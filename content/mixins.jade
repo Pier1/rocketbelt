@@ -1,0 +1,31 @@
+//- Escaping HTML in the Jade buffer: https://github.com/pugjs/pug/issues/1468#issuecomment-38195976
+mixin escape
+  - var oldBuf = buf;
+  - buf = [];
+  block
+  - buf  = oldBuf.concat(buf.map(jade.escape));
+
+mixin exampleWithCode
+  .example
+    block
+  code
+    +escape
+      block
+
+- var toTitleCase = function (str) {
+-   return str.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+- }
+
+mixin buildNav(navObject, rootHref)
+  unless navObject[0].name.indexOf('index.') > -1
+    ul
+      each item in navObject.sort(function (a, b) { return a.name > b.name })
+        - var name = toTitleCase(item.name);
+        li
+          - var newRootHref = rootHref ? rootHref : '';
+          if item.type == 'file'
+            a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '')}
+          else
+            a(href=newRootHref + '/' + item.name) #{name}
+
+            mixin buildNav(item.children, newRootHref + '/' + item.name)

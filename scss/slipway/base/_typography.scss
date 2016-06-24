@@ -1,0 +1,169 @@
+@import 'font-faces/font-faces';
+
+// line-height + margin-top + margin-bottom must be a multiple of 1.5rem to maintain vertical rhythm.
+$base-font-size: 1rem;
+$base-line-height: 1.5;
+$rhythm: $base-font-size * $base-line-height;
+
+$scales: (
+  xs: 1.125,
+  sm: 1.2,
+  md: 1.2,
+  lg: 1.25,
+  xl: 1.25,
+);
+
+$font-sans: 'Open Sans', sans-serif;
+$font-serif: 'Cormorant', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
+$font-monospace: Inconsolata, Monaco, Consolas, monospace;
+
+$default-font-family: $font-sans;
+
+body {
+  font-family: $default-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+$element-properties: (
+  small: (
+    scale-power: -2,
+    scale-line-height: 0.75,
+    margin-ratio: 0.5
+  ),
+  body: (
+    scale-power: 0,
+    scale-line-height: 1,
+    margin-ratio: 0.5
+  ),
+  p: (
+    scale-power: 0,
+    scale-line-height: 1,
+    margin-ratio: 0.5
+  ),
+  h6: (
+    scale-power: 0,
+    scale-line-height: 0.75,
+    margin-ratio: 0.8
+  ),
+  h5: (
+    scale-power: 0,
+    scale-line-height: 0.75,
+    margin-ratio: 0.8
+  ),
+  h4: (
+    scale-power: 1,
+    scale-line-height: 1,
+    margin-ratio: 0.8
+  ),
+  h3: (
+    scale-power: 2,
+    scale-line-height: 1,
+    margin-ratio: 0.8
+  ),
+  h2: (
+    scale-power: 3,
+    scale-line-height: 1,
+    margin-ratio: 0.8
+  ),
+  h1: (
+    scale-power: 4,
+    scale-line-height: 1,
+    margin-ratio: 0.8
+  )
+);
+
+@function get-text-properties($bp: 'xs', $el: 'body') {
+  $scale: map-get($scales, $bp);
+  $power: map-get(map-get($element-properties, $el), scale-power);
+  $scale-line-height: map-get(map-get($element-properties, $el), scale-line-height);
+  $font-size: decimal-round($base-font-size * pow($scale, $power), 4);
+  $line-height: $font-size * 1.5 * $scale-line-height;
+
+  $margin-ratio: map-get(map-get($element-properties, $el), margin-ratio);
+  $margin-top: '';
+  $margin-bottom: '';
+
+  $break: 0;
+
+  @for $i from 1 through 6 {
+    @if ($break != 1) {
+      $step: $i * $base-line-height;
+      $total-margin: $step - $line-height;
+
+      @if ($total-margin > 0) {
+        $margin-top: $total-margin * $margin-ratio;
+        $margin-bottom: $total-margin * (1 - $margin-ratio);
+        $break: 1;
+      }
+    }
+  }
+
+  @return (
+    font-size: $font-size,
+    line-height: $line-height,
+    margin-top: $margin-top,
+    margin-bottom: $margin-bottom
+  )
+}
+
+@each $el, $props in $element-properties {
+  $power: map-get($props, scale-power);
+  $bgc:map-get($props, background-color);
+  $synonym-string: '';
+
+  @if ($power != 0) {
+    $synonym-sign: if($power > 0, 'plus', 'minus');
+    $synonym-string: ', .font-size--#{$synonym-sign}-#{abs($power)}';
+  }
+
+  #{$el}#{$synonym-string} {
+    $font-size-ceil: 0;
+    $line-height-ceil: 0;
+
+    @each $breakpoint, $width in $breakpoints {
+      $current-props: get-text-properties($breakpoint, $el);
+      $fs: map-get($current-props, font-size);
+      $lh: map-get($current-props, line-height);
+
+      @if ($fs > $font-size-ceil or $lh > $line-height-ceil) {
+        $font-size-ceil: $fs;
+        $line-height-ceil: $lh;
+
+        @if ($breakpoint == 'xs') {
+          font-size: $fs;
+          line-height: $lh;
+          margin-top: map-get($current-props, margin-top);
+          margin-bottom: map-get($current-props, margin-bottom);
+        }
+        @else {
+          @include media('>=#{$breakpoint}') {
+            font-size: $fs;
+            line-height: $lh;
+            margin-top: map-get($current-props, margin-top);
+            margin-bottom: map-get($current-props, margin-bottom);
+          }
+        }
+      }
+    }
+  }
+}
+
+pre,
+code,
+.code {
+  white-space: pre-line;
+  font-family: $font-monospace;
+  font-weight: 300;
+}
+
+ul.horizontal {
+  li {
+    display: inline-block;
+  }
+}
+
+ul.list-reset {
+  list-style-type: none;
+  padding-left: 0;
+}

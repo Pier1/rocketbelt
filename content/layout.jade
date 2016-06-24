@@ -1,0 +1,22 @@
+include mixins
+
+doctype html
+html
+  head
+    block vars
+    block title
+     title #{title ? title + ' | ' : ''}Slipway Pattern Library
+    block styles
+      link(rel='stylesheet', href='/css/slipway/slipway.min.css')
+      link(rel='stylesheet', href='/css/site/site.min.css')
+  body.grid-fluid
+    .row
+      nav.col
+        block sidebar
+          +buildNav(nav)
+      .col.xs
+        block main
+          main.grid.fluid.no-margin
+            .row
+              .col.xs
+                block content

@@ -1,0 +1,216 @@
+$columns: 12;
+
+$gutter-width: 1rem;
+$half-gutter-width: $gutter-width / 2;
+$gutter-compensation: -1 * $half-gutter-width;
+
+@mixin row($reverse: false) {
+  @include row-direction($reverse);
+  display: flex;
+  flex: 0 1 auto;
+  flex-wrap: wrap;
+  // margin-right: $gutter-compensation;
+  // margin-left: $gutter-compensation;
+}
+
+@mixin row-direction($reverse: false) {
+  @if ($reverse) {
+    flex-direction: row-reverse;
+  }
+  @else {
+    flex-direction: row;
+  }
+}
+
+@mixin row-alignment-horizontal($alignment) {
+  $justify: inherit;
+
+  @if ($alignment == center) {
+    $justify: center;
+  }
+  @elseif ($alignment == end) {
+    $justify: flex-end;
+  }
+  @elseif ($alignment == start) {
+    $justify: flex-start;
+  }
+
+  justify-content: $justify;
+  text-align: $alignment;
+}
+
+@mixin row-alignment-vertical($alignment) {
+  @if ($alignment == middle) {
+    align-items: center;
+  }
+  @else if ($alignment == bottom) {
+    align-items: flex-end;
+  }
+  @else {
+    align-items: flex-start;
+  }
+}
+
+@mixin row-spacing($spacing) {
+  justify-content: $spacing;
+}
+
+@mixin column($reverse: false) {
+  @include column-direction($reverse);
+  display: flex;
+  flex: 0 1 auto;
+  flex-grow: 0;
+  flex-shrink: 0;
+  padding-right: $half-gutter-width;
+  padding-left: $half-gutter-width;
+}
+
+@mixin column-direction($reverse: false) {
+  @if ($reverse) {
+    flex-direction: column-reverse;
+  }
+  @else {
+    flex-direction: column;
+  }
+}
+
+@mixin column-span($columns-to-span: $columns, $total-columns-in-row: $columns) {
+  @if ($columns-to-span == auto) {
+    flex-grow: 1;
+    flex-basis: 0;
+    max-width: 100%;
+  }
+  @else {
+    $span-percentage: $columns-to-span / $total-columns-in-row;
+
+    flex-basis: $span-percentage * 100%;
+    max-width: $span-percentage * 100%;
+  }
+}
+
+@mixin column-offset($columns-to-offset, $total-columns-in-row: $columns) {
+  margin-left: ($columns-to-offset / $total-columns-in-row) * 100%;
+}
+
+@mixin column-order($position) {
+  @if ($position == last) {
+    $position: 9999;
+  }
+  @else if ($position == first) {
+    $position: -9999;
+  }
+
+  order: $position;
+}
+
+.grid {
+  margin-right: auto;
+  margin-left: auto;
+
+  &.no-margin {
+    margin: 0;
+  }
+
+  &.fluid {
+    width: inherit;
+  }
+}
+
+.row {
+  @include row;
+}
+
+.row.reverse {
+  @include row-direction(true);
+}
+
+.col.reverse {
+  @include column-direction($reverse: true);
+}
+
+@mixin example-viewport($key) {
+  .col.#{$key} {
+    $str: '&';
+    @for $i from 1 through $columns {
+      $str: $str + ', &-' + $i + ', &-offset-' + $i;
+    }
+
+    @at-root #{$str} {
+      @include column;
+    }
+
+    & {
+      @include column-span(auto);
+    }
+
+    @for $i from 1 through $columns {
+      &-#{$i} {
+        @include column-span($i);
+      }
+
+      &-offset-#{$i} {
+        @include column-offset($i);
+      }
+    }
+  }
+
+  .row {
+    &.#{$key}-start {
+      @include row-alignment-horizontal(start);
+    }
+
+    &.#{$key}-center {
+      @include row-alignment-horizontal(center);
+    }
+
+    &.#{$key}-end {
+      @include row-alignment-horizontal(end);
+    }
+
+    &.#{$key}-top {
+      @include row-alignment-vertical(top);
+    }
+
+    &.#{$key}-middle {
+      @include row-alignment-vertical(middle);
+    }
+
+    &.#{$key}-bottom {
+      @include row-alignment-vertical(bottom);
+    }
+
+    &.#{$key}-around {
+      @include row-spacing(space-around);
+    }
+
+    &.#{$key}-between {
+      @include row-spacing(space-between);
+    }
+  }
+
+  .col {
+    &.#{$key}-first {
+      @include column-order(first);
+    }
+
+    &.#{$key}-last {
+      @include column-order(last);
+    }
+  }
+}
+
+@each $key, $value in $breakpoints {
+  @if ($key == xs) {
+    @include example-viewport($key);
+  }
+  @else {
+    $min-width: '>=' + $value;
+
+    @include media($min-width) {
+      @include example-viewport($key);
+      .grid {
+        width: $value;
+      }
+    }
+  }
+}
