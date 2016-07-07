@@ -1,4 +1,5 @@
 @mixin font-family($family: sans) {
+  // TODO: Extract into variables map
   $sans: 'Brand Sans', sans-serif;
   $serif: 'Brand Serif', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
   $monospace: 'Brand Monospace', Monaco, Consolas, 'Lucida Console', monospace;
