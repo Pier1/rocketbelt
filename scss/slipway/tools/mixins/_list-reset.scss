@@ -1,0 +1,11 @@
+@mixin list-reset($horizontal: false) {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+
+  @if ($horizontal == true) {
+    li {
+      display: inline-block;
+    }
+  }
+}
