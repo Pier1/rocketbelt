@@ -1,6 +1,6 @@
 // @import 'https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600';
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Brand Sans';
   font-style: normal;
   @include font-weight(normal);
   src: local('Open Sans Light'), local('OpenSans-Light'),
@@ -9,7 +9,7 @@
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Brand Sans';
   font-style: italic;
   @include font-weight(normal);
   src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'),
@@ -18,7 +18,7 @@
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Brand Sans';
   font-style: normal;
   @include font-weight(normal);
   src: local('Open Sans'), local('OpenSans'),
@@ -27,7 +27,7 @@
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Brand Sans';
   font-style: italic;
   @include font-weight(normal);
   src: local('Open Sans Italic'), local('OpenSans-Italic'),
@@ -36,7 +36,7 @@
 }
 
 @font-face {
-  font-family: 'Open Sans';
+  font-family: 'Brand Sans';
   font-style: normal;
   @include font-weight(semibold);
   src: local('Open Sans Semibold'), local('OpenSans-Semibold'),

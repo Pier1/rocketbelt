@@ -13,14 +13,8 @@ $scales: (
   xl: 1.25,
 );
 
-$font-sans: 'Open Sans', sans-serif;
-$font-serif: 'Cormorant', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
-$font-monospace: Inconsolata, Monaco, Consolas, monospace;
-
-$default-font-family: $font-sans;
-
 body {
-  font-family: $default-font-family;
+  @include font-family(default);
   font-size: $base-font-size;
   line-height: $base-line-height;
 }
@@ -153,7 +147,7 @@ pre,
 code,
 .code {
   white-space: pre-line;
-  font-family: $font-monospace;
+  @include font-family(monospace);
   @include font-weight(light);
 }
 
