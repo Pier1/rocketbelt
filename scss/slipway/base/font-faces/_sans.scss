@@ -2,7 +2,7 @@
 @font-face {
   font-family: 'Brand Sans';
   font-style: normal;
-  @include font-weight(normal);
+  font-weight: font-weight(normal);
   src: local('Open Sans Light'), local('OpenSans-Light'),
        url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2'),
        url(https://fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff) format('woff');
@@ -11,7 +11,7 @@
 @font-face {
   font-family: 'Brand Sans';
   font-style: italic;
-  @include font-weight(normal);
+  font-weight: font-weight(normal);
   src: local('Open Sans Light Italic'), local('OpenSansLight-Italic'),
        url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxtTIkQYohD4BpHvJ3NvbHoA.woff2) format('woff2'),
        url(https://fonts.gstatic.com/s/opensans/v13/PRmiXeptR36kaC0GEAetxh_xHqYgAV9Bl_ZQbYUxnQU.woff) format('woff');
@@ -20,7 +20,7 @@
 @font-face {
   font-family: 'Brand Sans';
   font-style: normal;
-  @include font-weight(normal);
+  font-weight: font-weight(normal);
   src: local('Open Sans'), local('OpenSans'),
        url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2) format('woff2'),
        url(https://fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff) format('woff');
@@ -29,7 +29,7 @@
 @font-face {
   font-family: 'Brand Sans';
   font-style: italic;
-  @include font-weight(normal);
+  font-weight: font-weight(normal);
   src: local('Open Sans Italic'), local('OpenSans-Italic'),
        url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBogp9Q8gbYrhqGlRav_IXfk.woff2) format('woff2'),
        url(https://fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff) format('woff');
@@ -38,7 +38,7 @@
 @font-face {
   font-family: 'Brand Sans';
   font-style: normal;
-  @include font-weight(semibold);
+  font-weight: font-weight(semibold);
   src: local('Open Sans Semibold'), local('OpenSans-Semibold'),
        url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNShampu5_7CjHW5spxoeN3Vs.woff2) format('woff2'),
        url(https://fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff) format('woff');

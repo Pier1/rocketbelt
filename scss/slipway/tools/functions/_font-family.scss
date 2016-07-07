@@ -1,4 +1,4 @@
-@mixin font-family($family: sans) {
+@function font-family($family: sans) {
   // TODO: Extract into variables map
   $sans: 'Brand Sans', sans-serif;
   $serif: 'Brand Serif', Palatino, Palatino Linotype, Palatino LT STD, Book Antiqua, Georgia, serif;
@@ -32,7 +32,7 @@
     'brand monospace': $monospace
   );
 
-  font-family: if(map-has-key($families, $family),
+  @return if(map-has-key($families, $family),
                  map-get($families, $family),
                  map-get($families, sans));
 }

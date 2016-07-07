@@ -14,7 +14,7 @@ $scales: (
 );
 
 body {
-  @include font-family(default);
+  font-family: font-family(default);
   font-size: $base-font-size;
   line-height: $base-line-height;
 }
@@ -147,8 +147,8 @@ pre,
 code,
 .code {
   white-space: pre-line;
-  @include font-family(monospace);
-  @include font-weight(light);
+  font-family: font-family(monospace);
+  font-weight: font-weight(light);
 }
 
 ul.horizontal {
