@@ -3,7 +3,7 @@
   padding: 0;
   margin: 0;
 
-  @if ($horizontal == true) {
+  @if $horizontal {
     li {
       display: inline-block;
     }
