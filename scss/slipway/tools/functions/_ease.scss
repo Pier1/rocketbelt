@@ -1,4 +1,7 @@
 $ease: (
+  $in-out-quad: cubic-bezier(0.455,  0.030, 0.515, 0.955);
+  default:      $in-out-quad,
+
   in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530),
   in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190),
   in-quart:     cubic-bezier(0.895,  0.030, 0.685, 0.220),
@@ -15,7 +18,7 @@ $ease: (
   out-expo:     cubic-bezier(0.190,  1.000, 0.220, 1.000),
   out-circ:     cubic-bezier(0.075,  0.820, 0.165, 1.000),
   out-back:     cubic-bezier(0.175,  0.885, 0.320, 1.275),
-  in-out-quad:  cubic-bezier(0.455,  0.030, 0.515, 0.955),
+  in-out-quad:  $in-out-quad,
   in-out-cubic: cubic-bezier(0.645,  0.045, 0.355, 1.000),
   in-out-quart: cubic-bezier(0.770,  0.000, 0.175, 1.000),
   in-out-quint: cubic-bezier(0.860,  0.000, 0.070, 1.000),
@@ -25,7 +28,7 @@ $ease: (
   in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550)
 );
 
-@function ease($key) {
+@function ease($key: default) {
   @if map-has-key($ease, $key) {
     @return map-get($ease, $key);
   }
