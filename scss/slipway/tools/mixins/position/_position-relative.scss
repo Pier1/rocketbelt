@@ -1,0 +1,7 @@
+/// Shorthand mixin for relative positioning
+/// Serves as an alias for `position(relative, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin position-relative($args...) {
+  @include position(relative, $args...);
+}

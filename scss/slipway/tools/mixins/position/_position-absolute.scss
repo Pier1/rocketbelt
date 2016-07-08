@@ -1,0 +1,7 @@
+/// Shorthand mixin for absolute positioning
+/// Serves as an alias for `position(absolute, ...)`
+/// @param {Arglist} $args - Offsets
+/// @require {mixin} position
+@mixin position-absolute($args...) {
+  @include position(absolute, $args...);
+}
