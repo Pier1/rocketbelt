@@ -28,6 +28,9 @@ $ease: (
   in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550)
 );
 
+/// @author Kendrick Arnett
+/// @link http://easings.net/ See examples at easings.net.
+/// @param $key [default] - The easing to return.
 @function ease($key: default) {
   @if map-has-key($ease, $key) {
     @return map-get($ease, $key);
