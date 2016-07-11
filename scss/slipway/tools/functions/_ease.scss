@@ -1,5 +1,5 @@
+$in-out-quad: cubic-bezier(0.455,  0.030, 0.515, 0.955);
 $ease: (
-  $in-out-quad: cubic-bezier(0.455,  0.030, 0.515, 0.955);
   default:      $in-out-quad,
 
   in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530),
