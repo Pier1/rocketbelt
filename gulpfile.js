@@ -8,9 +8,12 @@ var sourcemaps = require('gulp-sourcemaps');
 var prefix   = require('gulp-autoprefixer');
 var plumber  = require('gulp-plumber');
 var notify   = require('gulp-notify');
-var cleanCss = require('gulp-clean-css');
 var rename   = require('gulp-rename');
 var del      = require('del');
+
+var postcss = require('gulp-postcss');
+var cssnano = require('cssnano');
+var flexibility = require('postcss-flexibility');
 
 var jade = require('gulp-jade');
 var md = require('jstransformer')(require('jstransformer-markdown-it'));
@@ -56,9 +59,10 @@ gulp.task('styles', function () {
                  'iOS >= 8',
                  'Android >= 4.3']
     }))
+    .pipe(postcss([flexibility()]))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(dist + '/css'))
-    .pipe(cleanCss())
+    .pipe(postcss([cssnano()]))
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(dist + '/css'))
