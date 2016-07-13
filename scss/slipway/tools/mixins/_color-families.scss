@@ -1,0 +1,41 @@
+@mixin color-families($families: $color-families) {
+  .fg_ {
+    @each $family, $variants in $families {
+      &#{$family} {
+        @each $variant, $color in $variants {
+          $variant-selector: $variant;
+          @if ($variant == base) {
+            $variant-selector: '';
+          }
+          @else {
+            $variant-selector: '-#{$variant}';
+          }
+
+          &#{$variant-selector} {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  .bg_ {
+    @each $family, $variants in $families {
+      &#{$family} {
+        @each $variant, $color in $variants {
+          $variant-selector: $variant;
+          @if ($variant == base) {
+            $variant-selector: '';
+          }
+          @else {
+            $variant-selector: '-#{$variant}';
+          }
+
+          &#{$variant-selector} {
+            background-color: $color;
+          }
+        }
+      }
+    }
+  }
+}

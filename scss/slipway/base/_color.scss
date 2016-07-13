@@ -1,0 +1,57 @@
+$base-families: (
+  primary: #006fb9,
+  secondary: #1cccbe,
+  accent: #2d16a1,
+  gray: mix(#a11622, #808080, 5%),
+  success: #17aa54,
+  warning: #e58744,
+  error: #a11622,
+  info: #006fb9,
+  black: mix(#a11622, #000, 2%),
+  white: mix(#a11622, #fff, 1%)
+);
+
+$base-variants: (
+  base: 0,
+  lighter: 0.4,
+  lightest: 0.8,
+  darker: -0.2,
+  darkest: -0.5
+);
+
+$gray-variants: (
+  base: 0,
+  light: 0.2,
+  lighter: 0.4,
+  lightest: 0.95,
+  dark: -0.2,
+  darker: -0.4,
+  darkest: -0.9
+);
+
+$black-white-variants: (base: 0);
+
+@function build-families() {
+  $families: ();
+
+  @each $family, $color in $base-families {
+    $variants: ();
+
+    $v: if($family == gray, $gray-variants,
+          if($family == black or $family == white, $black-white-variants,
+          $base-variants)
+        );
+
+    @each $variant, $percentage in $v {
+      $variants: map-merge($variants, (#{$variant}: scale-color($color, $lightness: percentage($percentage))));
+    }
+
+    $families: map-merge($families, (#{$family}: $variants));
+  }
+
+  @return $families;
+}
+
+$color-families: build-families();
+
+@include color-families();

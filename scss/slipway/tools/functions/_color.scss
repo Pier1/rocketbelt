@@ -1,0 +1,16 @@
+@function color($family: primary, $variant: base) {
+  $has-key-family:  map-has-key($color-families, $family);
+  $has-key-variant: ($has-key-family and map-has-key(map-get($color-families, $family), $variant));
+
+  @if ($has-key-variant) {
+    @return map-get(map-get($color-families, $family), $variant);
+  }
+  @else {
+    @if (not $has-key-family) {
+      @error "Color family `#{$family}` does not exist.";
+    }
+    else {
+      @error "Color variant `#{$variant}` does not exist in family `#{$family}`.";
+    }
+  }
+}
