@@ -1,0 +1,47 @@
+%button-static-props {
+  border-radius: 2px;
+  border: none;
+  cursor: default;
+  transition: all 50ms ease();
+
+  &:focus {
+    outline: 0;
+  }
+}
+
+.button-primary {
+  @include button-style;
+}
+
+.button-secondary {
+  @include button-style(secondary);
+}
+
+.button-text {
+  @include button-style(text);
+}
+
+.button-sm {
+  @include button-size(sm);
+}
+
+.button-md {
+  @include button-size(md);
+}
+
+.button-lg {
+  @include button-size(lg);
+}
+
+.button-primary.button-inset {
+  @include button-inset(primary);
+}
+
+.button-secondary.button-inset {
+  @include button-inset(secondary);
+}
+
+.button-block {
+  display: block;
+  width: 100%;
+}
