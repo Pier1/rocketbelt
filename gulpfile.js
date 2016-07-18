@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var browserSync = require('browser-sync');
 
+var eyeglass = require('eyeglass');
 var sass = require('gulp-sass');
 var sourcemaps = require('gulp-sourcemaps');
 var prefix   = require('gulp-autoprefixer');
@@ -49,7 +50,7 @@ gulp.task('styles', function () {
   return gulp.src('./scss/**/*.scss')
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sourcemaps.init())
-    .pipe(sass())
+    .pipe(sass(eyeglass()))
     .pipe(prefix({
       browsers: ['last 5 Chrome versions',
                  'last 5 Firefox versions',
