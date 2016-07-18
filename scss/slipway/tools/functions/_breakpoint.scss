@@ -1,0 +1,10 @@
+@function breakpoint($width: xs) {
+  $width: to-lower-case($width);
+
+  @if (map-has-key($breakpoints, $width)) {
+    @return map-get($breakpoints, $width);
+  }
+  else {
+    @error "Breakpoint width `#{$width}` does not exist in `$breakpoints`.";
+  }
+}
