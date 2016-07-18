@@ -1,9 +1,7 @@
 @import 'font-faces/font-faces';
 
 // line-height + margin-top + margin-bottom must be a multiple of 1.5rem to maintain vertical rhythm.
-$base-font-size: 1rem;
 $base-line-height: 1.5;
-$rhythm: $base-font-size * $base-line-height;
 
 @import 'modular-scale';
 $ms-base: 1rem;
@@ -11,26 +9,84 @@ $ms-ratio: 1.2,1.333;
 
 body {
   font-family: font-family(default);
-  font-size: $base-font-size;
+  font-size: ms(0);
+  margin: 0;
+  line-height: 1.5;
 }
 
 h1 {
-  font-size: ms(5);
+  font-size: ms(3);
+  margin: 0;
 }
 
 h2 {
-  font-size: ms(4);
+  font-size: ms(2);
+  margin: 0;
 }
 
 h3 {
-  font-size: ms(3);
+  font-size: ms(1);
+  margin: 0;
 }
 
 h4 {
-  font-size: ms(2);
+  font-size: ms(0);
+  margin: 0;
 }
 
+@include media('>=md') {
+  h1 {
+    font-size: ms(4);
+  }
 
+  h2 {
+    font-size: ms(3);
+  }
+
+  h3 {
+    font-size: ms(2);
+  }
+
+  h4 {
+    font-size: ms(1);
+  }
+}
+
+@include media('>=lg') {
+  h1 {
+    font-size: ms(5);
+  }
+
+  h2 {
+    font-size: ms(4);
+  }
+
+  h3 {
+    font-size: ms(3);
+  }
+
+  h4 {
+    font-size: ms(2);
+  }
+}
+
+@include media('>=xl') {
+  h1 {
+    font-size: ms(6);
+  }
+
+  h2 {
+    font-size: ms(5);
+  }
+
+  h3 {
+    font-size: ms(4);
+  }
+
+  h4 {
+    font-size: ms(3);
+  }
+}
 
 pre,
 code,
