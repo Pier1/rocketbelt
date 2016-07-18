@@ -8,9 +8,10 @@ mixin escape
 mixin exampleWithCode
   .example
     block
-  code
-    +escape
-      block
+  pre
+    code.language-html
+      +escape
+        block
 
 - var toTitleCase = function (str) {
 -   return str.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
