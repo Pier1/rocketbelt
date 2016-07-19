@@ -18,6 +18,7 @@ var flexibility = require('postcss-flexibility');
 
 var jade = require('gulp-jade');
 var md = require('jstransformer')(require('jstransformer-markdown-it'));
+var shortid = require('shortid');
 
 var jadeInheritance = require('gulp-jade-inheritance');
 var changed = require('gulp-changed');
@@ -91,7 +92,8 @@ gulp.task('views', function () {
         pretty: true,
         md: md,
         locals: {
-          nav: res
+          nav: res,
+          shortid: shortid
         }
       }))
       .pipe(gulp.dest(dist))

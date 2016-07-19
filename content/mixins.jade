@@ -6,12 +6,15 @@ mixin escape
   - buf  = oldBuf.concat(buf.map(jade.escape));
 
 mixin exampleWithCode
+  - var id = shortid.generate();
   .example
     block
-  pre
-    code.language-html
-      +escape
-        block
+  .code
+    button.copy-code(data-clipboard-target='#' + id) Copy
+    pre
+      code(id=id).language-html
+        +escape
+          block
 
 - var toTitleCase = function (str) {
 -   return str.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
