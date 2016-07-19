@@ -8,3 +8,18 @@ p code {
   background-color: color(gray, lightest);
   padding: 0.125rem 0.25rem;
 }
+
+.example + .code {
+  display: flex;
+  position: relative;
+
+  .copy-code {
+    position: absolute;
+    top: 1em;
+    right: 0.5em;
+  }
+
+  pre {
+    flex: 1;
+  }
+}
