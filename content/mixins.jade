@@ -21,7 +21,6 @@ mixin exampleWithCode
 - }
 
 mixin buildNav(navObject, rootHref)
-  -console.dir(navObject[0].name);
   ul
     each item in navObject.sort(function (a, b) { return a.name > b.name })
       - var name = toTitleCase(item.name);
