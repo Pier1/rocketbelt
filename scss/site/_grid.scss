@@ -12,9 +12,29 @@
       background-color: color(primary, lighter);
       transition: background-color 100ms linear;
     }
+  }
 
-    &.slex-tall:before {
-      min-height: 10rem;
+  .example-col-tall:before {
+    min-height: 10rem;
+  }
+
+  .col[class$="first"],
+  .col[class$="last"] {
+    &:before {
+      background-color: color(primary, lighter);
+    }
+
+    &:hover:before {
+      background-color: color(primary, lightest);
+    }
+  }
+
+  .row[class$="reverse"] .col {
+    text-align: center;
+
+    &:before,
+    &:hover:before {
+      background-color: inherit;
     }
   }
 }

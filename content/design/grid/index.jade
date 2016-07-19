@@ -99,14 +99,67 @@ block content
     +exampleWithCode
       .grid-fluid
         .row.xs-top.md-middle.xl-bottom
-          .col.xs-6.slex-tall
+          .col.xs-6.example-col-tall
           .col.xs-6
       
     :md
       ## Column Distribution
       ### `space-between`
+      Space columns evenly across the row, with no space at the beginning or end
+      of the row.
+      
+    +exampleWithCode
+      .grid-fluid
+        .row.xs-between
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2
+      
+    :md
       ### `space-around`
+      Space columns evenly across the row, including space at the beginning & end
+      of the row.
+      
+    +exampleWithCode
+      .grid-fluid
+        .row.xs-around
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2
+      
+    :md
       ## Column Order
-      ### `first`
-      ### `last`
+      ### `first` & `last`
+
+    +exampleWithCode
+      .grid-fluid
+        .row
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2.xs-first
+          
+    +exampleWithCode
+      .grid-fluid
+        .row
+          .col.xs-2.xs-last
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2
+          .col.xs-2
+      
+    :md
       ### `reverse`
+      
+    +exampleWithCode
+      .grid-fluid
+        .row.reverse
+          .col.xs-2 1
+          .col.xs-2 2
+          .col.xs-2 3
+          .col.xs-2 4
+          .col.xs-2 5
+          .col.xs-2 6
