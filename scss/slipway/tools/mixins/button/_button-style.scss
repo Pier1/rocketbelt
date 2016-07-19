@@ -1,7 +1,7 @@
 @mixin button-style($style: primary) {
   @if $style == primary {
     background-color: color(primary);
-    color: color('white');
+    color: color(white);
 
     &:hover {
       background-color: scale-color(color(primary), $lightness: 10%);
@@ -12,7 +12,7 @@
     }
   }
   @else if $style == secondary {
-    background-color: color('white');
+    background-color: color(white);
     color: color(primary);
     border: 0.1rem solid color(primary);
 
