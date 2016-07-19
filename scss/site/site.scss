@@ -14,6 +14,10 @@ p code {
   position: relative;
 
   .copy-code {
+    @include button-size(sm);
+    @include button-style(secondary);
+    @include button-shadow();
+
     position: absolute;
     top: 1em;
     right: 0.5em;

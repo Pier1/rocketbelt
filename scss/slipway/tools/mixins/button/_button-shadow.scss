@@ -1,0 +1,12 @@
+@mixin button-shadow {
+  transition: box-shadow 50ms ease-in;
+  @include z-depth(0);
+
+  &:hover {
+    @include z-depth(2);
+  }
+
+  &:active {
+    @include z-depth(1);
+  }
+}
