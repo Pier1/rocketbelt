@@ -21,10 +21,11 @@ mixin exampleWithCode
 - }
 
 mixin buildNav(navObject, rootHref)
-  unless navObject[0].name.indexOf('index.') > -1
-    ul
-      each item in navObject.sort(function (a, b) { return a.name > b.name })
-        - var name = toTitleCase(item.name);
+  -console.dir(navObject[0].name);
+  ul
+    each item in navObject.sort(function (a, b) { return a.name > b.name })
+      - var name = toTitleCase(item.name);
+      unless item.name.indexOf('index.') > -1
         li
           - var newRootHref = rootHref ? rootHref : '';
           if item.type == 'file'
