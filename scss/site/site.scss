@@ -1,2 +1,10 @@
-@import 'normalize',
-        'prism/prism';
+@import '../slipway/slipway',
+        'vendor/vendor',
+        'grid';
+
+p code {
+  border: 1px solid color(gray, lighter);
+  border-radius: 2px;
+  background-color: color(gray, lightest);
+  padding: 0.125rem 0.25rem;
+}
