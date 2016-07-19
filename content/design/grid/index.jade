@@ -9,18 +9,104 @@ block content
       # Grid
       Here is some short front matter about the grid.
 
+      ## Simple Syntax
+      Get started with as few as four classes.
+
     +exampleWithCode
       .grid
         .row
+          .col.xs
+
+    :md
+      ## Mobile-First & Responsive
+      Start with `xs`, then mix and match responsive modifiers.
+
+    +exampleWithCode
+      .grid-fluid
+        .row
+          .col.xs-12.md-2.xl-4
+          .col.xs-6.md-2.xl-4
+          .col.xs-6.md-2.xl-4
+          .col.xs-12.md-2.xl-3
+          .col.xs-3.md-2.xl-3
+          .col.xs-3.md-2.xl-3
+          .col.xs-3.md-4.xl-3
+          .col.xs-3.md-4.xl-6
+          .col.xs-12.md-4.xl-6
+          .col.xs-6.md-6.xl-12
+          .col.xs-6.md-6.xl-12
+          .col.xs-12.md-12.xl-12
+
+    :md
+      ## Automatic Widths
+      Leave off a column width if it needs to grow or shrink. The grid will size
+      it automatically.
+
+    +exampleWithCode
+      .grid-fluid
+        .row
           .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
-          .col.xs-1
+          .col.xs
+        .row
+          .col.xs-3
+          .col.xs
+          .col.xs-3
+        .row
+          .col.xs.xl-1
+          .col.xs.xl
+          .col.xs.xl-1
+          
+    :md
+      ## Column Offsets
+      Nudge a column to the right with an `-offset` class.
+      
+    +exampleWithCode
+      .grid-fluid
+        .row
+          .col.xs-offset-2.xs-4.md-offset-3.md-6.xl-offset-8.xl-4
+        .row
+          .col.xs-offset-3.xs-4.md-offset-3.md-6.xl-offset-6.xl-4
+        .row
+          .col.xs-offset-4.xs-4.md-offset-3.md-6.xl-offset-4.xl-4
+        .row
+          .col.xs-offset-5.xs-4.md-offset-3.md-6.xl-offset-2.xl-4
+      
+    :md
+      ## Nesting
+      
+    +exampleWithCode
+      .grid-fluid
+        .row
+          .col.xs-8
+            .row
+              .col.xs
+          .col.xs-4
+      
+    :md
+      ## Alignment Classes
+      ### Horizontal
+      #### `-start`, `-center`, `-end`
+      
+    +exampleWithCode
+      .grid-fluid
+        .row.xs-start.md-center.xl-end
+          .col.xs-4
+      
+    :md
+      ### Vertical
+      #### `-top`, `-middle`, `-bottom`
+      
+    +exampleWithCode
+      .grid-fluid
+        .row.xs-top.md-middle.xl-bottom
+          .col.xs-6.slex-tall
+          .col.xs-6
+      
+    :md
+      ## Column Distribution
+      ### `space-between`
+      ### `space-around`
+      ## Column Order
+      ### `first`
+      ### `last`
+      ### `reverse`

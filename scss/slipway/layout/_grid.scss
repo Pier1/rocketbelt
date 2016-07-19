@@ -4,6 +4,13 @@ $gutter-width: 1rem;
 $half-gutter-width: $gutter-width / 2;
 $gutter-compensation: -1 * $half-gutter-width;
 
+.row {
+  .row {
+    margin-right: $gutter-compensation;
+    margin-left: $gutter-compensation;
+  }
+}
+
 @mixin row($reverse: false) {
   @include row-direction($reverse);
   display: flex;
@@ -63,6 +70,7 @@ $gutter-compensation: -1 * $half-gutter-width;
   flex-shrink: 0;
   padding-right: $half-gutter-width;
   padding-left: $half-gutter-width;
+  padding-bottom: $gutter-width;
 }
 
 @mixin column-direction($reverse: false) {
