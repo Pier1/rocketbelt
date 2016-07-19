@@ -3,6 +3,11 @@
   padding: 0;
   margin: 0;
 
+  ul,
+  ol {
+    list-style-type: none;
+  }
+
   @if $horizontal {
     li {
       display: inline-block;

@@ -5,7 +5,8 @@ $base-line-height: 1.5;
 
 @import 'modular-scale';
 $ms-base: 1rem;
-$ms-ratio: 1.2,1.333;
+// $ms-ratio: 1.2,1.333;
+$ms-ratio: 1.125;
 
 body {
   font-family: font-family(default);
@@ -29,7 +30,9 @@ h3 {
   margin: 0;
 }
 
-h4 {
+h4,
+h5,
+h6 {
   font-size: ms(0);
   margin: 0;
 }
@@ -49,6 +52,11 @@ h4 {
 
   h4 {
     font-size: ms(1);
+  }
+
+  h5,
+  h6 {
+    font-size: ms(0);
   }
 }
 
@@ -87,6 +95,94 @@ h4 {
     font-size: ms(3);
   }
 }
+
+.font-sans {
+  font-family: font-family(sans);
+}
+
+.font-serif {
+  font-family: font-family(serif);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  small {
+    color: color(gray, light);
+    font-weight: font-weight(light);
+
+    &:before {
+      content: '\a0\a0';
+    }
+  }
+}
+
+.font-minus-3 {
+  font-size: ms(-3);
+}
+
+.font-minus-2 {
+  font-size: ms(-2);
+}
+
+.font-minus-1 {
+  font-size: ms(-1);
+}
+
+.font-plus-1 {
+  font-size: ms(1);
+}
+
+.font-plus-2 {
+  font-size: ms(2);
+}
+
+.font-plus-3 {
+  font-size: ms(3);
+}
+
+.font-plus-4 {
+  font-size: ms(4);
+}
+
+.font-plus-5 {
+  font-size: ms(5);
+}
+
+.font-plus-6 {
+  font-size: ms(6);
+}
+
+.font-plus-7 {
+  font-size: ms(7);
+}
+
+.font-plus-8 {
+  font-size: ms(8);
+}
+
+.font-plus-9 {
+  font-size: ms(9);
+}
+
+.font-weight-light {
+  font-weight: font-weight(light);
+}
+
+.font-weight-semibold {
+  font-weight: font-weight(semibold);
+}
+
+.list-reset {
+  @include list-reset();
+}
+
+.list-inline,
+.list-reset-horizontal {
+  @include list-reset($horizontal: true);
+}
+
 
 pre,
 code,
