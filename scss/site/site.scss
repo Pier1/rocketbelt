@@ -2,6 +2,10 @@
         'vendor/vendor',
         'grid';
 
+::selection {
+  background: color(secondary, lightest);
+}
+
 p code {
   border: 1px solid color(gray, lighter);
   border-radius: 2px;
