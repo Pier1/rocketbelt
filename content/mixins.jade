@@ -3,16 +3,26 @@ mixin escape
   - var oldBuf = buf;
   - buf = [];
   block
-  - buf  = oldBuf.concat(buf.map(jade.escape));
+  //- This is a little hacky, but it strips <script> tags so that Slipway
+  //- doesn't appear to prefer <script> blocks. The design library itself uses
+  //- <script> blocks because they're short and need to be included (escaped) 
+  //- in the page as examples.
+  - var addition = _.remove(buf.map(jade.escape), function (o) {
+  -   return !o.match(/\s*&lt;\/?script&gt;\s*/gi);
+  - });
+  - buf  = oldBuf.concat(addition);
 
-mixin exampleWithCode
+mixin exampleWithCode(htmlOrJs)
+  - htmlOrJs = htmlOrJs || 'html';
+  - if (htmlOrJs === 'js') htmlOrJs = 'javascript';
+  
   - var id = shortid.generate();
   .example
     block
   .code
     button.copy-code(data-clipboard-target='#' + id) Copy
     pre
-      code(id=id).language-html
+      code(id=id, class='language-' + htmlOrJs.toLowerCase())
         +escape
           block
 
