@@ -183,6 +183,24 @@ h4 {
   @include list-reset($horizontal: true);
 }
 
+blockquote {
+  margin: 0.75rem 0;
+  background: color(gray, lightest);
+  border-left: 0.75rem solid color(gray, lighter);
+  border-radius: 2px;
+  padding: 0.375rem 0.75rem;
+  font-size: ms(4);
+
+  .source {
+    display: block;
+    font-size: ms(2);
+    color: color(gray, lighter);
+
+    &:before {
+      content: '\2015' ' ';
+    }
+  }
+}
 
 pre,
 code,
