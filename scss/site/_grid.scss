@@ -3,7 +3,7 @@ article.grid {
     .col {
       &:before {
         content: '';
-        min-height: 1rem;
+        min-height: 2rem;
         background-color: color(primary);
         border-radius: 2px;
         transition: background-color 100ms linear;
