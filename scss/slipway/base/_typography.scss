@@ -9,6 +9,7 @@ $ms-base: 1rem;
 $ms-ratio: 1.125;
 
 body {
+  color: color(gray, darkest);
   font-family: font-family(default);
   font-size: ms(0);
   margin: 0;
@@ -166,6 +167,10 @@ h4 {
   font-size: ms(9);
 }
 
+.font-style-italic {
+  font-style: font-style('italic');
+}
+
 .font-weight-light {
   font-weight: font-weight(light);
 }
@@ -183,6 +188,22 @@ h4 {
   @include list-reset($horizontal: true);
 }
 
+a {
+  color: color(primary);
+
+  &:hover {
+    color: color(primary, lighter);
+  }
+
+  &:active {
+    color: color(primary, darker);
+  }
+
+  &:visited {
+    color: color(accent);
+  }
+}
+
 blockquote {
   margin: 0.75rem 0;
   background: color(gray, lightest);
@@ -190,6 +211,7 @@ blockquote {
   border-radius: 2px;
   padding: 0.375rem 0.75rem;
   font-size: ms(4);
+  text-align: left;
 
   .source {
     display: block;
@@ -197,8 +219,38 @@ blockquote {
     color: color(gray, lighter);
 
     &:before {
-      content: '\2015' ' ';
+      content: '\2015\a0';
     }
+  }
+
+  &.pull {
+    border: none;
+    background: transparent;
+    padding: 0;
+    width: 33%;
+
+    &:not(.font-serif) {
+      font-weight: font-weight(light);
+    }
+
+    & .quote {
+      display: inline;
+      background: rgba(color(secondary, lighter), 0.1);
+      box-shadow: 0 -0.25rem 0 rgba(color(secondary), 0.3);
+      line-height: 1.75;
+    }
+
+    & .source {
+      text-align: right;
+    }
+  }
+
+  &.pull-right {
+    float: right;
+  }
+
+  &.pull-left {
+    float: left;
   }
 }
 
