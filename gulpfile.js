@@ -74,7 +74,11 @@ gulp.task('styles', function () {
 });
 
 gulp.task('clean', function () {
-  del([dist + '/**/*', '!' + dist + '/css', '!' + dist + '/css/**/*']);
+  del([dist + '/**/*']);
+});
+
+gulp.task('build', ['clean', 'styles', 'views'], function () {
+  gulp.src(['./content/js/**/*']).pipe(gulp.dest(dist + '/js'));
 });
 
 gulp.task('views', function () {
