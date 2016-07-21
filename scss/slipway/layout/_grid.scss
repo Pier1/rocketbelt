@@ -43,7 +43,7 @@ $gutter-compensation: -1 * $half-gutter-width;
   }
 
   justify-content: $justify;
-  text-align: $alignment;
+  // text-align: $alignment;
 }
 
 @mixin row-alignment-vertical($alignment) {
