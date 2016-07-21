@@ -1,0 +1,66 @@
+extends /layout.jade
+
+block vars
+  - var title = 'Cards'
+
+block content
+  article
+    :md
+      # Cards
+      ## Basic Cards
+      
+    +exampleWithCode
+      .grid-fluid
+        .row.xs-center.font-weight-light
+          .col.xs-3
+            .card Cards are building blocks that lead to more detailed information.
+              | Their use, size, and composition can vary greatly.
+          .col.xs-3
+            .card Cards should be organized using #[span.font-monospace grid] 
+              | classes, and can contain many types of content.
+    :md
+      ## Action Cards
+      
+    .grid-fluid
+      .row
+        .col.xs-3
+          +exampleWithCode
+            .card
+              .card-title Action Cards
+              .card-content More structured, with a title and one or more 
+                | actions a user can take.
+              .card-actions
+                button.button.button-text Button 1
+                button.button.button-text Button 2
+      
+    :md
+      ## `z-depth`
+      
+    - var text = "Cards can be placed at different depths to indicate their position relative to other content."
+    +exampleWithCode
+      .grid-fluid
+        .row.font-weight-light
+          - var i = 0;
+          while i <= 5
+            .col.xs
+              .card(class='z-depth-' + i) #{text} This is #[span.font-monospace z-depth-#{i}].
+            - i++
+      
+    :md
+      ## Hover Cards
+      Combine `z-depth` classes with `hover` for engaging feedback.
+      
+    +exampleWithCode
+      .grid-fluid
+        .row.font-weight-light
+          //- - var text = "Cards can be placed at different depths to indicate their position relative to other content, or as feedback for user actions."
+          - var i = 0;
+          while i <= 5
+            .col.xs
+              .card.hover(class='z-depth-' + i) #{text} This is #[span.font-monospace z-depth-#{i}].
+            - i++
+    :md
+      ## Panel (Image) Cards
+      ## Thumbnail Cards
+      ## Reveal
+      ## Heights

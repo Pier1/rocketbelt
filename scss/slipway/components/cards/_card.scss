@@ -1,0 +1,8 @@
+.card {
+  border-radius: 2px;
+  padding: 0.33rem;
+
+  &:not([class*="z-depth-"]) {
+    @include z-depth(0);
+  }
+}

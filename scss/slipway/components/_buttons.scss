@@ -9,6 +9,10 @@
   }
 }
 
+.button {
+  @include button-size;
+}
+
 .button-primary {
   @include button-style;
 }
@@ -19,6 +23,7 @@
 
 .button-text {
   @include button-style(text);
+  cursor: pointer;
 }
 
 .button-sm {
