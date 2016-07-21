@@ -25,10 +25,11 @@ block content
       .row
         .col.xs-3
           +exampleWithCode
-            .card
-              .card-title Action Cards
-              .card-content More structured, with a title and one or more 
-                | actions a user can take.
+            .card.card-action
+              .card-action-content
+                .card-title Action Cards
+                .card-content More structured, with a title and one or more 
+                  | actions a user can take.
               .card-actions
                 button.button.button-text Button 1
                 button.button.button-text Button 2
@@ -59,6 +60,7 @@ block content
             .col.xs
               .card.hover(class='z-depth-' + i) #{text} This is #[span.font-monospace z-depth-#{i}].
             - i++
+
     :md
       ## Panel (Image) Cards
       ## Thumbnail Cards
