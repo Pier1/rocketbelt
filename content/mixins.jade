@@ -17,14 +17,15 @@ mixin exampleWithCode(htmlOrJs)
   - if (htmlOrJs === 'js') htmlOrJs = 'javascript';
   
   - var id = shortid.generate();
-  .example
-    block
-  .code
-    button.copy-code(data-clipboard-target='#' + id) Copy
-    pre
-      code(id=id, class='language-' + htmlOrJs.toLowerCase())
-        +escape
-          block
+  .exampleWithCode
+    .example
+      block
+    .code
+      button.copy-code(data-clipboard-target='#' + id) Copy
+      pre
+        code(id=id, class='language-' + htmlOrJs.toLowerCase())
+          +escape
+            block
 
 - var toTitleCase = function (str) {
 -   return str.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});

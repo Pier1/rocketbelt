@@ -4,6 +4,7 @@
 
 ::selection {
   background: color(secondary, lightest);
+  color: color(secondary);
 }
 
 p code {
@@ -13,11 +14,23 @@ p code {
   padding: 0.125rem 0.25rem;
 }
 
+.example {
+  // @include truncate-text();
+}
+
 .example + .code {
   display: flex;
   position: relative;
 
+  &:hover .copy-code {
+    opacity: 1;
+    transition: opacity 100ms linear;
+  }
+
   .copy-code {
+    opacity: 0.66;
+    transition: opacity 100ms linear;
+
     @include button-size(sm);
     @include button-style(secondary);
     @include button-shadow();

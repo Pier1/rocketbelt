@@ -32,30 +32,32 @@ block content
     :md
       ## Font Faces
     
-    +exampleWithCode
-      .grid-fluid
-        .row
-          .col.sm-12.md #[h3 Sans Serif]
-            span.font-sans
-              | Lorem ipsum dolor sit amet, consectetur adipisicing 
-              | elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-              | aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-              | laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-              | dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-              | fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-              | proident, sunt in culpa qui officia deserunt mollit anim id est 
-              | laborum.
-          .col.sm-12.md #[h3 Serif]
-            span.font-serif
-              | Lorem ipsum dolor sit amet, consectetur adipisicing 
-              | elit, sed do eiusmod tempor incididunt ut labore et dolore magna 
-              | aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco 
-              | laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure 
-              | dolor in reprehenderit in voluptate velit esse cillum dolore eu 
-              | fugiat nulla pariatur. Excepteur sint occaecat cupidatat non 
-              | proident, sunt in culpa qui officia deserunt mollit anim id est 
-              | laborum.
-    
+    .grid-fluid
+      .row
+        .col.sm-12.md #[h3 Sans Serif]
+          +exampleWithCode
+            div.font-sans
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              | eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+              | enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+              | nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+              | in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+              | nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+              | sunt in culpa qui officia deserunt mollit anim id est laborum.
+            
+    .grid-fluid
+      .row
+        .col.sm-12.md #[h3 Serif]
+          +exampleWithCode
+            .font-serif
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              | eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+              | enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+              | nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+              | in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+              | nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+              | sunt in culpa qui officia deserunt mollit anim id est laborum.
+
     :md
       ## Text Sizes
     
@@ -139,14 +141,36 @@ block content
     
     :md
       ### Block Quotes
-      
-    +exampleWithCode
-      blockquote.font-serif Simply because we were licked a hundred years before we started is no reason for us not to try to win.
-        .source Harper Lee, #[span.font-style-italic To Kill A Mockingbird]
+
+    .grid-fluid
+      .row
+        .col.xs-12.md-6
+          +exampleWithCode
+            blockquote.font-serif Simply because we were licked a hundred years before we started is no reason for us not to try to win.
+              .source Harper Lee, #[span.font-style-italic To Kill A Mockingbird]
+        .col.xs-12.md-6
+          +exampleWithCode
+            .group
+              blockquote.pull.float-right
+                p.quote Simply because we were licked a hundred years before we 
+                  | started is no reason for us not to try to win.
+                  .source Harper Lee, #[span.font-style-italic To Kill A Mockingbird]
+
+    :md
+      ### Lead Copy
     
-    +exampleWithCode
-      .group
-        blockquote.pull.pull-right
-          p.quote Simply because we were licked a hundred years before we 
-            | started is no reason for us not to try to win.
-            .source Harper Lee, #[span.font-style-italic To Kill A Mockingbird]
+    .grid-fluid
+      .row.xs-center
+        .col.xs-6
+          +exampleWithCode
+            .lead-first-line
+              | Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
+              | eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut 
+              | enim ad minim veniam, quis nostrud exercitation ullamco laboris 
+              | nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor 
+              | in reprehenderit in voluptate velit esse cillum dolore eu fugiat 
+              | nulla pariatur. Excepteur sint occaecat cupidatat non proident, 
+              | sunt in culpa qui officia deserunt mollit anim id est laborum.
+        .col.xs-6
+          +exampleWithCode
+            .lead-copy Lorem ipsum dolor sit amet

@@ -227,7 +227,7 @@ blockquote {
     border: none;
     background: transparent;
     padding: 0;
-    width: 33%;
+    width: 40%;
 
     &:not(.font-serif) {
       font-weight: font-weight(light);
@@ -244,14 +244,11 @@ blockquote {
       text-align: right;
     }
   }
+}
 
-  &.pull-right {
-    float: right;
-  }
-
-  &.pull-left {
-    float: left;
-  }
+.lead-copy,
+.lead-first-line::first-line {
+  font-size: ms(4);
 }
 
 pre,
