@@ -29,7 +29,7 @@ var gulpif = require('gulp-if');
 var dist = './dist';
 var nav = [];
 
-gulp.task('default', ['server', 'watch']);
+gulp.task('default', ['styles', 'views', 'server', 'watch']);
 
 gulp.task('server', function () {
   return browserSync.init({
@@ -83,7 +83,7 @@ gulp.task('views', function () {
     if (err)
       console.error(err);
 
-    gulp.src('./content/**/*.jade')
+    gulp.src(['./content/**/*.jade', '!./content/**/_*.jade'])
       .pipe(changed(dist, { extension: '.html' }))
       .pipe(gulpif(global.isWatching, cached('jade')))
       .pipe(jadeInheritance({ basedir: dir }))
