@@ -1,0 +1,72 @@
+extends /layout.jade
+
+block vars
+  - var title = 'Images'
+
+block content
+  article
+    :md
+      # Images
+      ## Lazy-Loading With Low-Quality Image Previews (LQIP)
+
+
+    - var base = 'https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/'
+
+    +exampleWithCode('js')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js')
+      
+    +exampleWithCode('js')
+      script.
+        var ctrl = new ScrollMagic.Controller();
+
+        $(document).ready(function () {
+          $('.lazyload-wrapper').each(function () {
+            var wrapper = this,
+                  small = wrapper.querySelector('.lazyload-small');
+
+            var img = new Image();
+            img.src = small.src;
+            img.onload = function () {
+              small.classList.add('loaded');
+            };
+          });
+          
+          $('.lazyload-wrapper .lazyload-small').each(function () {
+            var currentImage = this;
+            new ScrollMagic.Scene(
+              { 
+                triggerElement: currentImage, 
+                offset: (-document.documentElement.clientHeight / 2)
+              })
+              .on('enter', function () {
+                var wrapper = this.triggerElement().parentElement;
+                var imgLarge = new Image();
+
+                imgLarge.src = wrapper.dataset.srcLg; 
+                imgLarge.onload = function () {
+                  imgLarge.classList.add('loaded');
+                };
+                
+                wrapper.appendChild(imgLarge);
+              })
+              .addTo(ctrl);
+          });
+        });
+
+    .grid-fluid
+      .row.xs-center
+        .col.xs
+          +exampleWithCode('html', 'true')
+            each alt in ['ODR09_1']
+              - var short = alt.substring(0, alt.indexOf('_'));
+              
+              .lazyload-wrapper(data-src-lg=base + short + '/' + alt + '.jpg?sw=400&sh=400')
+                img.lazyload-small(src=base + short + '/' + alt + '.jpg?sw=10&sh=10')
+                .lazyload-pad(style='padding-bottom: 100%')
+
+          each alt in ['ODR09_2', '2587987_14', 'ODS001_3', 'ODS001_1', 'ODS005_12', '2437340_14', '2580054_13', '2437340_13', '2580054_14', 'ODS005_14', 'ODR14_1', '2757667_13', '2757667_14', '2756976_13', '2662334_12', 'PS64654_10A', '2506440_10A']
+            - var short = alt.substring(0, alt.indexOf('_'));
+            
+            .lazyload-wrapper(data-src-lg=base + short + '/' + alt + '.jpg?sw=400&sh=400')
+              img.lazyload-small(src=base + short + '/' + alt + '.jpg?sw=10&sh=10')
+              .lazyload-pad(style='padding-bottom: 100%')

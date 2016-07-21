@@ -8,9 +8,10 @@ html
      title #{title ? title + ' | ' : ''}Slipway Pattern Library
     block styles
       link(rel='stylesheet', href='/css/site/site.min.css')
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
   body.grid-fluid
     .row
-      nav.col
+      nav.col.xs
         block sidebar
           +buildNav(nav)
       .col.xs

@@ -12,20 +12,25 @@ mixin escape
   - });
   - buf  = oldBuf.concat(addition);
 
-mixin exampleWithCode(htmlOrJs)
+mixin exampleWithCode(htmlOrJs, inverted)
   - htmlOrJs = htmlOrJs || 'html';
+  - inverted = inverted || false;
   - if (htmlOrJs === 'js') htmlOrJs = 'javascript';
   
   - var id = shortid.generate();
   .exampleWithCode
-    .example
-      block
-    .code
+    if (!inverted)
+      .example
+        block
+    .example-code
       button.copy-code(data-clipboard-target='#' + id) Copy
       pre
         code(id=id, class='language-' + htmlOrJs.toLowerCase())
           +escape
             block
+    if (inverted)
+      .example
+        block
 
 - var toTitleCase = function (str) {
 -   return str.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
