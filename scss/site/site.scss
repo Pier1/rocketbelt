@@ -15,7 +15,6 @@ p code {
 }
 
 .example {
-  // @include truncate-text();
 }
 
 .example + .code {
@@ -38,6 +37,7 @@ p code {
     position: absolute;
     top: 1em;
     right: 0.5em;
+    border: none;
   }
 
   pre {
