@@ -105,6 +105,14 @@ h6 {
   font-family: font-family(serif);
 }
 
+.font-monospace {
+  font-family: font-family(monospace);
+  border: 1px solid color(gray, lighter);
+  border-radius: 2px;
+  background-color: color(gray, lightest);
+  padding: 0.125rem 0.25rem;
+}
+
 h1,
 h2,
 h3,
