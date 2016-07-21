@@ -74,11 +74,12 @@ gulp.task('styles', function () {
 });
 
 gulp.task('clean', function () {
+  del(['**/*/.DS_Store']);
   del([dist + '/**/*']);
 });
 
 gulp.task('build', ['clean', 'styles', 'views'], function () {
-  gulp.src(['./content/js/**/*']).pipe(gulp.dest(dist + '/js'));
+  gulp.src(['./content/_js/**/*']).pipe(gulp.dest(dist + '/_js'));
 });
 
 gulp.task('views', function () {
