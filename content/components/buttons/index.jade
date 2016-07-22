@@ -7,27 +7,61 @@ block content
   article
     :md
       # Buttons
+      ## Primary
+    
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            button.button-lg.button-primary Primary
+            button.button-lg.button-primary.button-inset Inset
+            button.button-md.button-primary Primary
+            button.button-md.button-primary.button-inset Inset
+            button.button-sm.button-primary Primary
+            button.button-sm.button-primary.button-inset Inset
       
-    .row
-      button.button-sm.button-primary Small Primary
-      button.button-sm.button-primary.button-inset Primary Inset
-      button.button-sm.button-secondary Small Secondary
-      button.button-sm.button-secondary.button-inset Secondary Inset
-      button.button-sm.button-text Small Text
+    :md
+      ## Secondary
       
-    .row
-      button.button-md.button-primary Medium Primary
-      button.button-md.button-primary.button-inset Primary Inset
-      button.button-md.button-secondary Medium Secondary
-      button.button-md.button-secondary.button-inset Secondary Inset
-      button.button-md.button-text Medium Text
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            button.button-lg.button-secondary Secondary
+            button.button-lg.button-secondary.button-inset Inset
+            button.button-md.button-secondary Secondary
+            button.button-md.button-secondary.button-inset Inset
+            button.button-sm.button-secondary Secondary
+            button.button-sm.button-secondary.button-inset Inset
+    :md
+      ## Text
       
-    .row
-      button.button-lg.button-primary Large Primary
-      button.button-lg.button-primary.button-inset Primary Inset
-      button.button-lg.button-secondary Large Secondary
-      button.button-lg.button-secondary.button-inset Secondary Inset
-      button.button-lg.button-text Large Text
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            button.button-lg.button-text Text Button
+            button.button-md.button-text Text Button
+            button.button-sm.button-text Text Button
       
-    .row
-      button.button-lg.button-primary.button-block Block Button
+    :md
+      ## Block
+
+    +exampleWithCode
+      .grid-fluid
+        .row
+          .col.xs-12.md-6
+            button.button-lg.button-secondary.button-block Block
+          .col.xs-12.md-6
+            button.button-lg.button-primary.button-block Block
+        .row
+          .col.xs-12.md-6
+            button.button-md.button-secondary.button-block Block
+          .col.xs-12.md-6
+            button.button-md.button-primary.button-block Block
+        .row
+          .col.xs-12.md-6
+            button.button-sm.button-secondary.button-block Block
+          .col.xs-12.md-6
+            button.button-sm.button-primary.button-block Block
+            

@@ -1,10 +1,11 @@
 @mixin button-style($style: primary) {
   @if $style == primary {
-    background-color: color(primary);
+    // background-color: color(primary);
+    background-color: scale-color(color(primary), $lightness: 15%);
     color: color(white);
 
     &:hover {
-      background-color: scale-color(color(primary), $lightness: 10%);
+      // background-color: scale-color(color(primary), $lightness: 10%);
     }
 
     &:active {

@@ -1,13 +1,15 @@
 @mixin button-inset($style: primary) {
   $box-shadow-props: inset 0 -2px 0 0;
-  $color: '';
+  // $color: '';
 
-  @if $style == primary {
-    $color: scale-color(color(primary), $lightness: -30%);
-  }
-  @else if $style == secondary {
-    $color: color(primary);
-  }
+  $color: color(primary);
+
+  // @if $style == primary {
+  //   $color: scale-color(color(primary), $lightness: -30%);
+  // }
+  // @else if $style == secondary {
+  //   $color: color(primary);
+  // }
 
   box-shadow: unquote($box-shadow-props + ' ' + $color);
 }
