@@ -57,5 +57,11 @@
       $c: scale-color(color(primary), $lightness: -10%);
       color: $c;
     }
+
+    &[disabled] {
+      &:hover {
+        color: color(primary);
+      }
+    }
   }
 }
