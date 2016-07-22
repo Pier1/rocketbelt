@@ -198,9 +198,11 @@ h4 {
 
 a {
   color: color(primary);
+  transition: color 200ms linear;
 
   &:hover {
     color: color(primary, lighter);
+    transition: color 100ms linear;
   }
 
   &:active {
@@ -209,6 +211,10 @@ a {
 
   &:visited {
     color: color(accent);
+  }
+
+  &:visited:hover {
+    color: color(accent, lighter);
   }
 }
 
