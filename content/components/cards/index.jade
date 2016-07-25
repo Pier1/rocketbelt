@@ -23,13 +23,13 @@ block content
       ## Action Cards
       
     .grid-fluid
-      .row
-        .col.xs-3
+      .row.xs-center
+        .col.xs-12.lg-4
           +exampleWithCode
-            .card.card-action
-              .card-action-content
+            .card.card-action.z-depth-2
+              .card-content
                 .card-title Action Cards
-                .card-content More structured, with a title and one or more 
+                .card-body More structured, with a title and one or more 
                   | actions a user can take.
               .card-actions
                 button.button.button-text Button 1
@@ -55,7 +55,6 @@ block content
     +exampleWithCode
       .grid-fluid
         .row.font-weight-light
-          //- - var text = "Cards can be placed at different depths to indicate their position relative to other content, or as feedback for user actions."
           - var i = 0;
           while i <= 5
             .col.xs
@@ -64,6 +63,65 @@ block content
 
     :md
       ## Panel (Image) Cards
+    
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            .card.card-image.z-depth-1
+              each alt in ['ODR09_1']
+                - var base = 'https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/';
+                - var short = alt.substring(0, alt.indexOf('_'));
+                // See foo
+                .lazyload-wrapper(data-src-lg=base + short + '/' + alt + '.jpg?sw=400&sh=400')
+                  img.lazyload-small(src=base + short + '/' + alt + '.jpg?sw=10&sh=10')
+                  .lazyload-pad(style='padding-bottom: 100%')
+              .card-content
+                .card-title Panel Cards
+                .card-body Combine an image with card content.
+              .card-actions
+                button.button.button-text Button 1
+                button.button.button-text Button 2
+                
+    script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js')
+    script.
+      var ctrl = new ScrollMagic.Controller();
+
+      $(document).ready(function () {
+        $('.lazyload-wrapper').each(function () {
+          var wrapper = this,
+                small = wrapper.querySelector('.lazyload-small');
+
+          var img = new Image();
+          img.src = small.src;
+          img.onload = function () {
+            small.classList.add('loaded');
+          };
+        });
+
+        $('.lazyload-wrapper .lazyload-small').each(function () {
+          var currentImage = this;
+          new ScrollMagic.Scene(
+            {
+              triggerElement: currentImage,
+              offset: (-document.documentElement.clientHeight / 2)
+            })
+            .on('enter', function () {
+              var wrapper = this.triggerElement().parentElement;
+              var imgLarge = new Image();
+
+              imgLarge.src = wrapper.dataset.srcLg;
+              imgLarge.onload = function () {
+                imgLarge.classList.add('loaded');
+              };
+
+              wrapper.appendChild(imgLarge);
+            })
+            .addTo(ctrl);
+        });
+      });
+      
+    :md
       ## Thumbnail Cards
       ## Expandable Thumbnail Cards
       ## Reveal

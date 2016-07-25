@@ -1,5 +1,6 @@
 .card {
   border-radius: 2px;
+  font-weight: font-weight(light);
   padding: 0.33rem;
 
   &:not([class*="z-depth-"]) {
