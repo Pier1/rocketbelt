@@ -11,10 +11,10 @@ html
     script(src='https://code.jquery.com/jquery-2.2.4.min.js')
   body.grid-fluid
     .row
-      nav.col.xs-12.lg-1
+      nav.col.xs(style='flex-grow:0')
         block sidebar
           +buildNav(nav)
-      .col.xs-12.lg-11
+      .col.xs
         block main
           main.grid-fluid.no-margin
             .row
