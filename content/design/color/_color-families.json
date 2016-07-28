@@ -1,0 +1,228 @@
+[
+  {
+    "familyName": "primary",
+    "variants": [
+      {
+        "variant": "lightest",
+        "colorName": "Sail Blue"
+      },
+      {
+        "variant": "lighter",
+        "colorName": "Curious Blue"
+      },
+      {
+        "variant": "base",
+        "colorName": "Pier 1 Blue"
+      },
+      {
+        "variant": "darker",
+        "colorName": "Venice Blue"
+      },
+      {
+        "variant": "darkest",
+        "colorName": "Astronaut Blue"
+      }
+    ]
+  },
+  {
+    "familyName": "secondary",
+    "variants": [
+      {
+        "variant": "lightest",
+        "colorName": "Hummingbird"
+      },
+      {
+        "variant": "lighter",
+        "colorName": "Bermuda"
+      },
+      {
+        "variant": "base",
+        "colorName": "Puerto Rico"
+      },
+      {
+        "variant": "darker",
+        "colorName": "Niagara"
+      },
+      {
+        "variant": "darkest",
+        "colorName": "Eden"
+      }
+    ]
+  },
+  {
+    "familyName": "accent",
+    "variants": [
+      {
+        "variant": "lightest",
+        "colorName": "Fog"
+      },
+      {
+        "variant": "lighter",
+        "colorName": "Purple Heart"
+      },
+      {
+        "variant": "base",
+        "colorName": "Ultramarine"
+      },
+      {
+        "variant": "darker",
+        "colorName": "Deep Koamaru"
+      },
+      {
+        "variant": "darkest",
+        "colorName": "Tolopea"
+      }
+    ]
+  },
+  {
+    "familyName": "gray",
+    "variants": [
+      {
+        "variant": "lightest",
+        "colorName": "Alabaster"
+      },
+      {
+        "variant": "lighter",
+        "colorName": "Noble Gray"
+      },
+      {
+        "variant": "light",
+        "colorName": "Mountain Gray"
+      },
+      {
+        "variant": "base",
+        "colorName": "Schooner"
+      },
+      {
+        "variant": "dark",
+        "colorName": "Dove Gray"
+      },
+      {
+        "variant": "darker",
+        "colorName": "Fuscous Gray"
+      },
+      {
+        "variant": "darkest",
+        "colorName": "Woodsmoke"
+      }
+    ]
+  },
+  {
+    "familyName": "success",
+    "variants": [
+      {
+        "variant": "lightest",
+        "colorName": "Snowy Mint"
+      },
+      {
+        "variant": "lighter",
+        "colorName": "Mint Green"
+      },
+      {
+        "variant": "base",
+        "colorName": "Chateau Green"
+      },
+      {
+        "variant": "darker",
+        "colorName": "Salem Green"
+      },
+      {
+        "variant": "darkest",
+        "colorName": "Parsley"
+      }
+    ]
+  },
+  {
+    "familyName": "warning",
+    "variants": [
+      {
+        "variant": "lightest",
+        "colorName": "Linen"
+      },
+      {
+        "variant": "lighter",
+        "colorName": "Potpourri"
+      },
+      {
+        "variant": "base",
+        "colorName": "Jaffa"
+      },
+      {
+        "variant": "darker",
+        "colorName": "Hot Cinnamon"
+      },
+      {
+        "variant": "darkest",
+        "colorName": "Copper Canyon"
+      }
+    ]
+  },
+  {
+    "familyName": "info",
+    "variants": [
+      {
+        "variant": "lightest",
+        "colorName": "Sail Blue"
+      },
+      {
+        "variant": "lighter",
+        "colorName": "Curious Blue"
+      },
+      {
+        "variant": "base",
+        "colorName": "Pier 1 Blue"
+      },
+      {
+        "variant": "darker",
+        "colorName": "Venice Blue"
+      },
+      {
+        "variant": "darkest",
+        "colorName": "Astronaut Blue"
+      }
+    ]
+  },
+  {
+    "familyName": "error",
+    "variants": [
+      {
+        "variant": "lightest",
+        "colorName": "Pastel Pink"
+      },
+      {
+        "variant": "lighter",
+        "colorName": "Brick Red"
+      },
+      {
+        "variant": "base",
+        "colorName": "Carmine"
+      },
+      {
+        "variant": "darker",
+        "colorName": "Venetian Red"
+      },
+      {
+        "variant": "darkest",
+        "colorName": "Maroon Oak"
+      }
+    ]
+  },
+  {
+    "familyName": "black",
+    "variants": [
+      {
+        "variant": "base",
+        "colorName": "Black"
+      }
+    ]
+  },
+  {
+    "familyName": "white",
+    "variants": [
+      {
+        "variant": "base",
+        "colorName": "White"
+      }
+    ]
+  }
+]

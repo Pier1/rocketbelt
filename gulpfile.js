@@ -88,6 +88,8 @@ gulp.task('views', function () {
     if (err)
       console.error(err);
 
+    var colorFamilies = require('./content/design/color/_color-families.json');
+
     gulp.src(['./content/**/*.jade', '!./content/**/_*.jade'])
       .pipe(changed(dist, { extension: '.html' }))
       .pipe(gulpif(global.isWatching, cached('jade')))
@@ -99,6 +101,7 @@ gulp.task('views', function () {
         md: md,
         locals: {
           nav: res,
+          colorFamilies: colorFamilies,
           shortid: shortid,
           _: _
         }

@@ -7,3 +7,8 @@ block content
   article
     :md
       # Color
+
+  each family in colorFamilies
+    - console.dir(family)
+    each variant in family.variants
+      .color #{family.familyName}, #{variant.variant}, #{variant.colorName}
