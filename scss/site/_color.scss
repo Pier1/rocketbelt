@@ -1,0 +1,11 @@
+.swatches {
+  display: flex;
+
+  .card {
+    margin: 1rem;
+  }
+
+  .swatch {
+    min-height: 10rem;
+  }
+}

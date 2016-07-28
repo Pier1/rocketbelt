@@ -8,7 +8,17 @@ block content
     :md
       # Color
 
-  each family in colorFamilies
-    - var variants = _.orderBy(family.variants, ['lightness'], ['desc'])
-    each variant in variants
-      .color #{family.familyName}, #{variant.variant}, #{variant.colorName}
+    .grid-fluid
+      .row.swatches
+        each family in colorFamilies
+          .col.xs-12.sm-6.md-4
+            .family.card.card-panel
+              .swatch(class='bg_' + family.familyName)
+              .card-content
+                .card-title #{family.familyName} #[small.variant-title.fg_gray-lighter base]
+                  - var variants = _.orderBy(family.variants, ['lightness'], ['desc'])
+                  //- each variant in variants
+                  //-   - var variant = variant.variant === 'base' ? '' : '-' + variant.variant
+                  //-   - var fg = 'fg_' + family.familyName + variant
+                  //-   - var bg = 'bg_' + family.familyName + variant
+                  //-   .variant(class=bg)
