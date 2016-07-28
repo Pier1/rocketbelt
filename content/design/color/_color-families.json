@@ -4,22 +4,27 @@
     "variants": [
       {
         "variant": "lightest",
+        "lightness": 2,
         "colorName": "Sail Blue"
       },
       {
         "variant": "lighter",
+        "lightness": 1,
         "colorName": "Curious Blue"
       },
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Pier 1 Blue"
       },
       {
         "variant": "darker",
+        "lightness": -1,
         "colorName": "Venice Blue"
       },
       {
         "variant": "darkest",
+        "lightness": -2,
         "colorName": "Astronaut Blue"
       }
     ]
@@ -29,22 +34,27 @@
     "variants": [
       {
         "variant": "lightest",
+        "lightness": 2,
         "colorName": "Hummingbird"
       },
       {
         "variant": "lighter",
+        "lightness": 1,
         "colorName": "Bermuda"
       },
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Puerto Rico"
       },
       {
         "variant": "darker",
+        "lightness": -1,
         "colorName": "Niagara"
       },
       {
         "variant": "darkest",
+        "lightness": -2,
         "colorName": "Eden"
       }
     ]
@@ -54,22 +64,27 @@
     "variants": [
       {
         "variant": "lightest",
+        "lightness": 2,
         "colorName": "Fog"
       },
       {
         "variant": "lighter",
+        "lightness": 1,
         "colorName": "Purple Heart"
       },
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Ultramarine"
       },
       {
         "variant": "darker",
+        "lightness": -1,
         "colorName": "Deep Koamaru"
       },
       {
         "variant": "darkest",
+        "lightness": -2,
         "colorName": "Tolopea"
       }
     ]
@@ -79,30 +94,37 @@
     "variants": [
       {
         "variant": "lightest",
+        "lightness": 3,
         "colorName": "Alabaster"
       },
       {
         "variant": "lighter",
+        "lightness": 2,
         "colorName": "Noble Gray"
       },
       {
         "variant": "light",
+        "lightness": 1,
         "colorName": "Mountain Gray"
       },
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Schooner"
       },
       {
         "variant": "dark",
+        "lightness": -1,
         "colorName": "Dove Gray"
       },
       {
         "variant": "darker",
+        "lightness": -2,
         "colorName": "Fuscous Gray"
       },
       {
         "variant": "darkest",
+        "lightness": -3,
         "colorName": "Woodsmoke"
       }
     ]
@@ -112,22 +134,27 @@
     "variants": [
       {
         "variant": "lightest",
+        "lightness": 2,
         "colorName": "Snowy Mint"
       },
       {
         "variant": "lighter",
+        "lightness": 1,
         "colorName": "Mint Green"
       },
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Chateau Green"
       },
       {
         "variant": "darker",
+        "lightness": -1,
         "colorName": "Salem Green"
       },
       {
         "variant": "darkest",
+        "lightness": -2,
         "colorName": "Parsley"
       }
     ]
@@ -137,22 +164,27 @@
     "variants": [
       {
         "variant": "lightest",
+        "lightness": 2,
         "colorName": "Linen"
       },
       {
         "variant": "lighter",
+        "lightness": 1,
         "colorName": "Potpourri"
       },
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Jaffa"
       },
       {
         "variant": "darker",
+        "lightness": -1,
         "colorName": "Hot Cinnamon"
       },
       {
         "variant": "darkest",
+        "lightness": -2,
         "colorName": "Copper Canyon"
       }
     ]
@@ -162,22 +194,27 @@
     "variants": [
       {
         "variant": "lightest",
+        "lightness": 2,
         "colorName": "Sail Blue"
       },
       {
         "variant": "lighter",
+        "lightness": 1,
         "colorName": "Curious Blue"
       },
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Pier 1 Blue"
       },
       {
         "variant": "darker",
+        "lightness": -1,
         "colorName": "Venice Blue"
       },
       {
         "variant": "darkest",
+        "lightness": -2,
         "colorName": "Astronaut Blue"
       }
     ]
@@ -187,22 +224,27 @@
     "variants": [
       {
         "variant": "lightest",
+        "lightness": 2,
         "colorName": "Pastel Pink"
       },
       {
         "variant": "lighter",
+        "lightness": 1,
         "colorName": "Brick Red"
       },
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Carmine"
       },
       {
         "variant": "darker",
+        "lightness": -1,
         "colorName": "Venetian Red"
       },
       {
         "variant": "darkest",
+        "lightness": -2,
         "colorName": "Maroon Oak"
       }
     ]
@@ -212,6 +254,7 @@
     "variants": [
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "Black"
       }
     ]
@@ -221,6 +264,7 @@
     "variants": [
       {
         "variant": "base",
+        "lightness": 0,
         "colorName": "White"
       }
     ]

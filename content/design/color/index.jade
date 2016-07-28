@@ -9,6 +9,6 @@ block content
       # Color
 
   each family in colorFamilies
-    - console.dir(family)
-    each variant in family.variants
+    - var variants = _.orderBy(family.variants, ['lightness'], ['desc'])
+    each variant in variants
       .color #{family.familyName}, #{variant.variant}, #{variant.colorName}
