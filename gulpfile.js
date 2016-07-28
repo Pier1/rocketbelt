@@ -46,6 +46,7 @@ gulp.task('watch', function(){
   gulp.watch('./scss/**/*.scss', ['styles']);
   gulp.watch('./content/**/*', ['views']);
   gulp.watch(dist + '/**/*.html').on('change', debounce(browserSync.reload, 500));
+  gulp.watch(dist + '/**/*.js').on('change', debounce(browserSync.reload, 500));
 });
 
 gulp.task('styles', function () {
@@ -79,10 +80,14 @@ gulp.task('clean', function () {
 });
 
 gulp.task('build', ['clean', 'styles', 'views'], function () {
-  gulp.src(['./content/_js/**/*']).pipe(gulp.dest(dist + '/_js'));
+
 });
 
-gulp.task('views', function () {
+gulp.task('copy-js', function () {
+  gulp.src(['./content/**/*.js']).pipe(gulp.dest(dist));
+});
+
+gulp.task('views', ['copy-js'], function () {
   var dir = './content';
   directoryTreeToObj(dir, function (err, res) {
     if (err)

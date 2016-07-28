@@ -1,11 +1,44 @@
-.swatches {
-  display: flex;
-
+.swatch-cards {
   .card {
     margin: 1rem;
+
+    .card-title {
+      text-transform: none;
+    }
+
+    .color-name {
+      font-weight: font-weight(normal);
+    }
   }
 
   .swatch {
+    position: relative;
     min-height: 10rem;
+    transition: all 100ms linear;
+  }
+
+  .variants {
+    position: absolute;
+    bottom: 0;
+    display: flex;
+    height: 3rem;
+    width: 100%;
+    align-self: flex-end;
+
+    .variant {
+      display: inline-block;
+      flex: 1;
+      height: 100%;
+      transition: transform 300ms ease-out;
+
+      &:hover {
+        position: relative;
+        z-index: 1;
+        transform: scale(1.2);
+        transition: all 100ms ease-out;
+
+        @include z-depth(2);
+      }
+    }
   }
 }

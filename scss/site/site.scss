@@ -8,7 +8,8 @@
   color: color(secondary);
 }
 
-p code {
+p code,
+.code {
   border: 1px solid color(gray, lighter);
   border-radius: 2px;
   background-color: color(gray, lightest);
