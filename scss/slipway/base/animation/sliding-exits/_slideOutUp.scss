@@ -1,0 +1,31 @@
+@mixin keyframes-slideOutUp {
+	@include keyframes(slideOutUp) {
+		0% {
+	  	@include transform(translateY(0));
+	  }
+		100% {
+	  	opacity: 0;
+	  	@include transform(translateY(-2000px));
+	  }
+	}
+}
+
+@mixin slideOutUp($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+	$name: slideOutUp;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-slideOutUp;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

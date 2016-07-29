@@ -1,0 +1,38 @@
+@mixin keyframes-flipInX {
+  @include keyframes(flipInX) {
+    0% {
+      opacity: 0;
+      @include transform(perspective(400px) rotateX(90deg));
+    }
+    40% {
+      @include transform(perspective(400px) rotateX(-10deg));
+    }
+    70% {
+      @include transform(perspective(400px) rotateX(10deg));
+    }
+    100% {
+      opacity: 1;
+      @include transform(perspective(400px) rotateX(0deg));
+    }
+  }
+}
+
+@mixin flipInX($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  $name: flipInX;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-flipInX;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

@@ -1,0 +1,54 @@
+$countDefault: 1 !default;
+$durationDefault: 1s !default;
+$delayDefault: 0s !default;
+$functionDefault: ease !default;
+$fillDefault: both !default;
+$visibilityDefault: hidden !default;
+
+$included-keyframes: ();
+
+@mixin count($count: 1) {
+  animation-iteration-count: $count;
+}
+
+@mixin duration($duration: 1s) {
+  animation-duration: $duration;
+}
+
+@mixin delay($delay: .2s) {
+  animation-delay: $delay;
+}
+
+@mixin function($function: ease) {
+  animation-timing-function: $function;
+}
+
+@mixin fill-mode($fill: both) {
+  animation-fill-mode: $fill;
+}
+
+@mixin visibility($visibility: hidden) {
+  backface-visibility: $visibility;
+}
+
+@mixin transform($property) {
+  transform: $property;
+}
+
+@mixin transform-origin($transform-origin: center center) {
+  transform-origin: $transform-origin;
+}
+
+@mixin transform-style($transform-style: flat) {
+  transform-style: $transform-style;
+}
+
+@mixin animation-name($animation-name) {
+  animation-name: $animation-name;
+}
+
+@mixin keyframes($animation-name) {
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}

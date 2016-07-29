@@ -1,0 +1,38 @@
+@mixin keyframes-bounceIn {
+  @include keyframes(bounceIn) {
+    0% {
+      opacity: 0;
+      @include transform(scale(.3));
+    }
+    50% {
+      opacity: 1;
+      @include transform(scale(1.05));
+    }
+    70% {
+  	@include transform(scale(.9));
+    }
+    100% {
+  	@include transform(scale(1));
+    }
+  }
+}
+
+@mixin bounceIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  $name: bounceIn;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-bounceIn;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

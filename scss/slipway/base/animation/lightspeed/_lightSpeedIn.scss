@@ -1,0 +1,41 @@
+@mixin keyframes-lightSpeedIn {
+  @include keyframes(lightSpeedIn) {
+  	0% {
+    	opacity: 0;
+    	@include transform(translateX(100%) skewX(-30deg));
+    }
+  	60% {
+    	opacity: 1;
+    	@include transform(translateX(-20%) skewX(30deg));
+    }
+  	80% {
+    	opacity: 1;
+    	@include transform(translateX(0%) skewX(-15deg));
+    }
+  	100% {
+    	opacity: 1;
+    	@include transform(translateX(0%) skewX(0deg));
+    }
+  }
+}
+
+@mixin lightSpeedIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  $name: lightSpeedIn;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-lightSpeedIn;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include count($count);
+	@include function(ease-out);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

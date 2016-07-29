@@ -1,0 +1,31 @@
+@mixin keyframes-swing {
+  @include keyframes(swing) {
+  	20%, 40%, 60%, 80%, 100% {@include transform-origin(top center);}
+  	20% {@include transform(rotate(15deg));}
+  	40% {@include transform(rotate(-10deg));}
+  	60% {@include transform(rotate(5deg));}
+  	80% {@include transform(rotate(-5deg));}
+  	100% {@include transform(rotate(0deg));}
+  }
+}
+
+@mixin swing($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  $name: swing;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-swing;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include transform-origin(top center);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

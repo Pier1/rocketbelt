@@ -1,0 +1,32 @@
+@mixin keyframes-flipOutX {
+  @include keyframes(flipOutX) {
+    0% {
+      opacity: 1;
+      @include transform(perspective(400px) rotateX(0deg));
+    }
+    100% {
+      opacity: 0;
+      @include transform(perspective(400px) rotateX(90deg));
+    }
+  }
+}
+
+@mixin flipOutX($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  $name: flipOutX;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-flipOutX;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

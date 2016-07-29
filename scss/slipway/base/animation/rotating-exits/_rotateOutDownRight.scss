@@ -1,0 +1,34 @@
+@mixin keyframes-rotateOutDownRight {
+  @include keyframes(rotateOutDownRight) {
+  	0% {
+    	opacity: 1;
+    	@include transform(rotate(0));
+    	@include transform-origin(right bottom);
+    }
+  	100% {
+    	opacity: 0;
+    	@include transform(rotate(-90deg));
+    	@include transform-origin(right bottom);
+    }
+  }
+}
+
+@mixin rotateOutDownRight($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  $name: rotateOutDownRight;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-rotateOutDownRight;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include count($count);
+  @include duration($duration);
+  @include delay($delay);
+  @include function($function);
+  @include fill-mode($fill);
+  @include visibility($visibility);
+}

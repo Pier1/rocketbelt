@@ -1,0 +1,29 @@
+@mixin keyframes-bounce {
+  @include keyframes(bounce) {
+		0%, 20%, 50%, 80%, 100% {@include transform(translateY(0));}
+		40% {@include transform(translateY(-30px));}
+		60% {@include transform(translateY(-15px));}
+	}
+}
+
+@mixin bounce($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+	$name: bounce;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-bounce;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  // animation: name duration timing-function delay iteration-count direction fill-mode play-state;
+	@include animation-name($name);
+	@include duration($duration);
+	@include function($function);
+	@include delay($delay);
+	@include count($count);
+
+	@include fill-mode($fill);
+	@include visibility($visibility);
+}
