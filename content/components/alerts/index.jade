@@ -1,0 +1,61 @@
+extends /_layout.jade
+
+block vars
+  - var title = 'Alerts'
+
+block content
+  article
+    :md
+      # Alerts
+      ## Flash Messages
+
+    +exampleWithCode
+      .message-flash.message-success Congratulations! This is a success message.
+      .message-flash.message-warning Caution! This is a warning message.
+      .message-flash.message-error Look out! This is an error message.
+      .message-flash.message-info Just FYI. This is an info message.
+
+    :md
+      ## Dismissable Flash Message
+      
+    +exampleWithCode
+      .message-flash.message-success.message-dismissable The action completed successfully.
+      
+    +exampleWithCode('js')
+      script.
+        $(document).ready(function () {
+          $('.message-dismissable:not(.message-banner)').after().click(function () {
+            $message = $(this).parent();
+            $message.toggleClass('slideOutUp');
+            $message.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',   
+              function(e) {
+                $message.slideUp('300', function () { $message.remove(); });
+              }
+            );
+          });
+          
+          $('.message-banner.message-dismissable').after().click(function () {
+            $(this).fadeOut(function () { $(this).remove(); });
+          });
+        });
+
+    :md
+      ## Fixed Banner Message
+      
+    script.
+      $(document).ready(function () {
+        $('.show-fixed-banner').click(function () {
+          if ($(this).next('.fixed-banner').find('.message-banner').length > 0) {
+            $(this).next('.visuallyhidden.fixed-banner').toggleClass('visuallyhidden');
+            $('.message-banner.message-warning.message-dismissable').css('z-index', '99');            
+          }
+          else {
+            $(this).next('.fixed-banner').find('.example').prepend('<div class="message-banner message-warning message-dismissable">Caution! This is a fixed banner message.</div>');
+          }
+        })
+      });
+    button.show-fixed-banner.button-secondary.button-md Show Fixed Banner
+    
+    .visuallyhidden.fixed-banner
+      +exampleWithCode
+        .message-banner.message-warning.message-dismissable Caution! This is a fixed banner message.
