@@ -79,16 +79,14 @@ gulp.task('clean', function () {
   del([dist + '/**/*']);
 });
 
-gulp.task('build', ['clean', 'styles', 'views'], function () {
+gulp.task('build', ['clean', 'styles', 'views']);
 
-});
-
-gulp.task('copy-js', function () {
-  del([dist + '/**/*.js']);
+gulp.task('copyjs', function () {
+  del.sync([dist + '/**/*.js', dist + '/content/_js']);
   gulp.src(['./content/**/*.js']).pipe(gulp.dest(dist));
 });
 
-gulp.task('views', ['copy-js'], function () {
+gulp.task('views', ['copyjs'], function () {
   var dir = './content';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
@@ -127,7 +125,7 @@ var directoryTreeToObj = function(dir, done) {
       return done(err);
 
     files = files.filter(function (file) {
-      return file.indexOf('_') !== 0;
+      return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });
 
     var pending = files.length;
