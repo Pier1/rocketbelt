@@ -84,6 +84,7 @@ gulp.task('build', ['clean', 'styles', 'views'], function () {
 });
 
 gulp.task('copy-js', function () {
+  del([dist + '/**/*.js']);
   gulp.src(['./content/**/*.js']).pipe(gulp.dest(dist));
 });
 
