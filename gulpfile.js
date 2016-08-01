@@ -82,7 +82,7 @@ gulp.task('clean', function () {
 gulp.task('build', ['clean', 'styles', 'views']);
 
 gulp.task('copyjs', function () {
-  del.sync([dist + '/**/*.js', dist + '/content/_js']);
+  del.sync([dist + '/**/*.js', dist + '/content/js']);
   gulp.src(['./content/**/*.js']).pipe(gulp.dest(dist));
 });
 
@@ -125,6 +125,7 @@ var directoryTreeToObj = function(dir, done) {
       return done(err);
 
     files = files.filter(function (file) {
+      if (fs.lstatSync(dir + '/' + file).isDirectory()) { if (file === 'js') return false; }
       return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });
 
