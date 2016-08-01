@@ -50,6 +50,19 @@ $message-families: (success, error, warning, info);
 @each $family in $message-families {
   .message-#{$family} {
     @include message($family);
+    transition: color 200ms ease-in-out;
+
+    & .message-dismissable_close {
+      &:hover {
+        color: color($family);
+        transition: color 200ms ease-in-out;
+      }
+
+      &:active {
+        color: color($family, darker);
+        transition: color 200ms ease-in-out;
+      }
+    }
   }
 }
 
@@ -60,6 +73,16 @@ $message-families: (success, error, warning, info);
   line-height: 1;
   font-weight: 600;
   padding: 0.125rem 0.375rem;
+  margin: -0.375rem;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  &:after {
+    content: '\00d7';
+  }
 }
 
 .slideOutUp {
