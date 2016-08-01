@@ -20,23 +20,22 @@ block content
       
     +exampleWithCode
       .message-flash.message-success.message-dismissable The action completed successfully.
+        .message-dismissable_close &times;
       
     +exampleWithCode('js')
       script.
         $(document).ready(function () {
-          $('.message-dismissable:not(.message-banner)').after().click(function () {
-            $message = $(this).parent();
-            $message.toggleClass('slideOutUp');
-            $message.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',   
-              function(e) {
-                $message.slideUp('300', function () { $message.remove(); });
-              }
-            );
-          });
-          
-          $('.message-banner.message-dismissable').after().click(function () {
-            $(this).fadeOut(function () { $(this).remove(); });
-          });
+          $('body').on('click', '.message-dismissable .message-dismissable_close',
+            function () {
+              var $message = $(this).parent();
+              $message.toggleClass('slideOutUp');
+              $message.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',   
+                function(e) {
+                  $message.slideUp('300', function () { $message.remove(); });
+                }
+              );
+            }
+          );
         });
 
     :md
@@ -50,7 +49,7 @@ block content
             $('.message-banner.message-warning.message-dismissable').css('z-index', '99');            
           }
           else {
-            $(this).next('.fixed-banner').find('.example').prepend('<div class="message-banner message-warning message-dismissable">Caution! This is a fixed banner message.</div>');
+            $(this).next('.fixed-banner').find('.example').prepend('<div class="message-banner message-warning message-dismissable">Caution! This is a fixed banner message.<div class="message-dismissable_close">&times;</div></div>');
           }
         })
       });
@@ -59,3 +58,4 @@ block content
     .visuallyhidden.fixed-banner
       +exampleWithCode
         .message-banner.message-warning.message-dismissable Caution! This is a fixed banner message.
+          .message-dismissable_close &times;
