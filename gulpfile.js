@@ -11,6 +11,9 @@ var plumber  = require('gulp-plumber');
 var notify   = require('gulp-notify');
 var rename   = require('gulp-rename');
 var del      = require('del');
+var clone    = require('gulp-clone');
+var merge    = require('merge-stream');
+var size     = require('gulp-size');
 
 var postcss = require('gulp-postcss');
 var cssnano = require('cssnano');
@@ -26,10 +29,17 @@ var changed = require('gulp-changed');
 var cached = require('gulp-cached');
 var gulpif = require('gulp-if');
 
+var vfs = require('vinyl-fs');
+var exec = require('child_process').exec;
 var dist = './dist';
+var distCss = dist + '/css';
+var slipwayDir = './slipway';
+var siteDir = './site';
+
+
 var nav = [];
 
-gulp.task('default', ['styles', 'views', 'server', 'watch']);
+gulp.task('default', ['styles:min', 'views', 'server', 'watch']);
 
 gulp.task('server', function () {
   return browserSync.init({
@@ -43,34 +53,49 @@ gulp.task('server', function () {
 gulp.task('watch', function(){
   global.isWatching = true;
 
-  gulp.watch('./scss/**/*.scss', ['styles']);
+  gulp.watch(['./slipway/**/*.scss', './content/scss/**/*.scss'], ['styles']);
   gulp.watch('./content/**/*', ['views']);
   gulp.watch(dist + '/**/*.html').on('change', debounce(browserSync.reload, 500));
   gulp.watch(dist + '/**/*.js').on('change', debounce(browserSync.reload, 500));
 });
 
+var sizeOptions = {
+  showFiles: true,
+  gzip: true
+};
+
 gulp.task('styles', function () {
-  return gulp.src('./scss/**/*.scss')
+  return gulp.src(['./slipway/**/*.scss', './content/scss/**/*.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+    .pipe(changed(distCss, { extension: '.css' }))
     .pipe(sourcemaps.init())
     .pipe(sass(eyeglass()))
     .pipe(prefix({
       browsers: ['last 5 Chrome versions',
                  'last 5 Firefox versions',
-                 'Safari >= 6',
+                 'Safari >= 9',
                  'ie >= 9',
                  'Edge >= 1',
                  'iOS >= 8',
-                 'Android >= 4.3']
+                 'Android >= 4.4']
     }))
     .pipe(postcss([flexibility()]))
-    .pipe(sourcemaps.write())
-    .pipe(gulp.dest(dist + '/css'))
-    .pipe(postcss([cssnano()]))
-    .pipe(rename({ suffix: '.min' }))
+    .pipe(size(sizeOptions))
     .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(dist + '/css'))
-    .pipe(browserSync.stream({ match: '**/*.css' }))
+    .pipe(gulp.dest(distCss))
+  ;
+});
+
+gulp.task('styles:min', ['styles'], function () {
+  return gulp.src([distCss + '/*.css', '!' + distCss + '/*.min.css'])
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+    .pipe(changed(distCss, { extension: '.min.css' }))
+    .pipe(postcss([cssnano()]))
+    .pipe(sourcemaps.init())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(size(sizeOptions))
+    .pipe(sourcemaps.write('.'))
+    .pipe(gulp.dest(distCss))
   ;
 });
 
@@ -81,12 +106,25 @@ gulp.task('clean', function () {
 
 gulp.task('build', ['clean', 'styles', 'views']);
 
-gulp.task('copyjs', function () {
-  del.sync([dist + '/**/*.js', dist + '/content/js']);
-  gulp.src(['./content/**/*.js']).pipe(gulp.dest(dist));
+gulp.task('js:site:copy', function () {
+  vfs.src(['./content/**/*.js']).pipe(vfs.dest(dist));
 });
 
-gulp.task('views', ['copyjs'], function () {
+gulp.task('link:partials', function () {
+  return vfs.src('./slipway/**/_*.jade')
+    .pipe(vfs.symlink('./content'));
+});
+
+gulp.task('link:js', function () {
+  return vfs.src('./slipway/**/*.js')
+    .pipe(vfs.symlink('./content'));
+});
+
+gulp.task('link:clean', function (cb) {
+  exec('find ./content -type l -exec test ! -e {} \\; -delete', function (err, stdout, stderr) {})
+});
+
+gulp.task('views', ['link:clean', 'link:partials', 'link:js', 'js:site:copy'], function () {
   var dir = './content';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
@@ -95,10 +133,10 @@ gulp.task('views', ['copyjs'], function () {
     var colorFamilies = require('./content/design/color/_color-families.json');
 
     gulp.src(['./content/**/*.jade', '!./content/**/_*.jade'])
+      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
       .pipe(changed(dist, { extension: '.html' }))
       .pipe(gulpif(global.isWatching, cached('jade')))
       .pipe(jadeInheritance({ basedir: dir }))
-      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
       .pipe(jade({
         basedir: __dirname + '/content',
         pretty: true,
@@ -125,7 +163,7 @@ var directoryTreeToObj = function(dir, done) {
       return done(err);
 
     files = files.filter(function (file) {
-      if (fs.lstatSync(dir + '/' + file).isDirectory()) { if (file === 'js') return false; }
+      if (fs.lstatSync(dir + '/' + file).isDirectory()) { if (file === 'js' || file === 'scss') return false; }
       return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });
 

@@ -10,33 +10,16 @@ block content
       ## Flash Messages
 
     +exampleWithCode
-      .message-flash.message-success Congratulations! This is a success message.
-      .message-flash.message-warning Caution! This is a warning message.
-      .message-flash.message-error Look out! This is an error message.
-      .message-flash.message-info Just FYI. This is an info message.
+      include _alerts-flash
 
     :md
       ## Dismissable Flash Message
       
     +exampleWithCode
-      .message-flash.message-success.message-dismissable The action completed successfully.
-        .message-dismissable_close
+      include _alerts-dismissable
       
     +exampleWithCode('js')
-      script.
-        $(document).ready(function () {
-          $('body').on('click', '.message-dismissable .message-dismissable_close',
-            function () {
-              var $message = $(this).parent();
-              $message.toggleClass('slideOutUp');
-              $message.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',   
-                function(e) {
-                  $message.slideUp('300', function () { $message.remove(); });
-                }
-              );
-            }
-          );
-        });
+      script(src='./alerts-dismissable.js')
 
     :md
       ## Fixed Banner Message
@@ -57,5 +40,4 @@ block content
     
     .visuallyhidden.fixed-banner
       +exampleWithCode
-        .message-banner.message-warning.message-dismissable Caution! This is a fixed banner message.
-          .message-dismissable_close
+        include _alerts-banner
