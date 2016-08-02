@@ -33,6 +33,7 @@
     "lodash": "^4.13.1",
     "modularscale-sass": "^2.1.1",
     "postcss-flexibility": "^1.1.0",
+    "remodal": "^1.1.0",
     "shortid": "^2.2.6"
   },
   "dependencies": {
