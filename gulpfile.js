@@ -39,7 +39,7 @@ var siteDir = './site';
 
 var nav = [];
 
-gulp.task('default', ['styles:min', 'views', 'server', 'watch']);
+gulp.task('default', ['styles', 'views', 'server', 'watch']);
 
 gulp.task('server', function () {
   return browserSync.init({
@@ -64,7 +64,7 @@ var sizeOptions = {
   gzip: true
 };
 
-gulp.task('styles', function () {
+gulp.task('styles:max', function () {
   return gulp.src(['./slipway/**/*.scss', './content/scss/**/*.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(changed(distCss, { extension: '.css' }))
@@ -86,7 +86,7 @@ gulp.task('styles', function () {
   ;
 });
 
-gulp.task('styles:min', ['styles'], function () {
+gulp.task('styles', ['styles:max'], function () {
   return gulp.src([distCss + '/*.css', '!' + distCss + '/*.min.css'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(changed(distCss, { extension: '.min.css' }))
@@ -104,7 +104,7 @@ gulp.task('clean', ['link:clean'], function () {
   del([dist + '/**/*']);
 });
 
-gulp.task('build', ['clean', 'styles:min', 'views']);
+gulp.task('build', ['clean', 'styles', 'views']);
 
 gulp.task('js:site:copy', function () {
   vfs.src(['./content/**/*.js']).pipe(vfs.dest(dist));
