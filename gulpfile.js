@@ -99,7 +99,7 @@ gulp.task('styles:min', ['styles'], function () {
   ;
 });
 
-gulp.task('clean', function () {
+gulp.task('clean', ['link:clean'], function () {
   del(['**/*/.DS_Store']);
   del([dist + '/**/*']);
 });
@@ -124,7 +124,7 @@ gulp.task('link:clean', function (cb) {
   exec('find ./content -type l -exec test ! -e {} \\; -delete', function (err, stdout, stderr) {})
 });
 
-gulp.task('views', ['link:clean', 'link:partials', 'link:js', 'js:site:copy'], function () {
+gulp.task('views', ['link:js', 'js:site:copy'], function () {
   var dir = './content';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
