@@ -13,14 +13,7 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            button.button-lg.button-primary Primary
-            button.button-lg.button-primary.button-inset Inset
-            button(disabled).button-lg.button-primary Disabled
-            button(disabled).button-lg.button-primary.button-inset Disabled
-            button.button-md.button-primary Primary
-            button.button-md.button-primary.button-inset Inset
-            button.button-sm.button-primary Primary
-            button.button-sm.button-primary.button-inset Inset
+            include _buttons-primary
       
     :md
       ## Secondary
@@ -29,14 +22,8 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            button.button-lg.button-secondary Secondary
-            button.button-lg.button-secondary.button-inset Inset
-            button(disabled).button-lg.button-secondary.button-disabled Disabled
-            button(disabled).button-lg.button-secondary.button-inset.button-disabled Disabled
-            button.button-md.button-secondary Secondary
-            button.button-md.button-secondary.button-inset Inset
-            button.button-sm.button-secondary Secondary
-            button.button-sm.button-secondary.button-inset Inset
+            include _buttons-secondary
+
     :md
       ## Text
       
@@ -44,29 +31,11 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            button.button-lg.button-text Text Button
-            button(disabled).button-lg.button-text Disabled
-            button.button-md.button-text Text Button
-            button.button-sm.button-text Text Button
+            include _buttons-text
       
     :md
       ## Block
 
     +exampleWithCode
-      .grid-fluid
-        .row
-          .col.xs-12.md-6
-            button.button-lg.button-secondary.button-block Block
-          .col.xs-12.md-6
-            button.button-lg.button-primary.button-block Block
-        .row
-          .col.xs-12.md-6
-            button.button-md.button-secondary.button-block Block
-          .col.xs-12.md-6
-            button.button-md.button-primary.button-block Block
-        .row
-          .col.xs-12.md-6
-            button.button-sm.button-secondary.button-block Block
-          .col.xs-12.md-6
-            button.button-sm.button-primary.button-block Block
+      include _buttons-block
             

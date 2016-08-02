@@ -104,7 +104,7 @@ gulp.task('clean', ['link:clean'], function () {
   del([dist + '/**/*']);
 });
 
-gulp.task('build', ['clean', 'styles', 'views']);
+gulp.task('build', ['clean', 'styles:min', 'views']);
 
 gulp.task('js:site:copy', function () {
   vfs.src(['./content/**/*.js']).pipe(vfs.dest(dist));
@@ -124,7 +124,7 @@ gulp.task('link:clean', function (cb) {
   exec('find ./content -type l -exec test ! -e {} \\; -delete', function (err, stdout, stderr) {})
 });
 
-gulp.task('views', ['link:js', 'js:site:copy'], function () {
+gulp.task('views', ['link:partials', 'link:js', 'js:site:copy'], function () {
   var dir = './content';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
