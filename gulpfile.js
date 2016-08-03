@@ -116,7 +116,7 @@ gulp.task('link:partials', function () {
 });
 
 gulp.task('link:js', function () {
-  return vfs.src('./slipway/**/*.js')
+  return vfs.src('./slipway/**/*.js', './slipway/**/*.json')
     .pipe(vfs.symlink('./content'));
 });
 
