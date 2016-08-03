@@ -9,7 +9,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "brfs": "^1.4.3",
     "browser-sync": "^2.13.0",
     "cssnano": "^3.7.1",
     "del": "^2.2.0",
