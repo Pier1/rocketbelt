@@ -130,7 +130,7 @@ gulp.task('views', ['link:partials', 'link:js', 'js:site:copy'], function () {
     if (err)
       console.error(err);
 
-    var colorFamilies = require('./content/design/color/_color-families.json');
+    var colorFamilies = require('./content/base/color/_color-families.json');
 
     gulp.src(['./content/**/*.jade', '!./content/**/_*.jade'])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))

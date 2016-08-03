@@ -1,0 +1,92 @@
+extends /_layout.jade
+
+block vars
+  - var title = 'Grid'
+
+block content
+  article.grid-article
+    :md
+      # Grid
+      Here is some short front matter about the grid.
+
+      ## Simple Syntax
+      Get started with as few as four classes.
+
+    +exampleWithCode
+      include _grid-basic
+
+    :md
+      ## Mobile-First & Responsive
+      Start with `xs`, then mix and match responsive modifiers.
+
+    +exampleWithCode
+      include _grid-responsive
+
+    :md
+      ## Automatic Widths
+      Leave off a column width if it needs to grow or shrink. The grid will size
+      it automatically.
+
+    +exampleWithCode
+      include _grid-auto-column-widths
+          
+    :md
+      ## Column Offsets
+      Nudge a column to the right with an `-offset` class.
+      
+    +exampleWithCode
+      include _grid-column-offsets
+      
+    :md
+      ## Nesting
+      
+    +exampleWithCode
+      include _grid-nested
+      
+    :md
+      ## Alignment Classes
+      ### Horizontal
+      #### `-start`, `-center`, `-end`
+      
+    +exampleWithCode
+      include _grid-alignment-horizontal
+      
+    :md
+      ### Vertical
+      #### `-top`, `-middle`, `-bottom`
+      
+    +exampleWithCode
+      include _grid-alignment-vertical
+      
+    :md
+      ## Column Distribution
+      ### `space-between`
+      Space columns evenly across the row, with no space at the beginning or end
+      of the row.
+      
+    +exampleWithCode
+      include _grid-distribution-space-between
+      
+    :md
+      ### `space-around`
+      Space columns evenly across the row, including space at the beginning & end
+      of the row.
+      
+    +exampleWithCode
+      include _grid-distribution-space-around
+      
+    :md
+      ## Column Order
+      ### `first` & `last`
+
+    +exampleWithCode
+      include _grid-order-first
+          
+    +exampleWithCode
+      include _grid-order-last
+      
+    :md
+      ### `reverse`
+      
+    +exampleWithCode
+      include _grid-order-reverse
