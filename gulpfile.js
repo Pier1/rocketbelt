@@ -101,7 +101,7 @@ gulp.task('styles', ['styles:max'], function () {
 
 gulp.task('clean', ['link:clean'], function () {
   del(['**/*/.DS_Store']);
-  del([dist + '/**/*']);
+  del([dist]);
 });
 
 gulp.task('build', ['clean', 'styles', 'views']);
@@ -120,8 +120,8 @@ gulp.task('link:js', function () {
     .pipe(vfs.symlink('./content'));
 });
 
-gulp.task('link:clean', function (cb) {
-  exec('find ./content -type l -exec test ! -e {} \\; -delete', function (err, stdout, stderr) {})
+gulp.task('link:clean', function () {
+  exec('find ./content -type l -exec test ! -e {} \\; -delete', function (err, stdout, stderr) { })
 });
 
 gulp.task('views', ['link:partials', 'link:js', 'js:site:copy'], function () {
