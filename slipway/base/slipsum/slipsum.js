@@ -47,13 +47,17 @@
   //   }
   // };
 
-  var slipsum = function (numSentences) {
-    // Start with the root node
+  function randomIntFromInterval(min,max)
+  {
+      return Math.floor(Math.random()*(max-min+1)+min);
+  }
+
+  var sentences = function (targetNumSentences) {
     var currentWord = '_START';
     var str = '';
 
-    // Generate 300 words of text
-    for (var i = 0; i < 300; i++) {
+    var numSentences = 0;
+    while (numSentences < targetNumSentences) {
       // Follow a random node, append it to the string, and move to that node
       var rand = Math.floor(Math.random() * cache[currentWord].length);
       str += cache[currentWord][rand];
@@ -63,6 +67,8 @@
         currentWord = '_START';
         if (!cache[currentWord][rand].match(/\.$/)) {
           str += '. ';
+          numSentences += 1;
+          break;
         }
         else {
           str += ' ';
@@ -70,11 +76,49 @@
       }
       else {
         currentWord = cache[currentWord][rand];
-        str += ' ';
+        var pattern = /[.!?](\s?)$/g;
+
+        if (currentWord.match(pattern)) {
+          var r = Math.floor(Math.random() * 19) + 1;
+
+          if (r === 1) {
+            currentWord.replace(pattern, '?!$1');
+          }
+          else if (r >= 2 && r < 4) {
+            currentWord.replace(pattern, '?$1');
+          }
+          else if (r >= 4 && r < 7) {
+            currentWord.replace(pattern, '!$1');
+          }
+
+          numSentences += 1;
+        }
+
+        if (numSentences !== targetNumSentences) {
+          str += ' ';
+        }
       }
     }
 
     return str;
+  }
+
+  var paragraphs = function (targetNumParagraphs) {
+    var paras = '';
+
+    for (var i = 0; i < targetNumParagraphs; i++) {
+      var rand = randomIntFromInterval(4, 8);
+      paras += sentences(rand);
+      paras += '\n\n';
+    }
+
+    paras.replace(/[\s\n]+$/g, '');
+    return paras;
+  }
+
+  var slipsum = {
+    sentences: sentences,
+    paragraphs: paragraphs
   }
 
   module.exports = {
