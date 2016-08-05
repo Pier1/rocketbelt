@@ -67,7 +67,6 @@ var sizeOptions = {
 gulp.task('styles:max', function () {
   return gulp.src(['./slipway/**/*.scss', './content/scss/**/*.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-    .pipe(changed(distCss, { extension: '.css' }))
     .pipe(sourcemaps.init())
     .pipe(sass(eyeglass()))
     .pipe(prefix({
