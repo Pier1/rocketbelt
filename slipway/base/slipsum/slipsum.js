@@ -1,3 +1,5 @@
+// See http://www.bitsofpancake.com/programming/markov-chain-text-generator/
+
 (function () {
   'use strict';
 
