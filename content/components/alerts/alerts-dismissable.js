@@ -1,1 +1,1 @@
-/Users/kmarnett/Dropbox/dev/git-repos/p1/slipway/slipway/components/alerts/alerts-dismissable.js
+../../../slipway/components/alerts/alerts-dismissable.js

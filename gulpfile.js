@@ -30,6 +30,8 @@ var cached = require('gulp-cached');
 var gulpif = require('gulp-if');
 
 var vfs = require('vinyl-fs');
+var symlink = require('gulp-symlink');
+var path = require('path');
 var exec = require('child_process').exec;
 var dist = './dist';
 var distCss = dist + '/css';
@@ -109,18 +111,32 @@ gulp.task('js:site:copy', function () {
   vfs.src(['./content/**/*.js']).pipe(vfs.dest(dist));
 });
 
+gulp.task('link', ['link:clean', 'link:partials', 'link:js']);
+
 gulp.task('link:partials', function () {
-  return vfs.src('./slipway/**/_*.jade')
-    .pipe(vfs.symlink('./content', { relative: true }));
+  return gulp.src('./slipway/**/_*.jade')
+    .pipe(symlink(function (file) {
+      return path.join('./content', file.relative);
+    }));
+  // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
+  // Should be fixed in vfs 3.0 and the above should be replaced with the following:
+  // return vfs.src('./slipway/**/_*.jade')
+  //   .pipe(vfs.symlink('./content', { relative: true }));
 });
 
 gulp.task('link:js', function () {
-  return vfs.src('./slipway/**/*.js', './slipway/**/*.json')
-    .pipe(vfs.symlink('./content', { relative: true }));
+  return gulp.src(['./slipway/**/*.js', './slipway/**/*.json', '!./**/slipsum-cache.json'])
+    .pipe(symlink(function (file) {
+      return path.join('./content', file.relative);
+    }));
+  // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
+  // Should be fixed in vfs 3.0 and the above should be replaced with the following:
+  // return vfs.src('./slipway/**/*.js', './slipway/**/*.json')
+  //   .pipe(vfs.symlink('./content', { relative: true }));
 });
 
 gulp.task('link:clean', function () {
-  exec('find ./content -type l -exec test ! -e {} \\; -delete', function (err, stdout, stderr) { })
+  exec('find ./content -type l -delete', function (err, stdout, stderr) { })
 });
 
 gulp.task('views', ['link:partials', 'link:js', 'js:site:copy'], function () {
