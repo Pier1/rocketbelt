@@ -1,6 +1,7 @@
 'use strict';
 
 var gulp = require('gulp');
+var runSequence = require('run-sequence');
 var browserSync = require('browser-sync');
 
 var eyeglass = require('eyeglass');
@@ -41,7 +42,9 @@ var siteDir = './site';
 
 var nav = [];
 
-gulp.task('default', ['styles', 'views', 'server', 'watch']);
+gulp.task('default', function (done) {
+  runSequence('build', ['server', 'watch'], done);
+});
 
 gulp.task('server', function () {
   return browserSync.init({
@@ -105,19 +108,21 @@ gulp.task('clean', ['link:clean'], function () {
   del([dist]);
 });
 
-gulp.task('build', ['clean', 'styles', 'views']);
-
-gulp.task('js:site:copy', function () {
-  vfs.src(['./content/**/*.js']).pipe(vfs.dest(dist));
+gulp.task('build', function (done) {
+  runSequence('link', ['styles', 'views'], done);
 });
 
-gulp.task('link', ['link:clean', 'link:partials', 'link:js']);
+gulp.task('js:site:copy', function () {
+  vfs.src(['./content/**/*.js']).pipe(vfs.dest(dist, { overwrite: true }));
+});
+
+gulp.task('link', ['link:partials', 'link:js']);
 
 gulp.task('link:partials', function () {
   return gulp.src('./slipway/**/_*.jade')
     .pipe(symlink(function (file) {
       return path.join('./content', file.relative);
-    }));
+    }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   // return vfs.src('./slipway/**/_*.jade')
@@ -128,7 +133,7 @@ gulp.task('link:js', function () {
   return gulp.src(['./slipway/**/*.js', './slipway/**/*.json', '!./**/slipsum-cache.json'])
     .pipe(symlink(function (file) {
       return path.join('./content', file.relative);
-    }));
+    }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   // return vfs.src('./slipway/**/*.js', './slipway/**/*.json')
@@ -139,7 +144,7 @@ gulp.task('link:clean', function () {
   exec('find ./content -type l -delete', function (err, stdout, stderr) { })
 });
 
-gulp.task('views', ['link:partials', 'link:js', 'js:site:copy'], function () {
+gulp.task('views', ['js:site:copy'], function () {
   var dir = './content';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
@@ -147,7 +152,7 @@ gulp.task('views', ['link:partials', 'link:js', 'js:site:copy'], function () {
 
     var colorFamilies = require('./content/base/color/_color-families.json');
 
-    gulp.src(['./content/**/*.jade', '!./content/**/_*.jade'])
+    return gulp.src(['./content/**/*.jade', '!./content/**/_*.jade'])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
       .pipe(changed(dist, { extension: '.html' }))
       .pipe(gulpif(global.isWatching, cached('jade')))

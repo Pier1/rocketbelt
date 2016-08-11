@@ -39,6 +39,7 @@
     "modularscale-sass": "^2.1.1",
     "postcss-flexibility": "^1.1.0",
     "remodal": "^1.1.0",
+    "run-sequence": "^1.2.2",
     "shortid": "^2.2.6",
     "vinyl-fs": "^2.4.3"
   },
