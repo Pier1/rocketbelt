@@ -111,12 +111,12 @@ gulp.task('js:site:copy', function () {
 
 gulp.task('link:partials', function () {
   return vfs.src('./slipway/**/_*.jade')
-    .pipe(vfs.symlink('./content'));
+    .pipe(vfs.symlink('./content', { relative: true }));
 });
 
 gulp.task('link:js', function () {
   return vfs.src('./slipway/**/*.js', './slipway/**/*.json')
-    .pipe(vfs.symlink('./content'));
+    .pipe(vfs.symlink('./content', { relative: true }));
 });
 
 gulp.task('link:clean', function () {
