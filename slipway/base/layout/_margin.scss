@@ -1,0 +1,8 @@
+@import 'modular-scale';
+
+@for $i from 1 through 5 {
+  %margin-#{$i},
+  .margin-#{$i} {
+    margin: ms($i - 4);
+  }
+}
