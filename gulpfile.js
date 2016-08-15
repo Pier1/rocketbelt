@@ -87,6 +87,7 @@ gulp.task('styles:max', function () {
     .pipe(size(sizeOptions))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(distCss))
+    .pipe(browserSync.stream())
   ;
 });
 
@@ -100,6 +101,7 @@ gulp.task('styles', ['styles:max'], function () {
     .pipe(size(sizeOptions))
     .pipe(sourcemaps.write('.'))
     .pipe(gulp.dest(distCss))
+    .pipe(browserSync.stream())
   ;
 });
 
