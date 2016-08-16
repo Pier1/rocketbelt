@@ -1,7 +1,8 @@
 @import '../../slipway/slipway',
         'vendor/vendor',
         'color',
-        'grid';
+        'grid',
+        'layout';
 
 ::selection {
   background: color(secondary, lightest);

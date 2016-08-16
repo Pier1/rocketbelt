@@ -7,5 +7,16 @@ block content
   article
     :md
       # Layout
-
-    include _padding
+      
+      ## Padding
+    .grid
+      .row.xs-between
+        +exampleWithCode
+          include _padding
+    
+    :md
+      ## Margin
+    .grid
+      .row.xs-between
+        +exampleWithCode
+          include _margin
