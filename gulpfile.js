@@ -25,6 +25,7 @@ var md = require('jstransformer')(require('jstransformer-markdown-it'));
 var shortid = require('shortid');
 var _ = require('lodash');
 
+var affected = require('gulp-jade-find-affected');
 var jadeInheritance = require('gulp-jade-inheritance');
 var changed = require('gulp-changed');
 var cached = require('gulp-cached');
@@ -115,7 +116,9 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('js:site:copy', function () {
-  vfs.src(['./content/**/*.js']).pipe(vfs.dest(dist, { overwrite: true }));
+  vfs.src(['./content/**/*.js'])
+    .pipe(changed(dist))
+    .pipe(vfs.dest(dist, { overwrite: true }));
 });
 
 gulp.task('link', ['link:partials', 'link:js']);
@@ -156,8 +159,7 @@ gulp.task('views', ['js:site:copy'], function () {
 
     return gulp.src(['./content/**/*.jade', '!./content/**/_*.jade'])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-      .pipe(changed(dist, { extension: '.html' }))
-      .pipe(gulpif(global.isWatching, cached('jade')))
+      .pipe(affected())
       .pipe(jadeInheritance({ basedir: dir }))
       .pipe(jade({
         basedir: __dirname + '/content',
