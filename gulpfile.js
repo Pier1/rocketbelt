@@ -70,8 +70,8 @@ var sizeOptions = {
   gzip: true
 };
 
-gulp.task('styles:max', function () {
-  return gulp.src(['./slipway/**/*.scss', './content/scss/**/*.scss'])
+gulp.task('styles', function () {
+  var source = gulp.src(['./slipway/**/*.scss', './content/scss/**/*.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sourcemaps.init())
     .pipe(sass(eyeglass()))
@@ -86,24 +86,23 @@ gulp.task('styles:max', function () {
     }))
     .pipe(postcss([flexibility()]))
     .pipe(size(sizeOptions))
-    .pipe(sourcemaps.write('.'))
-    .pipe(gulp.dest(distCss))
-    .pipe(browserSync.stream())
-  ;
-});
 
-gulp.task('styles', ['styles:max'], function () {
-  return gulp.src([distCss + '/*.css', '!' + distCss + '/*.min.css'])
-    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-    .pipe(changed(distCss, { extension: '.min.css' }))
-    .pipe(postcss([cssnano()]))
+  var max = source.pipe(clone())
+    .pipe(sourcemaps.write('.', { sourceRoot: null }))
+    .pipe(gulp.dest(distCss))
+  ;
+
+  var min = source.pipe(clone())
     .pipe(sourcemaps.init())
     .pipe(rename({ suffix: '.min' }))
+    .pipe(postcss([cssnano()]))
     .pipe(size(sizeOptions))
-    .pipe(sourcemaps.write('.'))
+    .pipe(sourcemaps.write('.', { sourceRoot: null }))
     .pipe(gulp.dest(distCss))
-    .pipe(browserSync.stream())
+    .pipe(browserSync.stream({ match: '**/*.css' }))
   ;
+
+  return merge(max, min);
 });
 
 gulp.task('clean', ['link:clean'], function () {
