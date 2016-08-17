@@ -85,7 +85,6 @@ gulp.task('styles', function () {
                  'Android >= 4.4']
     }))
     .pipe(postcss([flexibility()]))
-    .pipe(size(sizeOptions))
   ;
 
   var max = source.pipe(clone())
