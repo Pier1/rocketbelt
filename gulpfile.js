@@ -86,6 +86,7 @@ gulp.task('styles', function () {
     }))
     .pipe(postcss([flexibility()]))
     .pipe(size(sizeOptions))
+  ;
 
   var max = source.pipe(clone())
     .pipe(sourcemaps.write('.', { sourceRoot: null }))
