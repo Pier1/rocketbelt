@@ -7,5 +7,33 @@ block content
   article
     :md
       # Modals
-      
-    script(src='/js/components/modals/remodal.js')
+    
+  +exampleWithCode
+    script(src='./modal.min.js')
+    
+  +exampleWithCode
+    .modal(data-modal-id='modal', role='dialog')
+      button.modal-close(data-modal-action='close')
+      .grid-fluid
+        .row
+          .col.xs
+            h2.modal-header Show some farmhouse style
+        .row
+          .col.xs
+            p
+              | The earliest chandeliers fitted cushion is just go distressed
+              | edges and shape and ivory stoneware Chalk Note the place, and
+              | enjoy. A durable poly insert that decision-making a contemporary
+              | space. It’s safe bet you know you like, indoors and solids. You 
+              | don’t need is all the rows of muted shades of sheer jasmine and 
+              | neutral hues, from the stir in the view. Hand-painted in the
+              | look you'd like a lovely or covered outdoor life. So which means
+              | more tempting? How can throw.
+
+        .row.xs-end
+          .col.xs
+            button.button-md.button-secondary(data-modal-action='cancel') Cancel
+          .col.xs
+            button.button-md.button-primary(data-modal-action='confirm') OK
+        
+  a(href='#modal') Trigger Modal

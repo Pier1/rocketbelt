@@ -19,6 +19,7 @@ var size     = require('gulp-size');
 var postcss = require('gulp-postcss');
 var cssnano = require('cssnano');
 var flexibility = require('postcss-flexibility');
+var uglify  = require('gulp-uglify');
 
 var jade = require('gulp-jade');
 var md = require('jstransformer')(require('jstransformer-markdown-it'));
@@ -61,6 +62,7 @@ gulp.task('watch', function(){
 
   gulp.watch(['./slipway/**/*.scss', './content/scss/**/*.scss'], ['styles']);
   gulp.watch('./content/**/*', ['views']);
+  gulp.watch(['./slipway/**/*.js'], ['uglify']);
   gulp.watch(dist + '/**/*.html').on('change', debounce(browserSync.reload, 500));
   gulp.watch(dist + '/**/*.js').on('change', debounce(browserSync.reload, 500));
 });
@@ -69,6 +71,18 @@ var sizeOptions = {
   showFiles: true,
   gzip: true
 };
+
+gulp.task('uglify', function () {
+  return gulp.src(['./slipway/**/*.js', '!./slipway/**/*.min.js'])
+    .pipe(changed(dist))
+    .pipe(sourcemaps.init())
+    .pipe(rename({ suffix: '.min' }))
+    .pipe(uglify())
+    .pipe(size(sizeOptions))
+    .pipe(sourcemaps.write('.', { sourceRoot: null }))
+    .pipe(gulp.dest(dist))
+  ;
+});
 
 gulp.task('styles', function () {
   var source = gulp.src(['./slipway/**/*.scss', './content/scss/**/*.scss'])
@@ -111,7 +125,7 @@ gulp.task('clean', ['link:clean'], function () {
 });
 
 gulp.task('build', function (done) {
-  runSequence('link', ['styles', 'views'], done);
+  runSequence('uglify', 'link', ['styles', 'views'], done);
 });
 
 gulp.task('js:site:copy', function () {

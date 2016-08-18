@@ -30,6 +30,7 @@
     "gulp-size": "^2.1.0",
     "gulp-sourcemaps": "^1.6.0",
     "gulp-symlink": "^2.1.4",
+    "gulp-uglify": "^2.0.0",
     "jade": "^1.11.0",
     "jstransformer": "^1.0.0",
     "jstransformer-markdown-it": "^0.2.3",
@@ -37,6 +38,7 @@
     "merge-stream": "^1.0.0",
     "modularscale-sass": "^2.1.1",
     "postcss-flexibility": "^1.1.0",
+    "pump": "^1.0.1",
     "run-sequence": "^1.2.2",
     "shortid": "^2.2.6",
     "vinyl-fs": "^2.4.3"
