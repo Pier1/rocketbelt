@@ -525,8 +525,6 @@
       $appendTo.append(modal.$overlay);
     }
 
-    modal.$bg = $('.' + namespacify('bg')).addClass(namespacify('is', STATES.CLOSED));
-
     modal.$modal = $modal
       .addClass(
         NAMESPACE + ' ' +
@@ -543,6 +541,13 @@
       .hide()
       .append(modal.$modal);
     $appendTo.append(modal.$wrapper);
+
+    var bgClass = '.' + namespacify('bg');
+    if ($('.' + namespacify('bg')).length === 0) {
+      $('body > :not([class*="modal-"])').wrapAll('<div class="' + namespacify('bg') + '">');
+    }
+
+    modal.$bg = $('.' + namespacify('bg')).addClass(namespacify('is', STATES.CLOSED));
 
     // Add the event listener for the close button
     modal.$wrapper.on('click.' + NAMESPACE, '[data-' + PLUGIN_NAME + '-action="close"]', function(e) {
