@@ -1,7 +1,7 @@
 (function () {
   'use strict';
 
-  var clipboard = new Clipboard('.btn');
+  var clipboard = new Clipboard('.copy-code');
 
   clipboard.on('success', function(e) {
       e.clearSelection();
