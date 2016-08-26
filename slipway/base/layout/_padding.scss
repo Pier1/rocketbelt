@@ -5,6 +5,6 @@
     %padding-#{$i},
     .pad-#{$i},
     .padding-#{$i} {
-    padding: ms($i - 4);
+    padding: padding($i - 4);
   }
 }

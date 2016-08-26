@@ -7,9 +7,9 @@
 
   background: linear-gradient(
                 -90deg,
-                scale-color(color(gray, lighter), $lightness: 50%) 0%,
+                scale-color(color(gray, plus2), $lightness: 50%) 0%,
                 color(white) 50%,
-                scale-color(color(gray, lighter), $lightness: 50%) 100%
+                scale-color(color(gray, plus2), $lightness: 50%) 100%
               );
   background-size: 400% 400%;
   animation: pulse 1.2s ease-in-out infinite;

@@ -11,15 +11,14 @@ block content
   +exampleWithCode
     script(src='./modal.js')
     
-  +exampleWithCode
     .modal(data-modal-id='modal', role='dialog')
-      button.modal-close(data-modal-action='close')
       .grid-fluid
-        .row
-          .col.xs
-            h2.modal-header Show some farmhouse style
-        .row
-          .col.xs
+        .row.modal_header
+          .col.xs.modal_header_text
+            h2 Show some farmhouse style
+          .col.xs.modal_header_close(data-modal-action='close')
+        .row.modal_body
+          .col.xs.modal_body_content
             p
               | The earliest chandeliers fitted cushion is just go distressed
               | edges and shape and ivory stoneware Chalk Note the place, and
@@ -30,7 +29,7 @@ block content
               | look you'd like a lovely or covered outdoor life. So which means
               | more tempting? How can throw.
 
-        .row.xs-end
+        .row.xs-end.modal_footer
           .col.xs
             button.button-md.button-secondary(data-modal-action='cancel') Cancel
           .col.xs

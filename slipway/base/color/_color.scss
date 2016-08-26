@@ -21,11 +21,13 @@ $base-variants: (
 
 $gray-variants: (
   base: 0,
-  light: 0.2,
-  lighter: 0.4,
+  plus1: 0.2,
+  plus2: 0.4,
+  plus3: 0.8,
   lightest: 0.95,
-  dark: -0.2,
-  darker: -0.4,
+  minus1: -0.2,
+  minus2: -0.4,
+  minus3: -0.7,
   darkest: -0.9
 );
 
