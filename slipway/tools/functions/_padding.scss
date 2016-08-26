@@ -1,0 +1,3 @@
+@function padding($scale) {
+  @return ms($scale - 4);
+}

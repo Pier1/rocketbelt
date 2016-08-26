@@ -8,3 +8,7 @@
     @error "Breakpoint width `#{$width}` does not exist in `$breakpoints`.";
   }
 }
+
+@function above-breakpoint($width) {
+  @return '>=' + breakpoint($width);
+}
