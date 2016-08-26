@@ -6,7 +6,7 @@
 	}
 }
 
-@mixin bounce($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+@mixin bounce($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $timingFunction: $timingFunctionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
 	$name: bounce;
 
   @if (index($included-keyframes, $name) == null) {
@@ -17,13 +17,6 @@
     $included-keyframes: append($included-keyframes, $name) !global;
   }
 
-  // animation: name duration timing-function delay iteration-count direction fill-mode play-state;
 	@include animation-name($name);
-	@include duration($duration);
-	@include function($function);
-	@include delay($delay);
-	@include count($count);
-
-	@include fill-mode($fill);
-	@include visibility($visibility);
+  @include animation-properties($count, $duration, $delay, $timingFunction, $fill, $visibility);
 }

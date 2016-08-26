@@ -1,33 +1,33 @@
 $countDefault: 1 !default;
 $durationDefault: 1s !default;
 $delayDefault: 0s !default;
-$functionDefault: ease !default;
+$timingFunctionDefault: ease !default;
 $fillDefault: both !default;
 $visibilityDefault: hidden !default;
 
 $included-keyframes: ();
 
-@mixin count($count: 1) {
+@mixin count($count: $countDefault) {
   animation-iteration-count: $count;
 }
 
-@mixin duration($duration: 1s) {
+@mixin duration($duration: $durationDefault) {
   animation-duration: $duration;
 }
 
-@mixin delay($delay: .2s) {
+@mixin delay($delay: $delayDefault) {
   animation-delay: $delay;
 }
 
-@mixin function($function: ease) {
-  animation-timing-function: $function;
+@mixin timing-function($timingFunction: $timingFunctionDefault) {
+  animation-timing-function: $timingFunction;
 }
 
-@mixin fill-mode($fill: both) {
+@mixin fill-mode($fill: $fillDefault) {
   animation-fill-mode: $fill;
 }
 
-@mixin visibility($visibility: hidden) {
+@mixin visibility($visibility: $visibilityDefault) {
   backface-visibility: $visibility;
 }
 
@@ -50,5 +50,31 @@ $included-keyframes: ();
 @mixin keyframes($animation-name) {
   @keyframes #{$animation-name} {
     @content;
+  }
+}
+
+@mixin animation-properties($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $timingFunction: $timingFunctionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  @if $count {
+    @include count($count);
+  }
+
+  @if $duration {
+    @include duration($duration);
+  }
+
+  @if $delay {
+    @include delay($delay);
+  }
+
+  @if $timingFunction {
+    @include timing-function($timingFunction);
+  }
+
+  @if $fill {
+    @include fill-mode($fill);
+  }
+
+  @if $visibility {
+    @include visibility($visibility);
   }
 }

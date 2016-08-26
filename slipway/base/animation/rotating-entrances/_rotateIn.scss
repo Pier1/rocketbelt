@@ -13,7 +13,7 @@
   }
 }
 
-@mixin rotateIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $function: $functionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+@mixin rotateIn($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $timingFunction: $timingFunctionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
   $name: rotateIn;
 
   @if (index($included-keyframes, $name) == null) {
@@ -25,10 +25,5 @@
   }
 
   @include animation-name($name);
-  @include count($count);
-  @include duration($duration);
-  @include delay($delay);
-  @include function($function);
-  @include fill-mode($fill);
-  @include visibility($visibility);
+  @include animation-properties($count, $duration, $delay, $timingFunction, $fill, $visibility);
 }
