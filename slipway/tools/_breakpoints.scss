@@ -5,3 +5,10 @@ $breakpoints: (
   lg: 62rem,
   xl: 75rem
 );
+
+$gte: '>=';
+$above: ();
+
+@each $width, $rems in $breakpoints {
+  $above: map-merge($above, ($width: $gte + $width));
+}

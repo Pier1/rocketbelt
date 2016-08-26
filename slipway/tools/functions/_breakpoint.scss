@@ -9,6 +9,11 @@
   }
 }
 
-@function above-breakpoint($width) {
-  @return '>=' + breakpoint($width);
+@function above($width) {
+  @if (map-has-key($breakpoints, $width)) {
+    @return map-get($above, $width);
+  }
+  else {
+    @error "Breakpoint width `#{$width}` does not exist in `$breakpoints`.";
+  }
 }
