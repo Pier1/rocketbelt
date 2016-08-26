@@ -1,0 +1,17 @@
+.modal.modal-bottom-sheet {
+  max-width: 100%;
+  max-height: 70%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  border-radius: 0;
+
+  &.modal-is-closing {
+    @include slideOutDown();
+  }
+
+  &.modal-is-opening {
+    @include slideInUp();
+  }
+}
