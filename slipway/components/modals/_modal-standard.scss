@@ -4,7 +4,7 @@
 }
 
 .modal-overlay {
-  background: rgba(color(gray, minus2), 0.9);
+  background: rgba(color(gray, plus3), 0.8);
 }
 
 .modal-overlay.modal-is-opening,
@@ -22,9 +22,7 @@
 }
 
 .modal {
-  @include media('>=xs') {
-    max-width: 95%;
-  }
+  max-width: 95%;
 
   @include media('>=md') {
     max-width: 65%;
@@ -43,7 +41,7 @@
   color: color(gray, minus2);
   background: color(white);
 
-  @include z-depth(3);
+  @include z-depth(2);
   border-radius: 2px;
 }
 
@@ -63,7 +61,7 @@
 
 .modal_footer {
   border-top: 1px solid color(gray, plus2);
-  padding: padding(4) 0;
+  padding: padding(4) padding(0);
   background: color(gray, plus3);
 }
 
@@ -92,6 +90,11 @@
 .modal,
 .modal-wrapper:after {
   vertical-align: middle;
+}
+
+.modal_header_text {
+  display: flex;
+  justify-content: center;
 }
 
 .modal_header_close {

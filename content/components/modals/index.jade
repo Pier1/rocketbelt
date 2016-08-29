@@ -8,40 +8,31 @@ block content
     :md
       # Modals
     
-  +exampleWithCode
-    script(src='./modal.js')
+      ## Standard Modal
     
-    .modal.modal-bottom-sheet(data-modal-id='modal', role='dialog')
-      .grid-fluid
-        .row.modal_header
-          .col.xs.modal_header_text
-            h2 Show some farmhouse style
-          .col.xs.modal_header_close(data-modal-action='close')
-        .row.modal_body
-          .col.xs.modal_body_content
-            p
-              | The earliest chandeliers fitted cushion is just go distressed
-              | edges and shape and ivory stoneware Chalk Note the place, and
-              | enjoy. A durable poly insert that decision-making a contemporary
-              | space. It’s safe bet you know you like, indoors and solids. You 
-              | don’t need is all the rows of muted shades of sheer jasmine and 
-              | neutral hues, from the stir in the view. Hand-painted in the
-              | look you'd like a lovely or covered outdoor life. So which means
-              | more tempting? How can throw.
-              | 
-              | The earliest chandeliers fitted cushion is just go distressed
-              | edges and shape and ivory stoneware Chalk Note the place, and
-              | enjoy. A durable poly insert that decision-making a contemporary
-              | space. It’s safe bet you know you like, indoors and solids. You 
-              | don’t need is all the rows of muted shades of sheer jasmine and 
-              | neutral hues, from the stir in the view. Hand-painted in the
-              | look you'd like a lovely or covered outdoor life. So which means
-              | more tempting? How can throw.
+    +exampleWithCode
+      include _modal-standard
 
-        .row.xs-end.modal_footer
-          .col.xs
-            button.button-md.button-secondary(data-modal-action='cancel') Cancel
-          .col.xs
-            button.button-md.button-primary(data-modal-action='confirm') OK
-        
-  a(href='#modal') Trigger Modal
+    a(href='#modal-example-standard') Trigger Modal
+    
+    :md
+      ## Bottom Sheet Modal
+      
+    +exampleWithCode
+      include _modal-bottom-sheet
+      
+    a(href='#modal-example-bottom') Trigger Modal
+    
+    :md
+      ## Max Modal
+      
+    script(src='./modal-max.js')
+    +exampleWithCode
+      include _modal-max
+      
+    a(href='#modal-example-max') Trigger Modal
+
+    :md
+      ## Script Include
+    +exampleWithCode('html', true)
+      script(src='./modal.min.js')
