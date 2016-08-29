@@ -1,0 +1,29 @@
+@mixin keyframes-zoomOutSmall {
+  @include keyframes(zoomOutSmall) {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+      @include transform(scale3d(.9, .9, .9));
+    }
+    100% {
+      opacity: 0;
+    }
+  }
+}
+
+@mixin zoomOutSmall($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $timingFunction: $timingFunctionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  $name: zoomOutSmall;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-zoomOutSmall;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include animation-properties($count, $duration, $delay, $timingFunction, $fill, $visibility);
+}

@@ -43,10 +43,10 @@
   }
 
   &.modal-is-opening {
-    @include zoomIn($duration: 600ms);
+    @include zoomInSmall($duration: 600ms);
   }
 
   &.modal-is-closing {
-    @include zoomOut();
+    @include zoomOutSmall();
   }
 }
