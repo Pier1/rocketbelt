@@ -22,7 +22,7 @@ block content
       .row.xs-center
         .col.xs
           - var skus = ['ODR09_1'];
-          +exampleWithCode('html', 'true')
+          +exampleWithCode('html', null, true)
             each alt in skus
               - var short = alt.substring(0, alt.indexOf('_'));
               include _images-lazyload
