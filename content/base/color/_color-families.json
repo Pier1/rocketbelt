@@ -93,17 +93,17 @@
     "familyName": "gray",
     "variants": [
       {
-        "variant": "lightest",
+        "variant": "plus3",
         "lightness": 3,
         "colorName": "Alabaster"
       },
       {
-        "variant": "lighter",
+        "variant": "plus2",
         "lightness": 2,
         "colorName": "Noble Gray"
       },
       {
-        "variant": "light",
+        "variant": "plus1",
         "lightness": 1,
         "colorName": "Mountain Gray"
       },
@@ -113,17 +113,17 @@
         "colorName": "Schooner"
       },
       {
-        "variant": "dark",
+        "variant": "minus1",
         "lightness": -1,
         "colorName": "Dove Gray"
       },
       {
-        "variant": "darker",
+        "variant": "minus2",
         "lightness": -2,
         "colorName": "Fuscous Gray"
       },
       {
-        "variant": "darkest",
+        "variant": "minus3",
         "lightness": -3,
         "colorName": "Woodsmoke"
       }
