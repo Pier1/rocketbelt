@@ -12,12 +12,12 @@ mixin escape
   - });
   - buf  = oldBuf.concat(addition);
 
-mixin wrapInExpander(collapsedLabel, expandedLabel)
+mixin wrapInExpander(collapsedLabel, expandedLabel, expanded)
   - collapsedLabel = collapsedLabel || 'Show';
   - expandedLabel  = expandedLabel  || 'Hide';
   - var id = shortid.generate();
   .expander
-    input(type='checkbox', id=id, class='expander_checkbox')
+    input(type='checkbox', id=id, class='expander_checkbox', checked=expanded)
     label(for=id,
           class='expander_label',
           data-collapsed-label=collapsedLabel,
@@ -25,7 +25,7 @@ mixin wrapInExpander(collapsedLabel, expandedLabel)
     .expander_content
       block
 
-mixin exampleWithCode(htmlOrJs, inverted)
+mixin exampleWithCode(htmlOrJs, expanded, inverted)
   - htmlOrJs = htmlOrJs || 'html';
   - inverted = inverted || false;
   - if (htmlOrJs === 'js') htmlOrJs = 'javascript';
@@ -36,7 +36,7 @@ mixin exampleWithCode(htmlOrJs, inverted)
     if (!inverted)
       .example
         block
-    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend)
+    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded)
       .example-code
         button.copy-code(data-clipboard-target='#' + id) Copy
         pre
