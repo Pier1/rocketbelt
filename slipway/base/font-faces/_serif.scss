@@ -1,45 +1,26 @@
-/* @import 'https://fonts.googleapis.com/css?family=Cormorant:400,400i,600'; */
-@font-face {
-  font-family: 'Brand Serif';
-  font-style: normal;
-  font-weight: font-weight(light);
-  src: local('Cormorant Light'), local('Cormorant-Light'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/diggKPcUerIA8GQWRVxsVRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/diggKPcUerIA8GQWRVxsVaRDOzjiPcYnFooOUGCOsRk.woff) format('woff');
-}
-
-@font-face {
-  font-family: 'Brand Serif';
-  font-style: italic;
-  font-weight: font-weight(light);
-  src: local('Cormorant Light Italic'), local('Cormorant-LightItalic'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/UydD9tmk-DfLnEFRr_bBZ9TIkQYohD4BpHvJ3NvbHoA.woff2) format('woff2'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/UydD9tmk-DfLnEFRr_bBZ_R_54zmj3SbGZQh3vCOwvY.woff) format('woff');
-}
-
 @font-face {
   font-family: 'Brand Serif';
   font-style: normal;
   font-weight: font-weight(normal);
-  src: local('Cormorant'), local('Cormorant-Regular'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/a3k4tdhPAhIrqJlC0EH98pBw1xU1rKptJj_0jans920.woff2) format('woff2'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/a3k4tdhPAhIrqJlC0EH98rO3LdcAZYWl9Si6vvxL-qU.woff) format('woff');
+  src: local('Crimson Text'), local('CrimsonText-Roman'),
+       url(https://fonts.gstatic.com/s/crimsontext/v6/3IFMwfRa07i-auYR-B-zNRampu5_7CjHW5spxoeN3Vs.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/s/crimsontext/v6/3IFMwfRa07i-auYR-B-zNaRDOzjiPcYnFooOUGCOsRk.woff)  format('woff');
 }
 
 @font-face {
   font-family: 'Brand Serif';
   font-style: italic;
   font-weight: font-weight(normal);
-  src: local('Cormorant Italic'), local('Cormorant-Italic'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/UydD9tmk-DfLnEFRr_bBZ9TIkQYohD4BpHvJ3NvbHoA.woff2) format('woff2'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/X0EhxUCrSK0o-Ai-a9zFbrrIa-7acMAeDBVuclsi6Gc.woff) format('woff');
+  src: local('Crimson Text Italic'), local('CrimsonText-Italic'),
+       url(https://fonts.gstatic.com/s/crimsontext/v6/a5QZnvmn5amyNI-t2BMkWGfrnYWAzH6tTbHZfcsRIsM.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/s/crimsontext/v6/a5QZnvmn5amyNI-t2BMkWL52ooqJRs02xO3mONBoqeI.woff)  format('woff');
 }
 
 @font-face {
   font-family: 'Brand Serif';
   font-style: normal;
   font-weight: font-weight(semibold);
-  src: local('Cormorant SemiBold'), local('Cormorant-SemiBold'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/LKEtp8XimHLN0gSYqnV9qxampu5_7CjHW5spxoeN3Vs.woff2) format('woff2'),
-       url(https://fonts.gstatic.com/s/cormorant/v1/LKEtp8XimHLN0gSYqnV9q6RDOzjiPcYnFooOUGCOsRk.woff) format('woff');
+  src: local('Crimson Text Semibold'), local('CrimsonText-Semibold'),
+       url(https://fonts.gstatic.com/s/crimsontext/v6/rEy5tGc5HdXy56Xvd4f3I93uLUHnU24AL_1IdxwhTqs.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/s/crimsontext/v6/rEy5tGc5HdXy56Xvd4f3IxefZI2gqg-NXpw43Z_DJ3I.woff)  format('woff');
 }
