@@ -1,5 +1,15 @@
 [
   {
+    "familyName": "pier1blue",
+    "variants": [
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Pier 1 Blue"
+      }
+    ]
+  },
+  {
     "familyName": "primary",
     "variants": [
       {
