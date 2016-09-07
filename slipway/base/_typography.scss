@@ -205,16 +205,16 @@ h4 {
 }
 
 a {
-  color: color(primary);
+  color: color(pier1blue);
   transition: color 200ms linear;
 
   &:hover {
-    color: color(primary, lighter);
+    color: color(primary);
     transition: color 100ms linear;
   }
 
   &:active {
-    color: color(primary, darker);
+    color: color(pier1blue);
   }
 
   &:visited {
