@@ -5,22 +5,21 @@ $tooltip-background-light: rgba(color(white), 0.85);
   position: relative;
 }
 
-/* Base styles for the entire tooltip */
+// Base styles for the entire tooltip
 [data-tooltip] {
   &:before,
   &:after {
     position: absolute;
     visibility: hidden;
     opacity: 0;
-    transition:
-      opacity 250ms linear,
-      visibility 250ms linear,
-      transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24);
+    transition: opacity 250ms linear,
+                visibility 250ms linear,
+                transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24);
     transform: translate3d(0, 0, 0);
     pointer-events: none;
   }
 
-  /* Base styles for the tooltip's directional arrow */
+  // Base styles for the tooltip's directional arrow
   &:before {
     z-index: 1001;
     border: 8px solid transparent;
@@ -28,7 +27,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
     content: '';
   }
 
-  /* Base styles for the tooltip's content area */
+  // Base styles for the tooltip's content area
   &:after {
     letter-spacing: normal;
     text-transform: none;
@@ -47,7 +46,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
 }
 
-/* Show the entire tooltip on hover and focus */
+// Show the entire tooltip on hover and focus
 [data-tooltip] {
   &:hover,
   &:focus {
@@ -59,7 +58,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
 }
 
-/* Top (default) */
+// Top (default)
 [data-tooltip],
 .tooltip,
 .tooltip-top {
@@ -80,7 +79,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
 }
 
-/* Horizontally align top/bottom tooltips */
+// Horizontally align top/bottom tooltips
 [data-tooltip]:after,
 .tooltip:after,
 .tooltip-top:after {
