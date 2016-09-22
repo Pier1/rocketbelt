@@ -103,6 +103,11 @@
     "familyName": "gray",
     "variants": [
       {
+        "variant": "plus4",
+        "lightness": 4,
+        "colorName": "Seashell"
+      },
+      {
         "variant": "plus3",
         "lightness": 3,
         "colorName": "Alabaster"
