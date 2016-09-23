@@ -1,4 +1,6 @@
 (function () {
+  'use strict';
+
   $(document).ready(function () {
     var $firstTab = $('.tabs .tab').first();
     $firstTab.before('<div class="highlight"></div>');
