@@ -6,7 +6,8 @@
 
   font-size: 0;
   background: $color-bg;
-  border: $width-border solid $color-border;
+  border: $border;
+  overflow: hidden;
   position: relative;
 
   &:after {
@@ -43,12 +44,12 @@
     text-transform: uppercase;
     width: 100%;
     display: inline-block;
-    transition: all 200ms;
+    transition: all 250ms;
 
     @include media('>=sm') {
       width: auto;
       border: 0;
-      border-right: $width-border solid $color-border;
+      border-right: $border;
     }
   }
 
@@ -63,14 +64,14 @@
 
   .tab_content {
     padding: ms(-4);
+    background: color(white);
     display: block;
-    background: white;
     float: left;
     margin-top: -$width-border;
     width: 100%;
 
     @include media('>=sm') {
-      border-top: $width-border solid $color-border;
+      border-top: $border;
     }
   }
 
@@ -81,8 +82,8 @@
       left: 0;
       height: 3px;
       background: color(primary);
-      transition: width 300ms ease-in-out,
-                  left  300ms ease-in-out;
+      transition: width 250ms ease-in-out,
+                  left  250ms ease-in-out;
     }
   }
 }
