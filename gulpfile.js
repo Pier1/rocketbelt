@@ -75,11 +75,11 @@ var sizeOptions = {
 gulp.task('uglify', function () {
   return gulp.src(['./slipway/**/*.js', '!./slipway/**/*.min.js'])
     .pipe(changed(dist))
-    .pipe(sourcemaps.init())
     .pipe(rename({ suffix: '.min' }))
+    .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(size(sizeOptions))
-    .pipe(sourcemaps.write('.', { sourceRoot: null }))
+    .pipe(sourcemaps.write('.', { sourceRoot: '.' }))
     .pipe(gulp.dest(dist))
   ;
 });
