@@ -9,7 +9,6 @@ input[type=radio] {
 input[type=radio] + label {
   display: block;
   position: relative;
-  transition: all 200ms linear;
   padding-left: 1.25rem;
 
   &:before {

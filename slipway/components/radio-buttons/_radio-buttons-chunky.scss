@@ -9,13 +9,18 @@
     width: 100%;
 
     @include z-depth(0);
+    z-index: 0;
+    transition: box-shadow 200ms ease-in;
 
     &:hover {
       @include z-depth(2);
+      z-index: 1;
+      transition: box-shadow 200ms ease-in;
     }
 
     &:active {
       @include z-depth(1);
+      transition: box-shadow 200ms ease-in;
     }
 
     &:before {
@@ -31,11 +36,16 @@
 
     &:hover:before {
       background: color(white);
-      transition: color 200ms ease-in;
+      transition: color 200ms ease-in,
+                  box-shadow 200ms ease-in;
     }
   }
 
   input[type=radio]:checked + label {
+    @include z-depth(0);
+    border: 2px solid color(primary);
+    transition: box-shadow 200ms ease-in;
+
     &:before {
       border: 0;
       background: url('data:image/svg+xml;utf8,<svg width="24px" viewBox="629 458 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon id="" stroke="none" fill="%23fefdfd" fill-rule="evenodd" points="641.992188 458.394531 635.013672 465.373047 632.007812 462.349609 629.757812 464.582031 635.013672 469.855469 644.242188 460.626953"></polygon></svg>') no-repeat,
