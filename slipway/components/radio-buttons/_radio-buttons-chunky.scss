@@ -1,0 +1,49 @@
+.radio-group.radio-group-chunky {
+  li {
+    display: flex;
+  }
+
+  input[type=radio] + label {
+    padding: 0.5rem;
+    display: flex;
+    width: 100%;
+
+    @include z-depth(0);
+
+    &:hover {
+      @include z-depth(2);
+    }
+
+    &:active {
+      @include z-depth(1);
+    }
+
+    &:before {
+      margin: 0.25rem 0.5rem 0.25rem 0.25rem;
+      align-self: center;
+      background: color(white);
+      border: 2px solid color(gray, plus3);
+      flex-shrink: 0;
+      position: static;
+      height: 2rem;
+      width: 2rem;
+    }
+
+    &:hover:before {
+      background: color(white);
+      transition: color 200ms ease-in;
+    }
+  }
+
+  input[type=radio]:checked + label {
+    &:before {
+      border: 0;
+      background: url('data:image/svg+xml;utf8,<svg width="24px" viewBox="629 458 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon id="" stroke="none" fill="%23fefdfd" fill-rule="evenodd" points="641.992188 458.394531 635.013672 465.373047 632.007812 462.349609 629.757812 464.582031 635.013672 469.855469 644.242188 460.626953"></polygon></svg>') no-repeat,
+                  color(primary);
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: background-color 200ms ease-in,
+                  border 200ms ease-in;
+    }
+  }
+}
