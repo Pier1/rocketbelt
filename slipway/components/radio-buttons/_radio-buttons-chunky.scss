@@ -1,9 +1,13 @@
 .radio-group.radio-group-chunky {
+  $color-selected: color(primary);
+  $color-unselected: color(gray, plus3);
+
   li {
     display: flex;
   }
 
   input[type=radio] + label {
+    border: 2px solid transparent;
     padding: 0.5rem;
     display: flex;
     width: 100%;
@@ -26,8 +30,8 @@
     &:before {
       margin: 0.25rem 0.5rem 0.25rem 0.25rem;
       align-self: center;
-      background: color(white);
-      border: 2px solid color(gray, plus3);
+      background: transparent;
+      border: 2px solid $color-unselected;
       flex-shrink: 0;
       position: static;
       height: 2rem;
@@ -35,21 +39,23 @@
     }
 
     &:hover:before {
-      background: color(white);
       transition: color 200ms ease-in,
                   box-shadow 200ms ease-in;
     }
   }
 
   input[type=radio]:checked + label {
-    @include z-depth(0);
-    border: 2px solid color(primary);
+    border: 2px solid $color-selected;
     transition: box-shadow 200ms ease-in;
 
     &:before {
       border: 0;
-      background: url('data:image/svg+xml;utf8,<svg width="24px" viewBox="629 458 16 12" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><polygon id="" stroke="none" fill="%23fefdfd" fill-rule="evenodd" points="641.992188 458.394531 635.013672 465.373047 632.007812 462.349609 629.757812 464.582031 635.013672 469.855469 644.242188 460.626953"></polygon></svg>') no-repeat,
-                  color(primary);
+      background: url('data:image/svg+xml;utf8,
+                    <svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#{color(white)}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
+                    </svg>'
+                  ) no-repeat,
+                  $color-selected;
       background-position: center center;
       background-repeat: no-repeat;
       transition: background-color 200ms ease-in,
