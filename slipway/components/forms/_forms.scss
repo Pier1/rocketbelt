@@ -1,3 +1,9 @@
+.form-group,
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
 input,
 select {
   height: 2rem;
@@ -6,11 +12,7 @@ select {
   display: block;
   width: 100%;
   font-size: ms(-1);
-
-  &:not([type=radio]),
-  &:not([type=checkbox]) {
-    padding: ms(-12) ms(-10);
-  }
+  padding: ms(-12) ms(-10);
 
   &:focus {
     outline-color: color(primary);
@@ -40,12 +42,6 @@ select:invalid {
   border-width: 2px;
 }
 
-.form-group,
-fieldset {
-  display: flex;
-  flex-direction: column;
-}
-
 input,
 select {
   & + label {
@@ -62,6 +58,7 @@ fieldset {
   label,
   legend {
     font-size: ms(-1);
+    align-self: flex-start;
   }
 
   label:after,
