@@ -1,0 +1,105 @@
+input,
+select {
+  height: 2rem;
+  border: 1px solid color(gray, plus1);
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  font-size: ms(-1);
+
+  &:not([type=radio]),
+  &:not([type=checkbox]) {
+    padding: ms(-12) ms(-10);
+  }
+
+  &:focus {
+    outline-color: color(primary);
+    outline-width: 3px;
+
+    &:invalid {
+      outline-color: color(error);
+    }
+  }
+}
+
+[disabled] {
+  opacity: 0.6;
+  filter: grayscale(0.4);
+  cursor: not-allowed;
+}
+
+input[disabled],
+select[disabled] {
+  background-color: color(gray, plus3);
+  border-color: transparent;
+}
+
+input:invalid,
+select:invalid {
+  border-color: color(error);
+  border-width: 2px;
+}
+
+.form-group,
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+input,
+select {
+  & + label {
+    order: -1;
+  }
+}
+
+.form-group,
+fieldset {
+  &:not(:last-child) {
+    margin-bottom: ms(-10);
+  }
+
+  label,
+  legend {
+    font-size: ms(-1);
+  }
+
+  label:after,
+  legend:after {
+    color: color(gray, plus1);
+  }
+}
+
+.form-group {
+  input[required],
+  select[required] {
+    & + label:after {
+      content: '\00a0(required)';
+    }
+  }
+
+  input:not([required]),
+  select:not([required]) {
+    & + label:after {
+      content: '\00a0(optional)';
+    }
+  }
+
+  .helper-text {
+    color: color(gray, plus1);
+  }
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  &[required] legend:after {
+    content: '\00a0(required)';
+  }
+
+  &:not([required]) legend:after {
+    content: '\00a0(optional)';
+  }
+}

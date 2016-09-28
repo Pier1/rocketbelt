@@ -2,11 +2,12 @@
   .expander_checkbox {
     @extend %visuallyhidden;
 
-    & ~ .expander_label {
+    & + .expander_label {
       cursor: pointer;
       user-select: none;
       position: relative;
       color: color(primary);
+      padding: 0;
     }
 
     &:not(:checked) {
@@ -14,21 +15,27 @@
         @extend %visuallyhidden;
       }
 
-      & ~ .expander_label {
+      & + .expander_label {
         &:before {
           content: attr(data-collapsed-label);
+          position: static;
+          background: 0;
+          border: 0;
         }
       }
     }
 
-    &:checked ~ .expander_label {
+    &:checked + .expander_label {
       &:before {
         content: attr(data-expanded-label);
+        position: static;
+        background: 0;
+        border: 0;
       }
     }
   }
 
-  .expander_checkbox:checked ~ .chevron {
+  .expander_checkbox:checked + .chevron {
     transform: none;
     transition: transform 200ms ease-in-out;
   }

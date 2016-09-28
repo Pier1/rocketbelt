@@ -1,0 +1,46 @@
+form
+  .form-group
+    input#basic-fname(type='text')
+    label(for='basic-fname') First Name
+  .form-group
+    input#basic-email(type='email')
+    label(for='basic-email') Email Address
+  .form-group
+    input#basic-tel(type='tel')
+    label(for='basic-tel') Phone Number
+  .form-group
+    input#basic-password(type='password')
+    label(for='basic-password') Password
+  .form-group
+    select#basic-select
+      option(value='', disabled=true, selected=true, hidden=true) Select a collection
+      option Biblioteca
+      option Marcel
+      option Pierce
+    label(for='basic-select') Collection
+  fieldset
+    legend Collection
+    input#basic-radio-1(type='radio', value='biblioteca', name='basic-radio-group')
+    label(for='basic-radio-1') Biblioteca
+    input#basic-radio-2(type='radio', value='marcel', name='basic-radio-group')
+    label(for='basic-radio-2') Marcel
+    input#basic-radio-3(type='radio', value='pierce', name='basic-radio-group')
+    label(for='basic-radio-3') Pierce
+  fieldset
+    legend Collection
+    input#basic-check-1(type='checkbox', value='biblioteca', name='basic-check-group')
+    label(for='basic-check-1') Biblioteca
+    input#basic-check-2(type='checkbox', value='marcel', name='basic-check-group')
+    label(for='basic-check-2') Marcel
+    input#basic-check-3(type='checkbox', value='pierce', name='basic-check-group')
+    label(for='basic-check-3') Pierce
+//= helper text
+//= layout - stack vertically
+//= inline
+//= prefixed/postfixed
+//= labels for every input
+//= use the grid
+//= sm/md/lg inputsd
+//= disabled
+//= validation
+//= custom selects

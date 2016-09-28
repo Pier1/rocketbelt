@@ -2,15 +2,21 @@
   @include list-reset;
 }
 
-input[type=radio] {
+input[type=radio],
+input[type=checkbox] {
   @extend %visuallyhidden;
 }
 
-input[type=radio] + label {
-  display: block;
-  position: relative;
-  padding-left: 1.25rem;
+input[type=radio],
+input[type=checkbox] {
+  & + label {
+    display: block;
+    position: relative;
+    padding-left: 1.25rem;
+  }
+}
 
+input[type=radio] + label {
   &:before {
     content: '';
     position: absolute;
@@ -38,5 +44,62 @@ input[type=radio]:checked + label {
     background: color(white);
     transition: border 200ms ease-in,
                 background 200ms ease-in;
+  }
+}
+
+input[type=checkbox]{
+  $color-white: color(white);
+  $color-selected: color(primary);
+  $color-unselected: color(gray, plus3);
+
+  & + label {
+    &:before {
+      content: '';
+      position: absolute;
+      background: color(gray, plus3);
+      border: 2px solid transparent;
+      border-radius: 2px;
+      height: 1rem;
+      width: 1rem;
+      top: 0.15rem;
+      left: 0;
+      transition: all 200ms ease-in;
+    }
+
+    &:hover:before {
+      $color-fill: str-replace(quote($color-white), '#', '%23');
+      background: url('data:image/svg+xml;utf8,
+                    <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
+                    </svg>'
+                  ) no-repeat,
+                  $color-unselected;
+      background-size: 0.8rem;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: color 200ms ease-in,
+                  box-shadow 200ms ease-in,
+                  background-image 200ms ease-in,
+                  background-size 50ms ease-in;
+    }
+  }
+
+  &:checked + label {
+    &:before {
+      $color-fill: str-replace(quote($color-white), '#', '%23');
+      background: url('data:image/svg+xml;utf8,
+                    <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
+                      <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
+                    </svg>'
+                  ) no-repeat,
+                  $color-selected;
+      background-size: 0.8rem;
+      background-position: center center;
+      background-repeat: no-repeat;
+      transition: color 200ms ease-in,
+                  box-shadow 200ms ease-in,
+                  background-image 200ms ease-in,
+                  background-size 50ms ease-in;
+    }
   }
 }
