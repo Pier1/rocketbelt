@@ -5,9 +5,23 @@
  * @author Lea Verou
  */
 
+$color-accent-lighter: #9f6ef6;
+$color-gray: #827b7b;
+$color-gray-darkest: #0d0c0c;
+$color-gray-lightest: #f9f8f8;
+$color-gray-plus2: #4e4a4a;
+$color-secondary-lightest: #cffcf6;
+$color-secondary-darker: #0cbea5;
+$color-primary: #0f9dee;
+$color-warning: #ffc300;
+$color-error-lighter: #e7525f;
+
+$font-family-monospace: 'Brand Monospace', Monaco, Consolas, 'Lucida Console', monospace;
+
+
 code[class*="language-"],
 pre[class*="language-"] {
-	color: color(gray, darkest);
+	color: $color-gray-darkest;
 	background: none;
 	// text-shadow: 0 1px white;
 	font-family: font-family(monospace);
@@ -26,14 +40,14 @@ pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selectio
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
 	// background: #b3d4fc;
-	background: rgba(color(secondary, lightest), 0.8);
+	background: rgba($color-secondary-lightest, 0.8);
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
 	// background: #b3d4fc;
-	background: rgba(color(secondary, lightest), 0.8);
+	background: rgba($color-secondary-lightest, 0.8);
 }
 
 @media print {
@@ -53,8 +67,8 @@ pre[class*="language-"] {
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	// background: #f5f2f0;
-	background: color(gray, lightest);
-	border: 1px solid color(gray, plus2);
+	background: $color-gray-lightest;
+	border: 1px solid $color-gray-plus2;
 	border-radius: 2px;
 }
 
@@ -70,12 +84,12 @@ pre[class*="language-"] {
 .token.doctype,
 .token.cdata {
 	// color: slategray;
-	color: color(gray);
+	color: $color-gray;
 }
 
 .token.punctuation {
 	// color: #999;
-	color: color(gray);
+	color: $color-gray;
 }
 
 .namespace {
@@ -90,7 +104,7 @@ pre[class*="language-"] {
 .token.symbol,
 .token.deleted {
 	// color: #905;
-	color: color(accent, lighter);
+	color: $color-accent-lighter;
 }
 
 .token.selector,
@@ -100,7 +114,7 @@ pre[class*="language-"] {
 .token.builtin,
 .token.inserted {
 	// color: #690;
-	color: color(secondary, darker);
+	color: $color-secondary-darker;
 }
 
 .token.operator,
@@ -116,19 +130,19 @@ pre[class*="language-"] {
 .token.attr-value,
 .token.keyword {
 	// color: #07a;
-	color: color(primary);
+	color: $color-primary;
 }
 
 .token.function {
 	// color: #DD4A68;
-	color: color(error, lighter);
+	color: $color-error-lighter;
 }
 
 .token.regex,
 .token.important,
 .token.variable {
 	// color: #e90;
-	color: color(warning);
+	color: $color-warning;
 }
 
 .token.important,

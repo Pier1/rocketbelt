@@ -1,5 +1,5 @@
-@import '../../slipway/slipway',
-        'vendor/vendor',
+@import 'vendor/vendor',
+        '../../slipway/slipway',
         'color',
         'grid',
         'layout',
@@ -16,9 +16,6 @@ p code,
   border-radius: 2px;
   background-color: color(gray, lightest);
   padding: 0.125rem 0.25rem;
-}
-
-.example {
 }
 
 .example-code {
