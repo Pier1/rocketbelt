@@ -63,6 +63,7 @@ input[type=checkbox]{
       width: 1rem;
       top: 0.15rem;
       left: 0;
+      background-position: center center;
       transition: all 200ms ease-in;
     }
 
@@ -74,13 +75,8 @@ input[type=checkbox]{
                     </svg>'
                   ) no-repeat,
                   $color-unselected;
-      background-size: 0.8rem;
       background-position: center center;
-      background-repeat: no-repeat;
-      transition: color 200ms ease-in,
-                  box-shadow 200ms ease-in,
-                  background-image 200ms ease-in,
-                  background-size 50ms ease-in;
+      transition: background 100ms ease-in;
     }
   }
 
@@ -93,13 +89,8 @@ input[type=checkbox]{
                     </svg>'
                   ) no-repeat,
                   $color-selected;
-      background-size: 0.8rem;
       background-position: center center;
-      background-repeat: no-repeat;
-      transition: color 200ms ease-in,
-                  box-shadow 200ms ease-in,
-                  background-image 200ms ease-in,
-                  background-size 50ms ease-in;
+      transition: background 100ms ease-in;
     }
   }
 }
