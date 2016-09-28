@@ -76,6 +76,7 @@ input[type=checkbox]{
                   ) no-repeat,
                   $color-unselected;
       background-position: center center;
+      background-size: 0.8rem;
       transition: background 100ms ease-in;
     }
   }
