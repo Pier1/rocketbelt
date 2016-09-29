@@ -96,3 +96,31 @@ input[type=checkbox]{
     }
   }
 }
+
+input[type=checkbox][disabled] + label,
+input[type=radio][disabled] + label {
+  &:before {
+    background: color(gray, plus4);
+    border: 2px solid color(gray, plus4);
+  }
+}
+
+input[type=radio][disabled][checked] + label {
+  &:before {
+    background: color(gray, plus2);
+    border: 6px solid color(gray, plus4);
+  }
+}
+
+input[type=checkbox][disabled][checked] + label {
+  &:before {
+    $color-fill: str-replace(quote(color(gray, plus2)), '#', '%23');
+    background: url('data:image/svg+xml;utf8,
+                  <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
+                    <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
+                  </svg>'
+                ) no-repeat,
+                color(gray, plus4);
+    background-position: center center;
+  }
+}

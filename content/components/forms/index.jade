@@ -7,6 +7,28 @@ block content
   article
     :md
       # Forms
+      ## Standard Form Elements
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _forms-basic
 
-    +exampleWithCode
-      include _forms-basic
+    :md
+      ## Disabled Styles
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _forms-disabled
+      
+    :md
+      ## Invalid Styles
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _forms-invalid
+
+    :md
+      ## Helper Text

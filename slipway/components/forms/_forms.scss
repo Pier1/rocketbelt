@@ -15,12 +15,9 @@ select {
   padding: ms(-12) ms(-10);
 
   &:focus {
+    overflow: hidden;
     outline-color: color(primary);
     outline-width: 3px;
-
-    &:invalid {
-      outline-color: color(error);
-    }
   }
 }
 
@@ -30,16 +27,45 @@ select {
   cursor: not-allowed;
 }
 
+input[type=radio],
+input[type=checkbox] {
+  &[disabled] + label {
+    color: color(gray, plus2);
+    cursor: not-allowed;
+  }
+}
+
 input[disabled],
 select[disabled] {
   background-color: color(gray, plus3);
   border-color: transparent;
 }
 
-input:invalid,
-select:invalid {
-  border-color: color(error);
-  border-width: 2px;
+input,
+select {
+  &:invalid,
+  &.invalid {
+    border-color: color(error);
+    border-width: 2px;
+
+    & ~ .validation-message {
+      display: block;
+      visibility: visible;
+      color: color(error);
+    }
+  }
+
+  &:valid:not(.invalid) {
+    & ~ .validation-message {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &:focus:invalid,
+  &:focus.invalid {
+    outline-color: color(error);
+  }
 }
 
 input,
