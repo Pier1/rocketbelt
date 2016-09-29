@@ -41,6 +41,19 @@ select[disabled] {
   border-color: transparent;
 }
 
+select {
+  $fill: str-replace(quote(color(gray, darkest)), '#', '%23');
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,
+                <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#{$fill}" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/>
+                </svg>
+              ') no-repeat,
+              color(white);
+  background-size: 1rem;
+  background-position: right 0.5rem center;
+}
+
 input,
 select {
   &:invalid,
