@@ -1,0 +1,23 @@
+extends /_layout.jade
+
+block vars
+  - var title = 'Busy Indicators'
+  
+block content
+  article
+    :md
+      # Busy Indicators
+      ## Dots
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _busy-indicators-dots
+            
+    :md
+      ## Spinner
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _busy-indicators-spinners

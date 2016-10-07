@@ -1,0 +1,41 @@
+.busy {
+  // background: color(gray, plus3);
+  font-size: 0.25rem;
+  animation: animate 1.5s linear infinite;
+  clip: rect(0, 5em, 5em, 2.5em);
+  height: 5em;
+  width: 5em;
+  position: absolute;
+  left: calc(50% - 2.5em);
+  top: calc(50% - 2.5em);
+
+  &:after {
+    // background: gray;
+    animation: animate2 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite;
+    clip: rect(0, 5em, 5em, 2.5em);
+    content: '';
+    border-radius: 50%;
+    height: 5em;
+    width: 5em;
+    position: absolute;
+    box-shadow: 0 0 0 0.5em color(primary) inset;
+  }
+}
+
+@keyframes animate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(190deg);
+  }
+}
+
+@keyframes animate2 {
+  0% {
+    transform: rotate(-170deg);
+  }
+  100% {
+    transform: rotate(170deg);
+  }
+}
