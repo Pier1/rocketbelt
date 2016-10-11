@@ -179,6 +179,7 @@ gulp.task('views', ['js:site:copy'], function () {
         pretty: true,
         md: md,
         locals: {
+          relative: true,
           nav: res,
           colorFamilies: colorFamilies,
           shortid: shortid,
@@ -187,24 +188,6 @@ gulp.task('views', ['js:site:copy'], function () {
       }))
       .pipe(gulp.dest(dist))
     ;
-
-    // return gulp.src(['./docs/index.jade'])
-    //   .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-    //   .pipe(affected())
-    //   .pipe(jadeInheritance({ basedir: dir }))
-    //   .pipe(jade({
-    //     basedir: __dirname + '/docs',
-    //     pretty: true,
-    //     md: md,
-    //     locals: {
-    //       nav: res,
-    //       colorFamilies: colorFamilies,
-    //       shortid: shortid,
-    //       _: _
-    //     }
-    //   }))
-    //   .pipe(gulp.dest('.'))
-    // ;
   });
 });
 
