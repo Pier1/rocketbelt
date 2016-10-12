@@ -1,6 +1,6 @@
 include _mixins
 
-- var prepend = relative ? '../../' : '/';
+- var prepend = baseDistPath ? baseDistPath : '../..';
 
 doctype html
 html
@@ -9,7 +9,7 @@ html
     block title
      title #{title ? title + ' | ' : ''}Slipway Pattern Library
     block styles
-      link(rel='stylesheet', href=prepend + 'css/site.min.css')
+      link(rel='stylesheet', href=prepend + '/css/site.min.css')
     script(src='https://code.jquery.com/jquery-2.2.4.min.js')
   body.grid-fluid
     .row
@@ -23,6 +23,6 @@ html
               .col.xs
                 block content
 
-    script(src=prepend + 'js/prism.js')
-    script(src=prepend + 'js/clipboard.min.js')
-    script(src=prepend + 'js/site.js')
+    script(src=prepend + '/js/prism.js')
+    script(src=prepend + '/js/clipboard.min.js')
+    script(src=prepend + '/js/site.js')

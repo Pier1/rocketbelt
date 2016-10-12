@@ -162,7 +162,7 @@ gulp.task('link:clean', function () {
   exec('find ./docs -type l -delete', function (err, stdout, stderr) { })
 });
 
-gulp.task('views', ['js:site:copy'], function () {
+gulp.task('views', ['js:site:copy', 'views:ghpIndex'], function () {
   var dir = './docs';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
@@ -170,7 +170,7 @@ gulp.task('views', ['js:site:copy'], function () {
 
     var colorFamilies = require('./docs/base/color/_color-families.json');
 
-    return gulp.src(['./docs/**/*.jade', '!./docs/**/_*.jade'])
+    return gulp.src(['./docs/**/*.jade', '!./docs/**/_*.jade', '!./docs/index.jade'])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
       .pipe(affected())
       .pipe(jadeInheritance({ basedir: dir }))
@@ -179,7 +179,6 @@ gulp.task('views', ['js:site:copy'], function () {
         pretty: true,
         md: md,
         locals: {
-          relative: true,
           nav: res,
           colorFamilies: colorFamilies,
           shortid: shortid,
@@ -187,6 +186,29 @@ gulp.task('views', ['js:site:copy'], function () {
         }
       }))
       .pipe(gulp.dest(dist))
+    ;
+  });
+});
+
+gulp.task('views:ghpIndex', function () {
+  var dir = './docs';
+  directoryTreeToObj(dir, function (err, res) {
+    if (err)
+      console.error(err);
+
+    return gulp.src(['./docs/index.jade'])
+      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+      .pipe(jade({
+        basedir: __dirname + '/docs',
+        pretty: true,
+        md: md,
+        locals: {
+          baseDistPath: '/dist',
+          nav: res,
+          _: _
+        }
+      }))
+      .pipe(gulp.dest('.'))
     ;
   });
 });
