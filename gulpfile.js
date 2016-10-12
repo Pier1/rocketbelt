@@ -36,8 +36,8 @@ var vfs = require('vinyl-fs');
 var symlink = require('gulp-symlink');
 var path = require('path');
 var exec = require('child_process').exec;
-var dist = './dist';
-var distCss = dist + '/css';
+var buildPath = './docs';
+var buildCss = buildPath + '/css';
 var slipwayDir = './slipway';
 var siteDir = './site';
 
@@ -52,7 +52,7 @@ gulp.task('server', function () {
   return browserSync.init({
     server: {
       injectChanges: true,
-      baseDir: dist
+      baseDir: buildPath
     }
   });
 });
@@ -60,11 +60,11 @@ gulp.task('server', function () {
 gulp.task('watch', function(){
   global.isWatching = true;
 
-  gulp.watch(['./slipway/**/*.scss', './docs/scss/**/*.scss'], ['styles']);
-  gulp.watch('./docs/**/*', ['views']);
+  gulp.watch(['./slipway/**/*.scss', './templates/scss/**/*.scss'], ['styles']);
+  gulp.watch('./templates/**/*', ['views']);
   gulp.watch(['./slipway/**/*.js'], ['uglify']);
-  gulp.watch(dist + '/**/*.html').on('change', debounce(browserSync.reload, 500));
-  gulp.watch(dist + '/**/*.js').on('change', debounce(browserSync.reload, 500));
+  gulp.watch(buildPath + '/**/*.html').on('change', debounce(browserSync.reload, 500));
+  gulp.watch(buildPath + '/**/*.js').on('change', debounce(browserSync.reload, 500));
 });
 
 var sizeOptions = {
@@ -74,18 +74,18 @@ var sizeOptions = {
 
 gulp.task('uglify', function () {
   return gulp.src(['./slipway/**/*.js', '!./slipway/**/*.min.js'])
-    .pipe(changed(dist))
+    .pipe(changed(buildPath))
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(size(sizeOptions))
     .pipe(sourcemaps.write('.', { sourceRoot: '.' }))
-    .pipe(gulp.dest(dist))
+    .pipe(gulp.dest(buildPath))
   ;
 });
 
 gulp.task('styles', function () {
-  var source = gulp.src(['./slipway/**/*.scss', './docs/scss/**/*.scss'])
+  var source = gulp.src(['./slipway/**/*.scss', './templates/scss/**/*.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sourcemaps.init())
     .pipe(sass(eyeglass()))
@@ -103,7 +103,7 @@ gulp.task('styles', function () {
 
   var max = source.pipe(clone())
     .pipe(sourcemaps.write('.', { sourceRoot: null }))
-    .pipe(gulp.dest(distCss))
+    .pipe(gulp.dest(buildCss))
   ;
 
   var min = source.pipe(clone())
@@ -112,7 +112,7 @@ gulp.task('styles', function () {
     .pipe(postcss([cssnano()]))
     .pipe(size(sizeOptions))
     .pipe(sourcemaps.write('.', { sourceRoot: null }))
-    .pipe(gulp.dest(distCss))
+    .pipe(gulp.dest(buildCss))
     .pipe(browserSync.stream({ match: '**/*.css' }))
   ;
 
@@ -121,7 +121,7 @@ gulp.task('styles', function () {
 
 gulp.task('clean', ['link:clean'], function () {
   del(['**/*/.DS_Store']);
-  del([dist]);
+  del([buildPath]);
 });
 
 gulp.task('build', function (done) {
@@ -129,9 +129,9 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('js:site:copy', function () {
-  vfs.src(['./docs/**/*.js'])
-    .pipe(changed(dist))
-    .pipe(vfs.dest(dist, { overwrite: true }));
+  vfs.src(['./templates/**/*.js'])
+    .pipe(changed(buildPath))
+    .pipe(vfs.dest(buildPath, { overwrite: true }));
 });
 
 gulp.task('link', ['link:partials', 'link:js']);
@@ -139,43 +139,43 @@ gulp.task('link', ['link:partials', 'link:js']);
 gulp.task('link:partials', function () {
   return gulp.src('./slipway/**/_*.jade')
     .pipe(symlink(function (file) {
-      return path.join('./docs', file.relative);
+      return path.join('./templates', file.relative);
     }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   // return vfs.src('./slipway/**/_*.jade')
-  //   .pipe(vfs.symlink('./docs', { relative: true }));
+  //   .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:js', function () {
   return gulp.src(['./slipway/**/*.js', './slipway/**/*.json', '!./**/slipsum-cache.json'])
     .pipe(symlink(function (file) {
-      return path.join('./docs', file.relative);
+      return path.join('./templates', file.relative);
     }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   // return vfs.src('./slipway/**/*.js', './slipway/**/*.json')
-  //   .pipe(vfs.symlink('./docs', { relative: true }));
+  //   .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:clean', function () {
-  exec('find ./docs -type l -delete', function (err, stdout, stderr) { })
+  exec('find ./templates -type l -delete', function (err, stdout, stderr) { })
 });
 
-gulp.task('views', ['js:site:copy', 'views:ghpIndex'], function () {
-  var dir = './docs';
+gulp.task('views', ['js:site:copy'], function () {
+  var dir = './templates';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
       console.error(err);
 
-    var colorFamilies = require('./docs/base/color/_color-families.json');
+    var colorFamilies = require('./templates/base/color/_color-families.json');
 
-    return gulp.src(['./docs/**/*.jade', '!./docs/**/_*.jade', '!./docs/index.jade'])
+    return gulp.src(['./templates/**/*.jade', '!./templates/**/_*.jade'])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
       .pipe(affected())
       .pipe(jadeInheritance({ basedir: dir }))
       .pipe(jade({
-        basedir: __dirname + '/docs',
+        basedir: __dirname + '/templates',
         pretty: true,
         md: md,
         locals: {
@@ -185,30 +185,7 @@ gulp.task('views', ['js:site:copy', 'views:ghpIndex'], function () {
           _: _
         }
       }))
-      .pipe(gulp.dest(dist))
-    ;
-  });
-});
-
-gulp.task('views:ghpIndex', function () {
-  var dir = './docs';
-  directoryTreeToObj(dir, function (err, res) {
-    if (err)
-      console.error(err);
-
-    return gulp.src(['./docs/index.jade'])
-      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
-      .pipe(jade({
-        basedir: __dirname + '/docs',
-        pretty: true,
-        md: md,
-        locals: {
-          baseDistPath: '/dist',
-          nav: res,
-          _: _
-        }
-      }))
-      .pipe(gulp.dest('.'))
+      .pipe(gulp.dest(buildPath))
     ;
   });
 });
