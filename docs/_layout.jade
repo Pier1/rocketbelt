@@ -1,5 +1,7 @@
 include _mixins
 
+- var prepend = baseDistPath ? baseDistPath : '../..';
+
 doctype html
 html
   head
@@ -7,13 +9,13 @@ html
     block title
      title #{title ? title + ' | ' : ''}Slipway Pattern Library
     block styles
-      link(rel='stylesheet', href='/css/site.min.css')
+      link(rel='stylesheet', href=prepend + '/css/site.min.css')
     script(src='https://code.jquery.com/jquery-2.2.4.min.js')
   body.grid-fluid
     .row(style='flex-wrap: nowrap;')
       nav.col.xs(style='flex-grow: 0;')
         block sidebar
-          +buildNav(nav)
+          +buildNav(nav, prepend)
       .col.xs
         block main
           main.grid-fluid.no-margin
@@ -21,6 +23,6 @@ html
               .col.xs
                 block content
 
-    script(src='/js/prism.js')
-    script(src='/js/clipboard.min.js')
-    script(src='/js/site.js')
+    script(src=prepend + '/js/prism.js')
+    script(src=prepend + '/js/clipboard.min.js')
+    script(src=prepend + '/js/site.js')

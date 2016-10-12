@@ -60,8 +60,8 @@ gulp.task('server', function () {
 gulp.task('watch', function(){
   global.isWatching = true;
 
-  gulp.watch(['./slipway/**/*.scss', './content/scss/**/*.scss'], ['styles']);
-  gulp.watch('./content/**/*', ['views']);
+  gulp.watch(['./slipway/**/*.scss', './docs/scss/**/*.scss'], ['styles']);
+  gulp.watch('./docs/**/*', ['views']);
   gulp.watch(['./slipway/**/*.js'], ['uglify']);
   gulp.watch(dist + '/**/*.html').on('change', debounce(browserSync.reload, 500));
   gulp.watch(dist + '/**/*.js').on('change', debounce(browserSync.reload, 500));
@@ -85,7 +85,7 @@ gulp.task('uglify', function () {
 });
 
 gulp.task('styles', function () {
-  var source = gulp.src(['./slipway/**/*.scss', './content/scss/**/*.scss'])
+  var source = gulp.src(['./slipway/**/*.scss', './docs/scss/**/*.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sourcemaps.init())
     .pipe(sass(eyeglass()))
@@ -129,7 +129,7 @@ gulp.task('build', function (done) {
 });
 
 gulp.task('js:site:copy', function () {
-  vfs.src(['./content/**/*.js'])
+  vfs.src(['./docs/**/*.js'])
     .pipe(changed(dist))
     .pipe(vfs.dest(dist, { overwrite: true }));
 });
@@ -139,43 +139,43 @@ gulp.task('link', ['link:partials', 'link:js']);
 gulp.task('link:partials', function () {
   return gulp.src('./slipway/**/_*.jade')
     .pipe(symlink(function (file) {
-      return path.join('./content', file.relative);
+      return path.join('./docs', file.relative);
     }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   // return vfs.src('./slipway/**/_*.jade')
-  //   .pipe(vfs.symlink('./content', { relative: true }));
+  //   .pipe(vfs.symlink('./docs', { relative: true }));
 });
 
 gulp.task('link:js', function () {
   return gulp.src(['./slipway/**/*.js', './slipway/**/*.json', '!./**/slipsum-cache.json'])
     .pipe(symlink(function (file) {
-      return path.join('./content', file.relative);
+      return path.join('./docs', file.relative);
     }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   // return vfs.src('./slipway/**/*.js', './slipway/**/*.json')
-  //   .pipe(vfs.symlink('./content', { relative: true }));
+  //   .pipe(vfs.symlink('./docs', { relative: true }));
 });
 
 gulp.task('link:clean', function () {
-  exec('find ./content -type l -delete', function (err, stdout, stderr) { })
+  exec('find ./docs -type l -delete', function (err, stdout, stderr) { })
 });
 
-gulp.task('views', ['js:site:copy'], function () {
-  var dir = './content';
+gulp.task('views', ['js:site:copy', 'views:ghpIndex'], function () {
+  var dir = './docs';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
       console.error(err);
 
-    var colorFamilies = require('./content/base/color/_color-families.json');
+    var colorFamilies = require('./docs/base/color/_color-families.json');
 
-    return gulp.src(['./content/**/*.jade', '!./content/**/_*.jade'])
+    return gulp.src(['./docs/**/*.jade', '!./docs/**/_*.jade', '!./docs/index.jade'])
       .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
       .pipe(affected())
       .pipe(jadeInheritance({ basedir: dir }))
       .pipe(jade({
-        basedir: __dirname + '/content',
+        basedir: __dirname + '/docs',
         pretty: true,
         md: md,
         locals: {
@@ -186,6 +186,29 @@ gulp.task('views', ['js:site:copy'], function () {
         }
       }))
       .pipe(gulp.dest(dist))
+    ;
+  });
+});
+
+gulp.task('views:ghpIndex', function () {
+  var dir = './docs';
+  directoryTreeToObj(dir, function (err, res) {
+    if (err)
+      console.error(err);
+
+    return gulp.src(['./docs/index.jade'])
+      .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
+      .pipe(jade({
+        basedir: __dirname + '/docs',
+        pretty: true,
+        md: md,
+        locals: {
+          baseDistPath: '/dist',
+          nav: res,
+          _: _
+        }
+      }))
+      .pipe(gulp.dest('.'))
     ;
   });
 });
