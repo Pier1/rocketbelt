@@ -10,8 +10,8 @@ html
       link(rel='stylesheet', href='/css/site.min.css')
     script(src='https://code.jquery.com/jquery-2.2.4.min.js')
   body.grid-fluid
-    .row
-      nav.col.xs(style='flex-grow:0')
+    .row(style='flex-wrap: nowrap;')
+      nav.col.xs(style='flex-grow: 0;')
         block sidebar
           +buildNav(nav)
       .col.xs
