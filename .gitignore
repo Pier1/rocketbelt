@@ -1,15 +1,4 @@
 # =========================
-# USED ONLY FOR GH-PAGES BRANCH
-*
-**/*
-!.gitignore
-!index.html
-!css/
-!js
-!components/
-!base/
-
-# =========================
 dist/
 node_modules/
 *.bak

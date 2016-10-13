@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Forms | Slipway Pattern Library</title>
+    <link rel="stylesheet" href="/slipway/css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body class="grid-fluid">
+    <div style="flex-wrap: nowrap;" class="row">
+      <nav style="flex-grow: 0;" class="col xs">
+        <ul>
+          <li><a href="/slipway/base">Base</a>
+            <ul>
+              <li><a href="/slipway/base/breakpoints">Breakpoints</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/base/color">Color</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/base/grid">Grid</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/base/layout">Layout</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/base/slipsum">Slipsum</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/base/typography">Typography</a>
+                <ul>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/slipway/components">Components</a>
+            <ul>
+              <li><a href="/slipway/components/alerts">Alerts</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/expanders">Expanders</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/busy-indicators">Busy Indicators</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/buttons">Buttons</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/cards">Cards</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/forms">Forms</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/images">Images</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/modals">Modals</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/radio-buttons">Radio Buttons</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/tabcordions">Tabcordions</a>
+                <ul>
+                </ul>
+              </li>
+              <li><a href="/slipway/components/tooltips">Tooltips</a>
+                <ul>
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="/slipway/exposition">Exposition</a>
+            <ul>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="col xs">
+        <main class="grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <article><h1 id="forms">Forms</h1>
+<h2 id="standard-form-elements">Standard Form Elements</h2>
+
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <form>
+                            <div class="form-group">
+                              <input id="basic-fname" type="text">
+                              <label for="basic-fname">First Name</label>
+                            </div>
+                            <div class="form-group">
+                              <input id="basic-email" type="email">
+                              <label for="basic-email">Email Address</label>
+                            </div>
+                            <div class="form-group">
+                              <input id="basic-tel" type="tel">
+                              <label for="basic-tel">Phone Number</label>
+                            </div>
+                            <div class="form-group">
+                              <input id="basic-password" type="password">
+                              <label for="basic-password">Password</label>
+                            </div>
+                            <div class="form-group">
+                              <select id="basic-select">
+                                <option value="" disabled selected hidden>Select a collection</option>
+                                <option>Biblioteca</option>
+                                <option>Marcel</option>
+                                <option>Pierce</option>
+                              </select>
+                              <label for="basic-select">Collection</label>
+                            </div>
+                            <fieldset>
+                              <legend>Collection</legend>
+                              <ul class="radio-group">
+                                <li>
+                                  <input id="basic-radio-1" type="radio" checked value="biblioteca" name="basic-radio-group">
+                                  <label for="basic-radio-1">Biblioteca</label>
+                                </li>
+                                <li>
+                                  <input id="basic-radio-2" type="radio" value="marcel" name="basic-radio-group">
+                                  <label for="basic-radio-2">Marcel</label>
+                                </li>
+                                <li>
+                                  <input id="basic-radio-3" type="radio" value="pierce" name="basic-radio-group">
+                                  <label for="basic-radio-3">Pierce</label>
+                                </li>
+                              </ul>
+                            </fieldset>
+                            <fieldset>
+                              <legend>Collection</legend>
+                              <ul class="checkbox-group">
+                                <li>
+                                  <input id="basic-check-1" type="checkbox" checked value="biblioteca" name="basic-check-group">
+                                  <label for="basic-check-1">Biblioteca</label>
+                                </li>
+                                <li>
+                                  <input id="basic-check-2" type="checkbox" value="marcel" name="basic-check-group">
+                                  <label for="basic-check-2">Marcel</label>
+                                </li>
+                                <li>
+                                  <input id="basic-check-3" type="checkbox" value="pierce" name="basic-check-group">
+                                  <label for="basic-check-3">Pierce</label>
+                                </li>
+                              </ul>
+                            </fieldset>
+                          </form>
+                        </div>
+                        <div class="expander">
+                          <input type="checkbox" id="SkhNVkB4aC" class="expander_checkbox"/>
+                          <label for="SkhNVkB4aC" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button data-clipboard-target="#SyoVV1r4TC" class="copy-code">Copy</button>
+                              <pre><code id="SyoVV1r4TC" class="language-html">
+                                  &lt;form&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;basic-fname&quot; type=&quot;text&quot;&gt;
+                                      &lt;label for=&quot;basic-fname&quot;&gt;First Name&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;basic-email&quot; type=&quot;email&quot;&gt;
+                                      &lt;label for=&quot;basic-email&quot;&gt;Email Address&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;basic-tel&quot; type=&quot;tel&quot;&gt;
+                                      &lt;label for=&quot;basic-tel&quot;&gt;Phone Number&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;basic-password&quot; type=&quot;password&quot;&gt;
+                                      &lt;label for=&quot;basic-password&quot;&gt;Password&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;select id=&quot;basic-select&quot;&gt;
+                                        &lt;option value=&quot;&quot; disabled selected hidden&gt;Select a collection&lt;/option&gt;
+                                        &lt;option&gt;Biblioteca&lt;/option&gt;
+                                        &lt;option&gt;Marcel&lt;/option&gt;
+                                        &lt;option&gt;Pierce&lt;/option&gt;
+                                      &lt;/select&gt;
+                                      &lt;label for=&quot;basic-select&quot;&gt;Collection&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;fieldset&gt;
+                                      &lt;legend&gt;Collection&lt;/legend&gt;
+                                      &lt;ul class=&quot;radio-group&quot;&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;basic-radio-1&quot; type=&quot;radio&quot; checked value=&quot;biblioteca&quot; name=&quot;basic-radio-group&quot;&gt;
+                                          &lt;label for=&quot;basic-radio-1&quot;&gt;Biblioteca&lt;/label&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;basic-radio-2&quot; type=&quot;radio&quot; value=&quot;marcel&quot; name=&quot;basic-radio-group&quot;&gt;
+                                          &lt;label for=&quot;basic-radio-2&quot;&gt;Marcel&lt;/label&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;basic-radio-3&quot; type=&quot;radio&quot; value=&quot;pierce&quot; name=&quot;basic-radio-group&quot;&gt;
+                                          &lt;label for=&quot;basic-radio-3&quot;&gt;Pierce&lt;/label&gt;
+                                        &lt;/li&gt;
+                                      &lt;/ul&gt;
+                                    &lt;/fieldset&gt;
+                                    &lt;fieldset&gt;
+                                      &lt;legend&gt;Collection&lt;/legend&gt;
+                                      &lt;ul class=&quot;checkbox-group&quot;&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;basic-check-1&quot; type=&quot;checkbox&quot; checked value=&quot;biblioteca&quot; name=&quot;basic-check-group&quot;&gt;
+                                          &lt;label for=&quot;basic-check-1&quot;&gt;Biblioteca&lt;/label&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;basic-check-2&quot; type=&quot;checkbox&quot; value=&quot;marcel&quot; name=&quot;basic-check-group&quot;&gt;
+                                          &lt;label for=&quot;basic-check-2&quot;&gt;Marcel&lt;/label&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;basic-check-3&quot; type=&quot;checkbox&quot; value=&quot;pierce&quot; name=&quot;basic-check-group&quot;&gt;
+                                          &lt;label for=&quot;basic-check-3&quot;&gt;Pierce&lt;/label&gt;
+                                        &lt;/li&gt;
+                                      &lt;/ul&gt;
+                                    &lt;/fieldset&gt;
+                                  &lt;/form&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="helper-text">Helper Text</h2>
+
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <form>
+                            <div class="form-group">
+                              <input id="helper-password" type="password">
+                              <label for="helper-password">Password</label><small class="helper-text">At least 8 characters</small>
+                            </div>
+                            <div class="form-group">
+                              <input id="helper-fname" type="tel" class="invalid">
+                              <label for="helper-fname">Phone number</label><small class="validation-message">Please enter a valid Phone Number</small><small class="helper-text">US numbers only, please</small>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="expander">
+                          <input type="checkbox" id="Hk04NJHE6A" class="expander_checkbox"/>
+                          <label for="Hk04NJHE6A" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button data-clipboard-target="#Hk64N1SVTR" class="copy-code">Copy</button>
+                              <pre><code id="Hk64N1SVTR" class="language-html">
+                                  &lt;form&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;helper-password&quot; type=&quot;password&quot;&gt;
+                                      &lt;label for=&quot;helper-password&quot;&gt;Password&lt;/label&gt;&lt;small class=&quot;helper-text&quot;&gt;At least 8 characters&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;helper-fname&quot; type=&quot;tel&quot; class=&quot;invalid&quot;&gt;
+                                      &lt;label for=&quot;helper-fname&quot;&gt;Phone number&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid Phone Number&lt;/small&gt;&lt;small class=&quot;helper-text&quot;&gt;US numbers only, please&lt;/small&gt;
+                                    &lt;/div&gt;
+                                  &lt;/form&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="required-optional-fields">Required &amp; Optional Fields</h2>
+
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <form>
+                            <div class="form-group">
+                              <input id="required-email" type="email" required value="help@pier1.com">
+                              <label for="required-email">Email Address</label><small class="validation-message">Please enter a valid email address.</small>
+                            </div>
+                            <div class="form-group">
+                              <input id="required-mobile" value="(555) 555-1212">
+                              <label for="required-mobile">Mobile Phone</label><small class="validation-message">Please enter a valid Mobile Phone.</small>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="expander">
+                          <input type="checkbox" id="H1lH4JS4pR" class="expander_checkbox"/>
+                          <label for="H1lH4JS4pR" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button data-clipboard-target="#rkJH4yBVaA" class="copy-code">Copy</button>
+                              <pre><code id="rkJH4yBVaA" class="language-html">
+                                  &lt;form&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;required-email&quot; type=&quot;email&quot; required value=&quot;help@pier1.com&quot;&gt;
+                                      &lt;label for=&quot;required-email&quot;&gt;Email Address&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid email address.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;required-mobile&quot; value=&quot;(555) 555-1212&quot;&gt;
+                                      &lt;label for=&quot;required-mobile&quot;&gt;Mobile Phone&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid Mobile Phone.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                  &lt;/form&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="disabled-styles">Disabled Styles</h2>
+
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <form>
+                            <div class="form-group">
+                              <input id="disabled-fname" type="text" disabled>
+                              <label for="disabled-fname">First Name</label>
+                            </div>
+                            <div class="form-group">
+                              <select id="disabled-select" disabled>
+                                <option value="" disabled selected hidden>Select a collection</option>
+                                <option>Biblioteca</option>
+                                <option>Marcel</option>
+                                <option>Pierce</option>
+                              </select>
+                              <label for="disabled-select">Collection</label>
+                            </div>
+                            <fieldset>
+                              <legend>Collection</legend>
+                              <ul class="radio-group">
+                                <li>
+                                  <input id="disabled-radio-1" type="radio" disabled value="biblioteca" name="disabled-radio-group">
+                                  <label for="disabled-radio-1">Biblioteca</label>
+                                </li>
+                                <li>
+                                  <input id="disabled-radio-2" type="radio" disabled checked value="marcel" name="disabled-radio-group">
+                                  <label for="disabled-radio-2">Marcel</label>
+                                </li>
+                                <li>
+                                  <input id="disabled-radio-3" type="radio" checked value="pierce" name="disabled-radio-group">
+                                  <label for="disabled-radio-3">Pierce</label>
+                                </li>
+                              </ul>
+                            </fieldset>
+                            <fieldset>
+                              <legend>Collection</legend>
+                              <ul class="checkbox-group">
+                                <li>
+                                  <input id="disabled-check-1" type="checkbox" disabled value="biblioteca" name="disabled-check-group">
+                                  <label for="disabled-check-1">Biblioteca</label>
+                                </li>
+                                <li>
+                                  <input id="disabled-check-2" type="checkbox" disabled checked value="marcel" name="disabled-check-group">
+                                  <label for="disabled-check-2">Marcel</label>
+                                </li>
+                                <li>
+                                  <input id="disabled-check-3" type="checkbox" checked value="pierce" name="disabled-check-group">
+                                  <label for="disabled-check-3">Pierce</label>
+                                </li>
+                              </ul>
+                            </fieldset>
+                          </form>
+                        </div>
+                        <div class="expander">
+                          <input type="checkbox" id="B1GBVyBV6A" class="expander_checkbox"/>
+                          <label for="B1GBVyBV6A" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button data-clipboard-target="#rJWH4yHV60" class="copy-code">Copy</button>
+                              <pre><code id="rJWH4yHV60" class="language-html">
+                                  &lt;form&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;disabled-fname&quot; type=&quot;text&quot; disabled&gt;
+                                      &lt;label for=&quot;disabled-fname&quot;&gt;First Name&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;select id=&quot;disabled-select&quot; disabled&gt;
+                                        &lt;option value=&quot;&quot; disabled selected hidden&gt;Select a collection&lt;/option&gt;
+                                        &lt;option&gt;Biblioteca&lt;/option&gt;
+                                        &lt;option&gt;Marcel&lt;/option&gt;
+                                        &lt;option&gt;Pierce&lt;/option&gt;
+                                      &lt;/select&gt;
+                                      &lt;label for=&quot;disabled-select&quot;&gt;Collection&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;fieldset&gt;
+                                      &lt;legend&gt;Collection&lt;/legend&gt;
+                                      &lt;ul class=&quot;radio-group&quot;&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;disabled-radio-1&quot; type=&quot;radio&quot; disabled value=&quot;biblioteca&quot; name=&quot;disabled-radio-group&quot;&gt;
+                                          &lt;label for=&quot;disabled-radio-1&quot;&gt;Biblioteca&lt;/label&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;disabled-radio-2&quot; type=&quot;radio&quot; disabled checked value=&quot;marcel&quot; name=&quot;disabled-radio-group&quot;&gt;
+                                          &lt;label for=&quot;disabled-radio-2&quot;&gt;Marcel&lt;/label&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;disabled-radio-3&quot; type=&quot;radio&quot; checked value=&quot;pierce&quot; name=&quot;disabled-radio-group&quot;&gt;
+                                          &lt;label for=&quot;disabled-radio-3&quot;&gt;Pierce&lt;/label&gt;
+                                        &lt;/li&gt;
+                                      &lt;/ul&gt;
+                                    &lt;/fieldset&gt;
+                                    &lt;fieldset&gt;
+                                      &lt;legend&gt;Collection&lt;/legend&gt;
+                                      &lt;ul class=&quot;checkbox-group&quot;&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;disabled-check-1&quot; type=&quot;checkbox&quot; disabled value=&quot;biblioteca&quot; name=&quot;disabled-check-group&quot;&gt;
+                                          &lt;label for=&quot;disabled-check-1&quot;&gt;Biblioteca&lt;/label&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;disabled-check-2&quot; type=&quot;checkbox&quot; disabled checked value=&quot;marcel&quot; name=&quot;disabled-check-group&quot;&gt;
+                                          &lt;label for=&quot;disabled-check-2&quot;&gt;Marcel&lt;/label&gt;
+                                        &lt;/li&gt;
+                                        &lt;li&gt;
+                                          &lt;input id=&quot;disabled-check-3&quot; type=&quot;checkbox&quot; checked value=&quot;pierce&quot; name=&quot;disabled-check-group&quot;&gt;
+                                          &lt;label for=&quot;disabled-check-3&quot;&gt;Pierce&lt;/label&gt;
+                                        &lt;/li&gt;
+                                      &lt;/ul&gt;
+                                    &lt;/fieldset&gt;
+                                  &lt;/form&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="invalid-styles">Invalid Styles</h2>
+
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <form>
+                            <div class="form-group">
+                              <input id="invalid-email" type="email" value="not|a=valid!email">
+                              <label for="invalid-email">Email Address</label><small class="validation-message">Please enter a valid email address.</small>
+                            </div>
+                            <div class="form-group">
+                              <input id="invalid-phone" type="tel" value="(not) a-phone-number" class="invalid">
+                              <label for="invalid-phone">Phone Number</label><small class="validation-message">Please enter a valid phone number.</small>
+                            </div>
+                            <div class="form-group">
+                              <input id="invalid-password" type="password" value="doesn't-meet-regex" class="invalid">
+                              <label for="invalid-password">Password</label><small class="validation-message">Please enter a valid password.</small>
+                            </div>
+                            <div class="form-group">
+                              <input id="invalid-fname" type="text" class="invalid">
+                              <label for="invalid-fname">First Name</label><small class="validation-message">Please enter a first name.</small>
+                            </div>
+                            <div class="form-group">
+                              <select id="invalid-select" class="invalid">
+                                <option value="" disabled selected hidden>Select a collection</option>
+                                <option>Biblioteca</option>
+                                <option>Marcel</option>
+                                <option>Pierce</option>
+                              </select>
+                              <label for="invalid-select">Collection</label><small class="validation-message">Please select a collection.</small>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="expander">
+                          <input type="checkbox" id="SyNS4yH4aR" class="expander_checkbox"/>
+                          <label for="SyNS4yH4aR" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button data-clipboard-target="#SJmHVyBV6C" class="copy-code">Copy</button>
+                              <pre><code id="SJmHVyBV6C" class="language-html">
+                                  &lt;form&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;invalid-email&quot; type=&quot;email&quot; value=&quot;not|a=valid!email&quot;&gt;
+                                      &lt;label for=&quot;invalid-email&quot;&gt;Email Address&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid email address.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;invalid-phone&quot; type=&quot;tel&quot; value=&quot;(not) a-phone-number&quot; class=&quot;invalid&quot;&gt;
+                                      &lt;label for=&quot;invalid-phone&quot;&gt;Phone Number&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid phone number.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;invalid-password&quot; type=&quot;password&quot; value=&quot;doesn't-meet-regex&quot; class=&quot;invalid&quot;&gt;
+                                      &lt;label for=&quot;invalid-password&quot;&gt;Password&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid password.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input id=&quot;invalid-fname&quot; type=&quot;text&quot; class=&quot;invalid&quot;&gt;
+                                      &lt;label for=&quot;invalid-fname&quot;&gt;First Name&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a first name.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;select id=&quot;invalid-select&quot; class=&quot;invalid&quot;&gt;
+                                        &lt;option value=&quot;&quot; disabled selected hidden&gt;Select a collection&lt;/option&gt;
+                                        &lt;option&gt;Biblioteca&lt;/option&gt;
+                                        &lt;option&gt;Marcel&lt;/option&gt;
+                                        &lt;option&gt;Pierce&lt;/option&gt;
+                                      &lt;/select&gt;
+                                      &lt;label for=&quot;invalid-select&quot;&gt;Collection&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please select a collection.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                  &lt;/form&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="/slipway/js/prism.js"></script>
+    <script src="/slipway/js/clipboard.min.js"></script>
+    <script src="/slipway/js/site.js"></script>
+  </body>
+</html>
