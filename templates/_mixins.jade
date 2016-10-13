@@ -52,7 +52,7 @@ mixin exampleWithCode(htmlOrJs, expanded, inverted)
 - }
 
 mixin buildNav(navObject, rootHref)
-  ul
+  ul.list-reset
     each item in navObject.sort(function (a, b) { return a.name > b.name })
       - var name = toTitleCase(item.name);
       unless item.name.indexOf('index.') > -1
