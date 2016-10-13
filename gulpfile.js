@@ -179,13 +179,14 @@ gulp.task('views', ['js:site:copy'], function () {
         pretty: true,
         md: md,
         locals: {
+          buildPath: '/slipway',
           nav: res,
           colorFamilies: colorFamilies,
           shortid: shortid,
           _: _
         }
       }))
-      .pipe(gulp.dest(buildPath))
+      .pipe(gulp.dest('.'))
     ;
   });
 });
