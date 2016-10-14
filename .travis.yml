@@ -7,7 +7,7 @@ node_js:
 before_install:
 - openssl aes-256-cbc -K $encrypted_d1e5f63af608_key -iv $encrypted_d1e5f63af608_iv -in deploy_key.enc -out deploy_key -d
 before_script:
-  - npm install -g gulp
+
 script:
 
 after_success:

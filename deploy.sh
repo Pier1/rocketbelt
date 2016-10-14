@@ -5,8 +5,12 @@ SOURCE_BRANCH="master"
 TARGET_BRANCH="gh-pages"
 
 function ghpBuild {
+  cd $HOME
   rm -rf gh-pages/**/* || exit 0
+  git clone $REPO gh-pages
   cd gh-pages
+  git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+  git reset --head master
   npm install
   gulp build --release
 }
@@ -25,11 +29,6 @@ SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into gh-pages/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
-cd $HOME
-git clone $REPO gh-pages
-cd gh-pages
-git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-cd ..
 
 ghpBuild
 
