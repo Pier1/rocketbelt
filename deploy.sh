@@ -30,6 +30,7 @@ cd gh-pages
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
+npm install
 ghpBuild
 
 # Now let's go have some fun with the cloned repo
