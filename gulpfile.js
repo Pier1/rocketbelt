@@ -39,11 +39,9 @@ var exec = require('child_process').exec;
 
 var argv = require('minimist')(process.argv.slice(2));
 var buildPath = argv.release ? '.' : './docs';
-console.log(buildPath);
 var buildCss = buildPath + '/css';
 var slipwayDir = './slipway';
 var siteDir = './site';
-
 
 var nav = [];
 

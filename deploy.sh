@@ -10,7 +10,12 @@ function ghpBuild {
   git clone $REPO gh-pages
   cd gh-pages
   git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-  git merge -s ours master --no-commit
+  #git merge -s ours master --no-commit
+  git rebase -X ours master
+  git add . --all
+  git rebase --continue
+  git add . --all
+  git rebase --continue
   npm install
   gulp build --release
 }
