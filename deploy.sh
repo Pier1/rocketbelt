@@ -10,7 +10,7 @@ function ghpBuild {
   git clone $REPO gh-pages
   cd gh-pages
   git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-  git reset --hard master
+  git merge -s ours master --no-commit
   npm install
   gulp build --release
 }
@@ -57,6 +57,7 @@ openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out 
 chmod 600 deploy_key
 eval `ssh-agent -s`
 ssh-add deploy_key
+# cp deploy_key ~/.ssh/id_rsa
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
