@@ -33,7 +33,7 @@ SHA=`git rev-parse --verify HEAD`
 ghpBuild
 
 # Now let's go have some fun with the cloned repo
-cd gh-pages
+# cd gh-pages
 # git config user.name "Travis CI"
 # git config user.email "$COMMIT_AUTHOR_EMAIL"
 
