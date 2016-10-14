@@ -7,6 +7,7 @@ TARGET_BRANCH="gh-pages"
 function ghpBuild {
   rm -rf gh-pages/**/* || exit 0
   cd gh-pages
+  npm install
   gulp build --release
 }
 
@@ -30,7 +31,6 @@ cd gh-pages
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 cd ..
 
-npm install
 ghpBuild
 
 # Now let's go have some fun with the cloned repo
