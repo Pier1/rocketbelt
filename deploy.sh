@@ -7,7 +7,7 @@ TARGET_BRANCH="gh-pages"
 function ghpBuild {
   rm -rf gh-pages/**/* || exit 0
   cd gh-pages
-  ./node_modules/gulp/bin/gulp.js build --release
+  gulp build --release
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
