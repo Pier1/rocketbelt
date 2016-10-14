@@ -36,7 +36,10 @@ var vfs = require('vinyl-fs');
 var symlink = require('gulp-symlink');
 var path = require('path');
 var exec = require('child_process').exec;
-var buildPath = './docs';
+
+var argv = require('minimist')(process.argv.slice(2));
+var buildPath = argv.release ? '.' : './docs';
+console.log(buildPath);
 var buildCss = buildPath + '/css';
 var slipwayDir = './slipway';
 var siteDir = './site';
@@ -125,7 +128,18 @@ gulp.task('clean', ['link:clean'], function () {
 });
 
 gulp.task('build', function (done) {
-  runSequence('uglify', 'link', ['styles', 'views'], done);
+  if (!argv.release) {
+    runSequence('uglify', 'link', ['styles', 'views'], done);
+  }
+  else {
+    runSequence('uglify', 'link', ['styles', 'views'], 'del-assets', done);
+  }
+});
+
+gulp.task('del-assets', function () {
+  if (argv.release) {
+    del(['slipway/', 'templates/', 'docs/'])
+  }
 });
 
 gulp.task('js:site:copy', function () {

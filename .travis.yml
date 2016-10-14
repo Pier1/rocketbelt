@@ -1,0 +1,16 @@
+language: node_js
+env:
+  global:
+    - secure: <YOUR_ENCRYPTED_DATA>
+node_js:
+- '5'
+
+before_install:
+
+script:
+- node ./node_modules/gulp/bin/gulp build --release
+
+after_success:
+- git config --global user.name = "Kendrick Arnett"
+- git config --global user.email = "kmarnett@gmail.com"
+- node ./node_modules/gulp/bin/gulp deploy --production

@@ -36,6 +36,7 @@
     "jstransformer-markdown-it": "^0.2.3",
     "lodash": "^4.13.1",
     "merge-stream": "^1.0.0",
+    "minimist": "^1.2.0",
     "modularscale-sass": "^2.1.1",
     "postcss-flexibility": "^1.1.0",
     "pump": "^1.0.1",
