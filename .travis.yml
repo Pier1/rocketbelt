@@ -9,7 +9,7 @@ before_install:
 before_script:
   - npm install -g gulp
 script:
-  - exit 0
+
 after_success:
 - git config --global user.name = "Kendrick Arnett (via Travis CI)"
 - git config --global user.email = "kmarnett+travisci@gmail.com"
