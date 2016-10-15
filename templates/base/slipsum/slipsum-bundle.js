@@ -1,1 +1,0 @@
-../../../slipway/base/slipsum/slipsum-bundle.js
