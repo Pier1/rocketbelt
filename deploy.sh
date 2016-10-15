@@ -10,12 +10,8 @@ function ghpBuild {
   git clone $REPO gh-pages
   cd gh-pages
   git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-  #git merge -s ours master --no-commit
-  git rebase -X ours master
-  git add . --all
-  git rebase --continue
-  git add . --all
-  git rebase --continue
+  git fetch --all
+  git reset --hard origin/master
   npm install
   gulp build --release
 }
@@ -43,10 +39,10 @@ ghpBuild
 # git config user.email "$COMMIT_AUTHOR_EMAIL"
 
 # If there are no changes to the compiled out (e.g. this is a README update) then just bail.
-if [ -z `git diff --exit-code` ]; then
-    echo "No changes to the output on this push; exiting."
-    exit 0
-fi
+# if [ -z `git diff --exit-code` ]; then
+#     echo "No changes to the output on this push; exiting."
+#     exit 0
+# fi
 
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
