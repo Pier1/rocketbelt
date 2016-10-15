@@ -48,6 +48,7 @@ ghpBuild
 # The delta will show diffs between new and old versions.
 git add . --all
 git commit -m "Deploy to GitHub Pages: ${SHA}"
+git merge -s ours origin/gh-pages -m "Merge origin/gh-pages into gh-pages."
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
