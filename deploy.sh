@@ -9,11 +9,13 @@ function ghpBuild {
   rm -rf gh-pages/**/* || exit 0
   git clone $REPO gh-pages
   cd gh-pages
-  git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-  git fetch --all
-  git reset --hard origin/master
+  SHA=`git rev-parse --verify HEAD`
+
+  git checkout -b TEMP_BRANCH
   npm install
   gulp build --release
+  git add . --all
+  git commit -m "Build for gh-pages: ${SHA}"
 }
 
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
@@ -26,7 +28,7 @@ fi
 # Save some useful information
 REPO=`git config remote.origin.url`
 SSH_REPO=${REPO/https:\/\/github.com\//git@github.com:}
-SHA=`git rev-parse --verify HEAD`
+# SHA=`git rev-parse --verify HEAD`
 
 # Clone the existing gh-pages for this repo into gh-pages/
 # Create a new empty branch if gh-pages doesn't exist yet (should only happen on first deply)
@@ -46,9 +48,9 @@ ghpBuild
 
 # Commit the "changes", i.e. the new version.
 # The delta will show diffs between new and old versions.
-git add . --all
-git commit -m "Deploy to GitHub Pages: ${SHA}"
-git merge -s ours origin/gh-pages -m "Merge origin/gh-pages into gh-pages."
+
+git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
+git merge -s recursive -X theirs TEMP_BRANCH -m "Merge into gh-pages: ${SHA}"
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
@@ -63,3 +65,4 @@ ssh-add deploy_key
 
 # Now that we're all set up, we can push.
 git push $SSH_REPO $TARGET_BRANCH
+git branch -D TEMP_BRANCH
