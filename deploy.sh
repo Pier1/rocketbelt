@@ -50,7 +50,7 @@ ghpBuild
 # The delta will show diffs between new and old versions.
 
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-git merge -s recursive -X ours TEMP_BRANCH -m "Merge into gh-pages: ${SHA}"
+git merge -s recursive -X theirs TEMP_BRANCH -m "Merge into gh-pages: ${SHA}"
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
