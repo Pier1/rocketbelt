@@ -191,6 +191,7 @@ gulp.task('views', ['js:site:copy'], function () {
         pretty: true,
         md: md,
         locals: {
+          buildPath: argv.release ? '/slipway' : '',
           nav: res,
           colorFamilies: colorFamilies,
           shortid: shortid,
