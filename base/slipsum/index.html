@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Slipsum | Slipway Pattern Library</title>
+    <link rel="stylesheet" href="../../css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body class="grid-fluid">
+    <div style="flex-wrap: nowrap;" class="row">
+      <nav style="flex-grow: 0;" class="col xs">
+        <ul class="list-reset">
+          <li><a href="../../base">Base</a>
+            <ul class="list-reset">
+              <li><a href="../../base/breakpoints">Breakpoints</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/color">Color</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/grid">Grid</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/layout">Layout</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/slipsum">Slipsum</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/typography">Typography</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../../components">Components</a>
+            <ul class="list-reset">
+              <li><a href="../../components/forms">Forms</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/alerts">Alerts</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/busy-indicators">Busy Indicators</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/buttons">Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/cards">Cards</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/expanders">Expanders</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/images">Images</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/modals">Modals</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/radio-buttons">Radio Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/tabcordions">Tabcordions</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/tooltips">Tooltips</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../../exposition">Exposition</a>
+            <ul class="list-reset">
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="col xs">
+        <main class="grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <article><h1 id="slipsum">Slipsum</h1>
+<span>Build</span>
+                <select class="slipsum-num">
+                  <option value="1">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="5">5</option>
+                </select>
+                <select class="slipsum-type">
+                  <option value="paragraphs">paragraphs</option>
+                  <option value="sentences">sentences</option>
+                </select><span>&nbsp;of Slipsum.</span>
+                <button class="button-md button-secondary generate">Generate</button>
+                <script src="./slipsum-bundle.js"></script>
+                <div class="grid-fluid">
+                  <div class="row xs-center">
+                    <div class="col xs-12 md-8">
+                      <div class="slipsum-container"></div>
+                    </div>
+                  </div>
+                </div>
+                <script>
+                  $(document).ready(function () {
+                    $('button.generate').on('click', function () {
+                      var paras = $('.slipsum-type').val() === 'paragraphs';
+                      var num = $('.slipsum-num').val();
+                      var slipsum = '';
+                      
+                      slipsum = paras ? window.slipsum.paragraphs(num) : window.slipsum.sentences(num);
+                      
+                      var $container = $('.slipsum-container');
+                  
+                      $container.addClass('fadeOutUp');
+                      
+                      $container.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',
+                        function(e) {
+                          $container.text(slipsum);
+                          $container.addClass('fadeInDown');
+                          $container.removeClass('fadeOutUp');
+                          
+                          $container.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',
+                            function (ev) {
+                              $container.removeClass('fadeInDown');
+                            }
+                          );
+                        }
+                      );
+                    });
+                  });
+                </script>
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script src="../../js/site.js"></script>
+  </body>
+</html>

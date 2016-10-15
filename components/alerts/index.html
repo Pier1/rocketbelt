@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Alerts | Slipway Pattern Library</title>
+    <link rel="stylesheet" href="../../css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body class="grid-fluid">
+    <div style="flex-wrap: nowrap;" class="row">
+      <nav style="flex-grow: 0;" class="col xs">
+        <ul class="list-reset">
+          <li><a href="../../base">Base</a>
+            <ul class="list-reset">
+              <li><a href="../../base/breakpoints">Breakpoints</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/color">Color</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/grid">Grid</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/layout">Layout</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/slipsum">Slipsum</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/typography">Typography</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../../components">Components</a>
+            <ul class="list-reset">
+              <li><a href="../../components/alerts">Alerts</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/expanders">Expanders</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/busy-indicators">Busy Indicators</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/buttons">Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/cards">Cards</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/forms">Forms</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/images">Images</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/modals">Modals</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/radio-buttons">Radio Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/tabcordions">Tabcordions</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/tooltips">Tooltips</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../../exposition">Exposition</a>
+            <ul class="list-reset">
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="col xs">
+        <main class="grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <article><h1 id="alerts">Alerts</h1>
+<h2 id="flash-messages">Flash Messages</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="message-flash message-success">Congratulations! This is a success message.</div>
+                    <div class="message-flash message-warning">Caution! This is a warning message.</div>
+                    <div class="message-flash message-error">Look out! This is an error message.</div>
+                    <div class="message-flash message-info">Just FYI. This is an info message.</div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="H1NhYK-kye" class="expander_checkbox"/>
+                    <label for="H1NhYK-kye" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#HJmhKKZJ1e" class="copy-code">Copy</button>
+                        <pre><code id="HJmhKKZJ1e" class="language-html">
+                            &lt;div class=&quot;message-flash message-success&quot;&gt;Congratulations! This is a success message.&lt;/div&gt;
+                            &lt;div class=&quot;message-flash message-warning&quot;&gt;Caution! This is a warning message.&lt;/div&gt;
+                            &lt;div class=&quot;message-flash message-error&quot;&gt;Look out! This is an error message.&lt;/div&gt;
+                            &lt;div class=&quot;message-flash message-info&quot;&gt;Just FYI. This is an info message.&lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="dismissable-flash-message">Dismissable Flash Message</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="message-flash message-success message-dismissable">The action completed successfully.
+                      <div class="message-dismissable_close"></div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="SJI3FK-Jyg" class="expander_checkbox"/>
+                    <label for="SJI3FK-Jyg" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#B1rnKK-Jke" class="copy-code">Copy</button>
+                        <pre><code id="B1rnKK-Jke" class="language-html">
+                            &lt;div class=&quot;message-flash message-success message-dismissable&quot;&gt;The action completed successfully.
+                              &lt;div class=&quot;message-dismissable_close&quot;&gt;&lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <script src="./alerts-dismissable.js"></script>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="HJuhtYWJke" class="expander_checkbox"/>
+                    <label for="HJuhtYWJke" data-collapsed-label="Show JS" data-expanded-label="Hide JS" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#B1vhKtbkyl" class="copy-code">Copy</button>
+                        <pre><code id="B1vhKtbkyl" class="language-javascript">
+                            &lt;script src=&quot;./alerts-dismissable.js&quot;&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="fixed-banner-message">Fixed Banner Message</h2>
+
+                <script>
+                  $(document).ready(function () {
+                    $('.show-fixed-banner').click(function () {
+                      if ($(this).next('.fixed-banner').find('.message-banner').length > 0) {
+                        $(this).next('.visuallyhidden.fixed-banner').toggleClass('visuallyhidden');
+                        $('.message-banner.message-warning.message-dismissable').css('z-index', '99');            
+                      }
+                      else {
+                        $(this).next('.fixed-banner').find('.example').prepend('<div class="message-banner message-warning message-dismissable">Caution! This is a fixed banner message.<div class="message-dismissable_close"></div></div>');
+                      }
+                    })
+                  });
+                </script>
+                <button class="show-fixed-banner button-secondary button-md">Show Fixed Banner</button>
+                <div class="visuallyhidden fixed-banner">
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="message-banner message-warning message-dismissable">Caution! This is a fixed banner message.
+                        <div class="message-dismissable_close"></div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input type="checkbox" id="ry93KFby1e" class="expander_checkbox"/>
+                      <label for="ry93KFby1e" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <button data-clipboard-target="#HyYnFKZJ1x" class="copy-code">Copy</button>
+                          <pre><code id="HyYnFKZJ1x" class="language-html">
+                              &lt;div class=&quot;message-banner message-warning message-dismissable&quot;&gt;Caution! This is a fixed banner message.
+                                &lt;div class=&quot;message-dismissable_close&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script src="../../js/site.js"></script>
+  </body>
+</html>
