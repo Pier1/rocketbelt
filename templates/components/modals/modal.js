@@ -1,1 +1,0 @@
-../../../slipway/components/modals/modal.js
