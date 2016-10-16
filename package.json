@@ -41,7 +41,7 @@
     "postcss-flexibility": "^1.1.0",
     "pump": "^1.0.1",
     "run-sequence": "^1.2.2",
-    "shortid": "^2.2.6",
+    "shorthash": "0.0.2",
     "vinyl-fs": "^2.4.3"
   },
   "dependencies": {

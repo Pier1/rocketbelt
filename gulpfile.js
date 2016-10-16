@@ -23,7 +23,7 @@ var uglify  = require('gulp-uglify');
 
 var jade = require('gulp-jade');
 var md = require('jstransformer')(require('jstransformer-markdown-it'));
-var shortid = require('shortid');
+var shorthash = require('shorthash');
 var _ = require('lodash');
 
 var affected = require('gulp-jade-find-affected');
@@ -195,6 +195,8 @@ gulp.task('views', ['js:site:copy'], function () {
           nav: res,
           colorFamilies: colorFamilies,
           shortid: shortid,
+          shorthash: shorthash,
+          oh: oh,
           _: _
         }
       }))
