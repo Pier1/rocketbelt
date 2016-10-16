@@ -15,12 +15,10 @@ mixin escape
 mixin wrapInExpander(collapsedLabel, expandedLabel, expanded)
   - collapsedLabel = collapsedLabel || 'Show';
   - expandedLabel  = expandedLabel  || 'Hide';
-  - var addition = _.remove(buf.map(jade.escape), function (o) {
-  -   return !o.match(/\s*&lt;\/?script&gt;\s*/gi);
-  - });
   
-  - var id = shorthash.unique(addition);
-  
+  - var seed = objecthash(this);  
+  - var id = shorthash.unique(seed);
+
   .expander
     input(type='checkbox', id=id, class='expander_checkbox', checked=expanded)
     label(for=id,

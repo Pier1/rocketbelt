@@ -24,6 +24,7 @@ var uglify  = require('gulp-uglify');
 var jade = require('gulp-jade');
 var md = require('jstransformer')(require('jstransformer-markdown-it'));
 var shorthash = require('shorthash');
+var objecthash = require('object-hash');
 var _ = require('lodash');
 
 var affected = require('gulp-jade-find-affected');
@@ -194,9 +195,8 @@ gulp.task('views', ['js:site:copy'], function () {
           buildPath: argv.release ? '/slipway' : '',
           nav: res,
           colorFamilies: colorFamilies,
-          shortid: shortid,
           shorthash: shorthash,
-          oh: oh,
+          objecthash: objecthash,
           _: _
         }
       }))
