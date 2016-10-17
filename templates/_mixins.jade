@@ -12,16 +12,15 @@ mixin escape
   - });
   - buf  = oldBuf.concat(addition);
 
-mixin wrapInExpander(collapsedLabel, expandedLabel, expanded)
+mixin wrapInExpander(collapsedLabel, expandedLabel, expanded, id)
   - collapsedLabel = collapsedLabel || 'Show';
   - expandedLabel  = expandedLabel  || 'Hide';
   
-  - var seed = objecthash(this);  
-  - var id = shorthash.unique(seed);
+  - var hashedId = shorthash.unique(id);
 
   .expander
-    input(type='checkbox', id=id, class='expander_checkbox', checked=expanded)
-    label(for=id,
+    input(type='checkbox', id=hashedId, class='expander_checkbox', checked=expanded)
+    label(for=hashedId,
           class='expander_label',
           data-collapsed-label=collapsedLabel,
           data-expanded-label=expandedLabel) #[span.expander_icon]
@@ -40,7 +39,7 @@ mixin exampleWithCode(htmlOrJs, expanded, inverted)
     if (!inverted)
       .example
         block
-    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded)
+    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
       .example-code
         button.copy-code(data-clipboard-target='#' + id) Copy
         pre
