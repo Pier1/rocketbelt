@@ -24,7 +24,6 @@ var uglify  = require('gulp-uglify');
 var jade = require('gulp-jade');
 var md = require('jstransformer')(require('jstransformer-markdown-it'));
 var shorthash = require('shorthash');
-var objecthash = require('object-hash');
 var _ = require('lodash');
 
 var affected = require('gulp-jade-find-affected');
@@ -196,7 +195,6 @@ gulp.task('views', ['js:site:copy'], function () {
           nav: res,
           colorFamilies: colorFamilies,
           shorthash: shorthash,
-          objecthash: objecthash,
           _: _
         }
       }))

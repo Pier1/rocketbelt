@@ -38,7 +38,6 @@
     "merge-stream": "^1.0.0",
     "minimist": "^1.2.0",
     "modularscale-sass": "^2.1.1",
-    "object-hash": "^1.1.4",
     "postcss-flexibility": "^1.1.0",
     "pump": "^1.0.1",
     "run-sequence": "^1.2.2",
