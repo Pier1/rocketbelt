@@ -1,1 +1,1 @@
-../../../slipway/components/images/images-lazyload.js
+../../../rocketbelt/components/images/images-lazyload.js

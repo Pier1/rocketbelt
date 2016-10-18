@@ -40,7 +40,7 @@ var exec = require('child_process').exec;
 var argv = require('minimist')(process.argv.slice(2));
 var buildPath = argv.release ? '.' : './docs';
 var buildCss = buildPath + '/css';
-var slipwayDir = './slipway';
+var rbDir = './rocketbelt';
 var siteDir = './site';
 
 var nav = [];
@@ -61,9 +61,9 @@ gulp.task('server', function () {
 gulp.task('watch', function(){
   global.isWatching = true;
 
-  gulp.watch(['./slipway/**/*.scss', './templates/scss/**/*.scss'], ['styles']);
+  gulp.watch(['./rocketbelt/**/*.scss', './templates/scss/**/*.scss'], ['styles']);
   gulp.watch('./templates/**/*', ['views']);
-  gulp.watch(['./slipway/**/*.js'], ['uglify']);
+  gulp.watch(['./rocketbelt/**/*.js'], ['uglify']);
   gulp.watch(buildPath + '/**/*.html').on('change', debounce(browserSync.reload, 500));
   gulp.watch(buildPath + '/**/*.js').on('change', debounce(browserSync.reload, 500));
 });
@@ -74,7 +74,7 @@ var sizeOptions = {
 };
 
 gulp.task('uglify', function () {
-  return gulp.src(['./slipway/**/*.js', '!./slipway/**/*.min.js'])
+  return gulp.src(['./rocketbelt/**/*.js', '!./rocketbelt/**/*.min.js'])
     .pipe(changed(buildPath))
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.init())
@@ -86,7 +86,7 @@ gulp.task('uglify', function () {
 });
 
 gulp.task('styles', function () {
-  var source = gulp.src(['./slipway/**/*.scss', './templates/scss/**/*.scss'])
+  var source = gulp.src(['./rocketbelt/**/*.scss', './templates/scss/**/*.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(sourcemaps.init())
     .pipe(sass(eyeglass()))
@@ -136,7 +136,7 @@ gulp.task('build', function (done) {
 
 gulp.task('del-assets', function () {
   if (argv.release) {
-    del(['slipway/', 'templates/', 'docs/'])
+    del(['rocketbelt/', 'templates/', 'docs/'])
   }
 });
 
@@ -149,24 +149,24 @@ gulp.task('js:site:copy', function () {
 gulp.task('link', ['link:partials', 'link:js']);
 
 gulp.task('link:partials', function () {
-  return gulp.src('./slipway/**/_*.jade')
+  return gulp.src('./rocketbelt/**/_*.jade')
     .pipe(symlink(function (file) {
       return path.join('./templates', file.relative);
     }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  // return vfs.src('./slipway/**/_*.jade')
+  // return vfs.src('./rocketbelt/**/_*.jade')
   //   .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:js', function () {
-  return gulp.src(['./slipway/**/*.js', './slipway/**/*.json', '!./**/slipsum-cache.json'])
+  return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
     .pipe(symlink(function (file) {
       return path.join('./templates', file.relative);
     }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  // return vfs.src('./slipway/**/*.js', './slipway/**/*.json')
+  // return vfs.src('./rocketbelt/**/*.js', './rocketbelt/**/*.json')
   //   .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
@@ -191,7 +191,7 @@ gulp.task('views', ['js:site:copy'], function () {
         pretty: true,
         md: md,
         locals: {
-          buildPath: argv.release ? '/slipway' : '',
+          buildPath: argv.release ? '/rocketbelt' : '',
           nav: res,
           colorFamilies: colorFamilies,
           shorthash: shorthash,

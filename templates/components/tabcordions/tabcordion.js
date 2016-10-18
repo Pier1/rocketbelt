@@ -1,1 +1,1 @@
-../../../slipway/components/tabcordions/tabcordion.js
+../../../rocketbelt/components/tabcordions/tabcordion.js

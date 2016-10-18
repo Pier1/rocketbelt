@@ -1,1 +1,1 @@
-../../../slipway/base/slipsum/slipsum.js
+../../../rocketbelt/base/slipsum/slipsum.js

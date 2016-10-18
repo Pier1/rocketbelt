@@ -1,1 +1,1 @@
-../../../slipway/components/modals/modal.js
+../../../rocketbelt/components/modals/modal.js

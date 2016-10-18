@@ -1,1 +1,1 @@
-../../../slipway/components/alerts/alerts-dismissable.js
+../../../rocketbelt/components/alerts/alerts-dismissable.js
