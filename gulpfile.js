@@ -136,7 +136,7 @@ gulp.task('build', function (done) {
 
 gulp.task('del-assets', function () {
   if (argv.release) {
-    del(['rocketbelt/', 'templates/', 'docs/'])
+    del(['rocketbelt/', 'templates/', 'docs/']);
   }
 });
 
@@ -171,7 +171,7 @@ gulp.task('link:js', function () {
 });
 
 gulp.task('link:clean', function () {
-  exec('find ./templates -type l -delete', function (err, stdout, stderr) { })
+  exec('find ./templates -type l -delete', function (err, stdout, stderr) { });
 });
 
 gulp.task('views', ['js:site:copy'], function () {
@@ -191,7 +191,7 @@ gulp.task('views', ['js:site:copy'], function () {
         pretty: true,
         md: md,
         locals: {
-          buildPath: argv.release ? '/rocketbelt' : '',
+          buildPath: argv.release ? '' : '',
           nav: res,
           colorFamilies: colorFamilies,
           shorthash: shorthash,
