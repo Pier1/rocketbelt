@@ -59,11 +59,14 @@ mixin buildNav(navObject, rootHref)
     each item in navObject.sort(function (a, b) { return a.name > b.name })
       - var name = toTitleCase(item.name);
       unless item.name.indexOf('index.') > -1
-        li
-          - var newRootHref = rootHref ? rootHref : '';
+        - var newRootHref = rootHref ? rootHref : '';
+        - var shortName = item.name.replace('jade', '');
+        li(ref=shortName)
           if item.type == 'file'
-            a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '')}
+            if rootHref.indexOf('img') == -1 && item.name.indexOf('img') == -1
+              a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '')}
           else
-            a(href=newRootHref + '/' + item.name) #{name}
+            if rootHref.indexOf('img') == -1 && item.name.indexOf('img') == -1
+              a(href=newRootHref + '/' + item.name) #{name}
 
             mixin buildNav(item.children, newRootHref + '/' + item.name)
