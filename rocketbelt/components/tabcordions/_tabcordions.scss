@@ -32,16 +32,16 @@
       }
 
       &:checked + .tab_label {
-        color: color(pier1blue);
+        color: color(brand-blue);
         transition: all 200ms;
       }
 
       &:not(:checked) + .tab_label {
-        color: color(pier1blue);
+        color: color(brand-blue);
         transition: all 200ms;
 
         @include media('>=sm') {
-          color: rgba(color(pier1blue), 0.4);
+          color: rgba(color(brand-blue), 0.4);
         }
       }
 
@@ -77,7 +77,7 @@
       top: 50%;
       right: 1rem;
       position: absolute;
-      background: color(pier1blue);
+      background: color(brand-blue);
       transform: rotate(0deg);
       transition: 250ms all ease-in-out;
       height: 0.75rem;

@@ -1,11 +1,11 @@
 [
   {
-    "familyName": "pier1blue",
+    "familyName": "brand-blue",
     "variants": [
       {
         "variant": "base",
         "lightness": 0,
-        "colorName": "Pier 1 Blue"
+        "colorName": "Brand Blue"
       }
     ]
   },
@@ -25,7 +25,7 @@
       {
         "variant": "base",
         "lightness": 0,
-        "colorName": "Pier 1 Blue"
+        "colorName": "Brand Blue"
       },
       {
         "variant": "darker",

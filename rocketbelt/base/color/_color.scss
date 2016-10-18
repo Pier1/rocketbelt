@@ -1,8 +1,8 @@
-$pier-1-blue: #0a689d;
-$primary: scale-color($pier-1-blue, $lightness: 25%);
+$brand-blue: #0a689d;
+$primary: scale-color($brand-blue, $lightness: 25%);
 
 $base-families: (
-  pier1blue: $pier-1-blue,
+  brand-blue: $brand-blue,
   primary: $primary,
   secondary: adjust-hue($primary, -30),
   accent: adjust-hue($primary, 60),
@@ -10,7 +10,7 @@ $base-families: (
   success: #00b575,
   warning: #ffc300,
   error: #a11622,
-  info: $pier-1-blue,
+  info: $brand-blue,
   black: mix(#a11622, #000, 2%),
   white: mix(#a11622, #fff, 1%)
 );
