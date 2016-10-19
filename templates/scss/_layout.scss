@@ -79,6 +79,7 @@ body { min-height: 100%; }
 
 article > h1 {
   border-bottom: 1px solid color(gray, plus2);
+  margin-bottom: $half-gutter-width;
 }
 
 article > h2  {
