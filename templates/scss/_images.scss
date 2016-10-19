@@ -1,0 +1,12 @@
+.example-lqip .lazyload-wrapper {
+  width: 25rem;
+  margin: 10rem;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
