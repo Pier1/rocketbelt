@@ -1,0 +1,545 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Grid | Rocketbelt Pattern Library</title>
+    <link rel="stylesheet" href="../../css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body class="grid-fluid">
+    <div style="flex-wrap: nowrap;" class="row">
+      <nav style="flex-grow: 0;" class="col xs">
+        <ul class="list-reset">
+          <li><a href="../../base">Base</a>
+            <ul class="list-reset">
+              <li><a href="../../base/breakpoints">Breakpoints</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/color">Color</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/grid">Grid</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/layout">Layout</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/slipsum">Slipsum</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/typography">Typography</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../../components">Components</a>
+            <ul class="list-reset">
+              <li><a href="../../components/expanders">Expanders</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/forms">Forms</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/busy-indicators">Busy Indicators</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/buttons">Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/cards">Cards</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/alerts">Alerts</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/images">Images</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/modals">Modals</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/radio-buttons">Radio Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/tabcordions">Tabcordions</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/tooltips">Tooltips</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../../exposition">Exposition</a>
+            <ul class="list-reset">
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="col xs">
+        <main class="grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <article class="grid-article"><h1 id="grid">Grid</h1>
+<p>Here is some short front matter about the grid.</p>
+<h2 id="simple-syntax">Simple Syntax</h2>
+<p>Get started with as few as four classes.</p>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid">
+                      <div class="row">
+                        <div class="col xs"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="1JFa8c" class="expander_checkbox"/>
+                    <label for="1JFa8c" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#1Me78O" class="copy-code">Copy</button>
+                        <pre><code id="1Me78O" class="language-html">
+                            &lt;div class=&quot;grid&quot;&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="mobile-first-responsive">Mobile-First &amp; Responsive</h2>
+<p>Start with <code>xs</code>, then mix and match responsive modifiers.</p>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row">
+                        <div class="col xs-12 md-2 xl-4"></div>
+                        <div class="col xs-6 md-2 xl-4"></div>
+                        <div class="col xs-6 md-2 xl-4"></div>
+                        <div class="col xs-12 md-2 xl-3"></div>
+                        <div class="col xs-3 md-2 xl-3"></div>
+                        <div class="col xs-3 md-2 xl-3"></div>
+                        <div class="col xs-3 md-4 xl-3"></div>
+                        <div class="col xs-3 md-4 xl-6"></div>
+                        <div class="col xs-12 md-4 xl-6"></div>
+                        <div class="col xs-6 md-6 xl-12"></div>
+                        <div class="col xs-6 md-6 xl-12"></div>
+                        <div class="col xs-12 md-12 xl-12"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="1KvcWp" class="expander_checkbox"/>
+                    <label for="1KvcWp" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#1YtrP7" class="copy-code">Copy</button>
+                        <pre><code id="1YtrP7" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-12 md-2 xl-4&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-6 md-2 xl-4&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-6 md-2 xl-4&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-12 md-2 xl-3&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-3 md-2 xl-3&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-3 md-2 xl-3&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-3 md-4 xl-3&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-3 md-4 xl-6&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-12 md-4 xl-6&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-6 md-6 xl-12&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-6 md-6 xl-12&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-12 md-12 xl-12&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="automatic-widths">Automatic Widths</h2>
+<p>Leave off a column width if it needs to grow or shrink. The grid will size
+it automatically.</p>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row">
+                        <div class="col xs-1"></div>
+                        <div class="col xs"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col xs-3"></div>
+                        <div class="col xs"></div>
+                        <div class="col xs-3"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col xs xl-1"></div>
+                        <div class="col xs xl"></div>
+                        <div class="col xs xl-1"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="1OpUPH" class="expander_checkbox"/>
+                    <label for="1OpUPH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#2vKlgH" class="copy-code">Copy</button>
+                        <pre><code id="2vKlgH" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-1&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-3&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-3&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs xl-1&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs xl&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs xl-1&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="column-offsets">Column Offsets</h2>
+<p>Nudge a column to the right with an <code>-offset</code> class.</p>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row">
+                        <div class="col xs-offset-2 xs-4 md-offset-3 md-6 xl-offset-8 xl-4"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col xs-offset-3 xs-4 md-offset-3 md-6 xl-offset-6 xl-4"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col xs-offset-4 xs-4 md-offset-3 md-6 xl-offset-4 xl-4"></div>
+                      </div>
+                      <div class="row">
+                        <div class="col xs-offset-5 xs-4 md-offset-3 md-6 xl-offset-2 xl-4"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="ZgB5NH" class="expander_checkbox"/>
+                    <label for="ZgB5NH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Z1fBecC" class="copy-code">Copy</button>
+                        <pre><code id="Z1fBecC" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-offset-2 xs-4 md-offset-3 md-6 xl-offset-8 xl-4&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-offset-3 xs-4 md-offset-3 md-6 xl-offset-6 xl-4&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-offset-4 xs-4 md-offset-3 md-6 xl-offset-4 xl-4&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-offset-5 xs-4 md-offset-3 md-6 xl-offset-2 xl-4&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="nesting">Nesting</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row">
+                        <div class="col xs-8">
+                          <div class="row">
+                            <div class="col xs"></div>
+                          </div>
+                        </div>
+                        <div class="col xs-4"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="Zi691L" class="expander_checkbox"/>
+                    <label for="Zi691L" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Z1OVNdG" class="copy-code">Copy</button>
+                        <pre><code id="Z1OVNdG" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-8&quot;&gt;
+                                  &lt;div class=&quot;row&quot;&gt;
+                                    &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs-4&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="alignment-classes">Alignment Classes</h2>
+<h3 id="horizontal">Horizontal</h3>
+<h4 id="-start-center-end-"><code>-start</code>, <code>-center</code>, <code>-end</code></h4>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row xs-start md-center xl-end">
+                        <div class="col xs-4"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="3Tl9J" class="expander_checkbox"/>
+                    <label for="3Tl9J" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#8Lz3b" class="copy-code">Copy</button>
+                        <pre><code id="8Lz3b" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row xs-start md-center xl-end&quot;&gt;
+                                &lt;div class=&quot;col xs-4&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h3 id="vertical">Vertical</h3>
+<h4 id="-top-middle-bottom-"><code>-top</code>, <code>-middle</code>, <code>-bottom</code></h4>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row xs-top md-middle xl-bottom">
+                        <div class="col xs-6 example-col-tall"></div>
+                        <div class="col xs-6"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="Z1VcBXt" class="expander_checkbox"/>
+                    <label for="Z1VcBXt" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#ZVIHRl" class="copy-code">Copy</button>
+                        <pre><code id="ZVIHRl" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row xs-top md-middle xl-bottom&quot;&gt;
+                                &lt;div class=&quot;col xs-6 example-col-tall&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-6&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="column-distribution">Column Distribution</h2>
+<h3 id="-space-between-"><code>space-between</code></h3>
+<p>Space columns evenly across the row, with no space at the beginning or end
+of the row.</p>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row xs-between">
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="1OetgO" class="expander_checkbox"/>
+                    <label for="1OetgO" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#2t2eKb" class="copy-code">Copy</button>
+                        <pre><code id="2t2eKb" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row xs-between&quot;&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h3 id="-space-around-"><code>space-around</code></h3>
+<p>Space columns evenly across the row, including space at the beginning &amp; end
+of the row.</p>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row xs-around">
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="ZgKLio" class="expander_checkbox"/>
+                    <label for="ZgKLio" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Z1bv08T" class="copy-code">Copy</button>
+                        <pre><code id="Z1bv08T" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row xs-around&quot;&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="column-order">Column Order</h2>
+<h3 id="-first-last-"><code>first</code> &amp; <code>last</code></h3>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row">
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2 xs-first"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="ZfiT49" class="expander_checkbox"/>
+                    <label for="ZfiT49" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Z1z2S9p" class="copy-code">Copy</button>
+                        <pre><code id="Z1z2S9p" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2 xs-first&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row">
+                        <div class="col xs-2 xs-last"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                        <div class="col xs-2"></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="4I9c5" class="expander_checkbox"/>
+                    <label for="4I9c5" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#E5gzu" class="copy-code">Copy</button>
+                        <pre><code id="E5gzu" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row&quot;&gt;
+                                &lt;div class=&quot;col xs-2 xs-last&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h3 id="-reverse-"><code>reverse</code></h3>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row reverse">
+                        <div class="col xs-2">1</div>
+                        <div class="col xs-2">2</div>
+                        <div class="col xs-2">3</div>
+                        <div class="col xs-2">4</div>
+                        <div class="col xs-2">5</div>
+                        <div class="col xs-2">6</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="ZjWvKf" class="expander_checkbox"/>
+                    <label for="ZjWvKf" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Z13Ysl5" class="copy-code">Copy</button>
+                        <pre><code id="Z13Ysl5" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row reverse&quot;&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;1&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;2&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;3&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;4&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;5&lt;/div&gt;
+                                &lt;div class=&quot;col xs-2&quot;&gt;6&lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script src="../../js/site.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
