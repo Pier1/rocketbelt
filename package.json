@@ -13,7 +13,7 @@
   "repository" : {
     "type": "git",
     "url" : "git@github.com:Pier1/rocketbelt.git"
-  }
+  },
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "cssnano": "^3.7.1",
