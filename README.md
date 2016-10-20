@@ -1,10 +1,18 @@
 Rocketbelt
 ==========
-[Rocketbelt](http://rocketbelt.io) is a UX-focused, responsive, and mobile-first pattern library collaboratively assembled at Pier 1 Imports.
+Rocketbelt is a UX-focused, responsive, and mobile-first pattern library collaboratively assembled at Pier 1 Imports.
+
+[rocketbelt.io](http://rocketbelt.io) | [Rocketbelt on GitHub](https://github.com/pier1/rocketbelt)
 
 Introduction
 ------------
-Rocketbelt is a pattern library that addresses recurring design problems across the ecommerce landscape. Because it was developed with ecommerce in mind
+Rocketbelt is a pattern library that addresses recurring design problems across the ecommerce landscape.
+
+It strives to be a comprehensive, living document that serves the __clarity__ of design decisions. It facilitates a __shared vocabulary__ and therefore a __shared understanding__ of user interfaces.
+
+The pattern library guarantees consistency in the online experience—critical since the experience is the brand.
+
+Rocketbelt ensures UI components are reusable, efficient, and easily maintained. It accelerates UI development by providing building blocks to quickly build potentially complicated interactions. The pattern library allows rapid prototyping to also be high fidelity.
 
 Features
 --------
@@ -26,7 +34,7 @@ Tests
 
 Contributing
 ------------
-Rocketbelt is a living document and your contributions are valued—please submit [GitHub issues](https://github.com/pier1/rocketbelt/issues) and [pull requests](https://github.com/pier1/rocketbelt/pulls).
+Rocketbelt is a collaborative, living document and your contributions are valued—please submit [GitHub issues](https://github.com/pier1/rocketbelt/issues) and [pull requests](https://github.com/pier1/rocketbelt/pulls).
 
 See Also
 --------
@@ -34,22 +42,3 @@ See Also
 * [Lightning Design System](https://www.lightningdesignsystem.com/)
 * [Mailchimp Pattern Library](https://ux.mailchimp.com)
 * [Draft U.S. Web Design Standards](https://standards.usa.gov/)
-
-
-<!-- Dev, Creative, Content Production, Copyediting -->
-
-<!--
-Solution that addresses recurring design problems
-Strive to be comprehensive, well-documented
-Living document
-Out in the open, collaborative
-Clarity of design decisions
-Shared Vocabulary, Shared understanding - shared UI language - communication issues
-Reusability/Efficiency
-Maintainability
-Consistency in experience - the experience is the brand
-Rapid UIs - both design & dev - building blocks to quickly build potentially complicated interactions
-Rapid prototyping
-Reduced page weight
-Cross-device testing
--->
