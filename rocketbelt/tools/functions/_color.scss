@@ -12,7 +12,7 @@
     @if (not $has-key-family) {
       @error "Color family `#{$family}` does not exist.";
     }
-    else {
+    @else {
       @error "Color variant `#{$variant}` does not exist in family `#{$family}`.";
     }
   }
