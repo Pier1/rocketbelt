@@ -27,14 +27,14 @@ mixin wrapInExpander(collapsedLabel, expandedLabel, expanded, id)
     .expander_content
       block
 
-mixin exampleWithCode(htmlOrJs, expanded, inverted)
-  - htmlOrJs = htmlOrJs || 'html';
+mixin exampleWithCode(labelText, expanded, inverted)
+  - labelText = labelText || 'html';
   - inverted = inverted || false;
-  - if (htmlOrJs === 'js') htmlOrJs = 'javascript';
+  - if (labelText === 'js') labelText = 'javascript';
   - var seed = escape(block);
   - var id   = shorthash.unique(seed);
   
-  - var expanderAppend = htmlOrJs === 'html' ? 'HTML' : 'JS'
+  - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
   .exampleWithCode
     if (!inverted)
       .example
@@ -43,7 +43,7 @@ mixin exampleWithCode(htmlOrJs, expanded, inverted)
       .example-code
         button.copy-code(data-clipboard-target='#' + id) Copy
         pre
-          code(id=id, class='language-' + htmlOrJs.toLowerCase())
+          code(id=id, class='language-' + labelText.toLowerCase())
             +escape
               block
     if (inverted)
