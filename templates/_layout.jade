@@ -12,11 +12,11 @@ html
       link(rel='stylesheet', href=prepend + '/css/site.min.css')
     script(src='https://code.jquery.com/jquery-2.2.4.min.js')
   body.grid-fluid
-    .row(style='flex-wrap: nowrap;')
-      nav.col.xs(style='flex-grow: 0;')
+    #docs-wrapper.row(style='flex-wrap: nowrap;')
+      nav#docs-leftnav.col.xs-2(style='flex-grow: 0;')
         block sidebar
           +buildNav(nav, prepend)
-      .col.xs
+      #docs-content.pad-5.col.xs
         block main
           main.grid-fluid.no-margin
             .row
