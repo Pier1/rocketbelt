@@ -1,0 +1,28 @@
+.tag {
+  padding: ms(-8);
+  margin: ms(-5) 0;
+  
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  
+  text-transform: uppercase;
+  font-family: font-family(sans);
+  background: color(gray,plus3);
+  color: color(black);
+}
+
+.tag.tag-subtle {
+  border:1px solid color(gray,plus3);
+  background: color(white);
+}
+
+.tag.tag-success {
+  background: color(success);
+  color: color(white);
+}
+
+.tag.tag-sale {
+  background: color(error);
+  color: color(white);
+}
