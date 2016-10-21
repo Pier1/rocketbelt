@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Cards | Rocketbelt Pattern Library</title>
+    <link rel="stylesheet" href="../../css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body class="grid-fluid">
+    <div style="flex-wrap: nowrap;" class="row">
+      <nav style="flex-grow: 0;" class="col xs">
+        <ul class="list-reset">
+          <li><a href="../../base">Base</a>
+            <ul class="list-reset">
+              <li><a href="../../base/breakpoints">Breakpoints</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/color">Color</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/grid">Grid</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/layout">Layout</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/slipsum">Slipsum</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../base/typography">Typography</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../../components">Components</a>
+            <ul class="list-reset">
+              <li><a href="../../components/forms">Forms</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/alerts">Alerts</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/busy-indicators">Busy Indicators</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/buttons">Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/cards">Cards</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/expanders">Expanders</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/images">Images</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/modals">Modals</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/radio-buttons">Radio Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/tabcordions">Tabcordions</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li><a href="../../components/tooltips">Tooltips</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li><a href="../../exposition">Exposition</a>
+            <ul class="list-reset">
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div class="col xs">
+        <main class="grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <article><h1 id="cards">Cards</h1>
+<h2 id="basic-cards">Basic Cards</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row xs-center font-weight-light">
+                        <div class="col xs-3">
+                          <div class="card">
+                            Cards are building blocks that lead to more detailed information.
+                            Their use, size, and composition can vary greatly.
+                          </div>
+                        </div>
+                        <div class="col xs-3">
+                          <div class="card">Cards should be organized using <span class="font-monospace">grid</span> classes, and can contain many types of content.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="5EoSm" class="expander_checkbox"/>
+                    <label for="5EoSm" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#RWR5Q" class="copy-code">Copy</button>
+                        <pre><code id="RWR5Q" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row xs-center font-weight-light&quot;&gt;
+                                &lt;div class=&quot;col xs-3&quot;&gt;
+                                  &lt;div class=&quot;card&quot;&gt;
+                                    Cards are building blocks that lead to more detailed information.
+                                    Their use, size, and composition can vary greatly.
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs-3&quot;&gt;
+                                  &lt;div class=&quot;card&quot;&gt;Cards should be organized using &lt;span class=&quot;font-monospace&quot;&gt;grid&lt;/span&gt; classes, and can contain many types of content.&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="action-cards">Action Cards</h2>
+
+                <div class="grid-fluid">
+                  <div class="row xs-center">
+                    <div class="col xs-12 lg-4">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <div class="card card-action z-depth-2">
+                            <div class="card-content">
+                              <div class="card-title">Action Cards</div>
+                              <div class="card-body">
+                                More structured, with a title and one or more 
+                                actions a user can take.
+                              </div>
+                            </div>
+                            <div class="card-actions">
+                              <button class="button button-text">Button 1</button>
+                              <button class="button button-text">Button 2</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="expander">
+                          <input type="checkbox" id="ZhyllJ" class="expander_checkbox"/>
+                          <label for="ZhyllJ" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button data-clipboard-target="#Z28XL9O" class="copy-code">Copy</button>
+                              <pre><code id="Z28XL9O" class="language-html">
+                                  &lt;div class=&quot;card card-action z-depth-2&quot;&gt;
+                                    &lt;div class=&quot;card-content&quot;&gt;
+                                      &lt;div class=&quot;card-title&quot;&gt;Action Cards&lt;/div&gt;
+                                      &lt;div class=&quot;card-body&quot;&gt;
+                                        More structured, with a title and one or more 
+                                        actions a user can take.
+                                      &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;card-actions&quot;&gt;
+                                      &lt;button class=&quot;button button-text&quot;&gt;Button 1&lt;/button&gt;
+                                      &lt;button class=&quot;button button-text&quot;&gt;Button 2&lt;/button&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="-z-depth-"><code>z-depth</code></h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row font-weight-light">
+                        <div class="col xs">
+                          <div class="card z-depth-0">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-0</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card z-depth-1">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-1</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card z-depth-2">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-2</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card z-depth-3">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-3</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card z-depth-4">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-4</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card z-depth-5">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-5</span>.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="7lQ1y" class="expander_checkbox"/>
+                    <label for="7lQ1y" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#kdVPf" class="copy-code">Copy</button>
+                        <pre><code id="kdVPf" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row font-weight-light&quot;&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card z-depth-0&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-0&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card z-depth-1&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-1&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card z-depth-2&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-2&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card z-depth-3&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-3&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card z-depth-4&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-4&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card z-depth-5&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-5&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="hover-cards">Hover Cards</h2>
+<p>Combine <code>z-depth</code> classes with <code>hover</code> for engaging feedback.</p>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="grid-fluid">
+                      <div class="row font-weight-light">
+                        <div class="col xs">
+                          <div class="card hover z-depth-0">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-0</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card hover z-depth-1">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-1</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card hover z-depth-2">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-2</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card hover z-depth-3">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-3</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card hover z-depth-4">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-4</span>.</div>
+                        </div>
+                        <div class="col xs">
+                          <div class="card hover z-depth-5">Cards can be placed at different depths to indicate their position relative to other content. This is <span class="font-monospace">z-depth-5</span>.</div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="1Oqp8Y" class="expander_checkbox"/>
+                    <label for="1Oqp8Y" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#2vObUd" class="copy-code">Copy</button>
+                        <pre><code id="2vObUd" class="language-html">
+                            &lt;div class=&quot;grid-fluid&quot;&gt;
+                              &lt;div class=&quot;row font-weight-light&quot;&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card hover z-depth-0&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-0&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card hover z-depth-1&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-1&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card hover z-depth-2&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-2&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card hover z-depth-3&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-3&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card hover z-depth-4&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-4&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;col xs&quot;&gt;
+                                  &lt;div class=&quot;card hover z-depth-5&quot;&gt;Cards can be placed at different depths to indicate their position relative to other content. This is &lt;span class=&quot;font-monospace&quot;&gt;z-depth-5&lt;/span&gt;.&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="panel-image-cards">Panel (Image) Cards</h2>
+
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <div class="card card-image z-depth-1">
+                            <div data-src-lg="https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/ODR09/ODR09_1.jpg?sw=400&amp;sh=400" class="lazyload-wrapper"><img src="https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/ODR09/ODR09_1.jpg?sw=10&amp;sh=10" class="lazyload-small">
+                              <div style="padding-bottom: 100%" class="lazyload-pad"></div>
+                            </div>
+                            <div class="card-content">
+                              <div class="card-title">Panel Cards</div>
+                              <div class="card-body">Combine an image with card content.</div>
+                            </div>
+                            <div class="card-actions">
+                              <button class="button button-text">Button 1</button>
+                              <button class="button button-text">Button 2</button>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="expander">
+                          <input type="checkbox" id="8axq4" class="expander_checkbox"/>
+                          <label for="8axq4" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button data-clipboard-target="#wkJcf" class="copy-code">Copy</button>
+                              <pre><code id="wkJcf" class="language-html">
+                                  &lt;div class=&quot;card card-image z-depth-1&quot;&gt;
+                                    &lt;div data-src-lg=&quot;https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/ODR09/ODR09_1.jpg?sw=400&amp;amp;sh=400&quot; class=&quot;lazyload-wrapper&quot;&gt;&lt;img src=&quot;https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/ODR09/ODR09_1.jpg?sw=10&amp;amp;sh=10&quot; class=&quot;lazyload-small&quot;&gt;
+                                      &lt;div style=&quot;padding-bottom: 100%&quot; class=&quot;lazyload-pad&quot;&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;card-content&quot;&gt;
+                                      &lt;div class=&quot;card-title&quot;&gt;Panel Cards&lt;/div&gt;
+                                      &lt;div class=&quot;card-body&quot;&gt;Combine an image with card content.&lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;card-actions&quot;&gt;
+                                      &lt;button class=&quot;button button-text&quot;&gt;Button 1&lt;/button&gt;
+                                      &lt;button class=&quot;button button-text&quot;&gt;Button 2&lt;/button&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js"></script>
+                <script src="../images/images-lazyload.js"></script><h2 id="thumbnail-cards">Thumbnail Cards</h2>
+<h2 id="expandable-thumbnail-cards">Expandable Thumbnail Cards</h2>
+<h2 id="reveal">Reveal</h2>
+<h2 id="heights">Heights</h2>
+
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script src="../../js/site.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
