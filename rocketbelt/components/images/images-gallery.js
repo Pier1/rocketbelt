@@ -13,7 +13,8 @@
         slidesToScroll: 1,
         arrows: true,
         fade: false,
-        asNavFor: '#gallery1_thumbs'
+        infinite: false,
+        asNavFor: '#gallery1_thumbs',
       });
 
       $('#gallery1_thumbs').slick({
@@ -22,6 +23,7 @@
         slidesToScroll: 1,
         asNavFor: '#gallery1_main-image',
         dots: false,
+        infinite: false,
         centerMode: false,
         focusOnSelect: true,
         swipeToSlide: true

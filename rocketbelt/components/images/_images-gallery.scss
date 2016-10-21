@@ -103,16 +103,16 @@
 $slick-font-path: "./fonts/" !default;
 $slick-font-family: "slick" !default;
 $slick-loader-path: "./" !default;
-$slick-arrow-color: white !default;
-$slick-dot-color: black !default;
+$slick-arrow-color: color(white) !default;
+$slick-dot-color: color(black) !default;
 $slick-dot-color-active: $slick-dot-color !default;
-$slick-prev-character: "\2190" !default;
-$slick-next-character: "\2192" !default;
+$slick-prev-character: "\276e" !default;
+$slick-next-character: "\276f" !default;
 $slick-dot-character: "\2022" !default;
 $slick-dot-size: ms(4) !default;
 $slick-opacity-default: 0.75 !default;
 $slick-opacity-on-hover: 1 !default;
-$slick-opacity-not-active: 0.25 !default;
+$slick-opacity-not-active: 0.2 !default;
 
 @function slick-image-url($url) {
   @if function-exists(image-url) {
@@ -136,7 +136,7 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-list {
   .slick-loading & {
-    background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
+    // background: #fff slick-image-url("ajax-loader.gif") center center no-repeat;
   }
 }
 
@@ -144,9 +144,14 @@ $slick-opacity-not-active: 0.25 !default;
 
 .slick-prev,
 .slick-next {
+  position: absolute;
+  z-index: 1;
+  // padding: ms(-5) ms(-1);
+  height: ms(9);
+  width: ms(9);
   font-size: 0px;
+  background: rgba(color(black), 0.3);
   cursor: pointer;
-  padding: 0;
   border: none;
   outline: none;
 
@@ -160,13 +165,15 @@ $slick-opacity-not-active: 0.25 !default;
 
   &.slick-disabled:before {
     opacity: $slick-opacity-not-active;
+    transition: opacity 200ms linear;
   }
 
   &:before {
-    font-size: ms(2);
+    font-size: ms(4);
     line-height: 1;
     color: $slick-arrow-color;
     opacity: $slick-opacity-default;
+    transition: opacity 200ms linear;
 
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
@@ -174,6 +181,8 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-prev {
+  left: 0;
+
   [dir="rtl"] & {
     left: auto;
   }
@@ -188,6 +197,8 @@ $slick-opacity-not-active: 0.25 !default;
 }
 
 .slick-next {
+  right: 0;
+
   [dir="rtl"] & {
     right: auto;
   }
