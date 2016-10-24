@@ -1,4 +1,4 @@
-@for $i from 0 through 5 {
+@for $i from 0 through 3 {
   .z-depth-#{$i} {
     @include z-depth($i);
   }
