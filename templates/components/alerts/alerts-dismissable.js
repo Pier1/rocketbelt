@@ -1,1 +1,1 @@
-../../../rocketbelt/components/alerts/alerts-dismissable.js
+/Users/kmarnett/Dropbox/dev/git-repos/p1/slipway/rocketbelt/components/alerts/alerts-dismissable.js

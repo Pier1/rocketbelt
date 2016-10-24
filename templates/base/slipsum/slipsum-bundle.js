@@ -1,1 +1,1 @@
-../../../rocketbelt/base/slipsum/slipsum-bundle.js
+/Users/kmarnett/Dropbox/dev/git-repos/p1/slipway/rocketbelt/base/slipsum/slipsum-bundle.js

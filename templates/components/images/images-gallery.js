@@ -1,1 +1,1 @@
-../../../rocketbelt/components/images/images-gallery.js
+/Users/kmarnett/Dropbox/dev/git-repos/p1/slipway/rocketbelt/components/images/images-gallery.js
