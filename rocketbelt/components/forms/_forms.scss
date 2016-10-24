@@ -42,7 +42,7 @@ select[disabled] {
 }
 
 select {
-  $fill: str-replace(quote(color(gray, darkest)), '#', '%23');
+  $fill: str-replace(quote(color(black)), '#', '%23');
   appearance: none;
   background: url('data:image/svg+xml;utf8,
                 <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg">

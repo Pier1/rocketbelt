@@ -1,6 +1,6 @@
 [
   {
-    "familyName": "brand-blue",
+    "familyName": "brand",
     "variants": [
       {
         "variant": "base",
@@ -20,12 +20,12 @@
       {
         "variant": "lighter",
         "lightness": 1,
-        "colorName": "Curious Blue"
+        "colorName": "Malibu"
       },
       {
         "variant": "base",
         "lightness": 0,
-        "colorName": "Brand Blue"
+        "colorName": "Curious Blue"
       },
       {
         "variant": "darker",
@@ -100,6 +100,76 @@
     ]
   },
   {
+    "familyName": "success",
+    "variants": [
+      {
+        "variant": "lighter",
+        "lightness": 2,
+        "colorName": "Snowy Mint"
+      },
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Chateau Green"
+      },
+      {
+        "variant": "darker",
+        "lightness": -2,
+        "colorName": "Parsley"
+      }
+    ]
+  },
+  {
+    "familyName": "warning",
+    "variants": [
+      {
+        "variant": "lighter",
+        "lightness": 2,
+        "colorName": "Linen"
+      },
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Jaffa"
+      },
+      {
+        "variant": "darker",
+        "lightness": -2,
+        "colorName": "Copper Canyon"
+      }
+    ]
+  },
+  {
+    "familyName": "error",
+    "variants": [
+      {
+        "variant": "lighter",
+        "lightness": 2,
+        "colorName": "Pastel Pink"
+      },
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Carmine"
+      },
+      {
+        "variant": "darker",
+        "lightness": -2,
+        "colorName": "Maroon Oak"
+      }
+    ]
+  },
+  {
+    "familyName": "black",
+    "variants": [
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Black"
+      }
+    ]
+  },
+  {
     "familyName": "gray",
     "variants": [
       {
@@ -136,141 +206,6 @@
         "variant": "minus2",
         "lightness": -2,
         "colorName": "Fuscous Gray"
-      },
-      {
-        "variant": "minus3",
-        "lightness": -3,
-        "colorName": "Woodsmoke"
-      }
-    ]
-  },
-  {
-    "familyName": "success",
-    "variants": [
-      {
-        "variant": "lightest",
-        "lightness": 2,
-        "colorName": "Snowy Mint"
-      },
-      {
-        "variant": "lighter",
-        "lightness": 1,
-        "colorName": "Mint Green"
-      },
-      {
-        "variant": "base",
-        "lightness": 0,
-        "colorName": "Chateau Green"
-      },
-      {
-        "variant": "darker",
-        "lightness": -1,
-        "colorName": "Salem Green"
-      },
-      {
-        "variant": "darkest",
-        "lightness": -2,
-        "colorName": "Parsley"
-      }
-    ]
-  },
-  {
-    "familyName": "warning",
-    "variants": [
-      {
-        "variant": "lightest",
-        "lightness": 2,
-        "colorName": "Linen"
-      },
-      {
-        "variant": "lighter",
-        "lightness": 1,
-        "colorName": "Potpourri"
-      },
-      {
-        "variant": "base",
-        "lightness": 0,
-        "colorName": "Jaffa"
-      },
-      {
-        "variant": "darker",
-        "lightness": -1,
-        "colorName": "Hot Cinnamon"
-      },
-      {
-        "variant": "darkest",
-        "lightness": -2,
-        "colorName": "Copper Canyon"
-      }
-    ]
-  },
-  {
-    "familyName": "info",
-    "variants": [
-      {
-        "variant": "lightest",
-        "lightness": 2,
-        "colorName": "Sail Blue"
-      },
-      {
-        "variant": "lighter",
-        "lightness": 1,
-        "colorName": "Curious Blue"
-      },
-      {
-        "variant": "base",
-        "lightness": 0,
-        "colorName": "Pier 1 Blue"
-      },
-      {
-        "variant": "darker",
-        "lightness": -1,
-        "colorName": "Chambray"
-      },
-      {
-        "variant": "darkest",
-        "lightness": -2,
-        "colorName": "Astronaut Blue"
-      }
-    ]
-  },
-  {
-    "familyName": "error",
-    "variants": [
-      {
-        "variant": "lightest",
-        "lightness": 2,
-        "colorName": "Pastel Pink"
-      },
-      {
-        "variant": "lighter",
-        "lightness": 1,
-        "colorName": "Brick Red"
-      },
-      {
-        "variant": "base",
-        "lightness": 0,
-        "colorName": "Carmine"
-      },
-      {
-        "variant": "darker",
-        "lightness": -1,
-        "colorName": "Venetian Red"
-      },
-      {
-        "variant": "darkest",
-        "lightness": -2,
-        "colorName": "Maroon Oak"
-      }
-    ]
-  },
-  {
-    "familyName": "black",
-    "variants": [
-      {
-        "variant": "base",
-        "lightness": 0,
-        "colorName": "Black"
       }
     ]
   },
