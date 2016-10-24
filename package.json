@@ -49,7 +49,7 @@
     "pump": "^1.0.1",
     "run-sequence": "^1.2.2",
     "shorthash": "0.0.2",
-    "vinyl-fs": "^2.4.3"
+    "vinyl-fs": "^2.4.4"
   },
   "dependencies": {
     "clipboard": "^1.5.12"

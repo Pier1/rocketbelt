@@ -157,25 +157,25 @@ gulp.task('img:site:copy', function () {
 gulp.task('link', ['link:partials', 'link:js']);
 
 gulp.task('link:partials', function () {
-  return gulp.src('./rocketbelt/**/_*.jade')
-    .pipe(symlink(function (file) {
-      return path.join('./templates', file.relative);
-    }, { force: true, log: false }));
+  // return gulp.src('./rocketbelt/**/_*.jade')
+  //   .pipe(symlink(function (file) {
+  //     return path.join('./templates', file.relative);
+  //   }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  // return vfs.src('./rocketbelt/**/_*.jade')
-  //   .pipe(vfs.symlink('./templates', { relative: true }));
+  return vfs.src('./rocketbelt/**/_*.jade')
+    .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:js', function () {
-  return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
-    .pipe(symlink(function (file) {
-      return path.join('./templates', file.relative);
-    }, { force: true, log: false }));
+  // return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
+  //   .pipe(symlink(function (file) {
+  //     return path.join('./templates', file.relative);
+  //   }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  // return vfs.src('./rocketbelt/**/*.js', './rocketbelt/**/*.json')
-  //   .pipe(vfs.symlink('./templates', { relative: true }));
+  return vfs.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
+    .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:clean', function () {
