@@ -1,4 +1,4 @@
-@function padding($scale, $base-value: '') {
+@function margin($scale, $base-value: '') {
   @if ($base-value == '') {
     @return ms($scale);
   }
