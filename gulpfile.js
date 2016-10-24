@@ -38,7 +38,8 @@ var path = require('path');
 var exec = require('child_process').exec;
 
 var argv = require('minimist')(process.argv.slice(2));
-var buildPath = argv.release ? '.' : './docs';
+// var buildPath = './docs';
+var buildPath = './dist';
 var buildCss = buildPath + '/css';
 var rbDir = './rocketbelt';
 var siteDir = './site';
@@ -146,6 +147,12 @@ gulp.task('js:site:copy', function () {
     .pipe(vfs.dest(buildPath, { overwrite: true }));
 });
 
+gulp.task('img:site:copy', function () {
+  vfs.src(['./templates/**/img/*.*'])
+    .pipe(changed(buildPath))
+    .pipe(vfs.dest(buildPath, { overwrite: true }));
+});
+
 gulp.task('link', ['link:partials', 'link:js']);
 
 gulp.task('link:partials', function () {
@@ -174,7 +181,7 @@ gulp.task('link:clean', function () {
   exec('find ./templates -type l -delete', function (err, stdout, stderr) { });
 });
 
-gulp.task('views', ['js:site:copy'], function () {
+gulp.task('views', ['js:site:copy', 'img:site:copy'], function () {
   var dir = './templates';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
@@ -213,7 +220,9 @@ var directoryTreeToObj = function(dir, done) {
       return done(err);
 
     files = files.filter(function (file) {
-      if (fs.lstatSync(dir + '/' + file).isDirectory()) { if (file === 'js' || file === 'scss') return false; }
+      if (fs.lstatSync(dir + '/' + file).isDirectory()) { 
+        if (file === 'js' || file === 'scss') return false; 
+      }
       return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });
 
@@ -225,24 +234,26 @@ var directoryTreeToObj = function(dir, done) {
     files.forEach(function(file) {
       file = path.resolve(dir, file);
       fs.stat(file, function(err, stat) {
-        if (stat && stat.isDirectory()) {
-          directoryTreeToObj(file, function(err, res) {
+        if ( true /* file.indexOf('/img') === -1  */) {
+          if (stat && stat.isDirectory() ) {
+            directoryTreeToObj(file, function(err, res) {
+              results.push({
+                name: path.basename(file),
+                type: 'folder',
+                children: res
+              });
+              if (!--pending)
+                done(null, results);
+            });
+          }
+          else {
             results.push({
-              name: path.basename(file),
-              type: 'folder',
-              children: res
+              type: 'file',
+              name: path.basename(file)
             });
             if (!--pending)
               done(null, results);
-          });
-        }
-        else {
-          results.push({
-            type: 'file',
-            name: path.basename(file)
-          });
-          if (!--pending)
-            done(null, results);
+          }
         }
       });
     });
