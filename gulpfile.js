@@ -37,6 +37,7 @@ var symlink = require('gulp-symlink');
 var path = require('path');
 var exec = require('child_process').exec;
 
+var sitemap = require('gulp-sitemap');
 var argv = require('minimist')(process.argv.slice(2));
 // var buildPath = './docs';
 var buildPath = './dist';
@@ -205,6 +206,9 @@ gulp.task('views', ['js:site:copy', 'img:site:copy'], function () {
           _: _
         }
       }))
+      .pipe(sitemap({
+            siteUrl: 'http://rocketbelt.io'
+        }))
       .pipe(gulp.dest(buildPath))
     ;
   });
@@ -220,8 +224,8 @@ var directoryTreeToObj = function(dir, done) {
       return done(err);
 
     files = files.filter(function (file) {
-      if (fs.lstatSync(dir + '/' + file).isDirectory()) { 
-        if (file === 'js' || file === 'scss') return false; 
+      if (fs.lstatSync(dir + '/' + file).isDirectory()) {
+        if (file === 'js' || file === 'scss') return false;
       }
       return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });
