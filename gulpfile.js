@@ -129,10 +129,10 @@ gulp.task('clean', ['link:clean'], function () {
 
 gulp.task('build', function (done) {
   if (!argv.release) {
-    runSequence('uglify', 'link', ['styles', 'views'], done);
+    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', done);
   }
   else {
-    runSequence('uglify', 'link', ['styles', 'views'], 'del-assets', done);
+    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', 'del-assets', done);
   }
 });
 
@@ -206,12 +206,16 @@ gulp.task('views', ['js:site:copy', 'img:site:copy'], function () {
           _: _
         }
       }))
-      .pipe(sitemap({
-            siteUrl: 'http://rocketbelt.io'
-        }))
       .pipe(gulp.dest(buildPath))
     ;
   });
+});
+
+gulp.task('sitemap', function () {
+  return gulp.src(buildPath + '**/*.html', { read: false })
+    .pipe(sitemap({ siteUrl: 'http://rocketbelt.io' }))
+    .pipe(gulp.dest(buildPath))
+  ;
 });
 
 var directoryTreeToObj = function(dir, done) {
