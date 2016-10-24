@@ -15,9 +15,8 @@
   $(document).ready(function(){
   	var pageTitle = document.title.toLowerCase()
               .replace(' | rocketbelt pattern library', '')
-              .replace(/\s+/g,'-')
-              .replace(/\&/g,"and");
-  	console.log(pageTitle)
+              .replace(/\ & /g," ")
+              .replace(/\s+/g,'-');
     $('li.isActive', '#docs-leftnav').removeClass('isActive');
   	$('#docs-leftnav').find('li[ref="' + pageTitle + '"]').addClass('isActive');
   })
