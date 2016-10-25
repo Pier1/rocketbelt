@@ -1,0 +1,22 @@
+form
+  .form-group.inline.required-suppressed
+    input#inline(type='password')
+    label(for='inline') Password
+    .messages
+      small.helper-text At least 8 characters
+  .form-group.inline
+    input#inline(type='password', required=true)
+    label(for='inline') Password
+  .form-group.inline.required-suppressed
+    input.invalid#inline-invalid(type='password')
+    label(for='inline-invalid') Password
+    .messages
+      small.validation-message Please enter a valid password
+      small.helper-text At least 8 characters
+  .form-group.inline.required-suppressed
+    select#inline-select
+      option(value='', disabled=true, selected=true, hidden=true) Select a collection
+      option Biblioteca
+      option Marcel
+      option Pierce
+    label(for='inline-select') Collection
