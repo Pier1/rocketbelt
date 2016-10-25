@@ -1473,17 +1473,17 @@ h4 small {
     display: inline-block; }
 
 a {
-  color: #0a689d;
-  transition: color 200ms linear; }
+  color: #0f9dee;
+  transition: color 100ms linear; }
   a:hover {
-    color: #0f9dee;
+    color: #6ec5f6;
     transition: color 100ms linear; }
   a:active {
-    color: #0a689d; }
+    color: #0a689d;
+    transition: color 100ms linear; }
   a:visited {
-    color: #5f0fee; }
-  a:visited:hover {
-    color: #9f6ef6; }
+    color: #5f0fee;
+    transition: color 100ms linear; }
 
 blockquote {
   margin: 0.75rem 0;
@@ -1941,6 +1941,65 @@ fieldset {
       -ms-flex-direction: column;
           flex-direction: column; }
 
+form .form-group.inline:first-child {
+  margin-top: 0.30795rem; }
+
+.form-group.inline {
+  -webkit-flex-direction: row;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .form-group.inline label,
+  .form-group.inline .helper-text {
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    -webkit-align-self: center;
+        -ms-flex-item-align: center;
+                -ms-grid-row-align: center;
+            align-self: center; }
+  .form-group.inline label {
+    padding-right: 0.6243rem;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -js-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column; }
+  .form-group.inline .helper-text {
+    padding-left: 0.6243rem; }
+  .form-group.inline .messages {
+    -webkit-order: last;
+        -ms-flex-order: last;
+            order: last;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    -js-display: flex;
+    display: flex;
+    -webkit-flex-direction: column;
+        -ms-flex-direction: column;
+            flex-direction: column;
+    -webkit-flex: 0 0 auto;
+        -ms-flex: 0 0 auto;
+            flex: 0 0 auto;
+    padding-left: 0.6243rem; }
+    .form-group.inline .messages .helper-text {
+      padding-left: 0; }
+    .form-group.inline .messages .helper-text,
+    .form-group.inline .messages .validation-message {
+      -webkit-align-self: flex-start;
+          -ms-flex-item-align: start;
+              align-self: flex-start; }
+  .form-group.inline input[required] + label:after,
+  .form-group.inline select[required] + label:after {
+    content: '(required)'; }
+  .form-group.inline input:not([required]) + label:after,
+  .form-group.inline select:not([required]) + label:after {
+    content: '(optional)'; }
+
 input,
 select {
   height: 2rem;
@@ -1985,15 +2044,21 @@ select:invalid,
 select.invalid {
   border-color: #a11622;
   border-width: 2px; }
-  input:invalid ~ .validation-message, input.invalid ~ .validation-message,
+  input:invalid ~ .validation-message,
+  input:invalid ~ .messages .validation-message, input.invalid ~ .validation-message,
+  input.invalid ~ .messages .validation-message,
   select:invalid ~ .validation-message,
-  select.invalid ~ .validation-message {
+  select:invalid ~ .messages .validation-message,
+  select.invalid ~ .validation-message,
+  select.invalid ~ .messages .validation-message {
     display: block;
     visibility: visible;
     color: #a11622; }
 
 input:valid:not(.invalid) ~ .validation-message,
-select:valid:not(.invalid) ~ .validation-message {
+input:valid:not(.invalid) ~ .messages .validation-message,
+select:valid:not(.invalid) ~ .validation-message,
+select:valid:not(.invalid) ~ .messages .validation-message {
   display: none;
   visibility: hidden; }
 
@@ -2027,6 +2092,10 @@ fieldset label:after,
 fieldset legend:after {
   color: #9b9595; }
 
+.form-group input + label:after,
+.form-group select + label:after {
+  font-size: 0.79012rem; }
+
 .form-group input[required] + label:after,
 .form-group select[required] + label:after {
   content: '\00a0(required)'; }
@@ -2035,8 +2104,20 @@ fieldset legend:after {
 .form-group select:not([required]) + label:after {
   content: '\00a0(optional)'; }
 
+.form-group.required-suppressed input[required] + label:after,
+.form-group.required-suppressed select[required] + label:after {
+  content: ''; }
+
+.form-group.required-suppressed input:not([required]) + label:after,
+.form-group.required-suppressed select:not([required]) + label:after {
+  content: ''; }
+
 .form-group .helper-text {
   color: #9b9595; }
+
+.form-group .helper-text,
+.form-group .validation-message {
+  font-size: 0.79012rem; }
 
 fieldset {
   border: 0;
