@@ -13,9 +13,13 @@ function ghpBuild {
 
   git checkout -b TEMP_BRANCH
   npm install
+
+  echo -e "#-- TEMP CHANGES TO GITIGNORE FOR DEPLOYMENT --\nREADME.md\ndeploy*\ngulpfile.js\npackage.json\nrocketbelt/**/*\ntemplates/**/*\n\n$(cat .gitignore)" > .gitignore
+
   gulp build
   mv dist/* .
   rmdir dist
+
   git add . --all
   git commit -m "Build for gh-pages: ${SHA}"
 }
