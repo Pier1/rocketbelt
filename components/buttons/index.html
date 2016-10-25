@@ -1,97 +1,107 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
   <head>
     <title>Buttons | Rocketbelt Pattern Library</title>
     <link rel="stylesheet" href="../../css/site.min.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
   <body class="grid-fluid">
-    <div style="flex-wrap: nowrap;" class="row">
-      <nav style="flex-grow: 0;" class="col xs">
+    <div id="docs-wrapper" style="flex-wrap: nowrap;" class="row">
+      <nav id="docs-leftnav" style="flex-grow: 0;" class="col xs-2">
         <ul class="list-reset">
-          <li><a href="../../base">Base</a>
+          <li ref="base"><a href="../../base">Base</a>
             <ul class="list-reset">
-              <li><a href="../../base/breakpoints">Breakpoints</a>
+              <li ref="breakpoints"><a href="../../base/breakpoints">Breakpoints</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../base/color">Color</a>
+              <li ref="color"><a href="../../base/color">Color</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../base/grid">Grid</a>
+              <li ref="grid"><a href="../../base/grid">Grid</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../base/layout">Layout</a>
+              <li ref="layout"><a href="../../base/layout">Layout</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../base/slipsum">Slipsum</a>
+              <li ref="slipsum"><a href="../../base/slipsum">Slipsum</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../base/typography">Typography</a>
+              <li ref="typography"><a href="../../base/typography">Typography</a>
                 <ul class="list-reset">
                 </ul>
               </li>
             </ul>
           </li>
-          <li><a href="../../components">Components</a>
+          <li ref="components"><a href="../../components">Components</a>
             <ul class="list-reset">
-              <li><a href="../../components/alerts">Alerts</a>
+              <li ref="expanders"><a href="../../components/expanders">Expanders</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/expanders">Expanders</a>
+              <li ref="forms"><a href="../../components/forms">Forms</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/busy-indicators">Busy Indicators</a>
+              <li ref="busy-indicators"><a href="../../components/busy-indicators">Busy Indicators</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/buttons">Buttons</a>
+              <li ref="buttons"><a href="../../components/buttons">Buttons</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/cards">Cards</a>
+              <li ref="cards"><a href="../../components/cards">Cards</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/forms">Forms</a>
+              <li ref="alerts"><a href="../../components/alerts">Alerts</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/images">Images</a>
+              <li ref="images"><a href="../../components/images">Images</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/modals">Modals</a>
+              <li ref="modals"><a href="../../components/modals">Modals</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/radio-buttons">Radio Buttons</a>
+              <li ref="radio-buttons"><a href="../../components/radio-buttons">Radio Buttons</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/tabcordions">Tabcordions</a>
+              <li ref="tabcordions"><a href="../../components/tabcordions">Tabcordions</a>
                 <ul class="list-reset">
                 </ul>
               </li>
-              <li><a href="../../components/tooltips">Tooltips</a>
+              <li ref="tooltips"><a href="../../components/tooltips">Tooltips</a>
                 <ul class="list-reset">
                 </ul>
               </li>
             </ul>
           </li>
-          <li><a href="../../exposition">Exposition</a>
+          <li ref="exposition"><a href="../../exposition">Exposition</a>
             <ul class="list-reset">
+              <li ref="Links &amp; Buttons"><a href="../../exposition/Links &amp; Buttons">Links &amp; Buttons</a>
+                <ul class="list-reset">
+                  <li ref="img">
+                    <ul class="list-reset">
+                      <li ref="link_button_affordance.png">
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
             </ul>
           </li>
         </ul>
       </nav>
-      <div class="col xs">
+      <div id="docs-content" class="pad-5 col xs">
         <main class="grid-fluid no-margin">
           <div class="row">
             <div class="col xs">
@@ -104,29 +114,21 @@
                       <div class="exampleWithCode">
                         <div class="example">
                           <button class="button-lg button-primary">Primary</button>
-                          <button class="button-lg button-primary button-inset">Inset</button>
                           <button disabled class="button-lg button-primary">Disabled</button>
-                          <button disabled class="button-lg button-primary button-inset">Disabled</button>
-                          <button class="button-md button-primary">Primary</button>
-                          <button class="button-md button-primary button-inset">Inset</button>
-                          <button class="button-sm button-primary">Primary</button>
-                          <button class="button-sm button-primary button-inset">Inset</button>
+                          <button class="button button-primary">Medium</button>
+                          <button class="button-sm button-primary">Small</button>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="Zi8tuv" class="expander_checkbox"/>
-                          <label for="Zi8tuv" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="Z1TYt6F" class="expander_checkbox"/>
+                          <label for="Z1TYt6F" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#Z20Cu0b" class="copy-code">Copy</button>
-                              <pre><code id="Z20Cu0b" class="language-html">
+                              <button data-clipboard-target="#Zi0eFF" class="copy-code">Copy</button>
+                              <pre><code id="Zi0eFF" class="language-html">
                                   &lt;button class=&quot;button-lg button-primary&quot;&gt;Primary&lt;/button&gt;
-                                  &lt;button class=&quot;button-lg button-primary button-inset&quot;&gt;Inset&lt;/button&gt;
                                   &lt;button disabled class=&quot;button-lg button-primary&quot;&gt;Disabled&lt;/button&gt;
-                                  &lt;button disabled class=&quot;button-lg button-primary button-inset&quot;&gt;Disabled&lt;/button&gt;
-                                  &lt;button class=&quot;button-md button-primary&quot;&gt;Primary&lt;/button&gt;
-                                  &lt;button class=&quot;button-md button-primary button-inset&quot;&gt;Inset&lt;/button&gt;
-                                  &lt;button class=&quot;button-sm button-primary&quot;&gt;Primary&lt;/button&gt;
-                                  &lt;button class=&quot;button-sm button-primary button-inset&quot;&gt;Inset&lt;/button&gt;</code></pre>
+                                  &lt;button class=&quot;button button-primary&quot;&gt;Medium&lt;/button&gt;
+                                  &lt;button class=&quot;button-sm button-primary&quot;&gt;Small&lt;/button&gt;</code></pre>
                             </div>
                           </div>
                         </div>
@@ -140,30 +142,22 @@
                     <div class="col xs">
                       <div class="exampleWithCode">
                         <div class="example">
-                          <button class="button-lg button-secondary">Secondary</button>
-                          <button class="button-lg button-secondary button-inset">Inset</button>
-                          <button disabled class="button-lg button-secondary button-disabled">Disabled</button>
-                          <button disabled class="button-lg button-secondary button-inset button-disabled">Disabled</button>
-                          <button class="button-md button-secondary">Secondary</button>
-                          <button class="button-md button-secondary button-inset">Inset</button>
-                          <button class="button-sm button-secondary">Secondary</button>
-                          <button class="button-sm button-secondary button-inset">Inset</button>
+                          <button class="button-lg button-secondary">Primary</button>
+                          <button disabled class="button-lg button-secondary">Disabled</button>
+                          <button class="button button-secondary">Medium</button>
+                          <button class="button-sm button-secondary">Small</button>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="1LlpCx" class="expander_checkbox"/>
-                          <label for="1LlpCx" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="ZdnXBf" class="expander_checkbox"/>
+                          <label for="ZdnXBf" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#1fi8jk" class="copy-code">Copy</button>
-                              <pre><code id="1fi8jk" class="language-html">
-                                  &lt;button class=&quot;button-lg button-secondary&quot;&gt;Secondary&lt;/button&gt;
-                                  &lt;button class=&quot;button-lg button-secondary button-inset&quot;&gt;Inset&lt;/button&gt;
-                                  &lt;button disabled class=&quot;button-lg button-secondary button-disabled&quot;&gt;Disabled&lt;/button&gt;
-                                  &lt;button disabled class=&quot;button-lg button-secondary button-inset button-disabled&quot;&gt;Disabled&lt;/button&gt;
-                                  &lt;button class=&quot;button-md button-secondary&quot;&gt;Secondary&lt;/button&gt;
-                                  &lt;button class=&quot;button-md button-secondary button-inset&quot;&gt;Inset&lt;/button&gt;
-                                  &lt;button class=&quot;button-sm button-secondary&quot;&gt;Secondary&lt;/button&gt;
-                                  &lt;button class=&quot;button-sm button-secondary button-inset&quot;&gt;Inset&lt;/button&gt;</code></pre>
+                              <button data-clipboard-target="#Z2vi08P" class="copy-code">Copy</button>
+                              <pre><code id="Z2vi08P" class="language-html">
+                                  &lt;button class=&quot;button-lg button-secondary&quot;&gt;Primary&lt;/button&gt;
+                                  &lt;button disabled class=&quot;button-lg button-secondary&quot;&gt;Disabled&lt;/button&gt;
+                                  &lt;button class=&quot;button button-secondary&quot;&gt;Medium&lt;/button&gt;
+                                  &lt;button class=&quot;button-sm button-secondary&quot;&gt;Small&lt;/button&gt;</code></pre>
                             </div>
                           </div>
                         </div>
@@ -183,12 +177,12 @@
                           <button class="button-sm button-text">Text Button</button>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="Zk74Qt" class="expander_checkbox"/>
-                          <label for="Zk74Qt" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="1OA4Li" class="expander_checkbox"/>
+                          <label for="1OA4Li" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#Z11NxrR" class="copy-code">Copy</button>
-                              <pre><code id="Z11NxrR" class="language-html">
+                              <button data-clipboard-target="#2wyuw2" class="copy-code">Copy</button>
+                              <pre><code id="2wyuw2" class="language-html">
                                   &lt;button class=&quot;button-lg button-text&quot;&gt;Text Button&lt;/button&gt;
                                   &lt;button disabled class=&quot;button-lg button-text&quot;&gt;Disabled&lt;/button&gt;
                                   &lt;button class=&quot;button-md button-text&quot;&gt;Text Button&lt;/button&gt;
@@ -231,12 +225,12 @@
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="6L8lD" class="expander_checkbox"/>
-                    <label for="6L8lD" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="Z1VXB6M" class="expander_checkbox"/>
+                    <label for="Z1VXB6M" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#cM3Um" class="copy-code">Copy</button>
-                        <pre><code id="cM3Um" class="language-html">
+                        <button data-clipboard-target="#ZJWGzr" class="copy-code">Copy</button>
+                        <pre><code id="ZJWGzr" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row&quot;&gt;
                                 &lt;div class=&quot;col xs-12 md-6&quot;&gt;
