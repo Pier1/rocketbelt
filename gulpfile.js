@@ -37,8 +37,10 @@ var symlink = require('gulp-symlink');
 var path = require('path');
 var exec = require('child_process').exec;
 
+var sitemap = require('gulp-sitemap');
 var argv = require('minimist')(process.argv.slice(2));
-var buildPath = argv.release ? '.' : './docs';
+// var buildPath = './docs';
+var buildPath = './dist';
 var buildCss = buildPath + '/css';
 var rbDir = './rocketbelt';
 var siteDir = './site';
@@ -127,10 +129,10 @@ gulp.task('clean', ['link:clean'], function () {
 
 gulp.task('build', function (done) {
   if (!argv.release) {
-    runSequence('uglify', 'link', ['styles', 'views'], done);
+    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', done);
   }
   else {
-    runSequence('uglify', 'link', ['styles', 'views'], 'del-assets', done);
+    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', 'del-assets', done);
   }
 });
 
@@ -146,35 +148,41 @@ gulp.task('js:site:copy', function () {
     .pipe(vfs.dest(buildPath, { overwrite: true }));
 });
 
+gulp.task('img:site:copy', function () {
+  vfs.src(['./templates/**/img/*.*'])
+    .pipe(changed(buildPath))
+    .pipe(vfs.dest(buildPath, { overwrite: true }));
+});
+
 gulp.task('link', ['link:partials', 'link:js']);
 
 gulp.task('link:partials', function () {
-  return gulp.src('./rocketbelt/**/_*.jade')
-    .pipe(symlink(function (file) {
-      return path.join('./templates', file.relative);
-    }, { force: true, log: false }));
+  // return gulp.src('./rocketbelt/**/_*.jade')
+  //   .pipe(symlink(function (file) {
+  //     return path.join('./templates', file.relative);
+  //   }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  // return vfs.src('./rocketbelt/**/_*.jade')
-  //   .pipe(vfs.symlink('./templates', { relative: true }));
+  return vfs.src('./rocketbelt/**/_*.jade')
+    .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:js', function () {
-  return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
-    .pipe(symlink(function (file) {
-      return path.join('./templates', file.relative);
-    }, { force: true, log: false }));
+  // return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
+  //   .pipe(symlink(function (file) {
+  //     return path.join('./templates', file.relative);
+  //   }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  // return vfs.src('./rocketbelt/**/*.js', './rocketbelt/**/*.json')
-  //   .pipe(vfs.symlink('./templates', { relative: true }));
+  return vfs.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
+    .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:clean', function () {
   exec('find ./templates -type l -delete', function (err, stdout, stderr) { });
 });
 
-gulp.task('views', ['js:site:copy'], function () {
+gulp.task('views', ['js:site:copy', 'img:site:copy'], function () {
   var dir = './templates';
   directoryTreeToObj(dir, function (err, res) {
     if (err)
@@ -203,6 +211,13 @@ gulp.task('views', ['js:site:copy'], function () {
   });
 });
 
+gulp.task('sitemap', function () {
+  return gulp.src(buildPath + '**/*.html', { read: false })
+    .pipe(sitemap({ siteUrl: 'http://rocketbelt.io' }))
+    .pipe(gulp.dest(buildPath))
+  ;
+});
+
 var directoryTreeToObj = function(dir, done) {
   var fs = require('fs');
   var path = require('path');
@@ -213,7 +228,9 @@ var directoryTreeToObj = function(dir, done) {
       return done(err);
 
     files = files.filter(function (file) {
-      if (fs.lstatSync(dir + '/' + file).isDirectory()) { if (file === 'js' || file === 'scss') return false; }
+      if (fs.lstatSync(dir + '/' + file).isDirectory()) {
+        if (file === 'js' || file === 'scss') return false;
+      }
       return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });
 
@@ -225,24 +242,26 @@ var directoryTreeToObj = function(dir, done) {
     files.forEach(function(file) {
       file = path.resolve(dir, file);
       fs.stat(file, function(err, stat) {
-        if (stat && stat.isDirectory()) {
-          directoryTreeToObj(file, function(err, res) {
+        if ( true /* file.indexOf('/img') === -1  */) {
+          if (stat && stat.isDirectory() ) {
+            directoryTreeToObj(file, function(err, res) {
+              results.push({
+                name: path.basename(file),
+                type: 'folder',
+                children: res
+              });
+              if (!--pending)
+                done(null, results);
+            });
+          }
+          else {
             results.push({
-              name: path.basename(file),
-              type: 'folder',
-              children: res
+              type: 'file',
+              name: path.basename(file)
             });
             if (!--pending)
               done(null, results);
-          });
-        }
-        else {
-          results.push({
-            type: 'file',
-            name: path.basename(file)
-          });
-          if (!--pending)
-            done(null, results);
+          }
         }
       });
     });

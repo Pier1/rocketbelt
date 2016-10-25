@@ -1,3 +1,9 @@
+# ====================================================
+# Ignore component symlinks (but not site-specific JS)
+# ====================================================
+templates/components/**/_*.jade
+templates/components/**/*.js
+
 # =========================
 docs/
 dist/
