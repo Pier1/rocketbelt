@@ -3,8 +3,8 @@ README.md
 deploy*
 gulpfile.js
 package.json
-rocketbelt/
-templates/
+rocketbelt/**/*
+templates/**/*
 
 # ====================================================
 # Ignore component symlinks (but not site-specific JS)
