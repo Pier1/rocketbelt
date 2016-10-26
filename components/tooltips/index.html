@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Tooltips | Rocketbelt Pattern Library</title>
+    <link rel="stylesheet" href="../../css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body class="grid-fluid">
+    <div id="docs-wrapper" style="flex-wrap: nowrap;" class="row">
+      <nav id="docs-leftnav" style="flex-grow: 0;" class="col xs-2">
+        <ul class="list-reset">
+          <li ref="base"><a href="../../base">Base</a>
+            <ul class="list-reset">
+              <li ref="breakpoints"><a href="../../base/breakpoints">Breakpoints</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="color"><a href="../../base/color">Color</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="grid"><a href="../../base/grid">Grid</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="layout"><a href="../../base/layout">Layout</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="slipsum"><a href="../../base/slipsum">Slipsum</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="typography"><a href="../../base/typography">Typography</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li ref="components"><a href="../../components">Components</a>
+            <ul class="list-reset">
+              <li ref="expanders"><a href="../../components/expanders">Expanders</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="forms"><a href="../../components/forms">Forms</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="busy-indicators"><a href="../../components/busy-indicators">Busy Indicators</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="buttons"><a href="../../components/buttons">Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="cards"><a href="../../components/cards">Cards</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="alerts"><a href="../../components/alerts">Alerts</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="images"><a href="../../components/images">Images</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="modals"><a href="../../components/modals">Modals</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="radio-buttons"><a href="../../components/radio-buttons">Radio Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="tabcordions"><a href="../../components/tabcordions">Tabcordions</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="tooltips"><a href="../../components/tooltips">Tooltips</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li ref="creative"><a href="../../creative">Creative</a>
+            <ul class="list-reset">
+              <li ref="sale-sticker"><a href="../../creative/sale-sticker">Sale Sticker</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li ref="exposition"><a href="../../exposition">Exposition</a>
+            <ul class="list-reset">
+              <li ref="links-buttons"><a href="../../exposition/links-buttons">Links Buttons</a>
+                <ul class="list-reset">
+                  <li ref="img">
+                    <ul class="list-reset">
+                      <li ref="link_button_affordance.png">
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li ref="logo-usage"><a href="../../exposition/logo-usage">Logo Usage</a>
+                <ul class="list-reset">
+                  <li ref="img">
+                    <ul class="list-reset">
+                      <li ref="box_logo.png">
+                      </li>
+                      <li ref="limited_use_logo.png">
+                      </li>
+                      <li ref="normal_logo.png">
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="docs-content" class="pad-5 col xs">
+        <main class="grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <article><h1 id="tooltips">Tooltips</h1>
+<h2 id="default">Default</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <button data-tooltip="You'd be the help of open-air luxury." class="button-md button-secondary">Default</button>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="1LWxUY" class="expander_checkbox"/>
+                    <label for="1LWxUY" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#1olW68" class="copy-code">Copy</button>
+                        <pre><code id="1olW68" class="language-html">
+                            &lt;button data-tooltip=&quot;You'd be the help of open-air luxury.&quot; class=&quot;button-md button-secondary&quot;&gt;Default&lt;/button&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="directional">Directional</h2>
+<h3 id="left">Left</h3>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <button data-tooltip="Weave a sofa or outdoor seat on display." class="tooltip-left button-md button-secondary">Left</button>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="Z1V37yu" class="expander_checkbox"/>
+                    <label for="Z1V37yu" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#ZY55Bg" class="copy-code">Copy</button>
+                        <pre><code id="ZY55Bg" class="language-html">
+                            &lt;button data-tooltip=&quot;Weave a sofa or outdoor seat on display.&quot; class=&quot;tooltip-left button-md button-secondary&quot;&gt;Left&lt;/button&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h3 id="right">Right</h3>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <button data-tooltip="Case in covered with nailhead trim is even more of flowers?" class="tooltip-right button-md button-secondary">Right</button>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="Z1VTCNr" class="expander_checkbox"/>
+                    <label for="Z1VTCNr" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#ZJtobP" class="copy-code">Copy</button>
+                        <pre><code id="ZJtobP" class="language-html">
+                            &lt;button data-tooltip=&quot;Case in covered with nailhead trim is even more of flowers?&quot; class=&quot;tooltip-right button-md button-secondary&quot;&gt;Right&lt;/button&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h3 id="bottom">Bottom</h3>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <button data-tooltip="Decorated with an almost weightless, firefly-like effect." class="tooltip-bottom button-md button-secondary">Bottom</button>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="ZgOqWC" class="expander_checkbox"/>
+                    <label for="ZgOqWC" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Z1axQ8I" class="copy-code">Copy</button>
+                        <pre><code id="Z1axQ8I" class="language-html">
+                            &lt;button data-tooltip=&quot;Decorated with an almost weightless, firefly-like effect.&quot; class=&quot;tooltip-bottom button-md button-secondary&quot;&gt;Bottom&lt;/button&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="widths">Widths</h2>
+<h3 id="small-default-">Small (Default)</h3>
+<h3 id="medium">Medium</h3>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <button data-tooltip="Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back." class="tooltip-md tooltip-right button-md button-secondary">Medium</button>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="ZfsvpC" class="expander_checkbox"/>
+                    <label for="ZfsvpC" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Z1wFJmL" class="copy-code">Copy</button>
+                        <pre><code id="Z1wFJmL" class="language-html">
+                            &lt;button data-tooltip=&quot;Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.&quot; class=&quot;tooltip-md tooltip-right button-md button-secondary&quot;&gt;Medium&lt;/button&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h3 id="large">Large</h3>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <button data-tooltip="Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion." class="tooltip-lg tooltip-right button-md button-secondary">Large</button>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="6abAL" class="expander_checkbox"/>
+                    <label for="6abAL" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#ZJCF1" class="copy-code">Copy</button>
+                        <pre><code id="ZJCF1" class="language-html">
+                            &lt;button data-tooltip=&quot;Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.&quot; class=&quot;tooltip-lg tooltip-right button-md button-secondary&quot;&gt;Large&lt;/button&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script src="../../js/site.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
