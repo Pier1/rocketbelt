@@ -1,0 +1,92 @@
+.example-layout [class*="pad-"] {
+  display: inline-block;
+  border: 1px solid color(gray, plus2);
+  border-radius: 2px;
+}
+
+.example .container {
+  display: inline-block;
+  background: color(gray, plus4);
+  border: 1px dashed color(gray);
+}
+
+.example-layout [class*="margin-"] {
+  background: color(white);
+  display: inline-block;
+  border: 1px solid color(gray, plus1);
+  border-radius: 2px;
+}
+
+html, body { height: 100%; }
+body { min-height: 100%; }
+
+#docs-content {
+  padding: $gutter-width * 2;
+}
+
+#docs-wrapper {
+  height: 100%;
+}
+
+#docs-leftnav.col.xs-2 {
+    padding-top: $gutter-width;
+    flex: 0 0 220px;
+}
+
+.list-reset li li a {
+  padding-left: ms(2);
+}
+.list-reset li a {
+  padding-left: ms(-2);
+}
+#docs-leftnav {
+  background-color: color(primary, darkest);
+  color: color(white);
+  a { display: block; }
+  ul a { text-transform: uppercase }
+  ul ul a { text-transform: normal; }
+  a {
+    color: color(primary, lightest);
+    transition: color 200ms linear;
+    text-decoration: none;
+
+    &:hover {
+      color: color(primary, lighter);
+      transition: color 100ms linear;
+    }
+
+    &:active {
+      background-color: color(primary);
+      color: color(white);
+    }
+
+    &:visited {
+      color: color(primary, lightest);
+    }
+
+    &:visited:hover {
+      color: color(primary, lighter);
+    }
+  }
+
+  li.isActive {
+    &>a {
+      background-color: color(primary, lightest);
+      color: color(primary, darkest);
+    }
+
+  }
+}
+
+article > h1 {
+  border-bottom: 1px solid color(gray, plus2);
+  margin-bottom: $half-gutter-width;
+}
+
+article > h2  {
+  border-bottom: 1px solid color(gray, plus2);
+  text-transform: uppercase;
+  margin-top: $gutter-width;
+  margin-bottom: $half-gutter-width;
+  font-size: ms(3)
+}

@@ -1,7 +1,7 @@
 {
   "name": "rocketbelt",
-  "version": "0.0.1",
-  "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively built at Pier 1 Imports.",
+  "version": "0.1.2",
+  "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively assembled at Pier 1 Imports.",
   "homepage": "rocketbelt.io",
   "bugs": "https://github.com/pier1/rocketbelt/issues",
   "license": "MIT",

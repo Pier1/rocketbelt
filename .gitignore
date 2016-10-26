@@ -12,7 +12,7 @@ templates/**/*
 templates/components/**/_*.jade
 templates/components/**/*.js
 templates/base/**/_*.jade
-templates/base/**/*.js
+templates/base/**/*.js(on)?
 
 # =========================
 docs/

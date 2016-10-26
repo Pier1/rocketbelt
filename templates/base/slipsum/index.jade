@@ -1,0 +1,59 @@
+
+extends /_layout.jade
+
+block vars
+  - var title = 'Slipsum'
+
+block content
+  article
+    :md
+      # Slipsum
+      
+    span Build
+    select.slipsum-num
+      - var i = 1;
+      while i <=5
+        option(value=i) #{i}
+        - i++;
+        
+    select.slipsum-type
+      option(value='paragraphs') paragraphs
+      option(value='sentences') sentences
+      
+    span &nbsp;of Slipsum.
+    button.button-md.button-secondary.generate Generate
+    
+    script(src='./rocketbelt.slipsum-bundle.js')
+    .grid-fluid
+      .row.xs-center
+        .col.xs-12.md-8
+          .slipsum-container
+
+    script.
+      $(document).ready(function () {
+        $('button.generate').on('click', function () {
+          var paras = $('.slipsum-type').val() === 'paragraphs';
+          var num = $('.slipsum-num').val();
+          var slipsum = '';
+          
+          slipsum = paras ? window.slipsum.paragraphs(num) : window.slipsum.sentences(num);
+          
+          var $container = $('.slipsum-container');
+
+          $container.addClass('fadeOutUp');
+          
+          $container.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',
+            function(e) {
+              $container.text(slipsum);
+              $container.addClass('fadeInDown');
+              $container.removeClass('fadeOutUp');
+              
+              $container.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',
+                function (ev) {
+                  $container.removeClass('fadeInDown');
+                }
+              );
+            }
+          );
+        });
+      });

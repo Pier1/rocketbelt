@@ -13,8 +13,11 @@
   });
 
   $(document).ready(function(){
-  	var pageTitle = document.title.toLowerCase().replace(' | slipway pattern library', '').replace(/\s+/g,'-');
-  	$('li.isActive', '#docs-leftnav').removeClass('isActive');
+  	var pageTitle = document.title.toLowerCase()
+              .replace(' | rocketbelt pattern library', '')
+              .replace(/\ & /g," ")
+              .replace(/\s+/g,'-');
+    $('li.isActive', '#docs-leftnav').removeClass('isActive');
   	$('#docs-leftnav').find('li[ref="' + pageTitle + '"]').addClass('isActive');
   })
 })();

@@ -168,13 +168,13 @@ gulp.task('link:partials', function () {
 });
 
 gulp.task('link:js', function () {
-  // return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
+  // return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/rocketbelt.slipsum-cache.json'])
   //   .pipe(symlink(function (file) {
   //     return path.join('./templates', file.relative);
   //   }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  return vfs.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
+  return vfs.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/rocketbelt.slipsum-cache.json'])
     .pipe(vfs.symlink('./templates', { relative: true }));
 });
 

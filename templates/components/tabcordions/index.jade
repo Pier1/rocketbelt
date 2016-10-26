@@ -1,0 +1,20 @@
+extends /_layout.jade
+
+block vars
+  - var title = 'Tabcordions'
+
+block content
+  article
+    :md
+      # Tabcordions
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tabcordion
+
+    :md
+      ## Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.tabcordion.min.js')

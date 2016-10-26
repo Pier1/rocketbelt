@@ -3789,6 +3789,9 @@ body {
 #docs-content {
   padding: 2rem; }
 
+#docs-wrapper {
+  height: 100%; }
+
 #docs-leftnav.col.xs-2 {
   padding-top: 1rem;
   -webkit-flex: 0 0 220px;
@@ -3829,12 +3832,14 @@ body {
     color: #084f77; }
 
 article > h1 {
-  border-bottom: 1px solid #b4b0b0; }
+  border-bottom: 1px solid #b4b0b0;
+  margin-bottom: 0.5rem; }
 
 article > h2 {
   border-bottom: 1px solid #b4b0b0;
   text-transform: uppercase;
   margin-top: 1rem;
+  margin-bottom: 0.5rem;
   font-size: 1.42383rem; }
 
 .ellipsis [class*="font-"] {
