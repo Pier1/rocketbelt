@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Modals | Rocketbelt Pattern Library</title>
+    <link rel="stylesheet" href="../../css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+  </head>
+  <body class="grid-fluid">
+    <div id="docs-wrapper" style="flex-wrap: nowrap;" class="row">
+      <nav id="docs-leftnav" style="flex-grow: 0;" class="col xs-2">
+        <ul class="list-reset">
+          <li ref="base"><a href="../../base">Base</a>
+            <ul class="list-reset">
+              <li ref="breakpoints"><a href="../../base/breakpoints">Breakpoints</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="color"><a href="../../base/color">Color</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="grid"><a href="../../base/grid">Grid</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="layout"><a href="../../base/layout">Layout</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="slipsum"><a href="../../base/slipsum">Slipsum</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="typography"><a href="../../base/typography">Typography</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li ref="components"><a href="../../components">Components</a>
+            <ul class="list-reset">
+              <li ref="forms"><a href="../../components/forms">Forms</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="buttons"><a href="../../components/buttons">Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="busy-indicators"><a href="../../components/busy-indicators">Busy Indicators</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="alerts"><a href="../../components/alerts">Alerts</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="cards"><a href="../../components/cards">Cards</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="expanders"><a href="../../components/expanders">Expanders</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="images"><a href="../../components/images">Images</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="modals"><a href="../../components/modals">Modals</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="radio-buttons"><a href="../../components/radio-buttons">Radio Buttons</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="tabcordions"><a href="../../components/tabcordions">Tabcordions</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+              <li ref="tooltips"><a href="../../components/tooltips">Tooltips</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li ref="creative"><a href="../../creative">Creative</a>
+            <ul class="list-reset">
+              <li ref="sale-sticker"><a href="../../creative/sale-sticker">Sale Sticker</a>
+                <ul class="list-reset">
+                </ul>
+              </li>
+            </ul>
+          </li>
+          <li ref="exposition"><a href="../../exposition">Exposition</a>
+            <ul class="list-reset">
+              <li ref="links-buttons"><a href="../../exposition/links-buttons">Links Buttons</a>
+                <ul class="list-reset">
+                  <li ref="img">
+                    <ul class="list-reset">
+                      <li ref="link_button_affordance.png">
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+              <li ref="logo-usage"><a href="../../exposition/logo-usage">Logo Usage</a>
+                <ul class="list-reset">
+                  <li ref="img">
+                    <ul class="list-reset">
+                      <li ref="box_logo.png">
+                      </li>
+                      <li ref="limited_use_logo.png">
+                      </li>
+                      <li ref="normal_logo.png">
+                      </li>
+                    </ul>
+                  </li>
+                </ul>
+              </li>
+            </ul>
+          </li>
+        </ul>
+      </nav>
+      <div id="docs-content" class="pad-5 col xs">
+        <main class="grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <article><h1 id="modals">Modals</h1>
+<h2 id="standard-modal">Standard Modal</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div data-modal-id="modal-example-standard" role="dialog" class="modal">
+                      <div class="grid-fluid">
+                        <div class="row modal_header">
+                          <div class="col xs modal_header_text">
+                            <h2>Show some farmhouse style</h2>
+                          </div>
+                          <div data-modal-action="close" class="col xs modal_header_close"></div>
+                        </div>
+                        <div class="row modal_body">
+                          <div class="col xs modal_body_content">
+                            <p>
+                              The earliest chandeliers fitted cushion is just go distressed
+                              edges and shape and ivory stoneware Chalk Note the place, and
+                              enjoy. A durable poly insert that decision-making a contemporary
+                              space. It’s safe bet you know you like, indoors and solids. You 
+                              don’t need is all the rows of muted shades of sheer jasmine and 
+                              neutral hues, from the stir in the view. Hand-painted in the
+                              look you'd like a lovely or covered outdoor life. So which means
+                              more tempting? How can throw.
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row xs-end modal_footer">
+                          <div class="col xs">
+                            <button data-modal-action="cancel" class="button-md button-secondary">Cancel</button>
+                          </div>
+                          <div class="col xs">
+                            <button data-modal-action="confirm" class="button-md button-primary">OK</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="Z1Wja7m" class="expander_checkbox"/>
+                    <label for="Z1Wja7m" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#ZEV5LA" class="copy-code">Copy</button>
+                        <pre><code id="ZEV5LA" class="language-html">
+                            &lt;div data-modal-id=&quot;modal-example-standard&quot; role=&quot;dialog&quot; class=&quot;modal&quot;&gt;
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row modal_header&quot;&gt;
+                                  &lt;div class=&quot;col xs modal_header_text&quot;&gt;
+                                    &lt;h2&gt;Show some farmhouse style&lt;/h2&gt;
+                                  &lt;/div&gt;
+                                  &lt;div data-modal-action=&quot;close&quot; class=&quot;col xs modal_header_close&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row modal_body&quot;&gt;
+                                  &lt;div class=&quot;col xs modal_body_content&quot;&gt;
+                                    &lt;p&gt;
+                                      The earliest chandeliers fitted cushion is just go distressed
+                                      edges and shape and ivory stoneware Chalk Note the place, and
+                                      enjoy. A durable poly insert that decision-making a contemporary
+                                      space. It’s safe bet you know you like, indoors and solids. You 
+                                      don’t need is all the rows of muted shades of sheer jasmine and 
+                                      neutral hues, from the stir in the view. Hand-painted in the
+                                      look you'd like a lovely or covered outdoor life. So which means
+                                      more tempting? How can throw.
+                                    &lt;/p&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row xs-end modal_footer&quot;&gt;
+                                  &lt;div class=&quot;col xs&quot;&gt;
+                                    &lt;button data-modal-action=&quot;cancel&quot; class=&quot;button-md button-secondary&quot;&gt;Cancel&lt;/button&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class=&quot;col xs&quot;&gt;
+                                    &lt;button data-modal-action=&quot;confirm&quot; class=&quot;button-md button-primary&quot;&gt;OK&lt;/button&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><a href="#modal-example-standard">Trigger Modal</a><h2 id="bottom-sheet-modal">Bottom Sheet Modal</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div data-modal-id="modal-example-bottom" role="dialog" class="modal modal-bottom-sheet">
+                      <div class="grid-fluid">
+                        <div class="row modal_header">
+                          <div class="col xs modal_header_text">
+                            <h2>Heat up your room—or your holiday scene</h2>
+                          </div>
+                          <div data-modal-action="close" class="col xs modal_header_close"></div>
+                        </div>
+                        <div class="row modal_body">
+                          <div class="col xs modal_body_content">
+                            <p>
+                              Though it a log cabin vibe set that can be set that can be the U.S.
+                              is ready to perch in a fabulous, intimate lighting accent, think the
+                              center. We make fast friends come together for the halls and
+                              charming, it's dishing up your favorite gadgets and more plush
+                              texture of life’s storms. And it's clearly need something to a 
+                              pillar stand. Perfect for our incredibly soft acrylic features the 
+                              substantial look to your home. Just don’t need a romantic glow across 
+                              five words on our glass jar that's easy to jump through wreaths and 
+                              garden-fresh find.
+                            </p>
+                            <p>
+                              What's the ocean view will be labeled with a vintage-style glass 
+                              sleeve when awakening on your Halloween is both everyday family 
+                              room. Reap the perfect centerpiece or a cascading ombre vase 
+                              punctuates your decor with our pillow is exactly what page your 
+                              kitchen display or to South America, angelfish are practically 
+                              permission to perch on or living room, bedroom to have people who 
+                              like they see is trying out of drama to continue resting. 
+                              Handcrafted by our embroidered pillow is simple: Coffee with white 
+                              flowers and invite a lantern is painted an oversized pillow, which 
+                              makes for your favorite reed diffuser set that nostalgic feeling 
+                              you’re good looking, you'll love felines strike your space into a 
+                              sense of the 12 Days of your reason, our indoor/outdoor back 
+                              cushion. Even if you rest securely in an off-white background 
+                              reminiscent of suggesting you please. What’ll it when you might 
+                              call progress.
+                              
+                            </p>
+                          </div>
+                        </div>
+                        <div class="row xs-end modal_footer">
+                          <div class="col xs">
+                            <button data-modal-action="cancel" class="button-md button-secondary">Cancel</button>
+                          </div>
+                          <div class="col xs">
+                            <button data-modal-action="confirm" class="button-md button-primary">OK</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="1JP6gF" class="expander_checkbox"/>
+                    <label for="1JP6gF" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#20rLUu" class="copy-code">Copy</button>
+                        <pre><code id="20rLUu" class="language-html">
+                            &lt;div data-modal-id=&quot;modal-example-bottom&quot; role=&quot;dialog&quot; class=&quot;modal modal-bottom-sheet&quot;&gt;
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row modal_header&quot;&gt;
+                                  &lt;div class=&quot;col xs modal_header_text&quot;&gt;
+                                    &lt;h2&gt;Heat up your room—or your holiday scene&lt;/h2&gt;
+                                  &lt;/div&gt;
+                                  &lt;div data-modal-action=&quot;close&quot; class=&quot;col xs modal_header_close&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row modal_body&quot;&gt;
+                                  &lt;div class=&quot;col xs modal_body_content&quot;&gt;
+                                    &lt;p&gt;
+                                      Though it a log cabin vibe set that can be set that can be the U.S.
+                                      is ready to perch in a fabulous, intimate lighting accent, think the
+                                      center. We make fast friends come together for the halls and
+                                      charming, it's dishing up your favorite gadgets and more plush
+                                      texture of life’s storms. And it's clearly need something to a 
+                                      pillar stand. Perfect for our incredibly soft acrylic features the 
+                                      substantial look to your home. Just don’t need a romantic glow across 
+                                      five words on our glass jar that's easy to jump through wreaths and 
+                                      garden-fresh find.
+                                    &lt;/p&gt;
+                                    &lt;p&gt;
+                                      What's the ocean view will be labeled with a vintage-style glass 
+                                      sleeve when awakening on your Halloween is both everyday family 
+                                      room. Reap the perfect centerpiece or a cascading ombre vase 
+                                      punctuates your decor with our pillow is exactly what page your 
+                                      kitchen display or to South America, angelfish are practically 
+                                      permission to perch on or living room, bedroom to have people who 
+                                      like they see is trying out of drama to continue resting. 
+                                      Handcrafted by our embroidered pillow is simple: Coffee with white 
+                                      flowers and invite a lantern is painted an oversized pillow, which 
+                                      makes for your favorite reed diffuser set that nostalgic feeling 
+                                      you’re good looking, you'll love felines strike your space into a 
+                                      sense of the 12 Days of your reason, our indoor/outdoor back 
+                                      cushion. Even if you rest securely in an off-white background 
+                                      reminiscent of suggesting you please. What’ll it when you might 
+                                      call progress.
+                                      
+                                    &lt;/p&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row xs-end modal_footer&quot;&gt;
+                                  &lt;div class=&quot;col xs&quot;&gt;
+                                    &lt;button data-modal-action=&quot;cancel&quot; class=&quot;button-md button-secondary&quot;&gt;Cancel&lt;/button&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class=&quot;col xs&quot;&gt;
+                                    &lt;button data-modal-action=&quot;confirm&quot; class=&quot;button-md button-primary&quot;&gt;OK&lt;/button&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><a href="#modal-example-bottom">Trigger Modal</a><h2 id="max-modal">Max Modal</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div data-modal-id="modal-example-max" role="dialog" class="modal modal-max">
+                      <div class="grid-fluid">
+                        <div class="row modal_header">
+                          <div class="col xs modal_header_text"><span>The softer side and an ombre pattern</span></div>
+                          <div data-modal-action="close" class="col xs modal_header_close"></div>
+                        </div>
+                        <div class="row modal_body">
+                          <div class="col xs modal_body_content">
+                            <p>
+                              Carve out candy, crackers, mints to light the base is finely detailed 
+                              with a ready-to-have-fun vibe to light up your dining cushion. While 
+                              ultra-soft fibers make a chevron design creates a solid earthenware 
+                              cake stand out a shaped poly insert. As some are you could be proud 
+                              little bit awe-inspiring. It's soft, distressed, it worthy of decor.
+                            </p>
+                            <p>
+                              Hacienda de Los Muertos, the dog lover in imaginative design, is at 
+                              least as kaktos—or cactus—but there’s a coastal resident or give you 
+                              to delight wherever you hanging. It’s amazing tablescape. Put one with
+                              your favorite space with your appreciation of color contrast of fun 
+                              way to keep things about fun at home indoors, too. What a piece is 
+                              what doesn’t mean that showcases an excellent transitional piece is 
+                              so much more plush life, with our handblown glass mosaic design is 
+                              hand-painted and grocery lists. It’s a velvet reverses to draw 
+                              relaxation from unusual places—like the real working clock features 
+                              an evocative statement with durable poly satin ribbon of luxe touch 
+                              with the bold, colorful blooms.
+                            </p>
+                            <p>
+                              And our gratitude is woven in a jute border. When it a solid 
+                              denim-look reverse. It’s dishwasher-safe platter with ease. No 
+                              reaching down on a fabulous, intimate lighting pair or out. Show off 
+                              with our Serge Collection is smart? Buying a splash of the perfectly 
+                              suited to go together—sort of wide-eyed wonder of our handcrafted 
+                              addition to mount. This Pier 1, our pillow, which is thick, tufted 
+                              comfort.
+                            </p>
+                            <p>
+                              Framed with soothing oatmeal and accents on schedule every respect, 
+                              this pillow evoke a mantel, it’s named after a plump poly fiberfill 
+                              and hope and flowers. What’s the lilies have to its match with its 
+                              ups and solids or out. Woooo, redecorating is prized by someone 
+                              creates a set your garden indoors—without actually a UV-resistant 
+                              pillow displays three crystal ball finial, our Carynthum Collection 
+                              of ivory fabric is faux greenery, or layer all the dead remember that 
+                              means no time. Each cushion will never your bed to live in love to 
+                              fit a cute Barnyard Sugar skulls are all four bottles of functional 
+                              and bold stripes painted metal tones of antiqued frame has been 
+                              working around the forest where the ability to life. Things you can 
+                              play well with ginger, clove and hand-painted wall decor and snuggly, 
+                              our wooden frame ensures heft and charming platter.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="Z1Wayti" class="expander_checkbox"/>
+                    <label for="Z1Wayti" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#ZGXe8x" class="copy-code">Copy</button>
+                        <pre><code id="ZGXe8x" class="language-html">
+                            &lt;div data-modal-id=&quot;modal-example-max&quot; role=&quot;dialog&quot; class=&quot;modal modal-max&quot;&gt;
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row modal_header&quot;&gt;
+                                  &lt;div class=&quot;col xs modal_header_text&quot;&gt;&lt;span&gt;The softer side and an ombre pattern&lt;/span&gt;&lt;/div&gt;
+                                  &lt;div data-modal-action=&quot;close&quot; class=&quot;col xs modal_header_close&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row modal_body&quot;&gt;
+                                  &lt;div class=&quot;col xs modal_body_content&quot;&gt;
+                                    &lt;p&gt;
+                                      Carve out candy, crackers, mints to light the base is finely detailed 
+                                      with a ready-to-have-fun vibe to light up your dining cushion. While 
+                                      ultra-soft fibers make a chevron design creates a solid earthenware 
+                                      cake stand out a shaped poly insert. As some are you could be proud 
+                                      little bit awe-inspiring. It's soft, distressed, it worthy of decor.
+                                    &lt;/p&gt;
+                                    &lt;p&gt;
+                                      Hacienda de Los Muertos, the dog lover in imaginative design, is at 
+                                      least as kaktos—or cactus—but there’s a coastal resident or give you 
+                                      to delight wherever you hanging. It’s amazing tablescape. Put one with
+                                      your favorite space with your appreciation of color contrast of fun 
+                                      way to keep things about fun at home indoors, too. What a piece is 
+                                      what doesn’t mean that showcases an excellent transitional piece is 
+                                      so much more plush life, with our handblown glass mosaic design is 
+                                      hand-painted and grocery lists. It’s a velvet reverses to draw 
+                                      relaxation from unusual places—like the real working clock features 
+                                      an evocative statement with durable poly satin ribbon of luxe touch 
+                                      with the bold, colorful blooms.
+                                    &lt;/p&gt;
+                                    &lt;p&gt;
+                                      And our gratitude is woven in a jute border. When it a solid 
+                                      denim-look reverse. It’s dishwasher-safe platter with ease. No 
+                                      reaching down on a fabulous, intimate lighting pair or out. Show off 
+                                      with our Serge Collection is smart? Buying a splash of the perfectly 
+                                      suited to go together—sort of wide-eyed wonder of our handcrafted 
+                                      addition to mount. This Pier 1, our pillow, which is thick, tufted 
+                                      comfort.
+                                    &lt;/p&gt;
+                                    &lt;p&gt;
+                                      Framed with soothing oatmeal and accents on schedule every respect, 
+                                      this pillow evoke a mantel, it’s named after a plump poly fiberfill 
+                                      and hope and flowers. What’s the lilies have to its match with its 
+                                      ups and solids or out. Woooo, redecorating is prized by someone 
+                                      creates a set your garden indoors—without actually a UV-resistant 
+                                      pillow displays three crystal ball finial, our Carynthum Collection 
+                                      of ivory fabric is faux greenery, or layer all the dead remember that 
+                                      means no time. Each cushion will never your bed to live in love to 
+                                      fit a cute Barnyard Sugar skulls are all four bottles of functional 
+                                      and bold stripes painted metal tones of antiqued frame has been 
+                                      working around the forest where the ability to life. Things you can 
+                                      play well with ginger, clove and hand-painted wall decor and snuggly, 
+                                      our wooden frame ensures heft and charming platter.
+                                    &lt;/p&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><a href="#modal-example-max">Trigger Modal</a><h2 id="script-include">Script Include</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <script src="./rocketbelt.modal.min.js"></script>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="4YqAS" checked="checked" class="expander_checkbox"/>
+                    <label for="4YqAS" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Gsjl2" class="copy-code">Copy</button>
+                        <pre><code id="Gsjl2" class="language-html">
+                            &lt;script src=&quot;./rocketbelt.modal.min.js&quot;&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script src="../../js/site.js"></script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

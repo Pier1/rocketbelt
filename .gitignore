@@ -1,3 +1,11 @@
+#-- TEMP CHANGES TO GITIGNORE FOR DEPLOYMENT --
+README.md
+deploy*
+gulpfile.js
+package.json
+rocketbelt/**/*
+templates/**/*
+
 # ====================================================
 # Ignore component symlinks (but not site-specific JS)
 # ====================================================
