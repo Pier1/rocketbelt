@@ -5,7 +5,7 @@
 
   // var fs = require('fs');
 
-  var cache = require('./slipsum-cache.json', 'utf-8');
+  var cache = require('./rocketbelt.slipsum-cache.json', 'utf-8');
 
   // var buildCache = function () {
   //   if (cache) {
