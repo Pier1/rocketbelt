@@ -17,6 +17,7 @@
   "devDependencies": {
     "browser-sync": "^2.13.0",
     "cssnano": "^3.7.1",
+    "cz-conventional-changelog": "^1.2.0",
     "del": "^2.2.0",
     "eyeglass": "^0.8.3",
     "gulp": "^3.9.1",
@@ -53,5 +54,10 @@
   },
   "dependencies": {
     "clipboard": "^1.5.12"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
   }
 }
