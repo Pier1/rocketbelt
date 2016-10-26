@@ -24,6 +24,10 @@ body { min-height: 100%; }
   padding: $gutter-width * 2;
 }
 
+#docs-wrapper {
+  height: 100%;
+}
+
 #docs-leftnav.col.xs-2 {
     padding-top: $gutter-width;
     flex: 0 0 220px;
