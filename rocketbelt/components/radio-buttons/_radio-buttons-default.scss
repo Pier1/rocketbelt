@@ -11,6 +11,7 @@ input[type=checkbox] {
 input[type=radio],
 input[type=checkbox] {
   & + label {
+    font-weight: font-weight(normal);
     position: relative;
     padding-left: 1.25rem;
   }
