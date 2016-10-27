@@ -29,6 +29,7 @@
     "gulp-jade": "^1.1.0",
     "gulp-jade-find-affected": "^0.2.2",
     "gulp-jade-inheritance": "^0.5.5",
+    "gulp-modernizr": "^1.0.0-alpha",
     "gulp-notify": "^2.2.0",
     "gulp-plumber": "^1.1.0",
     "gulp-postcss": "^6.1.1",

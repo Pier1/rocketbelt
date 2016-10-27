@@ -37,6 +37,8 @@ var symlink = require('gulp-symlink');
 var path = require('path');
 var exec = require('child_process').exec;
 
+var modernizr = require('gulp-modernizr');
+
 var sitemap = require('gulp-sitemap');
 var argv = require('minimist')(process.argv.slice(2));
 // var buildPath = './docs';
@@ -87,6 +89,21 @@ gulp.task('uglify', function () {
   ;
 });
 
+gulp.task('feature-detection', function () {
+  gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.scss'])
+    .pipe(modernizr('rocketbelt.feature-detection.js',
+    {
+      options: [
+        'setClasses'
+      ],
+      tests: [
+        'touchevents'
+      ]
+    }))
+    .pipe(gulp.dest(rbDir + '/base/feature-detection'))
+  ;
+});
+
 gulp.task('styles', function () {
   var source = gulp.src(['./rocketbelt/**/*.scss', './templates/scss/**/*.scss'])
     .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
@@ -129,10 +146,7 @@ gulp.task('clean', ['link:clean'], function () {
 
 gulp.task('build', function (done) {
   if (!argv.release) {
-    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', done);
-  }
-  else {
-    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', 'del-assets', done);
+    runSequence('uglify', 'link', 'feature-detection', ['styles', 'views'], 'sitemap', done);
   }
 });
 
