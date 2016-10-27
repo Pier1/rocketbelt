@@ -163,12 +163,14 @@ fieldset {
   label,
   legend {
     font-size: ms(-1);
+    font-weight: font-weight(semibold);
     align-self: flex-start;
   }
 
   label:after,
   legend:after {
     color: color(gray, plus1);
+    font-weight: font-weight(normal);
   }
 }
 
