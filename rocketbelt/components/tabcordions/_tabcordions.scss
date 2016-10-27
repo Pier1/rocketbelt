@@ -5,15 +5,19 @@
   $border: $width-border solid $color-border;
 
   font-size: 0;
-  background: $color-bg;
-  border: $border;
   overflow: hidden;
   position: relative;
+  border: $border;
+  border-top: 0;
 
   &:after {
     clear: both;
     content: '';
     display: table;
+  }
+
+  @include media('>=sm') {
+    border: 0;
   }
 
   .tab {
@@ -32,71 +36,103 @@
       }
 
       &:checked + .tab_label {
-        color: color(brand);
-        transition: all 200ms;
+        color: color(gray, minus1);
+        // transition: all 200ms;
+        border-bottom: $border;
+
+        @include media('>=sm') {
+          &:after {
+            left: 0;
+            right: 0;
+            height: 4px;
+          }
+        }
       }
 
       &:not(:checked) + .tab_label {
         color: color(brand);
-        transition: all 200ms;
+        // transition: all 200ms;
 
         @include media('>=sm') {
-          color: rgba(color(brand), 0.4);
-        }
-      }
-
-      &:checked + .tab_label {
-        &:before,
-        &:after {
-          transition: all 250ms ease-in-out;
-        }
-
-        &:before {
-          transform: rotate(270deg);
-        }
-
-        &:after {
-          transform: rotate(90deg);
+          &:after {
+            left: 50%;
+            right: 50%;
+            height: 0;
+          }
         }
       }
     }
   }
 
-  .tab_label {
+  .tab .tab_radio:checked + .tab_label {
+    &:before {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    &:after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  .tab .tab_label {
     position: relative;
     padding: ms(-10) ms(-4);
     font-size: ms(-1);
     text-transform: uppercase;
     width: 100%;
     display: inline-block;
-    transition: all 250ms;
+    // transition: all 250ms;
+    background: $color-bg;
+
+    border-top: $border;
 
     &:before,
     &:after {
       content: '';
-      top: 50%;
-      right: 1rem;
       position: absolute;
+      border: 0;
       background: color(brand);
-      transform: rotate(0deg);
-      transition: 250ms all ease-in-out;
-      height: 0.75rem;
-      width: 0.15rem;
-      margin-top: -0.375rem;
-
-      @include media('>=sm') {
-        display: none;
-      }
     }
 
+    // Vertical
     &:before {
-      transform: rotate(90deg);
+      border-radius: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% - 15px);
+      width: 4px;
+      height: 18px;
+    }
+
+    // Horizontal
+    &:after {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 4px;
+      width: 18px;
+      height: 4px;
     }
 
     @include media('>=sm') {
+      border: $border;
       width: auto;
-      border: 0;
-      border-right: $border;
+
+      &:before {
+        border: none;
+        background: transparent;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        top: calc(100% - 2px);
+        width: 100%;
+        background: color(primary);
+        transition-property: height, left, right;
+        transition-duration: 200ms;
+        transition-timing-function: ease-out;
+      }
     }
   }
 
@@ -118,21 +154,13 @@
     width: 100%;
 
     @include media('>=sm') {
-      border-top: $border;
+      border: $border;
     }
   }
+}
 
-  .highlight {
-    display: none;
-
-    @include media('>=sm') {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      height: 3px;
-      background: color(primary);
-      transition: all 250ms ease-in-out;
-    }
+.tab:not(:first-of-type) .tab_label {
+  @include media('>=sm') {
+    border-left: 0;
   }
 }
