@@ -1,0 +1,16 @@
+section.swiper-container.gallery-top
+  .swiper-wrapper
+    - skus = ['BRS0005_1', '2490759_12', '2490759_13', '2222471_13', 'IDD0003_1', '2983222_10A']
+    each alt in skus
+      - var short = alt.substring(0, alt.indexOf('_'));
+      img.swiper-slide(src=base + short + '/' + alt + '.jpg?sw=400&sh=400')
+
+  .swiper-button-next.swiper-button-white
+  .swiper-button-prev.swiper-button-white
+
+section.swiper-container.gallery-thumbs
+  .swiper-wrapper
+    - skus = ['BRS0005_1', '2490759_12', '2490759_13', '2222471_13', 'IDD0003_1', '2983222_10A']
+    each alt in skus
+      - var short = alt.substring(0, alt.indexOf('_'));
+      img.swiper-slide(src=base + short + '/' + alt + '.jpg?sw=400&sh=400')  

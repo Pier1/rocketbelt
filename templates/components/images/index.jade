@@ -14,22 +14,11 @@ block content
     .grid-fluid
       .row.xs-center
         .col.xs-4
-          section#gallery1_main-image
-            - skus = ['BRS0005_1', '2490759_12', '2490759_13', '2222471_13', 'IDD0003_1', '2983222_10A']
-            each alt in skus
-              - var short = alt.substring(0, alt.indexOf('_'));
-              img(src=base + short + '/' + alt + '.jpg?sw=400&sh=400')
-      //- .row.xs-center
-      //-   .col.xs-4
-      //-     section#gallery1_thumbs
-      //-       - skus = ['BRS0005_1', '2490759_12', '2490759_13', '2222471_13', 'IDD0003_1', '2983222_10A']
-      //-       each alt in skus
-      //-         - var short = alt.substring(0, alt.indexOf('_'));
-      //-         img(src=base + short + '/' + alt + '.jpg?sw=150&sh=150')
+          +exampleWithCode
+            include _images-gallery
               
 
     +exampleWithCode('JS Include')
-      script(src='https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js')
       script(src='./rocketbelt.images-gallery.js')
           
     :md
