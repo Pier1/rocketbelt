@@ -4,6 +4,16 @@ fieldset {
   flex-direction: column;
 }
 
+.form-group:not(.inline) .messages {
+  display: flex;
+  flex-wrap: wrap;
+
+  .validation-message:after {
+    color: color(gray, plus1);
+    content: '\00A0\2014\00A0';
+  }
+}
+
 form .form-group.inline:first-child {
   margin-top: ms(-10);
 }
@@ -117,7 +127,6 @@ select {
     border-color: color(error);
     border-width: 2px;
 
-    & ~ .validation-message,
     & ~ .messages .validation-message {
       display: block;
       visibility: visible;
@@ -126,7 +135,6 @@ select {
   }
 
   &:valid:not(.invalid) {
-    & ~ .validation-message,
     & ~ .messages .validation-message {
       display: none;
       visibility: hidden;
