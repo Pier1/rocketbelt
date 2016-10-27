@@ -80,6 +80,7 @@ var sizeOptions = {
 gulp.task('uglify', function () {
   return gulp.src(['./rocketbelt/**/*.js', '!./rocketbelt/**/*.min.js'])
     .pipe(changed(buildPath))
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.init())
     .pipe(uglify())
@@ -178,6 +179,7 @@ gulp.task('link:partials', function () {
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   return vfs.src('./rocketbelt/**/_*.jade')
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
@@ -189,6 +191,7 @@ gulp.task('link:js', function () {
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   return vfs.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/rocketbelt.slipsum-cache.json'])
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
