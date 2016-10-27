@@ -97,14 +97,12 @@ select {
 [disabled] {
   opacity: 0.6;
   filter: grayscale(0.4);
-  cursor: not-allowed;
 }
 
 input[type=radio],
 input[type=checkbox] {
   &[disabled] + label {
     color: color(gray, plus2);
-    cursor: not-allowed;
   }
 }
 
