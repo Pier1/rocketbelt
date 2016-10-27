@@ -2,9 +2,11 @@ form
   .form-group
     input#helper-password(type='password')
     label(for='helper-password') Password
-    small.helper-text At least 8 characters
+    .messages
+      small.helper-text At least 8 characters
   .form-group
     input.invalid#helper-fname(type='tel')
     label(for='helper-fname') Phone number
-    small.validation-message Please enter a valid Phone Number
-    small.helper-text US numbers only, please
+    .messages
+      small.validation-message Please enter a valid Phone Number
+      small.helper-text US numbers only, please
