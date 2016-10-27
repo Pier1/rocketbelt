@@ -19,15 +19,17 @@
 }
 
 .button {
-  @include button-size;
+  @include button-size(md);
 }
 
 .button-primary {
   @include button-style;
+  @include button-inset(primary);
 }
 
 .button-secondary {
   @include button-style(secondary);
+  @include button-inset(secondary);
 }
 
 .button-text {
@@ -47,15 +49,8 @@
   @include button-size(lg);
 }
 
-.button-primary.button-inset {
-  @include button-inset(primary);
-}
-
-.button-secondary.button-inset {
-  @include button-inset(secondary);
-}
-
 .button-block {
+  box-shadow: none;
   display: block;
   width: 100%;
 }

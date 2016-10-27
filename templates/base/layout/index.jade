@@ -9,14 +9,16 @@ block content
       # Layout
       
       ## Padding
-    .grid.example-layout
-      .row.xs-between
-        +exampleWithCode
-          include _padding
+    .grid-fluid.example-layout
+      .row
+        .col.xs
+          +exampleWithCode
+            include _padding
     
     :md
       ## Margin
-    .grid.example-layout
-      .row.xs-between
-        +exampleWithCode
-          include _margin
+    .grid-fluid.example-layout
+      .row
+        .col.xs
+          +exampleWithCode
+            include _margin

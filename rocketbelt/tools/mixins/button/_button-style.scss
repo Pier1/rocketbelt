@@ -5,7 +5,7 @@
 
   @if $style == primary {
     background-color: $button-base;
-    color: color(white);
+    color: mix(color(white), $button-base, 90%);
 
     &:hover {
       background-color: $button-hover;
@@ -23,7 +23,7 @@
   }
   @else if $style == secondary {
     background-color: color(white);
-    color: $button-base;
+    color: mix(color(white), $button-base, 10%);
     border: 0.1rem solid $button-base;
 
     &:hover {

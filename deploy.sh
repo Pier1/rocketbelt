@@ -13,7 +13,13 @@ function ghpBuild {
 
   git checkout -b TEMP_BRANCH
   npm install
-  gulp build --release
+
+  echo -e "#-- TEMP CHANGES TO GITIGNORE FOR DEPLOYMENT --\nREADME.md\ndeploy*\ngulpfile.js\npackage.json\nrocketbelt/**/*\ntemplates/**/*\n\n$(cat .gitignore)" > .gitignore
+
+  gulp build
+  mv dist/* .
+  rmdir dist
+
   git add . --all
   git commit -m "Build for gh-pages: ${SHA}"
 }
@@ -21,7 +27,7 @@ function ghpBuild {
 # Pull requests and commits to other branches shouldn't try to deploy, just build to verify
 if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
     echo "Skipping deploy; just doing a build."
-    ghpBuild
+    # ghpBuild
     exit 0
 fi
 

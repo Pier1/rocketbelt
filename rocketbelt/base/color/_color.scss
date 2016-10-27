@@ -2,7 +2,7 @@ $brand-blue: #0a689d;
 $primary: scale-color($brand-blue, $lightness: 25%);
 
 $base-families: (
-  brand-blue: $brand-blue,
+  brand: $brand-blue,
   primary: $primary,
   secondary: adjust-hue($primary, -30),
   accent: adjust-hue($primary, 60),
@@ -29,11 +29,8 @@ $gray-variants: (
   plus2: 0.4,
   plus3: 0.8,
   plus4: 0.9,
-  lightest: 0.95,
   minus1: -0.2,
   minus2: -0.4,
-  minus3: -0.7,
-  darkest: -0.9
 );
 
 $black-white-variants: (base: 0);

@@ -37,6 +37,7 @@ var symlink = require('gulp-symlink');
 var path = require('path');
 var exec = require('child_process').exec;
 
+var sitemap = require('gulp-sitemap');
 var argv = require('minimist')(process.argv.slice(2));
 // var buildPath = './docs';
 var buildPath = './dist';
@@ -128,10 +129,10 @@ gulp.task('clean', ['link:clean'], function () {
 
 gulp.task('build', function (done) {
   if (!argv.release) {
-    runSequence('uglify', 'link', ['styles', 'views'], done);
+    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', done);
   }
   else {
-    runSequence('uglify', 'link', ['styles', 'views'], 'del-assets', done);
+    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', 'del-assets', done);
   }
 });
 
@@ -156,25 +157,25 @@ gulp.task('img:site:copy', function () {
 gulp.task('link', ['link:partials', 'link:js']);
 
 gulp.task('link:partials', function () {
-  return gulp.src('./rocketbelt/**/_*.jade')
-    .pipe(symlink(function (file) {
-      return path.join('./templates', file.relative);
-    }, { force: true, log: false }));
+  // return gulp.src('./rocketbelt/**/_*.jade')
+  //   .pipe(symlink(function (file) {
+  //     return path.join('./templates', file.relative);
+  //   }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  // return vfs.src('./rocketbelt/**/_*.jade')
-  //   .pipe(vfs.symlink('./templates', { relative: true }));
+  return vfs.src('./rocketbelt/**/_*.jade')
+    .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:js', function () {
-  return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/slipsum-cache.json'])
-    .pipe(symlink(function (file) {
-      return path.join('./templates', file.relative);
-    }, { force: true, log: false }));
+  // return gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/rocketbelt.slipsum-cache.json'])
+  //   .pipe(symlink(function (file) {
+  //     return path.join('./templates', file.relative);
+  //   }, { force: true, log: false }));
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
-  // return vfs.src('./rocketbelt/**/*.js', './rocketbelt/**/*.json')
-  //   .pipe(vfs.symlink('./templates', { relative: true }));
+  return vfs.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/rocketbelt.slipsum-cache.json'])
+    .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
 gulp.task('link:clean', function () {
@@ -210,6 +211,13 @@ gulp.task('views', ['js:site:copy', 'img:site:copy'], function () {
   });
 });
 
+gulp.task('sitemap', function () {
+  return gulp.src(buildPath + '**/*.html', { read: false })
+    .pipe(sitemap({ siteUrl: 'http://rocketbelt.io' }))
+    .pipe(gulp.dest(buildPath))
+  ;
+});
+
 var directoryTreeToObj = function(dir, done) {
   var fs = require('fs');
   var path = require('path');
@@ -220,8 +228,8 @@ var directoryTreeToObj = function(dir, done) {
       return done(err);
 
     files = files.filter(function (file) {
-      if (fs.lstatSync(dir + '/' + file).isDirectory()) { 
-        if (file === 'js' || file === 'scss') return false; 
+      if (fs.lstatSync(dir + '/' + file).isDirectory()) {
+        if (file === 'js' || file === 'scss') return false;
       }
       return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });

@@ -4,6 +4,62 @@ fieldset {
   flex-direction: column;
 }
 
+form .form-group.inline:first-child {
+  margin-top: ms(-10);
+}
+
+.form-group.inline {
+  flex-direction: row;
+  align-items: center;
+
+  label,
+  .helper-text {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+
+  label {
+    padding-right: padding(-4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .helper-text {
+    padding-left: padding(-4);
+  }
+
+  .messages {
+    order: last;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    padding-left: padding(-4);
+
+    .helper-text {
+      padding-left: 0;
+    }
+
+    .helper-text,
+    .validation-message {
+      align-self: flex-start;
+    }
+  }
+
+  input[required],
+  select[required] {
+    & + label:after {
+      content: '(required)';
+    }
+  }
+
+  input:not([required]),
+  select:not([required]) {
+    & + label:after {
+      content: '(optional)';
+    }
+  }
+}
+
 input,
 select {
   height: 2rem;
@@ -42,7 +98,7 @@ select[disabled] {
 }
 
 select {
-  $fill: str-replace(quote(color(gray, darkest)), '#', '%23');
+  $fill: str-replace(quote(color(black)), '#', '%23');
   appearance: none;
   background: url('data:image/svg+xml;utf8,
                 <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg">
@@ -61,7 +117,8 @@ select {
     border-color: color(error);
     border-width: 2px;
 
-    & ~ .validation-message {
+    & ~ .validation-message,
+    & ~ .messages .validation-message {
       display: block;
       visibility: visible;
       color: color(error);
@@ -69,7 +126,8 @@ select {
   }
 
   &:valid:not(.invalid) {
-    & ~ .validation-message {
+    & ~ .validation-message,
+    & ~ .messages .validation-message {
       display: none;
       visibility: hidden;
     }
@@ -107,6 +165,11 @@ fieldset {
 }
 
 .form-group {
+  input + label:after,
+  select + label:after {
+    font-size: font-size(-2);
+  }
+
   input[required],
   select[required] {
     & + label:after {
@@ -121,8 +184,29 @@ fieldset {
     }
   }
 
+  &.required-suppressed {
+    input[required],
+    select[required] {
+      & + label:after {
+        content: '';
+      }
+    }
+
+    input:not([required]),
+    select:not([required]) {
+      & + label:after {
+        content: '';
+      }
+    }
+  }
+
   .helper-text {
     color: color(gray, plus1);
+  }
+
+  .helper-text,
+  .validation-message {
+    font-size: font-size(-2);
   }
 }
 

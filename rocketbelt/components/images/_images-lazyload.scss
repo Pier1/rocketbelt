@@ -1,6 +1,6 @@
 .lazyload-wrapper {
   width: 100%;
-  background-color: color(gray, lightest);
+  background-color: color(gray, plus4);
   background-size: cover;
   background-repeat: no-repeat;
   position: relative;
@@ -38,7 +38,7 @@
 }
 
 .lazyload {
-  background-color: gray(lightest);
+  background-color: color(gray, plus4);
   margin-top: 10vh;
   margin-bottom: 90vh;
   flex: 1;
