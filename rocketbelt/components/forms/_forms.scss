@@ -70,6 +70,13 @@ form .form-group.inline:first-child {
   }
 }
 
+html.touchevents {
+  input,
+  select {
+    min-height: 44px;
+  }
+}
+
 input,
 select {
   height: 2rem;

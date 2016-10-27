@@ -91,7 +91,7 @@ gulp.task('uglify', function () {
 });
 
 gulp.task('feature-detection', function () {
-  gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.scss'])
+  gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.scss', '!./rocketbelt/base/feature-detection/*.js'])
     .pipe(modernizr('rocketbelt.feature-detection.js',
     {
       options: [
