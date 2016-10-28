@@ -55,18 +55,20 @@ mixin exampleWithCode(labelText, expanded, inverted)
 - }
 
 mixin buildNav(navObject, rootHref)
-  ul.list-reset
-    each item in navObject.sort(function (a, b) { return a.name > b.name })
+  ul.list-reset.category-contents
+    each item in _.sortBy(navObject, function (o) { return o.name; })
       - var name = toTitleCase(item.name);
       unless item.name.indexOf('index.') > -1
         - var newRootHref = rootHref ? rootHref : '';
         - var shortName = item.name.replace('jade', '');
-        li(ref=shortName)
-          if item.type == 'file'
-            if rootHref.indexOf('img') == -1 && item.name.indexOf('img') == -1
+        
+        if shortName !== 'img'
+          li.category(ref=shortName)
+            if item.children.length === 1
               a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '')}
-          else
-            if rootHref.indexOf('img') == -1 && item.name.indexOf('img') == -1
-              a(href=newRootHref + '/' + item.name) #{name}
+            else
+              input.category-toggle(id=name, type='checkbox', name=name)
+              label.category-label(for=name) #{name}
 
-            mixin buildNav(item.children, newRootHref + '/' + item.name)
+              if item.children.length > 1
+                mixin buildNav(item.children, newRootHref + '/' + item.name)

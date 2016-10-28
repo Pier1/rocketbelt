@@ -12,8 +12,8 @@ html(lang='en')
       link(rel='stylesheet', href=prepend + '/css/site.min.css')
     script(src='https://code.jquery.com/jquery-2.2.4.min.js')
   body.grid-fluid
-    #docs-wrapper.row(style='flex-wrap: nowrap;')
-      nav#docs-leftnav.col.xs-2(style='flex-grow: 0;')
+    #docs-wrapper.row
+      nav#docs-leftnav.nav.col.xs-12.md-3.xl-2
         block sidebar
           +buildNav(nav, prepend)
       #docs-content.pad-5.col.xs
