@@ -51,7 +51,7 @@ mixin exampleWithCode(labelText, expanded, inverted)
         block
 
 - var toTitleCase = function (str) {
--   return str.replace(/-/g, ' ').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+-   return str.replace(/-/g, ' ').replace(/and/g, '&').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 - }
 
 mixin buildNav(navObject, rootHref)
@@ -64,11 +64,11 @@ mixin buildNav(navObject, rootHref)
         
         if shortName !== 'img'
           li.category(ref=shortName)
-            if item.children.length === 1
+            if _.find(item.children, function (i) { return i.name.indexOf('index.') > -1 })
               a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '')}
             else
               input.category-toggle(id=name, type='checkbox', name=name)
               label.category-label(for=name) #{name}
 
-              if item.children.length > 1
+              if item.children.length >= 1
                 mixin buildNav(item.children, newRootHref + '/' + item.name)
