@@ -7,6 +7,31 @@ block content
   article
     :md
       # Tags
+      # Variations
 
-    +exampleWithCode
-      include _tags
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-variations
+
+    :md
+      # Sizes
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-sizes
+
+    :md
+      # Dismissable
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-dismissable.jade
+
+          +exampleWithCode('js')
+            script(src='../alerts/rocketbelt.alerts-dismissable.js')
