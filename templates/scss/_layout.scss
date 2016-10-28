@@ -40,12 +40,10 @@ body { min-height: 100%; }
 
   border-width: 2px;
   border-color: color(gray, plus3);
-  border-bottom-style: solid;
   border-right-style: none;
 
   @include media('>=md') {
     border-right-style: solid;
-    border-bottom-style: none;
   }
 
   a { display: block; }
@@ -55,7 +53,28 @@ body { min-height: 100%; }
   }
 }
 
+#docs-content {
+  margin-top: ms(4);
+  margin-left: auto;
+
+  @include media('>=md') {
+    margin-top: 0;
+    margin-left: 180px;
+  }
+}
+
 .nav {
+  position: fixed;
+  z-index: 1;
+  width: 100%;
+  box-shadow: 0 0 8px 0 rgba(color(black), 0.3);
+
+  @include media('>=md') {
+    box-shadow: none;
+    width: 180px;
+    height: 100%;
+  }
+
   & > .category-contents {
     display: flex;
     position: relative;
@@ -65,7 +84,8 @@ body { min-height: 100%; }
       flex: 1;
 
       .category-contents {
-        background: color(gray, plus3);
+        background: color(gray, plus4);
+        box-shadow: 0 0 8px 0 rgba(color(black), 0.3);
         position: absolute;
         z-index: 1;
         left: 0;
@@ -93,6 +113,7 @@ body { min-height: 100%; }
 
         .category-contents {
           background: transparent;
+          box-shadow: none;
           position: static;
           width: auto;
           display: block;
@@ -151,19 +172,23 @@ body { min-height: 100%; }
       cursor: pointer;
 
       text-transform: uppercase;
+      border-width: 4px;
+      border-left-style: none;
+      border-bottom-style: solid;
 
       @include media('>=md') {
-        border-width: 4px;
-        border-left: 4px solid color(primary);
+        border-left-style: solid;
+        border-bottom-style: none;
+
         padding: padding(-4);
 
         margin: 0;
         transition: border-width 200ms ease;
-      }
 
-      &:hover {
-        border-width: ms(2);
-        transition: border-width 200ms ease;
+        &:hover {
+          border-width: ms(2);
+          transition: border-width 200ms ease;
+        }
       }
 
       &:before {
@@ -177,9 +202,11 @@ body { min-height: 100%; }
       border-width: 4px;
       transition: border-width 200ms ease;
 
-      &:hover {
-        border-width: ms(2);
-        transition: border-width 200ms ease;
+      @include media('>=md') {
+        &:hover {
+          border-width: ms(2);
+          transition: border-width 200ms ease;
+        }
       }
 
       & + .category-contents {
@@ -197,8 +224,10 @@ body { min-height: 100%; }
     }
 
     &:checked + .category-label {
-      border-width: ms(2);
-      transition: border-width 200ms ease;
+      @include media('>=md') {
+        border-width: ms(2);
+        transition: border-width 200ms ease;
+      }
 
       & + .category-contents {
         opacity: 1;
