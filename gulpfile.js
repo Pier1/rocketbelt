@@ -164,7 +164,7 @@ gulp.task('js:site:copy', function () {
 });
 
 gulp.task('img:site:copy', function () {
-  vfs.src(['./templates/**/img/*.*'])
+  vfs.src(['./templates/**/img/*.*', './templates/**/*.svg'])
     .pipe(changed(buildPath))
     .pipe(vfs.dest(buildPath, { overwrite: true }));
 });
@@ -246,7 +246,7 @@ var directoryTreeToObj = function(dir, done) {
 
     files = files.filter(function (file) {
       if (fs.lstatSync(dir + '/' + file).isDirectory()) {
-        if (file === 'js' || file === 'scss') return false;
+        if (file === 'js' || file === 'scss' || file === 'assets') return false;
       }
       return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });
