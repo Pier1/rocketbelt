@@ -1,7 +1,38 @@
-.rb-logo {
-  background: url('/assets/rocketbelt.svg');
-  width: 180px;
-  height: 100px;
+.rb-header {
+  display: block;
+  text-decoration: none;
+
+  .row {
+    @include media('>=md') {
+      flex-wrap: wrap-reverse;
+    }
+  }
+}
+
+.rb-header .rb-logo {
+  user-select: none;
+  align-items: center;
+  padding: padding(-2) padding(-2) 0 padding(0);
+  margin-bottom: margin(-8);
+
+  &.rb-logo-belt {
+    padding-right: 0;
+  }
+
+  .rb-logo-uri {
+    padding-left: 0;
+  }
+
+  @include media('>=md') {
+    &.rb-logo-belt {
+      padding: 0;
+      margin: auto;
+    }
+  }
+
+  #uri {
+    display: none;
+  }
 }
 
 .example-layout [class*="pad-"] {
@@ -60,8 +91,12 @@ body { min-height: 100%; }
 }
 
 #docs-content {
-  margin-top: ms(4);
+  margin-top: calc(#{ms(4)} + 20%);
   margin-left: auto;
+
+  @include media('>=sm') {
+    margin-top: calc(#{ms(4)} + 10%);
+  }
 
   @include media('>=md') {
     margin-top: 0;
