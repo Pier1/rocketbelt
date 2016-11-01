@@ -24,9 +24,12 @@ html(lang='en')
               .col.xs
                 block content
 
-    script(src=prepend + '/js/prism.js')
-    script(src=prepend + '/js/clipboard.min.js')
     script(src=prepend + '/js/site.js')
     script(src='/base/feature-detection/rocketbelt.feature-detection.min.js')
+    
+    script(src=prepend + '/js/prism.js')
+    script(src=prepend + '/js/clipboard.min.js')
+    
+    include /base/layout/_rocketbelt.flexibility.jade
     
     include _analytics
