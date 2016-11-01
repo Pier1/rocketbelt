@@ -1,0 +1,240 @@
+.form-group,
+fieldset {
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group:not(.inline) .messages {
+  display: flex;
+  flex-wrap: wrap;
+
+  .validation-message:after {
+    color: color(gray, plus1);
+    content: '\00A0\2014\00A0';
+  }
+}
+
+form .form-group.inline:first-child {
+  margin-top: ms(-10);
+}
+
+.form-group.inline {
+  flex-direction: row;
+  align-items: center;
+
+  label,
+  .helper-text {
+    flex: 0 0 auto;
+    align-self: center;
+  }
+
+  label {
+    padding-right: padding(-4);
+    display: flex;
+    flex-direction: column;
+  }
+
+  .helper-text {
+    padding-left: padding(-4);
+  }
+
+  .messages {
+    order: last;
+    display: flex;
+    flex-direction: column;
+    flex: 0 0 auto;
+    padding-left: padding(-4);
+
+    .helper-text {
+      padding-left: 0;
+    }
+
+    .helper-text,
+    .validation-message {
+      align-self: flex-start;
+    }
+  }
+
+  input[required],
+  select[required] {
+    & + label:after {
+      content: '(required)';
+    }
+  }
+
+  input:not([required]),
+  select:not([required]) {
+    & + label:after {
+      content: '(optional)';
+    }
+  }
+}
+
+html.touchevents {
+  input,
+  select {
+    min-height: 44px;
+  }
+}
+
+input,
+select {
+  height: 2rem;
+  border: 1px solid color(gray, plus1);
+  border-radius: 2px;
+  display: block;
+  width: 100%;
+  font-size: ms(-1);
+  padding: ms(-12) ms(-10);
+
+  &:focus {
+    overflow: hidden;
+    outline-color: color(primary);
+    outline-width: 3px;
+  }
+}
+
+[disabled] {
+  opacity: 0.6;
+  filter: grayscale(0.4);
+}
+
+input[type=radio],
+input[type=checkbox] {
+  &[disabled] + label {
+    color: color(gray, plus2);
+  }
+}
+
+input[disabled],
+select[disabled] {
+  background-color: color(gray, plus3);
+  border-color: transparent;
+}
+
+select {
+  $fill: str-replace(quote(color(black)), '#', '%23');
+  appearance: none;
+  background: url('data:image/svg+xml;utf8,
+                <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg">
+                  <path fill="#{$fill}" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/>
+                </svg>
+              ') no-repeat,
+              color(white);
+  background-size: 1rem;
+  background-position: right 0.5rem center;
+}
+
+input,
+select {
+  &:invalid,
+  &.invalid {
+    border-color: color(error);
+    border-width: 2px;
+
+    & ~ .messages .validation-message {
+      display: block;
+      visibility: visible;
+      color: color(error);
+    }
+  }
+
+  &:valid:not(.invalid) {
+    & ~ .messages .validation-message {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  &:focus:invalid,
+  &:focus.invalid {
+    outline-color: color(error);
+  }
+}
+
+input,
+select {
+  & + label {
+    order: -1;
+  }
+}
+
+.form-group,
+fieldset {
+  &:not(:last-child) {
+    margin-bottom: ms(-10);
+  }
+
+  label,
+  legend {
+    font-size: ms(-1);
+    font-weight: font-weight(semibold);
+    align-self: flex-start;
+  }
+
+  label:after,
+  legend:after {
+    color: color(gray, plus1);
+    font-weight: font-weight(normal);
+  }
+}
+
+.form-group {
+  input + label:after,
+  select + label:after {
+    font-size: font-size(-2);
+  }
+
+  input[required],
+  select[required] {
+    & + label:after {
+      content: '\00a0(required)';
+    }
+  }
+
+  input:not([required]),
+  select:not([required]) {
+    & + label:after {
+      content: '\00a0(optional)';
+    }
+  }
+
+  &.required-suppressed {
+    input[required],
+    select[required] {
+      & + label:after {
+        content: '';
+      }
+    }
+
+    input:not([required]),
+    select:not([required]) {
+      & + label:after {
+        content: '';
+      }
+    }
+  }
+
+  .helper-text {
+    color: color(gray, plus1);
+  }
+
+  .helper-text,
+  .validation-message {
+    font-size: font-size(-2);
+  }
+}
+
+fieldset {
+  border: 0;
+  margin: 0;
+  padding: 0;
+
+  &[required] legend:after {
+    content: '\00a0(required)';
+  }
+
+  &:not([required]) legend:after {
+    content: '\00a0(optional)';
+  }
+}

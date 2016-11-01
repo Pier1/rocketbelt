@@ -6,118 +6,73 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
   <body class="grid-fluid">
-    <div id="docs-wrapper" style="flex-wrap: nowrap;" class="row">
-      <nav id="docs-leftnav" style="flex-grow: 0;" class="col xs-2">
-        <ul class="list-reset">
-          <li ref="base"><a href="../../base">Base</a>
-            <ul class="list-reset">
-              <li ref="breakpoints"><a href="../../base/breakpoints">Breakpoints</a>
-                <ul class="list-reset">
-                </ul>
+    <div id="docs-wrapper" class="row">
+      <nav id="docs-leftnav" class="nav col xs-12 md-3 xl-2">
+        <div class="rb-logo"></div>
+        <ul class="list-reset category-contents">
+          <li ref="base" class="category">
+            <input id="Base" type="checkbox" name="Base" class="category-toggle"/>
+            <label for="Base" class="category-label">Base</label>
+            <ul class="list-reset category-contents">
+              <li ref="breakpoints" class="category"><a href="../../base/breakpoints">Breakpoints</a>
               </li>
-              <li ref="color"><a href="../../base/color">Color</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="color" class="category"><a href="../../base/color">Color</a>
               </li>
-              <li ref="grid"><a href="../../base/grid">Grid</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="feature-detection" class="category"><a href="../../base/feature-detection">Feature Detection</a>
               </li>
-              <li ref="layout"><a href="../../base/layout">Layout</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="grid" class="category"><a href="../../base/grid">Grid</a>
               </li>
-              <li ref="slipsum"><a href="../../base/slipsum">Slipsum</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="layout" class="category"><a href="../../base/layout">Layout</a>
               </li>
-              <li ref="typography"><a href="../../base/typography">Typography</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="slipsum" class="category"><a href="../../base/slipsum">Slipsum</a>
+              </li>
+              <li ref="typography" class="category"><a href="../../base/typography">Typography</a>
               </li>
             </ul>
           </li>
-          <li ref="components"><a href="../../components">Components</a>
-            <ul class="list-reset">
-              <li ref="alerts"><a href="../../components/alerts">Alerts</a>
-                <ul class="list-reset">
-                </ul>
+          <li ref="components" class="category">
+            <input id="Components" type="checkbox" name="Components" class="category-toggle"/>
+            <label for="Components" class="category-label">Components</label>
+            <ul class="list-reset category-contents">
+              <li ref="alerts" class="category"><a href="../../components/alerts">Alerts</a>
               </li>
-              <li ref="expanders"><a href="../../components/expanders">Expanders</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="busy-indicators" class="category"><a href="../../components/busy-indicators">Busy Indicators</a>
               </li>
-              <li ref="busy-indicators"><a href="../../components/busy-indicators">Busy Indicators</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="buttons" class="category"><a href="../../components/buttons">Buttons</a>
               </li>
-              <li ref="buttons"><a href="../../components/buttons">Buttons</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="cards" class="category"><a href="../../components/cards">Cards</a>
               </li>
-              <li ref="cards"><a href="../../components/cards">Cards</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="expanders" class="category"><a href="../../components/expanders">Exp&amp;ers</a>
               </li>
-              <li ref="forms"><a href="../../components/forms">Forms</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="forms" class="category"><a href="../../components/forms">Forms</a>
               </li>
-              <li ref="images"><a href="../../components/images">Images</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="images" class="category"><a href="../../components/images">Images</a>
               </li>
-              <li ref="modals"><a href="../../components/modals">Modals</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="modals" class="category"><a href="../../components/modals">Modals</a>
               </li>
-              <li ref="radio-buttons"><a href="../../components/radio-buttons">Radio Buttons</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="radio-buttons" class="category"><a href="../../components/radio-buttons">Radio Buttons</a>
               </li>
-              <li ref="tabcordions"><a href="../../components/tabcordions">Tabcordions</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="tabcordions" class="category"><a href="../../components/tabcordions">Tabcordions</a>
               </li>
-              <li ref="tooltips"><a href="../../components/tooltips">Tooltips</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="tooltips" class="category"><a href="../../components/tooltips">Tooltips</a>
               </li>
             </ul>
           </li>
-          <li ref="creative"><a href="../../creative">Creative</a>
-            <ul class="list-reset">
-              <li ref="sale-sticker"><a href="../../creative/sale-sticker">Sale Sticker</a>
-                <ul class="list-reset">
-                </ul>
+          <li ref="creative" class="category">
+            <input id="Creative" type="checkbox" name="Creative" class="category-toggle"/>
+            <label for="Creative" class="category-label">Creative</label>
+            <ul class="list-reset category-contents">
+              <li ref="sale-sticker" class="category"><a href="../../creative/sale-sticker">Sale Sticker</a>
               </li>
             </ul>
           </li>
-          <li ref="exposition"><a href="../../exposition">Exposition</a>
-            <ul class="list-reset">
-              <li ref="links-buttons"><a href="../../exposition/links-buttons">Links Buttons</a>
-                <ul class="list-reset">
-                  <li ref="img">
-                    <ul class="list-reset">
-                      <li ref="link_button_affordance.png">
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+          <li ref="exposition" class="category">
+            <input id="Exposition" type="checkbox" name="Exposition" class="category-toggle"/>
+            <label for="Exposition" class="category-label">Exposition</label>
+            <ul class="list-reset category-contents">
+              <li ref="links-and-buttons" class="category"><a href="../../exposition/links-and-buttons">Links &amp; Buttons</a>
               </li>
-              <li ref="logo-usage"><a href="../../exposition/logo-usage">Logo Usage</a>
-                <ul class="list-reset">
-                  <li ref="img">
-                    <ul class="list-reset">
-                      <li ref="box_logo.png">
-                      </li>
-                      <li ref="limited_use_logo.png">
-                      </li>
-                      <li ref="normal_logo.png">
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+              <li ref="logo-usage" class="category"><a href="../../exposition/logo-usage">Logo Usage</a>
               </li>
             </ul>
           </li>
@@ -141,12 +96,12 @@
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="Zgw22m" class="expander_checkbox"/>
-                    <label for="Zgw22m" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="1M11cy" class="expander_checkbox"/>
+                    <label for="1M11cy" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#Z1fhvuF" class="copy-code">Copy</button>
-                        <pre><code id="Z1fhvuF" class="language-html">
+                        <button data-clipboard-target="#1pgc7E" class="copy-code">Copy</button>
+                        <pre><code id="1pgc7E" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row&quot;&gt;
                                 &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
@@ -178,12 +133,12 @@
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="1KvcWp" class="expander_checkbox"/>
-                    <label for="1KvcWp" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="Z1VwUAf" class="expander_checkbox"/>
+                    <label for="Z1VwUAf" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#1YtrP7" class="copy-code">Copy</button>
-                        <pre><code id="1YtrP7" class="language-html">
+                        <button data-clipboard-target="#ZQIR5d" class="copy-code">Copy</button>
+                        <pre><code id="ZQIR5d" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row&quot;&gt;
                                 &lt;div class=&quot;col xs-12 md-2 xl-4&quot;&gt;&lt;/div&gt;
@@ -227,12 +182,12 @@ it automatically.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="1OpUPH" class="expander_checkbox"/>
-                    <label for="1OpUPH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="1IY0hq" class="expander_checkbox"/>
+                    <label for="1IY0hq" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#2vKlgH" class="copy-code">Copy</button>
-                        <pre><code id="2vKlgH" class="language-html">
+                        <button data-clipboard-target="#1BxNPU" class="copy-code">Copy</button>
+                        <pre><code id="1BxNPU" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row&quot;&gt;
                                 &lt;div class=&quot;col xs-1&quot;&gt;&lt;/div&gt;
@@ -273,12 +228,12 @@ it automatically.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="ZgB5NH" class="expander_checkbox"/>
-                    <label for="ZgB5NH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="Zk75rD" class="expander_checkbox"/>
+                    <label for="Zk75rD" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#Z1fBecC" class="copy-code">Copy</button>
-                        <pre><code id="Z1fBecC" class="language-html">
+                        <button data-clipboard-target="#Z120Whl" class="copy-code">Copy</button>
+                        <pre><code id="Z120Whl" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row&quot;&gt;
                                 &lt;div class=&quot;col xs-offset-2 xs-4 md-offset-3 md-6 xl-offset-8 xl-4&quot;&gt;&lt;/div&gt;
@@ -312,12 +267,12 @@ it automatically.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="Zi691L" class="expander_checkbox"/>
-                    <label for="Zi691L" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="1I40rm" class="expander_checkbox"/>
+                    <label for="1I40rm" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#Z1OVNdG" class="copy-code">Copy</button>
-                        <pre><code id="Z1OVNdG" class="language-html">
+                        <button data-clipboard-target="#16AXkA" class="copy-code">Copy</button>
+                        <pre><code id="16AXkA" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row&quot;&gt;
                                 &lt;div class=&quot;col xs-8&quot;&gt;
@@ -344,12 +299,12 @@ it automatically.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="3Tl9J" class="expander_checkbox"/>
-                    <label for="3Tl9J" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="ZdTM1w" class="expander_checkbox"/>
+                    <label for="ZdTM1w" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#8Lz3b" class="copy-code">Copy</button>
-                        <pre><code id="8Lz3b" class="language-html">
+                        <button data-clipboard-target="#Z2nmbMe" class="copy-code">Copy</button>
+                        <pre><code id="Z2nmbMe" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row xs-start md-center xl-end&quot;&gt;
                                 &lt;div class=&quot;col xs-4&quot;&gt;&lt;/div&gt;
@@ -371,12 +326,12 @@ it automatically.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="Z1VcBXt" class="expander_checkbox"/>
-                    <label for="Z1VcBXt" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="Z1UiKqh" class="expander_checkbox"/>
+                    <label for="Z1UiKqh" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#ZVIHRl" class="copy-code">Copy</button>
-                        <pre><code id="ZVIHRl" class="language-html">
+                        <button data-clipboard-target="#Zd9HMt" class="copy-code">Copy</button>
+                        <pre><code id="Zd9HMt" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row xs-top md-middle xl-bottom&quot;&gt;
                                 &lt;div class=&quot;col xs-6 example-col-tall&quot;&gt;&lt;/div&gt;
@@ -402,12 +357,12 @@ of the row.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="1OetgO" class="expander_checkbox"/>
-                    <label for="1OetgO" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="ZhAtzd" class="expander_checkbox"/>
+                    <label for="ZhAtzd" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#2t2eKb" class="copy-code">Copy</button>
-                        <pre><code id="2t2eKb" class="language-html">
+                        <button data-clipboard-target="#Z1Vfaq9" class="copy-code">Copy</button>
+                        <pre><code id="Z1Vfaq9" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row xs-between&quot;&gt;
                                 &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
@@ -433,12 +388,12 @@ of the row.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="ZgKLio" class="expander_checkbox"/>
-                    <label for="ZgKLio" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="ZfokL7" class="expander_checkbox"/>
+                    <label for="ZfokL7" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#Z1bv08T" class="copy-code">Copy</button>
-                        <pre><code id="Z1bv08T" class="language-html">
+                        <button data-clipboard-target="#Z1xGENJ" class="copy-code">Copy</button>
+                        <pre><code id="Z1xGENJ" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row xs-around&quot;&gt;
                                 &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
@@ -466,12 +421,12 @@ of the row.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="ZfiT49" class="expander_checkbox"/>
-                    <label for="ZfiT49" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="4LgAo" class="expander_checkbox"/>
+                    <label for="4LgAo" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#Z1z2S9p" class="copy-code">Copy</button>
-                        <pre><code id="Z1z2S9p" class="language-html">
+                        <button data-clipboard-target="#DmCDU" class="copy-code">Copy</button>
+                        <pre><code id="DmCDU" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row&quot;&gt;
                                 &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
@@ -500,12 +455,12 @@ of the row.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="4I9c5" class="expander_checkbox"/>
-                    <label for="4I9c5" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="Z1VeGuh" class="expander_checkbox"/>
+                    <label for="Z1VeGuh" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#E5gzu" class="copy-code">Copy</button>
-                        <pre><code id="E5gzu" class="language-html">
+                        <button data-clipboard-target="#ZTwMuX" class="copy-code">Copy</button>
+                        <pre><code id="ZTwMuX" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row&quot;&gt;
                                 &lt;div class=&quot;col xs-2 xs-last&quot;&gt;&lt;/div&gt;
@@ -535,12 +490,12 @@ of the row.</p>
                     </div>
                   </div>
                   <div class="expander">
-                    <input type="checkbox" id="ZjWvKf" class="expander_checkbox"/>
-                    <label for="ZjWvKf" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <input type="checkbox" id="6TAHg" class="expander_checkbox"/>
+                    <label for="6TAHg" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button data-clipboard-target="#Z13Ysl5" class="copy-code">Copy</button>
-                        <pre><code id="Z13Ysl5" class="language-html">
+                        <button data-clipboard-target="#dmbB5" class="copy-code">Copy</button>
+                        <pre><code id="dmbB5" class="language-html">
                             &lt;div class=&quot;grid-fluid&quot;&gt;
                               &lt;div class=&quot;row reverse&quot;&gt;
                                 &lt;div class=&quot;col xs-2&quot;&gt;1&lt;/div&gt;
@@ -564,6 +519,7 @@ of the row.</p>
     <script src="../../js/prism.js"></script>
     <script src="../../js/clipboard.min.js"></script>
     <script src="../../js/site.js"></script>
+    <script src="/base/feature-detection/rocketbelt.feature-detection.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

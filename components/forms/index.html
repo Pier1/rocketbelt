@@ -6,118 +6,73 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
   <body class="grid-fluid">
-    <div id="docs-wrapper" style="flex-wrap: nowrap;" class="row">
-      <nav id="docs-leftnav" style="flex-grow: 0;" class="col xs-2">
-        <ul class="list-reset">
-          <li ref="base"><a href="../../base">Base</a>
-            <ul class="list-reset">
-              <li ref="breakpoints"><a href="../../base/breakpoints">Breakpoints</a>
-                <ul class="list-reset">
-                </ul>
+    <div id="docs-wrapper" class="row">
+      <nav id="docs-leftnav" class="nav col xs-12 md-3 xl-2">
+        <div class="rb-logo"></div>
+        <ul class="list-reset category-contents">
+          <li ref="base" class="category">
+            <input id="Base" type="checkbox" name="Base" class="category-toggle"/>
+            <label for="Base" class="category-label">Base</label>
+            <ul class="list-reset category-contents">
+              <li ref="breakpoints" class="category"><a href="../../base/breakpoints">Breakpoints</a>
               </li>
-              <li ref="color"><a href="../../base/color">Color</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="color" class="category"><a href="../../base/color">Color</a>
               </li>
-              <li ref="grid"><a href="../../base/grid">Grid</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="feature-detection" class="category"><a href="../../base/feature-detection">Feature Detection</a>
               </li>
-              <li ref="layout"><a href="../../base/layout">Layout</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="grid" class="category"><a href="../../base/grid">Grid</a>
               </li>
-              <li ref="slipsum"><a href="../../base/slipsum">Slipsum</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="layout" class="category"><a href="../../base/layout">Layout</a>
               </li>
-              <li ref="typography"><a href="../../base/typography">Typography</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="slipsum" class="category"><a href="../../base/slipsum">Slipsum</a>
+              </li>
+              <li ref="typography" class="category"><a href="../../base/typography">Typography</a>
               </li>
             </ul>
           </li>
-          <li ref="components"><a href="../../components">Components</a>
-            <ul class="list-reset">
-              <li ref="alerts"><a href="../../components/alerts">Alerts</a>
-                <ul class="list-reset">
-                </ul>
+          <li ref="components" class="category">
+            <input id="Components" type="checkbox" name="Components" class="category-toggle"/>
+            <label for="Components" class="category-label">Components</label>
+            <ul class="list-reset category-contents">
+              <li ref="alerts" class="category"><a href="../../components/alerts">Alerts</a>
               </li>
-              <li ref="expanders"><a href="../../components/expanders">Expanders</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="busy-indicators" class="category"><a href="../../components/busy-indicators">Busy Indicators</a>
               </li>
-              <li ref="busy-indicators"><a href="../../components/busy-indicators">Busy Indicators</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="buttons" class="category"><a href="../../components/buttons">Buttons</a>
               </li>
-              <li ref="buttons"><a href="../../components/buttons">Buttons</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="cards" class="category"><a href="../../components/cards">Cards</a>
               </li>
-              <li ref="cards"><a href="../../components/cards">Cards</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="expanders" class="category"><a href="../../components/expanders">Exp&amp;ers</a>
               </li>
-              <li ref="forms"><a href="../../components/forms">Forms</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="forms" class="category"><a href="../../components/forms">Forms</a>
               </li>
-              <li ref="images"><a href="../../components/images">Images</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="images" class="category"><a href="../../components/images">Images</a>
               </li>
-              <li ref="modals"><a href="../../components/modals">Modals</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="modals" class="category"><a href="../../components/modals">Modals</a>
               </li>
-              <li ref="radio-buttons"><a href="../../components/radio-buttons">Radio Buttons</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="radio-buttons" class="category"><a href="../../components/radio-buttons">Radio Buttons</a>
               </li>
-              <li ref="tabcordions"><a href="../../components/tabcordions">Tabcordions</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="tabcordions" class="category"><a href="../../components/tabcordions">Tabcordions</a>
               </li>
-              <li ref="tooltips"><a href="../../components/tooltips">Tooltips</a>
-                <ul class="list-reset">
-                </ul>
+              <li ref="tooltips" class="category"><a href="../../components/tooltips">Tooltips</a>
               </li>
             </ul>
           </li>
-          <li ref="creative"><a href="../../creative">Creative</a>
-            <ul class="list-reset">
-              <li ref="sale-sticker"><a href="../../creative/sale-sticker">Sale Sticker</a>
-                <ul class="list-reset">
-                </ul>
+          <li ref="creative" class="category">
+            <input id="Creative" type="checkbox" name="Creative" class="category-toggle"/>
+            <label for="Creative" class="category-label">Creative</label>
+            <ul class="list-reset category-contents">
+              <li ref="sale-sticker" class="category"><a href="../../creative/sale-sticker">Sale Sticker</a>
               </li>
             </ul>
           </li>
-          <li ref="exposition"><a href="../../exposition">Exposition</a>
-            <ul class="list-reset">
-              <li ref="links-buttons"><a href="../../exposition/links-buttons">Links Buttons</a>
-                <ul class="list-reset">
-                  <li ref="img">
-                    <ul class="list-reset">
-                      <li ref="link_button_affordance.png">
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+          <li ref="exposition" class="category">
+            <input id="Exposition" type="checkbox" name="Exposition" class="category-toggle"/>
+            <label for="Exposition" class="category-label">Exposition</label>
+            <ul class="list-reset category-contents">
+              <li ref="links-and-buttons" class="category"><a href="../../exposition/links-and-buttons">Links &amp; Buttons</a>
               </li>
-              <li ref="logo-usage"><a href="../../exposition/logo-usage">Logo Usage</a>
-                <ul class="list-reset">
-                  <li ref="img">
-                    <ul class="list-reset">
-                      <li ref="box_logo.png">
-                      </li>
-                      <li ref="limited_use_logo.png">
-                      </li>
-                      <li ref="normal_logo.png">
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
+              <li ref="logo-usage" class="category"><a href="../../exposition/logo-usage">Logo Usage</a>
               </li>
             </ul>
           </li>
@@ -198,12 +153,12 @@
                           </form>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="ZfAs5p" class="expander_checkbox"/>
-                          <label for="ZfAs5p" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="ZghTQB" class="expander_checkbox"/>
+                          <label for="ZghTQB" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#Z1uGYXo" class="copy-code">Copy</button>
-                              <pre><code id="Z1uGYXo" class="language-html">
+                              <button data-clipboard-target="#Z1ixKFD" class="copy-code">Copy</button>
+                              <pre><code id="Z1ixKFD" class="language-html">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;basic-fname&quot; type=&quot;text&quot;&gt;
@@ -281,29 +236,33 @@
                           <form>
                             <div class="form-group">
                               <input id="helper-password" type="password">
-                              <label for="helper-password">Password</label><small class="helper-text">At least 8 characters</small>
+                              <label for="helper-password">Password</label>
+                              <div class="messages"><small class="helper-text">At least 8 characters</small></div>
                             </div>
                             <div class="form-group">
                               <input id="helper-fname" type="tel" class="invalid">
-                              <label for="helper-fname">Phone number</label><small class="validation-message">Please enter a valid Phone Number</small><small class="helper-text">US numbers only, please</small>
+                              <label for="helper-fname">Phone number</label>
+                              <div class="messages"><small class="validation-message">Please enter a valid Phone Number</small><small class="helper-text">US numbers only, please</small></div>
                             </div>
                           </form>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="ZiFym6" class="expander_checkbox"/>
-                          <label for="ZiFym6" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="ZdlItk" class="expander_checkbox"/>
+                          <label for="ZdlItk" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#Z1GA5K2" class="copy-code">Copy</button>
-                              <pre><code id="Z1GA5K2" class="language-html">
+                              <button data-clipboard-target="#Z2vxqUo" class="copy-code">Copy</button>
+                              <pre><code id="Z2vxqUo" class="language-html">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;helper-password&quot; type=&quot;password&quot;&gt;
-                                      &lt;label for=&quot;helper-password&quot;&gt;Password&lt;/label&gt;&lt;small class=&quot;helper-text&quot;&gt;At least 8 characters&lt;/small&gt;
+                                      &lt;label for=&quot;helper-password&quot;&gt;Password&lt;/label&gt;
+                                      &lt;div class=&quot;messages&quot;&gt;&lt;small class=&quot;helper-text&quot;&gt;At least 8 characters&lt;/small&gt;&lt;/div&gt;
                                     &lt;/div&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;helper-fname&quot; type=&quot;tel&quot; class=&quot;invalid&quot;&gt;
-                                      &lt;label for=&quot;helper-fname&quot;&gt;Phone number&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid Phone Number&lt;/small&gt;&lt;small class=&quot;helper-text&quot;&gt;US numbers only, please&lt;/small&gt;
+                                      &lt;label for=&quot;helper-fname&quot;&gt;Phone number&lt;/label&gt;
+                                      &lt;div class=&quot;messages&quot;&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid Phone Number&lt;/small&gt;&lt;small class=&quot;helper-text&quot;&gt;US numbers only, please&lt;/small&gt;&lt;/div&gt;
                                     &lt;/div&gt;
                                   &lt;/form&gt;</code></pre>
                             </div>
@@ -331,12 +290,12 @@
                           </form>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="Ze3gnV" class="expander_checkbox"/>
-                          <label for="Ze3gnV" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="Zgswt1" class="expander_checkbox"/>
+                          <label for="Zgswt1" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#Z2lkOFM" class="copy-code">Copy</button>
-                              <pre><code id="Z2lkOFM" class="language-html">
+                              <button data-clipboard-target="#Z1geNT5" class="copy-code">Copy</button>
+                              <pre><code id="Z1geNT5" class="language-html">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;required-email&quot; type=&quot;email&quot; required value=&quot;help@pier1.com&quot;&gt;
@@ -378,12 +337,12 @@
                           </form>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="1N9DyT" class="expander_checkbox"/>
-                          <label for="1N9DyT" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="Z1Tvh7h" class="expander_checkbox"/>
+                          <label for="Z1Tvh7h" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#2cLT2D" class="copy-code">Copy</button>
-                              <pre><code id="2cLT2D" class="language-html">
+                              <button data-clipboard-target="#ZntSeN" class="copy-code">Copy</button>
+                              <pre><code id="ZntSeN" class="language-html">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group inline required-suppressed&quot;&gt;
                                       &lt;input id=&quot;inline-password&quot; type=&quot;password&quot; class=&quot;invalid&quot;&gt;
@@ -464,12 +423,12 @@
                           </form>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="6Xpxm" class="expander_checkbox"/>
-                          <label for="6Xpxm" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="Zgyg6f" class="expander_checkbox"/>
+                          <label for="Zgyg6f" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#fMF3U" class="copy-code">Copy</button>
-                              <pre><code id="fMF3U" class="language-html">
+                              <button data-clipboard-target="#Z1ex8zE" class="copy-code">Copy</button>
+                              <pre><code id="Z1ex8zE" class="language-html">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;disabled-fname&quot; type=&quot;text&quot; disabled&gt;
@@ -561,12 +520,12 @@
                           </form>
                         </div>
                         <div class="expander">
-                          <input type="checkbox" id="5o6VQ" class="expander_checkbox"/>
-                          <label for="5o6VQ" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                          <input type="checkbox" id="Zk6yjo" class="expander_checkbox"/>
+                          <label for="Zk6yjo" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button data-clipboard-target="#O7lCK" class="copy-code">Copy</button>
-                              <pre><code id="O7lCK" class="language-html">
+                              <button data-clipboard-target="#Z11T8ut" class="copy-code">Copy</button>
+                              <pre><code id="Z11T8ut" class="language-html">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;invalid-email&quot; type=&quot;email&quot; value=&quot;not|a=valid!email&quot;&gt;
@@ -610,6 +569,7 @@
     <script src="../../js/prism.js"></script>
     <script src="../../js/clipboard.min.js"></script>
     <script src="../../js/site.js"></script>
+    <script src="/base/feature-detection/rocketbelt.feature-detection.min.js"></script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

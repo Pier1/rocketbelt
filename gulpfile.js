@@ -37,6 +37,8 @@ var symlink = require('gulp-symlink');
 var path = require('path');
 var exec = require('child_process').exec;
 
+var modernizr = require('gulp-modernizr');
+
 var sitemap = require('gulp-sitemap');
 var argv = require('minimist')(process.argv.slice(2));
 // var buildPath = './docs';
@@ -78,12 +80,28 @@ var sizeOptions = {
 gulp.task('uglify', function () {
   return gulp.src(['./rocketbelt/**/*.js', '!./rocketbelt/**/*.min.js'])
     .pipe(changed(buildPath))
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(rename({ suffix: '.min' }))
     .pipe(sourcemaps.init())
     .pipe(uglify())
     .pipe(size(sizeOptions))
     .pipe(sourcemaps.write('.', { sourceRoot: '.' }))
     .pipe(gulp.dest(buildPath))
+  ;
+});
+
+gulp.task('feature-detection', function () {
+  gulp.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.scss', '!./rocketbelt/base/feature-detection/*.js'])
+    .pipe(modernizr('rocketbelt.feature-detection.js',
+    {
+      options: [
+        'setClasses'
+      ],
+      tests: [
+        'touchevents'
+      ]
+    }))
+    .pipe(gulp.dest(rbDir + '/base/feature-detection'))
   ;
 });
 
@@ -129,10 +147,7 @@ gulp.task('clean', ['link:clean'], function () {
 
 gulp.task('build', function (done) {
   if (!argv.release) {
-    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', done);
-  }
-  else {
-    runSequence('uglify', 'link', ['styles', 'views'], 'sitemap', 'del-assets', done);
+    runSequence('uglify', 'link', 'feature-detection', ['styles', 'views'], 'sitemap', done);
   }
 });
 
@@ -149,7 +164,7 @@ gulp.task('js:site:copy', function () {
 });
 
 gulp.task('img:site:copy', function () {
-  vfs.src(['./templates/**/img/*.*'])
+  vfs.src(['./templates/**/img/*.*', './templates/**/*.svg'])
     .pipe(changed(buildPath))
     .pipe(vfs.dest(buildPath, { overwrite: true }));
 });
@@ -164,6 +179,7 @@ gulp.task('link:partials', function () {
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   return vfs.src('./rocketbelt/**/_*.jade')
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
@@ -175,6 +191,7 @@ gulp.task('link:js', function () {
   // TODO: Using gulp-symlink because relative symlinks are broken in vfs.
   // Should be fixed in vfs 3.0 and the above should be replaced with the following:
   return vfs.src(['./rocketbelt/**/*.js', './rocketbelt/**/*.json', '!./**/rocketbelt.slipsum-cache.json'])
+    .pipe(plumber({ errorHandler: notify.onError('Error: <%= error.message %>') }))
     .pipe(vfs.symlink('./templates', { relative: true }));
 });
 
@@ -229,7 +246,7 @@ var directoryTreeToObj = function(dir, done) {
 
     files = files.filter(function (file) {
       if (fs.lstatSync(dir + '/' + file).isDirectory()) {
-        if (file === 'js' || file === 'scss') return false;
+        if (file === 'js' || file === 'scss' || file === 'assets') return false;
       }
       return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
     });

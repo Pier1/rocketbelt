@@ -1,0 +1,32 @@
+include _mixins
+
+- var prepend = buildPath ? buildPath : '../..';
+
+doctype html
+html(lang='en')
+  head
+    block vars
+    block title
+     title #{title ? title + ' | ' : ''}Rocketbelt Pattern Library
+    block styles
+      link(rel='stylesheet', href=prepend + '/css/site.min.css')
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+  body.grid-fluid
+    #docs-wrapper.row
+      nav#docs-leftnav.nav.col.xs-12.md-3.xl-2
+        .rb-logo
+        block sidebar
+          +buildNav(nav, prepend)
+      #docs-content.pad-5.col.xs
+        block main
+          main.grid-fluid.no-margin
+            .row
+              .col.xs
+                block content
+
+    script(src=prepend + '/js/prism.js')
+    script(src=prepend + '/js/clipboard.min.js')
+    script(src=prepend + '/js/site.js')
+    script(src='/base/feature-detection/rocketbelt.feature-detection.min.js')
+    
+    include _analytics

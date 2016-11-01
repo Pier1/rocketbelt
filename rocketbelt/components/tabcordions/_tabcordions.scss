@@ -1,0 +1,166 @@
+.tabs {
+  $width-border: 1px;
+  $color-border: color(gray, plus2);
+  $color-bg: color(gray, plus4);
+  $border: $width-border solid $color-border;
+
+  font-size: 0;
+  overflow: hidden;
+  position: relative;
+  border: $border;
+  border-top: 0;
+
+  &:after {
+    clear: both;
+    content: '';
+    display: table;
+  }
+
+  @include media('>=sm') {
+    border: 0;
+  }
+
+  .tab {
+    display: inline;
+
+    .tab_radio {
+      @extend %visuallyhidden;
+
+      &:checked ~ .tab_panel {
+        display: inline;
+        @include fadeIn();
+      }
+
+      &:not(:checked) ~ .tab_panel {
+        @include fadeOut();
+      }
+
+      &:checked + .tab_label {
+        color: color(gray, minus1);
+        // transition: all 200ms;
+        border-bottom: $border;
+
+        @include media('>=sm') {
+          &:after {
+            left: 0;
+            right: 0;
+            height: 4px;
+          }
+        }
+      }
+
+      &:not(:checked) + .tab_label {
+        color: color(brand);
+        // transition: all 200ms;
+
+        @include media('>=sm') {
+          &:after {
+            left: 50%;
+            right: 50%;
+            height: 0;
+          }
+        }
+      }
+    }
+  }
+
+  .tab .tab_radio:checked + .tab_label {
+    &:before {
+      transform: translateY(-50%) rotate(90deg);
+    }
+
+    &:after {
+      transform: translateY(-50%) rotate(180deg);
+    }
+  }
+
+  .tab .tab_label {
+    position: relative;
+    padding: ms(-10) ms(-4);
+    font-size: ms(-1);
+    text-transform: uppercase;
+    width: 100%;
+    display: inline-block;
+    // transition: all 250ms;
+    background: $color-bg;
+
+    border-top: $border;
+
+    &:before,
+    &:after {
+      content: '';
+      position: absolute;
+      border: 0;
+      background: color(brand);
+    }
+
+    // Vertical
+    &:before {
+      border-radius: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      left: calc(100% - 15px);
+      width: 4px;
+      height: 18px;
+    }
+
+    // Horizontal
+    &:after {
+      top: 50%;
+      transform: translateY(-50%);
+      right: 4px;
+      width: 18px;
+      height: 4px;
+    }
+
+    @include media('>=sm') {
+      border: $border;
+      width: auto;
+
+      &:before {
+        border: none;
+        background: transparent;
+      }
+
+      &:after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        top: calc(100% - 2px);
+        width: 100%;
+        background: color(primary);
+        transition-property: height, left, right;
+        transition-duration: 200ms;
+        transition-timing-function: ease-out;
+      }
+    }
+  }
+
+  .tab_panel {
+    font-size: initial;
+    display: inline-block;
+    overflow: hidden;
+    position: relative;
+    height: 0;
+    width: 0;
+  }
+
+  .tab_content {
+    padding: ms(-4);
+    background: color(white);
+    display: block;
+    float: left;
+    margin-top: -$width-border;
+    width: 100%;
+
+    @include media('>=sm') {
+      border: $border;
+    }
+  }
+}
+
+.tab:not(:first-of-type) .tab_label {
+  @include media('>=sm') {
+    border-left: 0;
+  }
+}
