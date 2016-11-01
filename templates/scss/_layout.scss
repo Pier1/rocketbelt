@@ -88,6 +88,11 @@ body { min-height: 100%; }
   a {
     text-decoration: none;
   }
+
+  .isActive {
+    background: color(white);
+    font-weight: font-weight(semibold);
+  }
 }
 
 #docs-content {
