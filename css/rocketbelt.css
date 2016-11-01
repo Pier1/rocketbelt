@@ -3292,6 +3292,52 @@ input[type=checkbox][disabled][checked] + label:before {
   .tab:not(:first-of-type) .tab_label {
     border-left: 0; } }
 
+.tag {
+  padding: 0.24332rem 0.38974rem;
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: "Brand Sans", sans-serif;
+  background: #e6e5e5;
+  color: #030001;
+  cursor: default; }
+  .tag.tag-stretch {
+    display: block;
+    text-align: center; }
+  .tag.tag-lg {
+    padding: 0.49327rem;
+    font-weight: 600;
+    font-size: 1.60181rem; }
+  .tag.tag-sm {
+    padding: 0.19225rem 0.38974rem;
+    font-size: 0.79012rem; }
+  .tag.tag-xs {
+    padding: 0.1519rem 0.38974rem;
+    font-size: 0.6243rem; }
+  .tag.tag-subtle {
+    border: 1px solid #e6e5e5;
+    background: #fefdfd; }
+  .tag.tag-success {
+    background: #00b575;
+    color: #fefdfd; }
+  .tag.tag-sale {
+    background: #a11622;
+    color: #fefdfd; }
+
+.tag.message-dismissable .message-dismissable_close {
+  width: auto;
+  line-height: inherit;
+  padding: 0;
+  margin: 0;
+  height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.tag.message-dismissable .message-dismissable_close:after {
+  margin: 0 0 0 0.5rem; }
+
 [data-tooltip] {
   position: relative; }
 

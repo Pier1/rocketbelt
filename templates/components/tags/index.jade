@@ -1,0 +1,46 @@
+extends /_layout.jade
+
+block vars
+  - var title = 'Tags'
+
+block content
+  article
+    :md
+      # Tags
+      # Variations
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-variations
+
+    :md
+      # Sizes
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-sizes
+
+    :md
+      # Dismissable
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-dismissable.jade
+
+    :md
+      # Stretch
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-stretch
+
+          +exampleWithCode('js')
+            script(src='../alerts/rocketbelt.alerts-dismissable.js')
