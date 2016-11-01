@@ -1,18 +1,31 @@
 (function () {
   'use strict';
 
-  var clipboard = new Clipboard('.copy-code');
+  window.rocketbelt = window.rocketbelt || {};
+  window.rocketbelt.getScript = function (url, cb) {
+    var body = document.getElementsByTagName('body')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
 
-  clipboard.on('success', function(e) {
-      e.clearSelection();
-  });
+    script.onreadystatechange = cb;
+    script.onload = cb;
 
-  clipboard.on('error', function(e) {
-      console.error('Action:', e.action);
-      console.error('Trigger:', e.trigger);
-  });
+    body.appendChild(script);
+  };
 
   $(document).ready(function(){
+    var clipboard = new Clipboard('.copy-code');
+
+    clipboard.on('success', function(e) {
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+
   	var pageTitle = document.title.toLowerCase()
               .replace(' | rocketbelt pattern library', '')
               .replace(/\ & /g," ")
@@ -28,5 +41,5 @@
         $(this).siblings('.category-toggle').prop('checked', true);
       }
     });
-  })
+  });
 })();
