@@ -33,6 +33,11 @@
     $('li.isActive', '#docs-leftnav').removeClass('isActive');
   	$('#docs-leftnav').find('li[ref="' + pageTitle + '"]').addClass('isActive');
 
+    // Mobile heuristic. 48rem == 'md' breakpoint.
+    if (window.matchMedia('(min-width: 48rem)')) {
+      $('.isActive').parent().siblings('.category-toggle').prop('checked', true);
+    }
+
     $('.nav .category-label').click(function (e) {
       // Mobile heuristic. 48rem == 'md' breakpoint.
       if (!window.matchMedia('(min-width: 48rem)').matches && $(this).siblings('.category-toggle').prop('checked') === false) {
