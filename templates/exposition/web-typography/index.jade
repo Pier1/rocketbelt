@@ -5,25 +5,41 @@ block vars
 
 block content
   article
+    h1 Web Typography
+  
+    h2 Overview
+    p Great communication is the basis for a great user experience.  Below are  tried and true typography and type layout rules that flatten obstacles in getting our messages to customers.   
+
+    p These guidelines do not exist to stifle creativity.  Rather, they provide a baseline so that we make sure to provide rationale when we choose to deviate. 
+
+    h2 Concise &amp; Scannable
+    ul
+      li Where you would be flowery; be direct.  
+      li Where you would be subjective; be objective.  
+      li Bullets and clear vertical spacing improve scannability.  
+      li Changing text colors or font faces for important information improves readability.
+
+    h2 2 Words...usually
+    div.grid-fluid
+      div.row
+        div.col.xs
+          p Using an F-shaped pattern, users will read through a section of a page.  Most only scan the first couple of words of each subject line or blurb.  You can get a way with a third word, by using the <i>ultra-powerful</i> number as the first or second word.
+          
+          p Remember, users will opt to #[a(href="#satisfice") satisfice#[sup 1]] instead of finding an optimal. 
+        
+        div.col.xs
+          img.gipho(data-play="./img/F_shaped_anim.gif" src="./img/F_shaped_poster.png" width="85") 
+          
+    h2 The Inverted Pyramid
+    div.grid-fluid
+      div.row
+        div.col.xs
+          p Using the inverted pyramid approach to web writing means you start with the conclusion, add any supporting information below and then link to relevant information&mdash;products, editorials or promotion info.
+          <br />
+          <br />
+        div.col.xs
+          img(src="./img/inverted_pyramid_graphic.png" width="278")
+
     :md
-      # Web Typography
-
-      ## Overview
-      Great communication is the basis for a great user experience.  Below are  tried and true typography and type layout rules that flatten obstacles in getting our messages to customers.   
-
-      These guidelines do not exist to stifle creativity.  Rather, they provide a baseline so that we make sure to provide rationale when we choose to deviate. 
-
-      ## Make It Concise &amp; Scannable
-      Where you would be flowery; be direct.  Where you would use subjective; be objective.  Bullets and clear vertical spacing improve scannability.  Changing text colors or font faces for important information improves readability.
-
-      ## 2 Words...usually
-      Users want to satisfice <sup>[1](#satisfice)</sup>.  Using the "F" pattern, they will read through parts of the site, scanning the first couple of words of each subject line or blurb.  You can get a way with a third word, by using an ultra-powerful number as the first or second word.
-
-      ## The Inverted Pyramid
-      Lorem ipsum dolor sit amet.  
-
-      <br />
-      <br />
-
       ### Reference
-      <cite><a name="satisfice"></a> <sup>1</sup> **Satisfice** _verb_ to choose or adopt the first satisfactory option that one comes across</cite>
+      <cite><a name="satisfice"></a> <sup>1</sup> **Satisfice:** _verb_ Portmanteau of suffice and satisfy.  To choose or adopt the first satisfactory option that one comes across</cite>
