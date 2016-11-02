@@ -16,6 +16,8 @@ var clone    = require('gulp-clone');
 var merge    = require('merge-stream');
 var size     = require('gulp-size');
 
+var sassLint = require('gulp-sass-lint');
+
 var postcss = require('gulp-postcss');
 var cssnano = require('cssnano');
 var flexibility = require('postcss-flexibility');
@@ -233,6 +235,13 @@ gulp.task('sitemap', function () {
     .pipe(sitemap({ siteUrl: 'http://rocketbelt.io' }))
     .pipe(gulp.dest(buildPath))
   ;
+});
+
+gulp.task('lint:sass', function () {
+  return gulp.src(['rocketbelt/**/*.scss', 'templates/**/*.scss', '!**/vendor/**/*.scss'])
+    .pipe(sassLint())
+    .pipe(sassLint.format())
+    .pipe(sassLint.failOnError())
 });
 
 var directoryTreeToObj = function(dir, done) {
