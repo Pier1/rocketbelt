@@ -307,6 +307,10 @@ body { min-height: 100%; }
         color: inherit;
       }
     }
+    &.isActive {
+      a { background: color(white); }
+        
+    }
   }
 }
 
@@ -318,7 +322,7 @@ article > h1 {
 article > h2  {
   border-bottom: 1px solid color(gray, plus2);
   text-transform: uppercase;
-  margin-top: $gutter-width;
+  margin-top: $gutter-width * 2;
   margin-bottom: $half-gutter-width;
   font-size: ms(3)
 }
