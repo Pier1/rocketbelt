@@ -50,8 +50,27 @@ mixin exampleWithCode(labelText, expanded, inverted)
       .example
         block
 
+mixin dynamicExampleCode(labelText, expanded)
+  - labelText = labelText || 'html';
+  - inverted = inverted || false;
+  - if (labelText === 'js') labelText = 'javascript';
+  - var seed = escape(block);
+  - var id   = 'example' + ( Math.random() * 10000|0 );
+  
+  - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
+  .exampleWithCode
+    .example
+      
+    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
+      .example-code
+        button.copy-code(data-clipboard-target='#' + id) Copy
+        pre
+          code(id=id, class="language-" + labelText.toLowerCase())
+        
+
+
 - var toTitleCase = function (str) {
--   return str.replace(/-/g, ' ').replace(/and/g, '&').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+-   return str.replace(/-/g, ' ').replace(/-and-/g, '-&-').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
 - }
 
 mixin buildNav(navObject, rootHref)
