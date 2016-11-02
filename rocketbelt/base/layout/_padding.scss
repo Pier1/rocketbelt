@@ -1,10 +1,10 @@
 @import 'modular-scale';
 
 @for $i from 1 through 5 {
-    %pad-#{$i},
-    %padding-#{$i},
-    .pad-#{$i},
-    .padding-#{$i} {
+  %pad-#{$i},
+  %padding-#{$i},
+  .pad-#{$i},
+  .padding-#{$i} {
     padding: padding($i - 4);
   }
 }
