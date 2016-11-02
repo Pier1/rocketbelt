@@ -34,7 +34,7 @@
   	$('#docs-leftnav').find('li[ref="' + pageTitle + '"]').addClass('isActive');
 
     // Mobile heuristic. 48rem == 'md' breakpoint.
-    if (!window.matchMedia('(min-width: 48rem)') {
+    if (window.matchMedia('(min-width: 48rem)')) {
       $('.isActive').parent().siblings('.category-toggle').prop('checked', true);
     }
 
