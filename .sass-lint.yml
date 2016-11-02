@@ -6,3 +6,6 @@ rules:
   mixins-before-declarations: 0
   no-ids: 0
   nesting-depth: 0
+  empty-args: 0
+  force-pseudo-nesting: 0
+  brace-style: 0
