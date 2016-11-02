@@ -44,12 +44,15 @@ var rb = rb || {};
     });
 
     // sets the active page in the nav
-  	var pageTitle = document.title.toLowerCase()
+  	var $category,
+        pageTitle = document.title.toLowerCase()
               .replace(' | rocketbelt pattern library', '')
-              .replace(/\ & /g," ")
+              .replace(/\ & /g," and ")
               .replace(/\s+/g,'-');
-    $('li.isActive', '#docs-leftnav').removeClass('isActive');
-  	$('#docs-leftnav').find('li[ref="' + pageTitle + '"]').addClass('isActive');
+    $('.isActive', '#docs-leftnav').removeClass('isActive');
+  	$category = $('#docs-leftnav').find('li[ref="' + pageTitle + '"]');
+    $category.addClass('isActive');
+    $category.parent('.category-contents').siblings('.category-toggle').prop('checked', true);
 
     // Play button for gifs
     $('img.gipho').on('click', function(){

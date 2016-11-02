@@ -306,6 +306,10 @@ body { min-height: 100%; }
         color: inherit;
       }
     }
+    &.isActive {
+      a { background: color(white); }
+        
+    }
   }
 }
 
