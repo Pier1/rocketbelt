@@ -1,31 +1,31 @@
 .busy {
-  // background: color(gray, plus3);
+  position: absolute;
+  top: calc(50% - 2.5em);
+  left: calc(50% - 2.5em);
+  clip: rect(0, 5em, 5em, 2.5em);
+  width: 5em;
+  height: 5em;
   font-size: 0.25rem;
   animation: animate 1.5s linear infinite;
-  clip: rect(0, 5em, 5em, 2.5em);
-  height: 5em;
-  width: 5em;
-  position: absolute;
-  left: calc(50% - 2.5em);
-  top: calc(50% - 2.5em);
 
-  &:after {
-    // background: gray;
-    animation: animate2 1.5s cubic-bezier(0.645, 0.045, 0.355, 1.000) infinite;
-    clip: rect(0, 5em, 5em, 2.5em);
-    content: '';
-    border-radius: 50%;
-    height: 5em;
-    width: 5em;
+  &::after {
     position: absolute;
+    clip: rect(0, 5em, 5em, 2.5em);
+    width: 5em;
+    height: 5em;
+    border-radius: 50%;
     box-shadow: 0 0 0 0.5em color(primary) inset;
+    content: '';
+    animation: animate2 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
   }
 }
+
 
 @keyframes animate {
   0% {
     transform: rotate(0deg);
   }
+
   100% {
     transform: rotate(190deg);
   }
@@ -35,6 +35,7 @@
   0% {
     transform: rotate(-170deg);
   }
+
   100% {
     transform: rotate(170deg);
   }

@@ -5,12 +5,14 @@
     @extend %visuallyhidden;
 
     & + .expander_label {
-      cursor: pointer;
-      user-select: none;
       position: relative;
-      color: color(primary);
       padding: 0;
+      color: color(primary);
+      cursor: pointer;
+
+      user-select: none;
     }
+
 
     &:not(:checked) {
       & ~ .expander_content {
@@ -19,30 +21,26 @@
 
       & + .expander_label {
         &:before {
-          content: attr(data-collapsed-label);
           position: static;
-          background: 0;
           border: 0;
+          background: 0;
+          content: attr(data-collapsed-label);
         }
       }
     }
 
     &:checked + .expander_label {
       &:before {
-        content: attr(data-expanded-label);
         position: static;
-        background: 0;
         border: 0;
+        background: 0;
+        content: attr(data-expanded-label);
       }
     }
   }
 
   .expander_checkbox:checked + .chevron {
-    transform: none;
     transition: transform 200ms ease-in-out;
-  }
-
-  .expander_icon {
-
+    transform: none;
   }
 }

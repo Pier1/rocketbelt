@@ -1,9 +1,9 @@
 %button-static-props {
-  text-transform: uppercase;
-  font-weight: font-weight(light);
-  letter-spacing: 0.1rem;
-  border-radius: 2px;
   border: none;
+  border-radius: 2px;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  font-weight: font-weight(light);
   cursor: default;
   transition: all 100ms ease();
 
@@ -11,6 +11,7 @@
     outline: 0;
   }
 }
+
 
 .button {
   @include button-size(md);
@@ -44,7 +45,7 @@
 }
 
 .button-block {
-  box-shadow: none;
   display: block;
   width: 100%;
+  box-shadow: none;
 }

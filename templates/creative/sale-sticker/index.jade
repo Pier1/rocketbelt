@@ -4,6 +4,61 @@ block vars
   - var title = 'Sale Sticker'
 
 block content
-    article
-        :md
-            # Sale Sticker
+  article
+    h1 Example Components
+    h2 Sale Sticker
+    div.grid-fluid.playground
+      div.row
+        div.col.xs-7.copyable-inner
+          span.test-element This is some text
+        div.col.xs-5
+          div.playground-control
+            label(for="test-element-control") Font Size:
+              input#test-element-control.playground-range( 
+                type="range"  
+                value="16"
+                min="12" 
+                max="54" 
+                step="4"
+                data-target=".test-element" 
+                data-property="font-size"
+                data-units="px"
+              ) 
+              span.playground-range-value 16px
+      div.row
+        +dynamicExampleCode
+
+
+    h2 Other Thing
+    div.grid-fluid.playground
+      div.row
+        div.col.xs-7.copyable-inner
+          span.test-element2 A Block
+        div.col.xs-5
+          div.playground-control
+            label(for="test-element-control2") Block Color:
+              input#test-element-control2.playground-range( 
+                type="range"  
+                value="Red"
+                data-target=".test-element2" 
+                data-property="class"
+                data-values="Red:red,Green:green,Blue:blue"
+              ) 
+              span.playground-range-value Red
+
+      div.row
+        +dynamicExampleCode
+  
+  //- EXAMPLE STYLES
+  style(type='text/css').
+    .test-element2 { padding: 20px; text-align: center; }
+    .test-element2.red { background-color: red; }
+    .test-element2.blue { background-color: blue; color: white; }
+    .test-element2.green { background-color: green; }
+
+block scripts 
+  script.
+    rb.launchPlayground();
+
+
+

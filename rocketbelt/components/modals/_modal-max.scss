@@ -1,45 +1,47 @@
 .modal.modal-max {
-  height: 100vh;
-  max-width: 100%;
   position: fixed;
   top: 0;
-  left: 0;
   right: 0;
+  left: 0;
+  max-width: 100%;
+  height: 100vh;
   border-radius: 0;
 
   @include media('>=md') {
-    left: 10%;
     right: 10%;
+    left: 10%;
   }
 
   $header-height: ms(8);
   & .modal_header {
-    align-items: flex-start;
     position: fixed;
-    left: 0;
     right: 0;
-    border: none;
-    color: color(white);
-    background-image: linear-gradient(#{rgba(color(black), 0.85)} 75%, transparent);
+    left: 0;
     height: $header-height;
+    border: none;
+    background-image: linear-gradient(#{rgba(color(black), 0.85)} 75%, transparent);
+    color: color(white);
+    align-items: flex-start;
 
     & .modal_header_text {
       font-size: ms(1);
       line-height: 1;
     }
 
+
     & .modal_header_close {
-      align-self: flex-end;
       padding-right: 0;
       width: auto;
       height: auto;
+
+      align-self: flex-end;
     }
   }
 
   & .modal_body {
     overflow-y: auto;
-    height: 100vh;
     padding-top: $header-height;
+    height: 100vh;
   }
 
   &.modal-is-opening {
