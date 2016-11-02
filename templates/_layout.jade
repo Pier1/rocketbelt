@@ -10,7 +10,6 @@ html(lang='en')
      title #{title ? title + ' | ' : ''}Rocketbelt Pattern Library
     block styles
       link(rel='stylesheet', href=prepend + '/css/site.min.css')
-    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
   body.grid-fluid
     #docs-wrapper.row(style='flex-wrap: nowrap;')
       nav#docs-leftnav.col.xs-2(style='flex-grow: 0;')
@@ -23,8 +22,11 @@ html(lang='en')
               .col.xs
                 block content
 
+    script(src='https://code.jquery.com/jquery-2.2.4.min.js') 
     script(src=prepend + '/js/prism.js')
     script(src=prepend + '/js/clipboard.min.js')
+    script(src=prepend + '/js/playground.jquery.js')          
     script(src=prepend + '/js/site.js')
     
     include _analytics
+    block scripts
