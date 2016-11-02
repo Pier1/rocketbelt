@@ -1,17 +1,20 @@
 var rb = rb || {};
+
 (function () {
   'use strict';
 
-  var clipboard = new Clipboard('.copy-code');
+  window.rocketbelt = window.rocketbelt || {};
+  window.rocketbelt.getScript = function (url, cb) {
+    var body = document.getElementsByTagName('body')[0];
+    var script = document.createElement('script');
+    script.type = 'text/javascript';
+    script.src = url;
 
-  clipboard.on('success', function(e) {
-      e.clearSelection();
-  });
+    script.onreadystatechange = cb;
+    script.onload = cb;
 
-  clipboard.on('error', function(e) {
-      console.error('Action:', e.action);
-      console.error('Trigger:', e.trigger);
-  });
+    body.appendChild(script);
+  };
 
   var entityMap = {
     "&": "&amp;",
@@ -29,6 +32,18 @@ var rb = rb || {};
   }
 
   $(document).ready(function(){
+    var clipboard = new Clipboard('.copy-code');
+
+    clipboard.on('success', function(e) {
+        e.clearSelection();
+    });
+
+    clipboard.on('error', function(e) {
+        console.error('Action:', e.action);
+        console.error('Trigger:', e.trigger);
+    });
+
+    // sets the active page in the nav
   	var pageTitle = document.title.toLowerCase()
               .replace(' | rocketbelt pattern library', '')
               .replace(/\ & /g," ")
@@ -36,17 +51,29 @@ var rb = rb || {};
     $('li.isActive', '#docs-leftnav').removeClass('isActive');
   	$('#docs-leftnav').find('li[ref="' + pageTitle + '"]').addClass('isActive');
 
-    // Play Gifs
+    // Play button for gifs
     $('img.gipho').on('click', function(){
       var $img = $(this), 
         playSrc = $img.attr('data-play'),
           rand = ( playSrc.indexOf('?') > -1 ? '&' : '?' ) + (Math.random() * 1000|0);
       $img.attr('src', playSrc + rand );
     });
+
+    $('.nav .category-label').click(function (e) {
+      // Mobile heuristic. 48rem == 'md' breakpoint.
+      if (!window.matchMedia('(min-width: 48rem)').matches && $(this).siblings('.category-toggle').prop('checked') === false) {
+        e.preventDefault();
+        $('.nav .category-toggle').prop('checked', false);
+        $(this).siblings('.category-toggle').prop('checked', true);
+      }
+    });
   });
 
+  // Playground defaults specific to Rocketbelt.
   $.playground.defaultOptions.wrapper = '.playground'
 
+
+  // Sets up all playground elements and makes the code copy function for dynamic elements
   function launchPlayground(){
     $('.playground-range').playground();
     $('body').on('playgroundUpdated', '.playground-range', function(){
@@ -70,8 +97,12 @@ var rb = rb || {};
       Prism.highlightElement($codeEl[0]);
 
     });
+
+    // Sets the code section on page load.
     $('.playground-range').trigger('input');
   }
 
+  // Exposes playground setup to a global so that it only gets setup when necessary.
   rb.launchPlayground = launchPlayground;
+
 })();

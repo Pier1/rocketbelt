@@ -5,6 +5,12 @@ templates/components/**/_*.jade
 templates/components/**/*.js
 templates/base/**/_*.jade
 templates/base/**/*.js
+templates/base/**/*.json
+
+# ===========================================================================
+# Ignore feature detection since it's generated & could change on every build
+# ===========================================================================
+rocketbelt/base/feature-detection/rocketbelt.feature-detection.js
 
 # =========================
 docs/

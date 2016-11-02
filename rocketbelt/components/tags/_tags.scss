@@ -1,0 +1,62 @@
+.tag {
+  padding: ms(-12) ms(-8);
+  display: inline-block;
+  text-transform: uppercase;
+  font-family: font-family(sans);
+  background: color(gray,plus3);
+  color: color(black);
+  cursor: default;
+
+  &.tag-stretch {
+    display: block;
+    text-align: center;
+  }
+
+  &.tag-lg {
+    padding: ms(-6);
+    font-weight: 600;
+    font-size: font-size(4);
+  }
+
+  &.tag-sm {
+    padding: ms(-14) ms(-8);
+    font-size: font-size(-2);
+  }
+
+ &.tag-xs {
+    padding:ms(-16) ms(-8);
+    font-size: font-size(-4);
+  }
+
+  &.tag-subtle {
+    border:1px solid color(gray,plus3);
+    background: color(white);
+  }
+
+  &.tag-success {
+    background: color(success);
+    color: color(white);
+  }
+
+  &.tag-sale {
+    background: color(error);
+    color: color(white);
+  }
+}
+
+.tag.message-dismissable .message-dismissable_close {
+  width: auto;
+  line-height: inherit;
+  padding: 0;
+  margin: 0;
+  height: inherit;
+  font-weight: inherit;
+  font-size: inherit;
+  justify-content: space-between;
+}
+
+.tag.message-dismissable .message-dismissable_close:after {
+  margin: 0 0 0 0.5rem
+}
+
+
