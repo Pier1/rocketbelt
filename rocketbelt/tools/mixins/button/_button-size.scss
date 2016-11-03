@@ -3,15 +3,15 @@
   $size: to_lower_case($size);
 
   @if $size == lg {
-    padding: 0.375rem 0.75rem;
-    font-size: 1.2rem;
+    padding: padding(-6) padding(1);
+    font-size: font-size(1);
   }
   @else if $size == md {
-    padding: 0.2895rem 0.579rem;
-    font-size: 1rem;
+    padding: padding(-8) padding(1);
+    font-size: font-size(0);
   }
   @else {
-    padding: 0.241rem 0.482rem;
-    font-size: 0.833rem;
+    padding: padding(-10) padding(1);
+    font-size: font-size(-1);
   }
 }
