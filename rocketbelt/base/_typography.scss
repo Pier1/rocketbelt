@@ -129,7 +129,7 @@ h4 {
     font-weight: font-weight(light);
 
     &::before {
-      content: '\a0\a0';
+      content: unicode(nbsp) + unicode(nbsp);
     }
   }
 }
@@ -214,7 +214,7 @@ blockquote {
     font-size: font-size(2);
 
     &::before {
-      content: '\2015\a0';
+      content: unicode('horizontal-bar') + unicode(nbsp);
     }
   }
 
