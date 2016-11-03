@@ -5,6 +5,28 @@ block vars
 
 block content
   article
+    h1 Example Components
+    h2 Sale Sticker
+    div.grid-fluid.playground
+      div.row
+        div.col.xs-7.copyable-inner
+          span.test-element This is some text
+        div.col.xs-5
+          div.playground-control
+            label(for="test-element-control") Font Size:
+              input#test-element-control.playground-range( 
+                type="range"  
+                value="16"
+                min="12" 
+                max="54" 
+                step="4"
+                data-target=".test-element" 
+                data-property="font-size"
+                data-units="px"
+              ) 
+              span.playground-range-value 16px
+      div.row
+        +dynamicExampleCode
 
     h2 Other Thing
     div.grid-fluid.playground
