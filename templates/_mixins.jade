@@ -56,7 +56,6 @@ mixin dynamicExampleCode(labelText, expanded)
   - if (labelText === 'js') labelText = 'javascript';
   - var seed = escape(block);
   - var id   = 'example' + ( Math.random() * 10000|0 );
-  
   - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
   .exampleWithCode
     .example
@@ -67,7 +66,6 @@ mixin dynamicExampleCode(labelText, expanded)
         pre
           code(id=id, class="language-" + labelText.toLowerCase())
         
-
 
 - var toTitleCase = function (str) {
 -   return str.replace(/-/g, ' ').replace(/-and-/g, '-&-').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
@@ -91,3 +89,34 @@ mixin buildNav(navObject, rootHref)
 
               if item.children.length >= 1
                 mixin buildNav(item.children, newRootHref + '/' + item.name)
+
+mixin footnoteTerm(name)
+  - footnotes = footnotes || [];
+  - var note = { name: name, id: footnotes.length + 1, block: '' };
+  - footnotes.push(note);
+  span.footnote-term #{note.name} #[a(href="#footnote_#{note.id}" name="footnote_term_#{note.id}")  #[sup &#91;#{note.id}&#93;]]
+  
+mixin footnoteDefine(name)
+  - var foundnote = null;
+  - footnotes.forEach(function(note){
+  -   if ( note.name == name ) foundnote = note;
+  - }); 
+  - if (foundnote) {
+      if block
+        - foundnote.block = block;
+        |  
+      else
+        - foundnote.block = function(){ return ''; }
+        |  
+  - }
+
+mixin footnoteList()
+  if footnotes
+    each fn in footnotes
+      cite.footnote-definition
+        a(name="footnote_#{fn.id}") 
+        | #[sup #{fn.id}] #[b #{fn.name}:] 
+        if fn.block
+          - fn.block()
+          span &nbsp;&nbsp;#[a(href="#footnote_term_#{fn.id}").footnote-returner &#8617;]
+
