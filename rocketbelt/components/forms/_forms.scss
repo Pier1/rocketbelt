@@ -97,7 +97,8 @@ form {
 html {
   &.touchevents {
     input,
-    select {
+    select,
+    button {
       min-height: 44px;
     }
   }
