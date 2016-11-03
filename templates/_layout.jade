@@ -5,12 +5,16 @@ include _mixins
 doctype html
 html(lang='en')
   head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+    
     block vars
     block title
      title #{title ? title + ' | ' : ''}Rocketbelt Pattern Library
     block styles
       link(rel='stylesheet', href=prepend + '/css/site.min.css')
-    script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+      script(src='https://code.jquery.com/jquery-2.2.4.min.js') 
+
   body.grid-fluid
     #docs-wrapper.row
       nav#docs-leftnav.nav.col.xs-12.md-3.xl-2
@@ -28,7 +32,11 @@ html(lang='en')
             .row
               .col.xs
                 block content
+                if footnotes
+                  h4 Reference  
+                  +footnoteList()
 
+    script(src=prepend + '/js/playground.jquery.js')      
     script(src=prepend + '/js/site.js')
     script(src='/base/feature-detection/rocketbelt.feature-detection.min.js')
     
@@ -36,5 +44,5 @@ html(lang='en')
     script(src=prepend + '/js/clipboard.min.js')
     
     include /base/layout/_rocketbelt.flexibility.jade
-    
     include _analytics
+    block scripts

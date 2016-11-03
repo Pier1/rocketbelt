@@ -72,6 +72,7 @@ body { min-height: 100%; }
 }
 
 #docs-leftnav {
+  overflow-y: auto;
   padding: 0;
   background-color: color(gray, plus4);
 
@@ -102,6 +103,11 @@ body { min-height: 100%; }
     margin-top: 0;
     margin-left: 180px;
   }
+}
+
+.docs-center {
+    align-items: center;
+    align-self: center;
 }
 
 .nav {
@@ -306,6 +312,10 @@ body { min-height: 100%; }
         color: inherit;
       }
     }
+    &.isActive {
+      a { background: color(white); }
+        
+    }
   }
 }
 
@@ -317,7 +327,7 @@ article > h1 {
 article > h2  {
   border-bottom: 1px solid color(gray, plus2);
   text-transform: uppercase;
-  margin-top: $gutter-width;
+  margin-top: $gutter-width * 2;
   margin-bottom: $half-gutter-width;
   font-size: ms(3)
 }
