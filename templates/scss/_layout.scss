@@ -105,6 +105,11 @@ body { min-height: 100%; }
   }
 }
 
+.docs-center {
+    align-items: center;
+    align-self: center;
+}
+
 .nav {
   position: fixed;
   z-index: 1;
