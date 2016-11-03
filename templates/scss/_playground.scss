@@ -1,21 +1,33 @@
 // Base Colors
-$shade-10: color(primary, darkest) !default;
-$shade-1: color(gray, plus3) !default;
-$shade-0: color(white) !default;
-$teal: color(primary, darkest) !default;
+$playground-color-primary: color(primary, darkest) !default;
+$playground-color-gray: color(gray, plus3) !default;
+$playground-color-light: color(white) !default;
 
 // Range Slider
 $range-width: 150px !default;
+$text-width: 200px !default;
 
-$range-handle-color: $shade-10 !default;
-$range-handle-color-hover: $teal !default;
+$range-handle-color: $playground-color-primary !default;
+$range-handle-color-hover: $playground-color-primary !default;
 $range-handle-size: 20px !default;
 
-$range-track-color: $shade-1 !default;
+$range-track-color: $playground-color-gray !default;
 $range-track-height: 10px !default;
 
-$range-label-color: $shade-10 !default;
+$range-label-color: $playground-color-primary !default;
 $range-label-width: 60px !default;
+
+.playground-control {
+  margin: 0 0 1.61803em 0;
+}
+
+input.playground-text {
+  background: $playground-color-light;
+  border-color: $playground-color-primary;
+  border-width: 2px;
+  width: $text-width;
+  display: inline-block;
+}
 
 input[type="range"].playground-range {
   -webkit-appearance: none;
@@ -83,7 +95,7 @@ input[type="range"].playground-range {
 .playground-range-value {
   display: inline-block;
   position: relative;
-  color: $shade-0;
+  color: $playground-color-light;
   line-height: 20px;
   text-align: center;
   border-radius: 3px;

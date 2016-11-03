@@ -33,7 +33,7 @@ block content
     div.grid-fluid.playground
       div.row
         div.col.xs-7.copyable-inner
-          span.test-element2 A Block
+          span.test-element2 #[span.test-element3 A Block]
         div.col.xs-5
           div.playground-control
             label(for="test-element-control2") Block Color:
@@ -45,7 +45,13 @@ block content
                 data-values="Red:red,Green:green,Blue:blue"
               ) 
               span.playground-range-value Red
-
+          div.playground-control
+            label(for="test-element-control3") Block Text:
+              input#test-element-control3.playground-text(
+                data-target=".test-element3"
+                type="text"
+                value = "A Block"
+              )
       div.row
         +dynamicExampleCode
   
