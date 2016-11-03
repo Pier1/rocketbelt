@@ -84,10 +84,14 @@ body { min-height: 100%; }
     border-right-style: solid;
   }
 
-  a { display: block; }
-
-  a {
+  a { 
+    display: block;
     text-decoration: none;
+  }
+
+  .isActive {
+    background: color(white);
+    font-weight: font-weight(semibold);
   }
 }
 

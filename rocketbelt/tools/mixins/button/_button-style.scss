@@ -22,9 +22,9 @@
     }
   }
   @else if $style == secondary {
+    border: 0.1rem solid $button-base;
     background-color: color(white);
     color: mix(color(white), $button-base, 10%);
-    border: 0.1rem solid $button-base;
 
     &:hover {
       border-color: $button-hover;
@@ -38,8 +38,8 @@
 
     &[disabled] {
       &:hover {
-        color: $button-base;
         border-color: $button-base;
+        color: $button-base;
       }
     }
   }

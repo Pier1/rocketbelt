@@ -1,34 +1,34 @@
 .lazyload-wrapper {
-  width: 100%;
-  background-color: color(gray, plus4);
-  background-size: cover;
-  background-repeat: no-repeat;
   position: relative;
-
+  width: 100%;
   background: linear-gradient(
-                -90deg,
-                scale-color(color(gray, plus2), $lightness: 50%) 0%,
-                color(white) 50%,
-                scale-color(color(gray, plus2), $lightness: 50%) 100%
-              );
+    -90deg,
+    scale-color(color(gray, plus2), $lightness: 50%) 0%,
+    color(white) 50%,
+    scale-color(color(gray, plus2), $lightness: 50%) 100%
+  );
+  background-color: color(gray, plus4);
+  // background-size: cover;
   background-size: 400% 400%;
+  background-repeat: no-repeat;
   animation: pulse 1.2s ease-in-out infinite;
 
   @keyframes pulse {
     0% {
-      background-position: 0% 0%
+      background-position: 0 0;
     }
+
     100% {
-      background-position: -135% 0%
+      background-position: -135% 0;
     }
   }
 
   & img {
     position: absolute;
-    opacity: 0;
     top: 0;
     left: 0;
     width: 100%;
+    opacity: 0;
     transition: opacity 100ms linear;
 
     &.loaded {
@@ -38,14 +38,15 @@
 }
 
 .lazyload {
-  background-color: color(gray, plus4);
+  display: flex;
+  flex: 1;
   margin-top: 10vh;
   margin-bottom: 90vh;
-  flex: 1;
-  min-height: 20vw;
   min-width: 20vw;
-  display: flex;
+  min-height: 20vw;
+  border-radius: 2px;
+  background-color: color(gray, plus4);
+
   justify-content: center;
   align-items: center;
-  border-radius: 2px;
 }

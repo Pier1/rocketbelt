@@ -1,7 +1,9 @@
-.card.card-action,
-.card.card-image,
-.card.card-panel {
-  padding: 0;
+.card {
+  &.card-action,
+  &.card-image,
+  &.card-panel {
+    padding: 0;
+  }
 }
 
 .card-content {
@@ -9,12 +11,12 @@
 }
 
 .card-title {
-  font-size: ms(1);
   text-transform: uppercase;
+  font-size: ms(1);
 }
 
 .card-actions {
-  border-top: 1px solid rgba(color(gray, plus2), 0.4);
   padding: 0.5rem;
+  border-top: 1px solid rgba(color(gray, plus2), 0.4);
   text-align: right;
 }

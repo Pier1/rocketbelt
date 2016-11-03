@@ -36,6 +36,6 @@ $ease: (
     @return map-get($ease, $key);
   }
 
-  @warn "Unkown '#{$key}' in $ease.";
+  @error 'Unkown '#{$key}' in $ease.';
   @return null;
 }
