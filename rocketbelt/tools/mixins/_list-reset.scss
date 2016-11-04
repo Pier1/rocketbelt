@@ -1,7 +1,7 @@
 @mixin list-reset($horizontal: false) {
-  list-style-type: none;
-  padding: 0;
   margin: 0;
+  padding: 0;
+  list-style-type: none;
 
   ul,
   ol {

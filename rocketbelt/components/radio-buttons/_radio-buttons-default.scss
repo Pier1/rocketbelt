@@ -3,125 +3,128 @@
   @include list-reset;
 }
 
-input[type=radio],
-input[type=checkbox] {
-  @extend %visuallyhidden;
-}
+input {
+  &[type='radio'],
+  &[type='checkbox'] {
+    @extend %visuallyhidden;
 
-input[type=radio],
-input[type=checkbox] {
-  & + label {
-    font-weight: font-weight(normal);
-    position: relative;
-    padding-left: 1.25rem;
-  }
-}
-
-input[type=radio] + label {
-  align-self: flex-start;
-
-  &:before {
-    content: '';
-    position: absolute;
-    background: color(gray, plus3);
-    border: 2px solid transparent;
-    border-radius: 100%;
-    height: 1rem;
-    width: 1rem;
-    top: 0.15rem;
-    left: 0;
-    transition: all 200ms ease-in;
-  }
-
-  &:hover:before {
-    background: color(white);
-    border: 6px solid rgba(color(gray), 0.2);
-    transition: color 200ms ease-in,
-                background 200ms ease-in;
-  }
-}
-
-input[type=radio]:checked + label {
-  &:before {
-    border: 6px solid color(primary);
-    background: color(white);
-    transition: border 200ms ease-in,
-                background 200ms ease-in;
-  }
-}
-
-input[type=checkbox]{
-  $color-white: color(white);
-  $color-selected: color(primary);
-  $color-unselected: color(gray, plus3);
-
-  & + label {
-    &:before {
-      content: '';
-      position: absolute;
-      background: color(gray, plus3);
-      border: 2px solid transparent;
-      border-radius: 2px;
-      height: 1rem;
-      width: 1rem;
-      top: 0.1rem;
-      left: 0;
-      background-position: center center;
-      transition: background-color 200ms ease-in;
+    & + label {
+      position: relative;
+      padding-left: 1.25rem;
+      font-weight: font-weight(normal);
     }
 
-    &:hover:before {
-      $color-fill: str-replace(quote($color-white), '#', '%23');
-      background: url('data:image/svg+xml;utf8,
-                    <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                    </svg>'
-                  ) no-repeat,
-                  $color-unselected;
-      background-position: center center;
-      transition: background-color 100ms ease-in;
+    &[disabled] + label {
+      &::before {
+        border: 2px solid color(gray, plus4);
+        background: color(gray, plus4);
+      }
     }
   }
 
-  &:checked + label {
-    &:before {
-      $color-fill: str-replace(quote($color-white), '#', '%23');
-      background: url('data:image/svg+xml;utf8,
-                    <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                      <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                    </svg>'
-                  ) no-repeat,
-                  $color-selected;
-      background-position: center center;
-      transition: background-color 100ms ease-in;
+  &[type='radio'] {
+    & + label {
+      align-self: flex-start;
+
+      &::before {
+        position: absolute;
+        top: 0.15rem;
+        left: 0;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid transparent;
+        border-radius: 100%;
+        background: color(gray, plus3);
+        content: '';
+        transition: all 200ms ease-in;
+      }
+
+      &:hover::before {
+        border: 6px solid rgba(color(gray), 0.2);
+        background: color(white);
+        transition: color 200ms ease-in,
+        background 200ms ease-in;
+      }
+    }
+
+    &:checked + label {
+      &::before {
+        border: 6px solid color(primary);
+        background: color(white);
+        transition: border 200ms ease-in,
+        background 200ms ease-in;
+      }
+    }
+
+    &[disabled] {
+      &[checked] + label {
+        &::before {
+          border: 6px solid color(gray, plus4);
+          background: color(gray, plus2);
+        }
+      }
     }
   }
-}
 
-input[type=checkbox][disabled] + label,
-input[type=radio][disabled] + label {
-  &:before {
-    background: color(gray, plus4);
-    border: 2px solid color(gray, plus4);
-  }
-}
+  &[type='checkbox'] {
+    $color-white: color(white);
+    $color-selected: color(primary);
+    $color-unselected: color(gray, plus3);
 
-input[type=radio][disabled][checked] + label {
-  &:before {
-    background: color(gray, plus2);
-    border: 6px solid color(gray, plus4);
-  }
-}
+    & + label {
+      &::before {
+        position: absolute;
+        top: 0.1rem;
+        left: 0;
+        width: 1rem;
+        height: 1rem;
+        border: 2px solid transparent;
+        border-radius: 2px;
+        background: color(gray, plus3);
+        background-position: center center;
+        content: '';
+        transition: background-color 200ms ease-in;
+      }
 
-input[type=checkbox][disabled][checked] + label {
-  &:before {
-    $color-fill: str-replace(quote(color(gray, plus2)), '#', '%23');
-    background: url('data:image/svg+xml;utf8,
-                  <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                    <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                  </svg>'
-                ) no-repeat,
-                color(gray, plus4);
-    background-position: center center;
+      &:hover::before {
+        $color-fill: str-replace(quote($color-white), '#', '%23');
+        background: url('data:image/svg+xml;utf8,
+                      <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
+                      </svg>'
+                    ) no-repeat,
+                    $color-unselected;
+        background-position: center center;
+        transition: background-color 100ms ease-in;
+
+      }
+    }
+
+    &:checked + label {
+      &::before {
+        $color-fill: str-replace(quote($color-white), '#', '%23');
+        background: url('data:image/svg+xml;utf8,
+                      <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
+                      </svg>'
+                    ) no-repeat,
+                    $color-selected;
+        background-position: center center;
+        transition: background-color 100ms ease-in;
+      }
+    }
+
+    &[disabled][checked] + label {
+      &::before {
+        $color-fill: str-replace(quote(color(gray, plus2)), '#', '%23');
+        background: url('data:image/svg+xml;utf8,
+                      <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
+                        <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
+                      </svg>'
+                    ) no-repeat,
+                    color(gray, plus4);
+        background-position: center center;
+      }
+    }
   }
 }

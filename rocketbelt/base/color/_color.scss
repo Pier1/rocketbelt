@@ -1,12 +1,13 @@
 $brand-blue: #0a689d;
-$primary: scale-color($brand-blue, $lightness: 25%);
+$gray: mix(#a11622, #808080, 5%);
+$primary: mix(scale-color($brand-blue, $lightness: 20%), gray, 95%);
 
 $base-families: (
   brand: $brand-blue,
   primary: $primary,
   secondary: adjust-hue($primary, -30),
   accent: adjust-hue($primary, 60),
-  gray: mix(#a11622, #808080, 5%),
+  gray: $gray,
   success: #00b575,
   warning: #ffc300,
   error: #a11622,
