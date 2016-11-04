@@ -57,6 +57,8 @@ ghpBuild
 
 git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
 git merge -s recursive -X theirs TEMP_BRANCH -m "Merge into gh-pages: ${SHA}"
+git status --porcelain | awk '{if ($1=="DU") print $2}' | xargs git rm
+git commit -m "Merge into gh-pages: ${SHA}"
 
 # Get the deploy key by using Travis's stored variables to decrypt deploy_key.enc
 ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"

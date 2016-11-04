@@ -4,8 +4,8 @@
   @if (map-has-key($breakpoints, $width)) {
     @return map-get($breakpoints, $width);
   }
-  else {
-    @error "Breakpoint width `#{$width}` does not exist in `$breakpoints`.";
+  @else {
+    @error 'Breakpoint width `#{$width}` does not exist in `$breakpoints`.';
   }
 }
 
@@ -13,7 +13,7 @@
   @if (map-has-key($breakpoints, $width)) {
     @return map-get($above, $width);
   }
-  else {
-    @error "Breakpoint width `#{$width}` does not exist in `$breakpoints`.";
+  @else {
+    @error 'Breakpoint width `#{$width}` does not exist in `$breakpoints`.';
   }
 }

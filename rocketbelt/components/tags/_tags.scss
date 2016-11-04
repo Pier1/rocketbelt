@@ -1,10 +1,10 @@
 .tag {
-  padding: ms(-12) ms(-8);
   display: inline-block;
+  padding: ms(-12) ms(-8);
+  background: color(gray, plus3);
+  color: color(black);
   text-transform: uppercase;
   font-family: font-family(sans);
-  background: color(gray,plus3);
-  color: color(black);
   cursor: default;
 
   &.tag-stretch {
@@ -23,13 +23,13 @@
     font-size: font-size(-2);
   }
 
- &.tag-xs {
-    padding:ms(-16) ms(-8);
+  &.tag-xs {
+    padding: ms(-16) ms(-8);
     font-size: font-size(-4);
   }
 
   &.tag-subtle {
-    border:1px solid color(gray,plus3);
+    border: 1px solid color(gray, plus3);
     background: color(white);
   }
 
@@ -42,21 +42,22 @@
     background: color(error);
     color: color(white);
   }
+
+  &.message-dismissable {
+    .message-dismissable_close {
+      margin: 0;
+      padding: 0;
+      width: auto;
+      height: inherit;
+      font-weight: inherit;
+      font-size: inherit;
+      line-height: inherit;
+
+      justify-content: space-between;
+
+      &::after {
+        margin: 0 0 0 0.5rem;
+      }
+    }
+  }
 }
-
-.tag.message-dismissable .message-dismissable_close {
-  width: auto;
-  line-height: inherit;
-  padding: 0;
-  margin: 0;
-  height: inherit;
-  font-weight: inherit;
-  font-size: inherit;
-  justify-content: space-between;
-}
-
-.tag.message-dismissable .message-dismissable_close:after {
-  margin: 0 0 0 0.5rem
-}
-
-

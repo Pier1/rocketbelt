@@ -10,10 +10,10 @@
   }
   @else {
     @if (not $has-key-family) {
-      @error "Color family `#{$family}` does not exist.";
+      @error 'Color family `#{$family}` does not exist.';
     }
     @else {
-      @error "Color variant `#{$variant}` does not exist in family `#{$family}`.";
+      @error 'Color variant `#{$variant}` does not exist in family `#{$family}`.';
     }
   }
 }

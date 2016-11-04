@@ -1,11 +1,13 @@
 @mixin button-style($style: primary) {
-  $button-base: scale-color(color(primary), $lightness: 10%);
-  $button-hover: scale-color(color(primary), $lightness: 20%);
-  $button-active: color(primary);
+  $button-base: scale-color(color(primary), $lightness: 0%);
+  $button-hover: scale-color(color(primary), $lightness: 10%);
+  $button-active: scale-color(color(primary), $lightness: -10%);
 
   @if $style == primary {
-    background-color: $button-base;
-    color: mix(color(white), $button-base, 90%);
+    background: $button-base;
+    background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.1) 0%, rgba(0, 0, 0, 0.08) 100%);
+    $color: mix(color(white), $button-base, 90%);
+    color: $color;
 
     &:hover {
       background-color: $button-hover;
@@ -16,17 +18,22 @@
     }
 
     &[disabled] {
+      color: rgba($color, 0.9);
+
       &:hover {
         background-color: $button-base;
       }
     }
   }
   @else if $style == secondary {
-    background-color: color(white);
-    color: mix(color(white), $button-base, 10%);
     border: 0.1rem solid $button-base;
+    background: color(white);
+    background-image: none;
+    $color: mix(color(white), $button-base, 10%);
+    color: $color;
 
     &:hover {
+      background: color(white);
       border-color: $button-hover;
       color: $button-hover;
     }
@@ -37,14 +44,16 @@
     }
 
     &[disabled] {
+      color: rgba($color, 0.9);
+
       &:hover {
+        border-color: $color;
         color: $button-base;
-        border-color: $button-base;
       }
     }
   }
   @else if $style == text {
-    background-color: transparent;
+    background: transparent;
     color: color(primary);
 
     &:hover {
@@ -59,8 +68,11 @@
     }
 
     &[disabled] {
+      $color: rgba(color(primary), 0.9);
+      color: $color;
+
       &:hover {
-        color: color(primary);
+        color: $color;
       }
     }
   }
