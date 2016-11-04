@@ -8,18 +8,57 @@ block content
     :md
       # Sale Sticker
 
-    .grid-fluid
+    .grid-fluid.playground
       .row
         .col.xs-6.background
-          :md
-            # Sans-serif
-          +exampleWithCode
-            include _sale-sticker-sans
-        .col.xs-6.background
-          :md
-            # Serif
           +exampleWithCode
             include _sale-sticker-serif
+        .col.xs-6
+          div.playground-control
+            input#ss_style.playground-item(
+              type="checkbox"
+              checked=false
+              value="serif"
+              name="Serif"
+              data-property="class"
+              data-target=".sale-sticker-wrapper"
+              units="px"
+            )
+            label(for="ss_style") Toggle Serif
+          div.playground-control
+            label(for="ss_fsize") Font Size:
+              input#ss_fsize.playground-item( 
+                type="range"  
+                value="120"
+                min="58" 
+                max="200" 
+                step="4"
+                data-target=".sale-sticker-inner" 
+                data-property="font-size"
+                data-units="px"
+              ) 
+              span.playground-range-value 120px
+          div.playground-control
+            label(for="ss_topmsg") Top Message:
+              input#ss_topmsg.playground-item(
+                data-target=".up-to-msg"
+                type="text"
+                value = "up to"
+              )
+          div.playground-control
+            label(for="ss_sale") Sale Amount:
+              input#ss_sale.playground-item(
+                data-target=".sale-amount"
+                type="text"
+                value = "20"
+              )
+          div.playground-control
+            label(for="ss_tagline") Tagline:
+              input#ss_tagline.playground-item(
+                data-target=".tagline"
+                type="text"
+                value = "All Sofas"
+              )
 
 block scripts 
   script.

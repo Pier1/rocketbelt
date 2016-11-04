@@ -82,8 +82,8 @@ var rb = rb || {};
 
   // Sets up all playground elements and makes the code copy function for dynamic elements
   function launchPlayground(){
-    $('.playground-range,.playground-text').playground();
-    $('body').on('playgroundUpdated', '.playground-range,.playground-text', function(){
+    $('.playground-item').playground();
+    $('body').on('playgroundUpdated', '.playground-item', function(){
       var $input = $(this),
           base = $input.data('playground'),
           $playground = $input.closest('.playground'),

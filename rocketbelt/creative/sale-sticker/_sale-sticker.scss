@@ -14,13 +14,13 @@ $sticker-bkg: rgba(255,255,255,0.9);
 
 .sale-sticker-wrapper {
   display: inline-block;
-  border:5px solid $sticker-bkg;
-  padding:.5em;
+  border: .04em solid hsla(0,0%,100%,.9);
+  padding: .05em;
+  font-size: 120px;
 }
 
 .sale-sticker-inner {
   position: relative;
-  font-size:120px;
   width: 1.75em;
   background: $sticker-bkg;
 
