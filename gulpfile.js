@@ -25,9 +25,7 @@ var config = {
 };
 
 var utils = {
-	getTask: require(utilsPath + 'getTask'),
-	directoryTreeToObj: require(utilsPath + 'directoryTreeToObj'),
-	debounce: require(utilsPath + 'debounce')
+	getTask: require(utilsPath + '/getTask')
 };
 
 function getTask(task) {
