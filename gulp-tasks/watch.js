@@ -21,8 +21,11 @@
       gulp.watch(['./rocketbelt/**/*.scss', './templates/scss/**/*.scss'], ['styles']);
       gulp.watch('./templates/**/*', ['views']);
       gulp.watch(['./rocketbelt/**/*.js'], ['uglify']);
+      gulp.watch(config.buildPath + '/**/*.html', ['a11y']);
       gulp.watch(config.buildPath + '/**/*.html').on('change', debounce(plugins.browserSync.reload, 500));
       gulp.watch(config.buildPath + '/**/*.js').on('change', debounce(plugins.browserSync.reload, 500));
+
+      global.isWatching = true;
 
       return true;
     }
