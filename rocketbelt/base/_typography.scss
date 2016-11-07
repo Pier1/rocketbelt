@@ -171,6 +171,12 @@ h4 {
   font-weight: font-weight(semibold);
 }
 
+.cta {
+  font-weight: font-weight(semibold);
+  color: color(black);
+  text-transform: uppercase;
+}
+
 .list-reset {
   @include list-reset();
 }

@@ -1,22 +1,12 @@
-.cta {
-  font-size: 1.2rem;
-  font-weight: 600;
-  vertical-align: baseline;
-  display: block;
-  color: #323232;
-  font-size: .9em;
-  text-transform: uppercase;
-  line-height: 1.2em;
-  vertical-align: middle;
-}
-
 $sticker-bkg: rgba(255,255,255,0.9);
+
+// BASE (SANS-SERIF)
 
 .sale-sticker-wrapper {
   display: inline-block;
-  border: .04em solid hsla(0,0%,100%,.9);
+  border: .04em solid $sticker-bkg;
   padding: .05em;
-  font-size: 120px;
+  font-size: 7rem;
 }
 
 .sale-sticker-inner {
@@ -75,6 +65,8 @@ $sticker-bkg: rgba(255,255,255,0.9);
   }
 }
 
+// SERIF STYLES
+
 .sale-sticker-wrapper.serif {
   font-family: 'Brand Serif';
 }
@@ -105,36 +97,3 @@ $sticker-bkg: rgba(255,255,255,0.9);
   }
 
 }
-
-/*  Sale Sticker Bullet Proof */
-
-// .serif .sale-sticker-inner .tagline {
-//   font-family: "Brand Serif","Palatino", serif;
-// }
-
-// .serif .sale-sticker-inner .pct-off-msg {
-//   width: 1.5em;
-//   margin-left: .125em;
-// }
-
-// .serif .sale-sticker-inner .percent-amount {
-//   top: .15em;
-//   font-size: .55em;
-// }
-// .serif .sale-sticker-inner .sale-off {
-//   top: 2.4em;
-//   font-size: .4em;
-// }
-// .serif .sale-sticker-inner .up-to-msg {
-//   font-family: "Brand Serif", "Palatino",serif;
-// }
-// .serif .sale-sticker-inner .pct-off-msg{
-//   font-family: "Brand Serif","Palatino",serif;
-// }
-
-// .sale-sticker-wrapper .sale-sticker-inner .cta {
-//   text-align: center;
-//   color: inherit;
-// }
-
-/* END - Sale Sticker Bullet Proof */
