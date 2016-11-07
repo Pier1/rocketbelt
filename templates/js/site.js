@@ -80,17 +80,16 @@ var rb = rb || {};
   // Playground defaults specific to Rocketbelt.
   $.playground.defaultOptions.wrapper = '.playground'
 
-
   // Sets up all playground elements and makes the code copy function for dynamic elements
   function launchPlayground(){
-    $('.playground-range').playground();
-    $('body').on('playgroundUpdated', '.playground-range', function(){
-      var $rangeInput = $(this),
-          base = $rangeInput.data('playground'),
-          $playground = $rangeInput.closest('.playground'),
+    $('.playground-range,.playground-text').playground();
+    $('body').on('playgroundUpdated', '.playground-range,.playground-text', function(){
+      var $input = $(this),
+          base = $input.data('playground'),
+          $playground = $input.closest('.playground'),
           $codeEl, targetHtmlStr;
 
-      if ( !$playground.length ) $playground = $rangeInput.closest('article');
+      if ( !$playground.length ) $playground = $input.closest('article');
       $codeEl = $playground.find('.exampleWithCode code');
 
       if ( $playground.find('.copyable').length ) {
