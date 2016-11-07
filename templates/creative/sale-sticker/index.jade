@@ -10,14 +10,14 @@ block content
 
     .grid-fluid.playground
       .row
-        .col.xs-6.background
+        .col.xs-12.md-6.ss_util_background
           +exampleWithCode
-            include _sale-sticker-serif
-        .col.xs-6
+            include _sale-sticker
+        .col.xs-12.md-6
           div.playground-control
             input#ss_style.playground-item(
               type="checkbox"
-              checked=false
+              checked=true
               value="serif"
               name="Serif"
               data-property="class"
@@ -32,7 +32,7 @@ block content
                 value="120"
                 min="58" 
                 max="200" 
-                step="4"
+                step="2"
                 data-target=".sale-sticker-inner" 
                 data-property="font-size"
                 data-units="px"
