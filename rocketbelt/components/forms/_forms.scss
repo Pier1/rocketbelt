@@ -2,95 +2,160 @@
 fieldset {
   display: flex;
   flex-direction: column;
-}
 
-.form-group:not(.inline) .messages {
-  display: flex;
-  flex-wrap: wrap;
-
-  .validation-message:after {
-    color: color(gray, plus1);
-    content: '\00A0\2014\00A0';
+  &:not(:last-child) {
+    margin-bottom: ms(-10);
   }
-}
-
-form .form-group.inline:first-child {
-  margin-top: ms(-10);
-}
-
-.form-group.inline {
-  flex-direction: row;
-  align-items: center;
 
   label,
-  .helper-text {
-    flex: 0 0 auto;
-    align-self: center;
-  }
+  legend {
+    font-weight: font-weight(semibold);
+    font-size: ms(-1);
 
-  label {
-    padding-right: padding(-4);
-    display: flex;
-    flex-direction: column;
-  }
+    align-self: flex-start;
 
-  .helper-text {
-    padding-left: padding(-4);
-  }
-
-  .messages {
-    order: last;
-    display: flex;
-    flex-direction: column;
-    flex: 0 0 auto;
-    padding-left: padding(-4);
-
-    .helper-text {
-      padding-left: 0;
-    }
-
-    .helper-text,
-    .validation-message {
-      align-self: flex-start;
-    }
-  }
-
-  input[required],
-  select[required] {
-    & + label:after {
-      content: '(required)';
-    }
-  }
-
-  input:not([required]),
-  select:not([required]) {
-    & + label:after {
-      content: '(optional)';
+    &::after {
+      color: color(gray, plus1);
+      font-weight: font-weight(normal);
     }
   }
 }
 
-html.touchevents {
-  input,
-  select {
-    min-height: 44px;
+.form-group:not(.inline) {
+  .messages {
+    display: flex;
+    flex-wrap: wrap;
+
+    .validation-message::after {
+      color: color(gray, plus1);
+      content: unicode(nbsp) + unicode('horizontal-bar') + unicode(nbsp);
+    }
+  }
+}
+
+form {
+  .form-group {
+    &.inline {
+      flex-direction: row;
+      align-items: center;
+
+      &:first-child {
+        margin-top: ms(-10);
+      }
+
+      label,
+      .helper-text {
+        flex: 0 0 auto;
+        align-self: center;
+      }
+
+      label {
+        display: flex;
+        flex-direction: column;
+        padding-right: padding(-4);
+      }
+
+      .helper-text {
+        padding-left: padding(-4);
+      }
+
+      .messages {
+        display: flex;
+        flex-direction: column;
+        flex: 0 0 auto;
+        padding-left: padding(-4);
+        order: last;
+
+        .helper-text {
+          padding-left: 0;
+        }
+
+        .helper-text,
+        .validation-message {
+          align-self: flex-start;
+        }
+      }
+
+      input,
+      select {
+        &[required] {
+          & + label::after {
+            content: '(required)';
+          }
+        }
+
+        &:not([required]) {
+          & + label::after {
+            content: '(optional)';
+          }
+        }
+      }
+    }
+  }
+}
+
+html {
+  &.touchevents {
+    input,
+    select,
+    button {
+      min-height: 44px;
+    }
   }
 }
 
 input,
 select {
+  display: block;
+  padding: ms(-12) ms(-10);
+  width: 100%;
   height: 2rem;
   border: 1px solid color(gray, plus1);
   border-radius: 2px;
-  display: block;
-  width: 100%;
   font-size: ms(-1);
-  padding: ms(-12) ms(-10);
+
+  & + label {
+    order: -1;
+  }
 
   &:focus {
     overflow: hidden;
-    outline-color: color(primary);
     outline-width: 3px;
+    outline-color: color(primary);
+
+    &:invalid,
+    &.invalid {
+      outline-color: color(error);
+    }
+  }
+
+  &[disabled] {
+    border-color: transparent;
+    background-color: color(gray, plus3);
+  }
+
+  &:invalid,
+  &.invalid {
+    border-width: 2px;
+    border-color: color(error);
+
+    & ~ .messages {
+      .validation-message {
+        display: block;
+        visibility: visible;
+        color: color(error);
+      }
+    }
+  }
+
+
+  &:valid:not(.invalid) {
+    & ~ .messages {
+      .validation-message {
+        display: none;
+        visibility: hidden;
+      }
+    }
   }
 }
 
@@ -99,118 +164,62 @@ select {
   filter: grayscale(0.4);
 }
 
-input[type=radio],
-input[type=checkbox] {
-  &[disabled] + label {
-    color: color(gray, plus2);
+input {
+  &[type='radio'],
+  &[type='checkbox'] {
+    &[disabled] + label {
+      color: color(gray, plus2);
+    }
   }
-}
-
-input[disabled],
-select[disabled] {
-  background-color: color(gray, plus3);
-  border-color: transparent;
 }
 
 select {
   $fill: str-replace(quote(color(black)), '#', '%23');
-  appearance: none;
   background: url('data:image/svg+xml;utf8,
                 <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg">
                   <path fill="#{$fill}" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/>
                 </svg>
               ') no-repeat,
               color(white);
-  background-size: 1rem;
   background-position: right 0.5rem center;
-}
+  background-size: 1rem;
 
-input,
-select {
-  &:invalid,
-  &.invalid {
-    border-color: color(error);
-    border-width: 2px;
-
-    & ~ .messages .validation-message {
-      display: block;
-      visibility: visible;
-      color: color(error);
-    }
-  }
-
-  &:valid:not(.invalid) {
-    & ~ .messages .validation-message {
-      display: none;
-      visibility: hidden;
-    }
-  }
-
-  &:focus:invalid,
-  &:focus.invalid {
-    outline-color: color(error);
-  }
-}
-
-input,
-select {
-  & + label {
-    order: -1;
-  }
-}
-
-.form-group,
-fieldset {
-  &:not(:last-child) {
-    margin-bottom: ms(-10);
-  }
-
-  label,
-  legend {
-    font-size: ms(-1);
-    font-weight: font-weight(semibold);
-    align-self: flex-start;
-  }
-
-  label:after,
-  legend:after {
-    color: color(gray, plus1);
-    font-weight: font-weight(normal);
-  }
+  appearance: none;
 }
 
 .form-group {
-  input + label:after,
-  select + label:after {
-    font-size: font-size(-2);
-  }
-
-  input[required],
-  select[required] {
-    & + label:after {
-      content: '\00a0(required)';
+  input,
+  select {
+    & + label::after {
+      font-size: font-size(-2);
     }
-  }
 
-  input:not([required]),
-  select:not([required]) {
-    & + label:after {
-      content: '\00a0(optional)';
+    &[required] {
+      & + label::after {
+        content: unicode(nbsp) + '(required)';
+      }
+    }
+
+    &:not([required]) {
+      & + label::after {
+        content: unicode(nbsp) + '(optional)';
+      }
     }
   }
 
   &.required-suppressed {
-    input[required],
-    select[required] {
-      & + label:after {
-        content: '';
+    input,
+    select {
+      &[required] {
+        & + label::after {
+          content: '';
+        }
       }
-    }
 
-    input:not([required]),
-    select:not([required]) {
-      & + label:after {
-        content: '';
+      &:not([required]) {
+        & + label::after {
+          content: '';
+        }
       }
     }
   }
@@ -226,15 +235,19 @@ fieldset {
 }
 
 fieldset {
-  border: 0;
   margin: 0;
   padding: 0;
+  border: 0;
 
-  &[required] legend:after {
-    content: '\00a0(required)';
+  &[required] {
+    legend::after {
+      content: unicode(nbsp) + '(required)';
+    }
   }
 
-  &:not([required]) legend:after {
-    content: '\00a0(optional)';
+  &:not([required]) {
+    legend::after {
+      content: unicode(nbsp) + '(optional)';
+    }
   }
 }
