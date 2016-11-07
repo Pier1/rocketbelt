@@ -32,9 +32,9 @@ input {
         left: 0;
         width: 1rem;
         height: 1rem;
-        border: 2px solid transparent;
+        border: 2px solid color(gray, plus2);
         border-radius: 100%;
-        background: color(gray, plus3);
+        background: color(white);
         content: '';
         transition: all 200ms ease-in;
       }
@@ -57,6 +57,11 @@ input {
     }
 
     &[disabled] {
+      & + label:hover::before {
+        border: none;
+        background: color(gray, plus4);
+      }
+
       &[checked] + label {
         &::before {
           border: 6px solid color(gray, plus4);
@@ -78,9 +83,9 @@ input {
         left: 0;
         width: 1rem;
         height: 1rem;
-        border: 2px solid transparent;
+        border: 2px solid color(gray, plus2);
         border-radius: 2px;
-        background: color(gray, plus3);
+        background: color(white);
         background-position: center center;
         content: '';
         transition: background-color 200ms ease-in;
@@ -88,6 +93,7 @@ input {
 
       &:hover::before {
         $color-fill: str-replace(quote($color-white), '#', '%23');
+        border-color: transparent;
         background: url('data:image/svg+xml;utf8,
                       <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
@@ -95,7 +101,8 @@ input {
                     ) no-repeat,
                     $color-unselected;
         background-position: center center;
-        transition: background-color 100ms ease-in;
+        transition: background-color 100ms ease-in,
+                    border-color 100ms ease-in;;
 
       }
     }
@@ -103,6 +110,7 @@ input {
     &:checked + label {
       &::before {
         $color-fill: str-replace(quote($color-white), '#', '%23');
+        border-color: transparent;
         background: url('data:image/svg+xml;utf8,
                       <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
                         <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
@@ -110,7 +118,8 @@ input {
                     ) no-repeat,
                     $color-selected;
         background-position: center center;
-        transition: background-color 100ms ease-in;
+        transition: background-color 100ms ease-in,
+                    border-color 100ms ease-in;
       }
     }
 
@@ -124,6 +133,13 @@ input {
                     ) no-repeat,
                     color(gray, plus4);
         background-position: center center;
+      }
+    }
+
+    &[disabled]:not([checked]) + label {
+      &::before {
+        border-color: transparent;
+        background: color(gray, plus4);
       }
     }
   }
