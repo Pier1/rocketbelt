@@ -30,7 +30,7 @@
             
             // Event attachment
             // Set Default
-			     // updateTarget(base.$el.val());
+			     updateTarget(base.$el.val());
 
             // Sample callback on init execution
             if (base.opts.init) {
