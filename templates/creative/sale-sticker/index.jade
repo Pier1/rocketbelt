@@ -10,20 +10,30 @@ block content
 
     .grid-fluid.playground
       .row
-        .col.xs-12.md-6.ss_util_background
+        .col.xs-12.ss_util_background
           +exampleWithCode
             include _sale-sticker
-        .col.xs-12.md-6
+        .col.xs-12
           div.playground-control
             input#ss_style.playground-item(
               type="checkbox"
-              checked=true
+              checked=false
               value="serif"
               name="Serif"
               data-property="class"
               data-target=".sale-sticker-wrapper"
             )
-            label(for="ss_style") Toggle Serif
+            label(for="ss_style") Sans-Serif
+          div.playground-control
+            input#ss_variant.playground-item(
+              type="checkbox"
+              checked=false
+              value="sale-sticker-horizontal"
+              name="Sale Sticker Horizontal Variant"
+              data-property="class"
+              data-target=".sale-sticker-wrapper"
+            )
+            label(for="ss_variant") Horizontal Variant
           div.playground-control
             label(for="ss_fsize") Font Size:
               input#ss_fsize.playground-item( 
@@ -58,7 +68,7 @@ block content
               input#ss_tagline.playground-item(
                 data-target=".tagline"
                 type="text"
-                maxlength="23"
+                maxlength="35"
                 value = "All Sofas"
               )
 
