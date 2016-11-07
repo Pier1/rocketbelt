@@ -89,6 +89,11 @@ body { min-height: 100%; }
   a {
     text-decoration: none;
   }
+
+  .isActive {
+    background: color(white);
+    font-weight: font-weight(semibold);
+  }
 }
 
 #docs-content {
@@ -214,6 +219,7 @@ body { min-height: 100%; }
 
   .category-toggle {
     & + .category-label {
+      font-size: font-size(-1);
       padding-left: 0;
       display: block;
       cursor: pointer;
@@ -224,6 +230,7 @@ body { min-height: 100%; }
       border-bottom-style: solid;
 
       @include media('>=md') {
+        font-size: font-size(0);
         border-left-style: solid;
         border-bottom-style: none;
 
@@ -314,7 +321,7 @@ body { min-height: 100%; }
     }
     &.isActive {
       a { background: color(white); }
-        
+
     }
   }
 }

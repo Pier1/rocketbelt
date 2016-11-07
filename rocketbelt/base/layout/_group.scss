@@ -1,11 +1,11 @@
 %group {
-  &:before,
-  &:after {
-    content: '';
+  &::before,
+  &::after {
     display: table;
+    content: '';
   }
 
-  &:after {
+  &::after {
     clear: both;
   }
 }

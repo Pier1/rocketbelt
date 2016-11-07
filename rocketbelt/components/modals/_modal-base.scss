@@ -1,8 +1,8 @@
-html.modal-is-locked {
-  overflow: hidden;
-
-  -ms-touch-action: none;
-  touch-action: none;
+html {
+  .modal-is-locked {
+    overflow: hidden;
+    touch-action: none;
+  }
 }
 
 // Anti FOUC
@@ -13,37 +13,31 @@ html.modal-is-locked {
 
 .modal-overlay {
   position: fixed;
-  z-index: 9999;
   top: -5000px;
   right: -5000px;
   bottom: -5000px;
   left: -5000px;
-
+  z-index: 9999;
   display: none;
 }
 
 .modal-wrapper {
   position: fixed;
-  z-index: 10000;
   top: 0;
   right: 0;
   bottom: 0;
   left: 0;
-
+  z-index: 10000;
   display: none;
   overflow: auto;
-
-  text-align: center;
-
   -webkit-overflow-scrolling: touch;
+  text-align: center;
 }
 
-.modal-wrapper:after {
+.modal-wrapper::after {
   display: inline-block;
-
-  height: 100%;
   margin-left: -0.05em;
-
+  height: 100%;
   content: '';
 }
 
@@ -56,6 +50,7 @@ html.modal-is-locked {
 .modal {
   position: relative;
   outline: none;
+
   text-size-adjust: 100%;
 }
 

@@ -56,7 +56,7 @@ var rb = rb || {};
 
     // Play button for gifs
     $('img.gipho').on('click', function(){
-      var $img = $(this), 
+      var $img = $(this),
         playSrc = $img.attr('data-play'),
           rand = ( playSrc.indexOf('?') > -1 ? '&' : '?' ) + (Math.random() * 1000|0);
       $img.attr('src', playSrc + rand );
@@ -91,7 +91,7 @@ var rb = rb || {};
 
       if ( !$playground.length ) $playground = $input.closest('article');
       $codeEl = $playground.find('.exampleWithCode code');
-          
+
       if ( $playground.find('.copyable').length ) {
         targetHtmlStr = $playground.find('.copyable')[0].outerHTML;
       } else if ( $playground.find('.copyable-inner').length ) {
@@ -99,7 +99,7 @@ var rb = rb || {};
       } else {
         targetHtmlStr = base.$targetEl[0].outerHTML;
       }
-      
+
       $codeEl.html(escapeHtml(targetHtmlStr));
       Prism.highlightElement($codeEl[0]);
 
