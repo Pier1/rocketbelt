@@ -121,7 +121,7 @@
 
 .modal_header_close::before {
   display: block;
-  content: '\00d7';
+  content: unicode(multiplication-sign);
   font-size: ms(6);
   line-height: 1;
 }

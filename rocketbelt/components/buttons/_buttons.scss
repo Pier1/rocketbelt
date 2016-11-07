@@ -1,35 +1,40 @@
 %button-static-props {
   border: none;
-  border-radius: 2px;
   text-transform: uppercase;
   letter-spacing: 0.1rem;
   font-weight: font-weight(light);
   cursor: default;
-  transition: all 100ms ease();
+  transition: color 100ms ease(),
+              border 100ms ease(),
+              background 100ms ease();
+
+  @include button-shadow;
 
   &:focus {
     outline: 0;
   }
 }
 
-
-.button {
-  @include button-size(md);
-}
-
+.button,
 .button-primary {
-  @include button-style;
-  @include button-inset(primary);
+  @include button-size(md);
+  @include button-style(primary);
 }
 
 .button-secondary {
   @include button-style(secondary);
-  @include button-inset(secondary);
 }
 
 .button-text {
   @include button-style(text);
   cursor: pointer;
+
+  &,
+  &:hover,
+  &:active {
+    background: transparent;
+    box-shadow: none;
+  }
 }
 
 .button-sm {
@@ -47,5 +52,30 @@
 .button-block {
   display: block;
   width: 100%;
-  box-shadow: none;
+
+  &:active {
+    background: rgba(color(gray, plus4), 0.6);
+    transition: background 100ms ease();
+  }
+  
+  &,
+  &:active,
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.button,
+.button-primary,
+.button-secondary,
+.button-text,
+.button-block {
+  &[disabled] {
+    box-shadow: none;
+
+    &:active,
+    &:hover {
+      box-shadow: none;
+    }
+  }
 }

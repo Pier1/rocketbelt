@@ -28,7 +28,7 @@ fieldset {
 
     .validation-message::after {
       color: color(gray, plus1);
-      content: '\00A0\2014\00A0';
+      content: unicode(nbsp) + unicode('horizontal-bar') + unicode(nbsp);
     }
   }
 }
@@ -58,7 +58,6 @@ form {
       .helper-text {
         padding-left: padding(-4);
       }
-
       .messages {
         display: flex;
         flex-direction: column;
@@ -97,7 +96,8 @@ form {
 html {
   &.touchevents {
     input,
-    select {
+    select,
+    button {
       min-height: 44px;
     }
   }
@@ -195,13 +195,13 @@ select {
 
     &[required] {
       & + label::after {
-        content: '\00a0(required)';
+        content: unicode(nbsp) + '(required)';
       }
     }
 
     &:not([required]) {
       & + label::after {
-        content: '\00a0(optional)';
+        content: unicode(nbsp) + '(optional)';
       }
     }
   }
@@ -240,13 +240,13 @@ fieldset {
 
   &[required] {
     legend::after {
-      content: '\00a0(required)';
+      content: unicode(nbsp) + '(required)';
     }
   }
 
   &:not([required]) {
     legend::after {
-      content: '\00a0(optional)';
+      content: unicode(nbsp) + '(optional)';
     }
   }
 }

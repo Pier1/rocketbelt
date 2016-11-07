@@ -88,7 +88,7 @@ $message-families: (success, error, warning, info);
     align-items: center;
 
     &::after {
-      content: '\00d7';
+      content: unicode(multiplication-sign);
     }
   }
 }

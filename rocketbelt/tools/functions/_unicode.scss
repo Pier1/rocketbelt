@@ -1,0 +1,22 @@
+@function unicode($character: '') {
+  $style: to_lower_case($character);
+  $characters: (
+    nbsp: '\00a0',
+    en-dash: '\2013',
+    em-dash: '\2014',
+    horizontal-bar: '\2015',
+    dagger: '\2020',
+    double-dagger: '\2021',
+    bullet: '\2022',
+    ellipsis: '\2026',
+    right-chevron: '\203a',
+    multiplication-sign: '\00d7'
+  );
+
+  @if map-has-key($characters, $character) {
+    @return map-get($characters, $character);
+  }
+  @else {
+    @error 'Character `#{$character}` does not exist in the map.';
+  }
+}
