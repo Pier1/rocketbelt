@@ -1,0 +1,26 @@
+.seo-banner {
+  display: flex;
+  border: 1px solid color(black);
+  font-size: font-size(0);
+  padding: ms(-6) ms(-1);
+
+  .seo-banner_title {
+    flex-basis: 28%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-family: 'Brand Serif';
+    font-size: font-size(5);
+    line-height: 1.1;
+    text-transform: uppercase;
+    padding: 0 ms(-1) 0 0;
+    border-right: 1px solid color(black);
+  }
+
+  .seo-banner_copy {
+    flex-basis: 72%;
+    line-height: 1.3;
+    padding: 0 0 0 ms(-1);
+  }
+}

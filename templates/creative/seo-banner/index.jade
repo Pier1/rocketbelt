@@ -8,8 +8,28 @@ block content
     :md
       # SEO Banner
 
-    .grid-fluid
+    .grid-fluid.playground
       .row
         .col.xs
           +exampleWithCode
             include _seo-banner
+      .row
+        .col.xs
+          div.playground-control
+            label(for="seo_copy") SEO Title:
+              input#seo_copy.playground-item(
+                data-target=".seo-banner_title"
+                type="text"
+                value = "PENDANT &amp; CEILING LIGHT"
+              )
+          div.playground-control
+            label(for="seo_copy") SEO Copy:
+              input#seo_copy.playground-item(
+                data-target=".seo-banner_copy"
+                type="text"
+                value = "You've worked hard to decorate your home, so why not put it in the spotlight and show it off with our brilliant selection of pendant and ceiling lighting. Hanging lights are a great way to amp up a room's character - use a single drop light for some high-wattage appeal, or add a grouping of two or more to give your space the perfect shine."
+              )
+
+block scripts 
+  script.
+    rb.launchPlayground();
