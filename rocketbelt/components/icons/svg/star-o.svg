@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>star-o</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="star-o" fill="#000000">
+            <path d="M128,69.1553398 L148.038835,110.398058 L193.475728,116.68932 L160.38835,148.61165 L168.543689,193.815534 L128,172.145631 L87.4563107,193.815534 L95.6116505,148.61165 L62.5242718,116.68932 L107.961165,110.398058 L128,69.1553398 Z M128,37 L98.6407767,97.5825243 L32,106.669903 L80.4660194,153.504854 L68.5825243,219.679612 L128,187.990291 L187.417476,219.679612 L175.533981,153.504854 L224,106.902913 L157.359223,97.5825243 L128,37 Z"></path>
+        </g>
+    </g>
+</svg>
