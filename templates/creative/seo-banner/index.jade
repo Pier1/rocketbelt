@@ -1,0 +1,15 @@
+extends /_layout.jade
+
+block vars
+  - var title = 'SEO Banner'
+
+block content
+  article
+    :md
+      # SEO Banner
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _seo-banner
