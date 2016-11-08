@@ -16,7 +16,6 @@
             } else {
                 base.$targetEl = $(base.opts.target || base.$el.data('target') );
             }
-
             if ( base.$el.attr("type").toLowerCase() === 'range' ) {
                 base.initRange();
                 base.$el.on('input', updateTarget);
@@ -30,7 +29,7 @@
             
             // Event attachment
             // Set Default
-			     // updateTarget(base.$el.val());
+			     updateTarget(base.$el.val(), 'init');
 
             // Sample callback on init execution
             if (base.opts.init) {
@@ -116,6 +115,7 @@
                 base.currentDisplay = base.opts.textTransform ? base.opts.textTransform(idx) : idx;
                 base.$targetEl.html(base.currentDisplay);
             } else if (base.type === 'checkbox') {
+              if ( !arguments[1] || arguments[1] !=='init')
               base.$targetEl.toggleClass(idx);
             }
         	
