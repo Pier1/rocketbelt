@@ -13,6 +13,8 @@ body {
   font-size: font-size(0);
   font-family: font-family(default);
   line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 p {
@@ -168,6 +170,12 @@ h4 {
 
 .font-weight-semibold {
   font-weight: font-weight(semibold);
+}
+
+.cta {
+  font-weight: font-weight(semibold);
+  color: color(black);
+  text-transform: uppercase;
 }
 
 .list-reset {

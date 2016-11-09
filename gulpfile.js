@@ -1,5 +1,4 @@
 'use strict';
-
 var gulp = require('gulp');
 var nav = [];
 
@@ -50,6 +49,7 @@ gulp.task('views', ['copy-js', 'copy-img'], getTask('views'));
 gulp.task('sitemap', getTask('sitemap'));
 gulp.task('lint-sass', getTask('lint-sass'));
 gulp.task('build', getTask('build'));
+gulp.task('a11y', getTask('a11y'));
 
 function throttle (callback, limit) {
   var wait = false;

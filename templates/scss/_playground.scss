@@ -21,7 +21,7 @@ $range-label-width: 60px !default;
   margin: 0 0 1.61803em 0;
 }
 
-input.playground-text {
+input[type="text"].playground-item {
   background: $playground-color-light;
   border-color: $playground-color-primary;
   border-width: 2px;
@@ -29,7 +29,7 @@ input.playground-text {
   display: inline-block;
 }
 
-input[type="range"].playground-range {
+input[type="range"].playground-item {
   -webkit-appearance: none;
   display: inline-block;
   width: $range-width;
