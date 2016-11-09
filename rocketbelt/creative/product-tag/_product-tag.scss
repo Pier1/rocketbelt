@@ -1,37 +1,34 @@
- .seo-banner {
-  display: flex;
-  flex-direction:column;
-  border: 1px solid color(black);
-  font-size: font-size(0);
-  padding: ms(-6) ms(-1);
-  @include media('>=sm') {
-    flex-direction:row;
+.product-tag {
+  font-family: 'Brand Serif';
+  background: rgba(color(error), .9);
+  color: color(white);
+  padding: 0 ms(-2);
+  display: inline-block;
+  font-size: font-size(5);
+  font-style: italic;
+  .product-tag_wrap {
+    display: flex;
+    align-items: center;
   }
-
-  .seo-banner_title {
-    text-align: center;
-    font-family: 'Brand Serif';
-    font-size: font-size(5);
-    line-height: 1.1;
-    text-transform: uppercase;
-    border-bottom: 1px solid color(black);
-    padding: 0 0 ms(-8) 0;
-    @include media('>=sm') {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      flex: 0 0 30%;
-      border-bottom: none;
-      border-right: 1px solid color(black);
-      padding: 0 ms(-1) 0 0;
+  &.percent-off {
+    padding: 0 ms(-6);
+    font-style: normal;
+    font-size: 2.25rem;
+    font-family: 'Brand Sans';
+    .product-tag_text {
+      letter-spacing: -3px;
+      line-height: 1.3;
     }
   }
+}
 
-  .seo-banner_copy {
-    line-height: 1.3;
-    padding: ms(-4) 0;
-    @include media('>=sm') {
-      padding: 0 0 0 ms(-1);
-    }
+.product-tag.percent-off {
+  .product-tag_wrap:after {
+      content: "%\Aoff";
+      white-space: pre;
+      line-height: 1;
+      font-size: .44em;
+      text-transform: uppercase;
+      margin-left: .25em;
   }
 }
