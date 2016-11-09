@@ -13,6 +13,7 @@
           transform: [{
             svgo: {
               plugins: [
+                { removeViewBox: false },
                 { removeUnusedNS: true },
                 { removeAttrs: { attrs: '(stroke|fill)' } }
               ]
@@ -27,6 +28,7 @@
           },
                   },
         mode: {
+          inline: true,
           symbol: {
             dest: './sprite',
             sprite: 'rocketbelt.icons.symbols.svg',
