@@ -13,25 +13,18 @@
           transform: [{
             svgo: {
               plugins: [
-                { removeViewBox: false },
+                { removeViewBox: true },
                 { removeUnusedNS: true },
                 { removeAttrs: { attrs: '(stroke|fill)' } }
               ]
             }
           }],
-          dimension: {
-            maxWidth: 32,
-            maxHeight: 32
-          },
-          spacing: {
-            padding: 10
-          },
-                  },
+        },
         mode: {
           inline: true,
           symbol: {
             dest: './sprite',
-            sprite: 'rocketbelt.icons.symbols.svg',
+            sprite: '../../rocketbelt.icons.svg',
             prefix: '.'
           },
         }
