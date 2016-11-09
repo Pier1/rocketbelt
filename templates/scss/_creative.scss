@@ -9,6 +9,21 @@ input[type=checkbox].playground-item:checked+label:before {
 
 /* HELPER CLASSES FOR TEMPLATE LAYOUT ********/
 
+.pt-img .copyable-inner {
+  background-image:url('//images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_us_catalog/default/dw2c038acc/dining%20room.jpg?sw=225&sh=225');
+  background-size:cover;
+  background-repeat:no-repeat;
+  width: 225px;
+  height: 225px;
+  position: relative;
+}
+
+.pt-img.pt-hide .copyable-inner {
+  background:none;
+  width: auto;
+  height: auto;
+}
+
 // sale sticker
 .ss_util_background  {
   text-align: center;
