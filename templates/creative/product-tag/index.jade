@@ -13,6 +13,25 @@ block content
         .col.xs
           +exampleWithCode
             include _product-tag
+        .col.xs
+          div.playground-control
+            input#pt_variant.playground-item(
+              type="checkbox"
+              checked=false
+              value="percent-off"
+              name="Percent Off"
+              data-property="class"
+              data-target=".product-tag"
+            )
+            label(for="pt_variant") Percent Off
+          div.playground-control
+            label(for="pt_msg") Tag Message:
+              input#pt_msg.playground-item(
+                data-target=".product-tag_text"
+                type="text"
+                maxlength="20"
+                value = "Sale"
+              )
 
 block scripts 
   script.
