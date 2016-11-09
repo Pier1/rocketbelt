@@ -104,9 +104,8 @@ var rb = rb || {};
       Prism.highlightElement($codeEl[0]);
 
     });
-
     // Sets the code section on page load.
-    $('.playground-range').trigger('input');
+    $('.playground-item').trigger('input');
   }
 
   // Exposes playground setup to a global so that it only gets setup when necessary.
