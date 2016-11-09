@@ -6,7 +6,7 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="sort-up" fill="#000000">
-            <polygon points="127.514563 32 189.029126 114.019417 66 114.019417"></polygon>
+            <polygon id="sort-both" points="128.019417 0 210.038835 109.359223 46 109.359223"></polygon>
         </g>
     </g>
 </svg>
