@@ -44,7 +44,7 @@ gulp.task('icons', getTask('icons'));
 gulp.task('link-svg', getTask('link-svg'));
 gulp.task('link-templates', getTask('link-templates'));
 gulp.task('link-js', getTask('link-js'));
-gulp.task('link', ['link-templates', 'link-js']);
+gulp.task('link', ['link-templates', 'link-js', 'link-svg']);
 gulp.task('lint-sass', getTask('lint-sass'));
 gulp.task('server', getTask('server'));
 gulp.task('sitemap', getTask('sitemap'));
