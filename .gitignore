@@ -3,6 +3,7 @@
 # ====================================================
 templates/components/**/_*.jade
 templates/components/**/*.js
+templates/components/**/*.svg
 templates/base/**/_*.jade
 templates/base/**/*.js
 templates/base/**/*.json

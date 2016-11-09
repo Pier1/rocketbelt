@@ -7,3 +7,12 @@ block content
   article
     :md
       # Icons
+
+  +exampleWithCode('Sprite Include')
+    .sprite-include(style='display:none;')
+      include ./svg/sprite/rocketbelt.icons.symbols.svg  
+
+  each icon in icons
+    - icon = icon.replace(/\.svg/, '');
+    svg.icon
+      use(xlink:href='#rb-icon-' + icon)
