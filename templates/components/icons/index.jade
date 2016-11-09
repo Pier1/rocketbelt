@@ -8,11 +8,11 @@ block content
     :md
       # Icons
 
-  +exampleWithCode('Sprite Include')
-    .sprite-include(style='display:none;')
-      include ./svg/sprite/rocketbelt.icons.symbols.svg  
-
-  each icon in icons
-    - icon = icon.replace(/\.svg/, '');
-    svg.icon
-      use(xlink:href='#rb-icon-' + icon)
+  .grid-fluid
+    .row.xs-center
+      each icon in icons
+        - icon = icon.replace(/\.svg/, '');
+        .col.xs-4.sm-3.md-2.lg-2
+          svg.icon
+            use(xlink:href='./rocketbelt.icons.svg#rb-icon-' + icon)
+          .icon-id.font-monospace.font-minus-2 #{'#rb-icon-' + icon}
