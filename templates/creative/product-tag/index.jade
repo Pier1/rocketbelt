@@ -1,0 +1,19 @@
+extends /_layout.jade
+
+block vars
+  - var title = 'Product Tag'
+
+block content
+  article
+    :md
+      # Product Tag
+
+    .grid-fluid.playground
+      .row
+        .col.xs
+          +exampleWithCode
+            include _product-tag
+
+block scripts 
+  script.
+    rb.launchPlayground();
