@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>zoom</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="zoom" fill="#000000">
+            <path d="M136,112 L112,112 L112,136 L96,136 L96,112 L72,112 L72,96 L96,96 L96,72 L112,72 L112,96 L136,96 L136,112 Z M201.376,224 L142.28,164.904 C131.176,171.896 118.088,176 104,176 C64.232,176 32,143.768 32,104 C32,64.232 64.232,32 104,32 C143.768,32 176,64.232 176,104 C176,118.088 171.888,131.184 164.904,142.28 L224,201.376 L201.376,224 Z M104,160 C134.872,160 160,134.88 160,104 C160,73.12 134.872,48 104,48 C73.128,48 48,73.12 48,104 C48,134.88 73.128,160 104,160 Z"></path>
+        </g>
+    </g>
+</svg>
