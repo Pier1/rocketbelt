@@ -25,7 +25,7 @@ block content
             )
             label(for="ss_style") Sans-Serif
           div.playground-control
-            input#ss_variant.playground-item(
+            input#ss_horizontal-variant.playground-item(
               type="checkbox"
               checked=false
               value="sale-sticker-horizontal"
@@ -33,7 +33,17 @@ block content
               data-property="class"
               data-target=".sale-sticker-wrapper"
             )
-            label(for="ss_variant") Horizontal Variant
+            label(for="ss_horizontal-variant") Horizontal
+          div.playground-control
+            input#ss_stretch-variant.playground-item(
+              type="checkbox"
+              checked=false
+              value="sale-sticker-stretch"
+              name="Sale Sticker Horizontal Variant"
+              data-property="class"
+              data-target=".sale-sticker-wrapper"
+            )
+            label(for="ss_stretch-variant") Full Width
           div.playground-control
             label(for="ss_fsize") Font Size:
               input#ss_fsize.playground-item( 
@@ -68,7 +78,6 @@ block content
               input#ss_tagline.playground-item(
                 data-target=".tagline"
                 type="text"
-                maxlength="35"
                 value = "All Sofas"
               )
 
