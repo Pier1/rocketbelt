@@ -1,23 +1,23 @@
-/**
- * Swiper 3.4.0
- * Most modern mobile touch slider and framework with hardware accelerated transitions
- *
- * http://www.idangero.us/swiper/
- *
- * Copyright 2016, Vladimir Kharlampidi
- * The iDangero.us
- * http://www.idangero.us/
- *
- * Licensed under MIT
- *
- * Released on: October 16, 2016
- */
+// Swiper 3.4.0
+// Most modern mobile touch slider and framework with hardware accelerated transitions
+//
+// http://www.idangero.us/swiper/
+//
+// Copyright 2016, Vladimir Kharlampidi
+// The iDangero.us
+// http://www.idangero.us/
+//
+// Licensed under MIT
+//
+// Released on: October 16, 2016
+
 .swiper-container {
   margin-left: auto;
   margin-right: auto;
   position: relative;
   overflow: hidden;
-  /* Fix of Webkit flickering */
+
+  // Fixes Webkit flickering
   z-index: 1;
 }
 .swiper-container-no-flexbox .swiper-slide {
@@ -52,7 +52,8 @@
   height: 100%;
   position: relative;
 }
-/* Auto Height */
+
+// Auto Height
 .swiper-container-autoheight,
 .swiper-container-autoheight .swiper-slide {
   height: auto;
@@ -61,7 +62,8 @@
   align-items: flex-start;
   transition-property: transform, height;
 }
-/* a11y */
+
+// a11y
 .swiper-container .swiper-notification {
   position: absolute;
   left: 0;
@@ -70,14 +72,16 @@
   opacity: 0;
   z-index: -1000;
 }
-/* IE10 Windows Phone 8 Fixes */
+
+// IE10 Windows Phone 8 Fixes
 .swiper-wp8-horizontal {
   touch-action: pan-y;
 }
 .swiper-wp8-vertical {
   touch-action: pan-x;
 }
-/* Arrows */
+
+// Arrows
 .swiper-button-prev,
 .swiper-button-next {
   position: absolute;
@@ -125,7 +129,8 @@
 .swiper-container-rtl .swiper-button-prev.swiper-button-white {
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg%20xmlns%3D'http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg'%20viewBox%3D'0%200%2027%2044'%3E%3Cpath%20d%3D'M27%2C22L27%2C22L5%2C44l-2.1-2.1L22.8%2C22L2.9%2C2.1L5%2C0L27%2C22L27%2C22z'%20fill%3D'%23ffffff'%2F%3E%3C%2Fsvg%3E");
 }
-/* Pagination Styles */
+
+// Pagination Styles
 .swiper-pagination {
   position: absolute;
   text-align: center;
@@ -136,7 +141,8 @@
 .swiper-pagination.swiper-pagination-hidden {
   opacity: 0;
 }
-/* Common Styles */
+
+// Common Styles
 .swiper-pagination-fraction,
 .swiper-pagination-custom,
 .swiper-container-horizontal > .swiper-pagination-bullets {
@@ -144,7 +150,8 @@
   left: 0;
   width: 100%;
 }
-/* Bullets */
+
+// Bullets
 .swiper-pagination-bullet {
   width: 8px;
   height: 8px;
@@ -188,7 +195,8 @@ button.swiper-pagination-bullet {
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
   margin: 0 5px;
 }
-/* Progress */
+
+// Progress
 .swiper-pagination-progress {
   background: rgba(0, 0, 0, 0.25);
   position: absolute;
@@ -228,7 +236,7 @@ button.swiper-pagination-bullet {
   background: #000;
 }
 
-/* Fade */
+// Fade
 .swiper-container-fade.swiper-container-free-mode .swiper-slide {
   transition-timing-function: ease-out;
 }
@@ -258,7 +266,8 @@ button.swiper-pagination-bullet {
   max-height: 100%;
   object-fit: contain;
 }
-/* Scrollbar */
+
+// Scrollbar
 .swiper-scrollbar {
   border-radius: 10px;
   position: relative;
@@ -293,7 +302,8 @@ button.swiper-pagination-bullet {
 .swiper-scrollbar-cursor-drag {
   cursor: move;
 }
-/* Preloader */
+
+// Preloader
 .swiper-lazy-preloader {
   width: 42px;
   height: 42px;

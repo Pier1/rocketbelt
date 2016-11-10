@@ -1,0 +1,18 @@
+extends /_layout.jade
+
+block vars
+  - var title = 'Icons'
+
+block content
+  article
+    :md
+      # Icons
+
+  .grid-fluid
+    .row.xs-center
+      each icon in icons
+        - icon = icon.replace(/\.svg/, '');
+        .col.xs-4.sm-3.md-2.lg-2
+          svg.icon
+            use(xlink:href='./rocketbelt.icons.svg#rb-icon-' + icon)
+          .icon-id.font-monospace.font-minus-2 #{'#rb-icon-' + icon}

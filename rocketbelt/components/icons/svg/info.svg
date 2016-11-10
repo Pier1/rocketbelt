@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <title>info</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="info" fill="#000000">
+            <path d="M128,224 C181.016,224 224,181.016 224,128 C224,74.984 181.016,32 128,32 C74.984,32 32,74.984 32,128 C32,181.016 74.984,224 128,224 Z M136,176 L120,176 L120,112 L136,112 L136,176 Z M128,78 C133.52,78 138,82.48 138,88 C138,93.52 133.52,98 128,98 C122.48,98 118,93.52 118,88 C118,82.48 122.48,78 128,78 Z"></path>
+        </g>
+    </g>
+</svg>
