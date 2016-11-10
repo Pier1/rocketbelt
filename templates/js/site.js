@@ -82,8 +82,8 @@ var rb = rb || {};
 
   // Sets up all playground elements and makes the code copy function for dynamic elements
   function launchPlayground(){
-    $('.playground-range,.playground-text').playground();
-    $('body').on('playgroundUpdated', '.playground-range,.playground-text', function(){
+    $('.playground-item').playground();
+    $('body').on('playgroundUpdated', '.playground-item', function(){
       var $input = $(this),
           base = $input.data('playground'),
           $playground = $input.closest('.playground'),
@@ -104,9 +104,8 @@ var rb = rb || {};
       Prism.highlightElement($codeEl[0]);
 
     });
-
     // Sets the code section on page load.
-    $('.playground-range').trigger('input');
+    $('.playground-item').trigger('input');
   }
 
   // Exposes playground setup to a global so that it only gets setup when necessary.

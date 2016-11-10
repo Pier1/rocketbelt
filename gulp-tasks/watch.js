@@ -24,6 +24,8 @@
       gulp.watch(config.buildPath + '/**/*.html').on('change', debounce(plugins.browserSync.reload, 500));
       gulp.watch(config.buildPath + '/**/*.js').on('change', debounce(plugins.browserSync.reload, 500));
 
+      global.isWatching = true;
+
       return true;
     }
   };

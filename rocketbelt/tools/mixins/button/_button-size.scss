@@ -4,14 +4,14 @@
 
   @if $size == lg {
     padding: padding(-6) padding(1);
-    font-size: font-size(1);
+    font-size: font-size(0);
   }
   @else if $size == md {
     padding: padding(-8) padding(1);
-    font-size: font-size(0);
+    font-size: font-size(-1);
   }
   @else {
     padding: padding(-10) padding(1);
-    font-size: font-size(-1);
+    font-size: font-size(-2);
   }
 }
