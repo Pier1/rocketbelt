@@ -8,8 +8,29 @@ block content
     :md
       # SEO Banner
 
-    .grid-fluid
+    .grid-fluid.playground
       .row
         .col.xs
           +exampleWithCode
             include _seo-banner
+      .row
+        .col.xs
+          div.playground-control
+            label(for="seo_title") SEO Title:
+              input#seo_title.playground-item(
+                data-target=".seo-banner_title"
+                type="text"
+                value = "Pillows & Cushions"
+              )
+        .col.xs
+          div.playground-control
+            label(for="seo_copy") SEO Copy:
+              input#seo_copy.playground-item(
+                data-target=".seo-banner_copy"
+                type="text"
+                value = "Have a soft spot for comfy, cushiony throw pillows? We do, too. With our selection of decorative pillows in textured, embellished, solid and patterned designs, adding the final flourish to your look is simple. And don’t forget about outdoor pillows, featuring UV-treated fabric. Toss in a new pillow or two today."
+              )
+
+block scripts 
+  script.
+    rb.launchPlayground();
