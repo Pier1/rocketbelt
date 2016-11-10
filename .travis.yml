@@ -9,7 +9,8 @@ node_js:
 
 before_install:
 - if [ "$TRAVIS_PULL_REQUEST"  = "false" ]; then openssl aes-256-cbc -K $encrypted_d1e5f63af608_key
-  -iv $encrypted_d1e5f63af608_iv -in deploy_key.enc -out deploy_key -d
+    -iv $encrypted_d1e5f63af608_iv -in deploy_key.enc -out deploy_key -d
+  fi
 
 install:
 - npm install
