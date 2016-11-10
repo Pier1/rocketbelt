@@ -25,10 +25,13 @@ $sticker-bkg: rgba(255,255,255,0.9);
   }
 
   .up-to-msg {
-    font-size:.25em;
     text-align: center;
-    line-height: 1;
     font-style:italic;
+    text-transform: uppercase;
+    font-size:.2em;
+    padding: .2em 0 0;
+    margin-bottom: -.3em;
+    line-height: .9;
   }
 
   .percent-amount {
@@ -75,8 +78,7 @@ $sticker-bkg: rgba(255,255,255,0.9);
 .serif .sale-sticker-inner {
 
   .up-to-msg {
-    font-size:.3em;
-    line-height: .9;
+    font-style: normal;
   }
 
   .pct-off-msg {
@@ -101,25 +103,27 @@ $sticker-bkg: rgba(255,255,255,0.9);
 
 // HORIZONTAL VARIANT 
 
-.sale-sticker-horizontal .sale-sticker-inner {
-  width: 4.25em;
-  padding: 0.05em;
-  overflow-x: auto;
-  overflow-y: hidden;
+.sale-sticker-wrapper.sale-sticker-horizontal {
+  
+  .sale-sticker-inner {
+    width: 4.25em;
+    padding: 0.05em;
+    overflow-x: auto;
+    overflow-y: hidden;
+  } 
 
   .up-to-msg, .pct-off-msg, .sale-sticker-tagline {
     float: left;
+    margin: 0 0 0 .1em;
   }
 
   .up-to-msg {
     width: 1.5em;
     font-size: .2em;
     font-style: normal;
-    text-transform: uppercase;
   }
 
   .pct-off-msg {
-    margin: 0 .1em 0 0;
     height: .75em;
     line-height: .725;
     width: 1.65em;
@@ -139,8 +143,6 @@ $sticker-bkg: rgba(255,255,255,0.9);
   .sale-off {
     font-size: .44em;
   }
-
-  .sale-sticker-tagline 
 
   .tagline-wrapper {
     width: 1.95em;
@@ -165,7 +167,7 @@ $sticker-bkg: rgba(255,255,255,0.9);
 
 }
 
-.serif.sale-sticker-horizontal .sale-sticker-inner {
+.serif.sale-sticker-horizontal {
   
   .pct-off-msg {
     line-height: .6;
@@ -183,6 +185,24 @@ $sticker-bkg: rgba(255,255,255,0.9);
     font-size: .215em;
   }
 
+}
+
+// FULL WIDTH VARIANT
+
+.sale-sticker-wrapper.sale-sticker-stretch {
+  width: 100%;
+
+  .sale-sticker-inner {
+    width:100%;
+  }
+
+  .pct-off-msg {
+    margin:0 auto;
+  }
+
+  &.sale-sticker-horizontal .tagline-wrapper {
+    width: auto;
+  }
 }
 
 
