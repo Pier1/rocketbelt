@@ -7,7 +7,7 @@
   "license": "MIT",
   "main": "gulpfile.js",
   "scripts": {
-    "test": ""
+    "test": "gulp test"
   },
   "author": "",
   "repository": {
