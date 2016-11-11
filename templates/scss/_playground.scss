@@ -21,89 +21,80 @@ $range-label-width: 60px !default;
   margin: 0 0 1.61803em 0;
 }
 
-input[type="text"].playground-item {
-  background: $playground-color-light;
-  border-color: $playground-color-primary;
-  border-width: 2px;
-  width: $text-width;
-  display: inline-block;
-}
-
-input[type="range"].playground-item {
-  -webkit-appearance: none;
-  display: inline-block;
-  width: $range-width;
-  height: $range-track-height;
-  border-radius: 5px;
-  background: $range-track-color;
-  outline: none;
-  padding: 0;
-  margin: 0;
-
-  // Range Handle
-  &::-webkit-slider-thumb {
-    appearance: none;
-    width: $range-handle-size;
-    height: $range-handle-size;
-    border-radius: 50%;
-    background: $range-handle-color;
-    cursor: pointer;
-    transition: background .15s ease-in-out;
-
-    &:hover {
-      background: $range-handle-color-hover;
+input {
+  &[type='text'] {
+    .playground-item {
+      display: inline-block;
+      width: $text-width;
+      border-width: 2px;
+      border-color: $playground-color-primary;
+      background: $playground-color-light;
     }
   }
 
-  &:active::-webkit-slider-thumb {
-    background: $range-handle-color-hover;
-  }
+  &[type='range'] {
+    &.playground-item {
+      -webkit-appearance: none;
+      margin: 0;
+      padding: 0;
+      width: $range-width;
+      height: $range-track-height;
+      outline: none;
+      border-radius: 5px;
+      background: $range-track-color;
+      display: inline-block;
 
-  &:focus { overflow: visible; }
+      // Range Handle
+      &::-webkit-slider-thumb,
+      &::-moz-range-thumb {
+        width: $range-handle-size;
+        height: $range-handle-size;
+        border-radius: 50%;
+        background: $range-handle-color;
+        cursor: pointer;
+        transition: background .15s ease-in-out;
+        appearance: none;
 
-  &::-moz-range-thumb {
-    width: $range-handle-size;
-    height: $range-handle-size;
-    border: 0;
-    border-radius: 50%;
-    background: $range-handle-color;
-    cursor: pointer;
-    transition: background .15s ease-in-out;
+        &:hover {
+          background: $range-handle-color-hover;
+        }
+      }
 
-    &:hover {
-      background: $range-handle-color-hover;
+      &:active::-webkit-slider-thumb,
+      &:active::-moz-range-thumb {
+        background: $range-handle-color-hover;
+      }
+
+      &:focus { overflow: visible; }
+
+      // Firefox Overrides
+      &::-moz-focus-inner,
+      &::-moz-focus-outer {
+        border: 0;
+      }
+
+      &::-moz-range-track {
+        border: 0;
+        background: $range-track-color;
+      }
     }
-  }
-
-  &:active::-moz-range-thumb {
-    background: $range-handle-color-hover;
-  }
-
-  // Firefox Overrides
-  &::-moz-focus-inner,
-  &::-moz-focus-outer { 
-    border: 0; 
-  }
-  &::-moz-range-track {
-    background: $range-track-color;
-    border: 0;
   }
 }
 
 
 // Range Label
 .playground-range-value {
-  display: inline-block;
   position: relative;
-  color: $playground-color-light;
-  line-height: 20px;
-  text-align: center;
+  display: inline-block;
+  margin-left: 8px;
+  padding: 5px 10px;
   border-radius: 3px;
   background: $range-label-color;
-  padding: 5px 10px;
-  margin-left: 8px;
+  color: $playground-color-light;
+  text-align: center;
+  line-height: 20px;
 
-  &:after {
+  &::after {
     position: absolute;
     top: 8px;
     left: -7px;
@@ -119,7 +110,8 @@ input[type="range"].playground-item {
     display: block;
     margin: 0;
     width: $range-width;
-    &:after {
+
+    &::after {
       display: none;
     }
   }
