@@ -10,7 +10,7 @@ if [ $TRAVIS_PULL_REQUEST = "false" -a $TRAVIS_BRANCH = $SOURCE_BRANCH ]; then
   git commit -m "Build for gh-pages: ${SHA}"
 
   git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
-  git merge -s recursive -X theirs TEMP_BRANCH -m "Merge into gh-pages: ${SHA}"
+  git merge -s recursive -X theirs TEMP_BRANCH -m "Merge into gh-pages: ${SHA}" || true
   git status --porcelain | awk '{if ($1=="DU") print $2}' | xargs git rm
   git commit -m "Merge into gh-pages: ${SHA}"
 
