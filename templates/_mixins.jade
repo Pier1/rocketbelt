@@ -90,6 +90,19 @@ mixin buildNav(navObject, rootHref)
               if item.children.length >= 1
                 mixin buildNav(item.children, newRootHref + '/' + item.name)
 
+mixin colorPicker()
+  - var obj = colorFamilies;
+  div.color-grid
+    each family in obj
+      each color in family.variants
+        if (family.familyName === 'brand' || family.familyName === 'white')
+          span(class="bg_#{family.familyName} visuallyhidden", title="#{family.familyName}")
+        else if (color.variant === 'base')
+          span(class="bg_#{family.familyName}", title="#{family.familyName}")
+        else 
+          span(class="bg_#{family.familyName}-#{color.variant}", title="#{family.familyName} #{color.variant}")
+
+
 mixin footnoteTerm(name)
   - footnotes = footnotes || [];
   - var note = { name: name, id: footnotes.length + 1, block: '' };
