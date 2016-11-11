@@ -1,3 +1,19 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/Pier1/rocketbelt/compare/0.5.0...v0.6.0) (2016-11-11)
+
+
+### Bug Fixes
+
+* **Build:** Remove multiline comments. ([b1e59c5](https://github.com/Pier1/rocketbelt/commit/b1e59c5))
+* **Icons:** Adjust icon sizes. ([8e9eb12](https://github.com/Pier1/rocketbelt/commit/8e9eb12))
+
+
+### Features
+
+* **Deployment:** Clean up deployment. ([60b17ba](https://github.com/Pier1/rocketbelt/commit/60b17ba))
+
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/Pier1/rocketbelt/compare/0.4.3...v0.5.0) (2016-11-09)
 
