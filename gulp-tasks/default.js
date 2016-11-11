@@ -3,7 +3,7 @@
 
   module.exports = function (gulp, plugins, config) {
     return function (done) {
-      return plugins.runSequence('build', ['watch', 'server'], done);
+      return plugins.runSequence('build', ['server', 'watch'], done);
     };
   };
 })();
