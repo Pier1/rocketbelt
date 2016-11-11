@@ -28,10 +28,15 @@ input[type=checkbox].playground-item:checked+label:before {
 .ss_util_background  {
   text-align: center;
 
-  & .example {
-    background: color(success, darker);
+  .example {
     padding:1em;
     text-align: center;
     min-width: 260px;
+    position: relative;
+  }
+  .cp_wrapper {
+    position: absolute;
+    top:10px;
+    left:10px;
   }
 }
