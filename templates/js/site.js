@@ -83,6 +83,24 @@ var rb = rb || {};
   // Sets up all playground elements and makes the code copy function for dynamic elements
   function launchPlayground(){
     $('.playground-item').playground();
+
+    // Eyedropper Helper Functions
+    $('.cp_eyedropper').on('click', function() {
+      if ($(this).next('.cp_grid').hasClass('visuallyhidden')) {
+        $(".cp_grid").addClass('visuallyhidden');
+        $(this).next(".cp_grid").removeClass('visuallyhidden');
+      } else {
+        $(this).next(".cp_grid").addClass('visuallyhidden');
+      }
+    })
+    // Hides eyedropper if you click outside eyedropper
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.cp_eyedropper').length && !$(event.target).hasClass('playground-list_item')) {
+        $(".cp_grid").addClass('visuallyhidden');
+      }
+    });
+
+    // Playground Event Handler
     $('body').on('playgroundUpdated', '.playground-item', function(){
       var $input = $(this),
           base = $input.data('playground'),

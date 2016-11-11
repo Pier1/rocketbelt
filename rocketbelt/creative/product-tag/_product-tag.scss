@@ -4,6 +4,8 @@
   padding: 0 ms(-4);
   display: inline-block;
   font-size: font-size(7);
+  font-family: 'Brand Serif';
+  font-style: italic;
   .product-tag_wrap {
     display: flex;
     align-items: center;
@@ -30,6 +32,8 @@
 }
 
 .product-tag.percent-off {
+  font-family: 'Brand Sans';
+  font-style: normal;
   .product-tag_wrap:after {
       content: "%\Aoff";
       white-space: pre;
