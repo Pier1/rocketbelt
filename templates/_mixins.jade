@@ -99,11 +99,11 @@ mixin colorPicker(target, val, type)
       each family in obj
         each color in family.variants
           if (family.familyName === 'white')
-            span(class="playground-list_item bg_#{family.familyName} color-w-border", title="#{family.familyName}", value="#{prefix}#{family.familyName}") 
+            span(class="playground-list_item bg_#{family.familyName} color-w-border", title="#{color.colorName}", value="#{prefix}#{family.familyName}") 
           else if (color.variant === 'base')
-            span(class="playground-list_item bg_#{family.familyName}", title="#{family.familyName}", value="#{prefix}#{family.familyName}")
+            span(class="playground-list_item bg_#{family.familyName}", title="#{color.colorName}", value="#{prefix}#{family.familyName}")
           else 
-            span(class="playground-list_item bg_#{family.familyName}-#{color.variant}", title="#{family.familyName} #{color.variant}", value="#{prefix}#{family.familyName}-#{color.variant}")
+            span(class="playground-list_item bg_#{family.familyName}-#{color.variant}", title="#{color.colorName}", value="#{prefix}#{family.familyName}-#{color.variant}")
 
 
 mixin footnoteTerm(name)
