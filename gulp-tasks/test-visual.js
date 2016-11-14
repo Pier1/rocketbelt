@@ -15,7 +15,7 @@
         }
       };
 
-      plugins.recursiveReaddir('.', ['!rocketbelt/**/*-test.js'], function (err, tests) {
+      plugins.recursiveReaddir('.', ['!rocketbelt/**/tests/*.js'], function (err, tests) {
         var casperChild = spawn('casperjs', ['test', Array.prototype.concat(tests), '--runAt=' + moment().tz('America/Chicago').format('YYYYMMDD-HHmmss')]);
 
         casperChild.stdout.on('data', function (data) {
