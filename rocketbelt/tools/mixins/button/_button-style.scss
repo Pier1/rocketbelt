@@ -41,6 +41,7 @@
     &:active {
       border-color: $button-active;
       color: $button-active;
+      background: color(white);
     }
 
     &[disabled] {
@@ -74,6 +75,27 @@
       &:hover {
         color: $color;
       }
+    }
+  }
+  @else if $style == busy {
+    position: relative;
+    color:transparent;
+    &::after {
+      content:"";
+      display: block;
+      width:1em;
+      height: 1em;
+      $color-fill: str-replace(quote(color(white)), '#', '%23');
+
+      background: url('data:image/svg+xml;utf8,<svg width="11" height="19" viewBox="190 45 11 19" fill="#{$color-fill}" xmlns="http://www.w3.org/2000/svg"><path d="M201 45v2c-4.962 0-9 4.038-9 9 0 2.48 1.01 4.73 2.64 6.36l-1.415 1.415C191.24 61.795 190 59.04 190 56c0-6.065 4.935-11 11-11z" fill-rule="evenodd"/></svg>');
+      background-size:contain;
+      background-repeat: no-repeat;
+      animation:spin 1s cubic-bezier(.78,.38,.49,.88) infinite;
+
+      position: absolute;
+      left:43%;
+      top:32%;
+      transform: translate(-50%, -50%);
     }
   }
 }

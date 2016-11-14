@@ -38,4 +38,14 @@ block content
 
     +exampleWithCode
       include _buttons-block
+
+    :md
+      ## Interactive
+
+    +exampleWithCode
+      include _buttons-load
             
+    :md
+      ## Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.buttonLoad.min.js')
