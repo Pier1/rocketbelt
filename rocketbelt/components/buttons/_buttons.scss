@@ -6,7 +6,9 @@
   cursor: default;
   transition: color 100ms ease(),
               border 100ms ease(),
-              background 100ms ease();
+              background 100ms ease(),
+              box-shadow 100ms ease-out,
+              opacity 500ms ease();
 
   @include button-shadow;
 
