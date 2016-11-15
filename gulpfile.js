@@ -38,7 +38,7 @@ gulp.task('build', getTask('build'));
 gulp.task('clean-links', getTask('clean-links'));
 gulp.task('clean', ['clean-links'], getTask('clean'));
 gulp.task('copy-js', getTask('copy-js'));
-gulp.task('copy-img', getTask('copy-img'));
+gulp.task('copy-resources', getTask('copy-resources'));
 gulp.task('feature-detection', getTask('feature-detection'));
 gulp.task('icons', getTask('icons'));
 gulp.task('link-svg', getTask('link-svg'));
@@ -53,7 +53,7 @@ gulp.task('test', ['test-visual']);
 gulp.task('test-webserver', getTask('test-webserver'));
 gulp.task('test-visual', ['test-webserver'], getTask('test-visual'));
 gulp.task('uglify', getTask('uglify'));
-gulp.task('views', ['copy-js', 'copy-img'], getTask('views'));
+gulp.task('views', ['copy-js', 'copy-resources'], getTask('views'));
 gulp.task('watch', getTask('watch'));
 
 function throttle (callback, limit) {
