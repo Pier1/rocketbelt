@@ -114,6 +114,12 @@ body { min-height: 100%; }
     align-self: center;
 }
 
+.docs-definition-list {
+  @include clearfix;
+  dt { font-weight: bold; float: left; display: block; clear: left; width: 100px; }
+  dd { display: block; float: left; margin: 0;}
+}
+
 .nav {
   position: fixed;
   z-index: 1;

@@ -90,11 +90,15 @@ mixin buildNav(navObject, rootHref)
               if item.children.length >= 1
                 mixin buildNav(item.children, newRootHref + '/' + item.name)
 
-mixin footnoteTerm(name)
+mixin footnoteTerm(name, annotateOnly)
   - footnotes = footnotes || [];
   - var note = { name: name, id: footnotes.length + 1, block: '' };
   - footnotes.push(note);
-  span.footnote-term #{note.name}
+  if !annotateOnly
+    span.footnote-term #{note.name}
+      a(href="#footnote_#{note.id}" name="footnote_term_#{note.id}")
+        sup &#91;#{note.id}&#93;
+  else 
     a(href="#footnote_#{note.id}" name="footnote_term_#{note.id}")
       sup &#91;#{note.id}&#93;
   
@@ -117,7 +121,7 @@ mixin footnoteList()
     each fn in footnotes
       cite.footnote-definition
         a(name="footnote_#{fn.id}") 
-        | #[sup #{fn.id}] #[b #{fn.name}:] 
+        | #[sup #{fn.id}] #[b.footnote-term #{fn.name}:] 
         if fn.block
           - fn.block()
           span &nbsp;&nbsp;#[a(href="#footnote_term_#{fn.id}").footnote-returner &#8617;]

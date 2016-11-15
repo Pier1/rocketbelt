@@ -6,7 +6,7 @@ block vars
 block content
   article
     :md
-      # Colorr
+      # Color
 
     .grid-fluid
       .row.swatch-cards
@@ -27,7 +27,7 @@ block content
       .row.swatch-cards
         .col.xs-12
           h2 Indicating Colors
-        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'success' || o.familyName === 'warning' || o.familyName === 'error'; })
+        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'success' || o.familyName === 'warning' || o.familyName === 'error' || o.familyName === 'sale'; })
           +swatch(family)
     script(src='./color.js')
 
