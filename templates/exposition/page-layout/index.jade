@@ -8,14 +8,35 @@ block content
       h1 Web Page Layout
 
       h2 Overview
-      p Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-      tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-      quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-      consequat.
+      p Website page layout is all about guiding the user down a path.  Through the imagery and text, a designer operates as a virtual tour guide making sure the customer sees all of the "sights" that are most important.
 
       h2 The "Fold"
-      p Yes, it #[i still] matters. Keep in mind that the "fold" varies based on screen height and the content itself isn't as important as the information scent it provides.  If those first items are valuable to a user, then that can be just the impetus necessary to encourage continued scrolling.
+      div.grid-fluid
+        div.row
+          div.col.xs
+            p Yes, it #[i still]#[+footnoteTerm('page fold', true)] matters. Remember, only &frac12; of 1% of our customers have the high-resolution desktop displays that designers use. The most beautiful design in the world won't matter if the customer can't see the entirety of it on their screen without scrolling.
+
+            p Keep in mind that the "fold" varies based on screen height and the size itself isn't as important as the information scent it provides.  If those first items are valuable to a user, then that can be just the impetus necessary to encourage continued scrolling.
+
+            //- p Here are the folds for Pier 1's customers on different devices:
+
+          div.col.xs.docs-center
+            figure.docs-figure
+              img(src="./img/folds.png" width="500")
+              figcaption #[span.lead Visualization] Pier 1 fold by device
+
+      //- dl.docs-definition-list
+      //-   dt Desktop
+      //-   dd 600px (95% of users)
+      //-   dt Tablet 
+      //-   dd 1000px (98.6% of users)
+      //-   dt Mobile
+      //-   dd 480 (98% of users)
+
       
+      +footnoteDefine('page fold')
+        | #[i noun] The Fold Manifesto: Why the Page Fold Still Matters #[a(href="https://www.nngroup.com/articles/page-fold-manifesto/") Nielsen Norman Group Essay ]
+
       h2 User Focus
       div.grid-fluid
         div.row
@@ -32,9 +53,16 @@ block content
       div.grid-fluid
         div.row 
           div.col.xs
-            p First items are always considered highest priority by users.  For mission-minded, non-scrollers it may be the one piece of content they see.
+            p First items are always considered highest priority by users.  This is defined as the #[+footnoteTerm('primacy effect')] For mission-minded, non-scrollers it may be the one piece of content they see.
 
-            p Items at the bottom of a page full of items will often get an extra boost of attention.  This is called the #[b recency effect] and can be used to your advantage.
+            +footnoteDefine('primacy effect')
+              | Primacy and Recency Effects in Learning #[a(href="https://rapidbi.com/primacy-and-recency-effects-in-learning/") RapidBI study ]
+
+            p Items at the bottom of a page full of items will often get an extra boost of attention.  This is called the #[+footnoteTerm('recency effect')] and can be used to your advantage.
+
+            +footnoteDefine('recency effect')
+              | Primacy and Recency Effects in Learning #[a(href="https://rapidbi.com/primacy-and-recency-effects-in-learning/") RapidBI study ]
+
           div.col.xs.docs-center
             figure.docs-figure
               <img class="gipho" data-play="./img/first_and_last_anim.gif" src="./img/first_and_last_poster.png" width="200">
