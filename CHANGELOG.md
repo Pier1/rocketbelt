@@ -1,3 +1,23 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/Pier1/rocketbelt/compare/0.5.0...v0.6.0) (2016-11-15)
+
+
+### Bug Fixes
+
+* **Build:** Fix sitemap task. ([53db1fb](https://github.com/Pier1/rocketbelt/commit/53db1fb))
+* **Build:** Remove multiline comments. ([b1e59c5](https://github.com/Pier1/rocketbelt/commit/b1e59c5))
+* **Icons:** Adjust icon sizes. ([8e9eb12](https://github.com/Pier1/rocketbelt/commit/8e9eb12))
+* **Left nav:** Pad the logo. ([3206966](https://github.com/Pier1/rocketbelt/commit/3206966))
+* **Linting:** Fix lots of linting issues. ([8094d21](https://github.com/Pier1/rocketbelt/commit/8094d21))
+
+
+### Features
+
+* **Deployment:** Clean up deployment. ([60b17ba](https://github.com/Pier1/rocketbelt/commit/60b17ba))
+* **Tests:** Build visual regression test architecture. ([651dbff](https://github.com/Pier1/rocketbelt/commit/651dbff))
+* **Tests:** Update visual testing architecture. ([1aa2db8](https://github.com/Pier1/rocketbelt/commit/1aa2db8))
+
+
 <a name="0.5.0"></a>
 # [0.5.0](https://github.com/Pier1/rocketbelt/compare/0.4.3...v0.5.0) (2016-11-09)
 
