@@ -1,5 +1,4 @@
 'use strict';
-
 var gulp = require('gulp');
 var nav = [];
 
@@ -34,22 +33,28 @@ function getTask(task) {
 
 gulp.task('default', getTask('default'));
 
-gulp.task('server', getTask('server'));
-gulp.task('watch',  getTask('watch'));
-gulp.task('uglify', getTask('uglify'));
-gulp.task('feature-detection', getTask('feature-detection'));
-gulp.task('styles', getTask('styles'));
+gulp.task('a11y', getTask('a11y'));
+gulp.task('build', getTask('build'));
 gulp.task('clean-links', getTask('clean-links'));
 gulp.task('clean', ['clean-links'], getTask('clean'));
-gulp.task('link-templates', getTask('link-templates'));
-gulp.task('link-js', getTask('link-js'));
-gulp.task('link', ['link-templates', 'link-js']);
 gulp.task('copy-js', getTask('copy-js'));
 gulp.task('copy-img', getTask('copy-img'));
-gulp.task('views', ['copy-js', 'copy-img'], getTask('views'));
-gulp.task('sitemap', getTask('sitemap'));
+gulp.task('feature-detection', getTask('feature-detection'));
+gulp.task('icons', getTask('icons'));
+gulp.task('link-svg', getTask('link-svg'));
+gulp.task('link-templates', getTask('link-templates'));
+gulp.task('link-js', getTask('link-js'));
+gulp.task('link', ['link-templates', 'link-js', 'link-svg']);
 gulp.task('lint-sass', getTask('lint-sass'));
-gulp.task('build', getTask('build'));
+gulp.task('server', getTask('server'));
+gulp.task('sitemap', getTask('sitemap'));
+gulp.task('styles', getTask('styles'));
+gulp.task('test', ['test-visual']);
+gulp.task('test-webserver', getTask('test-webserver'));
+gulp.task('test-visual', ['test-webserver'], getTask('test-visual'));
+gulp.task('uglify', getTask('uglify'));
+gulp.task('views', ['copy-js', 'copy-img'], getTask('views'));
+gulp.task('watch', getTask('watch'));
 
 function throttle (callback, limit) {
   var wait = false;

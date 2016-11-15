@@ -52,6 +52,9 @@
 
   module.exports = function (gulp, plugins, config) {
     return function () {
+      var fs = require('fs');
+      var icons = fs.readdirSync(config.patternsPath + '/components/icons/svg');
+
       return directoryTreeToObj(config.templatesPath, function (err, res) {
         if (err)
           console.error(err);
@@ -67,6 +70,7 @@
             locals: {
               buildPath: '',
               nav: res,
+              icons: icons,
               colorFamilies: config.colorFamilies,
               shorthash: plugins.shorthash,
               _: plugins.lodash

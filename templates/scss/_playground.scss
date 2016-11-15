@@ -21,89 +21,80 @@ $range-label-width: 60px !default;
   margin: 0 0 1.61803em 0;
 }
 
-input.playground-text {
-  background: $playground-color-light;
-  border-color: $playground-color-primary;
-  border-width: 2px;
-  width: $text-width;
-  display: inline-block;
-}
-
-input[type="range"].playground-range {
-  -webkit-appearance: none;
-  display: inline-block;
-  width: $range-width;
-  height: $range-track-height;
-  border-radius: 5px;
-  background: $range-track-color;
-  outline: none;
-  padding: 0;
-  margin: 0;
-
-  // Range Handle
-  &::-webkit-slider-thumb {
-    appearance: none;
-    width: $range-handle-size;
-    height: $range-handle-size;
-    border-radius: 50%;
-    background: $range-handle-color;
-    cursor: pointer;
-    transition: background .15s ease-in-out;
-
-    &:hover {
-      background: $range-handle-color-hover;
+input {
+  &[type='text'] {
+    .playground-item {
+      display: inline-block;
+      width: $text-width;
+      border-width: 2px;
+      border-color: $playground-color-primary;
+      background: $playground-color-light;
     }
   }
 
-  &:active::-webkit-slider-thumb {
-    background: $range-handle-color-hover;
-  }
+  &[type='range'] {
+    &.playground-item {
+      -webkit-appearance: none;
+      margin: 0;
+      padding: 0;
+      width: $range-width;
+      height: $range-track-height;
+      outline: none;
+      border-radius: 5px;
+      background: $range-track-color;
+      display: inline-block;
 
-  &:focus { overflow: visible; }
+      // Range Handle
+      &::-webkit-slider-thumb,
+      &::-moz-range-thumb {
+        width: $range-handle-size;
+        height: $range-handle-size;
+        border-radius: 50%;
+        background: $range-handle-color;
+        cursor: pointer;
+        transition: background .15s ease-in-out;
+        appearance: none;
 
-  &::-moz-range-thumb {
-    width: $range-handle-size;
-    height: $range-handle-size;
-    border: 0;
-    border-radius: 50%;
-    background: $range-handle-color;
-    cursor: pointer;
-    transition: background .15s ease-in-out;
+        &:hover {
+          background: $range-handle-color-hover;
+        }
+      }
 
-    &:hover {
-      background: $range-handle-color-hover;
+      &:active::-webkit-slider-thumb,
+      &:active::-moz-range-thumb {
+        background: $range-handle-color-hover;
+      }
+
+      &:focus { overflow: visible; }
+
+      // Firefox Overrides
+      &::-moz-focus-inner,
+      &::-moz-focus-outer {
+        border: 0;
+      }
+
+      &::-moz-range-track {
+        border: 0;
+        background: $range-track-color;
+      }
     }
-  }
-
-  &:active::-moz-range-thumb {
-    background: $range-handle-color-hover;
-  }
-
-  // Firefox Overrides
-  &::-moz-focus-inner,
-  &::-moz-focus-outer { 
-    border: 0; 
-  }
-  &::-moz-range-track {
-    background: $range-track-color;
-    border: 0;
   }
 }
 
 
 // Range Label
 .playground-range-value {
-  display: inline-block;
   position: relative;
-  color: $playground-color-light;
-  line-height: 20px;
-  text-align: center;
+  display: inline-block;
+  margin-left: 8px;
+  padding: 5px 10px;
   border-radius: 3px;
   background: $range-label-color;
-  padding: 5px 10px;
-  margin-left: 8px;
+  color: $playground-color-light;
+  text-align: center;
+  line-height: 20px;
 
-  &:after {
+  &::after {
     position: absolute;
     top: 8px;
     left: -7px;
@@ -119,8 +110,55 @@ input[type="range"].playground-range {
     display: block;
     margin: 0;
     width: $range-width;
-    &:after {
+
+    &::after {
       display: none;
     }
+  }
+}
+
+.cp_wrapper {
+  position: relative;
+  display: inline-block;
+  margin-left: 5px;
+  vertical-align: text-top;
+  z-index: 50;
+}
+
+.cp_eyedropper {
+  background-image: url(data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48cGF0aCBkPSJNMTguNzE3IDguODMxYy0uNzM0LjgyNC0uNjY1IDIuMDg3LjE1OCAyLjgyNWwtMS4zMzMgMS40OTEtNy40NTUtNi42NjcgMS4zMzQtMS40OWMuODIyLjczNiAyLjA4Ny42NjYgMi44MjItLjE1OWwzLjUwMy0zLjgzMWMuNTkzLS42NjMgMS40MTQtMSAyLjIzOC0xIDEuNjY2IDAgMy4wMTYgMS4zNTggMy4wMTYgMi45OTYgMCAuNzIzLS4yNzEgMS40MzUtLjc3OSAyLjAwNWwtMy41MDQgMy44M3ptLTguMjE3IDYuMTY5aC0yLjY5MWwzLjkyOC00LjM2Mi0xLjQ5MS0xLjMzMy03LjkgOC43OTRjLTEuMjc3IDEuNDIzLS4xNzEgMi4yNjEtMS4xNDkgNC4wNTItLjEzNS4yNDQtLjE5Ny40OC0uMTk3LjY5OCAwIC42NjEuNTQgMS4xNTEgMS4xNDEgMS4xNTEuMjQxIDAgLjQ5Mi0uMDc5LjcyNC0uMjU2IDEuNzMzLTEuMzMyIDIuNjQ0LS4xODQgMy45NTQtMS42NDdsNy45MDEtOC43OTItMS40OTEtMS4zMzMtMi43MjkgMy4wMjh6Ii8+PC9zdmc+);
+  width: 20px;
+  background-size: cover;
+  background-repeat: no-repeat;
+  height: 20px;
+  display: inline-block;
+  cursor: pointer;
+  position: absolute;
+  top:0;
+  left:0;
+}
+
+.cp_grid {
+  width:205px;
+  padding:10px;
+  display: flex;
+  flex-wrap: wrap;
+  box-shadow:0 2px 10px rgba(0,0,0,.12),0 2px 5px rgba(0,0,0,.16);
+  background:color(white);
+  position: absolute;
+  top:15px;
+  left:20px;
+}
+
+.cp_grid span {
+  margin: 0 1px 1px;
+  cursor: pointer;
+  height: 20px;
+  flex: 0 0 35px;
+  &.color-w-border {
+      border:1px solid color(gray, plus3);
+  }
+  &.cp_active {
+    border:3px solid color(white);
   }
 }

@@ -11,9 +11,13 @@ templates/**/*
 # ====================================================
 templates/components/**/_*.jade
 templates/components/**/*.js
+templates/components/**/*.svg
 templates/base/**/_*.jade
 templates/base/**/*.js
 templates/base/**/*.json
+templates/creative/**/_*.jade
+templates/creative/**/*.js
+templates/creative/**/*.json
 
 # ===========================================================================
 # Ignore feature detection since it's generated & could change on every build

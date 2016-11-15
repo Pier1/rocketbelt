@@ -16,18 +16,23 @@
             } else {
                 base.$targetEl = $(base.opts.target || base.$el.data('target') );
             }
-
             if ( base.$el.attr("type").toLowerCase() === 'range' ) {
                 base.initRange();
+                base.$el.on('input', updateTarget);
+            } else if (base.$el.attr("type").toLowerCase() === 'checkbox') {
+                base.initCheckBox();
+                base.$el.on('change', updateTarget);
+            } else if (base.$el.attr("type").toLowerCase() === 'list') {
+                base.initList();
+                base.$el.on('click', ".playground-list_item", updateTarget);
             } else {
                 base.initText();
+                base.$el.on('input', updateTarget);
             }
             
             // Event attachment
-            base.$el.on('input', updateTarget);
-
             // Set Default
-			updateTarget(base.$el.val());
+			     updateTarget(base.$el.val(), 'init');
 
             // Sample callback on init execution
             if (base.opts.init) {
@@ -72,17 +77,25 @@
             }
         };
 
+        base.initCheckBox = function(){
+          base.type = 'checkbox';
+        }
+
         base.initText = function(){
             base.type = 'text';
         };
+
+        base.initList = function(){
+          base.type = 'list';
+        }
 
         base.init();
 
         function updateTarget(){
         	var val, display, idx;
 
-        	if ( arguments[0].type === 'input' ) {
-        		idx = arguments[0].currentTarget.value;
+        	if ( arguments[0].type === 'input' || arguments[0].type === 'change' || arguments[0].type === 'click') {
+        		idx = arguments[0].currentTarget.value || arguments[0].currentTarget.getAttribute('value');
         	} else {
         		idx = arguments[0];
         	}
@@ -104,10 +117,25 @@
                 base.currentValue = val;
                 base.currentDisplay = display;
                 updateDisplayedValue();
-            } else {
+            } else if (base.type === 'text') {
                 base.currentValue = idx;
                 base.currentDisplay = base.opts.textTransform ? base.opts.textTransform(idx) : idx;
                 base.$targetEl.html(base.currentDisplay);
+            } else if (base.type === 'checkbox') {
+              if ( !arguments[1] || arguments[1] !=='init')
+              base.$targetEl.toggleClass(idx);
+            } else if (base.type === "list") {
+              if ( !arguments[1] || arguments[1] !=='init') {
+                base.$targetEl.removeClass(base.currentValue).removeClass(base.$el.attr('value')).addClass(idx);
+                base.currentValue = idx;
+                base.$el.attr('value', idx);
+                base.$el.find('.cp_active').removeClass('cp_active');
+                $(this).addClass('cp_active');
+              } else {
+                val = base.$el.attr('value');
+                $('.cp_grid span[value="'+val+'"]').addClass('cp_active');
+                base.$targetEl.addClass(val);
+              }
             }
         	
         	// Event trigger
@@ -140,6 +168,7 @@
 
     $.playground.defaultOptions = {
         target: null,
+        classTarget: null,
         units: '',
         wrapper: null,
         values: null,
@@ -165,5 +194,4 @@
             $.data(this, 'playground') || ( new $.playground(this, options) );
         });
     };
-
 })(jQuery);

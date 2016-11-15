@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Page Layout | Rocketbelt Pattern Library</title>
     <link rel="stylesheet" href="../../css/site.min.css">
+    <link rel="stylesheet" href="../../css/rocketbelt.creative.min.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"> </script>
   </head>
   <body class="grid-fluid">
@@ -116,6 +117,8 @@
               </li>
               <li ref="forms" class="category"><a href="../../components/forms">Forms</a>
               </li>
+              <li ref="icons" class="category"><a href="../../components/icons">Icons</a>
+              </li>
               <li ref="images" class="category"><a href="../../components/images">Images</a>
               </li>
               <li ref="modals" class="category"><a href="../../components/modals">Modals</a>
@@ -137,6 +140,12 @@
               <li ref="coming-soon" class="category"><a href="../../creative/coming-soon">Coming Soon</a>
               </li>
               <li ref="playground-example" class="category"><a href="../../creative/playground-example">Playground Example</a>
+              </li>
+              <li ref="product-tag" class="category"><a href="../../creative/product-tag">Product Tag</a>
+              </li>
+              <li ref="sale-sticker" class="category"><a href="../../creative/sale-sticker">Sale Sticker</a>
+              </li>
+              <li ref="seo-banner" class="category"><a href="../../creative/seo-banner">Seo Banner</a>
               </li>
             </ul>
           </li>
@@ -165,31 +174,61 @@
               <article>
                 <h1>Web Page Layout</h1>
                 <h2>Overview</h2>
-                <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod</p>
-                <tempor>incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,</tempor>
-                <quis>nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo</quis>
-                <consequat></consequat>
+                <p>Website page layout is all about guiding the user down a path.  Through the imagery and text, a designer operates as a virtual tour guide making sure the customer sees all of the "sights" that are most important.</p>
                 <h2>The "Fold"</h2>
-                <p>Yes, it <i>still</i> matters. Keep in mind that the "fold" varies based on screen height and the content itself isn't as important as the information scent it provides.  If those first items are valuable to a user, then that can be just the impetus necessary to encourage continued scrolling.</p>
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs">
+                      <p>Yes, it <i>still</i><a href="#footnote_1" name="footnote_term_1"><sup>&#91;1&#93;</sup></a> matters. Remember, only &frac12; of 1% of our customers have the high-resolution desktop displays that designers use. The most beautiful design in the world won't matter if the customer can't see the entirety of it on their screen without scrolling.
+                      </p>
+                      <p>Keep in mind that the "fold" varies based on screen height and the size itself isn't as important as the information scent it provides.  If those first items are valuable to a user, then that can be just the impetus necessary to encourage continued scrolling.</p>
+                    </div>
+                    <div class="col xs docs-center">
+                      <figure class="docs-figure"><img src="./img/folds.png" width="500">
+                        <figcaption><span class="lead">Visualization</span> Pier 1 fold by device</figcaption>
+                      </figure>
+                    </div>
+                  </div>
+                </div>
+                 
                 <h2>User Focus</h2>
                 <div class="grid-fluid">
                   <div class="row">
                     <div class="col xs">
-                      <p>A great way to make sure that users see important content on a page or in an image is to pay attention to how images will steer their focus.  In the example animation, the table's angle and the picture perspective will likely cause the user to look at it from top left to bottom right.  If the image does it's job and piques their interest, then you can insert your content at the exact location to be most effective.</p>
+                      <p>Pay attention to how images will steer focus.  In the example animation, the table's angle and the picture perspective will likely cause the user to look at it from top left to bottom right.</p>
+                      <p>If the image does it's job and piques a user's interest, then you can insert your content at the exact location to be most effective.</p>
                     </div>
-                    <div class="col xs docs-center"><img data-play="./img/user_focus_anim.gif" src="./img/user_focus_poster.png" width="176" class="gipho"></div>
+                    <div class="col xs docs-center">
+                      <figure class="docs-figure"><img data-play="./img/user_focus_anim.gif" src="./img/user_focus_poster.png" width="176" class="gipho">
+                        <figcaption><span class="lead">example</span> User Focus</figcaption>
+                      </figure>
+                    </div>
                   </div>
                 </div>
-                <h2>Last Items</h2>
+                <h2>First &amp; Last Items</h2>
                 <div class="grid-fluid">
-                  <div class="row">
+                  <div class="row"> 
                     <div class="col xs">
-                      <p>Items at the bottom of a page full of items will often get an extra boost of attention.  This is called the <b>recency effect</b> and can be used to your advantage.</p>
+                      <p>First items are always considered highest priority by users.  This is defined as the <span class="footnote-term">primacy effect<a href="#footnote_2" name="footnote_term_2"><sup>&#91;2&#93;</sup></a></span> For mission-minded, non-scrollers it may be the one piece of content they see.
+                      </p> 
+                      <p>Items at the bottom of a page full of items will often get an extra boost of attention.  This is called the <span class="footnote-term">recency effect<a href="#footnote_3" name="footnote_term_3"><sup>&#91;3&#93;</sup></a></span> and can be used to your advantage.
+                      </p> 
                     </div>
-                    <div class="col xs"><img src="./img/last_item_recency.png" width="93"></div>
+                    <div class="col xs docs-center">
+                      <figure class="docs-figure"><img class="gipho" data-play="./img/first_and_last_anim.gif" src="./img/first_and_last_poster.png" width="200">
+                        <figcaption><span class="lead">example</span> First &amp; Last Items</figcaption>
+                      </figure>
+                    </div>
                   </div>
                 </div>
               </article>
+              <h4>Reference  </h4>
+              <cite class="footnote-definition"><a name="footnote_1"> </a><sup>1</sup> <b class="footnote-term">page fold:</b> <i>noun</i> The Fold Manifesto: Why the Page Fold Still Matters <a href="https://www.nngroup.com/articles/page-fold-manifesto/">Nielsen Norman Group Essay </a><span>&nbsp;&nbsp;<a href="#footnote_term_1" class="footnote-returner">&#8617;</a></span>
+              </cite>
+              <cite class="footnote-definition"><a name="footnote_2"> </a><sup>2</sup> <b class="footnote-term">primacy effect:</b> Primacy and Recency Effects in Learning <a href="https://rapidbi.com/primacy-and-recency-effects-in-learning/">RapidBI study </a><span>&nbsp;&nbsp;<a href="#footnote_term_2" class="footnote-returner">&#8617;</a></span>
+              </cite>
+              <cite class="footnote-definition"><a name="footnote_3"> </a><sup>3</sup> <b class="footnote-term">recency effect:</b> Primacy and Recency Effects in Learning <a href="https://rapidbi.com/primacy-and-recency-effects-in-learning/">RapidBI study </a><span>&nbsp;&nbsp;<a href="#footnote_term_3" class="footnote-returner">&#8617;</a></span>
+              </cite>
             </div>
           </div>
         </main>

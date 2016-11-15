@@ -11,6 +11,8 @@ rules:
   force-pseudo-nesting: 0
   brace-style: 0
   no-url-protocols: 0
+  shorthand-values: 0
+  indentation: 0
   property-sort-order:
     - 1
     - order:

@@ -1,3 +1,47 @@
+<a name="0.6.0"></a>
+# [0.6.0](https://github.com/Pier1/rocketbelt/compare/0.5.0...v0.6.0) (2016-11-15)
+
+
+### Bug Fixes
+
+* **Build:** Fix sitemap task. ([53db1fb](https://github.com/Pier1/rocketbelt/commit/53db1fb))
+* **Build:** Remove multiline comments. ([b1e59c5](https://github.com/Pier1/rocketbelt/commit/b1e59c5))
+* **Icons:** Adjust icon sizes. ([8e9eb12](https://github.com/Pier1/rocketbelt/commit/8e9eb12))
+* **Left nav:** Pad the logo. ([3206966](https://github.com/Pier1/rocketbelt/commit/3206966))
+* **Linting:** Fix lots of linting issues. ([8094d21](https://github.com/Pier1/rocketbelt/commit/8094d21))
+
+
+### Features
+
+* **Deployment:** Clean up deployment. ([60b17ba](https://github.com/Pier1/rocketbelt/commit/60b17ba))
+* **Tests:** Build visual regression test architecture. ([651dbff](https://github.com/Pier1/rocketbelt/commit/651dbff))
+* **Tests:** Update visual testing architecture. ([1aa2db8](https://github.com/Pier1/rocketbelt/commit/1aa2db8))
+
+
+<a name="0.5.0"></a>
+# [0.5.0](https://github.com/Pier1/rocketbelt/compare/0.4.3...v0.5.0) (2016-11-09)
+
+
+### Bug Fixes
+
+* **a11y:** Remove `a11y` linting from `watch` task _for now_. ([e6ee050](https://github.com/Pier1/rocketbelt/commit/e6ee050))
+* **Forms:** Update radio & checkbox styles. ([a6ef399](https://github.com/Pier1/rocketbelt/commit/a6ef399)), closes [#36](https://github.com/Pier1/rocketbelt/issues/36)
+* **Icons:** Add `link-svg` task to `link` task. ([31a880f](https://github.com/Pier1/rocketbelt/commit/31a880f))
+
+
+### Features
+
+* **a11y:** Add a11y gulp task. ([aac00de](https://github.com/Pier1/rocketbelt/commit/aac00de))
+* **Build:** Add a11y linting. ([6d7294f](https://github.com/Pier1/rocketbelt/commit/6d7294f)), closes [#26](https://github.com/Pier1/rocketbelt/issues/26)
+* **Build:** Remove unused `npm` packages. ([e7b73b3](https://github.com/Pier1/rocketbelt/commit/e7b73b3))
+* **Icons:** Add CTA arrow icon. ([afa711e](https://github.com/Pier1/rocketbelt/commit/afa711e))
+* **Icons:** Add Pier1Icons to SVG icon set. ([17bd9e9](https://github.com/Pier1/rocketbelt/commit/17bd9e9))
+* **Icons:** Build icon demo page. ([718a20f](https://github.com/Pier1/rocketbelt/commit/718a20f))
+* **Icons:** Build icon example page. ([a4d98fc](https://github.com/Pier1/rocketbelt/commit/a4d98fc)), closes [#40](https://github.com/Pier1/rocketbelt/issues/40)
+* **Icons:** Build SVG icon workflow. ([0d79f3b](https://github.com/Pier1/rocketbelt/commit/0d79f3b)), closes [#32](https://github.com/Pier1/rocketbelt/issues/32)
+
+
+
 <a name="0.4.0"></a>
 # [0.4.0](https://github.com/Pier1/rocketbelt/compare/0.3.2...v0.4.0) (2016-11-04)
 

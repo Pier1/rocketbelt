@@ -1,7 +1,7 @@
 extends /_layout.jade
 
 block vars
-  - var title = 'Sale Sticker'
+  - var title = 'Playground Example'
 
 block content
   article
@@ -14,7 +14,7 @@ block content
         div.col.xs-5
           div.playground-control
             label(for="test-element-control") Font Size:
-              input#test-element-control.playground-range( 
+              input#test-element-control.playground-item( 
                 type="range"  
                 value="16"
                 min="12" 
@@ -28,7 +28,6 @@ block content
       div.row
         +dynamicExampleCode
 
-
     h2 Other Thing
     div.grid-fluid.playground
       div.row
@@ -37,7 +36,7 @@ block content
         div.col.xs-5
           div.playground-control
             label(for="test-element-control2") Block Color:
-              input#test-element-control2.playground-range( 
+              input#test-element-control2.playground-item( 
                 type="range"  
                 value="Red"
                 data-target=".test-element2" 
@@ -47,7 +46,7 @@ block content
               span.playground-range-value Red
           div.playground-control
             label(for="test-element-control3") Block Text:
-              input#test-element-control3.playground-text(
+              input#test-element-control3.playground-item(
                 data-target=".test-element3"
                 type="text"
                 value = "A Block"
