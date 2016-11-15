@@ -10,6 +10,16 @@
     ]
   },
   {
+    "familyName": "sale",
+    "variants": [
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Sale Red"
+      }
+    ]
+  },
+  {
     "familyName": "primary",
     "variants": [
       {
