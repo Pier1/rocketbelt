@@ -90,11 +90,30 @@ mixin buildNav(navObject, rootHref)
               if item.children.length >= 1
                 mixin buildNav(item.children, newRootHref + '/' + item.name)
 
-mixin footnoteTerm(name)
+mixin colorPicker(target, val, type)
+  - var prefix = type === 'background' ? 'bg_' : 'fg_';
+  - var obj = colorFamilies;
+  div.cp_wrapper.playground-item(type="list", data-target="#{target}", data-property="class", value="#{val}")
+    div.cp_eyedropper
+    div.cp_grid.visuallyhidden
+      each family in obj
+        each color in family.variants
+          if (family.familyName === 'white')
+            span(class="playground-list_item bg_#{family.familyName} color-w-border", title="#{color.colorName}", value="#{prefix}#{family.familyName}") 
+          else if (color.variant === 'base')
+            span(class="playground-list_item bg_#{family.familyName}", title="#{color.colorName}", value="#{prefix}#{family.familyName}")
+          else 
+            span(class="playground-list_item bg_#{family.familyName}-#{color.variant}", title="#{color.colorName}", value="#{prefix}#{family.familyName}-#{color.variant}")
+
+mixin footnoteTerm(name, annotateOnly)
   - footnotes = footnotes || [];
   - var note = { name: name, id: footnotes.length + 1, block: '' };
   - footnotes.push(note);
-  span.footnote-term #{note.name}
+  if !annotateOnly
+    span.footnote-term #{note.name}
+      a(href="#footnote_#{note.id}" name="footnote_term_#{note.id}")
+        sup &#91;#{note.id}&#93;
+  else 
     a(href="#footnote_#{note.id}" name="footnote_term_#{note.id}")
       sup &#91;#{note.id}&#93;
   
@@ -117,8 +136,7 @@ mixin footnoteList()
     each fn in footnotes
       cite.footnote-definition
         a(name="footnote_#{fn.id}") 
-        | #[sup #{fn.id}] #[b #{fn.name}:] 
+        | #[sup #{fn.id}] #[b.footnote-term #{fn.name}:] 
         if fn.block
           - fn.block()
           span &nbsp;&nbsp;#[a(href="#footnote_term_#{fn.id}").footnote-returner &#8617;]
-

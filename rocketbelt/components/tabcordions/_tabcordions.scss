@@ -4,20 +4,20 @@
   $color-bg: color(gray, plus4);
   $border: $width-border solid $color-border;
 
-  font-size: 0;
-  overflow: hidden;
   position: relative;
+  overflow: hidden;
   border: $border;
   border-top: 0;
-
-  &:after {
-    clear: both;
-    content: '';
-    display: table;
-  }
+  font-size: 0;
 
   @include media('>=sm') {
     border: 0;
+  }
+
+  &::after {
+    display: table;
+    clear: both;
+    content: '';
   }
 
   .tab {
@@ -28,6 +28,7 @@
 
       &:checked ~ .tab_panel {
         display: inline;
+
         @include fadeIn();
       }
 
@@ -36,14 +37,14 @@
       }
 
       &:checked + .tab_label {
-        color: color(gray, minus1);
         // transition: all 200ms;
         border-bottom: $border;
+        color: color(gray, minus1);
 
         @include media('>=sm') {
-          &:after {
-            left: 0;
+          &::after {
             right: 0;
+            left: 0;
             height: 4px;
           }
         }
@@ -54,9 +55,9 @@
         // transition: all 200ms;
 
         @include media('>=sm') {
-          &:after {
-            left: 50%;
+          &::after {
             right: 50%;
+            left: 50%;
             height: 0;
           }
         }
@@ -65,93 +66,91 @@
   }
 
   .tab .tab_radio:checked + .tab_label {
-    &:before {
+    &::before {
       transform: translateY(-50%) rotate(90deg);
     }
 
-    &:after {
+    &::after {
       transform: translateY(-50%) rotate(180deg);
     }
   }
 
   .tab .tab_label {
     position: relative;
-    padding: ms(-10) ms(-4);
-    font-size: ms(-1);
-    text-transform: uppercase;
-    width: 100%;
     display: inline-block;
-    // transition: all 250ms;
-    background: $color-bg;
-
+    padding: ms(-10) ms(-4);
+    width: 100%;
     border-top: $border;
-
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      border: 0;
-      background: color(brand);
-    }
-
-    // Vertical
-    &:before {
-      border-radius: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      left: calc(100% - 15px);
-      width: 4px;
-      height: 18px;
-    }
-
-    // Horizontal
-    &:after {
-      top: 50%;
-      transform: translateY(-50%);
-      right: 4px;
-      width: 18px;
-      height: 4px;
-    }
+    background: $color-bg;
+    text-transform: uppercase;
+    font-size: ms(-1);
 
     @include media('>=sm') {
-      border: $border;
       width: auto;
+      border: $border;
 
-      &:before {
+      &::before {
         border: none;
         background: transparent;
       }
 
-      &:after {
-        content: '';
+      &::after {
         position: absolute;
-        bottom: 0;
         top: calc(100% - 2px);
+        bottom: 0;
         width: 100%;
         background: color(primary);
-        transition-property: height, left, right;
-        transition-duration: 200ms;
+        content: '';
         transition-timing-function: ease-out;
+        transition-duration: 200ms;
+        transition-property: height, left, right;
       }
+    }
+
+    &::before,
+    &::after {
+      position: absolute;
+      border: 0;
+      background: color(brand);
+      content: '';
+    }
+
+    // Vertical
+    &::before {
+      top: 50%;
+      left: calc(100% - 15px);
+      width: 4px;
+      height: 18px;
+      border-radius: 0;
+      transform: translateY(-50%);
+    }
+
+    // Horizontal
+    &::after {
+      top: 50%;
+      right: 4px;
+      width: 18px;
+      height: 4px;
+      transform: translateY(-50%);
     }
   }
 
   .tab_panel {
-    font-size: initial;
+    position: relative;
     display: inline-block;
     overflow: hidden;
-    position: relative;
-    height: 0;
     width: 0;
+    height: 0;
+    font-size: initial;
   }
 
   .tab_content {
-    padding: ms(-4);
-    background: color(white);
     display: block;
     float: left;
     margin-top: -$width-border;
+    padding: ms(-4);
     width: 100%;
+    background: color(white);
 
     @include media('>=sm') {
       border: $border;

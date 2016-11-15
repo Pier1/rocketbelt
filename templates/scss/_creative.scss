@@ -1,22 +1,42 @@
-/* PLAYGROUND ********/
+// PLAYGROUND
 
 // checkbox color
-input[type=checkbox].playground-item:checked+label:before {
-  background: url('data:image/svg+xml;utf8,\a<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">\a<path fill="%23fefdfd" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>\a</svg>') no-repeat, #084F77;
+input[type='checkbox'].playground-item:checked + label::before {
+  background: url('data:image/svg+xml;utf8,<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="%23fefdfd" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>') no-repeat, #084F77;
   background-position: 50%;
 }
 
+// HELPER CLASSES FOR TEMPLATE LAYOUT ********/
 
-/* UTILITIES ********/
+.pt-img .copyable-inner {
+  position: relative;
+  width: 225px;
+  height: 225px;
+  background-image: url('//images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_us_catalog/default/dw2c038acc/dining%20room.jpg?sw=225&sh=225');
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.pt-img.pt-hide .copyable-inner {
+  width: auto;
+  height: auto;
+  background: none;
+}
 
 // sale sticker
 .ss_util_background  {
   text-align: center;
 
-  & .example {
-    background: color(success, darker);
-    padding:1em;
-    text-align: center;
+  .example {
+    position: relative;
+    padding: 1em;
     min-width: 260px;
+    text-align: center;
+  }
+
+  .cp_wrapper {
+    position: absolute;
+    top: 10px;
+    left: 10px;
   }
 }
