@@ -105,12 +105,15 @@ mixin colorPicker(target, val, type)
           else 
             span(class="playground-list_item bg_#{family.familyName}-#{color.variant}", title="#{color.colorName}", value="#{prefix}#{family.familyName}-#{color.variant}")
 
-
-mixin footnoteTerm(name)
+mixin footnoteTerm(name, annotateOnly)
   - footnotes = footnotes || [];
   - var note = { name: name, id: footnotes.length + 1, block: '' };
   - footnotes.push(note);
-  span.footnote-term #{note.name}
+  if !annotateOnly
+    span.footnote-term #{note.name}
+      a(href="#footnote_#{note.id}" name="footnote_term_#{note.id}")
+        sup &#91;#{note.id}&#93;
+  else 
     a(href="#footnote_#{note.id}" name="footnote_term_#{note.id}")
       sup &#91;#{note.id}&#93;
   
@@ -133,8 +136,7 @@ mixin footnoteList()
     each fn in footnotes
       cite.footnote-definition
         a(name="footnote_#{fn.id}") 
-        | #[sup #{fn.id}] #[b #{fn.name}:] 
+        | #[sup #{fn.id}] #[b.footnote-term #{fn.name}:] 
         if fn.block
           - fn.block()
           span &nbsp;&nbsp;#[a(href="#footnote_term_#{fn.id}").footnote-returner &#8617;]
-
