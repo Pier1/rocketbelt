@@ -4,13 +4,14 @@ $primary: mix(scale-color($brand-blue, $lightness: 20%), gray, 95%);
 
 $base-families: (
   brand: $brand-blue,
+  sale: #A21F35,
   primary: $primary,
   secondary: adjust-hue($primary, -30),
   accent: adjust-hue($primary, 60),
   gray: $gray,
   success: #00b575,
   warning: #ffc300,
-  error: #a11622,
+  error: #D51C31,
   info: $brand-blue,
   black: mix(#a11622, #000, 2%),
   white: mix(#a11622, #fff, 1%)
