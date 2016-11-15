@@ -1,6 +1,7 @@
 @function unicode($character: '') {
   $style: to_lower_case($character);
   $characters: (
+    newline: '\000a',
     nbsp: '\00a0',
     en-dash: '\2013',
     em-dash: '\2014',
