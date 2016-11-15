@@ -1,15 +1,17 @@
 .product-tag {
   display: inline-block;
   padding: 0 ms(-4);
-  background: rgba(color(error), .9);
+  background: rgba(color(error), 0.9);
   color: color(white);
+  font-style: italic;
   font-size: font-size(7);
+  font-family: font-family(serif);
 
   .product-tag_wrap {
     display: flex;
+
     align-items: center;
   }
-
   .product-tag_text {
     line-height: 1.3;
   }
@@ -18,15 +20,6 @@
     padding: 0 ms(-6);
     font-style: normal;
     font-family: 'Brand Sans';
-
-    .product-tag_wrap::after {
-      margin-left: .35em;
-      content: '%' + unicode(newline) + 'off';
-      text-transform: uppercase;
-      white-space: pre;
-      font-size: .43em;
-      line-height: 1;
-    }
 
     .product-tag_text {
       letter-spacing: -3px;
@@ -37,5 +30,19 @@
     position: absolute;
     bottom: 3%;
     left: 3%;
+  }
+}
+
+.product-tag.percent-off {
+  font-style: normal;
+  font-family: font-family(sans);
+
+  .product-tag_wrap::after {
+    margin-left: 0.35em;
+    content: '%' + unicode(newline) + 'off';
+    text-transform: uppercase;
+    white-space: pre;
+    font-size: 0.43em;
+    line-height: 1;
   }
 }
