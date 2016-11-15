@@ -49,9 +49,9 @@ var rb = rb || {};
               .replace(' | rocketbelt pattern library', '')
               .replace(/\ & /g," and ")
               .replace(/\s+/g,'-');
-    $('.isActive', '#docs-leftnav').removeClass('isActive');
+    $('.is-active', '#docs-leftnav').removeClass('is-active');
   	$category = $('#docs-leftnav').find('li[ref="' + pageTitle + '"]');
-    $category.addClass('isActive');
+    $category.addClass('is-active');
     $category.parent('.category-contents').siblings('.category-toggle').prop('checked', true);
 
     // Play button for gifs
@@ -64,7 +64,7 @@ var rb = rb || {};
 
     // Mobile heuristic. 48rem == 'md' breakpoint.
     if (window.matchMedia('(min-width: 48rem)')) {
-      $('.isActive').parent().siblings('.category-toggle').prop('checked', true);
+      $('.is-active').parent().siblings('.category-toggle').prop('checked', true);
     }
 
     $('.nav .category-label').click(function (e) {
@@ -83,6 +83,24 @@ var rb = rb || {};
   // Sets up all playground elements and makes the code copy function for dynamic elements
   function launchPlayground(){
     $('.playground-item').playground();
+
+    // Eyedropper Helper Functions
+    $('.cp_eyedropper').on('click', function() {
+      if ($(this).next('.cp_grid').hasClass('visuallyhidden')) {
+        $(".cp_grid").addClass('visuallyhidden');
+        $(this).next(".cp_grid").removeClass('visuallyhidden');
+      } else {
+        $(this).next(".cp_grid").addClass('visuallyhidden');
+      }
+    })
+    // Hides eyedropper if you click outside eyedropper
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.cp_eyedropper').length && !$(event.target).hasClass('playground-list_item')) {
+        $(".cp_grid").addClass('visuallyhidden');
+      }
+    });
+
+    // Playground Event Handler
     $('body').on('playgroundUpdated', '.playground-item', function(){
       var $input = $(this),
           base = $input.data('playground'),
