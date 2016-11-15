@@ -111,6 +111,6 @@ var rb = rb || {};
   // Exposes playground setup to a global so that it only gets setup when necessary.
   rb.launchPlayground = launchPlayground;
 
-  $('button.with-load').buttonLoad();
+  $('button.with-busy-indicator').busyButton();
 
 })();
