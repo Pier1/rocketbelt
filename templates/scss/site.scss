@@ -30,25 +30,24 @@ cite {
 
 p code,
 .code {
+  padding: 0.125rem 0.25rem;
   border: 1px solid color(gray, plus2);
   border-radius: 2px;
   background-color: color(gray, plus4);
-  padding: 0.125rem 0.25rem;
 }
 
 .example-code {
-  display: flex;
   position: relative;
+  display: flex;
 
-  &:hover .copy-code {
-    opacity: 1;
-    transition: opacity 100ms linear;
+  &:hover {
+    .copy-code {
+      opacity: 1;
+      transition: opacity 100ms linear;
+    }
   }
 
   .copy-code {
-    opacity: 0.66;
-    transition: opacity 100ms linear;
-
     @include button-size(sm);
     @include button-style(secondary);
     @include button-shadow();
@@ -57,6 +56,8 @@ p code,
     top: 1em;
     right: 0.5em;
     border: none;
+    opacity: 0.66;
+    transition: opacity 100ms linear;
   }
 
   pre {

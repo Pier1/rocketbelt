@@ -49,6 +49,7 @@ gulp.task('lint-sass', getTask('lint-sass'));
 gulp.task('server', getTask('server'));
 gulp.task('sitemap', getTask('sitemap'));
 gulp.task('styles', getTask('styles'));
+gulp.task('test', function () { console.log('\n** REPLACE W/ ACTUAL TEST LOGIC **\n'); return true; });
 gulp.task('uglify', getTask('uglify'));
 gulp.task('views', ['copy-js', 'copy-img'], getTask('views'));
 gulp.task('watch', getTask('watch'));
