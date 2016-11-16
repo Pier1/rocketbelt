@@ -90,6 +90,23 @@ mixin buildNav(navObject, rootHref)
               if item.children.length >= 1
                 mixin buildNav(item.children, newRootHref + '/' + item.name)
 
+
+mixin colorPicker(target, val, type)
+  - var prefix = type === 'background' ? 'bg_' : 'fg_';
+  - var obj = colorFamilies;
+  div.cp_wrapper.playground-item(type="list", data-target="#{target}", data-property="class", value="#{val}")
+    div.cp_eyedropper
+    div.cp_grid.visuallyhidden
+      each family in obj
+        each color in family.variants
+          if (family.familyName === 'white')
+            span(class="playground-list_item bg_#{family.familyName} color-w-border", title="#{color.colorName}", value="#{prefix}#{family.familyName}") 
+          else if (color.variant === 'base')
+            span(class="playground-list_item bg_#{family.familyName}", title="#{color.colorName}", value="#{prefix}#{family.familyName}")
+          else 
+            span(class="playground-list_item bg_#{family.familyName}-#{color.variant}", title="#{color.colorName}", value="#{prefix}#{family.familyName}-#{color.variant}")
+
+
 mixin footnoteTerm(name, annotateOnly)
   - footnotes = footnotes || [];
   - var note = { name: name, id: footnotes.length + 1, block: '' };
