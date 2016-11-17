@@ -6,7 +6,9 @@
   cursor: default;
   transition: color 100ms ease(),
               border 100ms ease(),
-              background 100ms ease();
+              background 100ms ease(),
+              box-shadow 100ms ease-out,
+              opacity 500ms ease();
 
   @include button-shadow;
 
@@ -35,6 +37,10 @@
     background: transparent;
     box-shadow: none;
   }
+}
+
+.button-busy {
+  @include button-style(busy);
 }
 
 .button-sm {
@@ -78,4 +84,10 @@
       box-shadow: none;
     }
   }
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  
+  100% { transform: rotate(360deg); }
 }
