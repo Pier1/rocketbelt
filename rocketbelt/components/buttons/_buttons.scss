@@ -3,6 +3,7 @@
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   font-weight: font-weight(demi);
+  text-decoration: none;
   cursor: default;
   transition: color 100ms ease(),
               border 100ms ease(),
@@ -12,6 +13,13 @@
 
   &:focus {
     outline: 0;
+  }
+  svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: baseline;
+    margin-right: $gutter-width/4;
+    margin-bottom: -0.1em;  /* I don't know why */
   }
 }
 
