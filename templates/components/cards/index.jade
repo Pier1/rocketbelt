@@ -6,50 +6,51 @@ block vars
 
 block content
   article
-    :md
-      # Cards
-      ## Basic Cards
-      
+    h1 Cards
+
+
+    h2 Basic Cards
     +exampleWithCode
       include _cards-basic
 
-    :md
-      ## Action Cards
-      
+
+    h2 Action Cards
     .grid-fluid
       .row.xs-center
         .col.xs-12.lg-4
-          +exampleWithCode
+          include _cards-action
+      .row
+        .col.xs
+          +exampleCodeOnly
             include _cards-action
-      
-    :md
-      ## `z-depth`
-      
+
+
+    h2 z-depth  
     - var text = "Cards can be placed at different depths to indicate their position relative to other content."
     +exampleWithCode
       include _cards-z-depth
-      
-    :md
-      ## Hover Cards
+  
+
+    h2 Hover Cards
       Combine `z-depth` classes with `hover` for engaging feedback.
-      
     +exampleWithCode
       include _cards-hover
 
-    :md
-      ## Image Cards
-    
+
+    h2 Image Cards
     .grid-fluid
       .row
         .col.xs-4
-          +exampleWithCode
+          include _cards-image
+      .row
+        .col.xs
+          +exampleCodeOnly
             include _cards-image
                 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js')
     script(src='../images/rocketbelt.images-lazyload.js')
       
-    :md
-      ## Thumbnail Cards
-      ## Expandable Thumbnail Cards
-      ## Reveal
-      ## Heights
+    h2 Thumbnail Cards
+    h2 Expandable Thumbnail Cards
+    h2 Reveal
+    h2 Heights
