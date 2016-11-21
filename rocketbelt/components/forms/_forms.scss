@@ -33,66 +33,66 @@ fieldset {
   }
 }
 
-form {
-  .form-group {
-    &.inline {
-      flex-direction: row;
-      align-items: center;
 
-      &:first-child {
-        margin-top: ms(-10);
-      }
+.form-group {
+  &.inline {
+    flex-direction: row;
+    align-items: center;
 
-      label,
+    &:first-child {
+      margin-top: ms(-10);
+    }
+
+    label,
+    .helper-text {
+      flex: 0 0 auto;
+      align-self: center;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      padding-right: padding(-4);
+    }
+
+    .helper-text {
+      padding-left: padding(-4);
+    }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 auto;
+      padding-left: padding(-4);
+      order: last;
+
       .helper-text {
-        flex: 0 0 auto;
-        align-self: center;
+        padding-left: 0;
       }
 
-      label {
-        display: flex;
-        flex-direction: column;
-        padding-right: padding(-4);
+      .helper-text,
+      .validation-message {
+        align-self: flex-start;
       }
+    }
 
-      .helper-text {
-        padding-left: padding(-4);
-      }
-
-      .messages {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 auto;
-        padding-left: padding(-4);
-        order: last;
-
-        .helper-text {
-          padding-left: 0;
-        }
-
-        .helper-text,
-        .validation-message {
-          align-self: flex-start;
+    input,
+    select {
+      &[required] {
+        & + label::after {
+          content: '(required)';
         }
       }
 
-      input,
-      select {
-        &[required] {
-          & + label::after {
-            content: '(required)';
-          }
+      &:not([required]) {
+        & + label::after {
+          content: '(optional)';
         }
-
-        &:not([required]) {
-          & + label::after {
-            content: '(optional)';
-          }
-        }
-      }
+      }   
     }
   }
 }
+
 
 html {
   &.touchevents {
@@ -157,6 +157,10 @@ select {
       }
     }
   }
+  /* Character Based Ems - Good Idea?? */
+  &.field-small { width: 8em; } 
+  &.field-medium { width: 16em; }
+  &.field-large { width: 24em; }
 }
 
 [disabled] {
@@ -186,6 +190,11 @@ select {
   background-size: 1rem;
 
   appearance: none;
+  &.field-auto { 
+    width: auto; 
+    margin-right: auto;
+    padding-right: 2em;
+  }
 }
 
 .form-group {
