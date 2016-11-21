@@ -7,22 +7,23 @@ block content
   article
     - var base = 'https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/'
     
-    :md
-      # Images
-      ## Gallery
-      ### Mobile
+    h1 Images
+
+    h2 Gallery
+
+    h3 Mobile
     .grid-fluid
       .row.xs-center
         .col.xs-4
-          +exampleWithCode
+          include _images-gallery
+      .row
+        .col.xs    
+          +exampleCodeOnly
             include _images-gallery
-              
-
-    +exampleWithCode('JS Include')
-      script(src='./rocketbelt.images-gallery.js')
+          +exampleWithCode('JS Include')
+            script(src='./rocketbelt.images-gallery.js')
           
-    :md
-      ## Lazy-Loading With Low-Quality Image Previews (LQIP)
+    h2 Lazy-Loading With Low-Quality Image Previews (LQIP)
 
     +exampleWithCode('JS Include')
       script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js')
