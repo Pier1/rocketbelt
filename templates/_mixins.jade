@@ -90,6 +90,7 @@ mixin buildNav(navObject, rootHref)
               if item.children && item.children.length >= 1
                 mixin buildNav(item.children, newRootHref + '/' + item.name)
 
+
 mixin colorPicker(target, val, type)
   - var prefix = type === 'background' ? 'bg_' : 'fg_';
   - var obj = colorFamilies;
@@ -104,6 +105,7 @@ mixin colorPicker(target, val, type)
             span(class="playground-list_item bg_#{family.familyName}", title="#{color.colorName}", value="#{prefix}#{family.familyName}")
           else 
             span(class="playground-list_item bg_#{family.familyName}-#{color.variant}", title="#{color.colorName}", value="#{prefix}#{family.familyName}-#{color.variant}")
+
 
 mixin footnoteTerm(name, annotateOnly)
   - footnotes = footnotes || [];
