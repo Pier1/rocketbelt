@@ -5,33 +5,42 @@ block vars
 
 block content
   article
-    :md
-      # Modals
+    h1 Modals
     
-      ## Standard Modal
+    h2 Standard Modal
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            a.button.button-secondary.button-md(href='#modal-example-standard') Trigger Modal
+      .row
+        .col.xs
+          +exampleWithCode
+            include _modal-standard
     
-    +exampleWithCode
-      include _modal-standard
+    h2 Bottom Sheet Modal
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            a.button.button-secondary.button-md(href='#modal-example-bottom') Trigger Modal
+      .row
+        .col.xs
+          +exampleWithCode
+            include _modal-bottom-sheet
+      
+    h2 Max Modal
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            a.button.button-secondary.button-md(href='#modal-example-max') Trigger Modal
+      .row
+        .col.xs
+          +exampleWithCode
+            include _modal-max
 
-    a(href='#modal-example-standard') Trigger Modal
-    
-    :md
-      ## Bottom Sheet Modal
       
-    +exampleWithCode
-      include _modal-bottom-sheet
-      
-    a(href='#modal-example-bottom') Trigger Modal
-    
-    :md
-      ## Max Modal
-      
-    +exampleWithCode
-      include _modal-max
-      
-    a(href='#modal-example-max') Trigger Modal
-
-    :md
-      ## Script Include
+    h2 Script Include
     +exampleWithCode('html', true)
       script(src='./rocketbelt.modal.min.js')
