@@ -5,36 +5,24 @@ block vars
 
 block content
   article
-    :md
-      # Typography
-      Here is some short front matter about typography.
+    h1 Typography
+    p Here is some short front matter about typography.
+    a.button-sm.button-secondary(href="./downloads/Pier1WebFonts.zip") 
+      svg.icon
+        use(xlink:href="../../components/icons/rocketbelt.icons.svg#rb-icon-arrow-down")
+      | Download Pier 1 Font Files
 
-      ## Headings
+    h2 Headings
     +exampleWithCode
       h1 h1. Pier 1 Imports
       h2 h2. Pier 1 Imports
       h3 h3. Pier 1 Imports
       h4 h4. Pier 1 Imports
-      
-    :md
-      ## Headings With Secondary Text
-      
-    +exampleWithCode
-      h1 h1. Pier 1 Imports
-        small Secondary
-      h2 h2. Pier 1 Imports
-        small Secondary
-      h3 h3. Pier 1 Imports
-        small Secondary
-      h4 h4. Pier 1 Imports
-        small Secondary
     
-    :md
-      ## Font Faces
-    
+    h2 Font Faces
     .grid-fluid
       .row
-        .col.sm-12.md #[h3 Sans Serif]
+        .col.sm-12.md #[h3.docs-header Sans Serif]
           +exampleWithCode
             div.font-sans
               p.
@@ -49,7 +37,7 @@ block content
             
     .grid-fluid
       .row
-        .col.sm-12.md #[h3 Serif]
+        .col.sm-12.md #[h3.docs-header Serif]
           +exampleWithCode
             .font-serif
               p.
@@ -63,9 +51,7 @@ block content
                 one bouquet of a hint of textures to be the right rhythm. 
                 Flaunting iron and sharing, rich hues of sophistication?
 
-    :md
-      ## UI Text Sizes
-    
+    h3 UI Text Sizes
     .grid.margin-0
       .row
         .col.xs.ellipsis
@@ -91,8 +77,7 @@ block content
               .font-plus-3 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you. 
               .font-plus-4 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you. 
 
-    :md
-      ## Non-UI Text Sizes
+    h2 Non-UI Text Sizes
     
     .grid.margin-0
       .row
@@ -118,9 +103,9 @@ block content
               .font-plus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you. 
               .font-plus-3 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you. 
               .font-plus-4 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you. 
-    :md
-      ## Lists
-      ### Reset      
+    
+    h2 Lists
+    h3 Reset      
     +exampleWithCode
       ul.list-reset
         li One
@@ -130,17 +115,14 @@ block content
             li B
         li Three
     
-    :md
-      ### Horizontal Reset
+    h3 Horizontal Reset
     +exampleWithCode
       ul.list-inline
         li One
         li Two
         li Three
         
-    :md
-      ### Font Weights
-      
+    h3 Font Weights
     .font-plus-4
       +exampleWithCode
         .font-weight-light Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890
@@ -161,9 +143,7 @@ block content
         .font-serif.font-style-italic
           div Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890
     
-    :md
-      ### Block Quotes
-
+    h3 Block Quotes
     .grid-fluid
       .row
         .col.xs-12.md-6
@@ -178,9 +158,7 @@ block content
                   | started is no reason for us not to try to win.
                   .source Harper Lee, #[span.font-style-italic To Kill A Mockingbird]
 
-    :md
-      ### Lead Copy
-    
+    h3 Lead Copy    
     .grid-fluid
       .row.xs-center
         .col.md-6.xs-12

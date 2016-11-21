@@ -11,22 +11,22 @@ block content
     .grid-fluid
       .row.swatch-cards
         .col.xs-12
-          h2 Brand Color
+          h2.docs-header Brand Color
         each family in _.filter(colorFamilies, function (o) { return o.familyName === 'brand'; })
           +swatch(family)
       .row.swatch-cards
         .col.xs-12
-          h2 UI Colors
+          h2.docs-header UI Colors
         each family in _.filter(colorFamilies, function (o) { return o.familyName === 'primary' || o.familyName === 'secondary' || o.familyName === 'accent'; })
           +swatch(family)
       .row.swatch-cards
         .col.xs-12
-          h2 Grayscale
+          h2.docs-header Grayscale
         each family in _.filter(colorFamilies, function (o) { return o.familyName === 'black' || o.familyName === 'gray' || o.familyName === 'white'; })
           +swatch(family)
       .row.swatch-cards
         .col.xs-12
-          h2 Indicating Colors
+          h2.docs-header Indicating Colors
         each family in _.filter(colorFamilies, function (o) { return o.familyName === 'success' || o.familyName === 'warning' || o.familyName === 'error' || o.familyName === 'sale'; })
           +swatch(family)
     script(src='./color.js')

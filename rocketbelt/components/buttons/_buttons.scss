@@ -3,15 +3,25 @@
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   font-weight: font-weight(demi);
+  text-decoration: none;
   cursor: default;
   transition: color 100ms ease(),
               border 100ms ease(),
-              background 100ms ease();
+              background 100ms ease(),
+              box-shadow 100ms ease-out,
+              opacity 500ms ease();
 
   @include button-shadow;
 
   &:focus {
     outline: 0;
+  }
+  svg {
+    width: 1em;
+    height: 1em;
+    vertical-align: baseline;
+    margin-right: $gutter-width/4;
+    margin-bottom: -0.1em;  /* I don't know why */
   }
 }
 
@@ -35,6 +45,10 @@
     background: transparent;
     box-shadow: none;
   }
+}
+
+.button-busy {
+  @include button-style(busy);
 }
 
 .button-sm {
@@ -78,4 +92,10 @@
       box-shadow: none;
     }
   }
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  
+  100% { transform: rotate(360deg); }
 }
