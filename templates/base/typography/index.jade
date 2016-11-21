@@ -7,11 +7,7 @@ block content
   article
     h1 Typography
     p Here is some short front matter about typography.
-    a.button-sm.button-secondary(href="./downloads/Pier1WebFonts.zip") 
-      svg.icon
-        use(xlink:href="../../components/icons/rocketbelt.icons.svg#rb-icon-arrow-down")
-      | Download Pier 1 Font Files
-
+    
     h2 Headings
     +exampleWithCode
       h1 h1. Pier 1 Imports
@@ -21,15 +17,15 @@ block content
       
     h2 Headings With Secondary Text
       
-    +exampleWithCode
-      h1 h1. Pier 1 Imports
-        small Secondary
-      h2 h2. Pier 1 Imports
-        small Secondary
-      h3 h3. Pier 1 Imports
-        small Secondary
-      h4 h4. Pier 1 Imports
-        small Secondary
+    h2 Downloads
+      
+    ul.list-reset
+      li
+        a(href='./OpenSans.zip') Open Sans
+        |—Brand Sans
+      li
+        a(href='./CrimsonText.zip') Crimson Text
+        |—Brand Serif
     
     h2 Font Faces
     .grid-fluid
