@@ -50,6 +50,25 @@ mixin exampleWithCode(labelText, expanded, inverted)
       .example
         block
 
+mixin exampleCodeOnly(labelText, expanded, inverted)
+  - labelText = labelText || 'html';
+  - inverted = inverted || false;
+  - if (labelText === 'js') labelText = 'javascript';
+  - var seed = escape(block);
+  - var id   = shorthash.unique(seed);
+  
+  - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
+  .exampleWithCode
+    if (!inverted)
+      .example
+    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
+      .example-code
+        button.copy-code(data-clipboard-target='#' + id) Copy
+        pre
+          code(id=id, class='language-' + labelText.toLowerCase())
+            +escape
+              block
+
 mixin dynamicExampleCode(labelText, expanded)
   - labelText = labelText || 'html';
   - inverted = inverted || false;

@@ -17,6 +17,10 @@
       background-color: $button-active;
     }
 
+    &:visited {
+      color: $color;
+    }
+
     &[disabled] {
       color: rgba($color, 0.9);
       fill: rgba($color, 0.9);
@@ -38,6 +42,9 @@
       background: color(white);
       color: $button-hover;
       fill: $button-hover;
+    }
+    &:visited {
+      color: $color;
     }
 
     &:active {
@@ -61,7 +68,10 @@
     background: transparent;
     color: color(primary);
     fill: color(primary);
-
+    &:visited {
+      color: color(primary);
+    }
+    
     &:hover {
       $c: scale-color(color(primary), $lightness: 10%);
       border-color: $c;

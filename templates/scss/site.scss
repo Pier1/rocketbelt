@@ -39,7 +39,7 @@ p code,
 .example-code {
   position: relative;
   display: flex;
-
+  max-width: 700px;
   &:hover {
     .copy-code {
       opacity: 1;
