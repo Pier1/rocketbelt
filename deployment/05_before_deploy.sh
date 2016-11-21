@@ -12,6 +12,7 @@ if [ $TRAVIS_PULL_REQUEST = "false" -a $TRAVIS_BRANCH = $SOURCE_BRANCH ]; then
   git checkout $TARGET_BRANCH || git checkout --orphan $TARGET_BRANCH
   git merge -s recursive -X theirs TEMP_BRANCH -m "Merge into gh-pages: ${SHA}" || true
   git status --porcelain | awk '{if ($1=="DU") print $2}' | xargs git rm
+  git add .
   git commit -m "Merge into gh-pages: ${SHA}"
 
   ENCRYPTED_KEY_VAR="encrypted_${ENCRYPTION_LABEL}_key"
