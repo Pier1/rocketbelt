@@ -51,6 +51,7 @@
       border-color: $button-active;
       color: $button-active;
       fill: $button-active;
+      background: color(white);
     }
 
     &[disabled] {
@@ -93,6 +94,47 @@
       &:hover {
         color: $color;
         fill: $color;
+      }
+    }
+  }
+  @else if $style == busy {
+    position: relative;
+    transition: opacity 0.5s ease;
+    .button-busy-text {
+      visibility: hidden;
+    }
+    .button-busy-icon {
+      width: 1em;
+      height: 1em;
+      position: absolute;
+      top:31%;
+      left:42%;
+      transform: translate(-50%,-50%);
+      $color-fill: str-replace(quote(color(white)), '#', '%23');
+      background: url('data:image/svg+xml;utf8,<svg width="11" height="19" viewBox="190 45 11 19" fill="#{$color-fill}" xmlns="http://www.w3.org/2000/svg"><path d="M201 45v2c-4.962 0-9 4.038-9 9 0 2.48 1.01 4.73 2.64 6.36l-1.415 1.415C191.24 61.795 190 59.04 190 56c0-6.065 4.935-11 11-11z" fill-rule="evenodd"/></svg>');
+      background-size:contain;
+      background-repeat: no-repeat;
+      animation:spin 1s cubic-bezier(.78,.38,.49,.88) infinite;
+    }
+    &.button-busy-with-text {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      white-space:nowrap;
+      .button-busy-text {
+        visibility: visible;
+        text-overflow: ellipsis;
+        overflow: hidden;
+        flex: 1 0 auto;
+      }
+      .button-busy-icon {
+        position: relative;
+        width: auto;
+        top: auto;
+        left: auto;
+        transform: none;
+        margin-left:1em;
+        flex: 0 0 1em;
       }
     }
   }

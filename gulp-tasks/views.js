@@ -1,5 +1,6 @@
 (function () {
   'use strict';
+
   var directoryTreeToObj = function(dir, done) {
     var fs = require('fs');
     var path = require('path');
@@ -13,7 +14,11 @@
         if (fs.lstatSync(dir + '/' + file).isDirectory()) {
           if (file === 'js' || file === 'scss' || file === 'assets') return false;
         }
-        return (file.indexOf('_') !== 0) && (file.indexOf('.js') == -1);
+
+        return (file.indexOf('_') !== 0) &&
+               (file.indexOf('.js') === -1) &&
+               (file.indexOf('.ttf') === -1) &&
+               (file.indexOf('.DS_Store') === -1);
       });
 
       var pending = files.length;

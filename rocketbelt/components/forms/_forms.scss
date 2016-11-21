@@ -165,6 +165,7 @@ select {
 
 [disabled] {
   opacity: 0.6;
+  transition: opacity 500ms ease;
   filter: grayscale(0.4);
 }
 
