@@ -153,6 +153,8 @@
             <input id="Exposition" type="checkbox" name="Exposition" class="category-toggle"/>
             <label for="Exposition" class="category-label">Exposition</label>
             <ul class="list-reset category-contents">
+              <li ref="homepage-components" class="category"><a href="../../exposition/homepage-components">Homepage Components</a>
+              </li>
               <li ref="links-and-buttons" class="category"><a href="../../exposition/links-and-buttons">Links And Buttons</a>
               </li>
               <li ref="logo-usage" class="category"><a href="../../exposition/logo-usage">Logo Usage</a>
@@ -171,15 +173,68 @@
         <main class="grid-fluid no-margin">
           <div class="row">
             <div class="col xs">
-              <article><h1 id="site-content">Site Content</h1>
-<h2 id="overview">Overview</h2>
-<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-consequat.</p>
-<h2 id="headers">Headers</h2>
-
+              <article>
+                <h1>Site Content</h1>
+                <h2>Overview</h2>
+                <p>Content is the most powerful way to attract new customers.  It is also the way we communicate with existing customers.  It is paramount that it has clarity and consistency to build trust.</p>
+                <h2>Content Guidelines</h2><img src="./img/content_guidelines.png" width="620">
+                <h2>Site Banners</h2>
+                <section>
+                  <h3 class="docs-header">SEO Typography</h3><img src="./img/seo_typography.png" width="750">
+                  <p>These banners provide textual value for search engines.  The copy should be keyword rich, but still structured so that it reads like text meant for a human.</p>
+                </section>
+                <section>
+                  <h3 class="docs-header">Link Banner</h3><img src="./img/link_banner.png" width="750">
+                  <p>This banner provides one or more links that will provide customers with inspiration and ideas on how to use the products below.  <strong>Remember:</strong> any click that takes a customer further away from the product must provide added value for them to purchase later in their visit.  Should be used sparingly.</p>
+                </section>
+                <section>
+                  <h3 class="docs-header">Headline Banner</h3><img src="./img/headline_banner.png" width="750">
+                  <p>Standard inspirational image banner.  It should be employed for either new product categories or where we believe our editorial imagery and copy will provide value beyond what the product imagery can provide.</p>
+                </section>
+                <section>
+                  <h3 class="docs-header">Feature Banner</h3><img src="./img/feature_banner.png" width="750">
+                  <p>Very specific usage.  These banners are for products that we feel are very special, but that the product imagery alone doesn't do justice.  They can also be used where Pier 1 feels additional information needs to be presented to help the customer make a buying decision. </p>
+                </section>
+                <section>
+                  <h3 class="docs-header">SEO Footer (coming soon)</h3><img src="./img/seo_footer.png" width="750">
+                  <p>These banners provide textual value for search engines.  The copy should be keyword rich, but still structured so that it reads like text meant for a human.  Since they are the final item on the page, these may also provide links to related categories or editorial content.</p>
+                </section>
+                <h2>Visual Filters</h2>
+                <p>Visual filters are a high-affordance method for customers to quickly narrow a product grid down to just the products they are interested in.</p>
+                <ul>
+                  <li>When possible use icons&mdash;images tend to set an expectation in the user's mind</li>
+                  <li>Keep the buttons large (48px or 64px)</li>
+                  <li>The top banner should <em>only</em> be added if additional explaination is needed</li>
+                </ul>
+                <section class="docs-vis-filters"><a name="docs-vis-filters"></a><br/>
+                  <div>
+                    <ul id="docs-vis-filter-controls" class="list-inline">
+                      <li><span><strong>Visual Filter Layouts: </strong></span></li>
+                      <li class="selected"><a href="#docs-vis-filters" data-layout="1">Single </a></li>
+                      <li><a href="#docs-vis-filters" data-layout="2">Multiple </a></li>
+                      <li><a href="#docs-vis-filters" data-layout="3">Multiple + Text</a></li>
+                    </ul>
+                    <div id="docs-vis-filter-items">
+                      <div data-layout="1" class="docs-vis-filter-item show"><img src="./img/vis_filter_single.png" width="700"></div>
+                      <div data-layout="2" class="docs-vis-filter-item"><img src="./img/vis_filter_multi.png" width="700"></div>
+                      <div data-layout="3" class="docs-vis-filter-item"> <img src="./img/vis_filter_multi_text.png" width="700"></div>
+                    </div>
+                  </div>
+                </section><br/>
+                <br/>
+                <br/>
               </article>
+              <script>
+                $('#docs-vis-filter-controls').on('click', 'a', function(e){
+                  e.preventDefault();
+                  var $link = $(this), layoutId = $link.data('layout');
+                  $('#docs-vis-filter-items').find('.show').removeClass('show');
+                  $('#docs-vis-filter-controls').find('.selected').removeClass('selected');
+                  
+                  $link.parent('li').addClass('selected');
+                  $('#docs-vis-filter-items').find('[data-layout="' + layoutId + '"]').addClass('show');
+                });
+              </script>
             </div>
           </div>
         </main>

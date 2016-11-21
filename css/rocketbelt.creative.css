@@ -1387,6 +1387,10 @@ h3 {
   margin: 0;
   font-size: 1.125rem; }
 
+h4 {
+  text-transform: uppercase;
+  font-weight: 400; }
+
 h4,
 h5,
 h6 {

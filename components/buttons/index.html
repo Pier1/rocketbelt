@@ -153,6 +153,8 @@
             <input id="Exposition" type="checkbox" name="Exposition" class="category-toggle"/>
             <label for="Exposition" class="category-label">Exposition</label>
             <ul class="list-reset category-contents">
+              <li ref="homepage-components" class="category"><a href="../../exposition/homepage-components">Homepage Components</a>
+              </li>
               <li ref="links-and-buttons" class="category"><a href="../../exposition/links-and-buttons">Links And Buttons</a>
               </li>
               <li ref="logo-usage" class="category"><a href="../../exposition/logo-usage">Logo Usage</a>
@@ -326,6 +328,44 @@
                       </div>
                     </div>
                   </div>
+                </div><h2 id="interactive">Interactive</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <button data-busy-text="Adding to Basket" class="button-lg button-primary with-busy-indicator">Add to Basket</button>
+                    <button class="button button-primary with-busy-indicator">Medium</button>
+                    <button class="button-sm button-primary with-busy-indicator">Small</button>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="Z1Wk4Ua" class="expander_checkbox"/>
+                    <label for="Z1Wk4Ua" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#ZDmUIf" class="copy-code">Copy</button>
+                        <pre><code id="ZDmUIf" class="language-html">
+                            &lt;button data-busy-text=&quot;Adding to Basket&quot; class=&quot;button-lg button-primary with-busy-indicator&quot;&gt;Add to Basket&lt;/button&gt;
+                            &lt;button class=&quot;button button-primary with-busy-indicator&quot;&gt;Medium&lt;/button&gt;
+                            &lt;button class=&quot;button-sm button-primary with-busy-indicator&quot;&gt;Small&lt;/button&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div><h2 id="script-include">Script Include</h2>
+
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <script src="./rocketbelt.busy-button.min.js"></script>
+                  </div>
+                  <div class="expander">
+                    <input type="checkbox" id="ZhzMM5" checked="checked" class="expander_checkbox"/>
+                    <label for="ZhzMM5" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML" class="expander_label"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button data-clipboard-target="#Z1VlIix" class="copy-code">Copy</button>
+                        <pre><code id="Z1VlIix" class="language-html">
+                            &lt;script src=&quot;./rocketbelt.busy-button.min.js&quot;&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </article>
             </div>
@@ -358,6 +398,13 @@
       
       ga('create', 'UA-1740251-3', 'auto');
       ga('send', 'pageview');
+    </script>
+    <script>
+      $(window).on('busyButton.click',function(e) {
+        setTimeout(function() {
+          $(e.el).trigger('buttonActionComplete')
+        }, 3000);
+      })
     </script>
   </body>
 </html>
