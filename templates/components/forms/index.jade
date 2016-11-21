@@ -5,51 +5,73 @@ block vars
 
 block content
   article
-    :md
-      # Forms
-      ## Standard Form Elements
+    h1 Forms
+    h2 Standard Form Elements
     .grid-fluid
       .row
         .col.xs-8.md-6.lg-4
-          +exampleWithCode
-            include _forms-basic
+          include _forms-basic
+    .row
+      .col.xs
+        +exampleCodeOnly
+          include _forms-basic
 
-    :md
-      ## Helper Text
+    h2 Sized Form Elements
     .grid-fluid
       .row
         .col.xs-8.md-6.lg-4
-          +exampleWithCode
+          include _forms-sized
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _forms-sized
+
+    h2 Helper Text
+    .grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          include _forms-helper-text
+      .row
+        .col.xs
+          +exampleCodeOnly
             include _forms-helper-text
 
-    :md
-      ## Required & Optional Fields
+    h2 Required &amp; Optional Fields
     .grid-fluid
       .row
         .col.xs-8.md-6.lg-4
-          +exampleWithCode
+          include _forms-required-and-optional
+      .row
+        .col.xs
+          +exampleCodeOnly
             include _forms-required-and-optional
             
-    :md
-      ## Inline Fields
+    h2 Inline Fields
     .grid-fluid
       .row
         .col.xs-8.md-6.lg-4
-          +exampleWithCode
+          include _forms-inline
+      .row
+        .col.xs
+          +exampleCodeOnly
             include _forms-inline
             
-    :md
-      ## Disabled Styles
+    h2 Disabled Styles
     .grid-fluid
       .row
         .col.xs-8.md-6.lg-4
-          +exampleWithCode
+          include _forms-disabled
+      .row
+        .col.xs
+          +exampleCodeOnly
             include _forms-disabled
       
-    :md
-      ## Invalid Styles
+    h2 Invalid Styles
     .grid-fluid
       .row
         .col.xs-8.md-6.lg-4
-          +exampleWithCode
+          include _forms-invalid
+      .row
+        .col.xs
+          +exampleCodeOnly
             include _forms-invalid
