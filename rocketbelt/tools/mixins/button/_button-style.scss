@@ -8,7 +8,7 @@
     background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.08%) 0%, rgba(0, 0, 0, 0.08%) 100%);
     $color: mix(color(white), $button-base, 90%);
     color: $color;
-
+    fill: $color;
     &:hover {
       background-color: $button-hover;
     }
@@ -19,6 +19,7 @@
 
     &[disabled] {
       color: rgba($color, 0.9);
+      fill: rgba($color, 0.9);
 
       &:hover {
         background-color: $button-base;
@@ -31,49 +32,59 @@
     background-image: none;
     $color: mix(color(white), $button-base, 10%);
     color: $color;
+    fill: $color;
 
     &:hover {
       border-color: $button-hover;
       background: color(white);
       color: $button-hover;
+      fill: $button-hover;
     }
 
     &:active {
       border-color: $button-active;
       color: $button-active;
+      fill: $button-active;
       background: color(white);
     }
 
     &[disabled] {
       color: rgba($color, 0.9);
+      fill: rgba($color, 0.9);
 
       &:hover {
         border-color: $color;
         color: $button-base;
+        fill: $button-base;
       }
     }
   }
   @else if $style == text {
     background: transparent;
     color: color(primary);
+    fill: color(primary);
 
     &:hover {
       $c: scale-color(color(primary), $lightness: 10%);
       border-color: $c;
       color: $c;
+      fill: $c;
     }
 
     &:active {
       $c: scale-color(color(primary), $lightness: -10%);
       color: $c;
+      fill: $c;
     }
 
     &[disabled] {
       $color: rgba(color(primary), 0.9);
       color: $color;
+      fill: $color;
 
       &:hover {
         color: $color;
+        fill: $color;
       }
     }
   }
