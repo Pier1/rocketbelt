@@ -72,7 +72,6 @@
             basedir: __dirname + '/../' + config.templatesPath,
             pretty: true,
             locals: {
-              filters: { md: plugins.jstransformerMarkdownIt },
               buildPath: '',
               nav: res,
               icons: icons,
