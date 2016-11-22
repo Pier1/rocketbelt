@@ -1,0 +1,21 @@
+extends /_layout
+
+block vars
+  - var title = 'Busy Indicators'
+
+block content
+  article
+    h1 Busy Indicators
+    h2 Dots
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _busy-indicators-dots
+
+    h2 Spinner
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _busy-indicators-spinners

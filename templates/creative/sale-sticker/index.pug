@@ -1,0 +1,91 @@
+extends /_layout
+
+block vars
+  - var title = 'Sale Sticker'
+
+block content
+  article
+    h1 Sale Sticker
+
+    .grid-fluid.playground
+      .row
+        .col.xs
+          div
+            +colorPicker('.example', 'bg_success-darker', 'background')
+      .row
+        .col.xs-12.ss_util_background
+          +exampleWithCode
+            include _sale-sticker
+        .col.xs-12
+          div.playground-control
+            input#ss_style.playground-item(
+              type="checkbox"
+              checked=false
+              value="serif"
+              name="Serif"
+              data-property="class"
+              data-target=".sale-sticker-wrapper"
+            )
+            label(for="ss_style") Sans-Serif
+          div.playground-control
+            input#ss_horizontal-variant.playground-item(
+              type="checkbox"
+              checked=false
+              value="sale-sticker-horizontal"
+              name="Sale Sticker Horizontal Variant"
+              data-property="class"
+              data-target=".sale-sticker-wrapper"
+            )
+            label(for="ss_horizontal-variant") Horizontal
+          div.playground-control
+            input#ss_stretch-variant.playground-item(
+              type="checkbox"
+              checked=false
+              value="sale-sticker-stretch"
+              name="Sale Sticker Horizontal Variant"
+              data-property="class"
+              data-target=".sale-sticker-wrapper"
+            )
+            label(for="ss_stretch-variant") Full Width
+          div.playground-control
+            label(for="ss_fsize") Font Size:
+              input#ss_fsize.playground-item(
+                type="range"
+                value="7"
+                min="4"
+                max="12"
+                step=".25"
+                data-target=".sale-sticker-inner"
+                data-property="font-size"
+                data-units="rem"
+              )
+              span.playground-range-value 7rem
+          div.playground-control
+            label(for="ss_topmsg") Top Message:
+              input#ss_topmsg.playground-item(
+                data-target=".up-to-msg"
+                type="text"
+                maxlength="20"
+                value = "up to"
+              )
+          div.playground-control
+            label(for="ss_sale") Sale Amount:
+              input#ss_sale.playground-item(
+                data-target=".sale-amount"
+                type="text"
+                maxlength="2"
+                value = "20"
+              )
+            +colorPicker(".pct-off-msg", "fg_black")
+          div.playground-control
+            label(for="ss_tagline") Tagline:
+              input#ss_tagline.playground-item(
+                data-target=".tagline"
+                type="text"
+                value = "All Sofas"
+              )
+            +colorPicker(".tagline", "fg_black")
+
+block scripts
+  script.
+    rb.launchPlayground();

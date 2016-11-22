@@ -25,7 +25,7 @@ Features
 * Responsive & mobile-first
 * User-definable browser support & prefix-free development
 * Easy cross-browser/cross-device testing via [BrowserSync](https://www.browsersync.io/)
-* <small><mark>COMING SOON!</mark></small> Automated visual regression tests of all patterns
+* Coming soon: Automated visual regression tests of all patterns
 
 Getting Started
 ---------------
@@ -33,7 +33,7 @@ Browse the pattern library at [rocketbelt.io](http://rocketbelt.io) or fork the 
 
 Tests
 -----
-<small>COMING SOON!</small>
+Coming soon.
 
 Contributing
 ------------

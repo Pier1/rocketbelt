@@ -64,15 +64,15 @@
         if (err)
           console.error(err);
 
-        return gulp.src([config.templatesPath + '/**/*.jade', '!' + config.templatesPath + '/**/_*.jade'])
+        return gulp.src([config.templatesPath + '/**/*.pug', '!' + config.templatesPath + '/**/_*.pug'])
           .pipe(plugins.plumber({ errorHandler: plugins.notify.onError('Error: <%= error.message %>') }))
           .pipe(plugins.jadeFindAffected())
           .pipe(plugins.jadeInheritance({ basedir: config.templatesPath }))
-          .pipe(plugins.jade({
+          .pipe(plugins.pug({
             basedir: __dirname + '/../' + config.templatesPath,
             pretty: true,
-            md: plugins.jstransformerMarkdownIt,
             locals: {
+              filters: { md: plugins.jstransformerMarkdownIt },
               buildPath: '',
               nav: res,
               icons: icons,
