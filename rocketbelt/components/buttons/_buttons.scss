@@ -51,6 +51,10 @@
   @include button-style(busy);
 }
 
+.with-success {
+  @include button-style(success);
+}
+
 .button-sm {
   @include button-size(sm);
 }

@@ -139,4 +139,26 @@
       }
     }
   }
+  @else if $style == success {
+    position: relative;
+    &.button-success-active {
+      background-color:color(success);
+      opacity: 1;
+      .button-busy-text {
+        visibility: hidden;
+      }
+      .button-busy-icon {
+        position: absolute;
+        width: 1.5em;
+        height: 1.5em;
+        top:50%;
+        left: 50%;
+        transform: translate(-50%,-50%);
+        $color-fill: str-replace(quote(color(white)), '#', '%23');
+        background: url('data:image/svg+xml;utf8,<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="check" fill="#{$color-fill}"><polygon points="96 224.746667 0 132.608 29.7706667 101.994667 95.4346667 164.650667 225.674667 32 256 62.048"></polygon></g></g></svg>');
+        background-size:contain;
+        background-repeat: no-repeat;
+      }
+    }
+  }
 }
