@@ -41,10 +41,15 @@ block content
 
     :md
       ## Interactive
-
+        ### Busy
     +exampleWithCode
       include _buttons-busy
-            
+
+    :md
+        ### Success
+    +exampleWithCode
+      include _buttons-success 
+
     :md
       ## Script Include
     +exampleWithCode('html', true)
@@ -54,7 +59,7 @@ block scripts
   script.
     $(window).on('busyButton.click',function(e) {
       setTimeout(function() {
-        $(e.el).trigger('buttonActionComplete')
+        $(e.el).trigger('buttonActionComplete', ['success'])
       }, 3000);
     })
 

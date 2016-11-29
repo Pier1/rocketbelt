@@ -22,8 +22,8 @@
       base.$el.on('click', function() {
         buttonActionBusy.call(this, btnChild, btnClass);
       });
-      base.$el.on('buttonActionComplete', function() {
-        buttonActionComplete.call(this, btnChild, base.opts.baseText, btnClass);
+      base.$el.on('buttonActionComplete', function(e, msg) {
+        buttonActionComplete.call(this, msg, btnChild, base.opts.baseText, btnClass);
       });
     };
 
@@ -53,9 +53,30 @@
       }
     };
 
-    function buttonActionComplete (btnChild, btnText, btnClass) {
+    function buttonActionComplete (msg, btnChild, btnText, btnClass, e) {
+      var btn = $(this);
+
+      if (btn.hasClass('with-success') && msg === 'success') {
+        btn.css('min-width',btn.outerWidth());
+        btn.removeClass(btnClass);
+        btnClass = 'button-success-active';
+        btn.addClass(btnClass);
+        setTimeout(function() {
+          buttonReset(btn, btnChild, btnText, btnClass);
+        }, 2000);
+        return false;
+      } else if (msg === 'fail') {
+        // fail placeholder
+        console.log('fail');
+      }
+
+      buttonReset(btn, btnChild, btnText, btnClass);
+    }
+
+    function buttonReset (btn, btnChild, btnText, btnClass) {
+      console.log('reset');
       btnChild.text(btnText);
-      $(this).prop('disabled',false).css('min-width', 'auto').removeClass(btnClass)
+      btn.prop('disabled',false).css('min-width', 'auto').removeClass(btnClass);
     }
 
     $.busyButton.defaultOptions = {
