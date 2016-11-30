@@ -48,7 +48,7 @@ block content
     :md
         ### Success
     +exampleWithCode
-      include _buttons-dynamic
+      include _buttons-dynamic-success
 
     :md
       ## Script Include
@@ -61,7 +61,7 @@ block scripts
     $(window).on('dynamicButton.busy',function(e) {
       var msg = $(e.el).closest('.exampleWithCode').prev('h3').attr('id');
       setTimeout(function() {
-        $(e.el).trigger('buttonActionComplete', [msg])
+        $(e.el).trigger('buttonActionComplete', [msg, 2500])
       }, 3000);
     })
 
