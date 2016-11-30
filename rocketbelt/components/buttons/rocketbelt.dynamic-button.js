@@ -9,6 +9,8 @@
       base.opts = $.extend({}, $.dynamicButton.defaultOptions);
       base.opts.baseText = base.$el.text() || base.opts.baseText;
       base.opts.busyText = base.$el.data('busy-text') || base.opts.busyText;
+      base.opts.successText = base.$el.data('success-text') || base.opts.successText;
+      base.opts.failureText = base.$el.data('failure-text') || base.opts.failureText;
 
       function dynamicElements () {
         var textEl = '<span class="button-state-text">' + base.opts.baseText + '</span>';
@@ -24,26 +26,29 @@
 
       // Init Variables
       var baseText = base.opts.baseText;
-      var btnClass = base.opts.busyText ? 'button-busy button-busy-with-text' : 'button-busy';
+      // Because button has to go into a busy state first, we initilize btnClass with "busy" classes
+      var btnClass = base.opts.busyText ? 'button-busy button-state-with-text' : 'button-busy';
+      var baseWidth = base.$el.outerWidth();
 
       // Event attachment
       base.$el.on('click', function(e) {
-        buttonActionBusy.call(this, btnClass);
+        buttonActionBusy.call(this, btnClass, baseWidth);
       });
 
-      base.$el.on('buttonActionComplete', function(e, statusMsg) {
-        buttonActionComplete.call(this, statusMsg, btnClass, baseText);
+      base.$el.on('buttonActionComplete', function(e, statusMsg, customDelay) {
+        if (statusMsg === 'success') { var stateText = base.opts.successText}
+        if (statusMsg === 'failure') { var stateText = base.opts.failureText}
+        buttonActionComplete.call(this, statusMsg, customDelay, btnClass, baseWidth, baseText, stateText);
       });
 
     };
 
     base.init();
 
-    function buttonActionBusy(btnClass){
+    function buttonActionBusy(btnClass, baseWidth){
       // busyClass arg here is determined whether/not busy-state has text
       var btn = $(this),
-      textSlot = btn.find('button-state-text'),
-      baseWidth = btn.outerWidth();
+      textSlot = btn.find('.button-state-text');
       
       textSlot.text(base.opts.busyText ? base.opts.busyText : base.opts.baseText);
       btn.prop('disabled',true).css('min-width',baseWidth).addClass(btnClass);
@@ -54,33 +59,38 @@
        });
     }
 
-    function buttonActionComplete (statusMsg, btnClass, baseText) {
+    function buttonActionComplete (statusMsg, customDelay, btnClass, baseWidth, baseText, stateText) {
       var btn = $(this),
       btnStateIcon = btn.find('.button-state-icon'),
-      btnStateText = btn.find('button-state-text'),
-      delay = 0;
+      textSlot = btn.find('.button-state-text'),
+      delay = customDelay || 0;
 
       var recognizedMsg = ['success','failure'];
 
-      btnStateIcon.hide();
       btn.css('min-width',btn.outerWidth());
+      btnStateIcon.hide();
 
       if (recognizedMsg.indexOf(statusMsg) > -1) {
-        delay = 2000;
+        delay = customDelay || 2000;
+
         btn.removeClass(btnClass);
-        btnClass = 'button-' + statusMsg;
+        btnClass = stateText ? 'button-state-with-text' : '';
+        btnClass += ' button-' + statusMsg;
+
+        btn.css('min-width',baseWidth);
         btn.addClass(btnClass);
+        textSlot.text(stateText);
       }
 
       btnStateIcon.show();
 
       setTimeout(function() {
-        buttonReset(btn, btnClass, btnStateText, baseText)
+        buttonReset(btn, btnClass, textSlot, baseText)
       }, delay)
     }
 
-    function buttonReset (btn, btnClass, btnStateText, baseText) {
-      btnStateText.text(baseText);
+    function buttonReset (btn, btnClass, textSlot, baseText) {
+      textSlot.text(baseText);
       btn.prop('disabled',false).css('min-width', 'auto').removeClass(btnClass);
     }
 
