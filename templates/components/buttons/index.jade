@@ -40,24 +40,25 @@ block content
       include _buttons-block
 
     :md
-      ## Interactive
+      ## Dynamic
         ### Busy
     +exampleWithCode
-      include _buttons-busy
+      include _buttons-dynamic
 
     :md
         ### Success
     +exampleWithCode
-      include _buttons-success 
+      include _buttons-dynamic
 
     :md
       ## Script Include
     +exampleWithCode('html', true)
-      script(src='./rocketbelt.busy-button.min.js')
+      script(src='./rocketbelt.dynamic-button.min.js')
 
 block scripts
   script.
-    $(window).on('busyButton.click',function(e) {
+    $('button.button-dynamic').dynamicButton();
+    $(window).on('dynamicButton.click',function(e) {
       setTimeout(function() {
         $(e.el).trigger('buttonActionComplete', ['success'])
       }, 3000);

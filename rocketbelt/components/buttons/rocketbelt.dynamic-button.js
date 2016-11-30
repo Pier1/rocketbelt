@@ -1,12 +1,12 @@
 (function($) {
-  $.busyButton = function(el) {
+  $.dynamicButton = function(el) {
     var base = this;
     base.el = el;
     base.$el = $(el);
-    base.$el.data("busyButton", base);
+    base.$el.data("dynamicButton", base);
 
     base.init = function(){
-      base.opts = $.extend({}, $.busyButton.defaultOptions);
+      base.opts = $.extend({}, $.dynamicButton.defaultOptions);
       base.opts.baseText = base.$el.text() || base.opts.baseText;
       base.opts.busyText = base.$el.data('busy-text') || base.opts.busyText;
 
@@ -15,7 +15,7 @@
       (base.$el).empty().append(addEventEls)
 
       // Init Variables
-      var btnChild = (base.$el).children('.button-busy-text');
+      var btnChild = (base.$el).children('.button-state-text');
       var btnClass = base.opts.busyText ? 'button-busy button-busy-with-text' : 'button-busy';
 
       // Event attachment
@@ -30,8 +30,8 @@
     base.init();
 
     function addEventEls () {
-      var textEl = '<span class="button-busy-text">' + base.opts.baseText + '</span>';
-      var busyIcon = '<span class="button-busy-icon"></span>';
+      var textEl = '<span class="button-state-text">' + base.opts.baseText + '</span>';
+      var busyIcon = '<span class="button-state-icon"></span>';
       var newStructure = textEl + busyIcon;
 
       return newStructure;
@@ -47,7 +47,7 @@
 
         // Sample Event Trigger
         base.$el.trigger({
-            type: "busyButton.click",
+            type: "dynamicButton.click",
             el: base.el
         });
       }
@@ -57,12 +57,12 @@
       var btn = $(this);
 
       if (btn.hasClass('with-success') && msg === 'success') {
-        btn.find('.button-busy-icon').hide();
+        btn.find('.button-state-icon').hide();
         btn.css('min-width',btn.outerWidth());
         btn.removeClass(btnClass);
         btnClass = 'button-success-active';
         btn.addClass(btnClass);
-        btn.find('.button-busy-icon').show();
+        btn.find('.button-state-icon').show();
         setTimeout(function() {
           buttonReset(btn, btnChild, btnText, btnClass);
         }, 2000);
@@ -80,27 +80,27 @@
       btn.prop('disabled',false).css('min-width', 'auto').removeClass(btnClass);
     }
 
-    $.busyButton.defaultOptions = {
+    $.dynamicButton.defaultOptions = {
         baseText: '',
         busyText: null
     };
 
-    $.fn.busyButton = function(options){
-        var busyButton, method, methodResult;
+    $.fn.dynamicButton = function(options){
+        var dynamicButton, method, methodResult;
         if ( typeof options === 'string' ){
             method = options;
-            busyButton = this.data('busyButton');
-            if (busyButton) {
-                if (busyButton.methods[method]) {
-                    methodResult = busyButton.methods[method].apply(busyButton, Array.prototype.slice.call( arguments, 1 ) );
+            dynamicButton = this.data('dynamicButton');
+            if (dynamicButton) {
+                if (dynamicButton.methods[method]) {
+                    methodResult = dynamicButton.methods[method].apply(dynamicButton, Array.prototype.slice.call( arguments, 1 ) );
                 } else {
-                    console.warn('The method ' + method + ' does not exist in busyButton.');
+                    console.warn('The method ' + method + ' does not exist in dynamicButton.');
                 }
             }
             return methodResult || this;
         }
         return this.each(function(){
-            $.data(this, 'busyButton') || ( new $.busyButton(this, options) );
+            $.data(this, 'dynamicButton') || ( new $.dynamicButton(this, options) );
         });
     };
  
