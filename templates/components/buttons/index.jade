@@ -58,9 +58,10 @@ block content
 block scripts
   script.
     $('button.button-dynamic').dynamicButton();
-    $(window).on('dynamicButton.click',function(e) {
+    $(window).on('dynamicButton.busy',function(e) {
+      var msg = $(e.el).closest('.exampleWithCode').prev('h3').attr('id');
       setTimeout(function() {
-        $(e.el).trigger('buttonActionComplete', ['success'])
+        $(e.el).trigger('buttonActionComplete', [msg])
       }, 3000);
     })
 
