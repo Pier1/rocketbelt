@@ -99,7 +99,7 @@
   }
   @else if $style == dynamic {
     position: relative;
-    transition: opacity 0.5s ease;
+    transition: background-color, opacity 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
   }
   @else if $style == busy {
     .button-state-text {
@@ -142,29 +142,24 @@
     }
   }
   @else if $style == success {
-    position: relative;
-    transition: background-color, opacity 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    &.button-success-active {
+    background-color: color(success);
+    .button-state-text {
+      visibility: hidden;
+    }
+    .button-state-icon {
+      $color-fill: str-replace(quote(color(white)), '#', '%23');
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1.5em;
+      height: 1.5em;
+      background: url('data:image/svg+xml;utf8,<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="check" fill="#{$color-fill}"><polygon points="96 224.746667 0 132.608 29.7706667 101.994667 95.4346667 164.650667 225.674667 32 256 62.048"></polygon></g></g></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translate(-50%, -50%);
+    }
+    &:hover {
       background-color: color(success);
-      opacity: 1;
-      .button-busy-text {
-        visibility: hidden;
-      }
-      .button-busy-icon {
-        $color-fill: str-replace(quote(color(white)), '#', '%23');
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        width: 1.5em;
-        height: 1.5em;
-        background: url('data:image/svg+xml;utf8,<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="check" fill="#{$color-fill}"><polygon points="96 224.746667 0 132.608 29.7706667 101.994667 95.4346667 164.650667 225.674667 32 256 62.048"></polygon></g></g></svg>');
-        background-size: contain;
-        background-repeat: no-repeat;
-        transform: translate(-50%, -50%);
-      }
-      &:hover {
-        background-color: color(success);
-      }
     }
   }
 }
