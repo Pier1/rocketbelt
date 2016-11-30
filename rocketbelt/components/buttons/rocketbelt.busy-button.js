@@ -57,10 +57,12 @@
       var btn = $(this);
 
       if (btn.hasClass('with-success') && msg === 'success') {
+        btn.find('.button-busy-icon').hide();
         btn.css('min-width',btn.outerWidth());
         btn.removeClass(btnClass);
         btnClass = 'button-success-active';
         btn.addClass(btnClass);
+        btn.find('.button-busy-icon').show();
         setTimeout(function() {
           buttonReset(btn, btnChild, btnText, btnClass);
         }, 2000);
@@ -74,7 +76,6 @@
     }
 
     function buttonReset (btn, btnChild, btnText, btnClass) {
-      console.log('reset');
       btnChild.text(btnText);
       btn.prop('disabled',false).css('min-width', 'auto').removeClass(btnClass);
     }
