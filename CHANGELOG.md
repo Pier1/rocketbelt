@@ -1,3 +1,19 @@
+<a name="0.7.0"></a>
+# [0.7.0](https://github.com/Pier1/rocketbelt/compare/0.6.0...v0.7.0) (2016-11-21)
+
+
+### Bug Fixes
+
+* **Deployment:** Add files to be merged to gh-pages. ([a83bd88](https://github.com/Pier1/rocketbelt/commit/a83bd88))
+* **Grid:** Fix the grid example. ([ed18b94](https://github.com/Pier1/rocketbelt/commit/ed18b94))
+
+
+### Features
+
+* **Typography:** Update headers. Add font downloads. ([0fae280](https://github.com/Pier1/rocketbelt/commit/0fae280))
+
+
+
 <a name="0.6.0"></a>
 # [0.6.0](https://github.com/Pier1/rocketbelt/compare/0.5.0...v0.6.0) (2016-11-15)
 
