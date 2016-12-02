@@ -1,0 +1,19 @@
+engines:
+  scss-lint:
+    enabled: true
+  eslint:
+    enabled: true
+  duplication:
+    enabled: true
+  shellcheck:
+    enabled: true
+
+ratings:
+  paths:
+    - "**.js"
+    - "**.scss"
+
+exclude_paths:
+  - "**/vendor/**/*"
+  - "**/slipsum/**/*"
+  - "**/*.min.js"
