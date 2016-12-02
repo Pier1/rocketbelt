@@ -31,6 +31,7 @@
   color: color(gray, minus2);
   text-align: initial;
   transform: translate3d(0, 0, 0);
+  overflow: hidden;
 
   @include z-depth(2);
   @include media('>=md') {
@@ -43,7 +44,6 @@
   &.modal-is-opening,
   &.modal-is-closing {
     animation-duration: 0.3s;
-
     animation-fill-mode: forwards;
   }
 
@@ -57,35 +57,27 @@
 }
 
 .modal_header {
-  border-bottom: 1px solid color(gray, plus2);
-}
-
-.modal_header,
-.modal_body {
-  padding: padding(-2);
-}
-
-.modal_header .modal_header_text,
-.modal_body .modal_body_content {
-  padding: 0;
-}
-
-.modal_footer {
-  padding: padding(4) padding(0);
-  border-top: 1px solid color(gray, plus2);
-  background: color(gray, plus3);
-}
-
-
-.modal_header {
-  .col {
-    padding-bottom: 0;
+  border-bottom: 1px solid color(gray, plus3);
+  padding: padding(-8) padding(2);
+  & .modal_header_text.col {
+    padding: 0;
   }
 }
 
-.modal_header_close {
-  &.col {
-    flex-grow: 0;
+.modal_body {
+  padding: padding(4) padding(2) padding(-1) padding(2);
+  position: relative;
+  box-shadow: 0px 2px 2px rgba(0,0,0,.25);
+  & .modal_body_content.col {
+    padding: 0;
+  }
+}
+
+.modal_footer {
+  padding: padding(2) padding(0);
+  background: color(gray, plus4);
+  .modal_footer_buttons.col {
+    padding-bottom: 0;
   }
 }
 
@@ -96,34 +88,47 @@
 
 .modal_header_text {
   display: flex;
-
   justify-content: center;
-}
-
-.modal_header_close {
-  display: flex;
-  width: 44px;
-  height: 44px;
-  background: transparent;
-  cursor: pointer;
-  transition: color 0.2s;
-
-  justify-content: center;
-}
-
-
-.modal_header_close {
-  &:hover,
-  &:focus {
-    color: color(gray, plus2);
+  h2 {
+    font-weight: font-weight(normal);
   }
 }
 
-.modal_header_close::before {
-  display: block;
-  content: unicode(multiplication-sign);
-  font-size: ms(6);
-  line-height: 1;
+.modal_header_close {
+  text-align: center;
+  fill: color(black);
+  position: absolute;
+  z-index: $z-modal-close-button;
+  top: 0;
+  right: 0;
+  width: 44px;
+  height: 44px;
+  background: transparent;
+  font-weight: bold;
+  cursor: pointer;
+  transition: fill 0.2s;
+  justify-content: center;
+  vertical-align: middle;
+  &:hover,
+  &:focus {
+    fill: color(gray, plus2);
+  }
+  &:before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+  }
+  &.col {
+    flex-grow: 0;
+  }
+  & .icon {
+    display: inline-block;
+    vertical-align: middle;
+    margin: -10px -10px 0 0;
+    width: 16px;
+    height: 16px;
+  }
 }
 
 @keyframes modal-opening-keyframes {
