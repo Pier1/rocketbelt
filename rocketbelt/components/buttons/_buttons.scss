@@ -5,6 +5,7 @@
   font-weight: font-weight(demi);
   text-decoration: none;
   cursor: default;
+  border: 1px solid transparent;
   transition: color 100ms ease(),
               border 100ms ease(),
               background 100ms ease(),
@@ -21,8 +22,15 @@
     height: 1em;
     vertical-align: baseline;
     margin-right: $gutter-width/4;
-    margin-bottom: -0.1em;  /* I don't know why */
+    margin-bottom: -0.1em;  // I don't know why
   }
+}
+
+.button + .button,
+button + button,
+.button + button,
+button + .button {
+  margin-left: $gutter-width/2;
 }
 
 .button,
@@ -33,6 +41,10 @@
 
 .button-secondary {
   @include button-style(secondary);
+}
+
+.button-subtle {
+  border: 1px solid desaturate(color(primary, lighter), 50%);
 }
 
 .button-text {
@@ -47,8 +59,16 @@
   }
 }
 
+.button-dynamic {
+  @include button-style(dynamic);
+}
+
 .button-busy {
   @include button-style(busy);
+}
+
+.button-success {
+  @include button-style(success);
 }
 
 .button-sm {

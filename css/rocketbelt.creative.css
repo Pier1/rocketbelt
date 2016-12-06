@@ -497,19 +497,19 @@
   margin-left: 100%; }
 
 .row.xs-start {
-  -webkit-justify-content: inherit;
-      -ms-flex-pack: inherit;
-          justify-content: inherit; }
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
 
 .row.xs-center {
-  -webkit-justify-content: inherit;
-      -ms-flex-pack: inherit;
-          justify-content: inherit; }
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
 
 .row.xs-end {
-  -webkit-justify-content: inherit;
-      -ms-flex-pack: inherit;
-          justify-content: inherit; }
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
 
 .row.xs-top {
   -webkit-align-items: flex-start;
@@ -660,17 +660,17 @@
   .col.sm-offset-12 {
     margin-left: 100%; }
   .row.sm-start {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
   .row.sm-center {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .row.sm-end {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
   .row.sm-top {
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
@@ -816,17 +816,17 @@
   .col.md-offset-12 {
     margin-left: 100%; }
   .row.md-start {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
   .row.md-center {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .row.md-end {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
   .row.md-top {
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
@@ -972,17 +972,17 @@
   .col.lg-offset-12 {
     margin-left: 100%; }
   .row.lg-start {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
   .row.lg-center {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .row.lg-end {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
   .row.lg-top {
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
@@ -1128,17 +1128,17 @@
   .col.xl-offset-12 {
     margin-left: 100%; }
   .row.xl-start {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: flex-start;
+        -ms-flex-pack: start;
+            justify-content: flex-start; }
   .row.xl-center {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center; }
   .row.xl-end {
-    -webkit-justify-content: inherit;
-        -ms-flex-pack: inherit;
-            justify-content: inherit; }
+    -webkit-justify-content: flex-end;
+        -ms-flex-pack: end;
+            justify-content: flex-end; }
   .row.xl-top {
     -webkit-align-items: flex-start;
         -ms-flex-align: start;
