@@ -1,0 +1,67 @@
+extends /_layout
+
+block vars
+  - var title = 'Buttons'
+
+block content
+  article
+    h1 Buttons
+    h2 Primary
+    
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _buttons-primary
+    h2 Secondary
+      
+    .grid-fluid
+      .row
+        .col.xs
+          div
+            include _buttons-secondary
+      .row
+        .col.xs
+          div
+            include _buttons-subtle
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _buttons-secondary
+            include _buttons-subtle
+
+    h2 Text
+      
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _buttons-text
+    h2 Block
+
+    +exampleWithCode
+      include _buttons-block
+
+    h2 Dynamic
+    h3 Busy
+    +exampleWithCode
+      include _buttons-dynamic
+
+    h3 Success
+    +exampleWithCode
+      include _buttons-dynamic-success
+
+    h2 Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.dynamic-button.min.js')
+
+block scripts
+  script.
+    $('button.button-dynamic').dynamicButton();
+    $(window).on('dynamicButton.busy',function(e) {
+      var msg = $(e.el).closest('.exampleWithCode').prev('h3').attr('id');
+      setTimeout(function() {
+        $(e.el).trigger('buttonActionComplete', [msg, 2500])
+      }, 3000);
+    })
+
