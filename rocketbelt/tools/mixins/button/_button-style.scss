@@ -9,6 +9,7 @@
     color: $color;
 
     fill: $color;
+    min-width: 8rem;
     &:hover {
       background-color: $button-hover;
     }
@@ -35,6 +36,7 @@
     color: $color;
 
     fill: $color;
+    min-width: 8rem;
     &:hover {
       border-color: $button-hover;
       background: color(white);

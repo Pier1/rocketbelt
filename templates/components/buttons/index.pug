@@ -18,8 +18,17 @@ block content
     .grid-fluid
       .row
         .col.xs
-          +exampleWithCode
+          div
             include _buttons-secondary
+      .row
+        .col.xs
+          div
+            include _buttons-subtle
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _buttons-secondary
+            include _buttons-subtle
 
     h2 Text
       

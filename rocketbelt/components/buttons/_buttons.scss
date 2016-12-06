@@ -5,6 +5,7 @@
   font-weight: font-weight(demi);
   text-decoration: none;
   cursor: default;
+  border: 1px solid transparent;
   transition: color 100ms ease(),
               border 100ms ease(),
               background 100ms ease(),
@@ -25,6 +26,13 @@
   }
 }
 
+.button + .button,
+button + button,
+.button + button,
+button + .button {
+  margin-left: $gutter-width/2;
+}
+
 .button,
 .button-primary {
   @include button-size(md);
@@ -33,6 +41,10 @@
 
 .button-secondary {
   @include button-style(secondary);
+}
+
+.button-subtle {
+  border: 1px solid desaturate(color(primary, lighter), 50%);
 }
 
 .button-text {

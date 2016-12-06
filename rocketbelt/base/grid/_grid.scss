@@ -35,7 +35,6 @@ $gutter-compensation: -1 * $half-gutter-width;
 
 @mixin row-alignment-horizontal($alignment) {
   $justify: inherit;
-  justify-content: $justify;
 
   @if ($alignment == center) {
     $justify: center;
@@ -46,6 +45,7 @@ $gutter-compensation: -1 * $half-gutter-width;
   @elseif ($alignment == start) {
     $justify: flex-start;
   }
+  justify-content: $justify;
 }
 
 @mixin row-alignment-vertical($alignment) {
