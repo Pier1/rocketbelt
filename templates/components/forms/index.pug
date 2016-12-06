@@ -1,0 +1,77 @@
+extends /_layout
+
+block vars
+  - var title = 'Forms'
+
+block content
+  article
+    h1 Forms
+    h2 Standard Form Elements
+    .grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          include _forms-basic
+    .row
+      .col.xs
+        +exampleCodeOnly
+          include _forms-basic
+
+    //- h2 Sized Form Elements
+    //- .grid-fluid
+    //-   .row
+    //-     .col.xs-8.md-6.lg-4
+    //-       include _forms-sized
+    //-   .row
+    //-     .col.xs
+    //-       +exampleCodeOnly
+    //-         include _forms-sized
+
+    h2 Helper Text
+    .grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          include _forms-helper-text
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _forms-helper-text
+
+    h2 Required &amp; Optional Fields
+    .grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          include _forms-required-and-optional
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _forms-required-and-optional
+
+    h2 Inline Fields
+    .grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          include _forms-inline
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _forms-inline
+
+    h2 Disabled Styles
+    .grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          include _forms-disabled
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _forms-disabled
+
+    h2 Invalid Styles
+    .grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          include _forms-invalid
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _forms-invalid

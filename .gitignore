@@ -1,13 +1,13 @@
 # ====================================================
 # Ignore component symlinks (but not site-specific JS)
 # ====================================================
-templates/components/**/_*.jade
+templates/components/**/_*.pug
 templates/components/**/*.js
 templates/components/**/*.svg
-templates/base/**/_*.jade
+templates/base/**/_*.pug
 templates/base/**/*.js
 templates/base/**/*.json
-templates/creative/**/_*.jade
+templates/creative/**/_*.pug
 templates/creative/**/*.js
 templates/creative/**/*.json
 
