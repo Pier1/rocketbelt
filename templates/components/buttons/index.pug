@@ -7,15 +7,14 @@ block content
   article
     h1 Buttons
     h2 Primary
-
+    
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
             include _buttons-primary
-
     h2 Secondary
-
+      
     .grid-fluid
       .row
         .col.xs
@@ -23,31 +22,37 @@ block content
             include _buttons-secondary
 
     h2 Text
-
+      
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
             include _buttons-text
-
     h2 Block
 
     +exampleWithCode
       include _buttons-block
 
-    h2 Interactive
-
+    h2 Dynamic
+    h3 Busy
     +exampleWithCode
-      include _buttons-busy
+      include _buttons-dynamic
+
+    h3 Success
+    +exampleWithCode
+      include _buttons-dynamic-success
 
     h2 Script Include
     +exampleWithCode('html', true)
-      script(src='./rocketbelt.busy-button.min.js')
+      script(src='./rocketbelt.dynamic-button.min.js')
 
 block scripts
   script.
-    $(window).on('busyButton.click',function(e) {
+    $('button.button-dynamic').dynamicButton();
+    $(window).on('dynamicButton.busy',function(e) {
+      var msg = $(e.el).closest('.exampleWithCode').prev('h3').attr('id');
       setTimeout(function() {
-        $(e.el).trigger('buttonActionComplete')
+        $(e.el).trigger('buttonActionComplete', [msg, 2500])
       }, 3000);
     })
+
