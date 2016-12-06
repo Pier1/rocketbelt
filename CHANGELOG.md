@@ -1,3 +1,13 @@
+<a name="1.0.0"></a>
+# [1.0.0](https://github.com/Pier1/rocketbelt/compare/0.7.0...v1.0.0) (2016-12-06)
+
+
+### Features
+
+* **Build:** Add configs for CodeClimate ([f458089](https://github.com/Pier1/rocketbelt/commit/f458089))
+
+
+
 <a name="0.7.0"></a>
 # [0.7.0](https://github.com/Pier1/rocketbelt/compare/0.6.0...v0.7.0) (2016-11-21)
 
