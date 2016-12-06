@@ -3,7 +3,9 @@
     .row.modal_header
       .col.xs.modal_header_text
         h2 Heat up your room—or your holiday scene
-      .col.xs.modal_header_close(data-modal-action='close')
+      .modal_header_close(data-modal-action='close')
+          svg.icon
+            use(xlink:href='#{iconsPath}#rb-icon-close')
     .row.modal_body
       .col.xs.modal_body_content
         p.
@@ -33,8 +35,8 @@
           reminiscent of suggesting you please. What’ll it when you might 
           call progress.
 
-    .row.xs-end.modal_footer
-      .col.xs
-        button.button-md.button-secondary(data-modal-action='cancel') Cancel
-      .col.xs
+    .row.modal_footer.xs-around.md-end
+      .col.modal_footer_buttons.xs-6.sm-4.md-3.lg-2
+        button.button-md.button-secondary.button-subtle(data-modal-action='cancel') Cancel
+      .col.modal_footer_buttons.xs-6.sm-4.md-3.lg-2
         button.button-md.button-primary(data-modal-action='confirm') OK

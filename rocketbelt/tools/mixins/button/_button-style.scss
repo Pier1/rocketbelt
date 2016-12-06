@@ -9,12 +9,17 @@
     $color: mix(color(white), $button-base, 90%);
     color: $color;
     fill: $color;
+    min-width: 8rem;
     &:hover {
       background-color: $button-hover;
     }
 
     &:active {
       background-color: $button-active;
+    }
+
+    &:visited {
+      color: $color;
     }
 
     &[disabled] {
@@ -33,12 +38,16 @@
     $color: mix(color(white), $button-base, 10%);
     color: $color;
     fill: $color;
+    min-width: 8rem;
 
     &:hover {
       border-color: $button-hover;
       background: color(white);
       color: $button-hover;
       fill: $button-hover;
+    }
+    &:visited {
+      color: $color;
     }
 
     &:active {
@@ -63,7 +72,10 @@
     background: transparent;
     color: color(primary);
     fill: color(primary);
-
+    &:visited {
+      color: color(primary);
+    }
+    
     &:hover {
       $c: scale-color(color(primary), $lightness: 10%);
       border-color: $c;

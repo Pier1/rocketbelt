@@ -1,8 +1,18 @@
+// These belong in a settings file with overrides at the component level
+$z-modal: 10000 !default;
+$z-modal-overlay: $z-modal - 1 !default;
+$z-modal-max-header: $z-modal + 10 !default;
+$z-modal-close-button: $z-modal + 20 !default;
+
 html {
-  .modal-is-locked {
+  &.modal-is-locked {
+    body {
+      overflow: hidden;
+    }
     overflow: hidden;
     touch-action: none;
   }
+
 }
 
 // Anti FOUC
@@ -17,7 +27,7 @@ html {
   right: -5000px;
   bottom: -5000px;
   left: -5000px;
-  z-index: 9999;
+  z-index: $z-modal-overlay;
   display: none;
 }
 
@@ -27,7 +37,7 @@ html {
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 10000;
+  z-index: $z-modal;
   display: none;
   overflow: auto;
   -webkit-overflow-scrolling: touch;
@@ -50,7 +60,6 @@ html {
 .modal {
   position: relative;
   outline: none;
-
   text-size-adjust: 100%;
 }
 
