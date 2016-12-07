@@ -33,8 +33,7 @@
         "right",
         "bottom",
         "left",
-        "z-index"
-      ],[
+        "z-index",
         "display",
         "visibility",
         "-webkit-flex-direction",
