@@ -12,12 +12,15 @@ rules:
   empty-args: 0
   force-pseudo-nesting: 0
   brace-style: 0
+  no-trailing-whitespace: 0
+  empty-line-between-blocks: 0
   no-url-protocols: 0
   shorthand-values: 0
   indentation: 0
   property-sort-order:
     - 1
     - order:
+        - $include
         - $variable
         - position
         - top
@@ -78,8 +81,8 @@ rules:
         - min-height
         - max-width
         - max-height
-        - height
         - width
+        - height
         - outline
         - outline-width
         - outline-style
