@@ -1,0 +1,20 @@
+form
+  .form-group
+    input#basic-fname.field-large(type='text')
+    label(for='basic-fname') First Name
+  .form-group
+    input#basic-email.field-large(type='email')
+    label(for='basic-email') Email Address
+  .form-group
+    input#basic-tel.field-small(type='tel')
+    label(for='basic-tel') Phone Number
+  .form-group
+    input#basic-password.field-medium(type='password')
+    label(for='basic-password') Password
+  .form-group
+    select#basic-select.field-auto
+      option(value='', disabled=true, selected=true, hidden=true) Select a collection
+      option Biblioteca
+      option Marcel
+      option Pierce
+    label(for='basic-select') Collection

@@ -50,6 +50,26 @@ h6 {
   font-size: font-size(0);
 }
 
+.heading-group {
+  .preheading, .heading, .subheading { 
+    display: block; 
+    line-height: 1.1
+  }
+  .preheading { 
+    font-size: font-size(0); }
+  .heading { 
+    font-size: font-size(4); }
+  .subheading { 
+    font-size: font-size(2); 
+  }
+
+  &.display {
+    text-align: center;
+    .preheading { font-style: italic; }
+    .subheading { text-transform: uppercase; }
+  }
+}
+
 @include media('>=md') {
   h1 {
     font-size: font-size(4);
