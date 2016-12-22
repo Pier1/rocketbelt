@@ -1,3 +1,8 @@
+@import 'node_modules/modularscale-sass/stylesheets/_modular-scale';
+// Needed to establish the scale before the typography partial is built.
+$ms-base: 1rem;
+$ms-ratio: 1.125;
+
 @import 'debug/debug',
         'font/font',
         'color',
