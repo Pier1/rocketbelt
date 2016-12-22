@@ -43,10 +43,6 @@ button + .button {
   @include button-style(secondary);
 }
 
-.button-subtle {
-  border: 1px solid desaturate(color(primary, lighter), 50%);
-}
-
 .button-text {
   @include button-style(text);
   cursor: pointer;

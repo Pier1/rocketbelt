@@ -1397,6 +1397,26 @@ h6 {
   margin: 0;
   font-size: 1rem; }
 
+.heading-group .preheading, .heading-group .heading, .heading-group .subheading {
+  display: block;
+  line-height: 1.1; }
+
+.heading-group .preheading {
+  font-size: 1rem; }
+
+.heading-group .heading {
+  font-size: 1.60181rem; }
+
+.heading-group .subheading {
+  font-size: 1.26562rem; }
+
+.heading-group.display {
+  text-align: center; }
+  .heading-group.display .preheading {
+    font-style: italic; }
+  .heading-group.display .subheading {
+    text-transform: uppercase; }
+
 @media (min-width: 48rem) {
   h1 {
     font-size: 1.60181rem; }

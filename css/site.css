@@ -1879,6 +1879,26 @@ h6 {
   margin: 0;
   font-size: 1rem; }
 
+.heading-group .preheading, .heading-group .heading, .heading-group .subheading {
+  display: block;
+  line-height: 1.1; }
+
+.heading-group .preheading {
+  font-size: 1rem; }
+
+.heading-group .heading {
+  font-size: 1.60181rem; }
+
+.heading-group .subheading {
+  font-size: 1.26562rem; }
+
+.heading-group.display {
+  text-align: center; }
+  .heading-group.display .preheading {
+    font-style: italic; }
+  .heading-group.display .subheading {
+    text-transform: uppercase; }
+
 @media (min-width: 48rem) {
   h1 {
     font-size: 1.60181rem; }
@@ -2347,34 +2367,29 @@ button + .button {
       background-color: #1492d9; }
 
 .button-secondary {
-  border: 0.1rem solid #1492d9;
   background: #fefdfd;
   background-image: none;
   color: #2b9ddd;
   fill: #2b9ddd;
   min-width: 8rem; }
   .button-secondary:hover {
-    border-color: #1ea1ea;
     background: #fefdfd;
     color: #1ea1ea;
     fill: #1ea1ea; }
   .button-secondary:visited {
     color: #2b9ddd; }
   .button-secondary:active {
-    border-color: #1283c3;
-    background: #fefdfd;
+    border: 0.1rem solid #dbe6ed;
     color: #1283c3;
-    fill: #1283c3; }
+    fill: #1283c3;
+    background: #fefdfd; }
   .button-secondary[disabled] {
+    border: 0.1rem solid #dbe6ed;
     color: rgba(43, 157, 221, 0.9);
     fill: rgba(43, 157, 221, 0.9); }
     .button-secondary[disabled]:hover {
-      border-color: #2b9ddd;
       color: #1492d9;
       fill: #1492d9; }
-
-.button-subtle {
-  border: 1px solid #92b5c8; }
 
 .button-text {
   background: transparent;
@@ -2384,7 +2399,6 @@ button + .button {
   .button-text:visited {
     color: #1492d9; }
   .button-text:hover {
-    border-color: #1ea1ea;
     color: #1ea1ea;
     fill: #1ea1ea; }
   .button-text:active {
@@ -2420,9 +2434,12 @@ button + .button {
           -ms-flex: 1 0 auto;
               flex: 1 0 auto;
       overflow: hidden;
-      text-overflow: ellipsis; }
+      text-overflow: ellipsis;
+      overflow: hidden;
+      flex: 1 0 auto; }
     .button-dynamic.button-state-with-text .button-state-icon {
       position: relative;
+      width: auto;
       top: auto;
       left: auto;
       -webkit-flex: 0 0 1em;
@@ -2432,7 +2449,9 @@ button + .button {
       width: auto;
       -webkit-transform: none;
           -ms-transform: none;
-              transform: none; }
+              transform: none;
+      margin-left: 1em;
+      flex: 0 0 1em; }
 
 .button-busy .button-state-text {
   visibility: hidden; }
@@ -4745,7 +4764,6 @@ p code,
     min-width: 8rem;
     padding: 0.30795rem 1.125rem;
     font-size: 0.79012rem;
-    border: 0.1rem solid #1492d9;
     background: #fefdfd;
     background-image: none;
     color: #2b9ddd;
@@ -4759,22 +4777,21 @@ p code,
     opacity: 0.66;
     transition: opacity 100ms linear; }
     .example-code .copy-code:hover {
-      border-color: #1ea1ea;
       background: #fefdfd;
       color: #1ea1ea;
       fill: #1ea1ea; }
     .example-code .copy-code:visited {
       color: #2b9ddd; }
     .example-code .copy-code:active {
-      border-color: #1283c3;
-      background: #fefdfd;
+      border: 0.1rem solid #dbe6ed;
       color: #1283c3;
-      fill: #1283c3; }
+      fill: #1283c3;
+      background: #fefdfd; }
     .example-code .copy-code[disabled] {
+      border: 0.1rem solid #dbe6ed;
       color: rgba(43, 157, 221, 0.9);
       fill: rgba(43, 157, 221, 0.9); }
       .example-code .copy-code[disabled]:hover {
-        border-color: #2b9ddd;
         color: #1492d9;
         fill: #1492d9; }
     .example-code .copy-code:hover {

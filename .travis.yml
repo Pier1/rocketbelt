@@ -34,7 +34,7 @@ deploy:
   on:
     repo: Pier1/rocketbelt
     branch: master
-    tags: true
+    tags: false
 
 notifications:
   slack:
