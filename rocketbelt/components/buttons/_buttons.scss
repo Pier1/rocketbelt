@@ -55,8 +55,16 @@ button + .button {
   }
 }
 
+.button-dynamic {
+  @include button-style(dynamic);
+}
+
 .button-busy {
   @include button-style(busy);
+}
+
+.button-success {
+  @include button-style(success);
 }
 
 .button-sm {
