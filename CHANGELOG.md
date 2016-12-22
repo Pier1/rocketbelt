@@ -1,3 +1,8 @@
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/Pier1/rocketbelt/compare/1.0.2...v1.0.3) (2016-12-22)
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/Pier1/rocketbelt/compare/0.7.0...v1.0.0) (2016-12-06)
 
