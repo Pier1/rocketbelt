@@ -32,7 +32,6 @@
     }
   }
   @else if $style == secondary {
-    border: 0.1rem solid $button-base;
     background: color(white);
     background-image: none;
     $color: mix(color(white), $button-base, 10%);
@@ -41,7 +40,6 @@
     min-width: 8rem;
 
     &:hover {
-      border-color: $button-hover;
       background: color(white);
       color: $button-hover;
       fill: $button-hover;
@@ -50,19 +48,19 @@
       color: $color;
     }
 
-    &:active {
-      border-color: $button-active;
+    &:active { 
+      border: 0.1rem solid desaturate(color(primary, lightest), 50%);
       color: $button-active;
       fill: $button-active;
       background: color(white);
     }
 
     &[disabled] {
+      border: 0.1rem solid desaturate(color(primary, lightest), 50%);
       color: rgba($color, 0.9);
       fill: rgba($color, 0.9);
 
-      &:hover {
-        border-color: $color;
+      &:hover {  
         color: $button-base;
         fill: $button-base;
       }
@@ -78,7 +76,6 @@
     
     &:hover {
       $c: scale-color(color(primary), $lightness: 10%);
-      border-color: $c;
       color: $c;
       fill: $c;
     }
