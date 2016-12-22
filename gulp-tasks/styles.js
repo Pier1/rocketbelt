@@ -6,7 +6,7 @@
       var source = gulp.src([config.patternsPath + '/**/*.scss', config.templatesPath + '/scss/**/*.scss'])
         .pipe(plugins.plumber({ errorHandler: plugins.notify.onError('Error: <%= error.message %>') }))
         .pipe(plugins.sourcemaps.init())
-        .pipe(plugins.sass(plugins.eyeglass()))
+        .pipe(plugins.sass())
         .pipe(plugins.autoprefixer({
           browsers: ['last 5 Chrome versions',
                      'last 5 Firefox versions',
