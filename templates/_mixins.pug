@@ -114,17 +114,17 @@ mixin buildNav(navObject, rootHref)
 mixin colorPicker(target, val, type)
   - var prefix = type === 'background' ? 'bg_' : 'fg_';
   - var obj = colorFamilies;
-  div.cp_wrapper.playground-item(type="list", data-target="#{target}", data-property="class", value="#{val}")
+  div.cp_wrapper.playground-item(type="list", data-target=target, data-property="class", value=val)
     div.cp_eyedropper
     div.cp_grid.visuallyhidden
       each family in obj
         each color in family.variants
           if (family.familyName === 'white')
-            span(class="playground-list_item bg_#{family.familyName} color-w-border", title="#{color.colorName}", value="#{prefix}#{family.familyName}")
+            span(class="playground-list_item bg_" + family.familyName + " color-w-border", title=color.colorName, value=prefix + family.familyName)
           else if (color.variant === 'base')
-            span(class="playground-list_item bg_#{family.familyName}", title="#{color.colorName}", value="#{prefix}#{family.familyName}")
+            span(class="playground-list_item bg_" + family.familyName, title=color.colorName, value=prefix + family.familyName)
           else
-            span(class="playground-list_item bg_#{family.familyName}-#{color.variant}", title="#{color.colorName}", value="#{prefix}#{family.familyName}-#{color.variant}")
+            span(class="playground-list_item bg_" + family.familyName + "-" + color.variant, title=color.colorName, value=prefix + family.familyName + "-" + color.variant)
 
 
 mixin footnoteTerm(name, annotateOnly)
