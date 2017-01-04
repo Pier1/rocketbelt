@@ -1,10 +1,11 @@
 .nav-menu {
-  display: block;
   position: relative;
-  list-style: none;
+  z-index: 15;
+  display: block;
   margin: 0;
   padding: 0;
-  z-index: 15;
+
+  list-style: none;
 
   & a:focus {
     outline-width: 2px;
@@ -15,62 +16,61 @@
 
 // Top-level nav item
 .nav-item {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
   outline-width: 3px;
   outline-color: color(primary);
 
   list-style: none;
-  display: inline-block;
-  padding: 0;
-  margin: 0;
 }
 
 // Descendant link within a top-level nav item
 .nav-item > a {
   position: relative;
   display: inline-block;
-  padding: 0.5em 1em;
   margin: 0 0 -1px 0;
+  padding: 0.5rem 1rem;
   border: 1px solid transparent;
 
   &:focus,
   &.open {
-    border: 1px solid #dedede;
+    border: 1px solid color(gray, plus3);
   }
 
   &.open {
-    background-color: #fff;
-    border-bottom: none;
     z-index: 1;
+    border-bottom: none;
+    background-color: color(white);
   }
 }
 
 // Sub-nav panel
 .sub-nav {
   position: absolute;
-  display: none;
   top: 2.6em;
+  display: none;
   margin-top: -1px;
   padding: 0.5em 1em;
-  border: 1px solid #dedede;
-  background-color: #fff;
+  border: 1px solid color(gray, plus3);
+  background-color: color(white);
 
   &.open {
     display: block;
   }
-}
 
-// Sub-nav items
-.sub-nav .sub-nav-group {
+  .sub-nav-group {
     display: inline-block;
-    vertical-align: top;
-    margin: 0 1em 0 0;
+    margin: 0 1rem 0 0;
     padding: 0;
-}
+    vertical-align: top;
+  }
 
-/* list item within sub-navigation panel */
-.sub-nav li {
+  li {
     display: block;
     list-style-type: none;
     margin: 0;
     padding: 0;
+  }
 }
