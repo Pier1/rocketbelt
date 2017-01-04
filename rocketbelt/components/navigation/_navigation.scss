@@ -4,13 +4,30 @@
   display: block;
   margin: 0;
   padding: 0;
-
   list-style: none;
+  font-size: font-size(-1);
 
-  & a:focus {
-    outline-width: 2px;
-    outline-color: color(primary);
-    outline-offset: 0;
+
+  & a {
+    color: color(gray, minus1);
+    text-decoration: none;
+
+    &:visited {
+      color: color(gray, minus1);
+    }
+    &:hover {
+      color: color(gray, plus1);
+    }
+
+    &:active {
+      color: color(gray, minus1);
+    }
+
+    &:focus {
+      outline-width: 2px;
+      outline-color: color(primary);
+      outline-offset: 0;
+    }
   }
 }
 
@@ -61,7 +78,6 @@
 
   .sub-nav-group {
     display: inline-block;
-    margin: 0 1rem 0 0;
     padding: 0;
     vertical-align: top;
   }
