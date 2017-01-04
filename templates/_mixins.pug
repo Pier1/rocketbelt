@@ -17,7 +17,7 @@ mixin wrapInExpander(collapsedLabel, expandedLabel, expanded, id)
   - collapsedLabel = collapsedLabel || 'Show';
   - expandedLabel  = expandedLabel  || 'Hide';
 
-  - var hashedId = shorthash.unique(id);
+  - var hashedId = 'rb-' + shorthash.unique(id);
 
   .expander
     input(type='checkbox', id=hashedId, class='expander_checkbox', checked=expanded)
@@ -33,7 +33,7 @@ mixin exampleWithCode(labelText, expanded, inverted)
   - inverted = inverted || false;
   - if (labelText === 'js') labelText = 'javascript';
   - var seed = escape(block);
-  - var id   = shorthash.unique(seed);
+  - var id   = 'rb-' + shorthash.unique(seed);
 
   - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
   .exampleWithCode
@@ -56,7 +56,7 @@ mixin exampleCodeOnly(labelText, expanded, inverted)
   - inverted = inverted || false;
   - if (labelText === 'js') labelText = 'javascript';
   - var seed = escape(block);
-  - var id   = shorthash.unique(seed);
+  - var id   = 'rb-' + shorthash.unique(seed);
 
   - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
   .exampleWithCode
