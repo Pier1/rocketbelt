@@ -49,10 +49,9 @@
 // Sub-nav panel
 .sub-nav {
   position: absolute;
-  top: 2.6em;
   display: none;
-  margin-top: -1px;
-  padding: 0.5em 1em;
+  margin-top: 1px; // Compensate for border width
+  padding: 0.5rem 1rem;
   border: 1px solid color(gray, plus3);
   background-color: color(white);
 
