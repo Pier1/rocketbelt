@@ -13,6 +13,20 @@ block content
         .col.xs
           +exampleWithCode
             include _navigation-xl
+          +exampleWithCode('Script')
+            script.
+              $(document).ready(function () {
+                $('#main-nav').accessibleMegaMenu({
+                  uuidPrefix: 'rb-navigation',
+                  menuClass: 'nav-menu',
+                  topNavItemClass: 'nav-item',
+                  panelClass: 'sub-nav',
+                  panelGroupClass: 'sub-nav-group',
+                  hoverClass: 'hover',
+                  focusClass: 'focus',
+                  openClass: 'open'
+                })
+              });
 
     h3 Script Include
     +exampleWithCode('html', true)
