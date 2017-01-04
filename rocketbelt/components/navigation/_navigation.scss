@@ -1,0 +1,76 @@
+.nav-menu {
+  display: block;
+  position: relative;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 15;
+
+  & a:focus {
+    outline-width: 2px;
+    outline-color: color(primary);
+    outline-offset: 0;
+  }
+}
+
+// Top-level nav item
+.nav-item {
+  outline-width: 3px;
+  outline-color: color(primary);
+
+  list-style: none;
+  display: inline-block;
+  padding: 0;
+  margin: 0;
+}
+
+// Descendant link within a top-level nav item
+.nav-item > a {
+  position: relative;
+  display: inline-block;
+  padding: 0.5em 1em;
+  margin: 0 0 -1px 0;
+  border: 1px solid transparent;
+
+  &:focus,
+  &.open {
+    border: 1px solid #dedede;
+  }
+
+  &.open {
+    background-color: #fff;
+    border-bottom: none;
+    z-index: 1;
+  }
+}
+
+// Sub-nav panel
+.sub-nav {
+  position: absolute;
+  display: none;
+  top: 2.6em;
+  margin-top: -1px;
+  padding: 0.5em 1em;
+  border: 1px solid #dedede;
+  background-color: #fff;
+
+  &.open {
+    display: block;
+  }
+}
+
+// Sub-nav items
+.sub-nav .sub-nav-group {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 1em 0 0;
+    padding: 0;
+}
+
+/* list item within sub-navigation panel */
+.sub-nav li {
+    display: block;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+}

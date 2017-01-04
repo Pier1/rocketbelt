@@ -1,0 +1,19 @@
+extends /_layout
+
+block vars
+  - var title = 'Navigation'
+
+block content
+  article
+    h1 Navigation
+
+    h2 Wide Viewports
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _navigation-xl
+
+    h3 Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.navigation-xl.min.js')

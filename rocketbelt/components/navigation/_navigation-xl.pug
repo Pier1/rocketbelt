@@ -1,0 +1,41 @@
+nav#main-nav
+  ul.nav-menu
+    li.nav-item
+      a(href='#') Category 1
+      .sub-nav
+        ul.sub-nav-group
+          li
+            a(href='#') Subcategory 1.1
+          li
+            a(href='#') Subcategory 1.2
+          li
+            a(href='#') Subcategory 1.3
+          li
+            a(href='#') Subcategory 1.4
+    li.nav-item
+      a(href='#') Category 2
+      .sub-nav
+        ul.sub-nav-group
+          li
+            a(href='#') Subcategory 2.1
+          li
+            a(href='#') Subcategory 2.2
+          li
+            a(href='#') Subcategory 2.3
+          li
+            a(href='#') Subcategory 2.4
+
++exampleWithCode
+  script.
+    $(document).ready(function () {
+      $('#main-nav').accessibleMegaMenu({
+        uuidPrefix: 'rb-navigation',
+        menuClass: 'nav-menu',
+        topNavItemClass: 'nav-item',
+        panelClass: 'sub-nav',
+        panelGroupClass: 'sub-nav-group',
+        hoverClass: 'hover',
+        focusClass: 'focus',
+        openClass: 'open'
+      })
+    });
