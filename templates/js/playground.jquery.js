@@ -27,6 +27,7 @@
                 base.$el.on('click', ".playground-list_item", updateTarget);
             } else {
                 base.initText();
+                base.$el.html(base.$el[0].getAttribute('value'));
                 base.$el.on('input', updateTarget);
             }
             
@@ -93,6 +94,7 @@
 
         function updateTarget(){
         	var val, display, idx;
+
 
         	if ( arguments[0].type === 'input' || arguments[0].type === 'change' || arguments[0].type === 'click') {
         		idx = arguments[0].currentTarget.value || arguments[0].currentTarget.getAttribute('value');
