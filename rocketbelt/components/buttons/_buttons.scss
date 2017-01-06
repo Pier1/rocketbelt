@@ -1,11 +1,10 @@
 %button-static-props {
-  border: none;
+  border: 1px solid transparent;
+  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   font-weight: font-weight(demi);
-  text-decoration: none;
   cursor: default;
-  border: 1px solid transparent;
   transition: color 100ms ease(),
               border 100ms ease(),
               background 100ms ease(),
@@ -14,15 +13,12 @@
 
   @include button-shadow;
 
-  &:focus {
-    outline: 0;
-  }
   svg {
+    margin-right: $gutter-width / 4;
+    margin-bottom: -0.1em;  // I don't know why
     width: 1em;
     height: 1em;
     vertical-align: baseline;
-    margin-right: $gutter-width/4;
-    margin-bottom: -0.1em;  // I don't know why
   }
 }
 
@@ -30,7 +26,7 @@
 button + button,
 .button + button,
 button + .button {
-  margin-left: $gutter-width/2;
+  margin-left: $gutter-width / 2;
 }
 
 .button,
@@ -112,6 +108,6 @@ button + .button {
 
 @keyframes spin {
   0%   { transform: rotate(0deg); }
-
+(??)  
   100% { transform: rotate(360deg); }
 }
