@@ -1854,8 +1854,6 @@ body {
 
 p {
   margin-top: 0; }
-  p:last-of-type {
-    margin-bottom: 0; }
 
 h1 {
   margin: 0;
@@ -2307,13 +2305,12 @@ ul.horizontal li {
 
 .button,
 .button-primary, .button-sm, .button-md, .button-lg, .example-code .copy-code {
-  border: none;
+  border: 1px solid transparent;
+  text-decoration: none;
   text-transform: uppercase;
   letter-spacing: 0.05rem;
   font-weight: 600;
-  text-decoration: none;
   cursor: default;
-  border: 1px solid transparent;
   transition: color 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), border 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), background 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), box-shadow 100ms ease-out, opacity 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .button:hover,
@@ -2322,16 +2319,13 @@ ul.horizontal li {
   .button:active,
   .button-primary:active, .button-sm:active, .button-md:active, .button-lg:active, .example-code .copy-code:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  .button:focus,
-  .button-primary:focus, .button-sm:focus, .button-md:focus, .button-lg:focus, .example-code .copy-code:focus {
-    outline: 0; }
   .button svg,
   .button-primary svg, .button-sm svg, .button-md svg, .button-lg svg, .example-code .copy-code svg {
+    margin-right: 0.25rem;
+    margin-bottom: -0.1em;
     width: 1em;
     height: 1em;
-    vertical-align: baseline;
-    margin-right: 0.25rem;
-    margin-bottom: -0.1em; }
+    vertical-align: baseline; }
 
 .button + .button,
 button + button,
@@ -2513,7 +2507,7 @@ button + .button {
 .button-block {
   display: block;
   width: 100%; }
-  .button-block:active {
+  .button-block.button-secondary:active {
     background: rgba(243, 242, 242, 0.6);
     transition: background 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
   .button-block, .button-block:active, .button-block:hover {
@@ -3679,6 +3673,76 @@ html.modal-is-locked {
     opacity: 1; }
   to {
     opacity: 0; } }
+
+.nav-menu {
+  position: relative;
+  z-index: 15;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: 0.79012rem; }
+  .nav-menu a {
+    color: #686262;
+    text-decoration: none; }
+    .nav-menu a:visited {
+      color: #686262; }
+    .nav-menu a:hover {
+      color: #9b9595; }
+    .nav-menu a:active {
+      color: #686262; }
+    .nav-menu a:focus {
+      outline-width: 2px;
+      outline-color: #1492d9;
+      outline-offset: 0; }
+
+.nav-item {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+  outline-width: 3px;
+  outline-color: #1492d9;
+  list-style: none; }
+
+.nav-item > a {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 -1px 0;
+  padding: 0.79012rem 1rem;
+  border: 1px solid transparent; }
+  .nav-item > a:focus, .nav-item > a.open {
+    border: 1px solid #e6e5e5; }
+  .nav-item > a.open {
+    z-index: 1;
+    border-bottom: none;
+    background-color: #fefdfd; }
+
+.sub-nav {
+  position: absolute;
+  display: none;
+  margin-top: 1px;
+  padding: 0.88889rem;
+  border: 1px solid #e6e5e5;
+  background-color: #fefdfd;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .sub-nav.wide {
+    left: 3%;
+    width: 94%; }
+    .sub-nav.wide .row {
+      margin: 0; }
+    .sub-nav.wide .col {
+      padding: 0; }
+  .sub-nav.open {
+    display: block; }
+  .sub-nav .sub-nav-group {
+    display: inline-block;
+    padding: 0;
+    vertical-align: top; }
+  .sub-nav li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none; }
 
 .radio-group.radio-group-chunky li {
   display: -webkit-flex;

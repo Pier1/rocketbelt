@@ -123,6 +123,8 @@
               </li>
               <li class="category" ref="modals"><a href="../../components/modals">Modals</a>
               </li>
+              <li class="category" ref="navigation"><a href="../../components/navigation">Navigation</a>
+              </li>
               <li class="category" ref="radio-buttons"><a href="../../components/radio-buttons">Radio Buttons</a>
               </li>
               <li class="category" ref="tabcordions"><a href="../../components/tabcordions">Tabcordions</a>
@@ -188,12 +190,12 @@
                           </div>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="ZifFMe"/>
-                          <label class="expander_label" for="ZifFMe" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1isAy0"/>
+                          <label class="expander_label" for="rb-Z1isAy0" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#Z1MKYRB">Copy</button>
-                              <pre><code class="language-html" id="Z1MKYRB">
+                              <button class="copy-code" data-clipboard-target="#rb-Z1MKYRB">Copy</button>
+                              <pre><code class="language-html" id="rb-Z1MKYRB">
                                   &lt;div class=&quot;copyable-inner&quot;&gt;
                                     &lt;div class=&quot;seo-banner&quot;&gt;
                                       &lt;div class=&quot;seo-banner_title&quot;&gt;&lt;/div&gt;
@@ -207,23 +209,45 @@
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col xs">
+                    <div class="col xs-12 sm-6">
                       <div class="playground-control">
                         <label for="seo_title">SEO Title:
-                          <input class="playground-item" id="seo_title" data-target=".seo-banner_title" type="text" value="Pillows &amp; Cushions">
+                          <textarea class="playground-item" id="seo_title" data-target=".seo-banner_title" type="text" value="Pillows &amp; Cushions"></textarea>
                         </label>
                       </div>
                     </div>
-                    <div class="col xs">
+                    <div class="col xs-12 sm-6">
                       <div class="playground-control">
                         <label for="seo_copy">SEO Copy:
-                          <input class="playground-item" id="seo_copy" data-target=".seo-banner_copy" type="text" value="Have a soft spot for comfy, cushiony throw pillows? We do, too. With our selection of decorative pillows in textured, embellished, solid and patterned designs, adding the final flourish to your look is simple. And don’t forget about outdoor pillows, featuring UV-treated fabric. Toss in a new pillow or two today.">
+                          <textarea class="playground-item" id="seo_copy" data-target=".seo-banner_copy" type="text" value="Have a soft spot for comfy, cushiony throw pillows? We do, too. With our selection of decorative pillows in textured, embellished, solid and patterned designs, adding the final flourish to your look is simple. And don’t forget about outdoor pillows, featuring UV-treated fabric. Toss in a new pillow or two today."></textarea>
                         </label>
                       </div>
                     </div>
                   </div>
                 </div>
               </article>
+              <style type="text/css">
+                 .col.xs-6 {
+                   padding: 1em;
+                 }
+                 #seo_copy, #seo_title {
+                   display:flex;
+                   align-items:center;
+                   width:100%;
+                   max-width:100%;
+                }
+                
+                #seo_copy {
+                   min-height:160px;
+                }
+                
+                .copyable-inner {
+                   /* simulates actual width on desktop pier1.com */
+                   max-width: 739px;
+                   margin: 0 auto;
+                }
+                
+              </style>
             </div>
           </div>
         </main>

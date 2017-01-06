@@ -1,0 +1,33 @@
+extends /_layout
+
+block vars
+  - var title = 'Navigation'
+
+block content
+  article
+    h1 Navigation
+
+    h2 Wide Viewports
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _navigation-xl
+          +exampleWithCode('HTML')
+            script.
+              $(document).ready(function () {
+                $('#main-nav').accessibleMegaMenu({
+                  uuidPrefix: 'rb-navigation',
+                  menuClass: 'nav-menu',
+                  topNavItemClass: 'nav-item',
+                  panelClass: 'sub-nav',
+                  panelGroupClass: 'sub-nav-group',
+                  hoverClass: 'hover',
+                  focusClass: 'focus',
+                  openClass: 'open'
+                })
+              });
+
+    h3 Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.navigation-xl.min.js')
