@@ -17,10 +17,6 @@ body {
 
 p {
   margin-top: 0;
-
-  &:last-of-type {
-    margin-bottom: 0;
-  }
 }
 
 h1 {
@@ -51,16 +47,16 @@ h6 {
 }
 
 .heading-group {
-  .preheading, .heading, .subheading { 
-    display: block; 
+  .preheading, .heading, .subheading {
+    display: block;
     line-height: 1.1
   }
-  .preheading { 
+  .preheading {
     font-size: font-size(0); }
-  .heading { 
+  .heading {
     font-size: font-size(4); }
-  .subheading { 
-    font-size: font-size(2); 
+  .subheading {
+    font-size: font-size(2);
   }
 
   &.display {
