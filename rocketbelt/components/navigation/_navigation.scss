@@ -5,8 +5,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: font-size(-1);
-
+  font-size: font-size(-2);
 
   & a {
     color: color(gray, minus1);
@@ -48,7 +47,7 @@
   position: relative;
   display: inline-block;
   margin: 0 0 -1px 0;
-  padding: 0.5rem 1rem;
+  padding: padding(-2) padding(0);
   border: 1px solid transparent;
 
   &:focus,
@@ -68,9 +67,24 @@
   position: absolute;
   display: none;
   margin-top: 1px; // Compensate for border width
-  padding: 0.5rem 1rem;
+  padding: padding(-1);
   border: 1px solid color(gray, plus3);
   background-color: color(white);
+
+  @include z-depth(1);
+
+  &.wide {
+    left: 3%;
+    width: 94%;
+
+    .row {
+      margin: 0;
+    }
+
+    .col {
+      padding: 0;
+    }
+  }
 
   &.open {
     display: block;
