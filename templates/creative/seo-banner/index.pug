@@ -14,22 +14,43 @@ block content
             div.copyable-inner
               include _seo-banner
       .row
-        .col.xs
+        .col.xs-12.sm-6
           div.playground-control
             label(for="seo_title") SEO Title:
-              input#seo_title.playground-item(
+              textarea#seo_title.playground-item(
                 data-target=".seo-banner_title"
                 type="text"
                 value = "Pillows & Cushions"
               )
-        .col.xs
+        .col.xs-12.sm-6
           div.playground-control
             label(for="seo_copy") SEO Copy:
-              input#seo_copy.playground-item(
+              textarea#seo_copy.playground-item(
                 data-target=".seo-banner_copy"
                 type="text"
                 value = "Have a soft spot for comfy, cushiony throw pillows? We do, too. With our selection of decorative pillows in textured, embellished, solid and patterned designs, adding the final flourish to your look is simple. And don’t forget about outdoor pillows, featuring UV-treated fabric. Toss in a new pillow or two today."
               )
+
+  style(type='text/css').
+    .col.xs-6 {
+      padding: 1em;
+    }
+    #seo_copy, #seo_title {
+      display:flex;
+      align-items:center;
+      width:100%;
+      max-width:100%;
+   }
+
+   #seo_copy {
+      min-height:160px;
+   }
+
+   .copyable-inner {
+      /* simulates actual width on desktop pier1.com */
+      max-width: 739px;
+      margin: 0 auto;
+   }
 
 block scripts
   script.

@@ -27,6 +27,7 @@ before_deploy:
 - bash ./deployment/05_before_deploy.sh
 
 deploy:
+  skip_cleanup: true
   provider: npm
   email: kmarnett@gmail.com
   api_key:
