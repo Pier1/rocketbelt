@@ -11,22 +11,13 @@ block content
       .row
         .col.xs
           div
-            +colorPicker('.example', 'bg_success-darker', 'background')
+            +colorPicker('.example', 'bg_gray-plus3', 'background')
       .row
         .col.xs-12.ss_util_background
           +exampleWithCode
             include _sale-sticker
-        .col.xs-12
-          div.playground-control
-            input#ss_style.playground-item(
-              type="checkbox"
-              checked=false
-              value="serif"
-              name="Serif"
-              data-property="class"
-              data-target=".sale-sticker-wrapper"
-            )
-            label(for="ss_style") Sans-Serif
+        .col.xs-12.md-6
+          h3 Variations
           div.playground-control
             input#ss_horizontal-variant.playground-item(
               type="checkbox"
@@ -38,17 +29,28 @@ block content
             )
             label(for="ss_horizontal-variant") Horizontal
           div.playground-control
-            input#ss_stretch-variant.playground-item(
+            input#ss_up-to.playground-item(
               type="checkbox"
               checked=false
-              value="sale-sticker-stretch"
-              name="Sale Sticker Horizontal Variant"
+              value="up-to-msg"
+              name="Sale Sticker Up To Msg"
               data-property="class"
-              data-target=".sale-sticker-wrapper"
+              data-target=".sale-sticker-inner"
             )
-            label(for="ss_stretch-variant") Full Width
+            label(for="ss_up-to") Up To Msg
           div.playground-control
-            label(for="ss_fsize") Font Size:
+            input#ss_percent-variant.playground-item(
+              type="checkbox"
+              checked=false
+              value="promo-percentage"
+              name="Sale Sticker Percent Amount Variant"
+              data-property="class"
+              data-target=".promo-msg"
+            )
+            label(for="ss_percent-variant") Percent Off
+          h3 Style
+          div.playground-control
+            label(for="ss_fsize") Size:
               input#ss_fsize.playground-item(
                 type="range"
                 value="7"
@@ -60,32 +62,85 @@ block content
                 data-units="rem"
               )
               span.playground-range-value 7rem
+        .col.xs-12.md-6.messaging
+          h3 Messaging
           div.playground-control
-            label(for="ss_topmsg") Top Message:
-              input#ss_topmsg.playground-item(
-                data-target=".up-to-msg"
+            +colorPicker(".promo-detail", "fg_black")
+            label(for="ss_promo") Discount:
+              textarea#ss_sale.playground-item(
+                data-target=".promo-detail"
                 type="text"
-                maxlength="20"
-                value = "up to"
+                value = "Sale"
               )
+          span.playground-control.kerning
+            input#ss_promo-kerning.playground-item(
+              type="checkbox"
+              checked=false
+              value="kern-minus-1"
+              name="Sale Sticker Promo Kerning Helper"
+              data-property="class"
+              data-target=".promo-detail"
+            )
+            label(for="ss_promo-kerning") Reduce Kerning
           div.playground-control
-            label(for="ss_sale") Sale Amount:
-              input#ss_sale.playground-item(
-                data-target=".sale-amount"
-                type="text"
-                maxlength="2"
-                value = "20"
-              )
-            +colorPicker(".pct-off-msg", "fg_black")
-          div.playground-control
-            label(for="ss_tagline") Tagline:
-              input#ss_tagline.playground-item(
+            +colorPicker(".tagline", "fg_black")
+            label(for="ss_tagline") Details:
+              textarea#ss_tagline.playground-item(
                 data-target=".tagline"
                 type="text"
-                value = "All Sofas"
+                value = "All Moorish<br/>Tile Rugs"
               )
-            +colorPicker(".tagline", "fg_black")
+          div.playground-control
+            +colorPicker(".optional-msg", "fg_black")
+            label(for="ss_optional") Optional:
+              textarea#ss_optional.playground-item(
+                data-target=".optional-msg"
+                type="text"
+                value = ""
+              )
+
+  style(type='text/css').
+    h3 {
+      margin-bottom:.35em;
+    }
+    .example-code {
+      max-width: 99999px;
+    }
+    .messaging .cp_wrapper {
+      position: absolute;
+      right:5%;
+      top:3%;
+    }
+    .messaging .playground-control {
+      width:100%;
+      max-width:460px;
+      position:relative;
+    }
+    .messaging label {
+      display: block;
+      font-size: 1.15rem;
+    }
+    .messaging textarea{
+      display: block;
+      width: 100%;
+      font-size:.9em;
+      min-height: 125px;
+      margin-top: .25em;
+    }
+    span.playground-control.kerning {
+      margin: -1.21803em 0 1.61803em 0;
+    }
+    span.playground-control.kerning label {
+      font-size:1em;
+    }
 
 block scripts
   script.
+    $('#ss_optional').on('input', function() {
+      if ($(this).val().length > 0) {
+        $('#ss_up-to').prop("checked") ? $('#ss_up-to').prop("checked", false).change().prop("disabled", true) : $('#ss_up-to').prop("disabled", true)
+      } else {
+        $('#ss_up-to').prop('disabled',false);
+      }
+    })
     rb.launchPlayground();

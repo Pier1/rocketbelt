@@ -1,3 +1,36 @@
+<a name="1.1.0"></a>
+# [1.1.0](https://github.com/Pier1/rocketbelt/compare/1.0.3...v1.1.0) (2017-01-06)
+
+
+### Bug Fixes
+
+* **Buttons:** Fix primary block button. ([fe12140](https://github.com/Pier1/rocketbelt/commit/fe12140))
+* **Buttons:** Remove diff characters ([9590b75](https://github.com/Pier1/rocketbelt/commit/9590b75))
+* **Code snippets:** Fix clipboard.js implementation. ([f53426e](https://github.com/Pier1/rocketbelt/commit/f53426e))
+* **Color Picker:** Updates color picker mixin to use pug style string concatenation ([c2ec835](https://github.com/Pier1/rocketbelt/commit/c2ec835))
+* **Navigation:** Freshen up those labels. ([87c74f4](https://github.com/Pier1/rocketbelt/commit/87c74f4))
+* **Navigation:** Un-break example code in snippet. ([86262d9](https://github.com/Pier1/rocketbelt/commit/86262d9))
+* **Typography:** Remove last-of-type margin. ([3e36c4f](https://github.com/Pier1/rocketbelt/commit/3e36c4f)), closes [#70](https://github.com/Pier1/rocketbelt/issues/70)
+
+
+### Features
+
+* **a11y:** Stop removing button outline. ([c0e57d9](https://github.com/Pier1/rocketbelt/commit/c0e57d9))
+* **Navigation:** Build accessible navigation. ([7a3b80b](https://github.com/Pier1/rocketbelt/commit/7a3b80b))
+* **Navigation:** Expand nav styles & example. ([6a1c3dc](https://github.com/Pier1/rocketbelt/commit/6a1c3dc))
+* **Navigation:** Property sort order. ([7690f8f](https://github.com/Pier1/rocketbelt/commit/7690f8f))
+* **Navigation:** Remove unnecessary positioning prop. ([e0f3e42](https://github.com/Pier1/rocketbelt/commit/e0f3e42))
+* **Navigation:** Sass linting. ([e612945](https://github.com/Pier1/rocketbelt/commit/e612945))
+* **Navigation:** Style cleanup. ([777c1a7](https://github.com/Pier1/rocketbelt/commit/777c1a7))
+* **Playground, Creative:** Extends playground to work with text-area inputs ([3d3b519](https://github.com/Pier1/rocketbelt/commit/3d3b519))
+
+
+
+<a name="1.0.3"></a>
+## [1.0.3](https://github.com/Pier1/rocketbelt/compare/1.0.2...v1.0.3) (2016-12-22)
+
+
+
 <a name="1.0.0"></a>
 # [1.0.0](https://github.com/Pier1/rocketbelt/compare/0.7.0...v1.0.0) (2016-12-06)
 
