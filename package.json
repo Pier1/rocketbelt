@@ -53,7 +53,6 @@
     "jstransformer-markdown-it": "^2.0.0",
     "lodash": "^4.17.2",
     "merge-stream": "^1.0.0",
-    "modularscale-sass": "^2.1.1",
     "moment-timezone": "^0.5.9",
     "phantomcss": "^1.1.4",
     "phantomjs-prebuilt": "^2.1.13",
