@@ -1,0 +1,23 @@
+%button-static-props {
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: font-weight(demi);
+  cursor: default;
+  transition: color 100ms ease(),
+              border 100ms ease(),
+              background 100ms ease(),
+              box-shadow 100ms ease-out,
+              opacity 500ms ease();
+
+  @include button-shadow;
+
+  svg {
+    margin-right: $gutter-width / 4;
+    margin-bottom: -0.1em;  // I don't know why
+    width: 1em;
+    height: 1em;
+    vertical-align: baseline;
+  }
+}
