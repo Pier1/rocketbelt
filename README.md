@@ -48,7 +48,7 @@ See Also
 
 Acknowledgements
 ----------------
-[![BrowserStack](https://cdn.rawgit.com/Pier1/rocketbelt/d31d9ce0/templates/assets/browserstack.svg)](https://browserstack.com)
+[![BrowserStack](https://cdn.rawgit.com/Pier1/rocketbelt/2ebe7e55/templates/assets/browserstack.svg)](https://browserstack.com)
 Thank you BrowserStack for supporting the cross-browser/cross-device compatiblity of the project!
 
 Under Consideration
