@@ -9,6 +9,7 @@ button + .button {
 .button-primary {
   @include button-size(md);
   @include button-style(primary);
+  line-height: normal;
 }
 
 .button-secondary {
