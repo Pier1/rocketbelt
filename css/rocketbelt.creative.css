@@ -1,4 +1,14 @@
 @charset "UTF-8";
+.visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0; }
+
 .fg_brand {
   color: #0a689d; }
 
@@ -1228,16 +1238,6 @@
 .padding-5 {
   padding: 1.125rem; }
 
-.visuallyhidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0; }
-
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
           animation-name: fadeInDown;
@@ -1500,6 +1500,9 @@ h4 small {
 .font-weight-semibold {
   font-weight: 600; }
 
+.kern-minus-1 {
+  letter-spacing: -.08em; }
+
 .cta {
   font-weight: 600;
   color: #030001;
@@ -1586,147 +1589,124 @@ ul.horizontal li {
 .sale-sticker-wrapper {
   display: inline-block;
   padding: 0.05em;
-  border: 0.04em solid rgba(254, 253, 253, 0.9);
   font-size: 7rem; }
-
-.sale-sticker-inner {
-  position: relative;
-  width: 1.75em;
-  background: rgba(254, 253, 253, 0.9); }
-  .sale-sticker-inner .pct-off-msg {
+  .sale-sticker-wrapper .sale-sticker-inner {
     position: relative;
-    margin-left: 0.05em;
-    width: 1.65em;
-    height: 0.9em;
-    text-align: left;
-    letter-spacing: -0.07em;
-    line-height: 0.9; }
-  .sale-sticker-inner .up-to-msg {
-    margin-bottom: -0.3em;
-    padding: 0.2em 0 0;
-    text-align: center;
+    background: rgba(254, 253, 253, 0.9);
+    font-family: 'Brand Serif';
     text-transform: uppercase;
-    font-style: italic;
-    font-size: 0.2em;
-    line-height: 0.9; }
-  .sale-sticker-inner .percent-amount {
-    position: absolute;
-    top: 0.125em;
-    right: 0;
-    width: 0.9em;
-    letter-spacing: 0;
-    font-size: 0.6em; }
-  .sale-sticker-inner .sale-off {
-    position: absolute;
-    top: 2em;
-    left: 0;
-    text-transform: uppercase;
-    font-size: 0.45em; }
-  .sale-sticker-inner .tagline {
-    margin-top: 0.2em;
     text-align: center;
-    text-transform: uppercase;
-    font-size: 0.25em;
-    line-height: 1; }
-  .sale-sticker-inner .cta {
-    margin-top: 0.29em;
-    color: inherit;
-    text-align: center;
-    font-size: 0.175em;
-    font-family: 'Brand Sans';
-    line-height: 1.3; }
-
-.sale-sticker-wrapper.serif {
-  font-family: 'Brand Serif'; }
-
-.serif .sale-sticker-inner .up-to-msg {
-  font-style: normal; }
-
-.serif .sale-sticker-inner .pct-off-msg {
-  line-height: 0.75; }
-
-.serif .sale-sticker-inner .tagline {
-  margin-top: 0.09em;
-  font-size: 0.275em; }
-
-.serif .sale-sticker-inner .cta {
-  margin-top: 0.23em; }
-
-.serif .sale-sticker-inner .sale-amount {
-  margin-left: 0.03em;
-  font-size: 1.15em; }
+    padding: .2em .1em; }
+    .sale-sticker-wrapper .sale-sticker-inner .promo-msg {
+      position: relative;
+      line-height: 0.2;
+      margin-top: -0.1em; }
+    .sale-sticker-wrapper .sale-sticker-inner .promo-detail {
+      font-size: .87em;
+      line-height: 1;
+      position: relative; }
+    .sale-sticker-wrapper .sale-sticker-inner .tagline-wrapper {
+      font-family: 'Brand Sans'; }
+    .sale-sticker-wrapper .sale-sticker-inner .tagline {
+      margin: 0.1em 0 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.18em;
+      line-height: 1.2; }
+    .sale-sticker-wrapper .sale-sticker-inner .cta {
+      margin-top: 0.39em;
+      text-align: center;
+      font-size: 0.18em;
+      font-family: 'Brand Sans';
+      line-height: 1.2; }
+    .sale-sticker-wrapper .sale-sticker-inner .cta:after {
+      line-height: .2; }
+    .sale-sticker-wrapper .sale-sticker-inner .optional-msg {
+      display: block;
+      font-family: 'Brand Sans';
+      font-size: .16em;
+      line-height: 1;
+      margin-bottom: .2em; }
+    .sale-sticker-wrapper .sale-sticker-inner .optional-msg:empty {
+      display: none !important; }
+    .sale-sticker-wrapper .sale-sticker-inner.up-to-msg .promo-msg:before {
+      content: "Up To";
+      font-family: 'Brand Sans';
+      margin-bottom: -0.6em;
+      padding: 0.6em 0 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.16em;
+      line-height: 0.9;
+      display: block; }
+    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage {
+      margin-bottom: -0.06em; }
+    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail:before {
+      content: "%";
+      font-size: .65em;
+      line-height: 1;
+      position: absolute;
+      top: .4em;
+      right: -.08em;
+      letter-spacing: normal; }
+    .sale-sticker-wrapper .sale-sticker-inner.up-to-msg .promo-msg.promo-percentage:after {
+      top: 0.31em; }
+    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail:after {
+      content: "off";
+      font-size: .2em;
+      margin-left: .15em;
+      letter-spacing: normal; }
+    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail.kern-minus-1:after {
+      margin-left: .6em; }
 
 .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner {
   overflow-x: auto;
   overflow-y: hidden;
-  padding: 0.05em;
-  width: 4.25em; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .up-to-msg,
-.sale-sticker-wrapper.sale-sticker-horizontal .pct-off-msg,
-.sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-tagline {
-  float: left;
-  margin: 0 0 0 0.1em; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .up-to-msg {
-  width: 1.5em;
-  font-style: normal;
-  font-size: 0.2em; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .pct-off-msg {
-  width: 1.65em;
-  height: 0.75em;
-  border-right: 2px solid #030001;
-  line-height: 0.725; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .percent-amount {
-  top: 0.1em;
-  width: 1em;
-  font-size: 0.55em; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .sale-amount {
-  margin: 0; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .sale-off {
-  font-size: 0.44em; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .tagline-wrapper {
-  position: absolute;
-  top: 50%;
-  width: 1.95em;
-  -webkit-transform: translateY(-50%);
-      -ms-transform: translateY(-50%);
-          transform: translateY(-50%); }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .tagline,
-.sale-sticker-wrapper.sale-sticker-horizontal .cta {
-  text-align: left; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .tagline {
-  margin-top: 0;
-  font-size: 0.2em; }
-
-.sale-sticker-wrapper.sale-sticker-horizontal .cta {
-  margin-top: 0.5em;
-  font-size: 0.185em; }
-
-.serif.sale-sticker-horizontal .pct-off-msg {
-  line-height: 0.6; }
-
-.serif.sale-sticker-horizontal .percent-amount {
-  font-size: 0.6em; }
-
-.serif.sale-sticker-horizontal .sale-off {
-  top: 1.85em; }
-
-.serif.sale-sticker-horizontal .tagline {
-  font-size: 0.215em; }
+  padding: .09em .2em; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .sale-sticker-tagline {
+    float: left;
+    padding: 0 0 0 .11em;
+    margin-top: .03em;
+    border-left: 2px solid #030001; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-msg {
+    float: left;
+    margin: -.147em 0 -.09em; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-detail {
+    margin: 0 .16em 0 0;
+    line-height: 1; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .cta, .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .tagline {
+    text-align: left;
+    margin-top: 0;
+    font-size: 0.18em; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .tagline {
+    line-height: 1;
+    margin-bottom: .47em;
+    margin-top: -.1em; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .cta {
+    line-height: .84; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .optional-msg {
+    display: inline-block;
+    margin: .75em .45em 0 0;
+    line-height: 1;
+    text-align: left;
+    float: left; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner.up-to-msg .promo-msg:before {
+    float: left;
+    display: inline-block;
+    padding: 0;
+    margin: 1.2em 0 0;
+    width: 2em;
+    line-height: 1; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-msg.promo-percentage:after {
+    right: .13em; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner.up-to-msg .promo-msg.promo-percentage:after {
+    top: .2em; }
 
 .sale-sticker-wrapper.sale-sticker-stretch {
   width: 100%; }
   .sale-sticker-wrapper.sale-sticker-stretch .sale-sticker-inner {
     width: 100%; }
-  .sale-sticker-wrapper.sale-sticker-stretch .pct-off-msg {
+  .sale-sticker-wrapper.sale-sticker-stretch .promo-msg {
     margin: 0 auto; }
   .sale-sticker-wrapper.sale-sticker-stretch.sale-sticker-horizontal .tagline-wrapper {
     width: auto; }

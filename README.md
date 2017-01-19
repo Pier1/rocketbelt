@@ -46,6 +46,12 @@ See Also
 * [Mailchimp Pattern Library](https://ux.mailchimp.com)
 * [Draft U.S. Web Design Standards](https://standards.usa.gov/)
 
+Acknowledgements
+----------------
+[![BrowserStack](https://cdn.rawgit.com/Pier1/rocketbelt/2ebe7e55/templates/assets/browserstack.svg)](https://browserstack.com)
+
+[**BrowserStack**](https://browserstack.com) generously supports Rocketbelt's goal of cross-browser & cross-device compatibility.
+
 Under Consideration
 -------------------
 * Brand styles (logo usage, copywriting/voice & tone)

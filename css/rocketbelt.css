@@ -1,4 +1,38 @@
 @charset "UTF-8";
+.button,
+.button-primary, .button-sm, .button-md, .button-lg {
+  border: 1px solid transparent;
+  text-decoration: none;
+  text-transform: uppercase;
+  letter-spacing: 0.05rem;
+  font-weight: 600;
+  cursor: default;
+  transition: color 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), border 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), background 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), box-shadow 100ms ease-out, opacity 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .button:hover,
+  .button-primary:hover, .button-sm:hover, .button-md:hover, .button-lg:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 4px rgba(0, 0, 0, 0.23); }
+  .button:active,
+  .button-primary:active, .button-sm:active, .button-md:active, .button-lg:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  .button svg,
+  .button-primary svg, .button-sm svg, .button-md svg, .button-lg svg {
+    margin-right: 0.25rem;
+    margin-bottom: -0.1em;
+    width: 1em;
+    height: 1em;
+    vertical-align: baseline; }
+
+.visuallyhidden, .expander .expander_checkbox, .expander .expander_checkbox:not(:checked) ~ .expander_content, input[type='radio'], input[type='checkbox'], .tabs .tab .tab_radio {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0; }
+
 .fg_brand {
   color: #0a689d; }
 
@@ -1228,16 +1262,6 @@
 .padding-5 {
   padding: 1.125rem; }
 
-.visuallyhidden, .expander .expander_checkbox, .expander .expander_checkbox:not(:checked) ~ .expander_content, input[type='radio'], input[type='checkbox'], .tabs .tab .tab_radio {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0; }
-
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
           animation-name: fadeInDown;
@@ -1499,6 +1523,9 @@ h4 small {
 
 .font-weight-semibold {
   font-weight: 600; }
+
+.kern-minus-1 {
+  letter-spacing: -.08em; }
 
 .cta {
   font-weight: 600;
@@ -1820,30 +1847,6 @@ ul.horizontal li {
   100% {
     -webkit-transform: rotate(170deg);
             transform: rotate(170deg); } }
-
-.button,
-.button-primary, .button-sm, .button-md, .button-lg {
-  border: 1px solid transparent;
-  text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  font-weight: 600;
-  cursor: default;
-  transition: color 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), border 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), background 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), box-shadow 100ms ease-out, opacity 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  .button:hover,
-  .button-primary:hover, .button-sm:hover, .button-md:hover, .button-lg:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 4px rgba(0, 0, 0, 0.23); }
-  .button:active,
-  .button-primary:active, .button-sm:active, .button-md:active, .button-lg:active {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
-  .button svg,
-  .button-primary svg, .button-sm svg, .button-md svg, .button-lg svg {
-    margin-right: 0.25rem;
-    margin-bottom: -0.1em;
-    width: 1em;
-    height: 1em;
-    vertical-align: baseline; }
 
 .button + .button,
 button + button,
