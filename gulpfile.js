@@ -14,9 +14,9 @@ var utilsPath = tasksPath + '/utils';
 var config = {
   buildPath: buildPath,
   buildCssPath: buildCssPath,
-	colorFamilies: require(templatesPath + '/base/color/_color-families.json'),
+  colorFamilies: require(templatesPath + '/base/color/_color-families.json'),
   patternsPath: patternsPath,
-	templatesPath: templatesPath,
+  templatesPath: templatesPath,
   sizeOptions: {
     showFiles: true,
     gzip: true
@@ -24,7 +24,7 @@ var config = {
 };
 
 var utils = {
-	getTask: require(utilsPath + '/getTask')
+  getTask: require(utilsPath + '/getTask')
 };
 
 function getTask(task) {
@@ -61,12 +61,12 @@ gulp.task('watch', getTask('watch'));
 function throttle (callback, limit) {
   var wait = false;
   return function () {
-      if (!wait) {
-          callback.call();
-          wait = true;
-          setTimeout(function () {
-              wait = false;
-          }, limit);
-      }
+    if (!wait) {
+      callback.call();
+      wait = true;
+      setTimeout(function () {
+        wait = false;
+      }, limit);
+    }
   };
 }
