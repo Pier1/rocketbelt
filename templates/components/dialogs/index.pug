@@ -1,0 +1,24 @@
+extends /_layout
+
+block vars
+  - var title = 'Dialogs'
+
+block content
+  article
+    h1 Dialogs
+
+    h2 Standard Dialog
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-example-standard') Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include dialog-standard
+
+
+    h2 Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.dialogs.min.js')
