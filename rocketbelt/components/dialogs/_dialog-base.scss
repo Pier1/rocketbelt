@@ -1,0 +1,40 @@
+.is-dialog-open {
+  filter: blur(3px);
+  transition: filter 300ms ease-out;
+}
+
+.dialog[aria-hidden="true"] {
+  display: none;
+}
+
+.dialog-overlay {
+  z-index: 2;
+  background-color: rgba(color(black), 0.7);
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+
+.dialog-content {
+  background-color: color(white)
+  z-index: 3;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.dialog-content {
+  padding: 1em;
+  max-width: 90%;
+  width: 600px;
+  border-radius: 2px;
+}
+
+.dialog-close {
+  position: absolute;
+  top: 0.5em;
+  right: 0.5em;
+}
