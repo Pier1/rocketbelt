@@ -1,12 +1,16 @@
 section.dialog#dialog-example-standard(tabindex=0, aria-hidden='true', data-rb-dialog-obscures='docs-wrapper')
-  .dialog-overlay(tabindex=-1, data-rb-dialog-hide)
-  .dialog-content.grid-fluid(aria-labelledby='dialog-title', aria-describedby='dialog-description', role='dialog')
-    .row.dialog-header
+  .dialog_overlay(tabindex=-1, data-rb-dialog-hide)
+  .dialog_content.grid-fluid(aria-labelledby='specific-dialog_title', aria-describedby='specific-dialog_description', role='dialog')
+    .row.dialog_header.xs-between
       .col.xs
-        h2#dialog-title Dialog title
+        h2.dialog_title#specific-dialog_title Dialog title
+      .col.xs.dialog_close_container
+        button.dialog_close(data-rb-dialog-hide, aria-label='Close dialog')
+          svg.icon
+            use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-close')
     .row
       .col.xs
-        p#dialog-description
+        p#specific-dialog_description
           | It’s safe bet you know you like, indoors and solids. You
           | don’t need is all the rows of muted shades of sheer jasmine and
           | neutral hues, from the stir in the view.
@@ -19,7 +23,8 @@ section.dialog#dialog-example-standard(tabindex=0, aria-hidden='true', data-rb-d
           | neutral hues, from the stir in the view. Hand-painted in the
           | look you'd like a lovely or covered outdoor life. So which means
           | more tempting? How can throw.
-    .row.xs-end.dialog-buttons
-      .col.xs
+    .row.xs-end.dialog_buttons
+      .col.xs-6.md-4
+        button.button.button-secondary Cancel
+      .col.xs-6.md-4
         button.button-primary OK
-        button.dialog-close(data-rb-dialog-hide, aria-label='Close dialog') &times;
