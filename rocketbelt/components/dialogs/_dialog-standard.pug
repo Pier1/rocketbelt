@@ -1,18 +1,25 @@
 section.dialog#dialog-example-standard(tabindex=0, aria-hidden='true', data-rb-dialog-obscures='docs-wrapper')
   .dialog-overlay(tabindex=-1, data-rb-dialog-hide)
-  .dialog-content(aria-labelledby='dialog-title', aria-describedby='dialog-description', role='dialog')
-    h2#dialog-title Dialog title
-    p#dialog-description
-      | It’s safe bet you know you like, indoors and solids. You
-      | don’t need is all the rows of muted shades of sheer jasmine and
-      | neutral hues, from the stir in the view.
-    p
-      | The earliest chandeliers fitted cushion is just go distressed
-      | edges and shape and ivory stoneware Chalk Note the place, and
-      | enjoy. A durable poly insert that decision-making a contemporary
-      | space. It’s safe bet you know you like, indoors and solids. You
-      | don’t need is all the rows of muted shades of sheer jasmine and
-      | neutral hues, from the stir in the view. Hand-painted in the
-      | look you'd like a lovely or covered outdoor life. So which means
-      | more tempting? How can throw.
-    button.dialog-close(data-rb-dialog-hide, aria-label='Close dialog')
+  .dialog-content.grid-fluid(aria-labelledby='dialog-title', aria-describedby='dialog-description', role='dialog')
+    .row.dialog-header
+      .col.xs
+        h2#dialog-title Dialog title
+    .row
+      .col.xs
+        p#dialog-description
+          | It’s safe bet you know you like, indoors and solids. You
+          | don’t need is all the rows of muted shades of sheer jasmine and
+          | neutral hues, from the stir in the view.
+        p
+          | The earliest chandeliers fitted cushion is just go distressed
+          | edges and shape and ivory stoneware Chalk Note the place, and
+          | enjoy. A durable poly insert that decision-making a contemporary
+          | space. It’s safe bet you know you like, indoors and solids. You
+          | don’t need is all the rows of muted shades of sheer jasmine and
+          | neutral hues, from the stir in the view. Hand-painted in the
+          | look you'd like a lovely or covered outdoor life. So which means
+          | more tempting? How can throw.
+    .row.xs-end.dialog-buttons
+      .col.xs
+        button.button-primary OK
+        button.dialog-close(data-rb-dialog-hide, aria-label='Close dialog') &times;
