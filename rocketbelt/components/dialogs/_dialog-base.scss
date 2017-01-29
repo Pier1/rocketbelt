@@ -1,56 +1,63 @@
-.is-dialog-open {
-  filter: blur(3px);
-  transition: filter 300ms ease-out;
-}
 
 #docs-wrapper:not(.is-dialog-open),
 #main:not(.is-dialog-open) {
-  filter: none;
-  transition: filter 300ms ease-out;
-
-  & ~ .dialog .dialog-content {
-    animation: dialogOut 300ms ease-out;
+  & ~ .dialog {
+    .dialog-content {
+      animation: dialogOut 300ms ease-in;
+    }
   }
 }
 
-.dialog[aria-hidden="true"] {
-  visibility: hidden;
-  transition: visibility 300ms ease-out;
+.dialog {
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    transition: visibility 300ms ease-out;
+  }
+
+  &:not([aria-hidden='true']) {
+    visibility: visible;
+    transition: visibility 300ms ease-out;
+  }
 }
 
-.dialog:not([aria-hidden="true"]) {
-  visibility: visible;
-  transition: visibility 300ms ease-out;
-}
+.is-dialog-open {
+  filter: blur(5px);
 
-.is-dialog-open ~ .dialog .dialog-overlay {
-  opacity: 1;
-  transition: opacity 300ms ease-out;
+  & ~ .dialog {
+    .dialog-overlay {
+      opacity: 1;
+      transition: opacity 300ms ease-out;
+    }
+
+    .dialog-content {
+      animation: dialogIn 500ms ease-out;
+    }
+  }
 }
 
 .dialog-overlay {
-  opacity: 0;
-  z-index: 2;
-  background-color: rgba(color(black), 0.6);
   position: fixed;
   top: 0;
-  left: 0;
-  bottom: 0;
   right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(color(black), 0.6);
+  opacity: 0;
   transition: opacity 300ms ease-out;
 }
 
 .dialog-content {
-  background-color: color(white);
-  z-index: 3;
   position: fixed;
   top: 50%;
   left: 50%;
+  z-index: 3;
+  padding: 1em;
+  max-width: 90%;
+  width: 600px;
+  border-radius: 2px;
+  background-color: color(white);
   transform: translate3d(-50%, -50%, 0);
-}
-
-.is-dialog-open ~ .dialog .dialog-content {
-  animation: dialogIn 500ms ease-out;
 }
 
 @keyframes dialogIn {
@@ -75,13 +82,6 @@
     opacity: 0;
     transform: translate3d(-50%, 0%, 0);
   }
-}
-
-.dialog-content {
-  padding: 1em;
-  max-width: 90%;
-  width: 600px;
-  border-radius: 2px;
 }
 
 .dialog-close {
