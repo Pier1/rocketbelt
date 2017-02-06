@@ -1,6 +1,7 @@
 exclude:
   - '**/vendor/**/*'
 rules:
+  convention: hyphenatedbem
   no-trailing-zero: 0
   leading-zero: 0
   no-color-keywords: 0
