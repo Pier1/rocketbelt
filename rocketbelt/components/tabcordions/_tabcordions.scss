@@ -133,6 +133,13 @@
       height: 4px;
       transform: translateY(-50%);
     }
+
+    @include media('>=sm') {
+      &::before,
+      &::after {
+        display: none;
+      }
+    }
   }
 
   .tab_panel {
