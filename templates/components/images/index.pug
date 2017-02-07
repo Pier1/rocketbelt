@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Images'
@@ -15,11 +15,11 @@ block content
     .grid-fluid
       .row.xs-center
         .col.xs-4
-          include _images-gallery
+          include _images-gallery.pug
       .row
         .col.xs
           +exampleCodeOnly
-            include _images-gallery
+            include _images-gallery.pug
           +exampleWithCode('JS Include')
             script(src='./rocketbelt.images-gallery.js')
 
@@ -36,9 +36,9 @@ block content
           +exampleWithCode('html', null, true)
             each alt in skus
               - var short = alt.substring(0, alt.indexOf('_'));
-              include _images-lazyload
+              include _images-lazyload.pug
 
           - skus = ['ODR09_2', '2587987_14', 'ODS001_3', 'ODS001_1', 'ODS005_12', '2437340_14', '2580054_13', '2437340_13', '2580054_14', 'ODS005_14', 'ODR14_1', '2757667_13', '2757667_14', '2756976_13', '2662334_12', 'PS64654_10A', '2506440_10A']
           each alt in skus
             - var short = alt.substring(0, alt.indexOf('_'));
-            include _images-lazyload
+            include _images-lazyload.pug

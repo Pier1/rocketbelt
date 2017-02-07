@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Busy Indicators'
@@ -11,11 +11,11 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            include _busy-indicators-dots
+            include _busy-indicators-dots.pug
 
     h2 Spinner
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
-            include _busy-indicators-spinners
+            include _busy-indicators-spinners.pug

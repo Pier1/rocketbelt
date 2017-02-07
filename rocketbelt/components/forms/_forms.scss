@@ -88,7 +88,7 @@ fieldset {
         & + label::after {
           content: '(optional)';
         }
-      }   
+      }
     }
   }
 }
@@ -157,16 +157,16 @@ select {
       }
     }
   }
-  /* Character Based Ems - Good Idea?? */
-  &.field-small { width: 8em; } 
+  // Character Based Ems - Good Idea??
+  &.field-small { width: 8em; }
   &.field-medium { width: 16em; }
   &.field-large { width: 24em; }
 }
 
 [disabled] {
   opacity: 0.6;
-  transition: opacity 500ms ease;
   filter: grayscale(0.4);
+  transition: opacity 500ms ease;
 }
 
 input {
@@ -188,10 +188,10 @@ select {
               color(white);
   background-position: right 0.5rem center;
   background-size: 1rem;
-
   appearance: none;
-  &.field-auto { 
-    width: auto; 
+
+  &.field-auto {
+    width: auto;
     margin-right: auto;
     padding-right: 2em;
   }

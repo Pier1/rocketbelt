@@ -1,0 +1,84 @@
+.dialog {
+  .dialog-max {
+    .dialog_header {
+      padding: 0;
+      border: 0;
+      background-color: color(black);
+
+      .dialog_close {
+        display: inline-block;
+        overflow: hidden;
+        padding: 0 padding(-5);
+        min-width: 44px;
+        min-height: 44px;
+        width: auto;
+        color: color(white);
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+
+        &::before {
+          margin-right: margin(-10);
+          content: unicode(left-chevron);
+          font-size: font-size(3);
+        }
+      }
+    }
+
+    .dialog_content {
+      position: absolute;
+      top: 0;
+      right: 5%;
+      bottom: 0;
+      left: 5%;
+
+      max-height: 100%;
+      width: 90%;
+      transform: none;
+      animation: dialog-max-in 300ms ease-in-out;
+
+      @include media('>=sm') {
+        right: 10%;
+        left: 10%;
+        width: 80%;
+      }
+    }
+  }
+}
+
+#docs-wrapper:not(.is-dialog-open),
+#main:not(.is-dialog-open) {
+  & ~ .dialog {
+    .dialog-max {
+      .dialog_content {
+        animation: dialog-max-out 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes dialog-max-in {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes dialog-max-out {
+  from {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 1);
+  }
+}

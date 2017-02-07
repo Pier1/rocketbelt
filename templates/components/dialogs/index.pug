@@ -1,0 +1,46 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Dialogs'
+
+block content
+  article
+    h1 Dialogs
+
+    h2 Standard Dialog
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-standard-example') Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-standard.pug
+
+    h2 Sheet Dialog
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-sheet-example') Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-sheet.pug
+
+    h2 Max Dialog
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-max-example') Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-max.pug
+
+
+    h2 Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.dialogs.min.js')

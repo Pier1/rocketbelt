@@ -1,5 +1,5 @@
 
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Cards'
@@ -11,41 +11,41 @@ block content
 
     h2 Basic Cards
     +exampleWithCode
-      include _cards-basic
+      include _cards-basic.pug
 
 
     h2 Action Cards
     .grid-fluid
       .row.xs-center
         .col.xs-12.lg-4
-          include _cards-action
+          include _cards-action.pug
       .row
         .col.xs
           +exampleCodeOnly
-            include _cards-action
+            include _cards-action.pug
 
 
     h2 z-depth
     - var text = "Cards can be placed at different depths to indicate their position relative to other content."
     +exampleWithCode
-      include _cards-z-depth
+      include _cards-z-depth.pug
 
 
     h2 Hover Cards
     | Combine #[span.code z-depth] classes with #[span.code hover] for engaging feedback.
     +exampleWithCode
-      include _cards-hover
+      include _cards-hover.pug
 
 
     h2 Image Cards
     .grid-fluid
       .row
         .col.xs-4
-          include _cards-image
+          include _cards-image.pug
       .row
         .col.xs
           +exampleCodeOnly
-            include _cards-image
+            include _cards-image.pug
 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js')
     script(src='../images/rocketbelt.images-lazyload.js')
