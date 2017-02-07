@@ -16,7 +16,7 @@
 
 #docs-wrapper:not(.is-dialog-open),
 #main:not(.is-dialog-open) {
-  & ~ .dialog {
+  & ~ .dialog.dialog-sheet {
     .dialog_content {
       animation: dialog-sheet-out 300ms ease-in-out;
     }
