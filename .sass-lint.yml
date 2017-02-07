@@ -1,7 +1,10 @@
 exclude:
   - '**/vendor/**/*'
 rules:
-  convention: hyphenatedbem
+  # class-name-format:
+  #   - 1
+  #   -
+  #     convention: [a-z]+-?[a-z0-9-]+([_-])?[a-z0-9-]+)?(-[a-z0-9-]+)?[a-z0-9]
   no-trailing-zero: 0
   leading-zero: 0
   no-color-keywords: 0
