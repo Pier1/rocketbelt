@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Dialogs'
@@ -16,7 +16,7 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            include _dialog-standard
+            include _dialog-standard.pug
 
     h2 Sheet Dialog
     .grid-fluid
@@ -27,7 +27,7 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            include _dialog-sheet
+            include _dialog-sheet.pug
 
     h2 Max Dialog
     .grid-fluid
@@ -38,7 +38,7 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            include _dialog-max
+            include _dialog-max.pug
 
 
     h2 Script Include

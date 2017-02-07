@@ -1,24 +1,28 @@
-.dialog.dialog-sheet {
-  .dialog_content {
-    position: absolute;
-    top: auto;
-    right: 0;
-    bottom: 0;
-    left: 0;
+.dialog {
+  .dialog-sheet {
+    .dialog_content {
+      position: absolute;
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
 
-    max-height: 40%;
-    width: 100%;
+      max-height: 40%;
+      width: 100%;
 
-    transform: none;
-    animation: dialog-sheet-in 300ms ease-in-out;
+      transform: none;
+      animation: dialog-sheet-in 300ms ease-in-out;
+    }
   }
 }
 
 #docs-wrapper:not(.is-dialog-open),
 #main:not(.is-dialog-open) {
-  & ~ .dialog.dialog-sheet {
-    .dialog_content {
-      animation: dialog-sheet-out 300ms ease-in-out;
+  & ~ .dialog {
+    .dialog-sheet {
+      .dialog_content {
+        animation: dialog-sheet-out 300ms ease-in-out;
+      }
     }
   }
 }

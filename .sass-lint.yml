@@ -2,9 +2,6 @@ exclude:
   - '**/vendor/**/*'
 rules:
   class-name-format: 0
-  #   - 1
-  #   -
-  #     convention: [a-z]+-?[a-z0-9-]+([_-])?[a-z0-9-]+)?(-[a-z0-9-]+)?[a-z0-9]
   no-trailing-zero: 0
   leading-zero: 0
   no-color-keywords: 0
@@ -19,6 +16,7 @@ rules:
   no-trailing-whitespace: 0
   empty-line-between-blocks: 0
   no-url-protocols: 0
+  no-url-domains: 0
   shorthand-values: 0
   indentation: 0
   property-sort-order:

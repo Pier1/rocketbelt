@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Grid'
@@ -12,44 +12,44 @@ block content
     | Get started with as few as four classes.
 
     +exampleWithCode
-      include _grid-basic
+      include _grid-basic.pug
 
     h2 Mobile-First & Responsive
     | Start with #[span.code xs], then mix and match responsive modifiers.
 
     +exampleWithCode
-      include _grid-responsive
+      include _grid-responsive.pug
 
     h2 Automatic Widths
     | Leave off a column width if it needs to grow or shrink. The grid will size
     | it automatically.
 
     +exampleWithCode
-      include _grid-auto-column-widths
+      include _grid-auto-column-widths.pug
 
     h2 Column Offsets
     | Nudge a column to the right with an `-offset` class.
 
     +exampleWithCode
-      include _grid-column-offsets
+      include _grid-column-offsets.pug
 
     h2 Nesting
 
     +exampleWithCode
-      include _grid-nested
+      include _grid-nested.pug
 
     h2 Alignment Classes
     h3 Horizontal
     h4 -start, -center, -end
 
     +exampleWithCode
-      include _grid-alignment-horizontal
+      include _grid-alignment-horizontal.pug
 
     h3 Vertical
     h4 -top, -middle, -bottom
 
     +exampleWithCode
-      include _grid-alignment-vertical
+      include _grid-alignment-vertical.pug
 
     h2 Column Distribution
     h3 space-between
@@ -57,25 +57,25 @@ block content
     | of the row.
 
     +exampleWithCode
-      include _grid-distribution-space-between
+      include _grid-distribution-space-between.pug
 
     h3 space-around
     | Space columns evenly across the row, including space at the beginning & end
     | of the row.
 
     +exampleWithCode
-      include _grid-distribution-space-around
+      include _grid-distribution-space-around.pug
 
     h2 Column Order
-    h3 first & last
+    h3 first &amp; last
 
     +exampleWithCode
-      include _grid-order-first
+      include _grid-order-first.pug
 
     +exampleWithCode
-      include _grid-order-last
+      include _grid-order-last.pug
 
     h3 reverse
 
     +exampleWithCode
-      include _grid-order-reverse
+      include _grid-order-reverse.pug
