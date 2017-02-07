@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Alerts'
@@ -9,12 +9,12 @@ block content
     h2 Flash Messages
 
     +exampleWithCode
-      include _alerts-flash
+      include _alerts-flash.pug
 
     h2 Dismissable Flash Message
 
     +exampleWithCode
-      include _alerts-dismissable
+      include _alerts-dismissable.pug
 
     +exampleWithCode('js')
       script(src='./rocketbelt.alerts-dismissable.js')
@@ -37,4 +37,4 @@ block content
 
     .visuallyhidden.fixed-banner
       +exampleWithCode
-        include _alerts-banner
+        include _alerts-banner.pug

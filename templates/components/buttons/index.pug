@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Buttons'
@@ -12,18 +12,18 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            include _buttons-primary
+            include _buttons-primary.pug
     h2 Secondary
       
     .grid-fluid
       .row
         .col.xs
           div
-            include _buttons-secondary
+            include _buttons-secondary.pug
       .row
         .col.xs
           +exampleCodeOnly
-            include _buttons-secondary
+            include _buttons-secondary.pug
 
     h2 Text
       
@@ -31,20 +31,20 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            include _buttons-text
+            include _buttons-text.pug
     h2 Block
 
     +exampleWithCode
-      include _buttons-block
+      include _buttons-block.pug
 
     h2 Dynamic
     h3 Busy
     +exampleWithCode
-      include _buttons-dynamic
+      include _buttons-dynamic.pug
 
     h3 Success
     +exampleWithCode
-      include _buttons-dynamic-success
+      include _buttons-dynamic-success.pug
 
     h2 Script Include
     +exampleWithCode('html', true)

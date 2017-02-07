@@ -1,0 +1,147 @@
+#docs-wrapper:not(.is-dialog-open),
+#main:not(.is-dialog-open) {
+  & ~ .dialog {
+    .dialog_content {
+      animation: dialogOut 300ms ease-in;
+    }
+  }
+}
+
+.dialog {
+  &[aria-hidden='true'] {
+    visibility: hidden;
+    transition: visibility 300ms ease-out;
+  }
+
+  &:not([aria-hidden='true']) {
+    visibility: visible;
+    transition: visibility 300ms ease-out;
+  }
+
+  .dialog_header {
+    border-bottom: 1px solid color(gray, plus3);
+    align-items: center;
+    justify-content: space-between;
+
+    .dialog_title {
+      font-weight: font-weight(normal);
+      font-size: font-size(4);
+    }
+  }
+
+  .dialog_header,
+  .dialog_buttons {
+    display: flex;
+  }
+
+  .dialog_header,
+  .dialog_body,
+  .dialog_buttons {
+    padding: padding(-5);
+  }
+}
+
+.is-dialog-open {
+  overflow: hidden;
+  filter: blur(5px);
+
+  & ~ .dialog {
+    .dialog_overlay {
+      opacity: 1;
+      transition: opacity 300ms ease-out;
+    }
+
+    .dialog_content {
+      animation: dialogIn 500ms ease-out;
+    }
+  }
+}
+
+.dialog_overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  z-index: 2;
+  background-color: rgba(color(gray, plus4), 0.6);
+  opacity: 0;
+  transition: opacity 300ms ease-out;
+}
+
+.dialog_buttons {
+  border-top: 1px solid color(gray, plus2);
+  background: color(gray, plus3);
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.dialog_content {
+  @include z-depth(1);
+
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  z-index: 3;
+  overflow-y: auto;
+  max-height: 90%;
+  width: 95%;
+  border-radius: 2px;
+  background-color: color(white);
+  transform: translate3d(-50%, -50%, 0);
+
+  .dialog_close_container {
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @include media('>=md') {
+    width: 60%;
+  }
+
+  @include media('>=lg') {
+    width: 40%;
+  }
+}
+
+@keyframes dialogIn {
+  from {
+    opacity: 0;
+    transform: translate3d(-50%, -70%, 0);
+  }
+
+  to {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+  }
+}
+
+@keyframes dialogOut {
+  from {
+    opacity: 1;
+    transform: translate3d(-50%, -50%, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(-50%, 0%, 0);
+  }
+}
+
+.dialog_close {
+  display: flex;
+  padding: 0;
+  width: 44px;
+  height: 44px;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+
+  .icon {
+    width: 1rem;
+    height: 100%;
+  }
+}

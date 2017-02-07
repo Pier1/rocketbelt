@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Layout'
@@ -12,11 +12,11 @@ block content
       .row
         .col.xs
           +exampleWithCode
-            include _padding
+            include _padding.pug
 
     h2 Margin
     .grid-fluid.example-layout
       .row
         .col.xs
           +exampleWithCode
-            include _margin
+            include _margin.pug
