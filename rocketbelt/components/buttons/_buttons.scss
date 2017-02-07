@@ -5,6 +5,10 @@ button + .button {
   margin-left: $gutter-width / 2;
 }
 
+.button-primary {
+  outline-color: color(primary, darkest);
+}
+
 .button,
 .button-primary {
   @include button-size(md);
