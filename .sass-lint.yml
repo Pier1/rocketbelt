@@ -1,7 +1,7 @@
 exclude:
   - '**/vendor/**/*'
 rules:
-  # class-name-format:
+  class-name-format: 0
   #   - 1
   #   -
   #     convention: [a-z]+-?[a-z0-9-]+([_-])?[a-z0-9-]+)?(-[a-z0-9-]+)?[a-z0-9]
