@@ -1,3 +1,28 @@
+<a name="1.3.0"></a>
+# [1.3.0](https://github.com/Pier1/rocketbelt/compare/1.2.2...v1.3.0) (2017-02-07)
+
+
+### Bug Fixes
+
+* **Buttons:** Fixed line height issue when using anchor tags as buttons. ([02f7f6c](https://github.com/Pier1/rocketbelt/commit/02f7f6c))
+* **Dialogs:** Unbreak modal ➡ dialog rename. ([1bc9131](https://github.com/Pier1/rocketbelt/commit/1bc9131))
+* **Tabcordions:** Hide open/close icon on viewports >=sm. ([e1f0991](https://github.com/Pier1/rocketbelt/commit/e1f0991))
+
+
+### Features
+
+* **Dialogs:** Add Max Dialog variation. ([54a6bb0](https://github.com/Pier1/rocketbelt/commit/54a6bb0))
+* **Dialogs:** Add prescriptive classes. ([4d3b24f](https://github.com/Pier1/rocketbelt/commit/4d3b24f))
+* **Dialogs:** Add Sheet Dialog variation. ([85be201](https://github.com/Pier1/rocketbelt/commit/85be201))
+* **Dialogs:** Animate base dialog. ([17d26c6](https://github.com/Pier1/rocketbelt/commit/17d26c6))
+* **Dialogs:** Build standard dialog styles. ([89ea7fa](https://github.com/Pier1/rocketbelt/commit/89ea7fa))
+* **Dialogs:** More semantic dialog markup. ([2ea84ea](https://github.com/Pier1/rocketbelt/commit/2ea84ea))
+* **Dialogs:** Rebuild standard dialogs. ([0528c9c](https://github.com/Pier1/rocketbelt/commit/0528c9c)), closes [#72](https://github.com/Pier1/rocketbelt/issues/72) [#77](https://github.com/Pier1/rocketbelt/issues/77)
+* **Dialogs:** Simplify dialog markup & add more styling. ([234ac8a](https://github.com/Pier1/rocketbelt/commit/234ac8a))
+* **Global:** Add global outline styles. ([1cfd595](https://github.com/Pier1/rocketbelt/commit/1cfd595))
+
+
+
 <a name="1.2.2"></a>
 ## [1.2.2](https://github.com/Pier1/rocketbelt/compare/1.2.1...v1.2.2) (2017-01-18)
 
