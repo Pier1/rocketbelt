@@ -12,11 +12,22 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-example-standard') Trigger Dialog
+            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-standard-example') Trigger Dialog
       .row
         .col.xs
           +exampleWithCode
             include _dialog-standard
+
+    h2 Sheet Dialog
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-sheet-example') Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-sheet
 
 
     h2 Script Include

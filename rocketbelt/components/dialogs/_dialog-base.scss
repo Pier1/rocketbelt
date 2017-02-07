@@ -19,13 +19,13 @@
   }
 
   .dialog_header {
-    justify-content: space-between;
-    align-items: center;
     border-bottom: 1px solid color(gray, plus3);
+    align-items: center;
+    justify-content: space-between;
 
     .dialog_title {
-      font-size: font-size(4);
       font-weight: font-weight(normal);
+      font-size: font-size(4);
     }
   }
 
@@ -70,10 +70,10 @@
 }
 
 .dialog_buttons {
-  justify-content: flex-end;
-  align-items: center;
   border-top: 1px solid color(gray, plus2);
   background: color(gray, plus3);
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .dialog_content {

@@ -1,14 +1,14 @@
-section.dialog#dialog-standard-example(tabindex=0, aria-hidden='true', data-rb-dialog-obscures='docs-wrapper')
+section.dialog.dialog-sheet#dialog-sheet-example(tabindex=0, aria-hidden='true', data-rb-dialog-obscures='docs-wrapper')
   .dialog_overlay(tabindex=-1, data-rb-dialog-hide)
-  .dialog_content.grid-fluid(aria-labelledby='supply-a-dialog_title', aria-describedby='supply-a-dialog_description', role='dialog')
+  .dialog_content.grid-fluid(aria-labelledby='give-a-dialog_title', aria-describedby='give-a-dialog_description', role='dialog')
     .dialog_header
-      h2.dialog_title#supply-a-dialog_title Standard dialog title
+      h2.dialog_title#give-a-dialog_title Sheet dialog title
       .dialog_close_container
         button.dialog_close(data-rb-dialog-hide, aria-label='Close dialog')
           svg.icon
             use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-close')
     .dialog_body
-      p#supply-a-dialog_description
+      p#give-a-dialog_description
         | Such a pedestal. Literally, in a plush, polyester finish. Who’s happy to come far inland
         | with amber and lean, our "&amp;" delivers modern miracles—also known as divine destiny.
       p
