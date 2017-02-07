@@ -83,10 +83,18 @@
   top: 50%;
   left: 50%;
   z-index: 3;
+  overflow-y: auto;
+  max-height: 90%;
   width: 95%;
   border-radius: 2px;
   background-color: color(white);
   transform: translate3d(-50%, -50%, 0);
+
+  .dialog_close_container {
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+  }
 
   @include media('>=md') {
     width: 60%;
@@ -118,17 +126,6 @@
   to {
     opacity: 0;
     transform: translate3d(-50%, 0%, 0);
-  }
-}
-
-.dialog_content {
-  overflow-y: auto;
-  max-height: 90%;
-
-  .dialog_close_container {
-    flex-grow: 0;
-    justify-content: center;
-    align-items: center;
   }
 }
 

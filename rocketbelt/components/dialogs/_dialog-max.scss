@@ -1,57 +1,60 @@
-.dialog.dialog-max {
-  .dialog_header {
-    padding: 0;
-    background-color: color(black);
-    border: 0;
+.dialog {
+  .dialog-max {
+    .dialog_header {
+      padding: 0;
+      border: 0;
+      background-color: color(black);
 
-    .dialog_close {
-      &:before {
-        content: unicode(left-chevron);
-        margin-right: margin(-10);
-        font-size: font-size(3);
+      .dialog_close {
+        display: inline-block;
+        overflow: hidden;
+        padding: 0 padding(-5);
+        min-width: 44px;
+        min-height: 44px;
+        width: auto;
+        color: color(white);
+        text-transform: uppercase;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        align-items: center;
+        justify-content: flex-start;
+
+        &::before {
+          margin-right: margin(-10);
+          content: unicode(left-chevron);
+          font-size: font-size(3);
+        }
       }
-
-      display: inline-block;
-      justify-content: flex-start;
-      align-items: center;
-      white-space: nowrap;
-      overflow: hidden;
-      text-overflow: ellipsis;
-
-      text-transform: uppercase;
-      color: color(white);
-      padding: 0 padding(-5);
-      min-height: 44px;
-      min-width: 44px;
-      width: auto;
     }
-  }
 
-  .dialog_content {
-    position: absolute;
-    top: 0;
-    right: 5%;
-    bottom: 0;
-    left: 5%;
+    .dialog_content {
+      position: absolute;
+      top: 0;
+      right: 5%;
+      bottom: 0;
+      left: 5%;
 
-    transform: none;
-    animation: dialog-max-in 300ms ease-in-out;
-    width: 90%;
-    max-height: 100%;
+      max-height: 100%;
+      width: 90%;
+      transform: none;
+      animation: dialog-max-in 300ms ease-in-out;
 
-    @include media('>=sm') {
-      left: 10%;
-      right: 10%;
-      width: 80%;
+      @include media('>=sm') {
+        right: 10%;
+        left: 10%;
+        width: 80%;
+      }
     }
   }
 }
 
 #docs-wrapper:not(.is-dialog-open),
 #main:not(.is-dialog-open) {
-  & ~ .dialog.dialog-max {
-    .dialog_content {
-      animation: dialog-max-out 300ms ease-in-out;
+  & ~ .dialog {
+    .dialog-max {
+      .dialog_content {
+        animation: dialog-max-out 300ms ease-in-out;
+      }
     }
   }
 }
