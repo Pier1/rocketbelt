@@ -317,8 +317,6 @@ limitations under the License.
          */
         _clickOutsideHandler = function (event) {
             if (this.menu.has($(event.target)).length === 0) {
-                event.preventDefault();
-                event.stopPropagation();
                 _togglePanel.call(this, event, true);
             }
         };
