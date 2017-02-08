@@ -2,134 +2,98 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
         <loc>http://rocketbelt.io/</loc>
-        <lastmod>2017-01-19T17:14:03.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:41.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/base/breakpoints/</loc>
-        <lastmod>2017-01-19T17:14:03.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:41.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/base/color/</loc>
-        <lastmod>2017-01-19T17:14:03.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:42.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/base/feature-detection/</loc>
-        <lastmod>2017-01-19T17:14:04.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:42.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/base/grid/</loc>
-        <lastmod>2017-01-19T17:14:04.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:43.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/base/layout/</loc>
-        <lastmod>2017-01-19T17:14:04.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:42.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/base/slipsum/</loc>
-        <lastmod>2017-01-19T17:14:04.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:42.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/base/typography/</loc>
-        <lastmod>2017-01-19T17:14:04.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:43.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/alerts/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:43.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/busy-indicators/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:43.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/buttons/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:43.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/cards/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
+    </url>
+    <url>
+        <loc>http://rocketbelt.io/components/dialogs/</loc>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/expanders/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/forms/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/icons/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/images/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/components/modals/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/components/navigation/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/components/tabcordions/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/radio-buttons/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
-        <loc>http://rocketbelt.io/components/tooltips/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <loc>http://rocketbelt.io/components/navigation/</loc>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
+    </url>
+    <url>
+        <loc>http://rocketbelt.io/components/tabcordions/</loc>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/components/tags/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/creative/coming-soon/</loc>
-        <lastmod>2017-01-19T17:14:05.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/creative/playground-example/</loc>
-        <lastmod>2017-01-19T17:14:05.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
     <url>
         <loc>http://rocketbelt.io/creative/product-tag/</loc>
-        <lastmod>2017-01-19T17:14:05.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/creative/sale-sticker/</loc>
-        <lastmod>2017-01-19T17:14:05.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/creative/seo-banner/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/exposition/homepage-components/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/exposition/logo-usage/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/exposition/site-content/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/exposition/links-and-buttons/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/exposition/page-layout/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
-    </url>
-    <url>
-        <loc>http://rocketbelt.io/exposition/web-typography/</loc>
-        <lastmod>2017-01-19T17:14:06.000Z</lastmod>
+        <lastmod>2017-02-08T00:02:44.000Z</lastmod>
     </url>
 </urlset>

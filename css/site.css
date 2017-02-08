@@ -676,17 +676,17 @@ body {
               -ms-grid-row-align: center;
           align-self: center; }
 
-.docs-definition-list:after {
-  content: "";
+.docs-definition-list::after {
   display: table;
-  clear: both; }
+  clear: both;
+  content: ''; }
 
 .docs-definition-list dt {
-  font-weight: bold;
-  float: left;
   display: block;
+  float: left;
   clear: left;
-  width: 100px; }
+  width: 100px;
+  font-weight: bold; }
 
 .docs-definition-list dd {
   display: block;
@@ -853,35 +853,38 @@ body {
   .nav .category-contents .category-contents .category.is-active a {
     background: #fefdfd; }
 
-article > h1, h1.docs-header {
+article > h1,
+h1.docs-header {
   margin-bottom: 0.5rem;
   border-bottom: 1px solid #b4b0b0; }
 
-article > h2, h2.docs-header {
+article > h2,
+h2.docs-header {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   border-bottom: 1px solid #b4b0b0;
   text-transform: uppercase;
   font-size: 1.42383rem; }
 
-article > h3, h3.docs-header {
+article > h3,
+h3.docs-header {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
+  color: #9b9595;
   text-transform: uppercase;
-  font-size: 1rem;
-  color: #9b9595; }
+  font-size: 1rem; }
 
 #docs-vis-filter-controls {
   margin-bottom: 0.5rem; }
   #docs-vis-filter-controls li {
     margin-right: 1rem;
     padding: 0.6243rem 1rem; }
-  #docs-vis-filter-controls li.selected {
-    background-color: #b4b0b0;
-    border-radius: 3px; }
-    #docs-vis-filter-controls li.selected a {
-      text-decoration: none;
-      color: #030001; }
+    #docs-vis-filter-controls li.selected {
+      border-radius: 3px;
+      background-color: #b4b0b0; }
+      #docs-vis-filter-controls li.selected a {
+        color: #030001;
+        text-decoration: none; }
 
 .docs-vis-filter-item {
   display: none;
@@ -912,7 +915,7 @@ article > h3, h3.docs-header {
     font-size: 0.6243rem; }
 
 input[type='checkbox'].playground-item:checked + label::before {
-  background: url('data:image/svg+xml;utf8,<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="%23fefdfd" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>') no-repeat, #084F77;
+  background: url('data:image/svg+xml;utf8,<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="%23fefdfd" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>') no-repeat, #084f77;
   background-position: 50%; }
 
 .pt-img .copyable-inner {
@@ -1069,9 +1072,9 @@ html {
 cite {
   font-style: normal;
   font-size: 0.79012rem; }
-  cite b.footnote-term {
+  cite b .footnote-term {
     text-transform: capitalize; }
-  cite .footnote-returner {
+  cite b .footnote-returner {
     text-decoration: none; }
 
 p code,
@@ -1095,11 +1098,11 @@ p code,
     min-width: 8rem;
     padding: 0.30795rem 1.125rem;
     font-size: 0.79012rem;
+    min-width: 8rem;
     background: #fefdfd;
     background-image: none;
     color: #2b9ddd;
     fill: #2b9ddd;
-    min-width: 8rem;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
     position: absolute;
     top: 1em;
@@ -1115,9 +1118,9 @@ p code,
       color: #2b9ddd; }
     .example-code .copy-code:active {
       border: 0.1rem solid #dbe6ed;
+      background: #fefdfd;
       color: #1283c3;
-      fill: #1283c3;
-      background: #fefdfd; }
+      fill: #1283c3; }
     .example-code .copy-code[disabled] {
       border: 0.1rem solid #dbe6ed;
       color: rgba(43, 157, 221, 0.9);

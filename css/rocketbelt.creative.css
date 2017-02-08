@@ -1395,7 +1395,9 @@ h6 {
   margin: 0;
   font-size: 1rem; }
 
-.heading-group .preheading, .heading-group .heading, .heading-group .subheading {
+.heading-group .preheading,
+.heading-group .heading,
+.heading-group .subheading {
   display: block;
   line-height: 1.1; }
 
@@ -1504,9 +1506,9 @@ h4 small {
   letter-spacing: -.08em; }
 
 .cta {
-  font-weight: 600;
   color: #030001;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-weight: 600; }
 
 .list-reset {
   margin: 0;
@@ -1586,25 +1588,28 @@ code,
 ul.horizontal li {
   display: inline-block; }
 
+:focus {
+  outline: dotted thin; }
+
 .sale-sticker-wrapper {
   display: inline-block;
   padding: 0.05em;
   font-size: 7rem; }
   .sale-sticker-wrapper .sale-sticker-inner {
     position: relative;
+    padding: 0.2em 0.1em;
     background: rgba(254, 253, 253, 0.9);
-    font-family: 'Brand Serif';
-    text-transform: uppercase;
     text-align: center;
-    padding: .2em .1em; }
+    text-transform: uppercase;
+    font-family: 'Brand Serif'; }
     .sale-sticker-wrapper .sale-sticker-inner .promo-msg {
       position: relative;
-      line-height: 0.2;
-      margin-top: -0.1em; }
+      margin-top: -0.1em;
+      line-height: 0.2; }
     .sale-sticker-wrapper .sale-sticker-inner .promo-detail {
+      position: relative;
       font-size: .87em;
-      line-height: 1;
-      position: relative; }
+      line-height: 1; }
     .sale-sticker-wrapper .sale-sticker-inner .tagline-wrapper {
       font-family: 'Brand Sans'; }
     .sale-sticker-wrapper .sale-sticker-inner .tagline {
@@ -1619,44 +1624,44 @@ ul.horizontal li {
       font-size: 0.18em;
       font-family: 'Brand Sans';
       line-height: 1.2; }
-    .sale-sticker-wrapper .sale-sticker-inner .cta:after {
+    .sale-sticker-wrapper .sale-sticker-inner .cta::after {
       line-height: .2; }
     .sale-sticker-wrapper .sale-sticker-inner .optional-msg {
       display: block;
-      font-family: 'Brand Sans';
+      margin-bottom: .2em;
       font-size: .16em;
-      line-height: 1;
-      margin-bottom: .2em; }
+      font-family: 'Brand Sans';
+      line-height: 1; }
     .sale-sticker-wrapper .sale-sticker-inner .optional-msg:empty {
       display: none !important; }
-    .sale-sticker-wrapper .sale-sticker-inner.up-to-msg .promo-msg:before {
-      content: "Up To";
-      font-family: 'Brand Sans';
+    .sale-sticker-wrapper .sale-sticker-inner.up-to-msg .promo-msg::before {
+      display: block;
       margin-bottom: -0.6em;
       padding: 0.6em 0 0;
+      content: 'Up To';
       text-align: center;
       text-transform: uppercase;
       font-size: 0.16em;
-      line-height: 0.9;
-      display: block; }
+      font-family: 'Brand Sans';
+      line-height: 0.9; }
     .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage {
       margin-bottom: -0.06em; }
-    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail:before {
-      content: "%";
-      font-size: .65em;
-      line-height: 1;
+    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail::before {
       position: absolute;
       top: .4em;
       right: -.08em;
-      letter-spacing: normal; }
-    .sale-sticker-wrapper .sale-sticker-inner.up-to-msg .promo-msg.promo-percentage:after {
+      content: '%';
+      letter-spacing: normal;
+      font-size: .65em;
+      line-height: 1; }
+    .sale-sticker-wrapper .sale-sticker-inner.up-to-msg .promo-msg.promo-percentage::after {
       top: 0.31em; }
-    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail:after {
-      content: "off";
-      font-size: .2em;
+    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail::after {
       margin-left: .15em;
-      letter-spacing: normal; }
-    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail.kern-minus-1:after {
+      content: 'off';
+      letter-spacing: normal;
+      font-size: .2em; }
+    .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail.kern-minus-1::after {
       margin-left: .6em; }
 
 .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner {
@@ -1665,8 +1670,8 @@ ul.horizontal li {
   padding: .09em .2em; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .sale-sticker-tagline {
     float: left;
-    padding: 0 0 0 .11em;
     margin-top: .03em;
+    padding: 0 0 0 .11em;
     border-left: 2px solid #030001; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-msg {
     float: left;
@@ -1675,31 +1680,31 @@ ul.horizontal li {
     margin: 0 .16em 0 0;
     line-height: 1; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .cta, .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .tagline {
-    text-align: left;
     margin-top: 0;
+    text-align: left;
     font-size: 0.18em; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .tagline {
-    line-height: 1;
+    margin-top: -.1em;
     margin-bottom: .47em;
-    margin-top: -.1em; }
+    line-height: 1; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .cta {
     line-height: .84; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .optional-msg {
     display: inline-block;
-    margin: .75em .45em 0 0;
-    line-height: 1;
-    text-align: left;
-    float: left; }
-  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner.up-to-msg .promo-msg:before {
     float: left;
+    margin: .75em .45em 0 0;
+    text-align: left;
+    line-height: 1; }
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner.up-to-msg .promo-msg::before {
     display: inline-block;
-    padding: 0;
+    float: left;
     margin: 1.2em 0 0;
+    padding: 0;
     width: 2em;
     line-height: 1; }
-  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-msg.promo-percentage:after {
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-msg.promo-percentage::after {
     right: .13em; }
-  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner.up-to-msg .promo-msg.promo-percentage:after {
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner.up-to-msg .promo-msg.promo-percentage::after {
     top: .2em; }
 
 .sale-sticker-wrapper.sale-sticker-stretch {
@@ -1778,6 +1783,16 @@ ul.horizontal li {
             align-items: center; }
   .product-tag .product-tag_text {
     line-height: 1.3; }
+  .product-tag .percent-off {
+    font-style: normal;
+    font-family: "Brand Sans", sans-serif; }
+    .product-tag .percent-off .product-tag_wrap::after {
+      margin-left: 0.35em;
+      content: "%\aoff";
+      text-transform: uppercase;
+      white-space: pre;
+      font-size: 0.43em;
+      line-height: 1; }
   .product-tag.percent-off {
     padding: 0 0.49327rem;
     font-style: normal;
@@ -1788,16 +1803,5 @@ ul.horizontal li {
     position: absolute;
     bottom: 3%;
     left: 3%; }
-
-.product-tag.percent-off {
-  font-style: normal;
-  font-family: "Brand Sans", sans-serif; }
-  .product-tag.percent-off .product-tag_wrap::after {
-    margin-left: 0.35em;
-    content: "%\aoff";
-    text-transform: uppercase;
-    white-space: pre;
-    font-size: 0.43em;
-    line-height: 1; }
 
 /*# sourceMappingURL=rocketbelt.creative.css.map */

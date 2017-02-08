@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Sale Sticker'
@@ -15,7 +15,7 @@ block content
       .row
         .col.xs-12.ss_util_background
           +exampleWithCode
-            include _sale-sticker
+            include _sale-sticker.pug
         .col.xs-12.md-6
           h3 Variations
           div.playground-control
