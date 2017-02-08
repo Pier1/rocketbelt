@@ -114,6 +114,8 @@
               </li>
               <li class="category" ref="cards"><a href="../../components/cards">Cards</a>
               </li>
+              <li class="category" ref="dialogs"><a href="../../components/dialogs">Dialogs</a>
+              </li>
               <li class="category" ref="expanders"><a href="../../components/expanders">Expanders</a>
               </li>
               <li class="category" ref="forms"><a href="../../components/forms">Forms</a>
@@ -121,8 +123,6 @@
               <li class="category" ref="icons"><a href="../../components/icons">Icons</a>
               </li>
               <li class="category" ref="images"><a href="../../components/images">Images</a>
-              </li>
-              <li class="category" ref="modals"><a href="../../components/modals">Modals</a>
               </li>
               <li class="category" ref="navigation"><a href="../../components/navigation">Navigation</a>
               </li>
@@ -196,7 +196,7 @@
                 </section>
                 <section>
                   <h3 class="docs-header">Feature Banner</h3><img src="./img/feature_banner.png" width="750">
-                  <p>Very specific usage.  These banners are for products that we feel are very special, but that the product imagery alone doesn't do justice.  They can also be used where Pier 1 feels additional information needs to be presented to help the customer make a buying decision. </p>
+                  <p>Very specific usage.  These banners are for products that we feel are very special, but that the product imagery alone doesn't do justice.  They can also be used where Pier 1 feels additional information needs to be presented to help the customer make a buying decision.</p>
                 </section>
                 <section>
                   <h3 class="docs-header">SEO Footer (coming soon)</h3><img src="./img/seo_footer.png" width="750">
@@ -209,7 +209,7 @@
                   <li>Keep the buttons large (48px or 64px)</li>
                   <li>The top banner should <em>only</em> be added if additional explaination is needed</li>
                 </ul>
-                <section class="docs-vis-filters"><a name="docs-vis-filters"></a><br/>
+                <section class="docs-vis-filters"><a name="docs-vis-filters"></a><br>
                   <div>
                     <ul class="list-inline" id="docs-vis-filter-controls">
                       <li><span><strong>Visual Filter Layouts: </strong></span></li>
@@ -220,12 +220,10 @@
                     <div id="docs-vis-filter-items">
                       <div class="docs-vis-filter-item show" data-layout="1"><img src="./img/vis_filter_single.png" width="700"></div>
                       <div class="docs-vis-filter-item" data-layout="2"><img src="./img/vis_filter_multi.png" width="700"></div>
-                      <div class="docs-vis-filter-item" data-layout="3"> <img src="./img/vis_filter_multi_text.png" width="700"></div>
+                      <div class="docs-vis-filter-item" data-layout="3"><img src="./img/vis_filter_multi_text.png" width="700"></div>
                     </div>
-                  </div>
-                </section><br/>
-<br/>
-<br/>
+                  </div><br><br><br>
+                </section>
               </article>
               <script>
                 $('#docs-vis-filter-controls').on('click', 'a', function(e){
@@ -233,7 +231,7 @@
                   var $link = $(this), layoutId = $link.data('layout');
                   $('#docs-vis-filter-items').find('.show').removeClass('show');
                   $('#docs-vis-filter-controls').find('.selected').removeClass('selected');
-                  
+                
                   $link.parent('li').addClass('selected');
                   $('#docs-vis-filter-items').find('[data-layout="' + layoutId + '"]').addClass('show');
                 });
