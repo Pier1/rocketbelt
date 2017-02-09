@@ -293,17 +293,7 @@ limitations under the License.
                     event.preventDefault();
                     event.stopPropagation();
                     _togglePanel.call(this, event);
-                } else {
-                    if (this.justFocused) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        this.justFocused = false;
-                    } else if (isTouch) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
-                    }
-                }
+                } 
             }
         };
 
@@ -317,8 +307,6 @@ limitations under the License.
          */
         _clickOutsideHandler = function (event) {
             if (this.menu.has($(event.target)).length === 0) {
-                event.preventDefault();
-                event.stopPropagation();
                 _togglePanel.call(this, event, true);
             }
         };
@@ -352,8 +340,7 @@ limitations under the License.
         _focusInHandler = function (event) {
             clearTimeout(this.focusTimeoutID);
             $(event.target)
-                .addClass(this.settings.focusClass)
-                .on('click.accessible-megamenu', _clickHandler.bind(this));
+                .addClass(this.settings.focusClass);
             this.justFocused = true;
             if (this.panels.filter('.' + this.settings.openClass).length) {
                 _togglePanel.call(this, event);
@@ -731,9 +718,12 @@ limitations under the License.
                     .on("mouseout.accessible-megamenu", _mouseOutHandler.bind(this))
                     .on("mousedown.accessible-megamenu", _mouseDownHandler.bind(this));
 
-				if (isTouch) {
-					menu.on("touchstart.accessible-megamenu", _clickHandler.bind(this));
-				}
+                if (isTouch) {
+                    menu.on("touchend.accessible-megamenu", _clickHandler.bind(this));
+                }
+                else {
+                    menu.on('click.accessible-megamenu', _clickHandler.bind(this));
+                }
 
 				menu.find("hr").attr("role", "separator");
             },
