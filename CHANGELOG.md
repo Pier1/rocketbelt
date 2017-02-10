@@ -1,3 +1,13 @@
+<a name="1.3.3"></a>
+## [1.3.3](https://github.com/Pier1/rocketbelt/compare/1.3.2...v1.3.3) (2017-02-10)
+
+
+### Bug Fixes
+
+* **Deployment:** Fix broken conditional in gh-pages deployment. ([837c7fe](https://github.com/Pier1/rocketbelt/commit/837c7fe))
+
+
+
 <a name="1.3.2"></a>
 ## [1.3.2](https://github.com/Pier1/rocketbelt/compare/1.3.1...v1.3.2) (2017-02-09)
 
