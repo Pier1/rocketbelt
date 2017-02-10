@@ -51,7 +51,7 @@
 #docs-wrapper:not(.is-dialog-open),
 #main:not(.is-dialog-open) {
   & ~ .dialog {
-    .dialog-max {
+    &.dialog-max {
       .dialog_content {
         animation: dialog-max-out 300ms ease-in-out;
       }
