@@ -355,7 +355,7 @@ button.swiper-pagination-bullet {
   background-size: cover;
 }
 
-.gallery-top {
+.gallery-main {
   width: 100%;
   height: 80%;
 }
@@ -370,8 +370,10 @@ button.swiper-pagination-bullet {
   width: 25%;
   height: 100%;
   opacity: 0.4;
+  transition: opacity 200ms ease-in-out;
 }
 
-.gallery-thumbs .swiper-slide-active {
+.gallery-thumbs .swiper-slide-selected {
   opacity: 1;
+  transition: opacity 200ms ease-in-out;
 }
