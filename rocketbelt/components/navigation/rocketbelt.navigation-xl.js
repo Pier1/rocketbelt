@@ -293,17 +293,7 @@ limitations under the License.
                     event.preventDefault();
                     event.stopPropagation();
                     _togglePanel.call(this, event);
-                } else {
-                    if (this.justFocused) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        this.justFocused = false;
-                    } else if (isTouch) {
-                        event.preventDefault();
-                        event.stopPropagation();
-                        _togglePanel.call(this, event, target.hasClass(this.settings.openClass));
-                    }
-                }
+                } 
             }
         };
 
@@ -317,8 +307,6 @@ limitations under the License.
          */
         _clickOutsideHandler = function (event) {
             if (this.menu.has($(event.target)).length === 0) {
-                event.preventDefault();
-                event.stopPropagation();
                 _togglePanel.call(this, event, true);
             }
         };
@@ -352,8 +340,7 @@ limitations under the License.
         _focusInHandler = function (event) {
             clearTimeout(this.focusTimeoutID);
             $(event.target)
-                .addClass(this.settings.focusClass)
-                .on('click.accessible-megamenu', _clickHandler.bind(this));
+                .addClass(this.settings.focusClass);
             this.justFocused = true;
             if (this.panels.filter('.' + this.settings.openClass).length) {
                 _togglePanel.call(this, event);
@@ -611,7 +598,7 @@ limitations under the License.
          * @private
          */
         _mouseDownHandler = function (event) {
-            this.mouseTimeoutID = setTimeout(function () {
+            this.mouseDownTimeoutID = setTimeout(function () {
                 clearTimeout(this.focusTimeoutID);
             }, 1);
         };
@@ -625,10 +612,15 @@ limitations under the License.
          * @private
          */
         _mouseOverHandler = function (event) {
-            clearTimeout(this.mouseTimeoutID);
+            var that = this; 
+            clearTimeout(this.mouseOutTimeoutID);
+            clearTimeout(this.mouseDownTimeoutID);
             $(event.target)
                 .addClass(this.settings.hoverClass);
-            _togglePanel.call(this, event);
+
+            that.mouseOverTimeoutID = setTimeout(function () {
+                _togglePanel.call(that, event);
+            }, 250); 
             if ($(event.target).is(':tabbable')) {
                 $('html').on('keydown.accessible-megamenu', _keyDownHandler.bind(event.target));
             }
@@ -644,10 +636,11 @@ limitations under the License.
          */
         _mouseOutHandler = function (event) {
             var that = this;
+            clearTimeout(this.mouseOverTimeoutID);
             $(event.target)
                 .removeClass(that.settings.hoverClass);
 
-            that.mouseTimeoutID = setTimeout(function () {
+            that.mouseOutTimeoutID = setTimeout(function () {
                 _togglePanel.call(that, event, true);
             }, 250);
             if ($(event.target).is(':tabbable')) {
@@ -725,9 +718,12 @@ limitations under the License.
                     .on("mouseout.accessible-megamenu", _mouseOutHandler.bind(this))
                     .on("mousedown.accessible-megamenu", _mouseDownHandler.bind(this));
 
-				if (isTouch) {
-					menu.on("touchstart.accessible-megamenu", _clickHandler.bind(this));
-				}
+                if (isTouch) {
+                    menu.on("touchend.accessible-megamenu", _clickHandler.bind(this));
+                }
+                else {
+                    menu.on('click.accessible-megamenu', _clickHandler.bind(this));
+                }
 
 				menu.find("hr").attr("role", "separator");
             },

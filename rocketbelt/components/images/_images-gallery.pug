@@ -1,16 +1,21 @@
-section.swiper-container.gallery-top
-  .swiper-wrapper
-    - skus = ['BRS0005_1', '2490759_12', '2490759_13', '2222471_13', 'IDD0003_1', '2983222_10A']
-    each alt in skus
-      - var short = alt.substring(0, alt.indexOf('_'));
-      img.swiper-slide(src=base + short + '/' + alt + '.jpg?sw=400&sh=400')
+section.gallery(aria-label='Images of [your thing here]')
+  aside.swiper-container.gallery-main
+    .swiper-wrapper
+      - skus = ['BRS0005_1', '2490759_12', '2490759_13', '2222471_13', 'IDD0003_1', '2983222_10A']
+      each alt in skus
+        - var short = alt.substring(0, alt.indexOf('_'));
+        img.swiper-slide(src=base + short + '/' + alt + '.jpg?sw=400&sh=400')
 
-  .swiper-button-next.swiper-button-white
-  .swiper-button-prev.swiper-button-white
+    button.swiper-button-prev(aria-label='Previous Image')
+      svg.icon
+        use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-chevron-left')
+    button.swiper-button-next(aria-label='Next Image')
+      svg.icon
+        use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-chevron-right')
 
-section.swiper-container.gallery-thumbs
-  .swiper-wrapper
-    - skus = ['BRS0005_1', '2490759_12', '2490759_13', '2222471_13', 'IDD0003_1', '2983222_10A']
-    each alt in skus
-      - var short = alt.substring(0, alt.indexOf('_'));
-      img.swiper-slide(src=base + short + '/' + alt + '.jpg?sw=400&sh=400')  
+  aside.swiper-container.gallery-thumbs
+    .swiper-wrapper
+      - skus = ['BRS0005_1', '2490759_12', '2490759_13', '2222471_13', 'IDD0003_1', '2983222_10A']
+      each alt in skus
+        - var short = alt.substring(0, alt.indexOf('_'));
+        img.swiper-slide(src=base + short + '/' + alt + '.jpg?sw=400&sh=400')

@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Tooltips'
@@ -9,7 +9,7 @@ block content
     h2 Default
     +exampleWithCode
       button.button-md.button-secondary(
-        data-tooltip="You'd be the help of open-air luxury."
+        data-tooltip='You\'d be the help of open-air luxury.'
       ) Default
 
     h2 Directional
@@ -17,13 +17,13 @@ block content
     h3 Left
     +exampleWithCode
       button.tooltip-left.button-md.button-secondary(
-        data-tooltip="Weave a sofa or outdoor seat on display."
+        data-tooltip='Weave a sofa or outdoor seat on display.'
       ) Left
 
     h3 Right
     +exampleWithCode
       button.tooltip-right.button-md.button-secondary(
-        data-tooltip="Case in covered with nailhead trim is even more of flowers?"
+        data-tooltip='Case in covered with nailhead trim is even more of flowers?'
       ) Right
 
     h3 Bottom
