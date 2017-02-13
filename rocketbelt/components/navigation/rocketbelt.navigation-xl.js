@@ -164,6 +164,7 @@ limitations under the License.
             _togglePanel,
             _clickHandler,
             _clickOutsideHandler,
+            _closeHandler,
             _DOMAttrModifiedHandler,
             _focusInHandler,
             _focusOutHandler,
@@ -171,6 +172,7 @@ limitations under the License.
             _mouseDownHandler,
             _mouseOverHandler,
             _mouseOutHandler,
+            _scrollHandler,
             _toggleExpandedEventHandlers;
 
         /**
@@ -285,7 +287,16 @@ limitations under the License.
         _clickHandler = function (event) {
             var target = $(event.target),
                 topli = target.closest('.' + this.settings.topNavItemClass),
+                isCloser = target.hasClass('closer'),
+                menu = target.closest('.' + this.settings.menuClass),
                 panel = target.closest('.' + this.settings.panelClass);
+
+            if(menu.data('is-scrolling')){
+                menu.data('is-scrolling', false);
+                event.preventDefault();
+                return;
+            }        
+
             if (topli.length === 1
                     && panel.length === 0
                     && topli.find('.' + this.settings.panelClass).length === 1) {
@@ -294,6 +305,10 @@ limitations under the License.
                     event.stopPropagation();
                     _togglePanel.call(this, event);
                 } 
+            }
+            else if(isCloser){
+                _togglePanel.call(this, event, true);
+                return false;
             }
         };
 
@@ -309,6 +324,17 @@ limitations under the License.
             if (this.menu.has($(event.target)).length === 0) {
                 _togglePanel.call(this, event, true);
             }
+        };
+
+
+        _closeHandler = function (event) {
+            _togglePanel.call(this, event, true);
+            this.justFocused = false;
+            return false;
+        };
+
+        _scrollHandler = function (event) {
+            $(event.target).data('is-scrolling', true);
         };
 
         /**
@@ -338,9 +364,13 @@ limitations under the License.
          * @private
          */
         _focusInHandler = function (event) {
+            var target = $(event.target);
+            var isCloser = target.hasClass('closer');
+             if(isCloser){
+                return true; 
+            } 
             clearTimeout(this.focusTimeoutID);
-            $(event.target)
-                .addClass(this.settings.focusClass);
+            target.addClass(this.settings.focusClass);
             this.justFocused = true;
             if (this.panels.filter('.' + this.settings.openClass).length) {
                 _togglePanel.call(this, event);
@@ -407,6 +437,7 @@ limitations under the License.
                 panel = target.hasClass(settings.panelClass) ? target : target.closest('.' + settings.panelClass),
                 panelGroups = panel.find('.' + settings.panelGroupClass),
                 currentPanelGroup = target.closest('.' + settings.panelGroupClass),
+                isCloser = target.hasClass('closer'),
                 next,
                 keycode = event.keyCode || event.which,
                 start,
@@ -496,7 +527,7 @@ limitations under the License.
             case Keyboard.TAB:
                 i = tabbables.index(target);
                 if (event.shiftKey && isTopNavItem && target.hasClass(settings.openClass)) {
-                    _togglePanel(event, true);
+                    _togglePanel.call(that, event, true);
                     next = topnavitems.filter(':lt(' + topnavitems.index(topli) + '):last');
                     if (next.children('.' + settings.panelClass).length) {
                         found = next.children()
@@ -531,6 +562,12 @@ limitations under the License.
                     _clickHandler.call(that, event);
                 }
                 break;
+            case Keyboard.ENTER:
+                // fall through to default unless target is closer button
+                if (isCloser) {
+                    _togglePanel.call(that, event, true);
+                    break;
+                }
             default:
                 // alphanumeric filter
                 clearTimeout(this.keydownTimeoutID);
@@ -621,10 +658,7 @@ limitations under the License.
             that.mouseOverTimeoutID = setTimeout(function () {
                 _togglePanel.call(that, event);
             }, 250); 
-            if ($(event.target).is(':tabbable')) {
-                $('html').on('keydown.accessible-megamenu', _keyDownHandler.bind(event.target));
-            }
-        };
+        }; 
 
         /**
          * @name jQuery.fn.accessibleMegaMenu~_mouseOutHandler
@@ -643,9 +677,6 @@ limitations under the License.
             that.mouseOutTimeoutID = setTimeout(function () {
                 _togglePanel.call(that, event, true);
             }, 250);
-            if ($(event.target).is(':tabbable')) {
-                $('html').off('keydown.accessible-megamenu');
-            }
         };
 
         _toggleExpandedEventHandlers = function (hide) {
@@ -720,6 +751,7 @@ limitations under the License.
 
                 if (isTouch) {
                     menu.on("touchend.accessible-megamenu", _clickHandler.bind(this));
+                    menu.on('scroll.accessible-megamenu', _scrollHandler);
                 }
                 else {
                     menu.on('click.accessible-megamenu', _clickHandler.bind(this));
