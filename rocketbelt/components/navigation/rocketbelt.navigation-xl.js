@@ -273,6 +273,12 @@ limitations under the License.
                 }
 
                 _toggleExpandedEventHandlers.call(that);
+                
+                // IE 9 support.
+                if (navigator.userAgent.indexOf('MSIE') !== -1 || navigator.appVersion.indexOf('Trident/') > 0){
+                    flexibility(topli[0]);
+                }
+                
             }
         };
 
