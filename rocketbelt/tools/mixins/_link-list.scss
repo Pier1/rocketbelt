@@ -1,0 +1,44 @@
+@mixin link-list() {
+  @include list-reset()
+
+  li {
+    text-transform: capitalize;
+    line-height: 1.75;
+
+    a {
+      color: color(gray);
+      cursor: pointer;
+      transition: color 100ms linear;
+
+      &:hover {
+        color: color(gray, plus1);
+        transition: color 100ms linear;
+      }
+
+      &:active {
+        color: color(gray, minus1);
+        transition: color 100ms linear;
+      }
+    }
+  }
+
+  .title {
+    text-transform: uppercase;
+
+    a {
+      color: color(black);
+      cursor: pointer;
+      transition: color 100ms linear;
+
+      &:hover {
+        color: color(gray, minus2);
+        transition: color 100ms linear;
+      }
+
+      &:active {
+        color: color(black);
+        transition: color 100ms linear;
+      }
+    }
+  }
+}
