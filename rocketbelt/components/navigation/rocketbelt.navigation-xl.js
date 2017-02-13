@@ -598,7 +598,7 @@ limitations under the License.
          * @private
          */
         _mouseDownHandler = function (event) {
-            this.mouseTimeoutID = setTimeout(function () {
+            this.mouseDownTimeoutID = setTimeout(function () {
                 clearTimeout(this.focusTimeoutID);
             }, 1);
         };
@@ -612,10 +612,15 @@ limitations under the License.
          * @private
          */
         _mouseOverHandler = function (event) {
-            clearTimeout(this.mouseTimeoutID);
+            var that = this; 
+            clearTimeout(this.mouseOutTimeoutID);
+            clearTimeout(this.mouseDownTimeoutID);
             $(event.target)
                 .addClass(this.settings.hoverClass);
-            _togglePanel.call(this, event);
+
+            that.mouseOverTimeoutID = setTimeout(function () {
+                _togglePanel.call(that, event);
+            }, 250); 
             if ($(event.target).is(':tabbable')) {
                 $('html').on('keydown.accessible-megamenu', _keyDownHandler.bind(event.target));
             }
@@ -631,10 +636,11 @@ limitations under the License.
          */
         _mouseOutHandler = function (event) {
             var that = this;
+            clearTimeout(this.mouseOverTimeoutID);
             $(event.target)
                 .removeClass(that.settings.hoverClass);
 
-            that.mouseTimeoutID = setTimeout(function () {
+            that.mouseOutTimeoutID = setTimeout(function () {
                 _togglePanel.call(that, event, true);
             }, 250);
             if ($(event.target).is(':tabbable')) {
