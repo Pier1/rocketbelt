@@ -6,12 +6,12 @@ section.gallery(aria-label='Images of [your thing here]')
         - var short = alt.substring(0, alt.indexOf('_'));
         img.swiper-slide(src=base + short + '/' + alt + '.jpg?sw=400&sh=400')
 
-    button.swiper-button-next(aria-label='Next Image')
-      svg.icon
-        use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-chevron-right')
     button.swiper-button-prev(aria-label='Previous Image')
       svg.icon
         use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-chevron-left')
+    button.swiper-button-next(aria-label='Next Image')
+      svg.icon
+        use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-chevron-right')
 
   aside.swiper-container.gallery-thumbs
     .swiper-wrapper
