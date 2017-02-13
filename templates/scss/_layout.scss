@@ -110,10 +110,6 @@ body { min-height: 100%; }
   }
 }
 
-#docs-content {
-
-}
-
 .docs-center {
     align-items: center;
     align-self: center;
@@ -121,8 +117,20 @@ body { min-height: 100%; }
 
 .docs-definition-list {
   @include clearfix;
-  dt { font-weight: bold; float: left; display: block; clear: left; width: 100px; }
-  dd { display: block; float: left; margin: 0;}
+
+  dt {
+    display: block;
+    float: left;
+    clear: left;
+    width: 100px;
+    font-weight: bold;
+  }
+
+  dd {
+    display: block;
+    float: left;
+    margin: 0;
+  }
 }
 
 .nav {
@@ -343,12 +351,14 @@ body { min-height: 100%; }
   }
 }
 
-article > h1, h1.docs-header {
+article > h1,
+h1.docs-header {
   margin-bottom: $half-gutter-width;
   border-bottom: 1px solid color(gray, plus2);
 }
 
-article > h2, h2.docs-header  {
+article > h2,
+h2.docs-header  {
   margin-top: $gutter-width * 2;
   margin-bottom: $half-gutter-width;
   border-bottom: 1px solid color(gray, plus2);
@@ -356,12 +366,13 @@ article > h2, h2.docs-header  {
   font-size: ms(3);
 }
 
-article > h3, h3.docs-header  {
+article > h3,
+h3.docs-header  {
   margin-top: $gutter-width * 2;
   margin-bottom: $half-gutter-width;
+  color: color(gray, plus1);
   text-transform: uppercase;
   font-size: ms(0);
-  color: color(gray, plus1);
 }
 
 #docs-vis-filter-controls, #docs-hp-layouts-controls {
@@ -371,8 +382,6 @@ article > h3, h3.docs-header  {
     border-radius: 3px;
     a { text-decoration: none; color: color(black); }
   }
-  margin-bottom: $half-gutter-width;
-}
 
 .docs-vis-filter-item, .docs-hp-layouts-item { 
   display: none; 

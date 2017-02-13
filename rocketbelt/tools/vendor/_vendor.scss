@@ -1,1 +1,5 @@
-@import 'include-media';
+$ms-base: 1rem;
+$ms-ratio: 1.125;
+
+@import 'include-media',
+        'modular-scale/modular-scale';

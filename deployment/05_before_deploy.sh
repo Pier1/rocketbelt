@@ -2,7 +2,7 @@
 set -e # Exit with nonzero exit code if anything fails
 
 # If we're on master, build for gh-pages & push to that branch
-if [ $TRAVIS_PULL_REQUEST = "false" -a $TRAVIS_BRANCH = $SOURCE_BRANCH ]; then
+if [[ $TRAVIS_PULL_REQUEST = "false" ]] && [[ $TRAVIS_BRANCH = $SOURCE_BRANCH ]]; then
   mv dist/* .
   rmdir dist
 
