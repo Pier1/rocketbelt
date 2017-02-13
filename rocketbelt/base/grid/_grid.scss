@@ -216,3 +216,9 @@
     }
   }
 }
+
+.grid-fluid, .grid {
+  &.static {
+    @include example-viewport('static');
+  }
+}
