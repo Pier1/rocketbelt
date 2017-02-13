@@ -1,4 +1,4 @@
-extends /_layout
+extends /_layout.pug
 
 block vars
   - var title = 'Product Tag'
@@ -12,7 +12,7 @@ block content
         .col.xs
           .pt-img.pt-hide
             +exampleWithCode
-              include _product-tag
+              include _product-tag.pug
         .col.xs
           div.playground-control
             input#pt_img.playground-item(

@@ -166,16 +166,18 @@
     function hide () {
       if (!that.shown) return;
 
-      that.shown = false;
+      if (event.target.dataset.rbDialogHide !== undefined) {
+        that.shown = false;
 
-      removeClass(main, 'is-dialog-open');
+        removeClass(main, 'is-dialog-open');
 
-      node.setAttribute('aria-hidden', 'true');
-      main.removeAttribute('aria-hidden');
-      focusedBeforeDialog && focusedBeforeDialog.focus();
-      document.body.removeEventListener('focus', maintainFocus, true);
-      document.removeEventListener('keydown', bindKeypress);
-      dispatchEvent(node, 'dialog:hide', this);
+        node.setAttribute('aria-hidden', 'true');
+        main.removeAttribute('aria-hidden');
+        focusedBeforeDialog && focusedBeforeDialog.focus();
+        document.body.removeEventListener('focus', maintainFocus, true);
+        document.removeEventListener('keydown', bindKeypress);
+        dispatchEvent(node, 'dialog:hide', this);
+      }
     }
 
     function destroy () {
@@ -216,9 +218,5 @@
 
       var dialog = new window.rbDialog(dialogEl, mainEl);
     }
-
-    // To manually control the dialog:
-    // dialog.show()
-    // dialog.hide()
   });
 }());

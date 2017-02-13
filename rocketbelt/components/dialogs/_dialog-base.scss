@@ -1,4 +1,3 @@
-
 #docs-wrapper:not(.is-dialog-open),
 #main:not(.is-dialog-open) {
   & ~ .dialog {
@@ -21,18 +20,24 @@
 
   .dialog_header {
     border-bottom: 1px solid color(gray, plus3);
+    align-items: center;
+    justify-content: space-between;
 
     .dialog_title {
       font-weight: font-weight(normal);
+      font-size: font-size(4);
     }
   }
 
   .dialog_header,
-  .dialog_content,
   .dialog_buttons {
-    .col {
-      padding: padding(-5);
-    }
+    display: flex;
+  }
+
+  .dialog_header,
+  .dialog_body,
+  .dialog_buttons {
+    padding: padding(-5);
   }
 }
 
@@ -67,6 +72,8 @@
 .dialog_buttons {
   border-top: 1px solid color(gray, plus2);
   background: color(gray, plus3);
+  justify-content: flex-end;
+  align-items: center;
 }
 
 .dialog_content {
@@ -76,10 +83,18 @@
   top: 50%;
   left: 50%;
   z-index: 3;
+  overflow-y: auto;
+  max-height: 90%;
   width: 95%;
   border-radius: 2px;
   background-color: color(white);
   transform: translate3d(-50%, -50%, 0);
+
+  .dialog_close_container {
+    flex-grow: 0;
+    justify-content: center;
+    align-items: center;
+  }
 
   @include media('>=md') {
     width: 60%;
@@ -111,14 +126,6 @@
   to {
     opacity: 0;
     transform: translate3d(-50%, 0%, 0);
-  }
-}
-
-.dialog_content {
-  .dialog_close_container {
-    flex-grow: 0;
-    justify-content: center;
-    align-items: center;
   }
 }
 

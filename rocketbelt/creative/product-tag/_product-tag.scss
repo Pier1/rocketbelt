@@ -16,6 +16,20 @@
     line-height: 1.3;
   }
 
+  .percent-off {
+    font-style: normal;
+    font-family: font-family(sans);
+
+    .product-tag_wrap::after {
+      margin-left: 0.35em;
+      content: '%' + unicode(newline) + 'off';
+      text-transform: uppercase;
+      white-space: pre;
+      font-size: 0.43em;
+      line-height: 1;
+    }
+  }
+
   &.percent-off {
     padding: 0 ms(-6);
     font-style: normal;
@@ -30,19 +44,5 @@
     position: absolute;
     bottom: 3%;
     left: 3%;
-  }
-}
-
-.product-tag.percent-off {
-  font-style: normal;
-  font-family: font-family(sans);
-
-  .product-tag_wrap::after {
-    margin-left: 0.35em;
-    content: '%' + unicode(newline) + 'off';
-    text-transform: uppercase;
-    white-space: pre;
-    font-size: 0.43em;
-    line-height: 1;
   }
 }
