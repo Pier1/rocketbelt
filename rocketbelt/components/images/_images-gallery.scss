@@ -146,7 +146,7 @@
   width: 8px;
   height: 8px;
   border-radius: 100%;
-  background: #000;
+  background: color(black);
   opacity: 0.2;
 }
 button.swiper-pagination-bullet {
@@ -164,14 +164,14 @@ button.swiper-pagination-bullet {
   background: #fff;
 }
 .swiper-pagination-bullet-active {
-  background: #007aff;
+  background: color(primary);
   opacity: 1;
 }
 .swiper-pagination-white .swiper-pagination-bullet-active {
-  background: #fff;
+  background: color(white);
 }
 .swiper-pagination-black .swiper-pagination-bullet-active {
-  background: #000;
+  background: color(black);
 }
 .swiper-container-vertical > .swiper-pagination-bullets {
   top: 50%;
@@ -189,7 +189,7 @@ button.swiper-pagination-bullet {
 // Progress
 .swiper-pagination-progress {
   position: absolute;
-  background: rgba(0, 0, 0, 0.25);
+  background: rgba(color(black), 0.25);
 }
 .swiper-pagination-progress .swiper-pagination-progressbar {
   position: absolute;
@@ -197,7 +197,7 @@ button.swiper-pagination-bullet {
   left: 0;
   width: 100%;
   height: 100%;
-  background: #007aff;
+  background: color(primary);
   transform: scale(0);
   transform-origin: left top;
 }
@@ -217,13 +217,13 @@ button.swiper-pagination-bullet {
   height: 100%;
 }
 .swiper-pagination-progress.swiper-pagination-white {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(color(white), 0.5);
 }
 .swiper-pagination-progress.swiper-pagination-white .swiper-pagination-progressbar {
   background: #fff;
 }
 .swiper-pagination-progress.swiper-pagination-black .swiper-pagination-progressbar {
-  background: #000;
+  background: color(black);
 }
 
 // Fade
@@ -263,7 +263,7 @@ button.swiper-pagination-bullet {
 .swiper-scrollbar {
   position: relative;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.1);
+  background: rgba(color(black), 0.1);
 
   -ms-touch-action: none;
 }
@@ -290,7 +290,7 @@ button.swiper-pagination-bullet {
   width: 100%;
   height: 100%;
   border-radius: 10px;
-  background: rgba(0, 0, 0, 0.5);
+  background: rgba(color(black), 0.5);
 }
 .swiper-scrollbar-cursor-drag {
   cursor: move;
