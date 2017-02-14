@@ -207,6 +207,32 @@ h4 {
   font-weight: font-weight(semibold);
 }
 
+.text-with-icon {
+  font-size: font-size(10);
+
+  &::before {
+    position: absolute;
+    top: .27em;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 0, 0, 0.23);
+    content: '';
+  }
+
+  &::after {
+    position: absolute;
+    bottom: .145833em;
+    left: 0;
+    z-index: -100;
+    width: 100%;
+    height: 1px;
+    background-color: rgba(255, 0, 0, 0.23);
+    content: '';
+  }
+}
+
 .list-reset {
   @include list-reset();
 }
