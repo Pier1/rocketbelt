@@ -130,16 +130,30 @@ block content
     h2 Text with Icon
     +exampleWithCode
       span.text-with-icon Store Locator
-        svg.icon(aria-hidden="true")
+        svg.icon.icon-left(aria-hidden="true")
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-pin')
-      span.text-with-icon
-        svg.icon(aria-hidden="true")
+      br
+      span.text-with-icon Store Locator
+        svg.icon.icon-right(aria-hidden="true")
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-pin')
-        |  Store Locator
+      br
+      a.text-with-icon(href="#") Chat Now
+        svg.icon.icon-right(aria-hidden="true")
+          use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-chat-single')
+      br
+      span.text-with-icon.font-minus-1 (817) 252-6300
+        svg.icon.icon-left(aria-hidden="true")
+          use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-phone')
+      br
+      span.text-with-icon.font-plus-4 Email Us
+        svg.icon.icon-left(aria-hidden="true")
+          use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-envelope')
 
     h2 CTA
     +exampleWithCode
-      span.cta Shop Now
+      a.cta.text-with-icon(href="#") Shop Now
+        svg.icon.icon-right(aria-hidden="true")
+          use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow')
 
     h2 Lists
     h3 Reset
