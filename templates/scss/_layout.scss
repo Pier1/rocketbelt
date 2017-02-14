@@ -375,29 +375,119 @@ h3.docs-header  {
   font-size: ms(0);
 }
 
-#docs-vis-filter-controls {
-  margin-bottom: $half-gutter-width;
-
-  li {
-    margin-right: $gutter-width;
-    padding: padding(-4) padding(0);
-
-    &.selected {
-      border-radius: 3px;
-      background-color: color(gray, plus2);
-
-      a {
-        color: color(black);
-        text-decoration: none;
-      }
-    }
+#docs-vis-filter-controls, #docs-hp-layouts-controls {
+  li { margin-right: $gutter-width; padding: padding(-4) padding(0); }
+  li.selected {
+    background-color: color(gray, plus2);
+    border-radius: 3px;
+    a { text-decoration: none; color: color(black); }
   }
 }
 
-.docs-vis-filter-item {
-  display: none;
+.docs-vis-filter-item, .docs-hp-layouts-item { 
+  display: none; 
   clear: both;
   &.show {
     display: block;
   }
 }
+
+
+// Homepage Components
+.i-hp-grid {
+    width: 495px;
+    margin: 0 auto;
+    .col {
+      padding-bottom: 0.5rem !important;
+    }
+}
+
+.i-header {
+    background: url("/exposition/homepage-components/img/c-site-header.png") no-repeat 8px;
+    background-size: 97%;
+    height: 93px;
+    .col {
+      text-align: center; 
+      align-items: center;
+    }
+    
+    .i-hp-item {
+      display: inline-block;
+      width: 25%;
+      margin-top: 6%;
+    }
+}
+
+.i-hp-item{
+  position: relative;
+  img {
+    max-width:100%;
+    max-height:100%;
+    transition: all 450ms ease-out; 
+  }
+}
+.i-hp-expanded, 
+.i-hp-initial { 
+  transition: all 450ms ease-out; 
+}
+.i-hp-expanded { 
+  opacity: 0; 
+  min-width: 50%; 
+  z-index: 50; 
+  overflow: hidden;
+}
+
+.i-hp-item { 
+  opacity: 1;
+  &:hover .i-hp-initial img {
+    @include z-depth(2);
+  }
+  &.i-hp-static {
+    opacity: .3;
+    &:hover .i-hp-initial img {
+      box-shadow: none;
+    }
+  }
+}
+
+.i-hp-item.active {
+  .i-hp-initial { opacity: 0; }
+  .i-hp-expanded { 
+    opacity: 1; 
+    
+    background: transparent;
+    width: 150%;
+    img {
+      display: block;
+      opacity: 1;
+      width: 150%;
+    }
+  }
+  .i-hp-info {
+    opacity: 1;
+    left: 10px;
+    z-index: 100;
+  }
+}
+
+.i-hp-expanded {
+  opacity: 0;
+  width: 100%;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  &:after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 51; 
+    background: rgba(0,0,0,.5);
+  }
+}
+
+
+
+
