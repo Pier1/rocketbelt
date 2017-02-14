@@ -1,0 +1,20 @@
+.cta {
+  color: color(black);
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: font-weight(semibold);
+  .icon {
+    width: .85em;
+    height: .85em;
+  }
+  &:hover {
+    color: lighten(black, 15%) !important;
+  }
+  &:active,
+  &:focus {
+    color: lighten(black, 30%) !important;
+  }
+  &:visited {
+    color: color(black);
+  }
+}
