@@ -1,4 +1,4 @@
-@import 'font-faces/font-faces';
+@import '../font-faces/font-faces';
 
 // line-height + margin-top + margin-bottom must be a multiple of 1.5rem to maintain vertical rhythm.
 $base-line-height: 1.5;
@@ -201,38 +201,6 @@ h4 {
   letter-spacing: -.08em;
 }
 
-.cta {
-  color: color(black);
-  text-transform: uppercase;
-  font-weight: font-weight(semibold);
-}
-
-.text-with-icon {
-  font-size: font-size(10);
-
-  &::before {
-    position: absolute;
-    top: .27em;
-    left: 0;
-    z-index: -100;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 0, 0, 0.23);
-    content: '';
-  }
-
-  &::after {
-    position: absolute;
-    bottom: .145833em;
-    left: 0;
-    z-index: -100;
-    width: 100%;
-    height: 1px;
-    background-color: rgba(255, 0, 0, 0.23);
-    content: '';
-  }
-}
-
 .list-reset {
   @include list-reset();
 }
@@ -324,3 +292,6 @@ ul {
     }
   }
 }
+
+@import 'typography-text-with-icon';
+@import 'typography-cta';
