@@ -357,11 +357,29 @@ button.swiper-pagination-bullet {
 }
 
 // Preloader
-.swiper-lazy-preloader {
-  // TODO: Skeleton screen
-}
+// .swiper-lazy-preloader {
+//   background: linear-gradient(
+//     -90deg,
+//     color(gray, plus2) 0%,
+//     color(white) 50%,
+//     color(gray, plus2) 100%
+//   );
+//
+//   background-size: 400% 400%;
+//   animation: pulse 2s ease-in-out infinite;
+//
+//   @keyframes pulse {
+//     0% {
+//       background-position: 0% 0%;
+//     }
+//
+//     100% {
+//       background-position: -135% 0%;
+//     }
+//   }
+// }
 
-.gallery-main {
+.swiper-container {
   width: 100%;
   height: 80%;
 }
