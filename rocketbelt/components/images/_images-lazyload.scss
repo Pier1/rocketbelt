@@ -1,4 +1,4 @@
-.lazyload-wrapper {
+%skeleton-image {
   position: relative;
   width: 100%;
   background: linear-gradient(
@@ -20,6 +20,16 @@
       background-position: -135% 0%;
     }
   }
+}
+
+.lazyload-loading {
+  @extend %skeleton-image;
+
+  padding-bottom: 100%;
+}
+
+.lazyload-wrapper {
+  @extend %skeleton-image;
 
   & img {
     position: absolute;
