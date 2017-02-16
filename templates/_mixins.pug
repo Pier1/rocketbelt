@@ -101,7 +101,7 @@ mixin buildNav(navObject, rootHref)
 
         if shortName !== 'img'
           li.category(ref=shortName)
-            if _.find(item.children, function (i) { return i.name.indexOf('index.') > -1 })
+            if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
               a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '')}
             else
               input.category-toggle(id=name, type='checkbox', name=name)
