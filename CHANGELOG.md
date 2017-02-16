@@ -1,3 +1,14 @@
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/Pier1/rocketbelt/compare/1.4.0...v1.4.1) (2017-02-16)
+
+
+### Features
+
+* **typography:** Add link lists ([a948bde](https://github.com/Pier1/rocketbelt/commit/a948bde))
+* **typography:** Add text with icons ([0bd6b4a](https://github.com/Pier1/rocketbelt/commit/0bd6b4a))
+
+
+
 <a name="1.4.0"></a>
 # [1.4.0](https://github.com/Pier1/rocketbelt/compare/1.3.3...v1.4.0) (2017-02-16)
 
