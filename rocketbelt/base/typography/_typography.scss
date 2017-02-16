@@ -1,0 +1,311 @@
+@import '../font-faces/font-faces';
+
+// line-height + margin-top + margin-bottom must be a multiple of 1.5rem to maintain vertical rhythm.
+$base-line-height: 1.5;
+$ms-base: 1rem;
+$ms-ratio: 1.125;
+
+body {
+  margin: 0;
+  color: color(black);
+  font-size: font-size(0);
+  font-family: font-family(default);
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+p {
+  margin-top: 0;
+}
+
+h1 {
+  margin: 0;
+  font-size: font-size(3);
+}
+
+h2 {
+  margin: 0;
+  font-size: font-size(2);
+}
+
+h3 {
+  margin: 0;
+  font-size: font-size(1);
+}
+
+h4 {
+  text-transform: uppercase;
+  font-weight: font-weight(normal);
+}
+
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-size: font-size(0);
+}
+
+.heading-group {
+  .preheading,
+  .heading,
+  .subheading {
+    display: block;
+    line-height: 1.1;
+  }
+  .preheading {
+    font-size: font-size(0);
+  }
+
+  .heading {
+    font-size: font-size(4);
+  }
+
+  .subheading {
+    font-size: font-size(2);
+  }
+
+  &.display {
+    text-align: center;
+    .preheading { font-style: italic; }
+    .subheading { text-transform: uppercase; }
+  }
+}
+
+@include media('>=md') {
+  h1 {
+    font-size: font-size(4);
+  }
+
+  h2 {
+    font-size: font-size(3);
+  }
+
+  h3 {
+    font-size: font-size(2);
+  }
+
+  h4 {
+    font-size: font-size(1);
+  }
+
+  h5,
+  h6 {
+    font-size: font-size(0);
+  }
+}
+
+@include media('>=lg') {
+  h1 {
+    font-size: font-size(5);
+  }
+
+  h2 {
+    font-size: font-size(4);
+  }
+
+  h3 {
+    font-size: font-size(3);
+  }
+
+  h4 {
+    font-size: font-size(2);
+  }
+}
+
+@include media('>=xl') {
+  h1 {
+    font-size: font-size(6);
+  }
+
+  h2 {
+    font-size: font-size(5);
+  }
+
+  h3 {
+    font-size: font-size(4);
+  }
+
+  h4 {
+    font-size: font-size(3);
+  }
+}
+
+.font-sans {
+  font-family: font-family(sans);
+}
+
+.font-serif {
+  font-family: font-family(serif);
+}
+
+.font-monospace {
+  padding: 0.125rem 0.25rem;
+  border: 1px solid color(gray, plus2);
+  border-radius: 2px;
+  background-color: color(gray, plus4);
+  font-family: font-family(monospace);
+}
+
+h1,
+h2,
+h3,
+h4 {
+  small {
+    color: color(gray, plus1);
+    font-weight: font-weight(light);
+
+    &::before {
+      content: unicode(nbsp) + unicode(nbsp);
+    }
+  }
+}
+
+.font-minus-2 {
+  font-size: font-size(-3);
+}
+
+.font-minus-1 {
+  font-size: font-size(-2);
+}
+
+.font-plus-1 {
+  font-size: font-size(2);
+}
+
+.font-plus-2 {
+  font-size: font-size(4);
+}
+
+.font-plus-3 {
+  font-size: font-size(6);
+}
+
+.font-plus-4 {
+  font-size: font-size(8);
+}
+
+.font-style-italic {
+  font-style: font-style('italic');
+}
+
+.font-weight-light {
+  font-weight: font-weight(light);
+}
+
+.font-weight-semibold {
+  font-weight: font-weight(semibold);
+}
+
+.kern-minus-1 {
+  letter-spacing: -.08em;
+}
+
+.list-reset {
+  @include list-reset();
+}
+
+.list-inline,
+.list-reset-horizontal {
+  @include list-reset($horizontal: true);
+}
+
+.link-list:first-of-type {
+  padding-left: 0;
+}
+
+.link-list {
+  @include link-list();
+  display: inline-block;
+  padding: 0 1em;
+}
+
+.link-list:last-of-type {
+  padding-right: 0;
+}
+
+a {
+  color: color(primary);
+  transition: color 100ms linear;
+
+  &:hover {
+    color: color(primary, lighter);
+    transition: color 100ms linear;
+  }
+
+  &:active {
+    color: color(brand);
+    transition: color 100ms linear;
+  }
+
+  &:visited {
+    color: color(accent);
+    transition: color 100ms linear;
+  }
+}
+
+blockquote {
+  margin: 0.75rem 0;
+  padding: 0.375rem 0.75rem;
+  border-left: 0.75rem solid color(gray, plus2);
+  border-radius: 2px;
+  background: color(gray, plus4);
+  text-align: left;
+  font-size: font-size(4);
+
+  .source {
+    display: block;
+    color: color(gray, plus2);
+    font-size: font-size(2);
+
+    &::before {
+      content: unicode('horizontal-bar') + unicode(nbsp);
+    }
+  }
+
+  &.pull {
+    padding: 0;
+    width: 40%;
+    border: none;
+    background: transparent;
+
+    &:not(.font-serif) {
+      font-weight: font-weight(light);
+    }
+
+    & .quote {
+      display: inline;
+      background: rgba(color(secondary, lighter), 0.1);
+      box-shadow: 0 -0.25rem 0 rgba(color(secondary), 0.3);
+      line-height: 1.75;
+    }
+
+    & .source {
+      text-align: right;
+    }
+  }
+}
+
+.lead-copy,
+.lead-first-line::first-line {
+  font-size: font-size(4);
+}
+
+pre,
+code,
+.code {
+  white-space: pre-line;
+  font-weight: font-weight(light);
+  font-family: font-family(monospace);
+}
+
+ul {
+  &.horizontal {
+    li {
+      display: inline-block;
+    }
+  }
+}
+
+@import 'typography-text-with-icon';
+@import 'typography-cta';

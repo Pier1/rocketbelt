@@ -1180,6 +1180,194 @@
   .grid {
     width: 75rem; } }
 
+.grid-fluid.static .col.static, .grid-fluid.static .col.static-1, .grid-fluid.static .col.static-offset-1, .grid-fluid.static .col.static-2, .grid-fluid.static .col.static-offset-2, .grid-fluid.static .col.static-3, .grid-fluid.static .col.static-offset-3, .grid-fluid.static .col.static-4, .grid-fluid.static .col.static-offset-4, .grid-fluid.static .col.static-5, .grid-fluid.static .col.static-offset-5, .grid-fluid.static .col.static-6, .grid-fluid.static .col.static-offset-6, .grid-fluid.static .col.static-7, .grid-fluid.static .col.static-offset-7, .grid-fluid.static .col.static-8, .grid-fluid.static .col.static-offset-8, .grid-fluid.static .col.static-9, .grid-fluid.static .col.static-offset-9, .grid-fluid.static .col.static-10, .grid-fluid.static .col.static-offset-10, .grid-fluid.static .col.static-11, .grid-fluid.static .col.static-offset-11, .grid-fluid.static .col.static-12, .grid-fluid.static .col.static-offset-12, .grid.static .col.static, .grid.static .col.static-1, .grid.static .col.static-offset-1, .grid.static .col.static-2, .grid.static .col.static-offset-2, .grid.static .col.static-3, .grid.static .col.static-offset-3, .grid.static .col.static-4, .grid.static .col.static-offset-4, .grid.static .col.static-5, .grid.static .col.static-offset-5, .grid.static .col.static-6, .grid.static .col.static-offset-6, .grid.static .col.static-7, .grid.static .col.static-offset-7, .grid.static .col.static-8, .grid.static .col.static-offset-8, .grid.static .col.static-9, .grid.static .col.static-offset-9, .grid.static .col.static-10, .grid.static .col.static-offset-10, .grid.static .col.static-11, .grid.static .col.static-offset-11, .grid.static .col.static-12, .grid.static .col.static-offset-12 {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  -js-display: flex;
+  display: flex;
+  -webkit-flex: 0 1 auto;
+      -ms-flex: 0 1 auto;
+          flex: 0 1 auto;
+  padding-right: 0.5rem;
+  padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-flex-grow: 0;
+      -ms-flex-positive: 0;
+          flex-grow: 0;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0; }
+
+.grid-fluid.static .col.static, .grid.static .col.static {
+  max-width: 100%;
+  -webkit-flex-basis: 0;
+      -ms-flex-preferred-size: 0;
+          flex-basis: 0;
+  -webkit-flex-grow: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1; }
+
+.grid-fluid.static .col.static-1, .grid.static .col.static-1 {
+  max-width: 8.33333%;
+  -webkit-flex-basis: 8.33333%;
+      -ms-flex-preferred-size: 8.33333%;
+          flex-basis: 8.33333%; }
+
+.grid-fluid.static .col.static-offset-1, .grid.static .col.static-offset-1 {
+  margin-left: 8.33333%; }
+
+.grid-fluid.static .col.static-2, .grid.static .col.static-2 {
+  max-width: 16.66667%;
+  -webkit-flex-basis: 16.66667%;
+      -ms-flex-preferred-size: 16.66667%;
+          flex-basis: 16.66667%; }
+
+.grid-fluid.static .col.static-offset-2, .grid.static .col.static-offset-2 {
+  margin-left: 16.66667%; }
+
+.grid-fluid.static .col.static-3, .grid.static .col.static-3 {
+  max-width: 25%;
+  -webkit-flex-basis: 25%;
+      -ms-flex-preferred-size: 25%;
+          flex-basis: 25%; }
+
+.grid-fluid.static .col.static-offset-3, .grid.static .col.static-offset-3 {
+  margin-left: 25%; }
+
+.grid-fluid.static .col.static-4, .grid.static .col.static-4 {
+  max-width: 33.33333%;
+  -webkit-flex-basis: 33.33333%;
+      -ms-flex-preferred-size: 33.33333%;
+          flex-basis: 33.33333%; }
+
+.grid-fluid.static .col.static-offset-4, .grid.static .col.static-offset-4 {
+  margin-left: 33.33333%; }
+
+.grid-fluid.static .col.static-5, .grid.static .col.static-5 {
+  max-width: 41.66667%;
+  -webkit-flex-basis: 41.66667%;
+      -ms-flex-preferred-size: 41.66667%;
+          flex-basis: 41.66667%; }
+
+.grid-fluid.static .col.static-offset-5, .grid.static .col.static-offset-5 {
+  margin-left: 41.66667%; }
+
+.grid-fluid.static .col.static-6, .grid.static .col.static-6 {
+  max-width: 50%;
+  -webkit-flex-basis: 50%;
+      -ms-flex-preferred-size: 50%;
+          flex-basis: 50%; }
+
+.grid-fluid.static .col.static-offset-6, .grid.static .col.static-offset-6 {
+  margin-left: 50%; }
+
+.grid-fluid.static .col.static-7, .grid.static .col.static-7 {
+  max-width: 58.33333%;
+  -webkit-flex-basis: 58.33333%;
+      -ms-flex-preferred-size: 58.33333%;
+          flex-basis: 58.33333%; }
+
+.grid-fluid.static .col.static-offset-7, .grid.static .col.static-offset-7 {
+  margin-left: 58.33333%; }
+
+.grid-fluid.static .col.static-8, .grid.static .col.static-8 {
+  max-width: 66.66667%;
+  -webkit-flex-basis: 66.66667%;
+      -ms-flex-preferred-size: 66.66667%;
+          flex-basis: 66.66667%; }
+
+.grid-fluid.static .col.static-offset-8, .grid.static .col.static-offset-8 {
+  margin-left: 66.66667%; }
+
+.grid-fluid.static .col.static-9, .grid.static .col.static-9 {
+  max-width: 75%;
+  -webkit-flex-basis: 75%;
+      -ms-flex-preferred-size: 75%;
+          flex-basis: 75%; }
+
+.grid-fluid.static .col.static-offset-9, .grid.static .col.static-offset-9 {
+  margin-left: 75%; }
+
+.grid-fluid.static .col.static-10, .grid.static .col.static-10 {
+  max-width: 83.33333%;
+  -webkit-flex-basis: 83.33333%;
+      -ms-flex-preferred-size: 83.33333%;
+          flex-basis: 83.33333%; }
+
+.grid-fluid.static .col.static-offset-10, .grid.static .col.static-offset-10 {
+  margin-left: 83.33333%; }
+
+.grid-fluid.static .col.static-11, .grid.static .col.static-11 {
+  max-width: 91.66667%;
+  -webkit-flex-basis: 91.66667%;
+      -ms-flex-preferred-size: 91.66667%;
+          flex-basis: 91.66667%; }
+
+.grid-fluid.static .col.static-offset-11, .grid.static .col.static-offset-11 {
+  margin-left: 91.66667%; }
+
+.grid-fluid.static .col.static-12, .grid.static .col.static-12 {
+  max-width: 100%;
+  -webkit-flex-basis: 100%;
+      -ms-flex-preferred-size: 100%;
+          flex-basis: 100%; }
+
+.grid-fluid.static .col.static-offset-12, .grid.static .col.static-offset-12 {
+  margin-left: 100%; }
+
+.grid-fluid.static .row.static-start, .grid.static .row.static-start {
+  -webkit-justify-content: flex-start;
+      -ms-flex-pack: start;
+          justify-content: flex-start; }
+
+.grid-fluid.static .row.static-center, .grid.static .row.static-center {
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center; }
+
+.grid-fluid.static .row.static-end, .grid.static .row.static-end {
+  -webkit-justify-content: flex-end;
+      -ms-flex-pack: end;
+          justify-content: flex-end; }
+
+.grid-fluid.static .row.static-top, .grid.static .row.static-top {
+  -webkit-align-items: flex-start;
+      -ms-flex-align: start;
+          align-items: flex-start; }
+
+.grid-fluid.static .row.static-middle, .grid.static .row.static-middle {
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+
+.grid-fluid.static .row.static-bottom, .grid.static .row.static-bottom {
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
+
+.grid-fluid.static .row.static-around, .grid.static .row.static-around {
+  -webkit-justify-content: space-around;
+      -ms-flex-pack: distribute;
+          justify-content: space-around; }
+
+.grid-fluid.static .row.static-between, .grid.static .row.static-between {
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between; }
+
+.grid-fluid.static .col.static-first, .grid.static .col.static-first {
+  -webkit-order: first;
+      -ms-flex-order: first;
+          order: first; }
+
+.grid-fluid.static .col.static-last, .grid.static .col.static-last {
+  -webkit-order: last;
+      -ms-flex-order: last;
+          order: last; }
+
 .float-right {
   float: right; }
 
@@ -1312,12 +1500,6 @@
 
 .slipsum-container {
   white-space: pre-wrap; }
-
-html {
-  box-sizing: border-box; }
-
-*, *::before, *::after {
-  box-sizing: inherit; }
 
 @font-face {
   font-weight: 300;
@@ -1505,11 +1687,6 @@ h4 small {
 .kern-minus-1 {
   letter-spacing: -.08em; }
 
-.cta {
-  color: #030001;
-  text-transform: uppercase;
-  font-weight: 600; }
-
 .list-reset {
   margin: 0;
   padding: 0;
@@ -1531,6 +1708,47 @@ h4 small {
   .list-inline li,
   .list-reset-horizontal li {
     display: inline-block; }
+
+.link-list:first-of-type {
+  padding-left: 0; }
+
+.link-list {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+  display: inline-block;
+  padding: 0 1em; }
+  .link-list ul,
+  .link-list ol {
+    list-style-type: none; }
+  .link-list li {
+    text-transform: capitalize;
+    line-height: 1.75; }
+    .link-list li a {
+      color: #827b7b;
+      cursor: pointer;
+      transition: color 100ms linear; }
+      .link-list li a:hover {
+        color: #9b9595;
+        transition: color 100ms linear; }
+      .link-list li a:active {
+        color: #686262;
+        transition: color 100ms linear; }
+  .link-list .title {
+    text-transform: uppercase; }
+    .link-list .title a {
+      color: #030001;
+      cursor: pointer;
+      transition: color 100ms linear; }
+      .link-list .title a:hover {
+        color: #4e4a4a;
+        transition: color 100ms linear; }
+      .link-list .title a:active {
+        color: #030001;
+        transition: color 100ms linear; }
+
+.link-list:last-of-type {
+  padding-right: 0; }
 
 a {
   color: #1492d9;
@@ -1587,6 +1805,53 @@ code,
 
 ul.horizontal li {
   display: inline-block; }
+
+.text-with-icon {
+  position: relative;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  vertical-align: middle;
+  -webkit-align-self: center;
+      -ms-flex-item-align: center;
+          align-self: center; }
+  .text-with-icon .icon {
+    position: relative;
+    bottom: -0.3em;
+    width: 1em;
+    height: 1em;
+    fill: currentColor; }
+    .text-with-icon .icon.icon-left {
+      margin-right: .3em;
+      -webkit-order: -1;
+          -ms-flex-order: -1;
+              order: -1; }
+    .text-with-icon .icon.icon-right {
+      margin-left: .3em;
+      -webkit-order: 999;
+          -ms-flex-order: 999;
+              order: 999; }
+
+.cta {
+  color: #030001;
+  text-decoration: none;
+  text-transform: uppercase;
+  font-weight: 600; }
+  .cta .icon {
+    width: .85em;
+    height: .85em; }
+  .cta:hover {
+    color: #262626 !important; }
+  .cta:active, .cta:focus {
+    color: #4d4d4d !important; }
+  .cta:visited {
+    color: #030001; }
+
+html {
+  box-sizing: border-box; }
+
+*, *::before, *::after {
+  box-sizing: inherit; }
 
 :focus {
   outline: dotted thin; }
