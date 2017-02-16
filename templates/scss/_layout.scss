@@ -376,6 +376,7 @@ h3.docs-header  {
 }
 
 #docs-vis-filter-controls, #docs-hp-layouts-controls {
+  margin-bottom: $gutter-width;
   li { margin-right: $gutter-width; padding: padding(-4) padding(0); }
   li.selected {
     background-color: color(gray, plus2);
@@ -389,6 +390,25 @@ h3.docs-header  {
   clear: both;
   &.show {
     display: block;
+  }
+}
+
+$mc-initial-width: 320px;
+$mc-dims-width: 676px;
+
+#mobile-components {
+  align-items: center;
+  .initial {
+    width: 0.6 * $mc-initial-width;
+    transition: all 450ms ease-out; 
+  }
+  .dims {
+    max-width: 0.6 * $mc-dims-width;
+  }
+  .dims { position: absolute; }
+  .hidden { display: none; }
+  .initial:hover  {
+    @include z-depth(2);
   }
 }
 
