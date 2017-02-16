@@ -1,4 +1,4 @@
-@import 'font-faces/font-faces';
+@import '../font-faces/font-faces';
 
 // line-height + margin-top + margin-bottom must be a multiple of 1.5rem to maintain vertical rhythm.
 $base-line-height: 1.5;
@@ -201,12 +201,6 @@ h4 {
   letter-spacing: -.08em;
 }
 
-.cta {
-  color: color(black);
-  text-transform: uppercase;
-  font-weight: font-weight(semibold);
-}
-
 .list-reset {
   @include list-reset();
 }
@@ -214,6 +208,20 @@ h4 {
 .list-inline,
 .list-reset-horizontal {
   @include list-reset($horizontal: true);
+}
+
+.link-list:first-of-type {
+  padding-left: 0;
+}
+
+.link-list {
+  @include link-list();
+  display: inline-block;
+  padding: 0 1em;
+}
+
+.link-list:last-of-type {
+  padding-right: 0;
 }
 
 a {
@@ -298,3 +306,6 @@ ul {
     }
   }
 }
+
+@import 'typography-text-with-icon';
+@import 'typography-cta';
