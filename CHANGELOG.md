@@ -1,3 +1,28 @@
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/Pier1/rocketbelt/compare/1.3.3...v1.4.0) (2017-02-16)
+
+
+### Bug Fixes
+
+* **Buttons:** Add id. ([5111f22](https://github.com/Pier1/rocketbelt/commit/5111f22))
+* **Buttons:** Fix success buttons not entering success state ([8c8d6c9](https://github.com/Pier1/rocketbelt/commit/8c8d6c9))
+* **Dialogs:** Undo overzealous linting. ([cec50ed](https://github.com/Pier1/rocketbelt/commit/cec50ed))
+* **Dialogs:** Undo overzealous linting. ([3bfe447](https://github.com/Pier1/rocketbelt/commit/3bfe447))
+
+
+### Features
+
+* **Dialogs:** Check event.target for "dialog-hide" attribute. ([40ce305](https://github.com/Pier1/rocketbelt/commit/40ce305))
+* **Dialogs:** Make Max Dialog full-screen on small viewport. ([90de92d](https://github.com/Pier1/rocketbelt/commit/90de92d))
+* **Images:** Boost gallery a11y. ([b4488df](https://github.com/Pier1/rocketbelt/commit/b4488df))
+* **Images:** Gallery styling. ([77e649c](https://github.com/Pier1/rocketbelt/commit/77e649c))
+* **Images:** Replace hard-coded colors with Rocketbelt functions. ([ab3515d](https://github.com/Pier1/rocketbelt/commit/ab3515d))
+* **Images:** Simplify gallery implementation. ([ebec922](https://github.com/Pier1/rocketbelt/commit/ebec922))
+* **Images:** Update gallery behavior. ([725efd6](https://github.com/Pier1/rocketbelt/commit/725efd6))
+* **Images:** Update z-index of gallery components. ([41e618b](https://github.com/Pier1/rocketbelt/commit/41e618b))
+
+
+
 <a name="1.3.3"></a>
 ## [1.3.3](https://github.com/Pier1/rocketbelt/compare/1.3.2...v1.3.3) (2017-02-10)
 
