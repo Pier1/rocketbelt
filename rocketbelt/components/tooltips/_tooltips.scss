@@ -1,6 +1,10 @@
 $tooltip-background: rgba(color(black), 0.85);
 $tooltip-background-light: rgba(color(white), 0.85);
 
+/* New Tooltip Styles */
+
+
+/* Old Tooltip Styles */
 [data-tooltip] {
   position: relative;
 
@@ -54,8 +58,8 @@ $tooltip-background-light: rgba(color(white), 0.85);
 
 // Top (default)
 [data-tooltip],
-.tooltip,
-.tooltip-top {
+.tooltip-old,
+.tooltip-old-top {
   &::before,
   &::after {
     bottom: 100%;
@@ -81,14 +85,14 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
 }
 
-.tooltip-left,
-.tooltip-right {
+.tooltip-old-left,
+.tooltip-old-right {
   &::before {
     border: 8px solid transparent;
   }
 }
 
-.tooltip-left {
+.tooltip-old-left {
   &::before,
   &::after {
     right: 100%;
@@ -119,7 +123,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
 }
 
-.tooltip-bottom {
+.tooltip-old-bottom {
   &::before,
   &::after {
     top: 100%;
@@ -149,7 +153,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
 }
 
-.tooltip-right {
+.tooltip-old-right {
   &::before,
   &::after {
     bottom: 50%;
@@ -178,13 +182,13 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
 }
 
-.tooltip-md {
+.tooltip-old-md {
   &::after {
     min-width: 325px;
   }
 }
 
-.tooltip-lg {
+.tooltip-old-lg {
   &::after {
     min-width: 400px;
   }
