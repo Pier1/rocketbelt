@@ -1,5 +1,5 @@
 .dialog {
-  .dialog-max {
+  &.dialog-max {
     .dialog_header {
       padding: 0;
       border: 0;
@@ -30,16 +30,17 @@
     .dialog_content {
       position: absolute;
       top: 0;
-      right: 5%;
+      right: 0;
       bottom: 0;
-      left: 5%;
+      left: 0;
 
       max-height: 100%;
-      width: 90%;
+      width: 100%;
+
       transform: none;
       animation: dialog-max-in 300ms ease-in-out;
 
-      @include media('>=sm') {
+      @include media('>=md') {
         right: 10%;
         left: 10%;
         width: 80%;
@@ -51,7 +52,7 @@
 #docs-wrapper:not(.is-dialog-open),
 #main:not(.is-dialog-open) {
   & ~ .dialog {
-    .dialog-max {
+    &.dialog-max {
       .dialog_content {
         animation: dialog-max-out 300ms ease-in-out;
       }
