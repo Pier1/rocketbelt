@@ -3,23 +3,17 @@ $tooltip-background-light: rgba(color(white), 0.85);
 
 /* New Tooltip Styles */
 
-
-/* Old Tooltip Styles */
-[data-tooltip] {
+.tooltip {
   position: relative;
-
   &::before,
-  &::after {
+  .tooltip-content {
     position: absolute;
     visibility: hidden;
     opacity: 0;
-    transition: opacity 250ms linear,
-    visibility 250ms linear,
-    transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24);
+    transition: opacity 250ms linear, visibility 250ms linear, transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24);
     transform: translate3d(0, 0, 0);
     pointer-events: none;
   }
-
   // Base styles for the tooltip's directional arrow
   &::before {
     z-index: 1001;
@@ -27,9 +21,9 @@ $tooltip-background-light: rgba(color(white), 0.85);
     background: transparent;
     content: '';
   }
-
   // Base styles for the tooltip's content area
-  &::after {
+  .tooltip-content {
+    @include z-depth(1);
     z-index: 1000;
     padding: padding(-2);
     min-width: 150px;
@@ -42,14 +36,11 @@ $tooltip-background-light: rgba(color(white), 0.85);
     letter-spacing: normal;
     font-size: ms(-2);
     line-height: 1.2;
-
-    @include z-depth(1);
   }
-
   &:hover,
   &:focus {
     &::before,
-    &::after {
+    .tooltip-content {
       visibility: visible;
       opacity: 1;
     }
@@ -57,50 +48,45 @@ $tooltip-background-light: rgba(color(white), 0.85);
 }
 
 // Top (default)
-[data-tooltip],
-.tooltip-old,
-.tooltip-old-top {
+.tooltip,
+.tooltip-top {
   &::before,
-  &::after {
+  .tooltip-content {
     bottom: 100%;
     left: 50%;
     transform: translate3d(-50%, 6px, 0);
   }
-
   &::before {
     margin-bottom: -12px;
     border-top-color: $tooltip-background;
   }
-
-  &::after {
+  .tooltip-content {
     margin-bottom: 4px;
   }
-
   &:hover,
   &:focus {
     &::before,
-    &::after {
+    .tooltip-content {
       transform: translate3d(-50%, -6px, 0);
     }
   }
 }
 
-.tooltip-old-left,
-.tooltip-old-right {
+.tooltip-left,
+.tooltip-right {
   &::before {
     border: 8px solid transparent;
   }
 }
 
-.tooltip-old-left {
+.tooltip-left {
   &::before,
-  &::after {
+  .tooltip-content {
     right: 100%;
     bottom: 50%;
     left: auto;
     transform: translate3d(6px, 50%, 0);
   }
-
   &::before {
     margin-right: -12px;
     margin-bottom: 0;
@@ -108,88 +94,80 @@ $tooltip-background-light: rgba(color(white), 0.85);
     border-top-color: transparent;
     border-left-color: $tooltip-background;
   }
-
-  &::after {
+  .tooltip-content{
     margin-right: 4px;
     margin-bottom: 0;
   }
-
   &:hover,
   &:focus {
     &::before,
-    &::after {
+    .tooltip-content {
       transform: translate3d(-6px, 50%, 0);
     }
   }
 }
 
-.tooltip-old-bottom {
+.tooltip-bottom {
   &::before,
-  &::after {
+  .tooltip-content {
     top: 100%;
     bottom: auto;
     left: 50%;
     transform: translate3d(-50%, -6px, 0);
   }
-
   &::before {
     margin-top: -12px;
     margin-bottom: 0;
     border-top-color: transparent;
     border-bottom-color: $tooltip-background;
   }
-
-  &::after {
+  .tooltip-content {
     margin-top: 4px;
     margin-bottom: 0;
   }
-
   &:hover,
   &:focus {
     &::before,
-    &::after {
+    .tooltip-content {
       transform: translate3d(-50%, 6px, 0);
     }
   }
 }
 
-.tooltip-old-right {
+.tooltip-right {
   &::before,
-  &::after {
+  .tooltip-content {
     bottom: 50%;
     left: 100%;
     transform: translate3d(-6px, 50%, 0);
   }
-
   &::before {
     margin-bottom: 0;
     margin-left: -12px;
     border-top-color: transparent;
     border-right-color: $tooltip-background;
   }
-
-  &::after {
+  .tooltip-content {
     margin-bottom: 0;
     margin-left: 4px;
   }
-
   &:hover,
   &:focus {
     &::before,
-    &::after {
+    .tooltip-content {
       transform: translate3d(6px, 50%, 0);
     }
   }
 }
 
-.tooltip-old-md {
-  &::after {
+.tooltip-md {
+  .tooltip-content {
     min-width: 325px;
   }
 }
 
-.tooltip-old-lg {
-  &::after {
+.tooltip-lg {
+  .tooltip-content {
     min-width: 400px;
   }
 }
