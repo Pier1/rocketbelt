@@ -6,32 +6,96 @@ block vars
 block content
   article
     h1 Tooltips
-    h2 Default
-    +exampleWithCode
-      span.tooltip.button-md.button-secondary Default
-        span.tooltip-content You'd be the help of open-air luxury.
+    h2 Variations
+    div.row
+      div.col.xs-12.md-6
+        +exampleWithCode
+          span.tooltip 
+            h3.docs-header Default
+            span.tooltip-content You'd be the help of open-air luxury.
+      div.col.xs-12.md-6
+        +exampleWithCode
+          span.tooltip.tooltip-inverted 
+            h3.docs-header Inverted
+              span.tooltip-content You'd be the help of open-air luxury.
 
     h2 Directional
-    h3 Left
-    +exampleWithCode
-      span.tooltip.tooltip-left.button-md.button-secondary Left
-        span.tooltip-content Weave a sofa or outdoor seat on display.
-    h3 Right
-    +exampleWithCode
-      span.tooltip.tooltip-right.button-md.button-secondary Right
-        span.tooltip-content Case in covered with nailhead trim is even more of flowers?
-    h3 Bottom
-    +exampleWithCode
-      span.tooltip.tooltip-bottom.button-md.button-secondary Bottom
-        span.tooltip-content Decorated with an almost weightless, firefly-like effect.
+    div.row
+      div.col.xs-12.md-6
+        +exampleWithCode
+          span.tooltip.tooltip-left
+            h3.docs-header Left
+            span.tooltip-content Weave a sofa or outdoor seat on display.
+        +exampleWithCode
+          span.tooltip.tooltip-right
+            h3.docs-header Right
+            span.tooltip-content Case in covered with nailhead trim is even more of flowers?
+        +exampleWithCode
+          span.tooltip.tooltip-bottom
+            h3.docs-header Bottom
+            span.tooltip-content Decorated with an almost weightless, firefly-like effect.
+      div.col.xs-12.md-6
+        +exampleWithCode
+          span.tooltip.tooltip-left.tooltip-inverted
+            h3.docs-header Inverted Left
+            span.tooltip-content Weave a sofa or outdoor seat on display.
+        +exampleWithCode
+          span.tooltip.tooltip-right.tooltip-inverted
+            h3.docs-header Inverted Right
+            span.tooltip-content Case in covered with nailhead trim is even more of flowers?
+        +exampleWithCode
+          span.tooltip.tooltip-bottom.tooltip-inverted
+            h3.docs-header Inverted Bottom
+            span.tooltip-content Decorated with an almost weightless, firefly-like effect.
 
-    h2 Variations
-    h3 Small (Default)
-    h3 Medium
+    h2 Sizes
     +exampleWithCode
-      span.tooltip.tooltip-md.tooltip-right.button-md.button-secondary Medium
+      span.tooltip 
+        h3.docs-header Small (Default)
+        span.tooltip-content You'd be the help of open-air luxury.
+    +exampleWithCode
+      span.tooltip.tooltip-md.tooltip-right
+        h3.docs-header Medium
         span.tooltip-content Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.
-    h3 Large
     +exampleWithCode
-      span.tooltip.tooltip-lg.tooltip-right.button-md.button-secondary Large
+      span.tooltip.tooltip-lg.tooltip-right
+        h3.docs-header Large
         span.tooltip-content Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.
+
+    h2 Features
+    +exampleWithCode
+      span.tooltip.tooltip-right.tooltip-inverted
+        h3.docs-header Rich Content
+        span.tooltip-content
+          img(src="/exposition/logo-usage/img/normal_logo.png" height="90")
+          p Let it a sleek, hand-painted in a little sunshine and proud heritage dating back and hang. We’d say white stoneware mug with bold and a beaded number. You’ll love a nostalgic, weathered sign is either way, our elegant simplicity. Collect a windowsill, but this unit in and it's a naked niche? Nothing spices up the deer pillar of warm colors and plum—all in our classic lines with flashy fringe. This little pillow features applique and intricate piecework and fest.
+    h3.docs-header Accessibility 
+    +exampleWithCode
+      div.form-group
+        label(for="fname") Email Address
+        span#name-tooltip.tooltip(tabindex="0",role="tooltip")
+          svg.icon
+            use(xlink:href='../icons/rocketbelt.icons.svg#rb-icon-question')
+          span.tooltip-content Please enter a valid email address. We will never release this information without explicit consent.
+        input#fname(type="text", aria-describedby="name-tooltip")
+
+
+  style(type='text/css').
+    .tooltip {
+      display:inline-block;
+      margin: 2rem 0 .5rem;
+    }
+    .tooltip h3.docs-header {
+      margin:0
+    }
+    div.form-group {
+      flex-direction: row;
+      flex-wrap: wrap;
+    }
+    #name-tooltip {
+      margin: 0 0 0 5px;
+    }
+    svg.icon {
+      width: 15px;
+      height: 15px;
+    }

@@ -6,6 +6,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
 .tooltip {
   position: relative;
   &::before,
+  &::after,
   .tooltip-content {
     position: absolute;
     visibility: hidden;
@@ -18,6 +19,12 @@ $tooltip-background-light: rgba(color(white), 0.85);
   &::before {
     z-index: 1001;
     border: 8px solid transparent;
+    background: transparent;
+    content: '';
+  }
+  &::after {
+    z-index: 1002;
+    border: 5px solid transparent;
     background: transparent;
     content: '';
   }
@@ -51,6 +58,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
 .tooltip,
 .tooltip-top {
   &::before,
+  &::after,
   .tooltip-content {
     bottom: 100%;
     left: 50%;
@@ -60,27 +68,26 @@ $tooltip-background-light: rgba(color(white), 0.85);
     margin-bottom: -12px;
     border-top-color: $tooltip-background;
   }
+  &::after {
+    margin-bottom: -6px;
+    border-top-color: $tooltip-background-light;
+  }
   .tooltip-content {
     margin-bottom: 4px;
   }
   &:hover,
   &:focus {
     &::before,
+    &::after,
     .tooltip-content {
       transform: translate3d(-50%, -6px, 0);
     }
   }
 }
 
-.tooltip-left,
-.tooltip-right {
-  &::before {
-    border: 8px solid transparent;
-  }
-}
-
 .tooltip-left {
   &::before,
+  &::after,
   .tooltip-content {
     right: 100%;
     bottom: 50%;
@@ -94,21 +101,66 @@ $tooltip-background-light: rgba(color(white), 0.85);
     border-top-color: transparent;
     border-left-color: $tooltip-background;
   }
-  .tooltip-content{
+  &::after {
+    margin-right: -8px;
+    margin-bottom: 0;
+    margin-left: 0;
+    border: 6px solid transparent;
+    border-top-color: transparent;
+    border-left-color: $tooltip-background-light;
+  }
+  .tooltip-content {
     margin-right: 4px;
     margin-bottom: 0;
   }
   &:hover,
   &:focus {
     &::before,
+    &::after,
     .tooltip-content {
       transform: translate3d(-6px, 50%, 0);
     }
   }
 }
 
+.tooltip-right {
+  &::before,
+  &::after,
+  .tooltip-content {
+    bottom: 50%;
+    left: 100%;
+    transform: translate3d(-6px, 50%, 0);
+  }
+  &::before {
+    margin-bottom: 0;
+    margin-left: -12px;
+    border-top-color: transparent;
+    border-right-color: $tooltip-background;
+  }
+  &::after {
+    margin-bottom: 0;
+    margin-left: -8px;
+    border: 6px solid transparent;
+    border-top-color: transparent;
+    border-right-color: $tooltip-background-light;
+  }
+  .tooltip-content {
+    margin-bottom: 0;
+    margin-left: 4px;
+  }
+  &:hover,
+  &:focus {
+    &::before,
+    &::after,
+    .tooltip-content {
+      transform: translate3d(6px, 50%, 0);
+    }
+  }
+}
+
 .tooltip-bottom {
   &::before,
+  &::after,
   .tooltip-content {
     top: 100%;
     bottom: auto;
@@ -121,6 +173,12 @@ $tooltip-background-light: rgba(color(white), 0.85);
     border-top-color: transparent;
     border-bottom-color: $tooltip-background;
   }
+  &::after {
+    margin-top: -6px;
+    margin-bottom: 0;
+    border-top-color: transparent;
+    border-bottom-color: $tooltip-background-light;
+  }
   .tooltip-content {
     margin-top: 4px;
     margin-bottom: 0;
@@ -128,34 +186,9 @@ $tooltip-background-light: rgba(color(white), 0.85);
   &:hover,
   &:focus {
     &::before,
+    &::after,
     .tooltip-content {
       transform: translate3d(-50%, 6px, 0);
-    }
-  }
-}
-
-.tooltip-right {
-  &::before,
-  .tooltip-content {
-    bottom: 50%;
-    left: 100%;
-    transform: translate3d(-6px, 50%, 0);
-  }
-  &::before {
-    margin-bottom: 0;
-    margin-left: -12px;
-    border-top-color: transparent;
-    border-right-color: $tooltip-background;
-  }
-  .tooltip-content {
-    margin-bottom: 0;
-    margin-left: 4px;
-  }
-  &:hover,
-  &:focus {
-    &::before,
-    .tooltip-content {
-      transform: translate3d(6px, 50%, 0);
     }
   }
 }
@@ -169,5 +202,40 @@ $tooltip-background-light: rgba(color(white), 0.85);
 .tooltip-lg {
   .tooltip-content {
     min-width: 400px;
+  }
+}
+
+.tooltip-inverted {
+  .tooltip-content {
+    background-color: $tooltip-background-light;
+    color: color(black);
+  }
+  &::before {
+    border-top-color: rgba(0, 0, 0, .17);
+  }
+  &:hover,
+  &:focus {
+    &::after {
+      visibility: visible;
+      opacity: 1;
+    }
+  }
+  &.tooltip-left {
+    &::before {
+      border: 8px solid transparent;
+      border-left-color: rgba(0, 0, 0, .14);
+    }
+  }
+  &.tooltip-right {
+    &::before {
+      border: 8px solid transparent;
+      border-right-color: rgba(0, 0, 0, .14);
+    }
+  }
+  &.tooltip-bottom {
+    &::before {
+      border: 8px solid transparent;
+      border-bottom-color: $tooltip-background-light;
+    }
   }
 }
