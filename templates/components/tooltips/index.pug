@@ -6,46 +6,32 @@ block vars
 block content
   article
     h1 Tooltips
-    h2 New
+    h2 Default
     +exampleWithCode
-      include _tooltips.pug
-    h2 Old
-    +exampleWithCode
-      button.button-md.button-secondary(
-        data-tooltip='You\'d be the help of open-air luxury.'
-      ) Default
+      span.tooltip.button-md.button-secondary Default
+        span.tooltip-content You'd be the help of open-air luxury.
 
     h2 Directional
-
     h3 Left
     +exampleWithCode
-      button.tooltip-old-left.button-md.button-secondary(
-        data-tooltip='Weave a sofa or outdoor seat on display.'
-      ) Left
-
+      span.tooltip.tooltip-left.button-md.button-secondary Left
+        span.tooltip-content Weave a sofa or outdoor seat on display.
     h3 Right
     +exampleWithCode
-      button.tooltip-old-right.button-md.button-secondary(
-        data-tooltip='Case in covered with nailhead trim is even more of flowers?'
-      ) Right
-
+      span.tooltip.tooltip-right.button-md.button-secondary Right
+        span.tooltip-content Case in covered with nailhead trim is even more of flowers?
     h3 Bottom
     +exampleWithCode
-      button.tooltip-old-bottom.button-md.button-secondary(
-        data-tooltip='Decorated with an almost weightless, firefly-like effect.'
-      ) Bottom
+      span.tooltip.tooltip-bottom.button-md.button-secondary Bottom
+        span.tooltip-content Decorated with an almost weightless, firefly-like effect.
 
-    h2 Widths
+    h2 Variations
     h3 Small (Default)
-
     h3 Medium
     +exampleWithCode
-      button.tooltip-old-md.tooltip-old-right.button-md.button-secondary(
-        data-tooltip='Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.'
-      ) Medium
-
+      span.tooltip.tooltip-md.tooltip-right.button-md.button-secondary Medium
+        span.tooltip-content Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.
     h3 Large
     +exampleWithCode
-      button.tooltip-old-lg.tooltip-old-right.button-md.button-secondary(
-        data-tooltip='Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.'
-      ) Large
+      span.tooltip.tooltip-lg.tooltip-right.button-md.button-secondary Large
+        span.tooltip-content Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.
