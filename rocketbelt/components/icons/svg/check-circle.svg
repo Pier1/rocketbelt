@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?xml version="1.0" encoding="UTF-8"?>
 <svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-    <!-- Generator: sketchtool 41 (35326) - http://www.bohemiancoding.com/sketch -->
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
     <title>check-circle</title>
     <desc>Created with sketchtool.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="check-circle" fill="#000000">
+        <g id="check-circle" fill="#000000" fill-rule="nonzero">
             <path d="M128,0 C57.312,0 0,57.312 0,128 C0,198.688 57.312,256 128,256 C198.688,256 256,198.688 256,128 C256,57.312 198.688,0 128,0 Z M114.666667,176.192 L66.6666667,130.122667 L81.5573333,114.816 L114.389333,146.144 L179.509333,79.8186667 L194.666667,94.848 L114.666667,176.192 Z"></path>
         </g>
     </g>
