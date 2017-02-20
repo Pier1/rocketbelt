@@ -10,6 +10,7 @@
               return 'rb-icon-' + file.replace(/\.svg/, '');
             }
           },
+          meta: './rocketbelt/components/icons/rocketbelt.icons.meta.yaml',
           transform: [{
             svgo: {
               plugins: [
@@ -18,7 +19,7 @@
                 { removeAttrs: { attrs: '(stroke|fill)' } }
               ]
             }
-          }],
+          }]
         },
         mode: {
           inline: true,
@@ -26,7 +27,7 @@
             dest: './sprite',
             sprite: '../../rocketbelt.icons.svg',
             prefix: '.'
-          },
+          }
         }
       };
 
