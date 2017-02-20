@@ -156,10 +156,11 @@ block content
               div.i-hp-expanded
                 img(src="./img/c-tower-dims.png")
       
-      div.grid-fluid.i-hp-grid.grid-fluid.docs-hp-layouts-item(data-layout="3")
+      div.grid-fluid.grid-fluid.docs-hp-layouts-item(data-layout="3")
         div.row
-          div.col.xs
-            img(src="./img/homepage_components_mobile.png" width="160")
+          div.col.xs#mobile-components
+            img.initial(src="./img/c-mobile.png?r1")
+            img.dims.hidden(src="./img/c-mobile-dims.png?r1")
 
 block scripts
   script.        
@@ -183,3 +184,9 @@ block scripts
       $link.parent('li').addClass('selected');
       $('#docs-hp-layouts-items').find('[data-layout="' + layoutId + '"]').addClass('show');
     });
+
+    $('#mobile-components').on('click', function(){
+      $('#mobile-components img').each(function(){
+        $(this).toggleClass('hidden');
+      });
+    })
