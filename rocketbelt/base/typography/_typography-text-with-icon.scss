@@ -9,11 +9,12 @@
     position: relative;
     width: 1em;
     height: 1em;
-    fill: currentColor;
+
     &.icon-left {
       margin-right: .3em;
       order: -1;
     }
+
     &.icon-right {
       margin-left: .3em;
       order: 999;
