@@ -63,21 +63,23 @@ block content
         span.tooltip-content Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.
 
     h2 Features
-    +exampleWithCode
-      span.tooltip.tooltip-right.tooltip-inverted
-        h3.docs-header Rich Content
-        span.tooltip-content
-          img(src="/exposition/logo-usage/img/normal_logo.png" height="90")
-          p Let it a sleek, hand-painted in a little sunshine and proud heritage dating back and hang. We’d say white stoneware mug with bold and a beaded number. You’ll love a nostalgic, weathered sign is either way, our elegant simplicity. Collect a windowsill, but this unit in and it's a naked niche? Nothing spices up the deer pillar of warm colors and plum—all in our classic lines with flashy fringe. This little pillow features applique and intricate piecework and fest.
-    h3.docs-header Accessibility 
-    +exampleWithCode
-      div.form-group
-        label(for="fname") Email Address
-        span#name-tooltip.tooltip(tabindex="0",role="tooltip")
-          svg.icon
-            use(xlink:href='../icons/rocketbelt.icons.svg#rb-icon-question')
-          span.tooltip-content Please enter a valid email address. We will never release this information without explicit consent.
-        input#fname(type="text", aria-describedby="name-tooltip")
+    div.row
+      div.col.xs-8.md-6.lg-4
+        +exampleWithCode
+          span.tooltip.tooltip-right.tooltip-inverted
+            h3.docs-header Rich Content
+            span.tooltip-content
+              img(src="/exposition/logo-usage/img/normal_logo.png" height="90")
+              p Let it a sleek, hand-painted in a little sunshine and proud heritage dating back and hang. We’d say white stoneware mug with bold and a beaded number. You’ll love a nostalgic, weathered sign is either way, our elegant simplicity. Collect a windowsill, but this unit in and it's a naked niche? Nothing spices up the deer pillar of warm colors and plum—all in our classic lines with flashy fringe. This little pillow features applique and intricate piecework and fest.
+        h3.docs-header Accessibility 
+        +exampleWithCode
+          div.form-group
+            label(for="fname") Email Address
+            input#fname(type="text", aria-describedby="name-tooltip")
+            span#name-tooltip.tooltip(tabindex="0",role="tooltip")
+              svg.icon
+                use(xlink:href='../icons/rocketbelt.icons.svg#rb-icon-question')
+              span.tooltip-content Please enter a valid email address. We will never release this information without explicit consent.
 
 
   style(type='text/css').
@@ -91,9 +93,14 @@ block content
     div.form-group {
       flex-direction: row;
       flex-wrap: wrap;
+      position: relative;
     }
     #name-tooltip {
-      margin: 0 0 0 5px;
+      margin: 0;
+      line-height: 1;
+      position: absolute;
+      right: -1.5rem;
+      top: 55%;    
     }
     svg.icon {
       width: 15px;
