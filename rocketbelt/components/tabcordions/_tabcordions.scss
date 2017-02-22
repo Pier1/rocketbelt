@@ -1,172 +1,115 @@
-.tabs {
-  $width-border: 1px;
-  $color-border: color(gray, plus2);
-  $color-bg: color(gray, plus4);
-  $border: $width-border solid $color-border;
+$width-border: 1px;
+$color-border: color(gray, plus2);
+$color-bg: color(gray, plus3);
+$border: $width-border solid $color-border;
 
-  position: relative;
-  overflow: hidden;
-  border: $border;
-  border-top: 0;
-  font-size: 0;
-
-  @include media('>=sm') {
-    border: 0;
-  }
-
-  &::after {
-    display: table;
-    clear: both;
-    content: '';
-  }
-
-  .tab {
-    display: inline;
-
-    .tab_radio {
-      @extend %visuallyhidden;
-
-      &:checked ~ .tab_panel {
-        display: inline;
-
-        @include fadeIn();
-      }
-
-      &:not(:checked) ~ .tab_panel {
-        @include fadeOut();
-      }
-
-      &:checked + .tab_label {
-        // transition: all 200ms;
-        border-bottom: $border;
-        color: color(gray, minus1);
-
-        @include media('>=sm') {
-          &::after {
-            right: 0;
-            left: 0;
-            height: 4px;
-          }
-        }
-      }
-
-      &:not(:checked) + .tab_label {
-        color: color(brand);
-        // transition: all 200ms;
-
-        @include media('>=sm') {
-          &::after {
-            right: 50%;
-            left: 50%;
-            height: 0;
-          }
-        }
-      }
-    }
-  }
-
-  .tab .tab_radio:checked + .tab_label {
-    &::before {
-      transform: translateY(-50%) rotate(90deg);
-    }
-
-    &::after {
-      transform: translateY(-50%) rotate(180deg);
-    }
-  }
-
-  .tab .tab_label {
+.tabs-view {
+  #navlist {
     position: relative;
-    display: inline-block;
-    padding: ms(-10) ms(-4);
-    width: 100%;
-    border-top: $border;
-    background: $color-bg;
-    text-transform: uppercase;
-    font-size: ms(-1);
-
-    @include media('>=sm') {
-      width: auto;
-      border: $border;
-
-      &::before {
-        border: none;
-        background: transparent;
-      }
-
-      &::after {
-        position: absolute;
-        top: calc(100% - 2px);
-        bottom: 0;
-        width: 100%;
-        background: color(primary);
-        content: '';
-        transition-timing-function: ease-out;
-        transition-duration: 200ms;
-        transition-property: height, left, right;
-      }
-    }
-
-    &::before,
-    &::after {
-      position: absolute;
-      border: 0;
-      background: color(brand);
-      content: '';
-    }
-
-    // Vertical
-    &::before {
-      top: 50%;
-      left: calc(100% - 15px);
-      width: 4px;
-      height: 18px;
-      border-radius: 0;
-      transform: translateY(-50%);
-    }
-
-    // Horizontal
-    &::after {
-      top: 50%;
-      right: 4px;
-      width: 18px;
-      height: 4px;
-      transform: translateY(-50%);
-    }
-
-    @include media('>=sm') {
-      &::before,
-      &::after {
-        display: none;
-      }
-    }
-  }
-
-  .tab_panel {
-    position: relative;
-    display: inline-block;
-    overflow: hidden;
-    width: 0;
-    height: 0;
-    font-size: initial;
-  }
-
-  .tab_content {
-    display: block;
-    float: left;
-    margin-top: -$width-border;
-    padding: ms(-4);
-    width: 100%;
-    background: color(white);
-
-    @include media('>=sm') {
-      border: $border;
-    }
+    margin: 0;
+    padding: 0;
+    border-bottom: $border;
   }
 }
 
-.tab:not(:first-of-type) .tab_label {
-  @include media('>=sm') {
-    border-left: 0;
-  }
+.tabs-view #navlist li {
+  position: relative;
+  top: 1px;
+  list-style: none;
+  margin: 0;
+  display: inline;
+  font-size: 0;
+}
+
+.tabs-view #navlist > li > button {
+  font-size: 1rem;
+  border: $border;
+  border-bottom: none;
+}
+.tabs-view #navlist :not(.active) {
+  background: $color-bg;
+  color: color(primary, darker);
+  transition: background 200ms ease,
+              color 200ms ease;
+}
+
+.tabs-view #navlist .active {
+  background: color(white);
+  color: color(black);
+  transition: background 200ms ease,
+              color 200ms ease;
+}
+
+.tabs-view #navlist .active button {
+  background: inherit;
+  color: inherit;
+  transition: background 200ms ease,
+              color 200ms ease;
+  border-bottom: 1px solid transparent;
+}
+.tabs-view #panels {
+  border: $border;
+  border-top: none;
+  padding: padding(-2);
+}
+.tabs-view .panel {
+  display: none;
+}
+.tabs-view .panel.current {
+  display: block !important;
+}
+
+.accordion-view #navlist {
+  padding: 3px 0px;
+}
+
+.accordion-view #navlist li {
+  display: block;
+  margin: 0 auto;
+  padding: 0;
+  position: relative;
+  background: $color-bg;
+  color: color(primary, darker);
+}
+
+.accordion-view #navlist li.active {
+  background: color(white);
+  color: color(black);
+}
+
+.accordion-view #navlist > li > button {
+  background: inherit;
+  color: inherit;
+  border: $border;
+  display: inline-block;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+.accordion-view #panels {
+  display: none;
+}
+
+.accordion-view .panel {
+  display: none;
+  width: 100%;
+  border: $border;
+  box-sizing: border-box;
+  border-top: none;
+  padding: 10px;
+  font-size: 18px;
+}
+
+.accordion-view .panel.current {
+  display: block;
+}
+#tab-container.accordion-view {
+  width: 85%;
+  margin: 0 auto;
+}
+.attributes .md {
+  background-color: #eee;
+  padding: 4px;
+  color: #000;
 }
