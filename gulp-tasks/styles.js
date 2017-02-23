@@ -8,8 +8,8 @@
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass())
         .pipe(plugins.autoprefixer({
-          browsers: ['last 5 Chrome versions',
-                     'last 5 Firefox versions',
+          browsers: ['last 10 Chrome versions',
+                     'last 10 Firefox versions',
                      'Safari >= 9',
                      'ie >= 9',
                      'Edge >= 1',
