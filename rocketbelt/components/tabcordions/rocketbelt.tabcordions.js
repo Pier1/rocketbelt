@@ -140,45 +140,48 @@
 
   })(jQuery,'smartresize');
 
-  // RESIZE EVENT:
+  // Resize event:
   $(window).smartresize(determineView);
 
   function determineView() {
-    var winWidth = $(window).width();
+    var isStatic = $tabcordion.hasClass('is-static');
 
-    if (winWidth <= 800 && !isAccordionView) { // SHOW ACCORDION VIEW
-      // switch to the accordion view
-      $tabcordion
-        .removeClass('is-tabs')
-        .addClass('is-accordion');
+    if (!isStatic) {
+      var winWidth = $(window).width();
+      if (winWidth <= 480 && !isAccordionView) {
+        // Switch to accordion
+        $tabcordion
+          .removeClass('is-tabs')
+          .addClass('is-accordion');
 
-      // fix the markup to be more suited for accordions
-      $panels.find('.tabcordion_panel').each(function () {
-        var panelID = this.id;
-        var assocLink = panelID && $('.tabcordion_navlist button[aria-controls="' + panelID + '"]')[0];
-        if (assocLink) {
-          $(assocLink.parentNode).append(this);
-        }
-      });
-
-      isAccordionView = true;
-      isTabsView = false;
-    }
-    else if (winWidth > 800 && !isTabsView) { // SHOW TABS VIEW
-      var wasAccordion = $tabcordion.hasClass('is-accordion');
-      // switch to the tabs view
-      $tabcordion
-        .removeClass('is-accordion')
-        .addClass('is-tabs');
-
-      if (wasAccordion) {
-        $navlist.find('.tabcordion_panel').each(function () {
-          $panels.append(this);
+        // Better markup semantics for accordion
+        $panels.find('.tabcordion_panel').each(function () {
+          var panelID = this.id;
+          var assocLink = panelID && $('.tabcordion_navlist button[aria-controls="' + panelID + '"]')[0];
+          if (assocLink) {
+            $(assocLink.parentNode).append(this);
+          }
         });
-      }
 
-      isTabsView = true;
-      isAccordionView = false;
+        isAccordionView = true;
+        isTabsView = false;
+      }
+      else if (winWidth > 480 && !isTabsView) {
+        // Switch to tabs
+        var wasAccordion = $tabcordion.hasClass('is-accordion');
+        $tabcordion
+          .removeClass('is-accordion')
+          .addClass('is-tabs');
+
+        if (wasAccordion) {
+          $navlist.find('.tabcordion_panel').each(function () {
+            $panels.append(this);
+          });
+        }
+
+        isTabsView = true;
+        isAccordionView = false;
+      }
     }
   }
 })(jQuery);
