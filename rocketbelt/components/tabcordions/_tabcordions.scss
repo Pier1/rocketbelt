@@ -3,90 +3,80 @@ $color-border: color(gray, plus2);
 $color-bg: color(gray, plus3);
 $border: $width-border solid $color-border;
 
-.is-tabs {
+.tabcordion {
   .tabcordion_navlist {
     position: relative;
     margin: 0;
     padding: 0;
-    border-bottom: $border;
+    font-size: 0;
+  }
 
-    .is-active {
+  .tabcordion_nav-item {
+    margin: 0;
+    background: $color-bg;
+    color: color(primary, darker);
+    list-style: none;
+    font-size: 1rem;
+    transition: background 200ms ease,
+                color 200ms ease;
+
+    &.is-active {
       background: color(white);
       color: color(black);
-      transition: background 200ms ease,
-                  color 200ms ease;
-
-      button {
-        border-bottom: 1px solid transparent;
-        background: inherit;
-        color: inherit;
-        transition: background 200ms ease,
-                    color 200ms ease;
-      }
     }
 
-    .tabcordion_nav-item {
-      position: relative;
-      top: 1px;
-      display: inline;
-      margin: 0;
-      background: $color-bg;
-      color: color(primary, darker);
-      list-style: none;
-      font-size: 0;
+    button {
+      border: $border;
+      background: inherit;
+      color: inherit;
       transition: background 200ms ease,
                   color 200ms ease;
-
-      button {
-        border: $border;
-        border-bottom: none;
-        font-size: 1rem;
-      }
     }
   }
 
-  .tabcordion_panels {
+  .tabcordion_panel {
+    display: none;
     padding: padding(-2);
     border: $border;
     border-top: none;
+
+    &.is-current {
+      display: block;
+    }
   }
 }
 
-.tabcordion .tabcordion_panel {
-  display: none;
+.is-tabs {
+  .tabcordion_navlist {
+    border-bottom: $border;
 
-  &.is-current {
+    .is-active {
+      button {
+        border-bottom: 1px solid transparent;
+      }
+    }
+
+    button {
+      border-bottom: none;
+      font-size: 1rem;
+    }
+  }
+
+  .tabcordion_nav-item {
+    position: relative;
+    top: 1px;
+    display: inline-block;
+  }
+}
+
+.is-accordion {
+  .tabcordion_nav-item {
     display: block;
+
+    button {
+      display: inline-block;
+      width: 100%;
+      text-align: left;
+    }
   }
-}
-
-.is-accordion .tabcordion_navlist .tabcordion_nav-item {
-  position: relative;
-  display: block;
-  margin: 0 auto;
-  padding: 0;
-  background: $color-bg;
-  color: color(primary, darker);
-}
-
-.is-accordion .tabcordion_navlist .tabcordion_nav-item.is-active {
-  background: color(white);
-  color: color(black);
-}
-
-.is-accordion .tabcordion_navlist > .tabcordion_nav-item > button {
-  display: inline-block;
-  width: 100%;
-  border: $border;
-  background: inherit;
-  color: inherit;
-  text-align: left;
-}
-
-.is-accordion .tabcordion_panel {
-  display: none;
-  padding: padding(-2);
-  width: 100%;
-  border: $border;
-  border-top: none;
 }
