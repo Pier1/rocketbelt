@@ -1,39 +1,39 @@
-#tab-container.tabs-view(aria-multiselectable='false')
-  ul#navlist(role='tablist')
-    li.active(role='presentation')
-      button#one(role='tab', aria-setsize='3', aria-posinset='1', tabindex='0', aria-controls='panel-1', aria-selected='true') Foo
-    li(role='presentation')
-      button#two(role='tab', aria-setsize='3', aria-posinset='2', tabindex='-1', aria-controls='panel-2', aria-selected='false') Bar
-    li(role='presentation')
-      button#three(role='tab', aria-setsize='3', aria-posinset='3', tabindex='-1', aria-controls='panel-3', aria-selected='false') Baz
-  #panels
-    #panel-1.panel.current(role='tabpanel', aria-labelledby='one', tabindex='-1')
+.tabcordion.is-tabs(aria-multiselectable='false')
+  ul.tabcordion_navlist(role='tablist')
+    li.tabcordion_nav-item.is-active(role='presentation')
+      button#ex-label-1(role='tab', aria-setsize='3', aria-posinset='1', tabindex='0', aria-controls='ex-panel-1', aria-selected='true') Foo
+    li.tabcordion_nav-item(role='presentation')
+      button#ex-label-2(role='tab', aria-setsize='3', aria-posinset='2', tabindex='-1', aria-controls='ex-panel-2', aria-selected='false') Bar
+    li.tabcordion_nav-item(role='presentation')
+      button#ex-label-3(role='tab', aria-setsize='3', aria-posinset='3', tabindex='-1', aria-controls='ex-panel-3', aria-selected='false') Baz
+  .tabcordion_panels
+    #ex-panel-1.tabcordion_panel.is-current(role='tabpanel', aria-labelledby='ex-label-1', tabindex='-1')
       h3 Foo
       .panel-body
         .field
-          label(for='home-email') Home Email
-          input#home-email(type='text')
+          label Foo Email
+            input(type='text')
         .field
-          label(for='home-phone') Home Phone
-          input#home-phone(type='text')
+          label Foo Phone
+            input(type='text')
         button(type='button') Submit
-    #panel-2.panel(aria-hidden='true', role='tabpanel', aria-labelledby='two', tabindex='-1')
+    #ex-panel-2.tabcordion_panel(aria-hidden='true', role='tabpanel', aria-labelledby='ex-label-2', tabindex='-1')
       h3 Bar
       .panel-body
         .field
-          label(for='work-email') Work Email
-          input#work-email(type='text')
+          label Bar Email
+            input(type='text')
         .field
-          label(for='work-phone') Work Phone
-          input#work-phone(type='text')
+          label Bar Phone
+            input(type='text')
         button(type='button') Submit
-    #panel-3.panel(aria-hidden='true', role='tabpanel', aria-labelledby='three', tabindex='-1')
+    #ex-panel-3.tabcordion_panel(aria-hidden='true', role='tabpanel', aria-labelledby='ex-label-3', tabindex='-1')
       h3 Baz
       .panel-body
         .field
-          label(for='other-email') Other Email
-          input#other-email(type='text')
+          label Baz Email
+            input(type='text')
         .field
-          label(for='other-phone') Other Phone
-          input#other-phone(type='text')
+          label Baz Phone
+            input(type='text')
         button(type='button') Submit

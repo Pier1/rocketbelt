@@ -3,113 +3,90 @@ $color-border: color(gray, plus2);
 $color-bg: color(gray, plus3);
 $border: $width-border solid $color-border;
 
-.tabs-view {
-  #navlist {
+.is-tabs {
+  .tabcordion_navlist {
     position: relative;
     margin: 0;
     padding: 0;
     border-bottom: $border;
+
+    .is-active {
+      background: color(white);
+      color: color(black);
+      transition: background 200ms ease,
+                  color 200ms ease;
+
+      button {
+        border-bottom: 1px solid transparent;
+        background: inherit;
+        color: inherit;
+        transition: background 200ms ease,
+                    color 200ms ease;
+      }
+    }
+
+    .tabcordion_nav-item {
+      position: relative;
+      top: 1px;
+      display: inline;
+      margin: 0;
+      background: $color-bg;
+      color: color(primary, darker);
+      list-style: none;
+      font-size: 0;
+      transition: background 200ms ease,
+                  color 200ms ease;
+
+      button {
+        border: $border;
+        border-bottom: none;
+        font-size: 1rem;
+      }
+    }
+  }
+
+  .tabcordion_panels {
+    padding: padding(-2);
+    border: $border;
+    border-top: none;
   }
 }
 
-.tabs-view #navlist li {
-  position: relative;
-  top: 1px;
-  list-style: none;
-  margin: 0;
-  display: inline;
-  font-size: 0;
-}
-
-.tabs-view #navlist > li > button {
-  font-size: 1rem;
-  border: $border;
-  border-bottom: none;
-}
-.tabs-view #navlist :not(.active) {
-  background: $color-bg;
-  color: color(primary, darker);
-  transition: background 200ms ease,
-              color 200ms ease;
-}
-
-.tabs-view #navlist .active {
-  background: color(white);
-  color: color(black);
-  transition: background 200ms ease,
-              color 200ms ease;
-}
-
-.tabs-view #navlist .active button {
-  background: inherit;
-  color: inherit;
-  transition: background 200ms ease,
-              color 200ms ease;
-  border-bottom: 1px solid transparent;
-}
-.tabs-view #panels {
-  border: $border;
-  border-top: none;
-  padding: padding(-2);
-}
-.tabs-view .panel {
+.tabcordion .tabcordion_panel {
   display: none;
-}
-.tabs-view .panel.current {
-  display: block !important;
+
+  &.is-current {
+    display: block;
+  }
 }
 
-.accordion-view #navlist {
-  padding: 3px 0px;
-}
-
-.accordion-view #navlist li {
+.is-accordion .tabcordion_navlist .tabcordion_nav-item {
+  position: relative;
   display: block;
   margin: 0 auto;
   padding: 0;
-  position: relative;
   background: $color-bg;
   color: color(primary, darker);
 }
 
-.accordion-view #navlist li.active {
+.is-accordion .tabcordion_navlist .tabcordion_nav-item.is-active {
   background: color(white);
   color: color(black);
 }
 
-.accordion-view #navlist > li > button {
-  background: inherit;
-  color: inherit;
-  border: $border;
+.is-accordion .tabcordion_navlist > .tabcordion_nav-item > button {
   display: inline-block;
   width: 100%;
-  box-sizing: border-box;
+  border: $border;
+  background: inherit;
+  color: inherit;
   text-align: left;
 }
 
-.accordion-view #panels {
+.is-accordion .tabcordion_panel {
   display: none;
-}
-
-.accordion-view .panel {
-  display: none;
+  padding: padding(-2);
   width: 100%;
   border: $border;
-  box-sizing: border-box;
   border-top: none;
-  padding: 10px;
-  font-size: 18px;
-}
-
-.accordion-view .panel.current {
-  display: block;
-}
-#tab-container.accordion-view {
-  width: 85%;
-  margin: 0 auto;
-}
-.attributes .md {
-  background-color: #eee;
-  padding: 4px;
-  color: #000;
 }

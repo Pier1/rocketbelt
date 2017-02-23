@@ -1,8 +1,8 @@
-var $navlist = $('#navlist');
-var $tabContainer = $('#tab-container');
-var $panels = $('#panels');
+var $navlist = $('.tabcordion_navlist');
+var $tabcordion = $('.tabcordion');
+var $panels = $('.tabcordion_panels');
 
-$navlist.on('keydown', 'li button', function (keyVent) {
+$navlist.on('keydown', '.tabcordion_nav-item button', function (keyVent) {
   var arrows = [37, 38, 39, 40];
   var which = keyVent.which;
   var target = keyVent.target;
@@ -27,10 +27,10 @@ $navlist.on('keydown', 'li button', function (keyVent) {
   }
 });
 
-$(document.body).on('keydown', '.panel', function (e) {
+$(document.body).on('keydown', '.tabcordion_panel', function (e) {
   if (e.which === 33) { // PAGE UP
     e.preventDefault(); // don't scroll
-    var activeTab = $navlist.find('li.active button')[0];
+    var activeTab = $navlist.find('.tabcordion_nav-item.is-active button')[0];
     if (activeTab) {
       activeTab.focus();
     }
@@ -38,7 +38,7 @@ $(document.body).on('keydown', '.panel', function (e) {
 });
 
 // click support
-$navlist.on('click', 'li button', function () {
+$navlist.on('click', '.tabcordion_nav-item button', function () {
   setActiveAndInactive(this, $navlist);
 });
 
@@ -49,7 +49,7 @@ function findAdjacentTab(startTab, $list, key) {
                     $(startTab.parentNode).next()[0];
 
   if (!adjacentTab) {
-    var allTabs = $list.find('li');
+    var allTabs = $list.find('.tabcordion_nav-item');
     if (dir === 'prev') {
       adjacentTab = allTabs[allTabs.length - 1];
     } else {
@@ -61,7 +61,7 @@ function findAdjacentTab(startTab, $list, key) {
 }
 
 function setActiveAndInactive(newActive, $list) {
-  $list.find('li').each(function () {
+  $list.find('.tabcordion_nav-item').each(function () {
     var assocPanelID = $(this)
                           .find('button')
                           .first()
@@ -69,18 +69,18 @@ function setActiveAndInactive(newActive, $list) {
     var anchor = $(this).find('button')[0];
 
     if (this !== newActive.parentNode) {
-      $(this).removeClass('active');
+      $(this).removeClass('is-active');
       anchor.tabIndex = -1;
       anchor.setAttribute('aria-selected', 'false');
       $('#' + assocPanelID)
-        .removeClass('current')
+        .removeClass('is-current')
         .attr('aria-hidden', 'true');
     } else {
-      $(this).addClass('active');
+      $(this).addClass('is-active');
       anchor.tabIndex = 0;
       anchor.setAttribute('aria-selected', 'true');
       $('#' + assocPanelID)
-        .addClass('current')
+        .addClass('is-current')
         .removeAttr('aria-hidden');
     }
 
@@ -122,24 +122,22 @@ determineView();
 
 })(jQuery,'smartresize');
 
-
 // RESIZE EVENT:
 $(window).smartresize(determineView);
-
 
 function determineView() {
   var winWidth = $(window).width();
 
   if (winWidth <= 800 && !isAccordionView) { // SHOW ACCORDION VIEW
     // switch to the accordion view
-    $tabContainer
-      .removeClass('tabs-view')
-      .addClass('accordion-view');
+    $tabcordion
+      .removeClass('is-tabs')
+      .addClass('is-accordion');
 
     // fix the markup to be more suited for accordions
-    $panels.find('.panel').each(function () {
+    $panels.find('.tabcordion_panel').each(function () {
       var panelID = this.id;
-      var assocLink = panelID && $('#navlist button[aria-controls="' + panelID + '"]')[0];
+      var assocLink = panelID && $('.tabcordion_navlist button[aria-controls="' + panelID + '"]')[0];
       if (assocLink) {
         $(assocLink.parentNode).append(this);
       }
@@ -148,14 +146,14 @@ function determineView() {
     isAccordionView = true;
     isTabsView = false;
   } else if (winWidth > 800 && !isTabsView) { // SHOW TABS VIEW
-    var wasAccordion = $tabContainer.hasClass('accordion-view');
+    var wasAccordion = $tabcordion.hasClass('is-accordion');
     // switch to the tabs view
-    $tabContainer
-      .removeClass('accordion-view')
-      .addClass('tabs-view');
+    $tabcordion
+      .removeClass('is-accordion')
+      .addClass('is-tabs');
 
     if (wasAccordion) {
-      $navlist.find('.panel').each(function () {
+      $navlist.find('.tabcordion_panel').each(function () {
         $panels.append(this);
       });
     }
