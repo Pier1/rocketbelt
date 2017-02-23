@@ -14,7 +14,7 @@
     PAGE_DOWN: 34
   };
 
-  $navlist.on('keydown', '.tabcordion_nav-item button', function (keyVent) {
+  $navlist.on('keydown', '.tabcordion_nav-item .tabcordion_nav-trigger', function (keyVent) {
     var which = keyVent.which;
     var target = keyVent.target;
 
@@ -45,7 +45,7 @@
   $(document.body).on('keydown', '.tabcordion_panel', function (e) {
     if (e.which === keys.PAGE_UP) {
       e.preventDefault();
-      var activeTab = $navlist.find('.tabcordion_nav-item.is-active button')[0];
+      var activeTab = $navlist.find('.tabcordion_nav-item.is-active .tabcordion_nav-trigger')[0];
 
       if (activeTab) {
         activeTab.focus();
@@ -54,7 +54,7 @@
   });
 
   // Click support
-  $navlist.on('click', '.tabcordion_nav-item button', function () {
+  $navlist.on('click', '.tabcordion_nav-item .tabcordion_nav-trigger', function () {
     setActiveAndInactive(this, $navlist);
   });
 
@@ -74,16 +74,16 @@
       }
     }
 
-    return $(adjacentTab).find('button')[0];
+    return $(adjacentTab).find('.tabcordion_nav-trigger')[0];
   }
 
   function setActiveAndInactive(newActive, $list) {
     $list.find('.tabcordion_nav-item').each(function () {
       var assocPanelID = $(this)
-                            .find('button')
+                            .find('.tabcordion_nav-trigger')
                             .first()
                             .attr('aria-controls');
-      var anchor = $(this).find('button')[0];
+      var anchor = $(this).find('.tabcordion_nav-trigger')[0];
 
       if (this !== newActive.parentNode) {
         $(this).removeClass('is-active');
@@ -157,7 +157,7 @@
         // Better markup semantics for accordion
         $panels.find('.tabcordion_panel').each(function () {
           var panelID = this.id;
-          var assocLink = panelID && $('.tabcordion_navlist button[aria-controls="' + panelID + '"]')[0];
+          var assocLink = panelID && $('.tabcordion_navlist .tabcordion_nav-trigger[aria-controls="' + panelID + '"]')[0];
           if (assocLink) {
             $(assocLink.parentNode).append(this);
           }

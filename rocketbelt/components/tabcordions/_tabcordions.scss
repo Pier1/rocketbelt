@@ -7,7 +7,7 @@ html.touchevents,
 body.touchevents {
   .tabcordion {
     .tabcordion_nav-item {
-      button {
+      .tabcordion_nav-trigger {
         min-height: 44px;
       }
     }
@@ -30,13 +30,13 @@ body.touchevents {
                 color 100ms ease;
 
     &.is-active {
-      button {
+      .tabcordion_nav-trigger {
         background: color(white);
         color: color(black);
       }
     }
 
-    button {
+    .tabcordion_nav-trigger {
       border: $border;
       background: $color-bg;
       color: color(primary, darker);
@@ -66,12 +66,12 @@ body.touchevents {
     border-bottom: $border;
 
     .is-active {
-      button {
+      .tabcordion_nav-trigger {
         border-bottom: 1px solid transparent;
       }
     }
 
-    button {
+    .tabcordion_nav-trigger {
       border-bottom: none;
       font-size: 1rem;
     }
@@ -113,7 +113,7 @@ body.touchevents {
   .tabcordion_nav-item {
     display: block;
 
-    button {
+    .tabcordion_nav-trigger {
       display: inline-block;
       width: 100%;
       text-align: left;
