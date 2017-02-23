@@ -13,32 +13,36 @@ $border: $width-border solid $color-border;
 
   .tabcordion_nav-item {
     margin: 0;
-    background: $color-bg;
-    color: color(primary, darker);
     list-style: none;
     font-size: 1rem;
-    transition: background 200ms ease,
-                color 200ms ease;
+    transition: background 100ms ease,
+                color 100ms ease;
 
     &.is-active {
-      background: color(white);
-      color: color(black);
+      button {
+        background: color(white);
+        color: color(black);
+      }
     }
 
     button {
       border: $border;
-      background: inherit;
-      color: inherit;
-      transition: background 200ms ease,
-                  color 200ms ease;
+      background: $color-bg;
+      color: color(primary, darker);
+      transition: background 100ms ease,
+                  color 100ms ease;
     }
+  }
+
+  .tabcordion_panels {
+    border: $border;
+    border-top: none;
   }
 
   .tabcordion_panel {
     display: none;
     padding: padding(-2);
-    border: $border;
-    border-top: none;
+    animation-duration: 500ms;
 
     &.is-current {
       display: block;
@@ -67,6 +71,31 @@ $border: $width-border solid $color-border;
     top: 1px;
     display: inline-block;
   }
+
+  .tabcordion_panel {
+    animation-name: fade-out;
+
+    &.is-current {
+      animation-name: fade-in;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 100%;
+  }
 }
 
 .is-accordion {
@@ -78,5 +107,39 @@ $border: $width-border solid $color-border;
       width: 100%;
       text-align: left;
     }
+  }
+
+  .tabcordion_panels {
+    border: 0;
+  }
+
+  .tabcordion_panel {
+    border: $border;
+    border-top: none;
+    animation-name: slide-up;
+
+    &.is-current {
+      animation-name: slide-down;
+      animation-duration: 1000ms;
+    }
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  1% {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  100% {
+    display: block;
+    max-height: 100vh;
   }
 }
