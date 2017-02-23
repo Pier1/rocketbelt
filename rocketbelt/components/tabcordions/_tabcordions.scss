@@ -3,6 +3,17 @@ $color-border: color(gray, plus2);
 $color-bg: color(gray, plus3);
 $border: $width-border solid $color-border;
 
+html.touchevents,
+body.touchevents {
+  .tabcordion {
+    .tabcordion_nav-item {
+      button {
+        min-height: 44px;
+      }
+    }
+  }
+}
+
 .tabcordion {
   .tabcordion_navlist {
     position: relative;
