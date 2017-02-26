@@ -1,38 +1,39 @@
-.tabs
-  .tab
-    input#tab1.tab_radio(type='radio', name='tab-group', checked=true)
-    label.tab_label(for='tab1') Biblioteca
-    .tab_panel
-      .tab_content
-        h3 Hanging from farmhouse chalkboard sides
-        p
-          | Handcrafted of the classic and will provide visual interest and
-          | beautiful Buddha assumes the Gold/Luster/Mosaic category, have you
-          | bring a white, beige, orange blossom, sweet tooth. We're definitely
-          | a nice touch to hang them a wardrobe change the Provencal look that
-          | empty wall, and hand-painted deer silhouette, it easy to good
-          | looking, you'll have to trend to insure it is.
-  .tab
-    input#tab2.tab_radio(type='radio', name='tab-group')
-    label.tab_label(for='tab2') Marcel
-    .tab_panel
-      .tab_content
-        h3 Traditional style to boogie
-        p
-          | Coordinating pendant to the perfect for special as grandiose and
-          | promises to cast iron for a timeless appeal. Versatile enough to a
-          | just-right decorative arrangement—so it offers a hint of origami.
-  .tab
-    input#tab3.tab_radio(type='radio', name='tab-group')
-    label.tab_label(for='tab3') Pierce
-    .tab_panel
-      .tab_content
-        h3 Handcrafted pillows that make some candle inside
-        p
-          | Hang these blooms fill a day and hand-painted a decorative pouf in a
-          | shelf, mantel or tablescape. Slatted to become a decorative genius of
-          | luxuriant teal shade complements cool-colored patterns and designed
-          | decor to blend of fruit or Halloween smiles and citrus—all in Italy
-          | or bedroom, our handcrafted and framed angel wings in Italy, he’s
-          | just makes a favorite tealight holder brings a ceramic discs with
-          | this novel, 3-D wheat and backed with a well-lit centerpiece.
+.tabcordion.is-tabs(aria-multiselectable='false')
+  ul.tabcordion_navlist(role='tablist')
+    li.tabcordion_nav-item.is-active(role='presentation')
+      button#ex-label-1.tabcordion_nav-trigger(role='tab', aria-setsize='3', aria-posinset='1', tabindex='0', aria-controls='ex-panel-1', aria-selected='true') Foo
+    li.tabcordion_nav-item(role='presentation')
+      button#ex-label-2.tabcordion_nav-trigger(role='tab', aria-setsize='3', aria-posinset='2', tabindex='-1', aria-controls='ex-panel-2', aria-selected='false') Bar
+    li.tabcordion_nav-item(role='presentation')
+      button#ex-label-3.tabcordion_nav-trigger(role='tab', aria-setsize='3', aria-posinset='3', tabindex='-1', aria-controls='ex-panel-3', aria-selected='false') Baz
+  .tabcordion_panels
+    #ex-panel-1.tabcordion_panel.is-current(role='tabpanel', aria-labelledby='ex-label-1', tabindex='-1')
+      h3 Foo
+      .panel-body
+        .field
+          label Foo Email
+            input(type='text')
+        .field
+          label Foo Phone
+            input(type='text')
+        button(type='button') Submit
+    #ex-panel-2.tabcordion_panel(aria-hidden='true', role='tabpanel', aria-labelledby='ex-label-2', tabindex='-1')
+      h3 Bar
+      .panel-body
+        .field
+          label Bar Email
+            input(type='text')
+        .field
+          label Bar Phone
+            input(type='text')
+        button(type='button') Submit
+    #ex-panel-3.tabcordion_panel(aria-hidden='true', role='tabpanel', aria-labelledby='ex-label-3', tabindex='-1')
+      h3 Baz
+      .panel-body
+        .field
+          label Baz Email
+            input(type='text')
+        .field
+          label Baz Phone
+            input(type='text')
+        button(type='button') Submit
