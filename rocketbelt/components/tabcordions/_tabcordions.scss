@@ -3,12 +3,14 @@ $color-border: color(gray, plus2);
 $color-bg: color(gray, plus3);
 $border: $width-border solid $color-border;
 
-html.touchevents,
-body.touchevents {
-  .tabcordion {
-    .tabcordion_nav-item {
-      .tabcordion_nav-trigger {
-        min-height: 44px;
+html,
+body {
+  &.touchevents {
+    .tabcordion {
+      .tabcordion_nav-item {
+        .tabcordion_nav-trigger {
+          min-height: 44px;
+        }
       }
     }
   }
@@ -25,7 +27,7 @@ body.touchevents {
   .tabcordion_nav-item {
     margin: 0;
     list-style: none;
-    font-size: 1rem;
+    font-size: font-size(-1);
     transition: background 100ms ease,
                 color 100ms ease;
 
@@ -33,13 +35,16 @@ body.touchevents {
       .tabcordion_nav-trigger {
         background: color(white);
         color: color(black);
+        font-weight: font-weight(semibold);
       }
     }
 
     .tabcordion_nav-trigger {
+      padding: padding(-14) padding(-2);
       border: $border;
       background: $color-bg;
       color: color(primary, darker);
+      text-transform: uppercase;
       transition: background 100ms ease,
                   color 100ms ease;
     }
@@ -67,19 +72,20 @@ body.touchevents {
 
     .is-active {
       .tabcordion_nav-trigger {
-        border-bottom: 1px solid transparent;
+        border-bottom: 3px solid color(primary);
+        transition: border-bottom 200ms ease;
       }
     }
 
     .tabcordion_nav-trigger {
-      border-bottom: none;
-      font-size: 1rem;
+      padding-top: calc(#{padding(-14)} + 3px);
+      border-bottom: 3px solid $color-bg;
+      // font-size: 1rem;
+      transition: border-bottom 200ms ease;
     }
   }
 
   .tabcordion_nav-item {
-    position: relative;
-    top: 1px;
     display: inline-block;
   }
 
@@ -114,9 +120,41 @@ body.touchevents {
     display: block;
 
     .tabcordion_nav-trigger {
-      display: inline-block;
+      position: relative;
+      display: flex;
       width: 100%;
       text-align: left;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        width: 3px;
+        height: 15px;
+        background: color(primary);
+        content: '';
+        transition: transform 200ms;
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        width: 15px;
+        height: 3px;
+        background: color(primary);
+        content: '';
+        transform: translateY(-50%);
+      }
+    }
+
+    &.is-active {
+      .tabcordion_nav-trigger {
+        &::before {
+          transform: translateY(-50%) rotate(270deg);
+        }
+      }
     }
   }
 
