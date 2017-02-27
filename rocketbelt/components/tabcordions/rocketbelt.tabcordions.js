@@ -16,7 +16,6 @@
   $tabcordions.each(function () {
     var $tabcordion = $(this);
     var $navlist = $tabcordion.find('.tabcordion_navlist');
-    var $panels  = $tabcordion.find('.tabcordion_panels');
 
     $navlist.on('keydown', '.tabcordion_nav-item .tabcordion_nav-trigger', function (keyVent) {
       var which = keyVent.which;
