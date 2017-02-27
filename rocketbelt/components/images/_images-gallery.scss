@@ -375,10 +375,12 @@ button.swiper-pagination-bullet {
   .swiper-pagination-bullet {
     background: rgba(color(white), 0.9);
     opacity: 0.8;
+    transition: opacity 300ms ease background 300ms ease;
 
     &.swiper-pagination-bullet-active {
       background: color(primary);
       opacity: 1;
+      transition: opacity 300ms ease background 300ms ease;
     }
   }
 }
