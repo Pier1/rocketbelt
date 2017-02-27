@@ -1,10 +1,11 @@
 (function () {
   'use strict';
   var galleryMain =
-    new Swiper('#gallery-with-thumbs',
+    new Swiper('#gallery-with-thumbs-main',
       {
         nextButton: '.swiper-button-next',
         prevButton: '.swiper-button-prev',
+        lazyLoading: true,
         observer: true,
         observeParents: true
       }
@@ -24,10 +25,8 @@
   });
 
   var galleryThumbs =
-    new Swiper('.gallery-thumbs',
+    new Swiper('#gallery-with-thumbs-thumbs',
       {
-        preloadImages: true,
-        lazyLoading: false,
         spaceBetween: 10,
         centeredSlides: true,
         slidesPerView: 'auto',

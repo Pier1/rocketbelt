@@ -11,18 +11,18 @@ block content
 
     h2 Gallery
 
-    //- h3 Default
-    //- .grid-fluid
-    //-   .row.xs-center
-    //-     .col.xs-4
-    //-       include _images-gallery.pug
-    //-   .row
-    //-     .col.xs
-    //-       +exampleCodeOnly
-    //-         include _images-gallery.pug
-    //-       +exampleWithCode('JS Include')
-    //-         script(src='./rocketbelt.images-gallery.js')
-    //-         script(src='./rocketbelt.images-gallery.init.js')
+    h3 Default
+    .grid-fluid
+      .row.xs-center
+        .col.xs-4
+          include _images-gallery.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _images-gallery.pug
+          +exampleWithCode('JS Include')
+            script(src='./rocketbelt.images-gallery.js')
+            script(src='./rocketbelt.images-gallery.init.js')
 
     h3 With Thumbnails
     .grid-fluid
