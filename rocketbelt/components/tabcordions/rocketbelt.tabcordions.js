@@ -1,7 +1,6 @@
 (function ($) {
-  var $navlist    = $('.tabcordion_navlist');
-  var $tabcordion = $('.tabcordion');
-  var $panels     = $('.tabcordion_panels');
+  var $tabcordions = $('.tabcordion');
+
   var keys = {
     ARROWS: [37, 38, 39, 40],
     ARROW_LEFT: 37,
@@ -14,48 +13,55 @@
     PAGE_DOWN: 34
   };
 
-  $navlist.on('keydown', '.tabcordion_nav-item .tabcordion_nav-trigger', function (keyVent) {
-    var which = keyVent.which;
-    var target = keyVent.target;
+  $tabcordions.each(function () {
+    var $tabcordion = $(this);
+    var $navlist = $tabcordion.find('.tabcordion_navlist');
+    var $panels  = $tabcordion.find('.tabcordion_panels');
 
-    if ($.inArray(which, keys.ARROWS) > -1) {
-      var adjacentTab = findAdjacentTab(target, $navlist, which);
+    $navlist.on('keydown', '.tabcordion_nav-item .tabcordion_nav-trigger', function (keyVent) {
+      var which = keyVent.which;
+      var target = keyVent.target;
 
-      if (adjacentTab) {
+      if ($.inArray(which, keys.ARROWS) > -1) {
+        var adjacentTab = findAdjacentTab(target, $navlist, which);
+
+        if (adjacentTab) {
+          keyVent.preventDefault();
+          adjacentTab.focus();
+
+          setActiveAndInactive(adjacentTab, $navlist);
+        }
+      }
+      else if (which === keys.ENTER || which === keys.SPACE) {
         keyVent.preventDefault();
-        adjacentTab.focus();
-
-        setActiveAndInactive(adjacentTab, $navlist);
+        target.click();
       }
-    }
-    else if (which === keys.ENTER || which === keys.SPACE) {
-      keyVent.preventDefault();
-      target.click();
-    }
-    else if (which === keys.PAGE_DOWN) {
-      keyVent.preventDefault();
-      var assocPanel = $('#' + this.getAttribute('aria-controls'));
+      else if (which === keys.PAGE_DOWN) {
+        keyVent.preventDefault();
+        var assocPanel = $('#' + this.getAttribute('aria-controls'));
 
-      if (assocPanel) {
-        assocPanel.focus();
+        if (assocPanel) {
+          assocPanel.focus();
+        }
       }
-    }
+    });
+
+    // Click support
+    $navlist.on('click', '.tabcordion_nav-item .tabcordion_nav-trigger', function () {
+      setActiveAndInactive(this, $navlist);
+    });
   });
 
   $(document.body).on('keydown', '.tabcordion_panel', function (e) {
     if (e.which === keys.PAGE_UP) {
       e.preventDefault();
+      var $navlist = $(this).closest('.tabcordion').find('.tabcordion_navlist');
       var activeTab = $navlist.find('.tabcordion_nav-item.is-active .tabcordion_nav-trigger')[0];
 
       if (activeTab) {
         activeTab.focus();
       }
     }
-  });
-
-  // Click support
-  $navlist.on('click', '.tabcordion_nav-item .tabcordion_nav-trigger', function () {
-    setActiveAndInactive(this, $navlist);
   });
 
   function findAdjacentTab(startTab, $list, key) {
@@ -105,8 +111,6 @@
   }
 
   // Initial configuration based on viewport width
-  var isAccordionView = false;
-  var isTabsView = false;
   determineView();
 
   // Debounced Resize() jQuery Plugin
@@ -117,11 +121,13 @@
     var debounce = function (func, threshold, execAsap) {
       var timeout;
 
-      return function debounced () {
-        var obj = this, args = arguments;
-        function delayed () {
-          if (!execAsap)
+      return function debounced() {
+        var obj = this;
+        var args = arguments;
+        function delayed() {
+          if (!execAsap) {
             func.apply(obj, args);
+          }
           timeout = null;
         }
 
@@ -136,52 +142,55 @@
       };
     };
     // smartresize
-    jQuery.fn[sr] = function(fn){  return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-
-  })(jQuery,'smartresize');
+    jQuery.fn[sr] = function (fn) { return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
+  })(jQuery, 'smartresize');
 
   // Resize event:
   $(window).smartresize(determineView);
 
   function determineView() {
-    var isStatic = $tabcordion.hasClass('is-static');
+    var winWidth = $(window).width();
+    var breakpoint = 480;
 
-    if (!isStatic) {
-      var winWidth = $(window).width();
-      if (winWidth <= 480 && !isAccordionView) {
-        // Switch to accordion
-        $tabcordion
-          .removeClass('is-tabs')
-          .addClass('is-accordion');
+    $('.tabcordion').each(function () {
+      var $tabcordion = $(this);
+      var $panels = $tabcordion.find('.tabcordion_panels');
+      var $navlist = $tabcordion.find('.tabcordion_navlist');
 
-        // Better markup semantics for accordion
-        $panels.find('.tabcordion_panel').each(function () {
-          var panelID = this.id;
-          var assocLink = panelID && $('.tabcordion_navlist .tabcordion_nav-trigger[aria-controls="' + panelID + '"]')[0];
-          if (assocLink) {
-            $(assocLink.parentNode).append(this);
-          }
-        });
+      var isStatic = $tabcordion.hasClass('is-static');
+      var isAccordionView = $tabcordion.hasClass('is-accordion');
+      var isTabsView = !isAccordionView;
 
-        isAccordionView = true;
-        isTabsView = false;
-      }
-      else if (winWidth > 480 && !isTabsView) {
-        // Switch to tabs
-        var wasAccordion = $tabcordion.hasClass('is-accordion');
-        $tabcordion
-          .removeClass('is-accordion')
-          .addClass('is-tabs');
+      if (!isStatic) {
+        if (winWidth <= breakpoint && !isAccordionView) {
+          // Switch to accordion
+          $tabcordion
+            .removeClass('is-tabs')
+            .addClass('is-accordion');
 
-        if (wasAccordion) {
-          $navlist.find('.tabcordion_panel').each(function () {
-            $panels.append(this);
+          // Better markup semantics for accordion
+          $panels.find('.tabcordion_panel').each(function () {
+            var panelID = this.id;
+            var assocLink = panelID && $('.tabcordion_navlist .tabcordion_nav-trigger[aria-controls="' + panelID + '"]')[0];
+            if (assocLink) {
+              $(assocLink.parentNode).append(this);
+            }
           });
         }
+        else if (winWidth > breakpoint && !isTabsView) {
+          // Switch to tabs
+          var wasAccordion = $tabcordion.hasClass('is-accordion');
+          $tabcordion
+            .removeClass('is-accordion')
+            .addClass('is-tabs');
 
-        isTabsView = true;
-        isAccordionView = false;
+          if (wasAccordion) {
+            $navlist.find('.tabcordion_panel').each(function () {
+              $panels.append(this);
+            });
+          }
+        }
       }
-    }
+    });
   }
 })(jQuery);
