@@ -11,7 +11,7 @@ block content
 
     h2 Gallery
 
-    h3 Mobile
+    h3 Default
     .grid-fluid
       .row.xs-center
         .col.xs-4
@@ -23,6 +23,19 @@ block content
           +exampleWithCode('JS Include')
             script(src='./rocketbelt.images-gallery.js')
             script(src='./rocketbelt.images-gallery.init.js')
+
+    h3 With Thumbnails
+    .grid-fluid
+      .row.xs-center
+        .col.xs-4
+          include _images-gallery-with-thumbs.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _images-gallery-with-thumbs.pug
+          +exampleWithCode('JS Include')
+            script(src='./rocketbelt.images-gallery.js')
+            script(src='./rocketbelt.images-gallery-with-thumbs.init.js')
 
     h2 Lazy-Loading With Low-Quality Image Previews (LQIP)
 
