@@ -78,7 +78,7 @@ body {
     }
 
     .tabcordion_nav-trigger {
-      padding-top: calc(#{padding(-14)} + 3px);
+      padding-top: calc(#{padding(-14)} + 3.4px);
       border-bottom: 3px solid $color-bg;
       transition: border-bottom 200ms ease;
     }
