@@ -7,10 +7,25 @@ block content
   article
     h1 Tabcordions
 
+    h2 Dynamic
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
             include _tabcordion.pug
+
+    h2 Tabs Only
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tabcordion-static-tabs.pug
+
+    h2 Accordion Only
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tabcordion-static-accordion.pug
 
   script(src='./rocketbelt.tabcordions.min.js', async=true)
