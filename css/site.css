@@ -384,6 +384,7 @@ pre[class*="language-"] {
   -moz-tab-size: 0;
        tab-size: 0;
   -webkit-hyphens: none;
+     -moz-hyphens: none;
       -ms-hyphens: none;
           hyphens: none; }
 

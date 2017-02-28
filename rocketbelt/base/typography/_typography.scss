@@ -210,20 +210,6 @@ h4 {
   @include list-reset($horizontal: true);
 }
 
-.link-list:first-of-type {
-  padding-left: 0;
-}
-
-.link-list {
-  @include link-list();
-  display: inline-block;
-  padding: 0 1em;
-}
-
-.link-list:last-of-type {
-  padding-right: 0;
-}
-
 a {
   color: color(primary);
   transition: color 100ms linear;
@@ -309,3 +295,4 @@ ul {
 
 @import 'typography-text-with-icon';
 @import 'typography-cta';
+@import 'typography-link-lists';
