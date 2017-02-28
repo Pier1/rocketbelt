@@ -1,3 +1,43 @@
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/Pier1/rocketbelt/compare/1.4.1...v1.5.0) (2017-02-28)
+
+
+### Bug Fixes
+
+* **Build:** Stop cssnano from removing needed vendor prefixes. ([f43d7e2](https://github.com/Pier1/rocketbelt/commit/f43d7e2))
+* **Icons:** Roll back slightly overzealous icon styling. ([e57120f](https://github.com/Pier1/rocketbelt/commit/e57120f))
+* **Navigation:** Remove clunky outline style from navigation. ([6badd72](https://github.com/Pier1/rocketbelt/commit/6badd72))
+* **Typography:** Removed lingering Jade template. ([7c993b3](https://github.com/Pier1/rocketbelt/commit/7c993b3))
+
+
+### Features
+
+* **Build:** Extend Autoprefixer browser support. ([bb517b6](https://github.com/Pier1/rocketbelt/commit/bb517b6))
+* **Forms:** Update outline style. ([6258039](https://github.com/Pier1/rocketbelt/commit/6258039))
+* **Icons:** Add a11y metadata to icons. ([a607246](https://github.com/Pier1/rocketbelt/commit/a607246))
+* **Icons:** Add svgxuse to polyfill external SVGs for older browsers. ([6ec6078](https://github.com/Pier1/rocketbelt/commit/6ec6078))
+* **Icons:** Make icons accessible! ([193a3a9](https://github.com/Pier1/rocketbelt/commit/193a3a9))
+* **Icons:** Surface some text-with-icon styles to icons themselves. ([ff3a406](https://github.com/Pier1/rocketbelt/commit/ff3a406))
+* **Images:** Gallery lazyloading & default styling. ([b111f18](https://github.com/Pier1/rocketbelt/commit/b111f18))
+* **Images:** Gallery pagination styles. ([cbfaad9](https://github.com/Pier1/rocketbelt/commit/cbfaad9))
+* **Images:** Gallery pagination styles. ([b80181f](https://github.com/Pier1/rocketbelt/commit/b80181f))
+* **Images:** Touch-friendly overhaul of gallery. ([51c4d9d](https://github.com/Pier1/rocketbelt/commit/51c4d9d))
+* **Layout:** Roll back Flexibility.js to better support IE9. ([6802a97](https://github.com/Pier1/rocketbelt/commit/6802a97))
+* **Tabcordions:** Add animation & update transitions when switching between tab panels. ([ad21665](https://github.com/Pier1/rocketbelt/commit/ad21665))
+* **Tabcordions:** Allow static implementation (tabs-only/accordion-only). ([b93a8bb](https://github.com/Pier1/rocketbelt/commit/b93a8bb))
+* **Tabcordions:** Further style simplification. ([6ecf714](https://github.com/Pier1/rocketbelt/commit/6ecf714))
+* **Tabcordions:** Make tabcordion UI elements touchable via `touchevents`. ([fde6992](https://github.com/Pier1/rocketbelt/commit/fde6992))
+* **Tabcordions:** Refactor JS & increase readability. ([d7ea114](https://github.com/Pier1/rocketbelt/commit/d7ea114))
+* **Tabcordions:** Refactor JS to support multiple tabcordions per page. ([e417051](https://github.com/Pier1/rocketbelt/commit/e417051))
+* **Tabcordions:** Refactor tabcordions for accessibility. ([9c50ebf](https://github.com/Pier1/rocketbelt/commit/9c50ebf))
+* **Tabcordions:** Remove specific element dependency (button) and replace with class. ([a7c541f](https://github.com/Pier1/rocketbelt/commit/a7c541f))
+* **Tabcordions:** Simplify styles & markup. ([b7ca89e](https://github.com/Pier1/rocketbelt/commit/b7ca89e))
+* **Tabcordions:** Static & dynamic tabcordion examples. ([fac09df](https://github.com/Pier1/rocketbelt/commit/fac09df))
+* **Tabcordions:** Update Tabcordion styles. ([ef661e3](https://github.com/Pier1/rocketbelt/commit/ef661e3))
+* **Typography:** Implement link lists for mobile. ([19403c6](https://github.com/Pier1/rocketbelt/commit/19403c6))
+
+
+
 <a name="1.4.1"></a>
 ## [1.4.1](https://github.com/Pier1/rocketbelt/compare/1.4.0...v1.4.1) (2017-02-16)
 
