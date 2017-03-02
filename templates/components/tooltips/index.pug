@@ -10,76 +10,76 @@ block content
     div.row
       div.col.xs-12.md-6
         +exampleWithCode
-          span.tooltip 
-            h3.docs-header Default
-            span.tooltip-content You'd be the help of open-air luxury.
+          span.tooltip(tabindex="0")
+            h3.docs-header(aria-describedby="default-tooltip") Default
+            .tooltip-content#default-tooltip(role="tooltip") You'd be the help of open-air luxury.
       div.col.xs-12.md-6
         +exampleWithCode
-          span.tooltip.tooltip-inverted 
-            h3.docs-header Inverted
-              span.tooltip-content You'd be the help of open-air luxury.
+          span.tooltip.tooltip-inverted(tabindex="0") 
+            h3.docs-header(aria-describedby="inverted-tooltip") Inverted
+            .tooltip-content#inverted-tooltip(role="tooltip") You'd be the help of open-air luxury.
 
     h2 Directional
     div.row
       div.col.xs-12.md-6
         +exampleWithCode
-          span.tooltip.tooltip-left
-            h3.docs-header Left
-            span.tooltip-content Weave a sofa or outdoor seat on display.
+          span.tooltip.tooltip-left(tabindex="0")
+            h3.docs-header(aria-describedby="left-tooltip") Left
+            .tooltip-content#left-tooltip(role="tooltip") Weave a sofa or outdoor seat on display.
         +exampleWithCode
-          span.tooltip.tooltip-right
-            h3.docs-header Right
-            span.tooltip-content Case in covered with nailhead trim is even more of flowers?
+          span.tooltip.tooltip-right(tabindex="0")
+            h3.docs-header(aria-describedby="right-tooltip") Right
+            .tooltip-content#right-tooltip(role="tooltip") Case in covered with nailhead trim is even more of flowers?
         +exampleWithCode
-          span.tooltip.tooltip-bottom
-            h3.docs-header Bottom
-            span.tooltip-content Decorated with an almost weightless, firefly-like effect.
+          span.tooltip.tooltip-bottom(tabindex="0")
+            h3.docs-header(aria-describedby="bottom-tooltip") Bottom
+            .tooltip-content#bottom-tooltip(role="tooltip") Decorated with an almost weightless, firefly-like effect.
       div.col.xs-12.md-6
         +exampleWithCode
-          span.tooltip.tooltip-left.tooltip-inverted
-            h3.docs-header Inverted Left
-            span.tooltip-content Weave a sofa or outdoor seat on display.
+          span.tooltip.tooltip-left.tooltip-inverted(tabindex="0")
+            h3.docs-header(aria-describedby="inverted-left-tooltip") Inverted Left
+            .tooltip-content#inverted-left-tooltip(role="tooltip") Weave a sofa or outdoor seat on display.
         +exampleWithCode
-          span.tooltip.tooltip-right.tooltip-inverted
-            h3.docs-header Inverted Right
-            span.tooltip-content Case in covered with nailhead trim is even more of flowers?
+          span.tooltip.tooltip-right.tooltip-inverted(tabindex="0")
+            h3.docs-header(aria-describedby="inverted-right-tooltip") Inverted Right
+            .tooltip-content#inverted-right-tooltip(role="tooltip") Case in covered with nailhead trim is even more of flowers?
         +exampleWithCode
-          span.tooltip.tooltip-bottom.tooltip-inverted
-            h3.docs-header Inverted Bottom
-            span.tooltip-content Decorated with an almost weightless, firefly-like effect.
+          span.tooltip.tooltip-bottom.tooltip-inverted(tabindex="0")
+            h3.docs-header(aria-describedby="inverted-bottom-tooltip") Inverted Bottom
+            .tooltip-content#inverted-bottom-tooltip(role="tooltip") Decorated with an almost weightless, firefly-like effect.
 
     h2 Sizes
     +exampleWithCode
-      span.tooltip 
-        h3.docs-header Small (Default)
-        span.tooltip-content You'd be the help of open-air luxury.
+      span.tooltip(tabindex="0") 
+        h3.docs-header(aria-describedby="small-tooltip") Small (Default)
+        .tooltip-content#small-tooltip(role="tooltip") You'd be the help of open-air luxury.
     +exampleWithCode
-      span.tooltip.tooltip-md.tooltip-right
-        h3.docs-header Medium
-        span.tooltip-content Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.
+      span.tooltip.tooltip-md.tooltip-right(tabindex="0")
+        h3.docs-header(aria-describedby="medium-tooltip") Medium
+        .tooltip-content#medium-tooltip(role="tooltip") Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.
     +exampleWithCode
-      span.tooltip.tooltip-lg.tooltip-right
-        h3.docs-header Large
-        span.tooltip-content Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.
+      span.tooltip.tooltip-lg.tooltip-right(tabindex="0")
+        h3.docs-header(aria-describedby="large-tooltip") Large
+        .tooltip-content#large-tooltip(role="tooltip") Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.
 
     h2 Features
     div.row
       div.col.xs-8.md-6.lg-4
         +exampleWithCode
-          span.tooltip.tooltip-right.tooltip-inverted
-            h3.docs-header Rich Content
-            span.tooltip-content
-              img(src="/exposition/logo-usage/img/normal_logo.png" height="90")
+          span.tooltip.tooltip-right.tooltip-md.tooltip-inverted(tabindex="0")
+            h3.docs-header(aria-describedby="rich-tooltip") Rich Content
+            span.tooltip-content#rich-tooltip(role="tooltip")
+              img(src="/exposition/logo-usage/img/normal_logo.png" style="width:85%;display:block")
               p Let it a sleek, hand-painted in a little sunshine and proud heritage dating back and hang. We’d say white stoneware mug with bold and a beaded number. You’ll love a nostalgic, weathered sign is either way, our elegant simplicity. Collect a windowsill, but this unit in and it's a naked niche? Nothing spices up the deer pillar of warm colors and plum—all in our classic lines with flashy fringe. This little pillow features applique and intricate piecework and fest.
         h3.docs-header Accessibility 
         +exampleWithCode
           div.form-group
             label(for="fname") Email Address
-            input#fname(type="text", aria-describedby="name-tooltip")
-            span#name-tooltip.tooltip(tabindex="0",role="tooltip")
+            input#fname(type="text", aria-describedby="input-tooltip")
+            span#input-tooltip.tooltip(tabindex="0",role="tooltip")
               svg.icon
                 use(xlink:href='../icons/rocketbelt.icons.svg#rb-icon-question')
-              span.tooltip-content Please enter a valid email address. We will never release this information without explicit consent.
+              .tooltip-content Please enter a valid email address. We will never release this information without explicit consent.
 
 
   style(type='text/css').
@@ -95,7 +95,7 @@ block content
       flex-wrap: wrap;
       position: relative;
     }
-    #name-tooltip {
+    #input-tooltip {
       margin: 0;
       line-height: 1;
       position: absolute;
