@@ -234,6 +234,7 @@ limitations under the License.
                     if ((event.type === 'mouseout' || event.type === 'focusout') && topli.has(document.activeElement).length > 0) {
                         return;
                     }
+                    topli.removeClass(settings.openClass);
                     topli.find('[aria-expanded]')
                         .attr('aria-expanded', 'false')
                         .removeClass(settings.openClass)
@@ -256,7 +257,9 @@ limitations under the License.
                 }
             } else {
                 clearTimeout(that.focusTimeoutID);
+                topli.addClass(settings.openClass);
                 topli.siblings()
+                    .removeClass(settings.openClass)
                     .find('[aria-expanded]')
                     .attr('aria-expanded', 'false')
                     .removeClass(settings.openClass)
