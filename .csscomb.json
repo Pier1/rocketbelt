@@ -26,10 +26,12 @@
         "node_modules/**",
         "bower_components/**"
     ],
-    "sort-order": [ 
+    "sort-order": [
       [
-        "$include",
-        "$variable"
+        "$import",
+        "$extend",
+        "$include"
+        "$variable",
       ],
       [
         "position",
