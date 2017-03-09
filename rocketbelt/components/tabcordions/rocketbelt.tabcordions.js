@@ -47,6 +47,13 @@
 
     // Click support
     $navlist.on('click', '.tabcordion_nav-item .tabcordion_nav-trigger', function () {
+      var currentTarget = $navlist.find('.tabcordion_nav-item.is-active .tabcordion_nav-trigger')[0];
+      if (currentTarget != $(this)[0]) {
+        var eventData = {'previousTarget': currentTarget, 'newTarget': $(this)[0]};
+        var event = new CustomEvent('tabcordion.TabChanged', {detail: eventData});
+        $(this)[0].dispatchEvent(event);
+      }
+
       setActiveAndInactive(this, $navlist);
     });
   });
@@ -148,7 +155,6 @@
   $(window).smartresize(determineView);
 
   function determineView() {
-    
     var $tabContainer = $('.tabcordion');
     var breakpoint = 480;
 
