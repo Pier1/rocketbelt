@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>star-o-half</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="star-o-half" fill-rule="nonzero" fill="#000000">
+            <g id="iconmonstr-star-4">
+                <path d="M128,55.1786667 L152.906667,106.56 L209.493333,114.368 L168.309333,153.941333 L178.357333,210.154667 L128,183.232 L128,55.1786667 L128,55.1786667 Z M128,6.26133333 L88.8746667,86.9866667 L0,99.264 L64.6826667,161.429333 L48.896,249.738667 L128,207.424 L207.104,249.728 L191.317333,161.418667 L256,99.264 L167.125333,86.9973333 L128,6.26133333 L128,6.26133333 Z" id="Shape"></path>
+            </g>
+        </g>
+    </g>
+</svg>
