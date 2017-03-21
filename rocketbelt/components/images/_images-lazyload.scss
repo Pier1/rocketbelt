@@ -50,17 +50,3 @@
     }
   }
 }
-
-.lazyload {
-  display: flex;
-  flex: 1;
-  margin-top: 10vh;
-  margin-bottom: 90vh;
-  min-width: 20vw;
-  min-height: 20vw;
-  border-radius: 2px;
-  background-color: color(gray, plus4);
-
-  justify-content: center;
-  align-items: center;
-}
