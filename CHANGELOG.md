@@ -1,3 +1,23 @@
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/Pier1/rocketbelt/compare/1.5.0...v1.6.0) (2017-03-23)
+
+
+### Bug Fixes
+
+* **Dialogs:** Handle Esc key as a close event; check parent for close attribute ([05b20b5](https://github.com/Pier1/rocketbelt/commit/05b20b5))
+* **Global:** Remove max-width from code samples. ([fb9f4ce](https://github.com/Pier1/rocketbelt/commit/fb9f4ce))
+* **Linting:** Add missing semicolon. ([9c228f5](https://github.com/Pier1/rocketbelt/commit/9c228f5))
+* **Linting:** Remove extra comma. ([bb61dfb](https://github.com/Pier1/rocketbelt/commit/bb61dfb))
+
+
+### Features
+
+* **Global:** Sane formatting of more complex code samples. ([e81eb5a](https://github.com/Pier1/rocketbelt/commit/e81eb5a))
+* **Icons:** Add half-star icon. ([52ffd32](https://github.com/Pier1/rocketbelt/commit/52ffd32))
+* **Icons:** Add stack-o & zoom-out icons. ([44ed7dd](https://github.com/Pier1/rocketbelt/commit/44ed7dd))
+
+
+
 <a name="1.5.0"></a>
 # [1.5.0](https://github.com/Pier1/rocketbelt/compare/1.4.1...v1.5.0) (2017-02-28)
 
