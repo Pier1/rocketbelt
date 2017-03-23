@@ -3048,27 +3048,6 @@ button.swiper-pagination-bullet {
     opacity: 0.5;
     transition: opacity 200ms ease-in-out; }
 
-.lazyload {
-  display: -webkit-flex;
-  display: -ms-flexbox;
-  -js-display: flex;
-  display: flex;
-  -webkit-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  margin-top: 10vh;
-  margin-bottom: 90vh;
-  min-width: 20vw;
-  min-height: 20vw;
-  border-radius: 2px;
-  background-color: #f3f2f2;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center; }
-
 #docs-wrapper:not(.is-dialog-open) ~ .dialog .dialog_content,
 #main:not(.is-dialog-open) ~ .dialog .dialog_content {
   -webkit-animation: dialogOut 300ms ease-in;
@@ -3787,7 +3766,6 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
     .tag.message-dismissable .message-dismissable_close::after {
       margin: 0 0 0 0.5rem; }
 
-/* New Tooltip Styles */
 .tooltip {
   position: relative; }
   .tooltip::before, .tooltip::after,
@@ -3799,8 +3777,7 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
     transition: opacity 250ms linear, visibility 250ms linear, transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24);
     transition: opacity 250ms linear, visibility 250ms linear, transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24), -webkit-transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24);
     -webkit-transform: translate3d(0, 0, 0);
-            transform: translate3d(0, 0, 0);
-    pointer-events: none; }
+            transform: translate3d(0, 0, 0); }
   .tooltip::before {
     z-index: 1001;
     border: 8px solid transparent;
@@ -3808,7 +3785,7 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
     content: ''; }
   .tooltip::after {
     z-index: 1002;
-    border: 5px solid transparent;
+    border: 8px solid transparent;
     background: transparent;
     content: ''; }
   .tooltip .tooltip-content {
@@ -3819,7 +3796,6 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
     border-radius: 2px;
     background-color: rgba(3, 0, 1, 0.85);
     color: #fefdfd;
-    content: attr(data-tooltip);
     text-align: left;
     text-transform: none;
     letter-spacing: normal;
@@ -3843,13 +3819,13 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
 
 .tooltip::before,
 .tooltip-top::before {
-  margin-bottom: -12px;
+  margin-bottom: -11px;
   border-top-color: rgba(3, 0, 1, 0.85); }
 
 .tooltip::after,
 .tooltip-top::after {
-  margin-bottom: -6px;
-  border-top-color: rgba(254, 253, 253, 0.85); }
+  margin-bottom: -9px;
+  border-top-color: #fefdfd; }
 
 .tooltip .tooltip-content,
 .tooltip-top .tooltip-content {
@@ -3876,19 +3852,18 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
           transform: translate3d(6px, 50%, 0); }
 
 .tooltip-left::before {
-  margin-right: -12px;
+  margin-right: -11px;
   margin-bottom: 0;
   margin-left: 0;
   border-top-color: transparent;
   border-left-color: rgba(3, 0, 1, 0.85); }
 
 .tooltip-left::after {
-  margin-right: -8px;
+  margin-right: -10px;
   margin-bottom: 0;
   margin-left: 0;
-  border: 6px solid transparent;
   border-top-color: transparent;
-  border-left-color: rgba(254, 253, 253, 0.85); }
+  border-left-color: #fefdfd; }
 
 .tooltip-left .tooltip-content {
   margin-right: 4px;
@@ -3909,16 +3884,15 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
 
 .tooltip-right::before {
   margin-bottom: 0;
-  margin-left: -12px;
+  margin-left: -11px;
   border-top-color: transparent;
   border-right-color: rgba(3, 0, 1, 0.85); }
 
 .tooltip-right::after {
   margin-bottom: 0;
-  margin-left: -8px;
-  border: 6px solid transparent;
+  margin-left: -10px;
   border-top-color: transparent;
-  border-right-color: rgba(254, 253, 253, 0.85); }
+  border-right-color: #fefdfd; }
 
 .tooltip-right .tooltip-content {
   margin-bottom: 0;
@@ -3939,16 +3913,16 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
           transform: translate3d(-50%, -6px, 0); }
 
 .tooltip-bottom::before {
-  margin-top: -12px;
+  margin-top: -11px;
   margin-bottom: 0;
   border-top-color: transparent;
   border-bottom-color: rgba(3, 0, 1, 0.85); }
 
 .tooltip-bottom::after {
-  margin-top: -6px;
+  margin-top: -10px;
   margin-bottom: 0;
   border-top-color: transparent;
-  border-bottom-color: rgba(254, 253, 253, 0.85); }
+  border-bottom-color: #fefdfd; }
 
 .tooltip-bottom .tooltip-content {
   margin-top: 4px;
@@ -3961,32 +3935,50 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
           transform: translate3d(-50%, 6px, 0); }
 
 .tooltip-md .tooltip-content {
-  min-width: 325px; }
+  min-width: 326px; }
 
 .tooltip-lg .tooltip-content {
   min-width: 400px; }
 
 .tooltip-inverted .tooltip-content {
-  background-color: rgba(254, 253, 253, 0.85);
+  background-color: #fefdfd;
+  border: 1px solid rgba(0, 0, 0, 0.06);
   color: #030001; }
 
 .tooltip-inverted::before {
-  border-top-color: rgba(0, 0, 0, 0.17); }
+  margin-bottom: -12px;
+  border: 8px solid transparent;
+  border-top-color: rgba(0, 0, 0, 0.12); }
 
 .tooltip-inverted:hover::after, .tooltip-inverted:focus::after {
   visibility: visible;
   opacity: 1; }
 
 .tooltip-inverted.tooltip-left::before {
-  border: 8px solid transparent;
-  border-left-color: rgba(0, 0, 0, 0.14); }
+  margin: 0;
+  margin-right: -12px;
+  border-top-color: transparent;
+  border-left-color: rgba(0, 0, 0, 0.1); }
+
+.tooltip-inverted.tooltip-left::after {
+  border-top-color: transparent; }
 
 .tooltip-inverted.tooltip-right::before {
-  border: 8px solid transparent;
-  border-right-color: rgba(0, 0, 0, 0.14); }
+  margin: 0;
+  margin-left: -12px;
+  border-top-color: transparent;
+  border-right-color: rgba(0, 0, 0, 0.1); }
+
+.tooltip-inverted.tooltip-right::after {
+  border-top-color: transparent; }
 
 .tooltip-inverted.tooltip-bottom::before {
-  border: 8px solid transparent;
-  border-bottom-color: rgba(254, 253, 253, 0.85); }
+  margin: 0;
+  margin-top: -12px;
+  border-top-color: transparent;
+  border-bottom-color: rgba(0, 0, 0, 0.07); }
+
+.tooltip-inverted.tooltip-bottom::after {
+  border-top-color: transparent; }
 
 /*# sourceMappingURL=rocketbelt.css.map */

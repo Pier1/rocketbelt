@@ -384,7 +384,6 @@ pre[class*="language-"] {
   -moz-tab-size: 0;
        tab-size: 0;
   -webkit-hyphens: none;
-     -moz-hyphens: none;
       -ms-hyphens: none;
           hyphens: none; }
 
@@ -1187,8 +1186,7 @@ p code,
   display: -webkit-flex;
   display: -ms-flexbox;
   -js-display: flex;
-  display: flex;
-  max-width: 700px; }
+  display: flex; }
   .example-code:hover .copy-code {
     opacity: 1;
     transition: opacity 100ms linear; }
