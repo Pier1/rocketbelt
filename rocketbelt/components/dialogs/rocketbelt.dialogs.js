@@ -133,7 +133,7 @@
     function bindKeypress (event) {
       if (that.shown && event.which === 27) {
         event.preventDefault();
-        hide();
+        hide(event.which);
       }
 
       if (that.shown && event.which === 9) {
@@ -163,10 +163,13 @@
       dispatchEvent(node, 'dialog:show', this);
     }
 
-    function hide () {
+    function hide (key) {
       if (!that.shown) return;
 
-      if (event.target.dataset.rbDialogHide !== undefined) {
+      if (event.target.dataset.rbDialogHide !== undefined ||
+          event.target.parentElement.dataset.rbDialogHide !== undefined ||
+          event.target.parentElement.parentElement.dataset.rbDialogHide !== undefined ||
+          key === 27) {
         that.shown = false;
 
         removeClass(main, 'is-dialog-open');
