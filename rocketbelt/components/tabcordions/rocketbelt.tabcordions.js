@@ -47,7 +47,16 @@
 
     // Click support
     $navlist.on('click', '.tabcordion_nav-item .tabcordion_nav-trigger', function () {
+
+      var currentTarget = $navlist.find('.tabcordion_nav-item.is-active .tabcordion_nav-trigger')[0];
+      if (currentTarget != $(this)[0]) {
+        var eventData = {'previousTarget': currentTarget, 'newTarget': $(this)[0]};
+        var event = new CustomEvent('rb.tabcordion.tabChanged', {detail: eventData});
+        $(this)[0].dispatchEvent(event);
+      }
+      
       setActiveAndInactive(this, $navlist);
+      
     });
   });
 
@@ -148,11 +157,13 @@
   $(window).smartresize(determineView);
 
   function determineView() {
-    var winWidth = $(window).width();
+    
+    var $tabContainer = $('.tabcordion');
     var breakpoint = 480;
 
-    $('.tabcordion').each(function () {
+    $tabContainer.each(function () {
       var $tabcordion = $(this);
+      var containerWidth = $tabcordion.width();
       var $panels = $tabcordion.find('.tabcordion_panels');
       var $navlist = $tabcordion.find('.tabcordion_navlist');
 
@@ -161,7 +172,7 @@
       var isTabsView = !isAccordionView;
 
       if (!isStatic) {
-        if (winWidth <= breakpoint && !isAccordionView) {
+        if (containerWidth <= breakpoint && !isAccordionView) {
           // Switch to accordion
           $tabcordion
             .removeClass('is-tabs')
@@ -176,7 +187,7 @@
             }
           });
         }
-        else if (winWidth > breakpoint && !isTabsView) {
+        else if (containerWidth > breakpoint && !isTabsView) {
           // Switch to tabs
           var wasAccordion = $tabcordion.hasClass('is-accordion');
           $tabcordion

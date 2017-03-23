@@ -1,9 +1,7 @@
-$tooltip-background: rgba(color(black), 0.85);
-$tooltip-background-light: rgba(color(white), 0.85);
+$tooltip-background: rgba(color(black), .85);
+$tooltip-background-light: color(white);
 
-/* New Tooltip Styles */
-
-.tooltip {
+.tooltip {  
   position: relative;
   &::before,
   &::after,
@@ -13,7 +11,6 @@ $tooltip-background-light: rgba(color(white), 0.85);
     opacity: 0;
     transition: opacity 250ms linear, visibility 250ms linear, transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24);
     transform: translate3d(0, 0, 0);
-    pointer-events: none;
   }
   // Base styles for the tooltip's directional arrow
   &::before {
@@ -24,7 +21,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
   &::after {
     z-index: 1002;
-    border: 5px solid transparent;
+    border: 8px solid transparent;
     background: transparent;
     content: '';
   }
@@ -37,7 +34,6 @@ $tooltip-background-light: rgba(color(white), 0.85);
     border-radius: 2px;
     background-color: $tooltip-background;
     color: color(white);
-    content: attr(data-tooltip);
     text-align: left;
     text-transform: none;
     letter-spacing: normal;
@@ -65,11 +61,11 @@ $tooltip-background-light: rgba(color(white), 0.85);
     transform: translate3d(-50%, 6px, 0);
   }
   &::before {
-    margin-bottom: -12px;
+    margin-bottom: -11px;
     border-top-color: $tooltip-background;
   }
   &::after {
-    margin-bottom: -6px;
+    margin-bottom: -9px;
     border-top-color: $tooltip-background-light;
   }
   .tooltip-content {
@@ -95,17 +91,16 @@ $tooltip-background-light: rgba(color(white), 0.85);
     transform: translate3d(6px, 50%, 0);
   }
   &::before {
-    margin-right: -12px;
+    margin-right: -11px;
     margin-bottom: 0;
     margin-left: 0;
     border-top-color: transparent;
     border-left-color: $tooltip-background;
   }
   &::after {
-    margin-right: -8px;
+    margin-right: -10px;
     margin-bottom: 0;
     margin-left: 0;
-    border: 6px solid transparent;
     border-top-color: transparent;
     border-left-color: $tooltip-background-light;
   }
@@ -133,14 +128,13 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
   &::before {
     margin-bottom: 0;
-    margin-left: -12px;
+    margin-left: -11px;
     border-top-color: transparent;
     border-right-color: $tooltip-background;
   }
   &::after {
     margin-bottom: 0;
-    margin-left: -8px;
-    border: 6px solid transparent;
+    margin-left: -10px;
     border-top-color: transparent;
     border-right-color: $tooltip-background-light;
   }
@@ -168,13 +162,13 @@ $tooltip-background-light: rgba(color(white), 0.85);
     transform: translate3d(-50%, -6px, 0);
   }
   &::before {
-    margin-top: -12px;
+    margin-top: -11px;
     margin-bottom: 0;
     border-top-color: transparent;
     border-bottom-color: $tooltip-background;
   }
   &::after {
-    margin-top: -6px;
+    margin-top: -10px;
     margin-bottom: 0;
     border-top-color: transparent;
     border-bottom-color: $tooltip-background-light;
@@ -195,7 +189,7 @@ $tooltip-background-light: rgba(color(white), 0.85);
 
 .tooltip-md {
   .tooltip-content {
-    min-width: 325px;
+    min-width: 326px;
   }
 }
 
@@ -208,10 +202,13 @@ $tooltip-background-light: rgba(color(white), 0.85);
 .tooltip-inverted {
   .tooltip-content {
     background-color: $tooltip-background-light;
+    border: 1px solid rgba(0, 0, 0, 0.06);
     color: color(black);
   }
   &::before {
-    border-top-color: rgba(0, 0, 0, .17);
+    margin-bottom: -12px;
+    border: 8px solid transparent;
+    border-top-color: rgba(0, 0, 0, .12);
   }
   &:hover,
   &:focus {
@@ -222,20 +219,35 @@ $tooltip-background-light: rgba(color(white), 0.85);
   }
   &.tooltip-left {
     &::before {
-      border: 8px solid transparent;
-      border-left-color: rgba(0, 0, 0, .14);
+      margin:0;
+      margin-right: -12px;
+      border-top-color: transparent;
+      border-left-color: rgba(0, 0, 0, .1);
+    }
+    &::after {
+      border-top-color: transparent;
     }
   }
   &.tooltip-right {
     &::before {
-      border: 8px solid transparent;
-      border-right-color: rgba(0, 0, 0, .14);
+      margin:0;
+      margin-left: -12px;
+      border-top-color: transparent;
+      border-right-color: rgba(0, 0, 0, .1);
+    }
+    &::after {
+      border-top-color: transparent;
     }
   }
   &.tooltip-bottom {
     &::before {
-      border: 8px solid transparent;
-      border-bottom-color: $tooltip-background-light;
+      margin:0;
+      margin-top: -12px;
+      border-top-color: transparent;
+      border-bottom-color: rgba(0, 0, 0, .07);
+    }
+    &::after {
+      border-top-color: transparent;
     }
   }
 }
