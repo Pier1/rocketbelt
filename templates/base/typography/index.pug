@@ -175,92 +175,75 @@ block content
 
     // Does title need modifier, or use first-of-type/first-child?
     h2 Link Lists
-    h3 Title
+    h3 With + Without Title
     +exampleWithCode
       ul.link-list
-        li.title Living Room
+        li.title Customer Relations
         li
-          a Chairs
+          a(href="#") FAQ
         li
-          a Ottomans
+          a(href="#") Assembly Instructions
         li
-          a Sectionals
+          a(href="#") Shipping Info
         li
-          a Sofas & Loveseats
+          a(href="#") Returns & Exchanges
         li
-          a Accent & Coffee Tables
-        li
-          a TV & Media Stands
-        li
-          a Cabinets
-        li
-          a Shelves and Bookcases
-        li
-          a Living Room Collections
+          a(href="#") Pier 1 for Business
       ul.link-list
-        li.title Dining & Kitchen
+        li Quick Links
         li
-          a Dining Tables
+          a.text-with-icon(href="#") Store Locator
+            svg.icon.icon-left(aria-hidden="true")
+              use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-pin')
         li
-          a Dining Chairs
+          a(href="#") Check Order Status
         li
-          a Sectionals
+          a(href="#") Gift Cards
         li
-          a Sofas & Loveseats
+          a(href="#") Gift Card Balance
         li
-          a Accent & Coffee Tables
+          a(href="#") Wishlist
         li
-          a TV & Media Stands
-        li
-          a Cabinets
-        li
-          a Shelves and Bookcases
-        li
-          a Living Room Collections
+          a(href="#") Designer Perks
       ul.link-list
-        li Living Room
         li
-          a Chairs
+          a(href="#") Contact Us
         li
-          a Ottomans
+          a(href="#") Send a Note
         li
-          a Sectionals
+          a.text-with-icon(href="#") Email Us
+            svg.icon.icon-left(aria-hidden="true")
+              use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-envelope')
         li
-          a Sofas & Loveseats
-        li
-          a Accent & Coffee Tables
-        li
-          a TV & Media Stands
-        li
-          a Cabinets
-        li
-          a Shelves and Bookcases
-        li
-          a Living Room Collections
+          a.text-with-icon(href="#") (817) 252-6300
+            svg.icon.icon-left(aria-hidden="true")
+              use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-phone')
 
     h3 Title + Link
     +exampleWithCode
       ul.link-list
         li.title
-          a Living Room
+          a.cta.text-with-icon(href="#") Living Room
+            svg.icon.icon-right(aria-hidden="true")
+              use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow')
           li
-            a Chairs
+            a(href="#") Chairs
           li
-            a Ottomans
+            a(href="#") Ottomans
           li
-            a Sectionals
+            a(href="#") Sectionals
           li
-            a Sofas & Loveseats
+            a(href="#") Sofas & Loveseats
           li
-            a Accent & Coffee Tables
+            a(href="#") Accent & Coffee Tables
           li
-            a TV & Media Stands
+            a(href="#") TV & Media Stands
           li
-            a Cabinets
+            a(href="#") Cabinets
           li
-            a Shelves and Bookcases
+            a(href="#") Shelves and Bookcases
           li
-            a Living Room Collections
+            a(href="#") Living Room Collections
 
     h3 Font Weights
     .font-plus-4

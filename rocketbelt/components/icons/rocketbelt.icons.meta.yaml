@@ -1,0 +1,203 @@
+arrow-down:
+  title: Down Arrow
+  description: A downward arrow
+
+arrow-left:
+  title: Left Arrow
+  description: A leftward arrow
+
+arrow-right:
+  title: Right Arrow
+  description: A rightward arrow
+
+arrow-up:
+  title: Up Arrow
+  description: An upward arrow
+
+avatar:
+  title: Avatar
+  description: Silhouette representing a person
+
+basket:
+  title: Basket
+  description: A two-handled shopping basket
+
+bookmark:
+  title: Bookmark
+  description: A simple bookmark with a decorative notch
+
+cart:
+  title: Shopping Cart
+  description: A wheeled shopping cart
+
+chat-double-o:
+  title: Open Double Chat Bubble
+  description: Two outlined chat bubbles
+
+chat-help:
+  title: Chat Help
+  description: A question mark enclosed within a chat bubble
+
+chat-single:
+  title: Chat
+  description: A chat bubble
+
+check:
+  title: Check
+  description: A check mark
+
+check-circle:
+  title: Circled Check
+  description: A check mark within a circle
+
+chevron-down:
+  title: Down Chevron
+  description: A downward chevron
+
+chevron-left:
+  title: Left Chevron
+  description: A leftward chevron
+
+chevron-right:
+  title: Right Chevron
+  description: A rightward chevron
+
+chevron-up:
+  title: Up Chevron
+  description: An upward chevron
+
+close:
+  title: Close
+  description: An "x" character representing a close action
+
+credit-card:
+  title: Credit Card
+  description: The back side of a credit card
+
+cta-arrow:
+  title: CTA Arrow
+  description: A slim rightward chevron indicating a call-to-action
+
+edit:
+  title: Edit
+  description: A pencil
+
+envelope:
+  title: Envelope
+  description: An envelop
+
+filter:
+  title: Filter
+  description: A funnel
+
+heart:
+  title: Heart
+  description: A heart
+
+heart-o:
+  title: Open Heart
+  description: The outline of a heart
+
+history:
+  title: History
+  description: A counterclockwise circular arrow with clock arms inside
+
+home:
+  title: Home
+  description: A house
+
+info:
+  title: Info
+  description: A circle with an "i" inside
+
+lock-check:
+  title: Lock With Check
+  description: A lock with a checkmark
+
+menu:
+  title: Menu
+  description: Three parallel horizontal lines
+
+minus:
+  title: Minus
+  description: A minus sign
+
+p1apron:
+  title: Pier 1 Apron
+  description: An apron with "P1" on the front
+
+p1logo:
+  title: Pier 1 Logo
+  description: The Pier 1 Imports logo
+
+p1logo-alt-1:
+  title: Pier 1 Logo (alternate)
+  description: An alternate Pier 1 Imports logo
+
+phone:
+  title: Phone
+  description: A phone handset
+
+pin:
+  title: Pin
+  description: A pin that indicates a location
+
+pin-map:
+  title: Pin On Map
+  description: A pin indicating a location on a map
+
+play:
+  title: Play
+  description: A triangular play symbol
+
+plus:
+  title: Plus
+  description: A plus sign
+
+question:
+  title: Question
+  description: A circle with a question mark inside
+
+search:
+  title: Search
+  description: A magnifying glass
+
+shipment:
+  title: Shipment
+  description: A box with motion lines behind it
+
+sort-both:
+  title: Sort Both
+  description: An upward-pointing triangle above a downward-pointing triangle
+
+sort-down:
+  title: Sort Down
+  description: A downward-pointing triangle
+
+sort-up:
+  title: Sort Up
+  description: An upward-pointing triangle
+
+stack-o:
+  title: Stack
+  description: A square stacked on another square
+
+star:
+  title: Star
+  description: A star
+
+star-o:
+  title: Open Star
+  description: The outline of a star
+
+star-o-half:
+  title: Half Star
+  description: A half-filled star
+
+zoom-in:
+  title: Zoom In
+  description: A magnifying glass with a plus sign inside
+
+zoom-out:
+  title: Zoom Out
+  description: A magnifying glass with a minus sign inside

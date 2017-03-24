@@ -1,3 +1,109 @@
+<a name="1.6.1"></a>
+## [1.6.1](https://github.com/Pier1/rocketbelt/compare/1.6.0...v1.6.1) (2017-03-24)
+
+
+### Features
+
+* **Icons:** Build SVG for updated icons. ([e784420](https://github.com/Pier1/rocketbelt/commit/e784420))
+
+
+
+<a name="1.6.0"></a>
+# [1.6.0](https://github.com/Pier1/rocketbelt/compare/1.5.0...v1.6.0) (2017-03-23)
+
+
+### Bug Fixes
+
+* **Dialogs:** Handle Esc key as a close event; check parent for close attribute ([05b20b5](https://github.com/Pier1/rocketbelt/commit/05b20b5))
+* **Global:** Remove max-width from code samples. ([fb9f4ce](https://github.com/Pier1/rocketbelt/commit/fb9f4ce))
+* **Linting:** Add missing semicolon. ([9c228f5](https://github.com/Pier1/rocketbelt/commit/9c228f5))
+* **Linting:** Remove extra comma. ([bb61dfb](https://github.com/Pier1/rocketbelt/commit/bb61dfb))
+
+
+### Features
+
+* **Global:** Sane formatting of more complex code samples. ([e81eb5a](https://github.com/Pier1/rocketbelt/commit/e81eb5a))
+* **Icons:** Add half-star icon. ([52ffd32](https://github.com/Pier1/rocketbelt/commit/52ffd32))
+* **Icons:** Add stack-o & zoom-out icons. ([44ed7dd](https://github.com/Pier1/rocketbelt/commit/44ed7dd))
+
+
+
+<a name="1.5.0"></a>
+# [1.5.0](https://github.com/Pier1/rocketbelt/compare/1.4.1...v1.5.0) (2017-02-28)
+
+
+### Bug Fixes
+
+* **Build:** Stop cssnano from removing needed vendor prefixes. ([f43d7e2](https://github.com/Pier1/rocketbelt/commit/f43d7e2))
+* **Icons:** Roll back slightly overzealous icon styling. ([e57120f](https://github.com/Pier1/rocketbelt/commit/e57120f))
+* **Navigation:** Remove clunky outline style from navigation. ([6badd72](https://github.com/Pier1/rocketbelt/commit/6badd72))
+* **Typography:** Removed lingering Jade template. ([7c993b3](https://github.com/Pier1/rocketbelt/commit/7c993b3))
+
+
+### Features
+
+* **Build:** Extend Autoprefixer browser support. ([bb517b6](https://github.com/Pier1/rocketbelt/commit/bb517b6))
+* **Forms:** Update outline style. ([6258039](https://github.com/Pier1/rocketbelt/commit/6258039))
+* **Icons:** Add a11y metadata to icons. ([a607246](https://github.com/Pier1/rocketbelt/commit/a607246))
+* **Icons:** Add svgxuse to polyfill external SVGs for older browsers. ([6ec6078](https://github.com/Pier1/rocketbelt/commit/6ec6078))
+* **Icons:** Make icons accessible! ([193a3a9](https://github.com/Pier1/rocketbelt/commit/193a3a9))
+* **Icons:** Surface some text-with-icon styles to icons themselves. ([ff3a406](https://github.com/Pier1/rocketbelt/commit/ff3a406))
+* **Images:** Gallery lazyloading & default styling. ([b111f18](https://github.com/Pier1/rocketbelt/commit/b111f18))
+* **Images:** Gallery pagination styles. ([cbfaad9](https://github.com/Pier1/rocketbelt/commit/cbfaad9))
+* **Images:** Gallery pagination styles. ([b80181f](https://github.com/Pier1/rocketbelt/commit/b80181f))
+* **Images:** Touch-friendly overhaul of gallery. ([51c4d9d](https://github.com/Pier1/rocketbelt/commit/51c4d9d))
+* **Layout:** Roll back Flexibility.js to better support IE9. ([6802a97](https://github.com/Pier1/rocketbelt/commit/6802a97))
+* **Tabcordions:** Add animation & update transitions when switching between tab panels. ([ad21665](https://github.com/Pier1/rocketbelt/commit/ad21665))
+* **Tabcordions:** Allow static implementation (tabs-only/accordion-only). ([b93a8bb](https://github.com/Pier1/rocketbelt/commit/b93a8bb))
+* **Tabcordions:** Further style simplification. ([6ecf714](https://github.com/Pier1/rocketbelt/commit/6ecf714))
+* **Tabcordions:** Make tabcordion UI elements touchable via `touchevents`. ([fde6992](https://github.com/Pier1/rocketbelt/commit/fde6992))
+* **Tabcordions:** Refactor JS & increase readability. ([d7ea114](https://github.com/Pier1/rocketbelt/commit/d7ea114))
+* **Tabcordions:** Refactor JS to support multiple tabcordions per page. ([e417051](https://github.com/Pier1/rocketbelt/commit/e417051))
+* **Tabcordions:** Refactor tabcordions for accessibility. ([9c50ebf](https://github.com/Pier1/rocketbelt/commit/9c50ebf))
+* **Tabcordions:** Remove specific element dependency (button) and replace with class. ([a7c541f](https://github.com/Pier1/rocketbelt/commit/a7c541f))
+* **Tabcordions:** Simplify styles & markup. ([b7ca89e](https://github.com/Pier1/rocketbelt/commit/b7ca89e))
+* **Tabcordions:** Static & dynamic tabcordion examples. ([fac09df](https://github.com/Pier1/rocketbelt/commit/fac09df))
+* **Tabcordions:** Update Tabcordion styles. ([ef661e3](https://github.com/Pier1/rocketbelt/commit/ef661e3))
+* **Typography:** Implement link lists for mobile. ([19403c6](https://github.com/Pier1/rocketbelt/commit/19403c6))
+
+
+
+<a name="1.4.1"></a>
+## [1.4.1](https://github.com/Pier1/rocketbelt/compare/1.4.0...v1.4.1) (2017-02-16)
+
+
+### Features
+
+* **typography:** Add link lists ([a948bde](https://github.com/Pier1/rocketbelt/commit/a948bde))
+* **typography:** Add text with icons ([0bd6b4a](https://github.com/Pier1/rocketbelt/commit/0bd6b4a))
+
+
+
+<a name="1.4.0"></a>
+# [1.4.0](https://github.com/Pier1/rocketbelt/compare/1.3.3...v1.4.0) (2017-02-16)
+
+
+### Bug Fixes
+
+* **Buttons:** Add id. ([5111f22](https://github.com/Pier1/rocketbelt/commit/5111f22))
+* **Buttons:** Fix success buttons not entering success state ([8c8d6c9](https://github.com/Pier1/rocketbelt/commit/8c8d6c9))
+* **Dialogs:** Undo overzealous linting. ([cec50ed](https://github.com/Pier1/rocketbelt/commit/cec50ed))
+* **Dialogs:** Undo overzealous linting. ([3bfe447](https://github.com/Pier1/rocketbelt/commit/3bfe447))
+
+
+### Features
+
+* **Dialogs:** Check event.target for "dialog-hide" attribute. ([40ce305](https://github.com/Pier1/rocketbelt/commit/40ce305))
+* **Dialogs:** Make Max Dialog full-screen on small viewport. ([90de92d](https://github.com/Pier1/rocketbelt/commit/90de92d))
+* **Images:** Boost gallery a11y. ([b4488df](https://github.com/Pier1/rocketbelt/commit/b4488df))
+* **Images:** Gallery styling. ([77e649c](https://github.com/Pier1/rocketbelt/commit/77e649c))
+* **Images:** Replace hard-coded colors with Rocketbelt functions. ([ab3515d](https://github.com/Pier1/rocketbelt/commit/ab3515d))
+* **Images:** Simplify gallery implementation. ([ebec922](https://github.com/Pier1/rocketbelt/commit/ebec922))
+* **Images:** Update gallery behavior. ([725efd6](https://github.com/Pier1/rocketbelt/commit/725efd6))
+* **Images:** Update z-index of gallery components. ([41e618b](https://github.com/Pier1/rocketbelt/commit/41e618b))
+
+
+
 <a name="1.3.3"></a>
 ## [1.3.3](https://github.com/Pier1/rocketbelt/compare/1.3.2...v1.3.3) (2017-02-10)
 

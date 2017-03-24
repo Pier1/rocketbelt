@@ -21,12 +21,6 @@
     &:active {
       color: color(gray, minus1);
     }
-
-    &:focus {
-      outline-width: 2px;
-      outline-color: color(primary);
-      outline-offset: 0;
-    }
   }
 }
 
@@ -35,9 +29,6 @@
   display: inline-block;
   margin: 0;
   padding: 0;
-
-  outline-width: 3px;
-  outline-color: color(primary);
 
   list-style: none;
 }
