@@ -1,4 +1,4 @@
-.lazyload-wrapper {
+%skeleton-image {
   position: relative;
   width: 100%;
   background: linear-gradient(
@@ -20,6 +20,16 @@
       background-position: -135% 0%;
     }
   }
+}
+
+.lazyload-loading {
+  @extend %skeleton-image;
+
+  padding-bottom: 100%;
+}
+
+.lazyload-wrapper {
+  @extend %skeleton-image;
 
   & img {
     position: absolute;
@@ -39,18 +49,4 @@
       transition: opacity 200ms ease-in-out;
     }
   }
-}
-
-.lazyload {
-  display: flex;
-  flex: 1;
-  margin-top: 10vh;
-  margin-bottom: 90vh;
-  min-width: 20vw;
-  min-height: 20vw;
-  border-radius: 2px;
-  background-color: color(gray, plus4);
-
-  justify-content: center;
-  align-items: center;
 }

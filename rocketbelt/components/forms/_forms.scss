@@ -120,8 +120,7 @@ select {
 
   &:focus {
     overflow: hidden;
-    outline-width: 3px;
-    outline-color: color(primary);
+    outline: 2px solid color(primary);
 
     &:invalid,
     &.invalid {

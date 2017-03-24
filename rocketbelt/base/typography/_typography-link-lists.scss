@@ -1,0 +1,87 @@
+.link-list {
+  @include list-reset()
+  display: inline-block;
+  vertical-align: top;
+
+  &:first-child:not(:last-child) {
+    padding-right: 1em;
+  }
+  &:not(:first-child):not(:last-child) {
+    padding: 0 1em;
+  }
+  &:last-child:not(:first-child) {
+    padding-left: 1em;
+  }
+  li {
+    display: flex;
+    min-height: 1.75rem;
+    text-transform: capitalize;
+    align-items: center;
+    // Color is going to change.
+    a:not(.cta) {
+      display: flex;
+      flex: 0 1 auto;
+      color: color(gray);
+      text-decoration: none;
+      transition: color 100ms linear;
+      align-items: center;
+      &:hover {
+        color: color(gray, plus1);
+        transition: color 100ms linear;
+      }
+      &:active {
+        color: color(gray, minus1);
+        transition: color 100ms linear;
+      }
+    }
+  }
+  .title {
+    display: flex;
+    text-transform: uppercase;
+    align-items: stretch;
+    // Could possibly use .text-with-icon instead of .cta
+    .cta {
+      display: flex;
+      flex: 0 1 auto;
+      font-weight: normal;
+      align-self: stretch;
+      .icon {
+        width: .8em;
+        height: .8em;
+      }
+    }
+  }
+}
+
+// Mobile style
+html {
+  &.touchevents {
+    .link-list {
+      &:first-child:not(:last-child),
+      &:not(:first-child):not(:last-child),
+      &:last-child:not(:first-child) {
+        padding: 0;
+      }
+      li {
+        min-height: 3.125rem;
+        align-items: stretch;
+        a:not(.cta) {
+          display: flex;
+          flex: 1;
+          align-items: center;
+          align-self: stretch;
+        }
+      }
+      .title,
+      li:first-child {
+        display: flex;
+        align-items: center;
+      }
+      .title {
+        .cta {
+          flex: 1;
+        }
+      }
+    }
+  }
+}
