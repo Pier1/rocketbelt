@@ -178,6 +178,10 @@ sort-up:
   title: Sort Up
   description: An upward-pointing triangle
 
+specs:
+  title: Specs
+  description: A square with perpendicular arrows that indicate measurements
+
 stack-o:
   title: Stack
   description: A square stacked on another square
