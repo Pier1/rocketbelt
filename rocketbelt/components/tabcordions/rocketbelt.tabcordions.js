@@ -54,9 +54,9 @@
         var event = new CustomEvent('rb.tabcordion.tabChanged', {detail: eventData});
         $(this)[0].dispatchEvent(event);
       }
-      
+
       setActiveAndInactive(this, $navlist);
-      
+
     });
   });
 
@@ -157,9 +157,10 @@
   $(window).smartresize(determineView);
 
   function determineView() {
-    
+
     var $tabContainer = $('.tabcordion');
-    var breakpoint = 480;
+    var breakpointOverride = $tabContainer.data('breakpoint');
+    var breakpoint = breakpointOverride ? breakpointOverride : 480;
 
     $tabContainer.each(function () {
       var $tabcordion = $(this);
