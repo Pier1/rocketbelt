@@ -10,8 +10,8 @@
   }
 
   .rb-logo {
-    margin-bottom: margin(-8);
-    padding: padding(-2) padding(-2) 0 padding(0);
+    // margin-bottom: margin(8);
+    padding: ms(1);
     user-select: none;
     align-items: center;
 
@@ -239,7 +239,7 @@ body { min-height: 100%; }
 
       @include media('>=md') {
         margin: 0;
-        padding: padding(-4);
+        padding: ms(-4);
         border-bottom-style: none;
         border-left-style: solid;
         font-size: font-size(0);
@@ -362,7 +362,7 @@ h3.docs-header  {
 
 #docs-vis-filter-controls, #docs-hp-layouts-controls {
   margin-bottom: $gutter-width;
-  li { margin-right: $gutter-width; padding: padding(-4) padding(0); }
+  li { margin-right: $gutter-width; padding: ms(-4) ms(0); }
   li.selected {
     background-color: color(gray, plus2);
     border-radius: 3px;

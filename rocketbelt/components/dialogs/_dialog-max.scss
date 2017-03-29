@@ -8,7 +8,7 @@
       .dialog_close {
         display: inline-block;
         overflow: hidden;
-        padding: 0 padding(-5);
+        padding: 0 ms(-5);
         min-width: 44px;
         min-height: 44px;
         width: auto;
@@ -20,7 +20,7 @@
         justify-content: flex-start;
 
         &::before {
-          margin-right: margin(-10);
+          margin-right: ms(-10);
           content: unicode(left-chevron);
           font-size: font-size(3);
         }
