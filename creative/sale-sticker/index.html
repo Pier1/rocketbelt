@@ -240,6 +240,10 @@
                         <label for="ss_horizontal-variant">Horizontal</label>
                       </div>
                       <div class="playground-control">
+                        <input class="playground-item" id="ss_for" type="checkbox" value="promo-for" name="Sale Sticker # for $$$" data-property="class" data-target=".promo-msg">
+                        <label for="ss_for">2 for $25</label>
+                      </div>
+                      <div class="playground-control">
                         <input class="playground-item" id="ss_up-to" type="checkbox" value="up-to-msg" name="Sale Sticker Up To Msg" data-property="class" data-target=".sale-sticker-inner">
                         <label for="ss_up-to">Up To Msg</label>
                       </div>
@@ -362,11 +366,21 @@
       ga('send', 'pageview');
     </script>
     <script>
+      var sale = $('#ss_sale'),
+          saleVal = "Sale";
       $('#ss_optional').on('input', function() {
         if ($(this).val().length > 0) {
           $('#ss_up-to').prop("checked") ? $('#ss_up-to').prop("checked", false).change().prop("disabled", true) : $('#ss_up-to').prop("disabled", true)
         } else {
           $('#ss_up-to').prop('disabled',false);
+        }
+      })
+      $('#ss_for').on('input',function(){
+        if($(this).is(':checked')){
+          saleVal=sale.val();
+          sale.val('2 <small>for</small><span class="promo-sup">$</span>25').trigger('input');
+        } else if(!$(this).is(':checked')){
+          sale.val(saleVal).trigger('input');
         }
       })
       rb.launchPlayground();
