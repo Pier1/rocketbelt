@@ -386,53 +386,65 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <path d="M128.02 0l82.019 109.36H46z" fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="btrb-icon-stack-o-desc btrb-icon-stack-o-title"
+  aria-labelledby="btrb-icon-specs-desc btrb-icon-specs-title"
+  id="rb-icon-specs">
+    <desc id="btrb-icon-specs-desc">A square with perpendicular
+    arrows that indicate measurements</desc>
+    <title id="btrb-icon-specs-title">Specs</title>
+    <g fill-rule="evenodd">
+      <path d="M234.667 64v170.667H64V64h170.667zM256 42.667H42.667V256H256V42.667z"
+      fill-rule="nonzero" />
+      <path d="M75.486 12V0L42.9 17.951 75.486 36V24h147.961v12l32.586-18.049L223.447 0v12H75.486zM24 75.586h12L18.049 43 0 75.586h12v147.961H0l18.049 32.586L36 223.547H24V75.586z" />
+    </g>
+  </symbol>
+  <symbol viewBox="0 0 256 256"
+  aria-labelledby="burb-icon-stack-o-desc burb-icon-stack-o-title"
   id="rb-icon-stack-o">
-    <desc id="btrb-icon-stack-o-desc">A square stacked on another
+    <desc id="burb-icon-stack-o-desc">A square stacked on another
     square</desc>
-    <title id="btrb-icon-stack-o-title">Stack</title>
+    <title id="burb-icon-stack-o-title">Stack</title>
     <path d="M234.667 64v170.667H64V64h170.667zM256 42.667H42.667V256H256V42.667zM0 0v213.333h21.333v-192h192V0H0z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="burb-icon-star-desc burb-icon-star-title"
+  aria-labelledby="bvrb-icon-star-desc bvrb-icon-star-title"
   id="rb-icon-star">
-    <desc id="burb-icon-star-desc">A star</desc>
-    <title id="burb-icon-star-title">Star</title>
+    <desc id="bvrb-icon-star-desc">A star</desc>
+    <title id="bvrb-icon-star-title">Star</title>
     <path d="M128 6l39.146 80.777L256 98.893l-64.621 62.447 15.844 88.233L128 207.32l-79.223 42.253L64.62 161.34 0 99.204l88.854-12.427z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="bvrb-icon-star-o-desc bvrb-icon-star-o-title"
+  aria-labelledby="bwrb-icon-star-o-desc bwrb-icon-star-o-title"
   id="rb-icon-star-o">
-    <desc id="bvrb-icon-star-o-desc">The outline of a star</desc>
-    <title id="bvrb-icon-star-o-title">Open Star</title>
+    <desc id="bwrb-icon-star-o-desc">The outline of a star</desc>
+    <title id="bwrb-icon-star-o-title">Open Star</title>
     <path d="M128 48.874l26.718 54.99 60.583 8.388-44.117 42.564 10.874 60.271L128 186.194l-54.058 28.893 10.874-60.271-44.117-42.564 60.583-8.388L128 48.874zM128 6L88.854 86.777 0 98.893l64.621 62.447-15.844 88.233L128 207.32l79.223 42.253-15.844-88.233L256 99.204l-88.854-12.427L128 6z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="bwrb-icon-star-o-half-desc bwrb-icon-star-o-half-title"
+  aria-labelledby="bxrb-icon-star-o-half-desc bxrb-icon-star-o-half-title"
   id="rb-icon-star-o-half">
-    <desc id="bwrb-icon-star-o-half-desc">A half-filled star</desc>
-    <title id="bwrb-icon-star-o-half-title">Half Star</title>
+    <desc id="bxrb-icon-star-o-half-desc">A half-filled star</desc>
+    <title id="bxrb-icon-star-o-half-title">Half Star</title>
     <path d="M128 55.179l24.907 51.381 56.586 7.808-41.184 39.573 10.048 56.214L128 183.232V55.179zm0-48.918L88.875 86.987 0 99.264l64.683 62.165-15.787 88.31L128 207.424l79.104 42.304-15.787-88.31L256 99.265l-88.875-12.267L128 6.261z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="bxrb-icon-zoom-in-desc bxrb-icon-zoom-in-title"
+  aria-labelledby="byrb-icon-zoom-in-desc byrb-icon-zoom-in-title"
   id="rb-icon-zoom-in">
-    <desc id="bxrb-icon-zoom-in-desc">A magnifying glass with a
+    <desc id="byrb-icon-zoom-in-desc">A magnifying glass with a
     plus sign inside</desc>
-    <title id="bxrb-icon-zoom-in-title">Zoom In</title>
+    <title id="byrb-icon-zoom-in-title">Zoom In</title>
     <path d="M138.667 106.667h-32v32H85.333v-32h-32V85.333h32v-32h21.334v32h32v21.334zM225.835 256l-78.795-78.795C132.235 186.528 114.784 192 96 192c-53.024 0-96-42.976-96-96S42.976 0 96 0s96 42.976 96 96c0 18.784-5.483 36.245-14.795 51.04L256 225.835 225.835 256zM96 170.667c41.163 0 74.667-33.494 74.667-74.667S137.163 21.333 96 21.333c-41.163 0-74.667 33.494-74.667 74.667S54.837 170.667 96 170.667z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="byrb-icon-zoom-out-desc byrb-icon-zoom-out-title"
+  aria-labelledby="bzrb-icon-zoom-out-desc bzrb-icon-zoom-out-title"
   id="rb-icon-zoom-out">
-    <desc id="byrb-icon-zoom-out-desc">A magnifying glass with a
+    <desc id="bzrb-icon-zoom-out-desc">A magnifying glass with a
     minus sign inside</desc>
-    <title id="byrb-icon-zoom-out-title">Zoom Out</title>
+    <title id="bzrb-icon-zoom-out-title">Zoom Out</title>
     <path d="M138.667 106.667H53.333V85.333h85.334v21.334zM225.835 256l-78.795-78.795C132.235 186.528 114.784 192 96 192c-53.024 0-96-42.976-96-96S42.976 0 96 0s96 42.976 96 96c0 18.784-5.483 36.245-14.795 51.04L256 225.835 225.835 256zM96 170.667c41.163 0 74.667-33.494 74.667-74.667S137.163 21.333 96 21.333c-41.163 0-74.667 33.494-74.667 74.667S54.837 170.667 96 170.667z"
     fill-rule="nonzero" />
   </symbol>
