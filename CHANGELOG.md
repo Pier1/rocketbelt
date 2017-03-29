@@ -1,3 +1,13 @@
+<a name="1.7.0"></a>
+# [1.7.0](https://github.com/Pier1/rocketbelt/compare/1.6.2...v1.7.0) (2017-03-29)
+
+
+### Features
+
+* **Icons:** Add specs icon. ([a321970](https://github.com/Pier1/rocketbelt/commit/a321970))
+
+
+
 <a name="1.6.2"></a>
 ## [1.6.2](https://github.com/Pier1/rocketbelt/compare/1.6.1...v1.6.2) (2017-03-28)
 
