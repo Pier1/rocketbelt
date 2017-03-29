@@ -2,8 +2,8 @@
   .icon-meaningful,
   .icon-link-no-text {
     .icon {
-      height: font-size(5);
       width: font-size(5);
+      height: font-size(5);
     }
   }
 
@@ -27,16 +27,16 @@
         top: 0;
         right: 0;
         z-index: 1;
-        font-size: font-size(0);
-        text-decoration: none;
         display: inline-flex;
-        justify-content: center;
-        align-content: center;
+        width: font-size(3);
+        height: font-size(3);
         border-radius: 50%;
         background: color(sale);
-        height: font-size(3);
-        width: font-size(3);
         color: color(white);
+        text-decoration: none;
+        font-size: font-size(0);
+        justify-content: center;
+        align-content: center;
       }
     }
   }
