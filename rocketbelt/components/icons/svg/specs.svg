@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: sketchtool 42 (36781) - http://www.bohemiancoding.com/sketch -->
+    <title>specs</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="specs" fill="#000000">
+            <path d="M234.666667,64 L234.666667,234.666667 L64,234.666667 L64,64 L234.666667,64 Z M256,42.6666667 L42.6666667,42.6666667 L42.6666667,256 L256,256 L256,42.6666667 Z" id="Shape" fill-rule="nonzero"></path>
+            <path d="M75.4859236,12 L75.4859236,-3.55271368e-15 L42.9000015,17.9513346 L75.4859236,36 L75.4859236,24 L223.447419,24 L223.447419,36 L256.033341,17.9513346 L223.447419,-1.77635684e-14 L223.447419,12 L75.4859236,12 Z" id="Combined-Shape"></path>
+            <path d="M-55.9807479,143.56667 L-55.9807479,131.56667 L-88.5666699,149.518004 L-55.9807479,167.56667 L-55.9807479,155.56667 L91.9807479,155.56667 L91.9807479,167.56667 L124.56667,149.518004 L91.9807479,131.56667 L91.9807479,143.56667 L-55.9807479,143.56667 Z" id="Combined-Shape-Copy" transform="translate(18.000000, 149.566670) rotate(90.000000) translate(-18.000000, -149.566670) "></path>
+        </g>
+    </g>
+</svg>
