@@ -166,9 +166,9 @@
     function hide (key) {
       if (!that.shown) return;
 
-      if (event.target.dataset.rbDialogHide !== undefined ||
+      if ((event && (event.target.dataset.rbDialogHide !== undefined ||
           event.target.parentElement.dataset.rbDialogHide !== undefined ||
-          event.target.parentElement.parentElement.dataset.rbDialogHide !== undefined ||
+          event.target.parentElement.parentElement.dataset.rbDialogHide !== undefined)) ||
           key === 27) {
         that.shown = false;
 
