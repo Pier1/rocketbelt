@@ -1,3 +1,8 @@
-@function margin($factor) {
-  @return $factor * $margin-default;
+@function margin($scale, $base-value: '') {
+  @if ($base-value == '') {
+    @return ms($scale);
+  }
+  @else {
+    @return ms($scale - 1, unquote($base-value));
+  }
 }

@@ -178,14 +178,6 @@ sort-up:
   title: Sort Up
   description: An upward-pointing triangle
 
-specs:
-  title: Specs
-  description: A square with perpendicular arrows that indicate measurements
-
-stack-o:
-  title: Stack
-  description: A square stacked on another square
-
 star:
   title: Star
   description: A star
@@ -198,10 +190,6 @@ star-o-half:
   title: Half Star
   description: A half-filled star
 
-zoom-in:
-  title: Zoom In
+zoom:
+  title: Zoom
   description: A magnifying glass with a plus sign inside
-
-zoom-out:
-  title: Zoom Out
-  description: A magnifying glass with a minus sign inside

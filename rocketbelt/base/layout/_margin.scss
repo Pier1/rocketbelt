@@ -1,0 +1,6 @@
+@for $i from 1 through 5 {
+  %margin-#{$i},
+  .margin-#{$i} {
+    margin: margin($i - 4);
+  }
+}
