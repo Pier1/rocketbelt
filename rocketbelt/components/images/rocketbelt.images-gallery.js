@@ -81,6 +81,7 @@
             zoomMax: 3,
             zoomMin: 1,
             zoomToggle: true,
+            onToggleZoom: function(e){},
             // Scrollbar
             scrollbar: null,
             scrollbarHide: true,
@@ -833,8 +834,10 @@
 
                     if (s.isHorizontal()) {
                         s.slides[i].style.width = slideSize + 'px';
+                        s.slides[i].style.height = slideSize + 'px';
                     }
                     else {
+                        s.slides[i].style.width = slideSize + 'px';
                         s.slides[i].style.height = slideSize + 'px';
                     }
                 }
@@ -1362,7 +1365,7 @@
                     touchEventsTarget[action](s.touchEvents.move, s.onTouchMove, moveCapture);
                     touchEventsTarget[action](s.touchEvents.end, s.onTouchEnd, passiveListener);
                 }
-                if ((params.simulateTouch && !s.device.ios && !s.device.android) || (params.simulateTouch && !s.support.touch && s.device.ios)) {
+                if (params.simulateTouch && !s.device.ios && !s.device.android) {
                     touchEventsTarget[action]('mousedown', s.onTouchStart, false);
                     document[action]('mousemove', s.onTouchMove, moveCapture);
                     document[action]('mouseup', s.onTouchEnd, false);
@@ -2773,13 +2776,15 @@
 
                 if (z.scale && z.scale !== 1) {
                     // Zoom Out
+                    s.params.onToggleZoom(false); // false for zoom out
                     z.scale = z.currentScale = 1;
                     z.gesture.imageWrap.transition(300).transform('translate3d(0,0,0)');
                     z.gesture.image.transition(300).transform('translate3d(0,0,0) scale(1)');
                     z.gesture.slide = undefined;
                 }
                 else {
-                    // Zoom In
+                    // Zoom true
+                    s.params.onToggleZoom(true); // false for zoom out
                     z.scale = z.currentScale = z.gesture.imageWrap.attr('data-swiper-zoom') || s.params.zoomMax;
                     if (e) {
                         slideWidth = z.gesture.slide[0].offsetWidth;
@@ -2848,6 +2853,9 @@
                     s.slides.each(function (index, slide){
                         if ($(slide).find('.' + s.params.zoomContainerClass).length > 0) {
                             $(slide)[action](s.touchEvents.move, s.zoom.onTouchMove);
+                            if (s.touchEvents.move !== 'mousemove') {// Always bind mousemove for touch-enabled desktops/laptops
+                                $(slide)[action]('mousemove', s.zoom.onTouchMove);
+                            }
                         }
                     });
                     s[action]('touchEnd', s.zoom.onTouchEnd);
