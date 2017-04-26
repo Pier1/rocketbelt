@@ -142,7 +142,16 @@
     }
 
     function maintainFocus (event) {
-      if (that.shown && !node.contains(event.target)) {
+      var target;
+      if (event) {
+        if (event.target) {
+          target = event.target;
+        } else if (event.srcElement) {
+          target = event.srcElement;
+        }
+      }
+
+      if (that.shown && !node.contains(target)) {
         setFocusToFirstItem(node);
       }
     }
@@ -166,9 +175,18 @@
     function hide (key) {
       if (!that.shown) return;
 
-      if ((event && (event.target.dataset.rbDialogHide !== undefined ||
-          event.target.parentElement.dataset.rbDialogHide !== undefined ||
-          event.target.parentElement.parentElement.dataset.rbDialogHide !== undefined)) ||
+      var target;
+      if (event) {
+        if (event.target) {
+          target = event.target;
+        } else if (event.srcElement) {
+          target = event.srcElement;
+        }
+      }
+
+      if ((event && (target.dataset.rbDialogHide !== undefined ||
+          target.parentElement.dataset.rbDialogHide !== undefined ||
+          target.parentElement.parentElement.dataset.rbDialogHide !== undefined)) ||
           key === 27) {
         that.shown = false;
 
