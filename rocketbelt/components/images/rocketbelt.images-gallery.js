@@ -175,6 +175,8 @@
             // Swiping/no swiping
             allowSwipeToPrev: true,
             allowSwipeToNext: true,
+            allowTouchSwipeToPrev: true,
+            allowTouchSwipeToNext: true,
             swipeHandler: null, //'.swipe-handler',
             noSwiping: true,
             noSwipingClass: 'swiper-no-swiping',
@@ -1688,7 +1690,9 @@
                 }
                 allowMomentumBounce = false;
                 //Grab Cursor
-                if (s.params.grabCursor && (s.params.allowSwipeToNext === true || s.params.allowSwipeToPrev === true)) {
+                if (s.params.grabCursor && 
+                    ((s.params.allowTouchSwipeToNext === true && s.params.allowSwipeToNext === true) || 
+                    (s.params.allowTouchSwipeToPrev === true && s.params.allowSwipeToPrev === true))) {
                     s.setGrabCursor(true);
                 }
             }
@@ -1717,10 +1721,10 @@
             }
 
             // Directions locks
-            if (!s.params.allowSwipeToNext && s.swipeDirection === 'next' && currentTranslate < startTranslate) {
+            if ( (!s.params.allowTouchSwipeToNext || !s.params.allowSwipeToNext) && s.swipeDirection === 'next' && currentTranslate < startTranslate) {
                 currentTranslate = startTranslate;
             }
-            if (!s.params.allowSwipeToPrev && s.swipeDirection === 'prev' && currentTranslate > startTranslate) {
+            if ( (!s.params.allowTouchSwipeToPrev || !s.params.allowSwipeToPrev) && s.swipeDirection === 'prev' && currentTranslate > startTranslate) {
                 currentTranslate = startTranslate;
             }
 
@@ -1775,7 +1779,9 @@
             allowTouchCallbacks = false;
             if (!isTouched) return;
             //Return Grab Cursor
-            if (s.params.grabCursor && isMoved && isTouched  && (s.params.allowSwipeToNext === true || s.params.allowSwipeToPrev === true)) {
+            if (s.params.grabCursor && isMoved && isTouched  && 
+               ((s.params.allowTouchSwipeToNext === true && s.params.allowSwipeToNext === true) ||
+               (s.params.allowTouchSwipeToPrev === true && s.params.allowSwipeToPrev === true))) {
                 s.setGrabCursor(false);
             }
 
@@ -4289,17 +4295,17 @@
      ===========================*/
     var swiperDomPlugins = ['jQuery', 'Zepto', 'Dom7'];
     for (var i = 0; i < swiperDomPlugins.length; i++) {
-    	if (window[swiperDomPlugins[i]]) {
-    		addLibraryPlugin(window[swiperDomPlugins[i]]);
-    	}
+      if (window[swiperDomPlugins[i]]) {
+        addLibraryPlugin(window[swiperDomPlugins[i]]);
+      }
     }
     // Required DOM Plugins
     var domLib;
     if (typeof Dom7 === 'undefined') {
-    	domLib = window.Dom7 || window.Zepto || window.jQuery;
+      domLib = window.Dom7 || window.Zepto || window.jQuery;
     }
     else {
-    	domLib = Dom7;
+      domLib = Dom7;
     }
 
     /*===========================
