@@ -36,6 +36,7 @@
           export: 'artboards',
           formats: 'svg'
         }))
+        .pipe(plugins.removeHtmlComments())
         .pipe(gulp.dest(config.patternsPath + '/components/icons/svg'))
         .pipe(plugins.svgSprite(options))
         .pipe(plugins.htmltidy(
