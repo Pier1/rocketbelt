@@ -344,53 +344,63 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="borb-icon-search-desc borb-icon-search-title"
+  aria-labelledby="borb-icon-ribbon-check-desc borb-icon-ribbon-check-title"
+  id="rb-icon-ribbon-check">
+    <desc id="borb-icon-ribbon-check-desc">A ribbon with a check
+    mark on the front</desc>
+    <title id="borb-icon-ribbon-check-title">Ribbon With Check
+    Mark</title>
+    <path d="M171.913 160.21V256l-44.37-33.63L82.23 256v-97.057c13.29 8.4 29.026 13.267 45.875 13.267 15.983 0 30.965-4.38 43.808-12zm-44.36-5.104C84.8 155.106 50 120.318 50 77.553S84.8 0 127.553 0c42.754 0 77.553 34.788 77.553 77.553s-34.8 77.553-77.553 77.553zm-12.086-41.012l60.43-61.446-11.45-11.353-49.19 50.1-24.8-23.664-11.25 11.564 36.26 34.8v-.001z"
+    fill-rule="nonzero" />
+  </symbol>
+  <symbol viewBox="0 0 256 256"
+  aria-labelledby="bprb-icon-search-desc bprb-icon-search-title"
   id="rb-icon-search">
-    <desc id="borb-icon-search-desc">A magnifying glass</desc>
-    <title id="borb-icon-search-title">Search</title>
+    <desc id="bprb-icon-search-desc">A magnifying glass</desc>
+    <title id="bprb-icon-search-title">Search</title>
     <path d="M225.835 256l-78.795-78.795C132.235 186.528 114.784 192 96 192c-53.024 0-96-42.976-96-96S42.976 0 96 0s96 42.976 96 96c0 18.784-5.483 36.245-14.795 51.04L256 225.835 225.835 256zM96 170.667c41.163 0 74.667-33.494 74.667-74.667S137.163 21.333 96 21.333c-41.163 0-74.667 33.494-74.667 74.667S54.837 170.667 96 170.667z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="bprb-icon-shipment-desc bprb-icon-shipment-title"
+  aria-labelledby="bqrb-icon-shipment-desc bqrb-icon-shipment-title"
   id="rb-icon-shipment">
-    <desc id="bprb-icon-shipment-desc">A box with motion lines
+    <desc id="bqrb-icon-shipment-desc">A box with motion lines
     behind it</desc>
-    <title id="bprb-icon-shipment-title">Shipment</title>
+    <title id="bqrb-icon-shipment-title">Shipment</title>
     <path d="M201.505 167.194l2.788-1.52v14.7l-2.788 1.521v-14.7zm-5.07 3.042l3.042-1.775v14.701l-3.041 1.775v-14.701zm21.545-12.42l2.788-1.774v14.7l-2.788 1.521v-14.447zM256 84.31v98.344l-81.616 47.652-102.4-59.818V72.145L153.854 25 256 84.31zM138.392 51.107l79.842 47.144 16.221-9.124L153.6 42.489l-15.208 8.618zm28.135 84.15l-79.588-46.13v72.744l79.588 46.384v-72.998zm23.572-21.544l-78.574-46.891-16.729 9.631 79.588 46.131 15.715-8.871zm50.947-11.153l-14.195 8.111v26.614h-.253v.254L198.463 153v-.253.253-26.867l-16.982 9.631v72.998l59.565-34.47V102.56zm-32.697 60.832l2.788-1.774v14.7l-2.788 1.775v-14.7zm16.728-9.885l2.788-1.52v14.7l-2.788 1.52v-14.7zm-11.913 7.097l2.788-1.774v14.7l-2.788 1.775v-14.701zM10.14 89.38h46.637v14.955H15.208l-5.07-14.955zM0 113.713h56.776v14.954H5.07L0 113.713zm29.909 39.54L25.093 138.3h31.683v14.954H29.91z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="bqrb-icon-sort-both-desc bqrb-icon-sort-both-title"
+  aria-labelledby="brrb-icon-sort-both-desc brrb-icon-sort-both-title"
   id="rb-icon-sort-both">
-    <desc id="bqrb-icon-sort-both-desc">An upward-pointing triangle
+    <desc id="brrb-icon-sort-both-desc">An upward-pointing triangle
     above a downward-pointing triangle</desc>
-    <title id="bqrb-icon-sort-both-title">Sort Both</title>
+    <title id="brrb-icon-sort-both-title">Sort Both</title>
     <path d="M128.02 0l82.019 109.36H46L128.02 0zm0 256L46 146.64h164.039L128.019 256z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="brrb-icon-sort-down-desc brrb-icon-sort-down-title"
+  aria-labelledby="bsrb-icon-sort-down-desc bsrb-icon-sort-down-title"
   id="rb-icon-sort-down">
-    <desc id="brrb-icon-sort-down-desc">A downward-pointing
+    <desc id="bsrb-icon-sort-down-desc">A downward-pointing
     triangle</desc>
-    <title id="brrb-icon-sort-down-title">Sort Down</title>
+    <title id="bsrb-icon-sort-down-title">Sort Down</title>
     <path d="M128.02 256L46 146.64h164.039z" fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="bsrb-icon-sort-up-desc bsrb-icon-sort-up-title"
+  aria-labelledby="btrb-icon-sort-up-desc btrb-icon-sort-up-title"
   id="rb-icon-sort-up">
-    <desc id="bsrb-icon-sort-up-desc">An upward-pointing
+    <desc id="btrb-icon-sort-up-desc">An upward-pointing
     triangle</desc>
-    <title id="bsrb-icon-sort-up-title">Sort Up</title>
+    <title id="btrb-icon-sort-up-title">Sort Up</title>
     <path d="M128.02 0l82.019 109.36H46z" fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="btrb-icon-specs-desc btrb-icon-specs-title"
+  aria-labelledby="burb-icon-specs-desc burb-icon-specs-title"
   id="rb-icon-specs">
-    <desc id="btrb-icon-specs-desc">A square with perpendicular
+    <desc id="burb-icon-specs-desc">A square with perpendicular
     arrows that indicate measurements</desc>
-    <title id="btrb-icon-specs-title">Specs</title>
+    <title id="burb-icon-specs-title">Specs</title>
     <g fill-rule="evenodd">
       <path d="M234.667 64v170.667H64V64h170.667zM256 42.667H42.667V256H256V42.667z"
       fill-rule="nonzero" />
@@ -398,36 +408,25 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     </g>
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="burb-icon-stack-o-desc burb-icon-stack-o-title"
+  aria-labelledby="bvrb-icon-stack-o-desc bvrb-icon-stack-o-title"
   id="rb-icon-stack-o">
-    <desc id="burb-icon-stack-o-desc">A square stacked on another
+    <desc id="bvrb-icon-stack-o-desc">A square stacked on another
     square</desc>
-    <title id="burb-icon-stack-o-title">Stack</title>
+    <title id="bvrb-icon-stack-o-title">Stack</title>
     <path d="M234.667 64v170.667H64V64h170.667zM256 42.667H42.667V256H256V42.667zM0 0v213.333h21.333v-192h192V0H0z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="bvrb-icon-star-desc bvrb-icon-star-title"
+  aria-labelledby="bwrb-icon-star-desc bwrb-icon-star-title"
   id="rb-icon-star">
-    <desc id="bvrb-icon-star-desc">A star</desc>
-    <title id="bvrb-icon-star-title">Star</title>
+    <desc id="bwrb-icon-star-desc">A star</desc>
+    <title id="bwrb-icon-star-title">Star</title>
     <path d="M128 6l39.146 80.777L256 98.893l-64.621 62.447 15.844 88.233L128 207.32l-79.223 42.253L64.62 161.34 0 99.204l88.854-12.427z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol viewBox="0 0 256 256"
-  aria-labelledby="bwrb-icon-star-o-desc bwrb-icon-star-o-title"
-  id="rb-icon-star-o">
-    <desc id="bwrb-icon-star-o-desc">The outline of a star</desc>
-    <title id="bwrb-icon-star-o-title">Open Star</title>
-    <path d="M128 48.874l26.718 54.99 60.583 8.388-44.117 42.564 10.874 60.271L128 186.194l-54.058 28.893 10.874-60.271-44.117-42.564 60.583-8.388L128 48.874zM128 6L88.854 86.777 0 98.893l64.621 62.447-15.844 88.233L128 207.32l79.223 42.253-15.844-88.233L256 99.204l-88.854-12.427L128 6z"
-    fill-rule="nonzero" />
-  </symbol>
-  <symbol viewBox="0 0 256 256"
-  aria-labelledby="bxrb-icon-star-o-half-desc bxrb-icon-star-o-half-title"
-  id="rb-icon-star-o-half">
-    <desc id="bxrb-icon-star-o-half-desc">A half-filled star</desc>
-    <title id="bxrb-icon-star-o-half-title">Half Star</title>
-    <path d="M128 55.179l24.907 51.381 56.586 7.808-41.184 39.573 10.048 56.214L128 183.232V55.179zm0-48.918L88.875 86.987 0 99.264l64.683 62.165-15.787 88.31L128 207.424l79.104 42.304-15.787-88.31L256 99.265l-88.875-12.267L128 6.261z"
+  <symbol viewBox="0 0 256 256" id="rb-icon-star-half">
+    <title>star-half</title>
+    <path d="M88.875 86.987L0 99.264l64.683 62.165-15.787 88.31L128 207.424V6.261z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
