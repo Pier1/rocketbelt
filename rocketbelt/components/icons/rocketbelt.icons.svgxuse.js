@@ -46,35 +46,6 @@
                 };
             }
         };
-        var createRequest = function (url) {
-            // In IE 9, cross origin requests can only be sent using XDomainRequest.
-            // XDomainRequest would fail if CORS headers are not set.
-            // Therefore, XDomainRequest should only be used with cross origin requests.
-            function getOrigin(loc) {
-                var a;
-                if (loc.protocol !== undefined) {
-                    a = loc;
-                } else {
-                    a = document.createElement("a");
-                    a.href = loc;
-                }
-                return a.protocol.replace(/:/g, "") + a.host;
-            }
-            var Request;
-            var origin;
-            var origin2;
-            if (window.XMLHttpRequest) {
-                Request = new XMLHttpRequest();
-                origin = getOrigin(location);
-                origin2 = getOrigin(url);
-                if (Request.withCredentials === undefined && origin2 !== "" && origin2 !== origin) {
-                    Request = XDomainRequest || undefined;
-                } else {
-                    Request = XMLHttpRequest;
-                }
-            }
-            return Request;
-        };
         var xlinkNS = "http://www.w3.org/1999/xlink";
         checkUseElems = function () {
             var base;
@@ -180,9 +151,7 @@
                             }), 0);
                         }
                         if (xhr === undefined) {
-                            Request = createRequest(base);
-                            if (Request !== undefined) {
-                                xhr = new Request();
+                                xhr = new XMLHttpRequest();
                                 cache[base] = xhr;
                                 xhr.onload = onloadFunc(xhr);
                                 xhr.onerror = onErrorTimeout(xhr);
@@ -190,7 +159,6 @@
                                 xhr.open("GET", base);
                                 xhr.send();
                                 inProgressCount += 1;
-                            }
                         }
                     }
                 } else {
