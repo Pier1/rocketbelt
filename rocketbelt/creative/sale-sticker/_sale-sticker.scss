@@ -18,28 +18,6 @@ $sticker-bkg: rgba(color(white), 0.9);
       position: relative;
       margin-top: -0.1em;
       line-height: 0.2;
-      // x for $ promo
-      &.promo-for .promo-detail small{
-        font-size: .205em;
-        margin-left: -1em;
-        vertical-align: 2.2em;
-      }
-      &.promo-for .promo-detail.kern-minus-1 small{
-        letter-spacing: 0.03em;
-        margin-left: -.4em;
-      }
-      &.promo-for .promo-detail .promo-sup{
-        font-size: .615em;
-        line-height: 0;
-        margin-left: .1em;
-        margin-right: -.1em;
-        position: relative;
-        top: -.4em;
-        vertical-align: baseline;
-      }
-      &.promo-for .promo-detail.kern-minus-1 .promo-sup{
-        margin-right: .05em;
-      }
     }
 
     .promo-detail {

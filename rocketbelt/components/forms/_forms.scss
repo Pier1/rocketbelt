@@ -52,18 +52,18 @@ fieldset {
     label {
       display: flex;
       flex-direction: column;
-      padding-right: ms(-4);
+      padding-right: padding(-4);
     }
 
     .helper-text {
-      padding-left: ms(-4);
+      padding-left: padding(-4);
     }
 
     .messages {
       display: flex;
       flex-direction: column;
       flex: 0 0 auto;
-      padding-left: ms(-4);
+      padding-left: padding(-4);
       order: last;
 
       .helper-text {
