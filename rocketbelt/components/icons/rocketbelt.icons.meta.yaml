@@ -30,6 +30,10 @@ cart:
   title: Shopping Cart
   description: A wheeled shopping cart
 
+cart-add:
+  title: Add to Basket
+  description: A wheeled shopping cart with a plus sign inside
+
 chat-double-o:
   title: Open Double Chat Bubble
   description: Two outlined chat bubbles
