@@ -133,7 +133,7 @@
     function bindKeypress (event) {
       if (that.shown && event.which === 27) {
         event.preventDefault();
-        hide(event.which);
+        hide(event);
       }
 
       if (that.shown && event.which === 9) {
@@ -172,7 +172,7 @@
       dispatchEvent(node, 'dialog:show', this);
     }
 
-    function hide (key) {
+    function hide (event) {
       if (!that.shown) return;
 
       var target;
@@ -184,10 +184,10 @@
         }
       }
 
-      if ((event && (target.dataset.rbDialogHide !== undefined ||
-          target.parentElement.dataset.rbDialogHide !== undefined ||
-          target.parentElement.parentElement.dataset.rbDialogHide !== undefined)) ||
-          key === 27) {
+      if ((event && (event.which === 27 ||
+          target.dataset.rbDialogHide !== 'undefined' ||
+          target.parentElement.dataset.rbDialogHide !== 'undefined' ||
+          target.parentElement.parentElement.dataset.rbDialogHide !== 'undefined'))) {
         that.shown = false;
 
         removeClass(main, 'is-dialog-open');
