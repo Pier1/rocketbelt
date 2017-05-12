@@ -35,6 +35,11 @@
   }
 
   &.tag-sale {
+    background: color(sale);
+    color: color(white);
+  }
+
+  &.tag-error {
     background: color(error);
     color: color(white);
   }
