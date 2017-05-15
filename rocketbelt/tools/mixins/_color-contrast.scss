@@ -1,0 +1,9 @@
+@function contrast($name) {
+  $color: color($name);
+  
+  @if (lightness($color) >= 50) {
+    @return color(black);
+  } @else {
+    @return color(white);
+  }
+}
