@@ -57,11 +57,12 @@ p code,
     @include button-shadow();
 
     position: absolute;
-    top: 1em;
+    top: 50%;
     right: 0.5em;
     border: none;
     opacity: 0.66;
     transition: opacity 100ms linear;
+    transform: translateY(-50%);
   }
 
   pre {
