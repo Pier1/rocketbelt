@@ -6,6 +6,9 @@
     "browser": true,                 // browser global variables
     "node": true                     // Node.js global variables and Node.js-specific rules
     },
+    "globals": {
+      "$": true
+    },
   "plugins": [
     ],
     "rules": {
@@ -107,9 +110,9 @@
  * Style
  */
     "indent": [2, 2],                // http://eslint.org/docs/rules/indent
-    "brace-style": [2,               // http://eslint.org/docs/rules/brace-style
-    "stroustrup", {
-      "allowSingleLine": true
+    "brace-style": ["error",
+      "1tbs", { 
+        "allowSingleLine": true
       }],
     "quotes": [                      // http://eslint.org/docs/rules/quotes
     2, "single", "avoid-escape"

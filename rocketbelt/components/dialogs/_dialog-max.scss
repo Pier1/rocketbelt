@@ -4,26 +4,12 @@
       padding: 0;
       border: 0;
       background-color: color(black);
-
+      .dialog_title {
+        padding-left: ms(-5);
+        color: color(white); 
+      }
       .dialog_close {
-        display: inline-block;
-        overflow: hidden;
-        padding: 0 ms(-5);
-        min-width: 44px;
-        min-height: 44px;
-        width: auto;
         color: color(white);
-        text-transform: uppercase;
-        text-overflow: ellipsis;
-        white-space: nowrap;
-        align-items: center;
-        justify-content: flex-start;
-
-        &::before {
-          margin-right: ms(-10);
-          content: unicode(left-chevron);
-          font-size: font-size(3);
-        }
       }
     }
 
@@ -33,10 +19,8 @@
       right: 0;
       bottom: 0;
       left: 0;
-
       max-height: 100%;
       width: 100%;
-
       transform: none;
       animation: dialog-max-in 300ms ease-in-out;
 
