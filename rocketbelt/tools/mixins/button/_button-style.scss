@@ -13,10 +13,12 @@
     fill: $color;
     &:hover {
       background-color: $button-hover;
+      color: $color;
     }
 
     &:active {
       background-color: $button-active;
+      color: $color;
     }
 
     &:visited {
