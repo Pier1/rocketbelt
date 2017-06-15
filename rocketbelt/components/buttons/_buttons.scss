@@ -1,8 +1,13 @@
 .button + .button,
 button + button,
 .button + button,
-button + .button {
+button + .button,
+a[class *= 'button'] + a[class *= 'button'] {
   margin-left: $gutter-width / 2;
+}
+
+a[class *= 'button'] {
+  display: inline-block;
 }
 
 .button-primary {
@@ -35,6 +40,8 @@ button + .button {
 
 .button-link {
   @extend %button-text;
+
+  font-weight: font-weight(normal);
 }
 
 .button-dynamic {
