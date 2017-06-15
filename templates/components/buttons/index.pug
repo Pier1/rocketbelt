@@ -7,14 +7,14 @@ block content
   article
     h1 Buttons
     h2 Primary
-    
+
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
             include _buttons-primary.pug
     h2 Secondary
-      
+
     .grid-fluid
       .row
         .col.xs
@@ -26,12 +26,21 @@ block content
             include _buttons-secondary.pug
 
     h2 Text
-      
+
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
             include _buttons-text.pug
+
+    h2 Link
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _buttons-link.pug
+
     h2 Block
 
     +exampleWithCode
@@ -59,4 +68,3 @@ block scripts
         $(e.el).trigger('buttonActionComplete', [msg, 2500])
       }, 3000);
     })
-

@@ -20,7 +20,8 @@ button + .button {
   @include button-style(secondary);
 }
 
-.button-text {
+.button-text,
+%button-text {
   @include button-style(text);
   cursor: pointer;
 
@@ -30,6 +31,10 @@ button + .button {
     background: transparent;
     box-shadow: none;
   }
+}
+
+.button-link {
+  @extend %button-text;
 }
 
 .button-dynamic {
@@ -46,14 +51,35 @@ button + .button {
 
 .button-sm {
   @include button-size(sm);
+
+  &.button-link {
+    min-width: 0;
+    padding: 0;
+    text-transform: none;
+    text-decoration: underline;
+  }
 }
 
 .button-md {
   @include button-size(md);
+
+  &.button-link {
+    min-width: 0;
+    padding: 0;
+    text-transform: none;
+    text-decoration: underline;
+  }
 }
 
 .button-lg {
   @include button-size(lg);
+
+  &.button-link {
+    min-width: 0;
+    padding: 0;
+    text-transform: none;
+    text-decoration: underline;
+  }
 }
 
 .button-block {
@@ -76,6 +102,7 @@ button + .button {
 .button-primary,
 .button-secondary,
 .button-text,
+.button-link,
 .button-block {
   &[disabled] {
     box-shadow: none;
