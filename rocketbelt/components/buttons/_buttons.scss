@@ -56,14 +56,18 @@ a[class *= 'button'] {
   @include button-style(success);
 }
 
+%button-link-props {
+  padding: 0;
+  min-width: 0;
+  text-decoration: underline;
+  text-transform: none;
+}
+
 .button-sm {
   @include button-size(sm);
 
   &.button-link {
-    min-width: 0;
-    padding: 0;
-    text-transform: none;
-    text-decoration: underline;
+    @extend %button-link-props;
   }
 }
 
@@ -71,10 +75,7 @@ a[class *= 'button'] {
   @include button-size(md);
 
   &.button-link {
-    min-width: 0;
-    padding: 0;
-    text-transform: none;
-    text-decoration: underline;
+    @extend %button-link-props;
   }
 }
 
@@ -82,10 +83,7 @@ a[class *= 'button'] {
   @include button-size(lg);
 
   &.button-link {
-    min-width: 0;
-    padding: 0;
-    text-transform: none;
-    text-decoration: underline;
+    @extend %button-link-props;
   }
 }
 
