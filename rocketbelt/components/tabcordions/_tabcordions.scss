@@ -40,7 +40,7 @@ body {
     }
 
     .tabcordion_nav-trigger {
-      padding: padding(-14) padding(-2);
+      padding: ms(-14) ms(-2);
       border: $border;
       background: $color-bg;
       color: color(primary, darker);
@@ -57,7 +57,7 @@ body {
 
   .tabcordion_panel {
     display: none;
-    padding: padding(-2);
+    padding: ms(-2);
     animation-duration: 500ms;
 
     &.is-current {
@@ -78,7 +78,7 @@ body {
     }
 
     .tabcordion_nav-trigger {
-      padding-top: calc(#{padding(-14)} + 3.4px);
+      padding-top: calc(#{ms(-14)} + 3.4px);
       border-bottom: 3px solid $color-bg;
       transition: border-bottom 200ms ease;
     }

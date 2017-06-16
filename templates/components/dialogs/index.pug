@@ -12,7 +12,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-standard-example') Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#standard-dialog').rbDialog({title: 'Base Dialog', buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
       .row
         .col.xs
           +exampleWithCode
@@ -23,7 +23,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-sheet-example') Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#sheet-dialog').rbDialog({title: 'Sheet Dialog', classes: { 'rbDialog': 'dialog-sheet' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
       .row
         .col.xs
           +exampleWithCode
@@ -34,13 +34,51 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(data-rb-dialog-show='dialog-max-example') Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#max-dialog').rbDialog({title: 'Max Dialog', classes: { 'rbDialog': 'dialog-max' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+          small.fg_error
+            | <br/>
+            | Max dialogs don't support the button option.
+            | <br/>
+            | Button option included to illustrate non-support.
       .row
         .col.xs
           +exampleWithCode
             include _dialog-max.pug
 
+    h3 How to call a Dialog:
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode('Javascript')
+            | // Defaults + Button Example
+            | $('selector').rbDialog({
+            |   appendTo: 'body',
+            |   autoOpen: true,
+            |   buttons: [
+            |     {
+            |       text: 'Close',
+            |       classes: 'button-secondary',
+            |       click: function () {
+            |         $(this).rbDialog('close');
+            |       }
+            |     }
+            |   ],
+            |   classes: { // Classes get merged
+            |     'rbDialog': 'dialog',
+            |     'rbDialogTitle': 'dialog_title',
+            |     'rbDialogBody': 'dialog_body'
+            |   },
+            |   title: null,
+            |   beforeClose: null,
+            |   close: null,
+            |   open: null
+            | });
 
     h2 Script Include
     +exampleWithCode('html', true)
       script(src='./rocketbelt.dialogs.min.js')
+
+    style(type='text/css').
+      .exampleWithCode > .example {
+        display: none;
+      }

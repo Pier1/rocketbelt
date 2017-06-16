@@ -52,18 +52,18 @@ fieldset {
     label {
       display: flex;
       flex-direction: column;
-      padding-right: padding(-4);
+      padding-right: ms(-4);
     }
 
     .helper-text {
-      padding-left: padding(-4);
+      padding-left: ms(-4);
     }
 
     .messages {
       display: flex;
       flex-direction: column;
       flex: 0 0 auto;
-      padding-left: padding(-4);
+      padding-left: ms(-4);
       order: last;
 
       .helper-text {
@@ -77,7 +77,8 @@ fieldset {
     }
 
     input,
-    select {
+    select,
+    textarea {
       &[required] {
         & + label::after {
           content: '(required)';
@@ -106,10 +107,15 @@ html {
 
 input,
 select {
+  height: 2rem;
+}
+
+input,
+select,
+textarea {
   display: block;
   padding: ms(-12) ms(-10);
   width: 100%;
-  height: 2rem;
   border: 1px solid color(gray, plus1);
   border-radius: 2px;
   font-size: ms(-1);
@@ -122,7 +128,6 @@ select {
     overflow: hidden;
     outline: 2px solid color(primary);
 
-    &:invalid,
     &.invalid {
       outline-color: color(error);
     }
@@ -133,7 +138,6 @@ select {
     background-color: color(gray, plus3);
   }
 
-  &:invalid,
   &.invalid {
     border-width: 2px;
     border-color: color(error);
@@ -198,7 +202,8 @@ select {
 
 .form-group {
   input,
-  select {
+  select,
+  textarea {
     & + label::after {
       font-size: font-size(-2);
     }
@@ -218,7 +223,8 @@ select {
 
   &.required-suppressed {
     input,
-    select {
+    select,
+    textarea {
       &[required] {
         & + label::after {
           content: '';

@@ -1,7 +1,7 @@
 $tooltip-background: rgba(color(black), .85);
 $tooltip-background-light: color(white);
 
-.tooltip {  
+.tooltip {
   position: relative;
   &::before,
   &::after,
@@ -29,7 +29,7 @@ $tooltip-background-light: color(white);
   .tooltip-content {
     @include z-depth(1);
     z-index: 1000;
-    padding: padding(-2);
+    padding: ms(-2);
     min-width: 150px;
     border-radius: 2px;
     background-color: $tooltip-background;

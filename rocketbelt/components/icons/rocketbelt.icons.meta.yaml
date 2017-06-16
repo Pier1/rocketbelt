@@ -30,6 +30,10 @@ cart:
   title: Shopping Cart
   description: A wheeled shopping cart
 
+cart-add:
+  title: Add to Basket
+  description: A wheeled shopping cart with a plus sign inside
+
 chat-double-o:
   title: Open Double Chat Bubble
   description: Two outlined chat bubbles
@@ -158,6 +162,10 @@ question:
   title: Question
   description: A circle with a question mark inside
 
+ribbon-check:
+  title: Ribbon With Check Mark
+  description: A ribbon with a check mark on the front
+
 search:
   title: Search
   description: A magnifying glass
@@ -189,14 +197,6 @@ stack-o:
 star:
   title: Star
   description: A star
-
-star-o:
-  title: Open Star
-  description: The outline of a star
-
-star-o-half:
-  title: Half Star
-  description: A half-filled star
 
 zoom-in:
   title: Zoom In
