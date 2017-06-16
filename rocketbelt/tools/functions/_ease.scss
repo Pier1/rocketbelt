@@ -37,6 +37,10 @@ $ease: (
         @return map-get($ease, $key);
     }
     @else {
+      @if $key == default {
+        $key: 'in-out-quad';
+      }
+
       @if $key == linear { @return $x; }
       @else if $key == in-quad  { @return $x * $x; }
       @else if $key == in-cubic { @return $x * $x * $x; }

@@ -1,0 +1,24 @@
+/// @author Kendrick Arnett
+/// @param $key [default] - The easing to return.
+@function eased-gradient($direction: '', $color-start: color(black), $color-end: rgba(color(black), 0), $easing: default, $num-stops: 10) {
+  @if $direction != '' { $direction: $direction + ', '; }
+
+  $gradient-stops: $direction;
+
+  @if ($easing == 'scrim') {
+
+  }
+  @else {
+    @for $i from 1 through $num-stops + 1 {
+      $x: decimal-round(($i - 1) / $num-stops, 3);
+      $color: mix($color-end, $color-start, percentage($x));
+      $stop-percentage: percentage(decimal-round(ease($easing, $x), 3));
+
+      $separator: if($i != ($num-stops + 1), ', ', '');
+
+      $gradient-stops: $gradient-stops + $color + ' ' + $stop-percentage + $separator;
+    }
+
+    @return linear-gradient(#{$gradient-stops});
+  }
+}
