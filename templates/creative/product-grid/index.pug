@@ -5,10 +5,21 @@ block vars
 
 block content
   article
-    h1 Product Grid
+    h1= title
 
     .grid-fluid.playground
       .row
+        .col.xs-12.md-3
+          .playground-control
+            label(for="col-count-ctrl") Column Count:
+              input#col-count-ctrl.playground-item(
+                type="range"
+                value="3"
+                data-target=".product-grid"
+                data-property="class"
+                data-values="2:cols-2,3:cols-3,4:cols-4"
+              )
+              span.playground-range-value 3
         .col.xs
           .pt-img.pt-hide
             +exampleWithCode
@@ -16,8 +27,7 @@ block content
 
   style(type='text/css').
     .product-grid {
-      margin: 0 auto;
-      max-width: 770px;
+      padding:0;
     }
     .grid-tile {
       list-style: none;
@@ -41,4 +51,15 @@ block content
 
 block scripts
   script(src='./_product-grid.js')
-  gridcontentinjector.init()
+  script.
+    rb.launchPlayground();
+    gridcontentinjector.init()
+    function gridRefresh () {
+      $('.cog-padding').remove()
+      $('.grid-tile.cog-tile').remove()
+      gridcontentinjector.init()
+    }
+
+    $('#col-count-ctrl').on('input', function(){
+      gridRefresh()
+    })
