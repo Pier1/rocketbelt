@@ -1,0 +1,11 @@
+- var n = 0
+
+.search-result-content#js-grid
+  ul.search-result-items.product-grid.tiles-container.ec_gridwall.clearfix.cols-3
+    while n < 12
+      li(data-count=n++).grid-tile
+
+#cog-container
+  .cog-tile(data-cog-type="block" data-cog-location="1,1")
+  .cog-tile(data-cog-type="wide" data-cog-location="2,1")
+  .cog-tile(data-cog-type="tall" data-cog-location="3,3")

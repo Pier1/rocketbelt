@@ -1,0 +1,44 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Product Grid'
+
+block content
+  article
+    h1 Product Grid
+
+    .grid-fluid.playground
+      .row
+        .col.xs
+          .pt-img.pt-hide
+            +exampleWithCode
+              include _product-grid.pug
+
+  style(type='text/css').
+    .product-grid {
+      margin: 0 auto;
+      max-width: 770px;
+    }
+    .grid-tile {
+      list-style: none;
+      border: 1px solid black;
+    }
+    #cog-container {
+      display: none;
+    }
+    .cog-tile {
+      min-height: 150px;
+    }
+    .cog-tile-wide {
+      background: #1075AE;
+    }
+    .cog-tile-tall {
+      background:#FFC300;
+    }
+    .cog-tile-block {
+      background: #69F1DE;
+    }
+
+block scripts
+  script(src='./_product-grid.js')
+  gridcontentinjector.init()
