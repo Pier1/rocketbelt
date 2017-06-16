@@ -1,3 +1,41 @@
+<a name="1.8.0"></a>
+# [1.8.0](https://github.com/Pier1/rocketbelt/compare/1.7.0...v1.8.0) (2017-06-16)
+
+
+### Bug Fixes
+* **Dialogs:** Fix dialogs for Firefox and Safari ([1a88a76](https://github.com/Pier1/rocketbelt/commit/1a88a76))
+* **Dialogs:** Add fallback for IE's srcElement. ([421f9a3](https://github.com/Pier1/rocketbelt/commit/421f9a3))
+* **Dialogs:** Null check event (needed for Firefox). ([b6e7316](https://github.com/pier1/rocketbelt/commit/b6e7316))
+* **Global:** Remove margin & padding helper classes. ([6fc849f](https://github.com/Pier1/rocketbelt/commit/6fc849f))
+* **Icons:** Update sketchfile. ([4952725](https://github.com/Pier1/rocketbelt/commit/4952725))
+* **Icons:** Remove CORS request from SVG shim. ([ecf4b43](https://github.com/Pier1/rocketbelt/commit/ecf4b43))
+* **Gallery:** Add allowTouchSwipePrev and allowTouchSwipeNext. ([db1b1e3](https://github.com/Pier1/rocketbelt/commit/db1b1e3))
+* **Gallery:** Always bind mousemove for touch-enable desktops/laptops; Added callback for toggleZoom() for analytics. ([2b20c31](https://github.com/Pier1/rocketbelt/commit/2b20c31))
+* **Tags:** Implement default font-weight for tags. Add more colors to tags. ([3f91f4c](https://github.com/Pier1/rocketbelt/commit/3f91f4c))
+* **Typography:** Ow, my eyes! 👀 Undo subpixel antialiasing. ([c4130bd](https://github.com/Pier1/rocketbelt/commit/c4130bd))
+* **z-depth:** 👉 Give z-depths a softer touch. ([36f4f56](https://github.com/Pier1/rocketbelt/commit/36f4f56))
+
+
+### Features
+
+* **Buttons:** Add anchor button component. ([bf15a93](https://github.com/Pier1/rocketbelt/commit/bf15a93))
+* **Buttons:** Add Link Button pattern. ([11828c8](https://github.com/Pier1/rocketbelt/commit/11828c8))
+* **Dialogs:** Update modal implementation to handle dynamic content. ([e623636](https://github.com/Pier1/rocketbelt/commit/e623636))
+* **Forms:** Implement textareas within forms. ([50fc017](https://github.com/Pier1/rocketbelt/commit/50fc017))
+* **Global:** Add focusable class to visuallyhidden. ([6098717](https://github.com/Pier1/rocketbelt/commit/6098717))
+* **Global:** Update visuallyhidden properties. ([06dd2a5](https://github.com/Pier1/rocketbelt/commit/06dd2a5))
+* **Grid:** Add legacy grid for older browsers. ([cc5b836](https://github.com/pier1/rocketbelt/commit/cc5b836))
+* **Icons:** Add cart-add icon. ([c60e7da](https://github.com/Pier1/rocketbelt/commit/c60e7da))
+* **Icons:** Add star-half & ribbon-check icons. Remove star-half-o & star-o icons. ([bd9b723](https://github.com/Pier1/rocketbelt/commit/bd9b723))
+* **Icons:** Build accessible icon examples. ([3f04af6](https://github.com/Pier1/rocketbelt/commit/3f04af6))
+* **Icons:** Remove sketchtool comment from built SVG. ([b1ded20](https://github.com/Pier1/rocketbelt/commit/b1ded20))
+* **Layout:** Remove margin & padding helper classes. ([ce131b3](https://github.com/Pier1/rocketbelt/commit/ce131b3))
+* **Tags:** Add error variation to tags. ([91d1a30](https://github.com/Pier1/rocketbelt/commit/91d1a30))
+* **Typography:** Update font smoothing. ([3dc0c66](https://github.com/Pier1/rocketbelt/commit/3dc0c66)), closes [#104](https://github.com/Pier1/rocketbelt/issues/104)
+* **Typography:** Added font-weight-normal helper style for overriding certain conflicting styles. ([9005f87](https://github.com/Pier1/rocketbelt/commit/9005f87))
+
+
+
 <a name="1.7.0"></a>
 # [1.7.0](https://github.com/Pier1/rocketbelt/compare/1.6.2...v1.7.0) (2017-03-29)
 
