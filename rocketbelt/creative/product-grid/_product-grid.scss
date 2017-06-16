@@ -1,0 +1,165 @@
+@supports(display: grid){
+  $cols: 3 !default;
+  $gridCols: "[col-start] 1fr [col-mid] 1fr [col-end] 1fr";
+  $box: 225px !default;
+  @mixin mobile-grid-product-image{
+    .product-image {
+            height: $box;
+            width: $box;
+        @media screen and (max-width: 990px) {
+            height: auto;
+            max-height: $box;
+            max-width: $box;
+            width: auto;
+        }
+    }
+  }
+    .product-grid {
+        display: grid;
+        grid-auto-flow: row;
+        grid-template-columns: #{$gridCols};
+        grid-gap: 1rem;
+        align-content: space-around;
+        justify-content: space-between;
+        &::before, &::after{
+            display: none;
+        }
+        .grid-tile {
+          background-size: cover;
+          margin-right: 0;
+          width: auto;
+          .product-tile {
+            margin: 0;
+          }
+          .product-image {
+            overflow: hidden;
+            img {
+              max-width: 100%;
+              width: auto;
+            }
+          }
+          .product-overlay {
+            min-height: 1.375em;
+          }
+        }
+    /* Column variations */
+    /* Middle Stuff */
+        .grid-tile {
+            &.cog-tile-last{
+                display: none;
+            }
+        }
+        &.product-grid-loaded-full {
+            .grid-tile {
+                &.cog-tile-last{
+                    display: block;
+                }
+            }
+        }
+        @for $i from 1 through 20{
+        $load: $i*30;
+            .grid-tile {
+                &.cog-tile-middle-#{$i},
+                &.cog-tile-product-show-#{$load}{
+                    display: none;
+                }
+
+            }
+            &.product-grid-loaded-#{$load}{
+                .grid-tile {
+                    &.cog-tile-middle-#{$i},
+                    &.cog-tile-product-show-#{$load}{
+                        display: block;
+                    }
+                }
+            }
+        }
+    }
+    /* Mobile Overrides */
+    .mobile .product-grid,
+    .mobile .product-grid.cols-3,
+    .mobile .product-grid.cols-4 {
+        padding: .5em;
+        display: grid;
+        grid-gap: .5rem;
+        grid-template-columns: repeat(2, 1fr);
+        .grid-tile .product-tile {
+            border-top: none;
+            height: 100%;
+            padding: .5em .5em 1.75em;
+        div{
+            float: none;
+        }
+        button {
+            margin: auto;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+        }
+        .product-name{
+            min-height: 0;
+        }
+        .product-sales-price .sale {
+            display: block;
+            }
+        }
+    }
+  /* Column variations */
+  @for $i from 2 through 5 {
+    $cols: $i;
+    .product-grid.#{cols}-#{$i} {
+      grid-template-columns: repeat($i, 1fr);
+      @if $cols==2 {
+         $gridCols: "[col-start] 1fr [col-end] 1fr";
+         $box: 343px;
+        grid-template-columns: #{$gridCols};
+        .grid-tile {
+          min-height: 466px;
+          width: auto;
+            @include mobile-grid-product-image;
+        }
+      }
+      @else if $cols==3 {
+         $gridCols: "[col-start] 1fr [col-mid] 1fr [col-end] 1fr";
+         $box: 225px;
+        grid-template-columns: #{$gridCols};
+        .grid-tile {
+          min-height: 339px;
+          width: auto;
+            @include mobile-grid-product-image;
+        }
+      }
+      @else if $cols==4 {
+         $gridCols: "[col-start] 1fr [col-mid] 1fr [col-mid-2] 1fr [col-end] 1fr";
+         $box: 154px;
+        grid-template-columns: #{$gridCols};
+        .grid-tile {
+          min-height: 277px;
+          width: auto;
+            @include mobile-grid-product-image;
+        }
+      }
+      @else if $cols==5 {
+         $gridCols: "[col-start] 1fr [col-mid] 1fr [col-mid-2] 1fr [col-mid-3] 1fr [col-end] 1fr";
+         $box: 116px;
+        grid-template-columns: #{$gridCols};
+        .grid-tile {
+          min-height: 248px;
+          width: auto;
+            @include mobile-grid-product-image;
+        }
+      }
+      @else {
+        $gridCols: "[col-start] 1fr [col-mid] 1fr [col-end] 1fr";
+        $box: 225px;
+        grid-template-columns: #{$gridCols};
+        .grid-tile {
+          min-height: 339px;
+          width: auto;
+            @include mobile-grid-product-image;
+        }
+      }
+    }
+  }
+}
