@@ -1,4 +1,5 @@
 @charset "UTF-8";
+.visually-hidden,
 .visuallyhidden {
   position: absolute;
   overflow: hidden;
@@ -7,7 +8,22 @@
   padding: 0;
   width: 1px;
   height: 1px;
-  border: 0; }
+  border: 0;
+  white-space: nowrap;
+  -webkit-clip-path: inset(50%);
+          clip-path: inset(50%); }
+  .focusable.visually-hidden:active,
+  .focusable.visuallyhidden:active, .focusable.visually-hidden:focus,
+  .focusable.visuallyhidden:focus {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    margin: 0;
+    width: auto;
+    height: auto;
+    white-space: inherit;
+    -webkit-clip-path: none;
+            clip-path: none; }
 
 .fg_brand {
   color: #0a689d; }
@@ -1368,64 +1384,6 @@
       -ms-flex-order: last;
           order: last; }
 
-.float-right {
-  float: right; }
-
-.float-left {
-  float: left; }
-
-.group::before, .group::after {
-  display: table;
-  content: ''; }
-
-.group::after {
-  clear: both; }
-
-
-.margin-1 {
-  margin: 0.70233rem; }
-
-
-.margin-2 {
-  margin: 0.79012rem; }
-
-
-.margin-3 {
-  margin: 0.88889rem; }
-
-
-.margin-4 {
-  margin: 1rem; }
-
-
-.margin-5 {
-  margin: 1.125rem; }
-
-
-.pad-1,
-.padding-1 {
-  padding: 0.70233rem; }
-
-
-.pad-2,
-.padding-2 {
-  padding: 0.79012rem; }
-
-
-.pad-3,
-.padding-3 {
-  padding: 0.88889rem; }
-
-
-.pad-4,
-.padding-4 {
-  padding: 1rem; }
-
-
-.pad-5,
-.padding-5 {
-  padding: 1.125rem; }
-
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
           animation-name: fadeInDown;
@@ -1680,6 +1638,9 @@ h4 small {
 
 .font-weight-light {
   font-weight: 300; }
+
+.font-weight-normal {
+  font-weight: 400; }
 
 .font-weight-semibold {
   font-weight: 600; }
@@ -1940,25 +1901,25 @@ html {
       margin-top: -0.1em;
       line-height: 0.2; }
       .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-for .promo-detail small {
-        font-size: .205em;
         margin-left: -1em;
-        vertical-align: 2.2em; }
+        vertical-align: 2.2em;
+        font-size: 0.205em; }
       .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-for .promo-detail.kern-minus-1 small {
-        letter-spacing: 0.03em;
-        margin-left: -.4em; }
+        margin-left: -.4em;
+        letter-spacing: 0.03em; }
       .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-for .promo-detail .promo-sup {
-        font-size: .615em;
-        line-height: 0;
-        margin-left: .1em;
-        margin-right: -.1em;
         position: relative;
         top: -.4em;
-        vertical-align: baseline; }
+        margin-right: -.1em;
+        margin-left: 0.1em;
+        vertical-align: baseline;
+        font-size: 0.615em;
+        line-height: 0; }
       .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-for .promo-detail.kern-minus-1 .promo-sup {
-        margin-right: .05em; }
+        margin-right: 0.05em; }
     .sale-sticker-wrapper .sale-sticker-inner .promo-detail {
       position: relative;
-      font-size: .87em;
+      font-size: 0.87em;
       line-height: 1; }
     .sale-sticker-wrapper .sale-sticker-inner .tagline-wrapper {
       font-family: 'Brand Sans'; }
@@ -1975,15 +1936,15 @@ html {
       font-family: 'Brand Sans';
       line-height: 1.2; }
     .sale-sticker-wrapper .sale-sticker-inner .cta::after {
-      line-height: .2; }
+      line-height: 0.2; }
     .sale-sticker-wrapper .sale-sticker-inner .optional-msg {
       display: block;
-      margin-bottom: .2em;
-      font-size: .16em;
+      margin-bottom: 0.2em;
+      font-size: 0.16em;
       font-family: 'Brand Sans';
       line-height: 1; }
     .sale-sticker-wrapper .sale-sticker-inner .optional-msg:empty {
-      display: none !important; }
+      display: none; }
     .sale-sticker-wrapper .sale-sticker-inner.up-to-msg .promo-msg::before {
       display: block;
       margin-bottom: -0.6em;
@@ -1998,51 +1959,52 @@ html {
       margin-bottom: -0.06em; }
     .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail::before {
       position: absolute;
-      top: .4em;
+      top: 0.4em;
       right: -.08em;
       content: '%';
       letter-spacing: normal;
-      font-size: .65em;
+      font-size: 0.65em;
       line-height: 1; }
     .sale-sticker-wrapper .sale-sticker-inner.up-to-msg .promo-msg.promo-percentage::after {
       top: 0.31em; }
     .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail::after {
-      margin-left: .15em;
+      margin-left: 0.15em;
       content: 'off';
       letter-spacing: normal;
-      font-size: .2em; }
+      font-size: 0.2em; }
     .sale-sticker-wrapper .sale-sticker-inner .promo-msg.promo-percentage .promo-detail.kern-minus-1::after {
-      margin-left: .6em; }
+      margin-left: 0.6em; }
 
 .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner {
   overflow-x: auto;
   overflow-y: hidden;
-  padding: .09em .2em; }
+  padding: 0.09em 0.2em; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .sale-sticker-tagline {
     float: left;
-    margin-top: .03em;
-    padding: 0 0 0 .11em;
+    margin-top: 0.03em;
+    padding: 0 0 0 0.11em;
     border-left: 2px solid #030001; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-msg {
     float: left;
     margin: -.147em 0 -.09em; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-detail {
-    margin: 0 .16em 0 0;
+    margin: 0 0.16em 0 0;
     line-height: 1; }
-  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .cta, .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .tagline {
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .cta,
+  .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .tagline {
     margin-top: 0;
     text-align: left;
     font-size: 0.18em; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .tagline {
     margin-top: -.1em;
-    margin-bottom: .47em;
+    margin-bottom: 0.47em;
     line-height: 1; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .cta {
-    line-height: .84; }
+    line-height: 0.84; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .optional-msg {
     display: inline-block;
     float: left;
-    margin: .75em .45em 0 0;
+    margin: 0.75em 0.45em 0 0;
     text-align: left;
     line-height: 1; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner.up-to-msg .promo-msg::before {
@@ -2053,9 +2015,9 @@ html {
     width: 2em;
     line-height: 1; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner .promo-msg.promo-percentage::after {
-    right: .13em; }
+    right: 0.13em; }
   .sale-sticker-wrapper.sale-sticker-horizontal .sale-sticker-inner.up-to-msg .promo-msg.promo-percentage::after {
-    top: .2em; }
+    top: 0.2em; }
 
 .sale-sticker-wrapper.sale-sticker-stretch {
   width: 100%; }

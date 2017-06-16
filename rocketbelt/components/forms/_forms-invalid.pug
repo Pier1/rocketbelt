@@ -16,6 +16,10 @@ form
     label(for='invalid-fname') First Name
     small.validation-message Please enter a first name.
   .form-group
+    textarea.invalid#invalid-message
+    label(for='invalid-message') Message
+    small.validation-message Please enter a message.
+  .form-group
     select.invalid#invalid-select
       option(value='', disabled=true, selected=true, hidden=true) Select a collection
       option Biblioteca

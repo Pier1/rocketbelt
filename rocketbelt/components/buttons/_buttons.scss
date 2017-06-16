@@ -1,8 +1,13 @@
 .button + .button,
 button + button,
 .button + button,
-button + .button {
+button + .button,
+a[class *= 'button'] + a[class *= 'button'] {
   margin-left: $gutter-width / 2;
+}
+
+a[class *= 'button'] {
+  display: inline-block;
 }
 
 .button-primary {
@@ -20,7 +25,8 @@ button + .button {
   @include button-style(secondary);
 }
 
-.button-text {
+.button-text,
+%button-text {
   @include button-style(text);
   cursor: pointer;
 
@@ -30,6 +36,12 @@ button + .button {
     background: transparent;
     box-shadow: none;
   }
+}
+
+.button-link {
+  @extend %button-text;
+
+  font-weight: font-weight(normal);
 }
 
 .button-dynamic {
@@ -44,16 +56,35 @@ button + .button {
   @include button-style(success);
 }
 
+%button-link-props {
+  padding: 0;
+  min-width: 0;
+  text-decoration: underline;
+  text-transform: none;
+}
+
 .button-sm {
   @include button-size(sm);
+
+  &.button-link {
+    @extend %button-link-props;
+  }
 }
 
 .button-md {
   @include button-size(md);
+
+  &.button-link {
+    @extend %button-link-props;
+  }
 }
 
 .button-lg {
   @include button-size(lg);
+
+  &.button-link {
+    @extend %button-link-props;
+  }
 }
 
 .button-block {
@@ -76,6 +107,7 @@ button + .button {
 .button-primary,
 .button-secondary,
 .button-text,
+.button-link,
 .button-block {
   &[disabled] {
     box-shadow: none;

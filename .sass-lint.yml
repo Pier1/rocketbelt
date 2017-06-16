@@ -12,8 +12,9 @@ rules:
   border-zero: 0
   mixins-before-declarations: 0
   no-ids: 0
-  nesting-depth: 0
+  nesting-depth: 4
   empty-args: 0
+  force-element-nesting: 1
   force-pseudo-nesting: 0
   brace-style: 0
   no-trailing-whitespace: 0

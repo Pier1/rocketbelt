@@ -490,7 +490,7 @@ pre[class*="language-"] {
   transition: color 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), border 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), background 100ms cubic-bezier(0.455, 0.03, 0.515, 0.955), box-shadow 100ms ease-out, opacity 500ms cubic-bezier(0.455, 0.03, 0.515, 0.955);
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .example-code .copy-code:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 4px rgba(0, 0, 0, 0.23); }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
   .example-code .copy-code:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .example-code .copy-code svg {
@@ -542,7 +542,7 @@ pre[class*="language-"] {
       -webkit-transform: scale(1.2);
           -ms-transform: scale(1.2);
               transform: scale(1.2);
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 4px rgba(0, 0, 0, 0.23); }
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
 
 article.grid-article .example .col::before {
   min-height: 2rem;
@@ -569,6 +569,44 @@ article.grid-article .example .row[class$='reverse'] .col {
   article.grid-article .example .row[class$='reverse'] .col::before, article.grid-article .example .row[class$='reverse'] .col:hover::before {
     background-color: inherit; }
 
+.examples-icons .icon-meaningful .icon,
+.examples-icons .icon-link-no-text .icon {
+  width: 1.80203rem;
+  height: 1.80203rem; }
+
+.examples-icons .icon-with-text {
+  font-size: 1rem; }
+
+.examples-icons .icon-link-no-text {
+  font-size: 1.80203rem; }
+
+.examples-icons .icon-link-with-indicator {
+  font-size: 3.24732rem; }
+  .examples-icons .icon-link-with-indicator .text-with-icon {
+    position: relative;
+    color: #0a689d; }
+    .examples-icons .icon-link-with-indicator .text-with-icon .indicator {
+      position: absolute;
+      top: 0;
+      right: 0;
+      z-index: 1;
+      display: -webkit-inline-flex;
+      display: -ms-inline-flexbox;
+      display: inline-flex;
+      width: 1.42383rem;
+      height: 1.42383rem;
+      border-radius: 50%;
+      background: #a21f35;
+      color: #fefdfd;
+      text-decoration: none;
+      font-size: 1rem;
+      -webkit-justify-content: center;
+          -ms-flex-pack: center;
+              justify-content: center;
+      -webkit-align-content: center;
+          -ms-flex-line-pack: center;
+              align-content: center; }
+
 .example-lqip .lazyload-wrapper {
   margin: 10rem;
   width: 25rem; }
@@ -587,8 +625,7 @@ article.grid-article .example .row[class$='reverse'] .col {
           -ms-flex-wrap: wrap-reverse;
               flex-wrap: wrap-reverse; } }
   .rb-header .rb-logo {
-    margin-bottom: 0.38974rem;
-    padding: 0.79012rem 0.79012rem 0 1rem;
+    padding: 1.125rem;
     -webkit-user-select: none;
        -moz-user-select: none;
         -ms-user-select: none;
@@ -606,17 +643,6 @@ article.grid-article .example .row[class$='reverse'] .col {
         padding: 0; } }
     .rb-header .rb-logo #uri {
       display: none; }
-
-.example-layout [class*='pad-'] {
-  display: inline-block;
-  border: 1px solid #b4b0b0;
-  border-radius: 2px; }
-
-.example-layout [class*='margin-'] {
-  display: inline-block;
-  border: 1px solid #9b9595;
-  border-radius: 2px;
-  background: #fefdfd; }
 
 .example .container {
   display: inline-block;
@@ -906,7 +932,7 @@ h3.docs-header {
   #mobile-components .hidden {
     display: none; }
   #mobile-components .initial:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 4px rgba(0, 0, 0, 0.23); }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
 
 .i-hp-grid {
   width: 495px;
@@ -948,7 +974,7 @@ h3.docs-header {
 .i-hp-item {
   opacity: 1; }
   .i-hp-item:hover .i-hp-initial img {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 4px rgba(0, 0, 0, 0.23); }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
   .i-hp-item.i-hp-static {
     opacity: .3; }
     .i-hp-item.i-hp-static:hover .i-hp-initial img {
@@ -1225,7 +1251,7 @@ p code,
         color: #1492d9;
         fill: #1492d9; }
     .example-code .copy-code:hover {
-      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 3px 4px rgba(0, 0, 0, 0.23); }
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
     .example-code .copy-code:active {
       box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
   .example-code pre {
