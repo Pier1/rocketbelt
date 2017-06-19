@@ -1,6 +1,6 @@
 /// @author Kendrick Arnett
 /// @param $key [default] - The easing to return.
-@function eased-gradient($direction: '', $color-start: color(black), $color-end: rgba(color(black), 0), $easing: default, $num-stops: 10) {
+@function eased-gradient($direction: '', $color-start: color(black), $color-end: rgba(color(black), 0), $easing: default, $num-stops: 12) {
   @if $direction != '' { $direction: $direction + ', '; }
 
   $gradient-stops: $direction;
