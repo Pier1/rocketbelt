@@ -1,3 +1,17 @@
+/// Returns a font size along the modular scale. font-size(0) is the base (1 rem).
+///
+/// @group Typography
+/// @author Kendrick Arnett
+///
+/// @param $scale - The number of steps to scale up or down
+///
+/// @example scss - font-size function
+///   font-size(0);
+///   // 1 rem
+///   font-family(2);
+///   // 2 steps up the scale
+///   font-family(-1);
+///   // 1 step down the scale
 @function font-size($scale) {
   @return ms($scale);
 }

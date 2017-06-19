@@ -1,3 +1,12 @@
+/// Return a breakpoint from a predefined set.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @param $width [xs] - The viewport width to return
+///
+/// @example scss - breakpoint function
+///   breakpoint(xs)
 @function breakpoint($width: xs) {
   $width: to-lower-case($width);
 
