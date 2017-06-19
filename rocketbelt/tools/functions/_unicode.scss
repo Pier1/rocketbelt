@@ -1,3 +1,12 @@
+/// Never Google a unicode value for generated content again!
+///
+/// @author Kendrick Arnett
+///
+/// @param $character - The name of the character.
+///
+/// @example scss - unicode function
+///   unicode(right-chevron)
+///   // '\2039'
 @function unicode($character: '') {
   $style: to_lower_case($character);
   $characters: (
