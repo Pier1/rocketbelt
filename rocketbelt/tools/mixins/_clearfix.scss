@@ -1,3 +1,9 @@
+/// Adds clearfix pseudoelements.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @see http://nicolasgallagher.com/micro-clearfix-hack/
 @mixin clearfix {
   &::after {
     display: table;

@@ -1,3 +1,13 @@
+/// Centers a selector's content horizontally, vertically, or both.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @see {mixin} centered-horizontally
+/// @see {mixin} centered-vertically
+///
+/// @param $horizontal [false] - Indicates whether to center horizontally.
+/// @param $vertical [false] - Indicates whether to center vertically.
 @mixin centered($horizontal: false, $vertical: false) {
   position: absolute;
   @if ($horizontal and $vertical) or (not $horizontal and not $vertical) {
@@ -15,10 +25,22 @@
   }
 }
 
+/// A shorthand method to center a selector's content horizontally.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @see {mixin} centered
 @mixin centered-horizontally() {
   @include centered($horizontal: true);
 }
 
+/// A shorthand method to center a selector's content vertically.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @see {mixin} centered
 @mixin centered-vertically() {
   @include centered($vertical: true);
 }
