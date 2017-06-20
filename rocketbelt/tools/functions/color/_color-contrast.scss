@@ -1,6 +1,17 @@
+/// Given a Rocketbelt palette color, returns the closest contrasting color (black or white).
+///
+/// @author Chancellor Clark
+///
+/// @param $name - The palette family & variant to contrast with.
+/// @param $digits [0] - The number of digits to round to.
+/// @param $mode [round] - "round", "ceil", or "floor".
+///
+/// @example scss - contrast function
+///   contrast('primary, lightest')
+///   // color(white)
 @function contrast($name) {
   $color: color($name);
-  
+
   @if (lightness($color) >= 50) {
     @return color(black);
   } @else {
