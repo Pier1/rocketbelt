@@ -1,4 +1,5 @@
 $in-out-quad: cubic-bezier(0.455,  0.030, 0.515, 0.955);
+
 $ease: (
   default:      $in-out-quad,
 
@@ -28,9 +29,20 @@ $ease: (
   in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550)
 );
 
+/// Get a cubic bezier easing curve or the Y value of that curve, if $x is supplied.
+///
 /// @author Kendrick Arnett
+///
 /// @link http://easings.net/ See examples at easings.net.
+///
 /// @param $key [default] - The easing to return.
+/// @param $x [null] - The x value to find the curve's corresponding y value. Must be between 0–1.
+///
+/// @example scss - ease function
+///   ease(in-out-quad);
+///   // cubic-bezier(0.455,  0.030, 0.515, 0.955);
+///   ease(in-out-quad, 0.25);
+///   // 0.125
 @function ease($key: default, $x: null) {
   @if map-has-key($ease, $key) {
     @if $x == null {
