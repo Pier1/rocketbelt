@@ -1,3 +1,7 @@
+/// Display a vertical grid over a selector's contents. Useful for debugging/maintaining vertical rhythm.
+///
+/// @group Debug
+/// @author Kendrick Arnett
 @mixin vertical-grid() {
   background-image: linear-gradient(to bottom, #0ff 0, rgba(255, 255, 255, 0) 1px);
   background-size: 100% 1.5rem;

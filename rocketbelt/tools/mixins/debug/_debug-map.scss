@@ -1,3 +1,9 @@
+/// Print all of a map's key-value pairs.
+///
+/// @group Debug
+/// @author Kendrick Arnett
+///
+/// @param $map - The map to debug.
 @mixin debug-map($map) {
   @at-root {
     @debug-map {
