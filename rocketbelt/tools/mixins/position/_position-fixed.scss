@@ -1,7 +1,0 @@
-/// Shorthand mixin for fixed positioning
-/// Serves as an alias for `position(fixed, ...)`
-/// @param {Arglist} $args - Offsets
-/// @require {mixin} position
-@mixin position-fixed($args...) {
-  @include position(fixed, $args...);
-}
