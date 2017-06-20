@@ -1,0 +1,9 @@
+.skip {
+  a {
+    &:focus,
+    &:active {
+      top: 0.5rem;
+      left: 12rem;
+    }
+  }
+}
