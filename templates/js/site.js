@@ -73,6 +73,12 @@ var rb = rb || {};
         e.preventDefault();
         $('.nav .category-toggle').prop('checked', false);
         $(this).siblings('.category-toggle').prop('checked', true);
+
+        var height = $(this).siblings('.category-contents').height() + $(this).height() + 4;
+        $(this).closest('.category-contents').css('height', height);
+      } else if (!window.matchMedia('(min-width: 48rem)').matches) {
+        var height = $(this).height() + 4;
+        $(this).closest('.category-contents').css('height', height);
       }
     });
   });
