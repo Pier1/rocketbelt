@@ -1,0 +1,15 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Accessibility'
+
+block content
+  article.grid-article
+    h1 Accessibility
+    | Rocketbelt strives to be accessible out of the box.
+
+    h2 Skip Links
+    | Main content or items in a page's footer may require dozens or hundreds Tab presses to interact with if a user is navigating via keyboard. Skip links make this interaction much less tedious by using an on-page href. The link is visually hidden unless it is focused via keyboard.
+
+    +exampleCodeOnly
+      include _a11y-skip-links.pug
