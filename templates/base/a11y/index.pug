@@ -9,58 +9,132 @@ block content
     | Rocketbelt strives to be accessible out of the box.
 
     h2 Accessibility Checklist
-    h3 Perceivable
-    h4 Text Alternatives
-    ul
-      li All images have appropriate, equivalent alternative text.
-      li Images that do not convey content, are decorative, or contain content that is already conveyed in text are given null alt text (#[code alt=""]) or implemented as CSS backgrounds. All linked images have descriptive alternative text.
-      li Equivalent alternatives to complex images are provided in context or on a separate (linked and/or referenced via #[code longdesc]) page.
-      li Form buttons have a descriptive value.
-      li Form inputs have associated text labels.
-      li Embedded multimedia is identified via accessible text.
-      li Frames are appropriately titled.
-
-    h4 Adaptable
-    ul
-      li Semantic markup is used to designate headings (#[code &lt;h1&gt;]), lists (#[code &lt;ul&gt;], #[code &lt;ol&gt;], and #[code &lt;dl&gt;]), emphasized or special text (#[code &lt;strong&gt;], #[code &lt;code&gt;], #[code &lt;abbr&gt;], #[code &lt;blockquote&gt;], for example), etc. Semantic markup is used appropriately.
-      li Tables are used for tabular data. Where necessary, data cells are associated with their headers. Data table captions and summaries are used where appropriate.
-      li Text labels are associated with form input elements. Related form elements are grouped with fieldset/legend.
-      li The reading and navigation order (determined by code order) is logical and intuitive.
-      li Instructions do not rely upon shape, size, or visual location.
-
-    h4 Distinguishable
-    ul
-      li Color is not used as the sole method of conveying content or distinguishing visual elements.
-      li The page is readable and functional when the text size is doubled.
-      li If the same visual presentation can be made using text alone, an image is not used to present that text.
-      li Text is used within an image only for decoration (image does not convey content) or when the information cannot be presented with text alone.
-
-    h3 Operable
-    h4 Keyboard accessible
-    ul
-      li All page functionality is available using the keyboard, unless the functionality cannot be accomplished in any known way using a keyboard.
-      li All page functionality is available using the keyboard.
-
-    h4 Navigable
-    ul
-      li A link is provided to skip navigation and other page elements that are repeated across web pages.
-      li If a page has a proper heading structure, this may be considered a sufficient technique instead of a "Skip to main content" link. Note that navigating by headings is not yet supported in all browsers.
-      li The purpose of each link can be determined from the link text alone, or from the link text and its context (e.g., surrounding paragraph, list item, table cell, or table headers).
-      li Links (or form image buttons) with the same text that go to different locations are readily distinguishable.
-      li It is visually apparent which page element has the current keyboard focus (i.e., as you tab through the page, you can see where you are).
-      li The purpose of each link (or form image button or image map hotspot) can be determined from the link text alone.
-      li There are no links (or form image buttons) with the same text that go to different locations.
-    h3 Understandable
-    h4 Predictable
-    ul
-      li When a page element receives focus, it does not result in a substantial change to the page, the spawning of a pop-up window, an additional change of keyboard focus, or any other change that could confuse or disorient the user.
-      li When a user inputs information or interacts with a control, it does not result in a substantial change to the page, the spawning of a pop-up window, an additional change of keyboard focus, or any other change that could confuse or disorient the user unless the user is informed of the change ahead of time.
-      li Substantial changes to the page, the spawning of pop-up windows, uncontrolled changes of keyboard focus, or any other change that could confuse or disorient the user must be initiated by the user. Alternatively, the user is provided an option to disable such changes.
-    h3 Robust
-    h4 Compatible
-    ul
-      li Significant HTML/XHTML validation/parsing errors are avoided.
-      li Markup is used in a way that facilitates accessibility. This includes following the HTML/XHTML specifications and using forms, form labels, frame titles, etc. appropriately.
+    table
+      thead
+        tr
+          th Principle
+          th Description
+      tbody
+        tr
+          td
+            span.a11y-principle.text-alternatives Text Alternatives
+          td All images have appropriate, equivalent alternative text.
+        tr
+          td
+            span.a11y-principle.text-alternatives Text Alternatives
+          td Images that do not convey content, are decorative, or contain content that is already conveyed in text are given null alt text (#[code alt=""]) or implemented as CSS backgrounds. All linked images have descriptive alternative text.
+        tr
+          td
+            span.a11y-principle.text-alternatives Text Alternatives
+          td Equivalent alternatives to complex images are provided in context or on a separate (linked and/or referenced via #[code longdesc]) page.
+        tr
+          td
+            span.a11y-principle.text-alternatives Text Alternatives
+          td Form buttons have a descriptive value.
+        tr
+          td
+            span.a11y-principle.text-alternatives Text Alternatives
+          td Form inputs have associated text labels.
+        tr
+          td
+            span.a11y-principle.text-alternatives Text Alternatives
+          td Embedded multimedia is identified via accessible text.
+        tr
+          td
+            span.a11y-principle.text-alternatives Text Alternatives
+          td Frames are appropriately titled.
+        tr
+          td
+            span.a11y-principle.adaptable Adaptable
+          td Semantic markup is used to designate headings (#[code &lt;h1&gt;]), lists (#[code &lt;ul&gt;], #[code &lt;ol&gt;], and #[code &lt;dl&gt;]), emphasized or special text (#[code &lt;strong&gt;], #[code &lt;code&gt;], #[code &lt;abbr&gt;], #[code &lt;blockquote&gt;], for example), etc. Semantic markup is used appropriately.
+        tr
+          td
+            span.a11y-principle.adaptable Adaptable
+          td Tables are used for tabular data. Where necessary, data cells are associated with their headers. Data table captions and summaries are used where appropriate.
+        tr
+          td
+            span.a11y-principle.adaptable Adaptable
+          td Text labels are associated with form input elements. Related form elements are grouped with fieldset/legend.
+        tr
+          td
+            span.a11y-principle.adaptable Adaptable
+          td The reading and navigation order (determined by code order) is logical and intuitive.
+        tr
+          td
+            span.a11y-principle.adaptable Adaptable
+          td Instructions do not rely upon shape, size, or visual location.
+        tr
+          td
+            span.a11y-principle.distinguishable Distinguishable
+          td Color is not used as the sole method of conveying content or distinguishing visual elements.
+        tr
+          td
+            span.a11y-principle.distinguishable Distinguishable
+          td The page is readable and functional when the text size is doubled.
+        tr
+          td
+            span.a11y-principle.distinguishable Distinguishable
+          td If the same visual presentation can be made using text alone, an image is not used to present that text.
+        tr
+          td
+            span.a11y-principle.distinguishable Distinguishable
+          td Text is used within an image only for decoration (image does not convey content) or when the information cannot be presented with text alone.
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td All page functionality is available using the keyboard, unless the functionality cannot be accomplished in any known way using a keyboard.
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td All page functionality is available using the keyboard.
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td A link is provided to skip navigation and other page elements that are repeated across web pages.
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td If a page has a proper heading structure, this may be considered a sufficient technique instead of a "Skip to main content" link. Note that navigating by headings is not yet supported in all browsers.
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td The purpose of each link can be determined from the link text alone, or from the link text and its context (e.g., surrounding paragraph, list item, table cell, or table headers).
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td Links (or form image buttons) with the same text that go to different locations are readily distinguishable.
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td It is visually apparent which page element has the current keyboard focus (i.e., as you tab through the page, you can see where you are).
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td The purpose of each link (or form image button or image map hotspot) can be determined from the link text alone.
+        tr
+          td
+            span.a11y-principle.navigable Navigable
+          td There are no links (or form image buttons) with the same text that go to different locations.
+        tr
+          td
+            span.a11y-principle.predictable Predictable
+          td When a page element receives focus, it does not result in a substantial change to the page, the spawning of a pop-up window, an additional change of keyboard focus, or any other change that could confuse or disorient the user.
+        tr
+          td
+            span.a11y-principle.predictable Predictable
+          td When a user inputs information or interacts with a control, it does not result in a substantial change to the page, the spawning of a pop-up window, an additional change of keyboard focus, or any other change that could confuse or disorient the user unless the user is informed of the change ahead of time.
+        tr
+          td
+            span.a11y-principle.predictable Predictable
+          td Substantial changes to the page, the spawning of pop-up windows, uncontrolled changes of keyboard focus, or any other change that could confuse or disorient the user must be initiated by the user. Alternatively, the user is provided an option to disable such changes.
+        tr
+          td
+            span.a11y-principle.compatible Compatible
+          td Significant HTML/XHTML validation/parsing errors are avoided.
+        tr
+          td
+            span.a11y-principle.compatible Compatible
+          td Markup is used in a way that facilitates accessibility. This includes following the HTML/XHTML specifications and using forms, form labels, frame titles, etc. appropriately.
 
     h2 Accessibility User Stories
     ul
