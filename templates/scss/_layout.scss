@@ -358,12 +358,18 @@ h2.docs-header  {
 }
 
 article > h3,
-h3.docs-header  {
+h3.docs-header,
+article h4 {
   margin-top: $gutter-width * 2;
   margin-bottom: $half-gutter-width;
   color: color(gray, plus1);
   text-transform: uppercase;
   font-size: ms(0);
+}
+
+article h4 {
+  margin-top: 0.5rem;
+  text-transform: none;
 }
 
 #docs-vis-filter-controls, #docs-hp-layouts-controls {
