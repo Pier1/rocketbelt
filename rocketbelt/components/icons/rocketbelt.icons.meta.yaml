@@ -1,3 +1,5 @@
+# =-=-=-=-=-=-=-=- Annotations for rocketbelt.icons.svg -=-=-=-=-=-=-=-= #
+# =-=-=-=-=-=-=-=- See below for enterprise annotations -=-=-=-=-=-=-=-= #
 arrow-down:
   title: Down Arrow
   description: A downward arrow
@@ -205,3 +207,20 @@ zoom-in:
 zoom-out:
   title: Zoom Out
   description: A magnifying glass with a minus sign inside
+
+# =-=-=-=-=-=-=-=- Annotations for rocketbelt.icons.enterprise.svg -=-=-=-=-=-=-=-= #
+book:
+  title: Book
+  description: A book laying open
+
+dots-circle-o:
+  title: Dots in Circle
+  description: Three dots within a circle
+
+graph-line:
+  title: Line Graph
+  description: An ascending & descending line graph
+
+horizon:
+  title: Horizon Logo
+  description: A rising sun stylistically separated into horizontal pieces
