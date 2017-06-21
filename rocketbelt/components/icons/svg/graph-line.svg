@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>graph-line</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="graph-line" fill="#000000">
+            <path d="M256,241.646689 L-2.84217094e-14,241.646689 L-2.84217094e-14,106.5613 L40.7473575,147.992275 L95.4237412,88.331074 L174.952122,166.430072 L255.999379,118.248059 L255.999379,241.646689 L256,241.646689 Z M40.2713109,114.70754 L94.7177503,55.2961697 L177.767385,136.851789 L256,90.3433966 L256,57.1991134 L182.884576,99.0296947 L93.9744711,15 L40.747979,73.0031171 L0.000621470847,33.2277399 L0.000621470847,73.761933 L40.2713109,114.70754 L40.2713109,114.70754 Z"></path>
+        </g>
+    </g>
+</svg>

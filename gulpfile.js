@@ -1,6 +1,5 @@
 'use strict';
 var gulp = require('gulp');
-var nav = [];
 
 var plugins = require('gulp-load-plugins')({ DEBUG: false, pattern: '*' });
 
@@ -27,8 +26,8 @@ var utils = {
   getTask: require(utilsPath + '/getTask')
 };
 
-function getTask(task) {
-  return require('./gulp-tasks/' + task)(gulp, plugins, config);
+function getTask(task, taskParams) {
+  return require('./gulp-tasks/' + task)(gulp, plugins, config, taskParams);
 }
 
 gulp.task('default', getTask('default'));
@@ -41,7 +40,9 @@ gulp.task('copy-js', getTask('copy-js'));
 gulp.task('copy-resources', getTask('copy-resources'));
 gulp.task('css-sort', getTask('css-sort'));
 gulp.task('feature-detection', getTask('feature-detection'));
-gulp.task('icons', getTask('icons'));
+gulp.task('icons-enterprise', getTask('icons', { enterprise: true }));
+gulp.task('icons-ecom', getTask('icons'));
+gulp.task('icons', ['icons-ecom', 'icons-enterprise']);
 gulp.task('link-svg', getTask('link-svg'));
 gulp.task('link-templates', getTask('link-templates'));
 gulp.task('link-js', getTask('link-js'));
@@ -50,8 +51,6 @@ gulp.task('lint-sass', ['css-sort'], getTask('lint-sass'));
 gulp.task('server', getTask('server'));
 gulp.task('sitemap', getTask('sitemap'));
 gulp.task('styles', getTask('styles'));
-gulp.task('test', function () { return true; }); // Temporary
-// gulp.task('test', ['test-visual']);
 gulp.task('test-webserver', getTask('test-webserver'));
 gulp.task('test-visual', ['test-webserver'], getTask('test-visual'));
 gulp.task('uglify', getTask('uglify'));
