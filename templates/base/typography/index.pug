@@ -6,7 +6,7 @@ block vars
 block content
   article
     h1 Typography
-    p Here is some short front matter about typography.
+    p Rocketbelt's typography is built on a modular scale. The scale makes it easy to use type to visually reinforce the hierarchy of content. Rocketbelt also includes plenty of helper classes to support icons, call-to-action links, lists, and pull quotes.
 
     h2 Downloads
 
@@ -19,6 +19,7 @@ block content
         |—Brand Serif
 
     h2 Headings
+    p Headings are responsive and use a modular scale—this means that a giant heading on desktop isn't quite so dominant on a smaller viewport. See #[em #[a(href='https://typecast.com/blog/a-more-modern-scale-for-web-typography') A More Modern Scale for Web Typography]] for background information on this design decision.
     +exampleWithCode
       h1 h1. Pier 1 Imports
       h2 h2. Pier 1 Imports
@@ -27,7 +28,7 @@ block content
 
     h2 Headings With Secondary Text
       h3 Consideration: Semantics
-      div(class="bg_secondary-lighter" style="padding: 40px; width: 250px;")
+      .bg_secondary-lighter(style='padding: 40px; width: 250px;')
         header.heading-group.display
           span.preheading This is a
           h1.heading Headline
@@ -38,12 +39,13 @@ block content
         span.preheading Preheadline #[span.heading Headline]
 
 
-    h2 Font Faces
+    h2 Font Specimens
     .grid-fluid
       .row
-        .col.sm-12.md #[h3.docs-header Sans Serif]
+        .col.sm-12.md
+          h3.docs-header Sans Serif
           +exampleWithCode
-            div.font-sans
+            .font-sans
               h4 Open Sans
               p.
                 Let it a sleek, hand-painted in a little sunshine and proud
@@ -56,9 +58,9 @@ block content
                 applique and intricate piecework and fest.
 
           a(href='./OpenSans.zip') Download Open Sans—Brand Sans
-    .grid-fluid
       .row
-        .col.sm-12.md #[h3.docs-header Serif]
+        .col.sm-12.md
+          h3.docs-header Serif
           +exampleWithCode
             .font-serif
               h4 Crimson Text
@@ -74,85 +76,60 @@ block content
                 Flaunting iron and sharing, rich hues of sophistication?
           a(href='./CrimsonText.zip') Download Crimson Text—Brand Serif
 
-    h3 UI Text Sizes
+    h2 Text Sizes
+    p Always use the #[code font-size] helper function (found in the #[code tools] Sass partial) or a corresponding helper class to render different text sizes. #[em Never] use pixels to size text.
     .grid.margin-0
       .row
         .col.xs.ellipsis
           +exampleWithCode
-            .font-minus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-minus-1 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            div We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-plus-1 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-plus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-plus-3 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-plus-4 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+            .font-minus-2 #[code.font-minus-1 font-size(-2):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+            .font-minus-1 #[code.font-minus-1 font-size(-1):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+            div #[code.font-minus-1 font-size(0):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+            .font-plus-1 #[code.font-minus-1 font-size(1):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+            .font-plus-2 #[code.font-minus-1 font-size(2):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+            .font-plus-3 #[code.font-minus-1 font-size(3):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+            .font-plus-4 #[code.font-minus-1 font-size(4):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
 
     .grid.margin-0
       .row
         .col.xs.ellipsis
           +exampleWithCode
             .font-serif
-              .font-minus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-minus-1 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              div We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-1 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-3 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-4 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-
-    h2 Non-UI Text Sizes
-
-    .grid.margin-0
-      .row
-        .col.xs.ellipsis
-          +exampleWithCode
-            .font-minus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-minus-1 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            div We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-plus-1 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-plus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-plus-3 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-            .font-plus-4 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-
-    .grid.margin-0
-      .row
-        .col.xs.ellipsis
-          +exampleWithCode
-            .font-serif
-              .font-minus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-minus-1 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              div We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-1 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-2 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-3 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-4 We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+              .font-minus-2 #[code.font-minus-1 font-size(-2):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+              .font-minus-1 #[code.font-minus-1 font-size(-1):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+              div #[code.font-minus-1 font-size(0):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+              .font-plus-1 #[code.font-minus-1 font-size(1):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+              .font-plus-2 #[code.font-minus-1 font-size(2):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+              .font-plus-3 #[code.font-minus-1 font-size(3):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
+              .font-plus-4 #[code.font-minus-1 font-size(4):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
 
     h2 Text with Icon
+    p This pattern automatically renders an icon that is the same height as the accompanying text. Add an #[code icon-left] or #[code icon-right] class to indicate where the icon should be placed.
     +exampleWithCode
       span.text-with-icon Store Locator
-        svg.icon.icon-left(aria-hidden="true")
+        svg.icon.icon-left(aria-hidden='true')
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-pin')
       br
       span.text-with-icon Store Locator
-        svg.icon.icon-right(aria-hidden="true")
+        svg.icon.icon-right(aria-hidden='true')
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-pin')
       br
-      a.text-with-icon(href="#") Chat Now
-        svg.icon.icon-right(aria-hidden="true")
+      a.text-with-icon(href='#') Chat Now
+        svg.icon.icon-right(aria-hidden='true')
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-chat-single')
       br
       span.text-with-icon.font-minus-1 (817) 252-6300
-        svg.icon.icon-left(aria-hidden="true")
+        svg.icon.icon-left(aria-hidden='true')
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-phone')
       br
       span.text-with-icon.font-plus-4 Email Us
-        svg.icon.icon-left(aria-hidden="true")
+        svg.icon.icon-left(aria-hidden='true')
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-envelope')
 
     h2 CTA
     +exampleWithCode
-      a.cta.text-with-icon(href="#") Shop Now
-        svg.icon.icon-right(aria-hidden="true")
+      a.cta.text-with-icon(href='#') Shop Now
+        svg.icon.icon-right(aria-hidden='true')
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow')
 
     h2 Lists
@@ -180,91 +157,91 @@ block content
       ul.link-list
         li.title Customer Relations
         li
-          a(href="#") FAQ
+          a(href='#') FAQ
         li
-          a(href="#") Assembly Instructions
+          a(href='#') Assembly Instructions
         li
-          a(href="#") Shipping Info
+          a(href='#') Shipping Info
         li
-          a(href="#") Returns & Exchanges
+          a(href='#') Returns & Exchanges
         li
-          a(href="#") Pier 1 for Business
+          a(href='#') Pier 1 for Business
       ul.link-list
         li Quick Links
         li
-          a.text-with-icon(href="#") Store Locator
-            svg.icon.icon-left(aria-hidden="true")
+          a.text-with-icon(href='#') Store Locator
+            svg.icon.icon-left(aria-hidden='true')
               use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-pin')
         li
-          a(href="#") Check Order Status
+          a(href='#') Check Order Status
         li
-          a(href="#") Gift Cards
+          a(href='#') Gift Cards
         li
-          a(href="#") Gift Card Balance
+          a(href='#') Gift Card Balance
         li
-          a(href="#") Wishlist
+          a(href='#') Wishlist
         li
-          a(href="#") Designer Perks
+          a(href='#') Designer Perks
       ul.link-list
         li
-          a(href="#") Contact Us
+          a(href='#') Contact Us
         li
-          a(href="#") Send a Note
+          a(href='#') Send a Note
         li
-          a.text-with-icon(href="#") Email Us
-            svg.icon.icon-left(aria-hidden="true")
+          a.text-with-icon(href='#') Email Us
+            svg.icon.icon-left(aria-hidden='true')
               use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-envelope')
         li
-          a.text-with-icon(href="#") (817) 252-6300
-            svg.icon.icon-left(aria-hidden="true")
+          a.text-with-icon(href='#') (817) 252-6300
+            svg.icon.icon-left(aria-hidden='true')
               use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-phone')
 
     h3 Title + Link
     +exampleWithCode
       ul.link-list
         li.title
-          a.cta.text-with-icon(href="#") Living Room
-            svg.icon.icon-right(aria-hidden="true")
+          a.cta.text-with-icon(href='#') Living Room
+            svg.icon.icon-right(aria-hidden='true')
               use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow')
           li
-            a(href="#") Chairs
+            a(href='#') Chairs
           li
-            a(href="#") Ottomans
+            a(href='#') Ottomans
           li
-            a(href="#") Sectionals
+            a(href='#') Sectionals
           li
-            a(href="#") Sofas & Loveseats
+            a(href='#') Sofas &amp; Loveseats
           li
-            a(href="#") Accent & Coffee Tables
+            a(href='#') Accent &amp; Coffee Tables
           li
-            a(href="#") TV & Media Stands
+            a(href='#') TV &amp; Media Stands
           li
-            a(href="#") Cabinets
+            a(href='#') Cabinets
           li
-            a(href="#") Shelves and Bookcases
+            a(href='#') Shelves and Bookcases
           li
-            a(href="#") Living Room Collections
+            a(href='#') Living Room Collections
 
     h3 Font Weights
-    .font-plus-4
+    .font-plus-3
       +exampleWithCode
-        .font-weight-light Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890
-        div Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890
-        .font-weight-semibold Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890
+        .font-weight-light For a stunning mosaic design will add a carefree pattern really impressive.
+        div For a stunning mosaic design will add a carefree pattern really impressive.
+        .font-weight-semibold For a stunning mosaic design will add a carefree pattern really impressive.
 
-    .font-plus-4
+    .font-plus-3
       +exampleWithCode
         .font-style-italic
-          div Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890
-    .font-plus-4
+          div For a stunning mosaic design will add a carefree pattern really impressive.
+    .font-plus-3
       +exampleWithCode
         .font-serif
-          div Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890
+          div For a stunning mosaic design will add a carefree pattern really impressive.
 
-    .font-plus-4
+    .font-plus-3
       +exampleWithCode
         .font-serif.font-style-italic
-          div Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890
+          div For a stunning mosaic design will add a carefree pattern really impressive.
 
     h3 Block Quotes
     .grid-fluid
