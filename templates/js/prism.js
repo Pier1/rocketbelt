@@ -179,7 +179,7 @@ var _self = "undefined" != typeof window ? window : "undefined" != typeof Worker
                 var i = {
                     type: e.type,
                     content: a.stringify(e.content, t, r),
-                    tag: "span",
+                    tags: "span",
                     classes: ["token", e.type],
                     attributes: {},
                     language: t,
@@ -193,7 +193,7 @@ var _self = "undefined" != typeof window ? window : "undefined" != typeof Worker
                 var o = Object.keys(i.attributes).map(function(e) {
                     return e + '="' + (i.attributes[e] || "").replace(/"/g, "&quot;") + '"'
                 }).join(" ");
-                return "<" + i.tag + ' class="' + i.classes.join(" ") + '"' + (o ? " " + o : "") + ">" + i.content + "</" + i.tag + ">"
+                return "<" + i.tags + ' class="' + i.classes.join(" ") + '"' + (o ? " " + o : "") + ">" + i.content + "</" + i.tags + ">"
             }, !_self.document) return _self.addEventListener ? (_self.addEventListener("message", function(e) {
             var t = JSON.parse(e.data),
                 a = t.language,
@@ -210,10 +210,10 @@ Prism.languages.markup = {
     prolog: /<\?[\s\S]+?\?>/,
     doctype: /<!DOCTYPE[\s\S]+?>/i,
     cdata: /<!\[CDATA\[[\s\S]*?]]>/i,
-    tag: {
+    tags: {
         pattern: /<\/?(?!\d)[^\s>\/=$<]+(?:\s+[^\s>\/=]+(?:=(?:("|')(?:\\\1|\\?(?!\1)[\s\S])*\1|[^\s'">=]+))?)*\s*\/?>/i,
         inside: {
-            tag: {
+            tags: {
                 pattern: /^<\/?[^\s>\/]+/i,
                 inside: {
                     punctuation: /^<\/?/,
@@ -257,7 +257,7 @@ Prism.languages.css = {
     important: /\B!important\b/i,
     "function": /[-a-z0-9]+(?=\()/i,
     punctuation: /[(){};:]/
-}, Prism.languages.css.atrule.inside.rest = Prism.util.clone(Prism.languages.css), Prism.languages.markup && (Prism.languages.insertBefore("markup", "tag", {
+}, Prism.languages.css.atrule.inside.rest = Prism.util.clone(Prism.languages.css), Prism.languages.markup && (Prism.languages.insertBefore("markup", "tags", {
     style: {
         pattern: /(<style[\s\S]*?>)[\s\S]*?(?=<\/style>)/i,
         lookbehind: !0,
@@ -270,7 +270,7 @@ Prism.languages.css = {
         inside: {
             "attr-name": {
                 pattern: /^\s*style/i,
-                inside: Prism.languages.markup.tag.inside
+                inside: Prism.languages.markup.tags.inside
             },
             punctuation: /^\s*=\s*['"]|['"]\s*$/,
             "attr-value": {
@@ -336,7 +336,7 @@ Prism.languages.javascript = Prism.languages.extend("clike", {
             string: /[\s\S]+/
         }
     }
-}), Prism.languages.markup && Prism.languages.insertBefore("markup", "tag", {
+}), Prism.languages.markup && Prism.languages.insertBefore("markup", "tags", {
     script: {
         pattern: /(<script[\s\S]*?>)[\s\S]*?(?=<\/script>)/i,
         lookbehind: !0,
