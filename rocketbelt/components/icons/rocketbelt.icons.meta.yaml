@@ -209,6 +209,10 @@ zoom-out:
   description: A magnifying glass with a minus sign inside
 
 # =-=-=-=-=-=-=-=- Annotations for rocketbelt.icons.enterprise.svg -=-=-=-=-=-=-=-= #
+a11y:
+  title: Accessibility Logo
+  description: A human figure with arms outstretched inside a circle
+
 book:
   title: Book
   description: A book laying open
