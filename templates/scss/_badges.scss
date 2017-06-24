@@ -1,0 +1,15 @@
+.rb-badge {
+  border-radius: 2px;
+  color: color(white);
+  text-transform: none;
+  font-weight: font-weight(semibold);
+  font-size: font-size(-4);
+}
+
+.rb-badge-toolbelt {
+  background: color(accent, darker);
+}
+
+.rb-badge-ux {
+  background: color(secondary, darker);
+}
