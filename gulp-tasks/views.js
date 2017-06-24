@@ -12,7 +12,7 @@
 
       files = files.filter(function (file) {
         if (fs.lstatSync(dir + '/' + file).isDirectory()) {
-          if (file === 'js' || file === 'scss' || file === 'assets') return false;
+          if (file === 'js' || file === 'scss' || file === 'assets' || file === 'partials') return false;
         }
 
         return (file.indexOf('_') !== 0) &&
