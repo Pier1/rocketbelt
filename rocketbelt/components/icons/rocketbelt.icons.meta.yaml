@@ -204,6 +204,10 @@ star:
   title: Star
   description: A star
 
+star-o:
+  title: Open Star
+  description: The outline of a star
+
 zoom-in:
   title: Zoom In
   description: A magnifying glass with a plus sign inside
