@@ -332,11 +332,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
-  aria-labelledby="bmrb-icon-play-desc bmrb-icon-play-title"
-  id="rb-icon-play" xmlns="http://www.w3.org/2000/svg">
-    <desc id="bmrb-icon-play-desc">A triangular play symbol</desc>
-    <title id="bmrb-icon-play-title">Play</title>
-    <path d="M21 0l213.333 128L21 256z" fill-rule="nonzero" />
+  aria-labelledby="bmrb-icon-play-circle-desc bmrb-icon-play-circle-title"
+  id="rb-icon-play-circle" xmlns="http://www.w3.org/2000/svg">
+    <desc id="bmrb-icon-play-circle-desc">A triangular play symbol
+    inside a circle</desc>
+    <title id="bmrb-icon-play-circle-title">Play</title>
+    <path d="M128 0C57.312 0 0 57.312 0 128s57.312 128 128 128 128-57.312 128-128S198.688 0 128 0zM96 181.333V74.667l96 54.89-96 51.776z"
+    fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
   aria-labelledby="bnrb-icon-plus-desc bnrb-icon-plus-title"

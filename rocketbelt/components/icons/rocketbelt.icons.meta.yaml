@@ -156,6 +156,10 @@ play:
   title: Play
   description: A triangular play symbol
 
+play-circle:
+  title: Play
+  description: A triangular play symbol inside a circle
+
 plus:
   title: Plus
   description: A plus sign
