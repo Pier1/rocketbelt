@@ -4,6 +4,7 @@
   text-transform: none;
   font-weight: font-weight(semibold);
   font-size: font-size(-4);
+  flex-shrink: 0;
 }
 
 .rb-badge-toolbelt {
@@ -12,4 +13,14 @@
 
 .rb-badge-ux {
   background: color(secondary, darker);
+}
+
+.rb-note {
+  display: flex;
+  font-size: font-size(-1);
+  align-items: center;
+
+  .rb-note-text::before {
+    content: unicode(nbsp);
+  }
 }
