@@ -1,3 +1,43 @@
+<a name="1.9.0"></a>
+# [1.9.0](https://github.com/Pier1/rocketbelt/compare/1.8.0...v1.9.0) (2017-07-26)
+
+
+### Bug Fixes
+
+* **a11y:** Update a11y icon. ([cdbe3e9](https://github.com/Pier1/rocketbelt/commit/cdbe3e9))
+* **Layout:** Add ::before pseudoelement to clearfix. ([111b74f](https://github.com/Pier1/rocketbelt/commit/111b74f))
+* **Sample Site:** Fix gigantic RB logo on non-simulated mobile devices. ([ffeeabe](https://github.com/Pier1/rocketbelt/commit/ffeeabe))
+* **Sample Site:** Fix sample site mobile menus. ([e7b397b](https://github.com/Pier1/rocketbelt/commit/e7b397b))
+* **Tabcordions:** Remove default accordion padding. ([bd482a3](https://github.com/Pier1/rocketbelt/commit/bd482a3))
+* **Typography:** Slim down text with icon examples. ([7fe83b3](https://github.com/Pier1/rocketbelt/commit/7fe83b3))
+* **Z-Depth:** Change -1px top box-shadow to 0 for some stylistic purposes. ([a93dd18](https://github.com/Pier1/rocketbelt/commit/a93dd18))
+
+
+### Features
+
+* **a11y:** Add an a11y logo to enterprise icons. ([13d97fd](https://github.com/Pier1/rocketbelt/commit/13d97fd))
+* **a11y:** Add skip link pattern. ([12f3383](https://github.com/Pier1/rocketbelt/commit/12f3383)), closes [#123](https://github.com/Pier1/rocketbelt/issues/123)
+* **a11y:** Improve the presentation of accessibility principles. ([3a49d1d](https://github.com/Pier1/rocketbelt/commit/3a49d1d))
+* **a11y:** Write a11y checklist guidance. ([f186353](https://github.com/Pier1/rocketbelt/commit/f186353)), closes [#134](https://github.com/Pier1/rocketbelt/issues/134)
+* **a11y:** Write a11y user story documentation. ([caa23d6](https://github.com/Pier1/rocketbelt/commit/caa23d6))
+* **a11y:** Write first-pass a11y checklist. ([421c98a](https://github.com/Pier1/rocketbelt/commit/421c98a)), closes [#122](https://github.com/Pier1/rocketbelt/issues/122)
+* **Cards:** Add full bleed cards. ([93ff537](https://github.com/Pier1/rocketbelt/commit/93ff537))
+* **Color:** Add Cloud Gray to palette. ([e106147](https://github.com/Pier1/rocketbelt/commit/e106147))
+* **Color:** Write color exposition. ([abd47ee](https://github.com/Pier1/rocketbelt/commit/abd47ee))
+* **Functions:** Overload ease() function with Y easing values. ([e2f75dc](https://github.com/Pier1/rocketbelt/commit/e2f75dc))
+* **Global:** Add eased gradients. ([84a88a1](https://github.com/Pier1/rocketbelt/commit/84a88a1))
+* **Icons:** Add `play-circle` icon. ([21d14f0](https://github.com/Pier1/rocketbelt/commit/21d14f0))
+* **Icons:** Add `star-o`. ([62571ab](https://github.com/Pier1/rocketbelt/commit/62571ab))
+* **Icons:** Add UX & Tools icons for sample site. ([925b432](https://github.com/Pier1/rocketbelt/commit/925b432))
+* **Icons:** Append optional enterprise icons. ([ecbfd12](https://github.com/Pier1/rocketbelt/commit/ecbfd12)), closes [#128](https://github.com/Pier1/rocketbelt/issues/128)
+* **Layout:** Remove Flexibility.js from Rocketbelt. ([387ba2a](https://github.com/Pier1/rocketbelt/commit/387ba2a))
+* **Sample Site:** Add media query/breakpoint exposition. ([a609c31](https://github.com/Pier1/rocketbelt/commit/a609c31))
+* **Sample Site:** Add Sass syntax highlighting to code examples. ([f92d67f](https://github.com/Pier1/rocketbelt/commit/f92d67f))
+* **Tabcordions:** Allow all accordion panels to be collapsed. ([6e29167](https://github.com/Pier1/rocketbelt/commit/6e29167)), closes [#125](https://github.com/Pier1/rocketbelt/issues/125)
+* **Typography:** Write typography exposition. ([3283739](https://github.com/Pier1/rocketbelt/commit/3283739)), closes [#133](https://github.com/Pier1/rocketbelt/issues/133)
+
+
+
 <a name="1.8.0"></a>
 # [1.8.0](https://github.com/Pier1/rocketbelt/compare/1.7.0...v1.8.0) (2017-06-16)
 
