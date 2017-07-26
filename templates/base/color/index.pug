@@ -6,13 +6,41 @@ block vars
 block content
   article
     h1 Color
+    p
+      | Rocketbelt includes a color palette with generated secondary &amp; accent colors. Color
+      | can be used to attract attention to specific pieces of the design, or to indicate the state
+      | of an element on the screen.
+
+      .rb-note
+        include /partials/ux.pug
+        .rb-note-text Use color to guide the eye to a #[em preferred action] or to the most important information.
+
+    p
+      | The #[code tools] SASS partial provided by Rocketbelt includes a #[code color] helper
+      | function to make color usage foolproof. Not only will you never need to memorize another
+      | hex code, if a functional color definition changes all usages of the #[code color] function
+      | will update automatically. This means much lower friction &amp; fewer repeated color
+      | definitions!
+
+      .rb-note
+        include /partials/toolbelt.pug
+        .rb-note-text #[b Always] use the #[code color(…)] function to declare color values.
+    p
+      | Even users without a vision impairment can have a hard time with low-contrast elements.
+      | Be sure that text has sufficient contrast with its background. WCAG 2.0 Level AA dictates
+      | a ratio of at least 4.5:1. Use tools like the
+      | #[a(href='http://contrast-finder.tanaguru.com/') Tanaguru Contrast Finder] to check a
+      | layout's contrast.
+
+      .rb-note
+        include /partials/a11y.pug
+        .rb-note-text Never use color as the sole indicator of information.
+
+      //- Tools: Don't use hex codes, use color function
+      //- a11y: Use a tool like NoCoffee https://chrome.google.com/webstore/detail/nocoffee/jjeeggmbnhckmgdhmgdckeigabjfbddl?hl=en
+      //-   or Spectrum https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb
 
     .grid-fluid
-      .row.swatch-cards
-        .col.xs-12
-          h2.docs-header Brand Color
-        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'brand'; })
-          +swatch(family)
       .row.swatch-cards
         .col.xs-12
           h2.docs-header UI Colors
@@ -27,6 +55,14 @@ block content
         .col.xs-12
           h2.docs-header Indicating Colors
         each family in _.filter(colorFamilies, function (o) { return o.familyName === 'success' || o.familyName === 'warning' || o.familyName === 'error' || o.familyName === 'sale'; })
+          +swatch(family)
+      .row.swatch-cards
+        .col.xs-12
+          h2.docs-header Brand Color
+          .rb-note
+            include /partials/ux.pug
+            .rb-note-text Use Brand Blue sparingly &amp; lean more toward other palette options.
+        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'brand'; })
           +swatch(family)
     script(src='./color.js')
 

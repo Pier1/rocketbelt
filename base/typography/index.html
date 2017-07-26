@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
   <body class="grid-fluid">
+    <ul class="skip list-reset">
+      <li><a class="button-sm button-secondary" href="#content">Skip to Main Content</a></li>
+      <li><a class="button-sm button-secondary" href="#footer">Skip to Footer</a></li>
+    </ul>
     <div class="row" id="docs-wrapper">
       <nav class="nav col xs-12 md-3 xl-2" id="docs-leftnav"><a class="rb-header grid-fluid" href="/">
           <div class="row xs-middle">
@@ -86,7 +90,7 @@
             <input class="category-toggle" id="Base" type="checkbox" name="Base"/>
             <label class="category-label" for="Base">Base</label>
             <ul class="list-reset category-contents">
-              <li class="category" ref="breakpoints"><a href="../../base/breakpoints">Breakpoints</a>
+              <li class="category" ref="a11y"><a href="../../base/a11y">Accessibility</a>
               </li>
               <li class="category" ref="color"><a href="../../base/color">Color</a>
               </li>
@@ -178,13 +182,14 @@
             <div class="col xs">
               <article>
                 <h1>Typography</h1>
-                <p>Here is some short front matter about typography.</p>
+                <p>Rocketbelt's typography is built on a modular scale. The scale makes it easy to use type to visually reinforce the hierarchy of content. Rocketbelt also includes plenty of helper classes to support icons, call-to-action links, lists, and pull quotes.</p>
                 <h2>Downloads</h2>
                 <ul class="list-reset">
                   <li><a href="./OpenSans.zip">Open Sans</a>—Brand Sans</li>
                   <li><a href="./CrimsonText.zip">Crimson Text</a>—Brand Serif</li>
                 </ul>
                 <h2>Headings</h2>
+                <p>Headings are responsive and use a modular scale—this means that a giant heading on desktop isn't quite so dominant on a smaller viewport. See <em><a href="https://typecast.com/blog/a-more-modern-scale-for-web-typography">A More Modern Scale for Web Typography</a></em> for background information on this design decision.</p>
                 <div class="exampleWithCode">
                   <div class="example">
                     <h1>h1. Pier 1 Imports</h1>
@@ -193,12 +198,12 @@
                     <h4>h4. Pier 1 Imports</h4>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-2diWPL"/>
-                    <label class="expander_label" for="rb-2diWPL" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-Z1eRqCX"/>
+                    <label class="expander_label" for="rb-Z1eRqCX" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-1WB0tt">Copy</button>
-                        <pre><code class="language-html" id="rb-1WB0tt">
+                        <button class="copy-code" data-clipboard-target="#rb-Z2cerd2">Copy</button>
+                        <pre><code class="language-html" id="rb-Z2cerd2">
                             &lt;h1&gt;h1. Pier 1 Imports&lt;/h1&gt;
                             &lt;h2&gt;h2. Pier 1 Imports&lt;/h2&gt;
                             &lt;h3&gt;h3. Pier 1 Imports&lt;/h3&gt;
@@ -218,7 +223,7 @@
                   <h3>Consideration: SEO</h3>
                   <h1 class="heading-group"><span class="preheading">Preheadline <span class="heading">Headline</span></span></h1>
                 </h2>
-                <h2>Font Faces</h2>
+                <h2>Font Specimens</h2>
                 <div class="grid-fluid">
                   <div class="row">
                     <div class="col sm-12 md">
@@ -241,12 +246,12 @@
                           </div>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-2cbJkz"/>
-                          <label class="expander_label" for="rb-2cbJkz" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1tN4sJ"/>
+                          <label class="expander_label" for="rb-Z1tN4sJ" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-1EgViB">Copy</button>
-                              <pre><code class="language-html" id="rb-1EgViB">
+                              <button class="copy-code" data-clipboard-target="#rb-ZLU8gI">Copy</button>
+                              <pre><code class="language-html" id="rb-ZLU8gI">
                                   &lt;div class=&quot;font-sans&quot;&gt;
                                     &lt;h4&gt;Open Sans&lt;/h4&gt;
                                     &lt;p&gt;
@@ -267,8 +272,6 @@
                       </div><a href="./OpenSans.zip">Download Open Sans—Brand Sans</a>
                     </div>
                   </div>
-                </div>
-                <div class="grid-fluid">
                   <div class="row">
                     <div class="col sm-12 md">
                       <h3 class="docs-header">Serif</h3>
@@ -290,12 +293,12 @@
                           </div>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-2ddR5z"/>
-                          <label class="expander_label" for="rb-2ddR5z" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-2hu5Q5"/>
+                          <label class="expander_label" for="rb-2hu5Q5" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-26Wtlw">Copy</button>
-                              <pre><code class="language-html" id="rb-26Wtlw">
+                              <button class="copy-code" data-clipboard-target="#rb-2w8KxJ">Copy</button>
+                              <pre><code class="language-html" id="rb-2w8KxJ">
                                   &lt;div class=&quot;font-serif&quot;&gt;
                                     &lt;h4&gt;Crimson Text&lt;/h4&gt;
                                     &lt;p&gt;
@@ -317,34 +320,35 @@
                     </div>
                   </div>
                 </div>
-                <h3>UI Text Sizes</h3>
+                <h2>Text Sizes</h2>
+                <p>Always use the <code>font-size</code> helper function (found in the <code>tools</code> Sass partial) or a corresponding helper class to render different text sizes. <em>Never</em> use pixels to size text.</p>
                 <div class="grid margin-0">
                   <div class="row">
                     <div class="col xs ellipsis">
                       <div class="exampleWithCode">
                         <div class="example">
-                          <div class="font-minus-2">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-minus-1">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div>We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-plus-1">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-plus-2">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-plus-3">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-plus-4">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                          <div class="font-minus-2"><code class="font-minus-1">font-size(-2):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                          <div class="font-minus-1"><code class="font-minus-1">font-size(-1):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                          <div><code class="font-minus-1">font-size(0):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                          <div class="font-plus-1"><code class="font-minus-1">font-size(1):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                          <div class="font-plus-2"><code class="font-minus-1">font-size(2):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                          <div class="font-plus-3"><code class="font-minus-1">font-size(3):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                          <div class="font-plus-4"><code class="font-minus-1">font-size(4):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1dFBlT"/>
-                          <label class="expander_label" for="rb-Z1dFBlT" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1iIdhY"/>
+                          <label class="expander_label" for="rb-Z1iIdhY" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Z2ucOUM">Copy</button>
-                              <pre><code class="language-html" id="rb-Z2ucOUM">
-                                  &lt;div class=&quot;font-minus-2&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-minus-1&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-plus-1&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-plus-2&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-plus-3&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-plus-4&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;</code></pre>
+                              <button class="copy-code" data-clipboard-target="#rb-Z1IPXoy">Copy</button>
+                              <pre><code class="language-html" id="rb-Z1IPXoy">
+                                  &lt;div class=&quot;font-minus-2&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(-2):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                  &lt;div class=&quot;font-minus-1&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(-1):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                  &lt;div&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(0):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                  &lt;div class=&quot;font-plus-1&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(1):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                  &lt;div class=&quot;font-plus-2&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(2):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                  &lt;div class=&quot;font-plus-3&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(3):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                  &lt;div class=&quot;font-plus-4&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(4):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;</code></pre>
                             </div>
                           </div>
                         </div>
@@ -358,103 +362,30 @@
                       <div class="exampleWithCode">
                         <div class="example">
                           <div class="font-serif">
-                            <div class="font-minus-2">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-minus-1">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div>We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-plus-1">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-plus-2">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-plus-3">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-plus-4">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-minus-2"><code class="font-minus-1">font-size(-2):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-minus-1"><code class="font-minus-1">font-size(-1):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div><code class="font-minus-1">font-size(0):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-plus-1"><code class="font-minus-1">font-size(1):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-plus-2"><code class="font-minus-1">font-size(2):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-plus-3"><code class="font-minus-1">font-size(3):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-plus-4"><code class="font-minus-1">font-size(4):</code> We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
                           </div>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1hAqU0"/>
-                          <label class="expander_label" for="rb-Z1hAqU0" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-2hy9dm"/>
+                          <label class="expander_label" for="rb-2hy9dm" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Z1YkxbL">Copy</button>
-                              <pre><code class="language-html" id="rb-Z1YkxbL">
+                              <button class="copy-code" data-clipboard-target="#rb-2wWJ3c">Copy</button>
+                              <pre><code class="language-html" id="rb-2wWJ3c">
                                   &lt;div class=&quot;font-serif&quot;&gt;
-                                    &lt;div class=&quot;font-minus-2&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-minus-1&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-plus-1&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-plus-2&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-plus-3&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-plus-4&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;/div&gt;</code></pre>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <h2>Non-UI Text Sizes</h2>
-                <div class="grid margin-0">
-                  <div class="row">
-                    <div class="col xs ellipsis">
-                      <div class="exampleWithCode">
-                        <div class="example">
-                          <div class="font-minus-2">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-minus-1">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div>We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-plus-1">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-plus-2">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-plus-3">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          <div class="font-plus-4">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                        </div>
-                        <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1hEWAG"/>
-                          <label class="expander_label" for="rb-Z1hEWAG" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
-                          <div class="expander_content">
-                            <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Z1YJLSn">Copy</button>
-                              <pre><code class="language-html" id="rb-Z1YJLSn">
-                                  &lt;div class=&quot;font-minus-2&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-minus-1&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-plus-1&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-plus-2&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-plus-3&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                  &lt;div class=&quot;font-plus-4&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;</code></pre>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="grid margin-0">
-                  <div class="row">
-                    <div class="col xs ellipsis">
-                      <div class="exampleWithCode">
-                        <div class="example">
-                          <div class="font-serif">
-                            <div class="font-minus-2">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-minus-1">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div>We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-plus-1">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-plus-2">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-plus-3">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                            <div class="font-plus-4">We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.</div>
-                          </div>
-                        </div>
-                        <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-2h2WCC"/>
-                          <label class="expander_label" for="rb-2h2WCC" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
-                          <div class="expander_content">
-                            <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-2pC68m">Copy</button>
-                              <pre><code class="language-html" id="rb-2pC68m">
-                                  &lt;div class=&quot;font-serif&quot;&gt;
-                                    &lt;div class=&quot;font-minus-2&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-minus-1&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-plus-1&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-plus-2&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-plus-3&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
-                                    &lt;div class=&quot;font-plus-4&quot;&gt;We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-minus-2&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(-2):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-minus-1&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(-1):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(0):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-plus-1&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(1):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-plus-2&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(2):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-plus-3&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(3):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-plus-4&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(4):&lt;/code&gt; We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
                                   &lt;/div&gt;</code></pre>
                             </div>
                           </div>
@@ -464,43 +395,32 @@
                   </div>
                 </div>
                 <h2>Text with Icon</h2>
+                <p>This pattern automatically renders an icon that is the same height as the accompanying text. Add an <code>icon-left</code> or <code>icon-right</code> class to indicate where the icon should be placed.</p>
                 <div class="exampleWithCode">
                   <div class="example"><span class="text-with-icon">Store Locator
                       <svg class="icon icon-left" aria-hidden="true">
                         <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-pin"></use>
-                      </svg></span><br><span class="text-with-icon">Store Locator
-                      <svg class="icon icon-right" aria-hidden="true">
-                        <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-pin"></use>
                       </svg></span><br><a class="text-with-icon" href="#">Chat Now
                       <svg class="icon icon-right" aria-hidden="true">
                         <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-chat-single"></use>
-                      </svg></a><br><span class="text-with-icon font-minus-1">(817) 252-6300
-                      <svg class="icon icon-left" aria-hidden="true">
-                        <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-phone"></use>
-                      </svg></span><br><span class="text-with-icon font-plus-4">Email Us
+                      </svg></a><br><span class="text-with-icon font-plus-4">Email Us
                       <svg class="icon icon-left" aria-hidden="true">
                         <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-envelope"></use>
                       </svg></span>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-Z1udec0"/>
-                    <label class="expander_label" for="rb-Z1udec0" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-Z1iQOWk"/>
+                    <label class="expander_label" for="rb-Z1iQOWk" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-ZEmb8u">Copy</button>
-                        <pre><code class="language-html" id="rb-ZEmb8u">&lt;span class=&quot;text-with-icon&quot;&gt;Store Locator
+                        <button class="copy-code" data-clipboard-target="#rb-Z1FlDeP">Copy</button>
+                        <pre><code class="language-html" id="rb-Z1FlDeP">&lt;span class=&quot;text-with-icon&quot;&gt;Store Locator
                               &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
-                                &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-pin&quot;&gt;&lt;/use&gt;
-                              &lt;/svg&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;text-with-icon&quot;&gt;Store Locator
-                              &lt;svg class=&quot;icon icon-right&quot; aria-hidden=&quot;true&quot;&gt;
                                 &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-pin&quot;&gt;&lt;/use&gt;
                               &lt;/svg&gt;&lt;/span&gt;&lt;br&gt;&lt;a class=&quot;text-with-icon&quot; href=&quot;#&quot;&gt;Chat Now
                               &lt;svg class=&quot;icon icon-right&quot; aria-hidden=&quot;true&quot;&gt;
                                 &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-chat-single&quot;&gt;&lt;/use&gt;
-                              &lt;/svg&gt;&lt;/a&gt;&lt;br&gt;&lt;span class=&quot;text-with-icon font-minus-1&quot;&gt;(817) 252-6300
-                              &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
-                                &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-phone&quot;&gt;&lt;/use&gt;
-                              &lt;/svg&gt;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;text-with-icon font-plus-4&quot;&gt;Email Us
+                              &lt;/svg&gt;&lt;/a&gt;&lt;br&gt;&lt;span class=&quot;text-with-icon font-plus-4&quot;&gt;Email Us
                               &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
                                 &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-envelope&quot;&gt;&lt;/use&gt;
                               &lt;/svg&gt;&lt;/span&gt;</code></pre>
@@ -516,12 +436,12 @@
                       </svg></a>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-17mh2c"/>
-                    <label class="expander_label" for="rb-17mh2c" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-2dh4ew"/>
+                    <label class="expander_label" for="rb-2dh4ew" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-fvGk">Copy</button>
-                        <pre><code class="language-html" id="rb-fvGk">&lt;a class=&quot;cta text-with-icon&quot; href=&quot;#&quot;&gt;Shop Now
+                        <button class="copy-code" data-clipboard-target="#rb-282bBU">Copy</button>
+                        <pre><code class="language-html" id="rb-282bBU">&lt;a class=&quot;cta text-with-icon&quot; href=&quot;#&quot;&gt;Shop Now
                               &lt;svg class=&quot;icon icon-right&quot; aria-hidden=&quot;true&quot;&gt;
                                 &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow&quot;&gt;&lt;/use&gt;
                               &lt;/svg&gt;&lt;/a&gt;</code></pre>
@@ -545,12 +465,12 @@
                     </ul>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-Z1gz9jx"/>
-                    <label class="expander_label" for="rb-Z1gz9jx" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-2b0VK2"/>
+                    <label class="expander_label" for="rb-2b0VK2" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-Z1iWLdU">Copy</button>
-                        <pre><code class="language-html" id="rb-Z1iWLdU">
+                        <button class="copy-code" data-clipboard-target="#rb-1556nz">Copy</button>
+                        <pre><code class="language-html" id="rb-1556nz">
                             &lt;ul class=&quot;list-reset&quot;&gt;
                               &lt;li&gt;One&lt;/li&gt;
                               &lt;li&gt;Two
@@ -575,12 +495,12 @@
                     </ul>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-2ddkdA"/>
-                    <label class="expander_label" for="rb-2ddkdA" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-Z1dJMlG"/>
+                    <label class="expander_label" for="rb-Z1dJMlG" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-275Rf0">Copy</button>
-                        <pre><code class="language-html" id="rb-275Rf0">
+                        <button class="copy-code" data-clipboard-target="#rb-Z2uD5K4">Copy</button>
+                        <pre><code class="language-html" id="rb-Z2uD5K4">
                             &lt;ul class=&quot;list-inline&quot;&gt;
                               &lt;li&gt;One&lt;/li&gt;
                               &lt;li&gt;Two&lt;/li&gt;
@@ -629,12 +549,12 @@
                     </ul>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-2eacfH"/>
-                    <label class="expander_label" for="rb-2eacfH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-ZT7LY7"/>
+                    <label class="expander_label" for="rb-ZT7LY7" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-1bynno">Copy</button>
-                        <pre><code class="language-html" id="rb-1bynno">
+                        <button class="copy-code" data-clipboard-target="#rb-8zwjn">Copy</button>
+                        <pre><code class="language-html" id="rb-8zwjn">
                             &lt;ul class=&quot;link-list&quot;&gt;
                               &lt;li class=&quot;title&quot;&gt;Customer Relations&lt;/li&gt;
                               &lt;li&gt;&lt;a href=&quot;#&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
@@ -682,9 +602,9 @@
                         <li><a href="#">Chairs</a></li>
                         <li><a href="#">Ottomans</a></li>
                         <li><a href="#">Sectionals</a></li>
-                        <li><a href="#">Sofas & Loveseats</a></li>
-                        <li><a href="#">Accent & Coffee Tables</a></li>
-                        <li><a href="#">TV & Media Stands</a></li>
+                        <li><a href="#">Sofas &amp; Loveseats</a></li>
+                        <li><a href="#">Accent &amp; Coffee Tables</a></li>
+                        <li><a href="#">TV &amp; Media Stands</a></li>
                         <li><a href="#">Cabinets</a></li>
                         <li><a href="#">Shelves and Bookcases</a></li>
                         <li><a href="#">Living Room Collections</a></li>
@@ -692,12 +612,12 @@
                     </ul>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-ZPlmjl"/>
-                    <label class="expander_label" for="rb-ZPlmjl" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-ZQ09md"/>
+                    <label class="expander_label" for="rb-ZQ09md" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-qpLaC">Copy</button>
-                        <pre><code class="language-html" id="rb-qpLaC">
+                        <button class="copy-code" data-clipboard-target="#rb-gwGoE">Copy</button>
+                        <pre><code class="language-html" id="rb-gwGoE">
                             &lt;ul class=&quot;link-list&quot;&gt;
                               &lt;li class=&quot;title&quot;&gt;&lt;a class=&quot;cta text-with-icon&quot; href=&quot;#&quot;&gt;Living Room
                                   &lt;svg class=&quot;icon icon-right&quot; aria-hidden=&quot;true&quot;&gt;
@@ -706,9 +626,9 @@
                                 &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Chairs&lt;/a&gt;&lt;/li&gt;
                                 &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ottomans&lt;/a&gt;&lt;/li&gt;
                                 &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sectionals&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sofas &amp; Loveseats&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Accent &amp; Coffee Tables&lt;/a&gt;&lt;/li&gt;
-                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;TV &amp; Media Stands&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sofas &amp;amp; Loveseats&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Accent &amp;amp; Coffee Tables&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;TV &amp;amp; Media Stands&lt;/a&gt;&lt;/li&gt;
                                 &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cabinets&lt;/a&gt;&lt;/li&gt;
                                 &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Shelves and Bookcases&lt;/a&gt;&lt;/li&gt;
                                 &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Living Room Collections&lt;/a&gt;&lt;/li&gt;
@@ -719,88 +639,88 @@
                   </div>
                 </div>
                 <h3>Font Weights</h3>
-                <div class="font-plus-4">
+                <div class="font-plus-3">
                   <div class="exampleWithCode">
                     <div class="example">
-                      <div class="font-weight-light">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890</div>
-                      <div>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890</div>
-                      <div class="font-weight-semibold">Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890</div>
+                      <div class="font-weight-light">For a stunning mosaic design will add a carefree pattern really impressive.</div>
+                      <div>For a stunning mosaic design will add a carefree pattern really impressive.</div>
+                      <div class="font-weight-semibold">For a stunning mosaic design will add a carefree pattern really impressive.</div>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-Z1qRDEt"/>
-                      <label class="expander_label" for="rb-Z1qRDEt" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZR6QQi"/>
+                      <label class="expander_label" for="rb-ZR6QQi" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
-                          <button class="copy-code" data-clipboard-target="#rb-Zy0dlh">Copy</button>
-                          <pre><code class="language-html" id="rb-Zy0dlh">
-                              &lt;div class=&quot;font-weight-light&quot;&gt;Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890&lt;/div&gt;
-                              &lt;div&gt;Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890&lt;/div&gt;
-                              &lt;div class=&quot;font-weight-semibold&quot;&gt;Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890&lt;/div&gt;</code></pre>
+                          <button class="copy-code" data-clipboard-target="#rb-XDJf8">Copy</button>
+                          <pre><code class="language-html" id="rb-XDJf8">
+                              &lt;div class=&quot;font-weight-light&quot;&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;
+                              &lt;div&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;
+                              &lt;div class=&quot;font-weight-semibold&quot;&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;</code></pre>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="font-plus-4">
+                <div class="font-plus-3">
                   <div class="exampleWithCode">
                     <div class="example">
                       <div class="font-style-italic">
-                        <div>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890</div>
+                        <div>For a stunning mosaic design will add a carefree pattern really impressive.</div>
                       </div>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-ZOT9o0"/>
-                      <label class="expander_label" for="rb-ZOT9o0" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1qQNw1"/>
+                      <label class="expander_label" for="rb-Z1qQNw1" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
-                          <button class="copy-code" data-clipboard-target="#rb-xeuhO">Copy</button>
-                          <pre><code class="language-html" id="rb-xeuhO">
+                          <button class="copy-code" data-clipboard-target="#rb-Zy8403">Copy</button>
+                          <pre><code class="language-html" id="rb-Zy8403">
                               &lt;div class=&quot;font-style-italic&quot;&gt;
-                                &lt;div&gt;Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890&lt;/div&gt;
+                                &lt;div&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;
                               &lt;/div&gt;</code></pre>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="font-plus-4">
+                <div class="font-plus-3">
                   <div class="exampleWithCode">
                     <div class="example">
                       <div class="font-serif">
-                        <div>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890</div>
+                        <div>For a stunning mosaic design will add a carefree pattern really impressive.</div>
                       </div>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-Z1vaCKb"/>
-                      <label class="expander_label" for="rb-Z1vaCKb" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZRWbVu"/>
+                      <label class="expander_label" for="rb-ZRWbVu" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
-                          <button class="copy-code" data-clipboard-target="#rb-Z8Canp">Copy</button>
-                          <pre><code class="language-html" id="rb-Z8Canp">
+                          <button class="copy-code" data-clipboard-target="#rb-L1I3o">Copy</button>
+                          <pre><code class="language-html" id="rb-L1I3o">
                               &lt;div class=&quot;font-serif&quot;&gt;
-                                &lt;div&gt;Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890&lt;/div&gt;
+                                &lt;div&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;
                               &lt;/div&gt;</code></pre>
                         </div>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="font-plus-4">
+                <div class="font-plus-3">
                   <div class="exampleWithCode">
                     <div class="example">
                       <div class="font-serif font-style-italic">
-                        <div>Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890</div>
+                        <div>For a stunning mosaic design will add a carefree pattern really impressive.</div>
                       </div>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-2hl2zV"/>
-                      <label class="expander_label" for="rb-2hl2zV" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZTiKH4"/>
+                      <label class="expander_label" for="rb-ZTiKH4" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
-                          <button class="copy-code" data-clipboard-target="#rb-2snkkv">Copy</button>
-                          <pre><code class="language-html" id="rb-2snkkv">
+                          <button class="copy-code" data-clipboard-target="#rb-7GEFl">Copy</button>
+                          <pre><code class="language-html" id="rb-7GEFl">
                               &lt;div class=&quot;font-serif font-style-italic&quot;&gt;
-                                &lt;div&gt;Aa Bb Cc Dd Ee Ff Gg Hh Ii Jj Kk Ll Mm Nn Oo Pp Qu Rr Ss Tt Uu Vv Ww Xx Yy Zz 1234567890&lt;/div&gt;
+                                &lt;div&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;
                               &lt;/div&gt;</code></pre>
                         </div>
                       </div>
@@ -818,12 +738,12 @@
                           </blockquote>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1gftrE"/>
-                          <label class="expander_label" for="rb-Z1gftrE" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1gfJSr"/>
+                          <label class="expander_label" for="rb-Z1gfJSr" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Z1o3HaM">Copy</button>
-                              <pre><code class="language-html" id="rb-Z1o3HaM">
+                              <button class="copy-code" data-clipboard-target="#rb-Z1o1GLe">Copy</button>
+                              <pre><code class="language-html" id="rb-Z1o1GLe">
                                   &lt;blockquote class=&quot;font-serif&quot;&gt;Simply because we were licked a hundred years before we started is no reason for us not to try to win.
                                     &lt;div class=&quot;source&quot;&gt;Harper Lee, &lt;span class=&quot;font-style-italic&quot;&gt;To Kill A Mockingbird&lt;/span&gt;&lt;/div&gt;
                                   &lt;/blockquote&gt;</code></pre>
@@ -845,12 +765,12 @@
                           </div>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-ZTtsuc"/>
-                          <label class="expander_label" for="rb-ZTtsuc" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1fnbvE"/>
+                          <label class="expander_label" for="rb-Z1fnbvE" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-4Qs4U">Copy</button>
-                              <pre><code class="language-html" id="rb-4Qs4U">
+                              <button class="copy-code" data-clipboard-target="#rb-Z1ztIuM">Copy</button>
+                              <pre><code class="language-html" id="rb-Z1ztIuM">
                                   &lt;div class=&quot;group&quot;&gt;
                                     &lt;blockquote class=&quot;pull float-right&quot;&gt;
                                       &lt;p class=&quot;quote&quot;&gt;
@@ -882,12 +802,12 @@
                           </div>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-2e9JMh"/>
-                          <label class="expander_label" for="rb-2e9JMh" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-2cNNKR"/>
+                          <label class="expander_label" for="rb-2cNNKR" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-1cWbEV">Copy</button>
-                              <pre><code class="language-html" id="rb-1cWbEV">
+                              <button class="copy-code" data-clipboard-target="#rb-20SYXV">Copy</button>
+                              <pre><code class="language-html" id="rb-20SYXV">
                                   &lt;div class=&quot;lead-first-line&quot;&gt;
                                     Gerbera daisies bloom at a skilled artisan, with Mother Nature's
                                     showing off at home which features a luxe in so good. Our ornate
@@ -907,12 +827,12 @@
                           <div class="lead-copy">Traditional yet graceful cast iron and his lumpy complexion or entryway table</div>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-ZS8CqR"/>
-                          <label class="expander_label" for="rb-ZS8CqR" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1uaftN"/>
+                          <label class="expander_label" for="rb-Z1uaftN" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-I6bzg">Copy</button>
-                              <pre><code class="language-html" id="rb-I6bzg">
+                              <button class="copy-code" data-clipboard-target="#rb-ZFdwKQ">Copy</button>
+                              <pre><code class="language-html" id="rb-ZFdwKQ">
                                   &lt;div class=&quot;lead-copy&quot;&gt;Traditional yet graceful cast iron and his lumpy complexion or entryway table&lt;/div&gt;</code></pre>
                             </div>
                           </div>
@@ -949,18 +869,6 @@
     <script src="../../js/preCode.js"></script>
     <script src="../../js/prism.js"></script>
     <script src="../../js/clipboard.min.js"></script>
-    <script>
-      if (navigator.userAgent.indexOf('MSIE') !== -1 ||
-          navigator.appVersion.indexOf('Trident/') > 0) {
-        window.rocketbelt.getScript('/base/layout/rocketbelt.flexibility.min.js', function () {
-          window.rocketbelt = window.rocketbelt || {};
-          window.rocketbelt.layout = window.rocketbelt.layout || {};
-          window.rocketbelt.layout.flexibility = true;
-          
-          flexibility(document.documentElement);
-        });
-      }
-    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
   <body class="grid-fluid">
+    <ul class="skip list-reset">
+      <li><a class="button-sm button-secondary" href="#content">Skip to Main Content</a></li>
+      <li><a class="button-sm button-secondary" href="#footer">Skip to Footer</a></li>
+    </ul>
     <div class="row" id="docs-wrapper">
       <nav class="nav col xs-12 md-3 xl-2" id="docs-leftnav"><a class="rb-header grid-fluid" href="/">
           <div class="row xs-middle">
@@ -86,7 +90,7 @@
             <input class="category-toggle" id="Base" type="checkbox" name="Base"/>
             <label class="category-label" for="Base">Base</label>
             <ul class="list-reset category-contents">
-              <li class="category" ref="breakpoints"><a href="../../base/breakpoints">Breakpoints</a>
+              <li class="category" ref="a11y"><a href="../../base/a11y">Accessibility</a>
               </li>
               <li class="category" ref="color"><a href="../../base/color">Color</a>
               </li>
@@ -475,18 +479,6 @@
     <script src="../../js/preCode.js"></script>
     <script src="../../js/prism.js"></script>
     <script src="../../js/clipboard.min.js"></script>
-    <script>
-      if (navigator.userAgent.indexOf('MSIE') !== -1 ||
-          navigator.appVersion.indexOf('Trident/') > 0) {
-        window.rocketbelt.getScript('/base/layout/rocketbelt.flexibility.min.js', function () {
-          window.rocketbelt = window.rocketbelt || {};
-          window.rocketbelt.layout = window.rocketbelt.layout || {};
-          window.rocketbelt.layout.flexibility = true;
-          
-          flexibility(document.documentElement);
-        });
-      }
-    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

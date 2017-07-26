@@ -1,7 +1,9 @@
-.row::after {
+.row::before, .row::after {
   display: table;
-  clear: both;
-  content: ''; }
+  content: ' '; }
+
+.row::after {
+  clear: both; }
 
 .row .row {
   margin-right: -0.5rem;

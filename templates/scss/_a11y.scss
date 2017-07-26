@@ -1,0 +1,66 @@
+.skip {
+  a {
+    &:focus,
+    &:active {
+      top: 0.5rem;
+      left: 12rem;
+    }
+  }
+}
+
+table {
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: font-size(-1);
+
+  tr {
+    td {
+      padding: 0.5rem;
+      border-top: 1px solid color(gray, plus3);
+    }
+
+    td:nth-of-type(1) {
+      overflow: hidden;
+      text-align: center;
+      text-transform: uppercase;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+      font-weight: font-weight(semibold);
+      font-size: font-size(-3);
+    }
+
+    &:nth-child(even) {
+      background-color: color(gray, plus4);
+    }
+  }
+
+  .a11y-principle {
+    padding: 4px;
+    border-radius: 2px;
+    color: white;
+
+    &.text-alternatives {
+      background-color: color(primary);
+    }
+
+    &.adaptable {
+      background-color: color(secondary, darker);
+    }
+
+    &.distinguishable {
+      background-color: color(accent, darkest);
+    }
+
+    &.navigable {
+      background-color: color(secondary);
+    }
+
+    &.predictable {
+      background-color: color(primary, darkest);
+    }
+
+    &.compatible {
+      background-color: color(accent);
+    }
+  }
+}

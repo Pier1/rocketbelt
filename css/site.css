@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /*! normalize.css v4.1.1 | MIT License | github.com/necolas/normalize.css */
 /**
  * 1. Change the default font family in all browsers (opinionated).
@@ -500,6 +501,71 @@ pre[class*="language-"] {
     height: 1em;
     vertical-align: baseline; }
 
+.skip a:focus, .skip a:active {
+  top: 0.5rem;
+  left: 12rem; }
+
+table {
+  border-spacing: 0;
+  table-layout: fixed;
+  font-size: 0.88889rem; }
+  table tr td {
+    padding: 0.5rem;
+    border-top: 1px solid #cdcaca; }
+  table tr td:nth-of-type(1) {
+    overflow: hidden;
+    text-align: center;
+    text-transform: uppercase;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    font-weight: 600;
+    font-size: 0.70233rem; }
+  table tr:nth-child(even) {
+    background-color: #e6e5e5; }
+  table .a11y-principle {
+    padding: 4px;
+    border-radius: 2px;
+    color: white; }
+    table .a11y-principle.text-alternatives {
+      background-color: #1492d9; }
+    table .a11y-principle.adaptable {
+      background-color: #10ae98; }
+    table .a11y-principle.distinguishable {
+      background-color: #2e0a6d; }
+    table .a11y-principle.navigable {
+      background-color: #14d9be; }
+    table .a11y-principle.predictable {
+      background-color: #0a496d; }
+    table .a11y-principle.compatible {
+      background-color: #5b14d9; }
+
+.rb-badge {
+  border-radius: 2px;
+  color: #fefdfd;
+  text-transform: none;
+  font-weight: 600;
+  font-size: 0.6243rem;
+  -webkit-flex-shrink: 0;
+      -ms-flex-negative: 0;
+          flex-shrink: 0; }
+
+.rb-badge-toolbelt {
+  background: #4910ae; }
+
+.rb-badge-ux {
+  background: #10ae98; }
+
+.rb-note {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 0.88889rem;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center; }
+  .rb-note .rb-note-text::before {
+    content: " "; }
+
 .swatch-cards .card {
   margin: 1rem; }
   .swatch-cards .card .card-title {
@@ -517,7 +583,6 @@ pre[class*="language-"] {
   bottom: 0;
   display: -webkit-flex;
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   width: 100%;
   height: 3rem;
@@ -644,10 +709,13 @@ article.grid-article .example .row[class$='reverse'] .col {
     .rb-header .rb-logo #uri {
       display: none; }
 
+.rb-logo svg {
+  width: 100%; }
+
 .example .container {
   display: inline-block;
   border: 1px dashed #827b7b;
-  background: #f3f2f2; }
+  background: #e6e5e5; }
 
 html,
 body {
@@ -675,9 +743,9 @@ body {
   overflow-y: auto;
   padding: 0;
   border-width: 2px;
-  border-color: #e6e5e5;
+  border-color: #cdcaca;
   border-right-style: none;
-  background-color: #f3f2f2; }
+  background-color: #e6e5e5; }
   @media (min-width: 48rem) {
     #docs-leftnav {
       -webkit-flex: 0 0 220px;
@@ -702,10 +770,12 @@ body {
               -ms-grid-row-align: center;
           align-self: center; }
 
-.docs-definition-list::after {
+.docs-definition-list::before, .docs-definition-list::after {
   display: table;
-  clear: both;
-  content: ''; }
+  content: ' '; }
+
+.docs-definition-list::after {
+  clear: both; }
 
 .docs-definition-list dt {
   display: block;
@@ -733,7 +803,6 @@ body {
     position: relative;
     display: -webkit-flex;
     display: -ms-flexbox;
-    -js-display: flex;
     display: flex;
     min-height: 1.60181rem; }
     .nav > .category-contents .category {
@@ -746,13 +815,12 @@ body {
         z-index: 1;
         display: -webkit-flex;
         display: -ms-flexbox;
-        -js-display: flex;
         display: flex;
         -webkit-flex-direction: column;
             -ms-flex-direction: column;
                 flex-direction: column;
         width: 100vw;
-        background: #f3f2f2;
+        background: #e6e5e5;
         box-shadow: 0 0 8px 0 rgba(3, 0, 1, 0.3);
         -webkit-flex-wrap: wrap;
             -ms-flex-wrap: wrap;
@@ -765,7 +833,6 @@ body {
       .nav > .category-contents .category .category-label {
         display: -webkit-flex;
         display: -ms-flexbox;
-        -js-display: flex;
         display: flex;
         height: 2.56578rem;
         text-align: center;
@@ -871,7 +938,7 @@ body {
       color: inherit;
       transition: background 200ms ease; }
     .nav .category-contents .category-contents .category a:active {
-      background: #e6e5e5;
+      background: #cdcaca;
       color: inherit;
       transition: background 200ms ease; }
     .nav .category-contents .category-contents .category a:visited {
@@ -893,12 +960,17 @@ h2.docs-header {
   font-size: 1.42383rem; }
 
 article > h3,
-h3.docs-header {
+h3.docs-header,
+article h4 {
   margin-top: 2rem;
   margin-bottom: 0.5rem;
   color: #9b9595;
   text-transform: uppercase;
   font-size: 1rem; }
+
+article h4 {
+  margin-top: 0.5rem;
+  text-transform: none; }
 
 #docs-vis-filter-controls, #docs-hp-layouts-controls {
   margin-bottom: 1rem; }
@@ -1015,6 +1087,9 @@ h3.docs-header {
     z-index: 51;
     background: rgba(0, 0, 0, 0.5); }
 
+.tabcordion_panel > div {
+  padding: 0.5rem; }
+
 .ellipsis [class*='font-'] {
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1084,7 +1159,7 @@ input[type='range'].playground-item {
   height: 10px;
   outline: none;
   border-radius: 5px;
-  background: #e6e5e5;
+  background: #cdcaca;
   display: inline-block; }
   input[type='range'].playground-item::-webkit-slider-thumb, input[type='range'].playground-item::-moz-range-thumb {
     width: 20px;
@@ -1105,7 +1180,7 @@ input[type='range'].playground-item {
     border: 0; }
   input[type='range'].playground-item::-moz-range-track {
     border: 0;
-    background: #e6e5e5; }
+    background: #cdcaca; }
 
 .playground-range-value {
   position: relative;
@@ -1158,7 +1233,6 @@ input[type='range'].playground-item {
   padding: 10px;
   display: -webkit-flex;
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex;
   -webkit-flex-wrap: wrap;
       -ms-flex-wrap: wrap;
@@ -1177,7 +1251,7 @@ input[type='range'].playground-item {
       -ms-flex: 0 0 35px;
           flex: 0 0 35px; }
   .cp_grid span.color-w-border {
-    border: 1px solid #e6e5e5; }
+    border: 1px solid #cdcaca; }
   .cp_grid span.cp_active {
     border: 3px solid #fefdfd; }
 
@@ -1205,13 +1279,12 @@ p code,
   padding: 0.125rem 0.25rem;
   border: 1px solid #b4b0b0;
   border-radius: 2px;
-  background-color: #f3f2f2; }
+  background-color: #e6e5e5; }
 
 .example-code {
   position: relative;
   display: -webkit-flex;
   display: -ms-flexbox;
-  -js-display: flex;
   display: flex; }
   .example-code:hover .copy-code {
     opacity: 1;

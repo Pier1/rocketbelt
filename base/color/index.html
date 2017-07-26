@@ -10,6 +10,10 @@
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
   </head>
   <body class="grid-fluid">
+    <ul class="skip list-reset">
+      <li><a class="button-sm button-secondary" href="#content">Skip to Main Content</a></li>
+      <li><a class="button-sm button-secondary" href="#footer">Skip to Footer</a></li>
+    </ul>
     <div class="row" id="docs-wrapper">
       <nav class="nav col xs-12 md-3 xl-2" id="docs-leftnav"><a class="rb-header grid-fluid" href="/">
           <div class="row xs-middle">
@@ -86,7 +90,7 @@
             <input class="category-toggle" id="Base" type="checkbox" name="Base"/>
             <label class="category-label" for="Base">Base</label>
             <ul class="list-reset category-contents">
-              <li class="category" ref="breakpoints"><a href="../../base/breakpoints">Breakpoints</a>
+              <li class="category" ref="a11y"><a href="../../base/a11y">Accessibility</a>
               </li>
               <li class="category" ref="color"><a href="../../base/color">Color</a>
               </li>
@@ -178,27 +182,46 @@
             <div class="col xs">
               <article>
                 <h1>Color</h1>
-                <div class="grid-fluid">
-                  <div class="row swatch-cards">
-                    <div class="col xs-12">
-                      <h2 class="docs-header">Brand Color</h2>
-                    </div>
-                    <div class="col xs-12 sm-6 md-4 lg-3 xl-2">
-                      <div class="family card card-panel z-depth-1">
-                        <div class="swatch bg_brand">
-                          <div class="variants">
-                            <div class="variant bg_brand" data-color-name="Brand Blue" data-color-variant="base" data-color-map="color(brand)" data-color-fg="fg_brand" data-color-bg="bg_brand"></div>
-                          </div>
-                        </div>
-                        <div class="card-content variant-info">
-                          <div class="card-title color-name"></div>
-                          <div class="card-body"><span class="family-name">brand</span> <small class="variant-title fg_gray-lighter">base</small>
-                            <div><span class="code color-map">color(brand)</span></div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+                <p>
+                  Rocketbelt includes a color palette with generated secondary &amp; accent colors. Color
+                  can be used to attract attention to specific pieces of the design, or to indicate the state
+                  of an element on the screen.
+                  <div class="rb-note">
+                    <div class="tag rb-badge rb-badge-ux"><span class="text-with-icon">UX Tip
+                        <svg class="icon icon-left" aria-hidden="true">
+                          <use xlink:href="/components/icons/rocketbelt.icons.enterprise.svg#rb-icon-uxd"></use>
+                        </svg></span></div>
+                    <div class="rb-note-text">Use color to guide the eye to a <em>preferred action</em> or to the most important information.</div>
                   </div>
+                </p>
+                <p>The <code>tools</code> SASS partial provided by Rocketbelt includes a <code>color</code> helper
+                  function to make color usage foolproof. Not only will you never need to memorize another
+                  hex code, if a functional color definition changes all usages of the <code>color</code> function
+                  will update automatically. This means much lower friction &amp; fewer repeated color
+                  definitions!
+                  <div class="rb-note">
+                    <div class="tag rb-badge rb-badge-toolbelt"><span class="text-with-icon">Toolbelt
+                        <svg class="icon icon-left" aria-hidden="true">
+                          <use xlink:href="/components/icons/rocketbelt.icons.enterprise.svg#rb-icon-wrench"></use>
+                        </svg></span></div>
+                    <div class="rb-note-text"><b>Always</b> use the <code>color(…)</code> function to declare color values.</div>
+                  </div>
+                </p>
+                <p>
+                  Even users without a vision impairment can have a hard time with low-contrast elements.
+                  Be sure that text has sufficient contrast with its background. WCAG 2.0 Level AA dictates
+                  a ratio of at least 4.5:1. Use tools like the
+                  <a href="http://contrast-finder.tanaguru.com/">Tanaguru Contrast Finder</a> to check a
+                  layout's contrast.
+                  <div class="rb-note">
+                    <div class="tag tag-primary rb-badge rb-badge-a11y"><span class="text-with-icon">Be an &nbsp;<code>a11y</code>
+                        <svg class="icon icon-left" aria-hidden="true">
+                          <use xlink:href="/components/icons/rocketbelt.icons.enterprise.svg#rb-icon-a11y"></use>
+                        </svg></span></div>
+                    <div class="rb-note-text">Never use color as the sole indicator of information.</div>
+                  </div>
+                </p>
+                <div class="grid-fluid">
                   <div class="row swatch-cards">
                     <div class="col xs-12">
                       <h2 class="docs-header">UI Colors</h2>
@@ -284,8 +307,9 @@
                       <div class="family card card-panel z-depth-1">
                         <div class="swatch bg_gray">
                           <div class="variants">
-                            <div class="variant bg_gray-plus4" data-color-name="Seashell" data-color-variant="plus4" data-color-map="color(gray, plus4)" data-color-fg="fg_gray-plus4" data-color-bg="bg_gray-plus4"></div>
-                            <div class="variant bg_gray-plus3" data-color-name="Alabaster" data-color-variant="plus3" data-color-map="color(gray, plus3)" data-color-fg="fg_gray-plus3" data-color-bg="bg_gray-plus3"></div>
+                            <div class="variant bg_gray-plus5" data-color-name="Seashell" data-color-variant="plus5" data-color-map="color(gray, plus5)" data-color-fg="fg_gray-plus5" data-color-bg="bg_gray-plus5"></div>
+                            <div class="variant bg_gray-plus4" data-color-name="Alabaster" data-color-variant="plus4" data-color-map="color(gray, plus4)" data-color-fg="fg_gray-plus4" data-color-bg="bg_gray-plus4"></div>
+                            <div class="variant bg_gray-plus3" data-color-name="Cloud Gray" data-color-variant="plus3" data-color-map="color(gray, plus3)" data-color-fg="fg_gray-plus3" data-color-bg="bg_gray-plus3"></div>
                             <div class="variant bg_gray-plus2" data-color-name="Noble Gray" data-color-variant="plus2" data-color-map="color(gray, plus2)" data-color-fg="fg_gray-plus2" data-color-bg="bg_gray-plus2"></div>
                             <div class="variant bg_gray-plus1" data-color-name="Mountain Gray" data-color-variant="plus1" data-color-map="color(gray, plus1)" data-color-fg="fg_gray-plus1" data-color-bg="bg_gray-plus1"></div>
                             <div class="variant bg_gray" data-color-name="Boulder" data-color-variant="base" data-color-map="color(gray)" data-color-fg="fg_gray" data-color-bg="bg_gray"></div>
@@ -388,6 +412,33 @@
                       </div>
                     </div>
                   </div>
+                  <div class="row swatch-cards">
+                    <div class="col xs-12">
+                      <h2 class="docs-header">Brand Color</h2>
+                      <div class="rb-note">
+                        <div class="tag rb-badge rb-badge-ux"><span class="text-with-icon">UX Tip
+                            <svg class="icon icon-left" aria-hidden="true">
+                              <use xlink:href="/components/icons/rocketbelt.icons.enterprise.svg#rb-icon-uxd"></use>
+                            </svg></span></div>
+                        <div class="rb-note-text">Use Brand Blue sparingly &amp; lean more toward other palette options.</div>
+                      </div>
+                    </div>
+                    <div class="col xs-12 sm-6 md-4 lg-3 xl-2">
+                      <div class="family card card-panel z-depth-1">
+                        <div class="swatch bg_brand">
+                          <div class="variants">
+                            <div class="variant bg_brand" data-color-name="Brand Blue" data-color-variant="base" data-color-map="color(brand)" data-color-fg="fg_brand" data-color-bg="bg_brand"></div>
+                          </div>
+                        </div>
+                        <div class="card-content variant-info">
+                          <div class="card-title color-name"></div>
+                          <div class="card-body"><span class="family-name">brand</span> <small class="variant-title fg_gray-lighter">base</small>
+                            <div><span class="code color-map">color(brand)</span></div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
                 <script src="./color.js"></script>
               </article>
@@ -418,18 +469,6 @@
     <script src="../../js/preCode.js"></script>
     <script src="../../js/prism.js"></script>
     <script src="../../js/clipboard.min.js"></script>
-    <script>
-      if (navigator.userAgent.indexOf('MSIE') !== -1 ||
-          navigator.appVersion.indexOf('Trident/') > 0) {
-        window.rocketbelt.getScript('/base/layout/rocketbelt.flexibility.min.js', function () {
-          window.rocketbelt = window.rocketbelt || {};
-          window.rocketbelt.layout = window.rocketbelt.layout || {};
-          window.rocketbelt.layout.flexibility = true;
-          
-          flexibility(document.documentElement);
-        });
-      }
-    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
