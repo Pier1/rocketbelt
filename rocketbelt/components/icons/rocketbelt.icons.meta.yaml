@@ -1,3 +1,5 @@
+# =-=-=-=-=-=-=-=- Annotations for rocketbelt.icons.svg -=-=-=-=-=-=-=-= #
+# =-=-=-=-=-=-=-=- See below for enterprise annotations -=-=-=-=-=-=-=-= #
 arrow-down:
   title: Down Arrow
   description: A downward arrow
@@ -154,6 +156,10 @@ play:
   title: Play
   description: A triangular play symbol
 
+play-circle:
+  title: Play
+  description: A triangular play symbol inside a circle
+
 plus:
   title: Plus
   description: A plus sign
@@ -198,6 +204,10 @@ star:
   title: Star
   description: A star
 
+star-o:
+  title: Open Star
+  description: The outline of a star
+
 zoom-in:
   title: Zoom In
   description: A magnifying glass with a plus sign inside
@@ -205,3 +215,24 @@ zoom-in:
 zoom-out:
   title: Zoom Out
   description: A magnifying glass with a minus sign inside
+
+# =-=-=-=-=-=-=-=- Annotations for rocketbelt.icons.enterprise.svg -=-=-=-=-=-=-=-= #
+a11y:
+  title: Accessibility Logo
+  description: A human figure with arms outstretched
+
+book:
+  title: Book
+  description: A book laying open
+
+dots-circle-o:
+  title: Dots in Circle
+  description: Three dots within a circle
+
+graph-line:
+  title: Line Graph
+  description: An ascending & descending line graph
+
+horizon:
+  title: Horizon Logo
+  description: A rising sun stylistically separated into horizontal pieces

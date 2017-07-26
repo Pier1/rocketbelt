@@ -30,12 +30,10 @@
 
           setActiveAndInactive(adjacentTab, $navlist);
         }
-      }
-      else if (which === keys.ENTER || which === keys.SPACE) {
+      } else if (which === keys.ENTER || which === keys.SPACE) {
         keyVent.preventDefault();
         target.click();
-      }
-      else if (which === keys.PAGE_DOWN) {
+      } else if (which === keys.PAGE_DOWN) {
         keyVent.preventDefault();
         var assocPanel = $('#' + this.getAttribute('aria-controls'));
 
@@ -47,7 +45,6 @@
 
     // Click support
     $navlist.on('click', '.tabcordion_nav-item .tabcordion_nav-trigger', function () {
-
       var currentTarget = $navlist.find('.tabcordion_nav-item.is-active .tabcordion_nav-trigger')[0];
       if (currentTarget != $(this)[0]) {
         var eventData = {'previousTarget': currentTarget, 'newTarget': $(this)[0]};
@@ -56,7 +53,6 @@
       }
 
       setActiveAndInactive(this, $navlist);
-
     });
   });
 
@@ -82,8 +78,7 @@
       var allTabs = $list.find('.tabcordion_nav-item');
       if (dir === 'prev') {
         adjacentTab = allTabs[allTabs.length - 1];
-      }
-      else {
+      } else {
         adjacentTab = allTabs[0];
       }
     }
@@ -99,15 +94,15 @@
                             .attr('aria-controls');
       var anchor = $(this).find('.tabcordion_nav-trigger')[0];
 
-      if (this !== newActive.parentNode) {
+      if (this !== newActive.parentNode ||
+          ($(this).hasClass('is-active') && $(this).closest('.tabcordion').hasClass('is-accordion'))) {
         $(this).removeClass('is-active');
         anchor.tabIndex = -1;
         anchor.setAttribute('aria-selected', 'false');
         $('#' + assocPanelID)
           .removeClass('is-current')
           .attr('aria-hidden', 'true');
-      }
-      else {
+      } else {
         $(this).addClass('is-active');
         anchor.tabIndex = 0;
         anchor.setAttribute('aria-selected', 'true');
@@ -157,7 +152,6 @@
   $(window).smartresize(determineView);
 
   function determineView() {
-
     var $tabContainer = $('.tabcordion');
     var breakpointOverride = $tabContainer.data('breakpoint');
     var breakpoint = breakpointOverride ? breakpointOverride : 480;
@@ -187,8 +181,7 @@
               $(assocLink.parentNode).append(this);
             }
           });
-        }
-        else if (containerWidth > breakpoint && !isTabsView) {
+        } else if (containerWidth > breakpoint && !isTabsView) {
           // Switch to tabs
           var wasAccordion = $tabcordion.hasClass('is-accordion');
           $tabcordion

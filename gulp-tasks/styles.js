@@ -19,7 +19,6 @@
         .pipe(plugins.autoprefixer({
           browsers: supported
         }))
-        .pipe(plugins.postcss([plugins.postcssFlexibility()]))
       ;
 
       var max = source.pipe(plugins.clone())

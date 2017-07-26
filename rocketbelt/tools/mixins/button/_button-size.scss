@@ -1,3 +1,9 @@
+/// Add size properties for Rocketbelt buttons.
+///
+/// @group Buttons
+/// @author Kendrick Arnett
+///
+/// @param $size [md] - The size of button properties to render.
 @mixin button-size($size: md) {
   @extend %button-static-props;
   $size: to_lower_case($size);

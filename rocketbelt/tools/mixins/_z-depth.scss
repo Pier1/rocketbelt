@@ -1,5 +1,12 @@
+/// Adds visual depth with a box shadow and manages a corresponding `z-index`.
+///
+/// @author Kendrick Arnett
+///
+/// @see {mixin} button-shadow
+///
+/// @param $depth [0] - The depth of shadow to render.
 @mixin z-depth($depth: 0) {
-  $box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15),  0 -1px 2px rgba(0, 0, 0, 0.09);
+  $box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15),  0 0 2px rgba(0, 0, 0, 0.09);
   @if ($depth == off) {
     $box-shadow: none;
     $z-index: 0;

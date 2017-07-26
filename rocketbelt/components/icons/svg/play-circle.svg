@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>play-circle</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="play-circle" fill="#000000" fill-rule="nonzero">
+            <path d="M128,0 C57.312,0 0,57.312 0,128 C0,198.688 57.312,256 128,256 C198.688,256 256,198.688 256,128 C256,57.312 198.688,0 128,0 Z M96,181.333333 L96,74.6666667 L192,129.557333 L96,181.333333 Z"></path>
+        </g>
+    </g>
+</svg>

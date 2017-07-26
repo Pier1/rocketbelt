@@ -1416,16 +1416,19 @@
         // Clicks
         s.onClickNext = function (e) {
             e.preventDefault();
+            this.focus();
             if (s.isEnd && !s.params.loop) return;
             s.slideNext();
         };
         s.onClickPrev = function (e) {
             e.preventDefault();
+            this.focus();
             if (s.isBeginning && !s.params.loop) return;
             s.slidePrev();
         };
         s.onClickIndex = function (e) {
             e.preventDefault();
+            this.focus;
             var index = $(this).index() * s.params.slidesPerGroup;
             if (s.params.loop) index = index + s.loopedSlides;
             s.slideTo(index);
@@ -3076,12 +3079,20 @@
             }
         }
         s.disableKeyboardControl = function () {
+            var event = 'keydown';
+
             s.params.keyboardControl = false;
-            $(document).off('keydown', handleKeyboard);
+            container.off(event, handleKeyboard);
+            s.nextButton.off(event, handleKeyboard);
+            s.prevButton.off(event, handleKeyboard);
         };
         s.enableKeyboardControl = function () {
+            var event = 'keydown';
+
             s.params.keyboardControl = true;
-            $(document).on('keydown', handleKeyboard);
+            container.on(event, handleKeyboard);
+            s.nextButton.on(event, handleKeyboard);
+            s.prevButton.on(event, handleKeyboard);
         };
 
 

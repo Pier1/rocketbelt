@@ -9,3 +9,16 @@
 .slipsum-container {
   white-space: pre-wrap;
 }
+
+.slipsum-num,
+.slipsum-type {
+  display: inline-block;
+}
+
+.slipsum-num {
+  width: 3rem;
+}
+
+.slipsum-type {
+  width: 8rem;
+}

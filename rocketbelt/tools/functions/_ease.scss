@@ -1,4 +1,5 @@
 $in-out-quad: cubic-bezier(0.455,  0.030, 0.515, 0.955);
+
 $ease: (
   default:      $in-out-quad,
 
@@ -28,12 +29,59 @@ $ease: (
   in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550)
 );
 
+/// Get a cubic bezier easing curve or the Y value of that curve, if $x is supplied.
+///
 /// @author Kendrick Arnett
+///
 /// @link http://easings.net/ See examples at easings.net.
+///
 /// @param $key [default] - The easing to return.
-@function ease($key: default) {
+/// @param $x [null] - The x value to find the curve's corresponding y value. Must be between 0–1.
+///
+/// @example scss - ease function
+///   ease(in-out-quad);
+///   // cubic-bezier(0.455,  0.030, 0.515, 0.955);
+///   ease(in-out-quad, 0.25);
+///   // 0.125
+@function ease($key: default, $x: null) {
   @if map-has-key($ease, $key) {
-    @return map-get($ease, $key);
+    @if $x == null {
+        @return map-get($ease, $key);
+    }
+    @else {
+      @if $key == default {
+        $key: 'in-out-quad';
+      }
+
+      @if $key == linear { @return $x; }
+      @else if $key == in-quad  { @return $x * $x; }
+      @else if $key == in-cubic { @return $x * $x * $x; }
+      @else if $key == in-quart { @return $x * $x * $x * $x; }
+      @else if $key == in-quint { @return $x * $x * $x * $x * $x; }
+      @else if $key == in-sine  { @return 1 - cos($x * $PI / 2); }
+      // @else if $key == in-expo  { }
+      // @else if $key == in-circ  { }
+      // @else if $key == in-back  { }
+      @else if $key == out-quad  { @return $x * (2 - $x); }
+      @else if $key == out-cubic { @return (-1 * $x) * $x * $x + 1; }
+      @else if $key == out-quart { @return 1 - (-1 * $x) * $x * $x * $x; }
+      @else if $key == out-quint { @return 1 + (-1 * $x) * $x * $x * $x * $x; }
+      @else if $key == out-sine  { @return sin($x * $PI / 2); }
+      // @else if $key == out-expo  { }
+      // @else if $key == out-circ  { }
+      // @else if $key == out-back  { }
+      @else if $key == in-out-quad  { @return if($x < 0.5, 2*$x*$x,   -1+(4-2*$x)*$x); }
+      @else if $key == in-out-cubic { @return if($x < 0.5, 4*$x*$x*$x, ($x-1)*(2*$x-2)*(2*$x-2)+1); }
+      @else if $key == in-out-quart { @return if($x < 0.5, 8*$x*$x*$x*$x, 1-8*(-1*$x)*$x*$x*$x); }
+      @else if $key == in-out-quint { @return if($x < 0.5, 16*$x*$x*$x*$x*$x, 1+16*(-1*$x)*$x*$x*$x*$x); }
+      @else if $key == in-out-sine  { @return 0.5 * (1 - cos($PI * $x)); }
+      // @else if $key == in-out-expo  { }
+      // @else if $key == in-out-circ  { }
+      // @else if $key == in-out-back  { }
+
+      @error '#{$key} easing equation not implemented.';
+      @return null;
+    }
   }
 
   @error 'Unkown '#{$key}' in $ease.';
