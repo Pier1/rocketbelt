@@ -1,3 +1,8 @@
+/// Remove units from a value.
+///
+/// @author Kendrick Arnett
+///
+/// @param $number - The value to make unitless.
 @function strip-unit($number) {
   @if type-of($number) == 'number' and not unitless($number) {
     @return $number / ($number * 0 + 1);
