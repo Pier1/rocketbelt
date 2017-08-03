@@ -180,6 +180,10 @@ shipment:
   title: Shipment
   description: A box with motion lines behind it
 
+sms:
+  title: SMS
+  description: A speech bubble with lines of text inside
+
 sort-both:
   title: Sort Both
   description: An upward-pointing triangle above a downward-pointing triangle
