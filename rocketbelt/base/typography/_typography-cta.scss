@@ -4,9 +4,10 @@
   text-decoration: none;
   text-transform: uppercase;
   font-weight: font-weight(semibold);
+  line-height: 1.5;
   .icon {
-    width: .85em;
-    height: .85em;
+    width: .75rem;
+    height: .75rem;
   }
   &:hover {
     color: lighten(black, 15%) !important;
