@@ -92,6 +92,10 @@ envelope:
   title: Envelope
   description: An envelop
 
+error:
+  title: Error
+  description: An exclamation mark inside an octogon
+
 filter:
   title: Filter
   description: A funnel
@@ -211,6 +215,10 @@ star:
 star-o:
   title: Open Star
   description: The outline of a star
+
+warning:
+  title: Warning
+  description: An exclamation mark inside a triangle
 
 zoom-in:
   title: Zoom In
