@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>error</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="error" fill="#000000" fill-rule="nonzero">
+            <path d="M177.71,8 L78.29,8 L8,78.29 L8,177.7 L78.29,248 L177.7,248 L248,177.71 L248,78.29 L177.71,8 Z M128,200.5 C121.1,200.5 115.5,194.9 115.5,188 C115.5,181.1 121.1,175.5 128,175.5 C134.9,175.5 140.5,181.1 140.5,188 C140.5,194.9 134.9,200.5 128,200.5 Z M133.5,153.02 C133.21,155.85 130.84,158 128,158 C125.16,158 122.79,155.85 122.5,153.02 L114.49,72.92 C113.69,64.92 119.99,58 128,58 C136.01,58 142.31,64.92 141.51,72.93 L133.5,153.02 L133.5,153.02 Z"></path>
+        </g>
+    </g>
+</svg>
