@@ -138,13 +138,13 @@
       visibility: hidden;
     }
     .button-state-icon {
-      $color-fill: str-replace(quote(color(white)), '#', '%23');
+      $color-fill: quote(color(white));
       position: absolute;
       top: 31%;
       left: 42%;
       width: 1em;
       height: 1em;
-      background: url('data:image/svg+xml;utf8,<svg width="11" height="19" viewBox="190 45 11 19" fill="#{$color-fill}" xmlns="http://www.w3.org/2000/svg"><path d="M201 45v2c-4.962 0-9 4.038-9 9 0 2.48 1.01 4.73 2.64 6.36l-1.415 1.415C191.24 61.795 190 59.04 190 56c0-6.065 4.935-11 11-11z" fill-rule="evenodd"/></svg>');
+      @include background-svg('<svg width="11" height="19" viewBox="190 45 11 19" fill="#{$color-fill}" xmlns="http://www.w3.org/2000/svg"><path d="M201 45v2c-4.962 0-9 4.038-9 9 0 2.48 1.01 4.73 2.64 6.36l-1.415 1.415C191.24 61.795 190 59.04 190 56c0-6.065 4.935-11 11-11z" fill-rule="evenodd"/></svg>');
       background-size: contain;
       background-repeat: no-repeat;
       transform: translate(-50%, -50%);
@@ -157,13 +157,13 @@
       visibility: hidden;
     }
     .button-state-icon {
-      $color-fill: str-replace(quote(color(white)), '#', '%23');
+      $color-fill: quote(color(white));
       position: absolute;
       top: 50%;
       left: 50%;
       width: 1.5em;
       height: 1.5em;
-      background: url('data:image/svg+xml;utf8,<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="check" fill="#{$color-fill}"><polygon points="96 224.746667 0 132.608 29.7706667 101.994667 95.4346667 164.650667 225.674667 32 256 62.048"></polygon></g></g></svg>');
+     @include background-svg('<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="check" fill="#{$color-fill}"><polygon points="96 224.746667 0 132.608 29.7706667 101.994667 95.4346667 164.650667 225.674667 32 256 62.048"></polygon></g></g></svg>');
       background-position: center center;
       background-size: contain;
       background-repeat: no-repeat;
