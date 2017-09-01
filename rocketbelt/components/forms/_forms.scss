@@ -187,7 +187,7 @@ input {
 
 select {
   $fill: quote(color(black));
-  @include background-svg('<svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg"> <path fill="#{$fill}" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/> </svg> ');
+  background-image: svg-url('<svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg"> <path fill="#{$fill}" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/> </svg> ');
   background-repeat: no-repeat;
   background-color: color(white);
   background-position: right 0.5rem center;
