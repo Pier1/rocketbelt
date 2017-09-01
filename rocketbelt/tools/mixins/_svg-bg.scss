@@ -1,5 +1,0 @@
-@import '../functions/svg-url-encode';
-//  Background svg mixin          
-@mixin background-svg($svg){
-    background-image: svg-url($svg);        
-}  
