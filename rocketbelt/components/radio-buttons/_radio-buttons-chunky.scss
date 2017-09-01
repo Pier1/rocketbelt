@@ -48,8 +48,7 @@
         &:hover::before {
           $color-fill: quote($color-unselected);
 
-          @include background-svg('<svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>'
-                      );
+           background-image: svg-url('<svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
           background-position: center center;
           background-size: 24px;
           background-repeat: no-repeat;
@@ -67,8 +66,7 @@
         &::before {
           $color-fill: quote(color(white));
           border-color: transparent;
-          @include background-svg('<svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>'
-                      )
+           background-image: svg-url('<svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
           background-color: $color-selected;
           background-position: center center;
           background-repeat: no-repeat;
