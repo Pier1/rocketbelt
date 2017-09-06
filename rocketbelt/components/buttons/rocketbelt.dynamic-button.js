@@ -3,7 +3,7 @@
     var base = this;
     base.el = el;
     base.$el = $(el);
-    base.$el.data("dynamicButton", base);
+    base.$el.data('dynamicButton', base);
 
     base.init = function () {
       base.opts = $.extend({}, $.dynamicButton.defaultOptions);
@@ -39,14 +39,13 @@
 
       base.$el.on('buttonActionComplete', function (e, statusMsg, customDelay) {
         if (statusMsg === 'success') {
-          var stateText = base.opts.successText
+          var stateText = base.opts.successText;
         }
         if (statusMsg === 'failure') {
-          var stateText = base.opts.failureText
+          var stateText = base.opts.failureText;
         }
         buttonActionComplete.call(this, statusMsg, customDelay, btnClass, baseWidth, baseText, stateText);
       });
-
     };
 
     base.init();
@@ -62,7 +61,7 @@
         .addClass(btnClass);
 
       base.$el.trigger({
-        type: "dynamicButton.busy",
+        type: 'dynamicButton.busy',
         el: base.el
       });
     }
@@ -93,8 +92,8 @@
       btnStateIcon.show();
 
       setTimeout(function () {
-        buttonReset(btn, btnClass, textSlot, baseText)
-      }, delay)
+        buttonReset(btn, btnClass, textSlot, baseText);
+      }, delay);
     }
 
     function buttonReset(btn, btnClass, textSlot, baseText) {
@@ -128,5 +127,4 @@
       $.data(this, 'dynamicButton') || (new $.dynamicButton(this, options));
     });
   };
-
 })(jQuery);
