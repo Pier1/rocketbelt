@@ -92,6 +92,10 @@ envelope:
   title: Envelope
   description: An envelop
 
+error:
+  title: Error
+  description: An exclamation mark inside an octogon
+
 filter:
   title: Filter
   description: A funnel
@@ -140,9 +144,13 @@ p1logo-alt-1:
   title: Pier 1 Logo (alternate)
   description: An alternate Pier 1 Imports logo
 
-phone:
-  title: Phone
-  description: A phone handset
+pause:
+  title: Pause
+  description: A pause symbol
+
+pause-circle:
+  title: Pause
+  description: A pause symbol in a circle
 
 pin:
   title: Pin
@@ -180,6 +188,10 @@ shipment:
   title: Shipment
   description: A box with motion lines behind it
 
+sms:
+  title: SMS
+  description: A speech bubble with lines of text inside
+
 sort-both:
   title: Sort Both
   description: An upward-pointing triangle above a downward-pointing triangle
@@ -207,6 +219,10 @@ star:
 star-o:
   title: Open Star
   description: The outline of a star
+
+warning:
+  title: Warning
+  description: An exclamation mark inside a triangle
 
 zoom-in:
   title: Zoom In
