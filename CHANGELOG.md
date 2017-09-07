@@ -1,3 +1,25 @@
+<a name="1.10.0"></a>
+# [1.10.0](https://github.com/Pier1/rocketbelt/compare/1.9.0...v1.10.0) (2017-09-07)
+
+
+### Bug Fixes
+
+* **Buttons:** Fix post-event width of dynamic button. ([84d953e](https://github.com/Pier1/rocketbelt/commit/84d953e))
+* **Dialogs:** Fix appendTo options from not getting applied to cached options. ([efffad9](https://github.com/Pier1/rocketbelt/commit/efffad9))
+* **Typography:** Added line-height and changed nested icon from em's to rem's ([dca2e47](https://github.com/Pier1/rocketbelt/commit/dca2e47))
+* **Typography:** Changed declared line-height to initial. ([25b232e](https://github.com/Pier1/rocketbelt/commit/25b232e))
+
+
+### Features
+
+* **Forms:** Update opacity for disabled elements. ([2b5ad28](https://github.com/Pier1/rocketbelt/commit/2b5ad28))
+* **Icons:** Add pause & pause-circle icons. ([da9d44f](https://github.com/Pier1/rocketbelt/commit/da9d44f))
+* **Icons:** Add play icon. ([3f4304c](https://github.com/Pier1/rocketbelt/commit/3f4304c))
+* **Icons:** Add SMS icon. ([2030556](https://github.com/Pier1/rocketbelt/commit/2030556))
+* **Icons:** Add warning & error icons. ([2913e16](https://github.com/Pier1/rocketbelt/commit/2913e16))
+
+
+
 <a name="1.9.0"></a>
 # [1.9.0](https://github.com/Pier1/rocketbelt/compare/1.8.0...v1.9.0) (2017-07-26)
 
