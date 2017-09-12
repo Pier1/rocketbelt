@@ -1,3 +1,8 @@
+<a name="1.10.2"></a>
+## [1.10.2](https://github.com/Pier1/rocketbelt/compare/1.10.1...v1.10.2) (2017-09-12)
+
+
+
 # [1.10.1](https://github.com/Pier1/rocketbelt/compare/1.10.0...v1.10.1) (2017-09-11)
 
 ## Bug Fixes
