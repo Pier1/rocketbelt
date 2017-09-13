@@ -1,10 +1,12 @@
 // Color is going to change.
-.cta {
+.cta,
+a.cta {
   color: color(black);
   text-decoration: none;
   text-transform: uppercase;
   font-weight: font-weight(semibold);
   line-height: initial;
+  cursor: pointer;
   .icon {
     width: .75em;
     height: .75em;
