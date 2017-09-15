@@ -81,6 +81,7 @@
             zoomMax: 3,
             zoomMin: 1,
             zoomToggle: true,
+            onToggleZoom: function(e){},
             // Scrollbar
             scrollbar: null,
             scrollbarHide: true,
@@ -174,6 +175,8 @@
             // Swiping/no swiping
             allowSwipeToPrev: true,
             allowSwipeToNext: true,
+            allowTouchSwipeToPrev: true,
+            allowTouchSwipeToNext: true,
             swipeHandler: null, //'.swipe-handler',
             noSwiping: true,
             noSwipingClass: 'swiper-no-swiping',
@@ -833,8 +836,10 @@
 
                     if (s.isHorizontal()) {
                         s.slides[i].style.width = slideSize + 'px';
+                        s.slides[i].style.height = slideSize + 'px';
                     }
                     else {
+                        s.slides[i].style.width = slideSize + 'px';
                         s.slides[i].style.height = slideSize + 'px';
                     }
                 }
@@ -1362,7 +1367,7 @@
                     touchEventsTarget[action](s.touchEvents.move, s.onTouchMove, moveCapture);
                     touchEventsTarget[action](s.touchEvents.end, s.onTouchEnd, passiveListener);
                 }
-                if ((params.simulateTouch && !s.device.ios && !s.device.android) || (params.simulateTouch && !s.support.touch && s.device.ios)) {
+                if (params.simulateTouch && !s.device.ios && !s.device.android) {
                     touchEventsTarget[action]('mousedown', s.onTouchStart, false);
                     document[action]('mousemove', s.onTouchMove, moveCapture);
                     document[action]('mouseup', s.onTouchEnd, false);
@@ -1411,16 +1416,19 @@
         // Clicks
         s.onClickNext = function (e) {
             e.preventDefault();
+            this.focus();
             if (s.isEnd && !s.params.loop) return;
             s.slideNext();
         };
         s.onClickPrev = function (e) {
             e.preventDefault();
+            this.focus();
             if (s.isBeginning && !s.params.loop) return;
             s.slidePrev();
         };
         s.onClickIndex = function (e) {
             e.preventDefault();
+            this.focus;
             var index = $(this).index() * s.params.slidesPerGroup;
             if (s.params.loop) index = index + s.loopedSlides;
             s.slideTo(index);
@@ -1685,7 +1693,9 @@
                 }
                 allowMomentumBounce = false;
                 //Grab Cursor
-                if (s.params.grabCursor && (s.params.allowSwipeToNext === true || s.params.allowSwipeToPrev === true)) {
+                if (s.params.grabCursor && 
+                    ((s.params.allowTouchSwipeToNext === true && s.params.allowSwipeToNext === true) || 
+                    (s.params.allowTouchSwipeToPrev === true && s.params.allowSwipeToPrev === true))) {
                     s.setGrabCursor(true);
                 }
             }
@@ -1714,10 +1724,10 @@
             }
 
             // Directions locks
-            if (!s.params.allowSwipeToNext && s.swipeDirection === 'next' && currentTranslate < startTranslate) {
+            if ( (!s.params.allowTouchSwipeToNext || !s.params.allowSwipeToNext) && s.swipeDirection === 'next' && currentTranslate < startTranslate) {
                 currentTranslate = startTranslate;
             }
-            if (!s.params.allowSwipeToPrev && s.swipeDirection === 'prev' && currentTranslate > startTranslate) {
+            if ( (!s.params.allowTouchSwipeToPrev || !s.params.allowSwipeToPrev) && s.swipeDirection === 'prev' && currentTranslate > startTranslate) {
                 currentTranslate = startTranslate;
             }
 
@@ -1772,7 +1782,9 @@
             allowTouchCallbacks = false;
             if (!isTouched) return;
             //Return Grab Cursor
-            if (s.params.grabCursor && isMoved && isTouched  && (s.params.allowSwipeToNext === true || s.params.allowSwipeToPrev === true)) {
+            if (s.params.grabCursor && isMoved && isTouched  && 
+               ((s.params.allowTouchSwipeToNext === true && s.params.allowSwipeToNext === true) ||
+               (s.params.allowTouchSwipeToPrev === true && s.params.allowSwipeToPrev === true))) {
                 s.setGrabCursor(false);
             }
 
@@ -2773,13 +2785,15 @@
 
                 if (z.scale && z.scale !== 1) {
                     // Zoom Out
+                    s.params.onToggleZoom(false); // false for zoom out
                     z.scale = z.currentScale = 1;
                     z.gesture.imageWrap.transition(300).transform('translate3d(0,0,0)');
                     z.gesture.image.transition(300).transform('translate3d(0,0,0) scale(1)');
                     z.gesture.slide = undefined;
                 }
                 else {
-                    // Zoom In
+                    // Zoom true
+                    s.params.onToggleZoom(true); // false for zoom out
                     z.scale = z.currentScale = z.gesture.imageWrap.attr('data-swiper-zoom') || s.params.zoomMax;
                     if (e) {
                         slideWidth = z.gesture.slide[0].offsetWidth;
@@ -2848,6 +2862,9 @@
                     s.slides.each(function (index, slide){
                         if ($(slide).find('.' + s.params.zoomContainerClass).length > 0) {
                             $(slide)[action](s.touchEvents.move, s.zoom.onTouchMove);
+                            if (s.touchEvents.move !== 'mousemove') {// Always bind mousemove for touch-enabled desktops/laptops
+                                $(slide)[action]('mousemove', s.zoom.onTouchMove);
+                            }
                         }
                     });
                     s[action]('touchEnd', s.zoom.onTouchEnd);
@@ -3062,12 +3079,20 @@
             }
         }
         s.disableKeyboardControl = function () {
+            var event = 'keydown';
+
             s.params.keyboardControl = false;
-            $(document).off('keydown', handleKeyboard);
+            container.off(event, handleKeyboard);
+            s.nextButton.off(event, handleKeyboard);
+            s.prevButton.off(event, handleKeyboard);
         };
         s.enableKeyboardControl = function () {
+            var event = 'keydown';
+
             s.params.keyboardControl = true;
-            $(document).on('keydown', handleKeyboard);
+            container.on(event, handleKeyboard);
+            s.nextButton.on(event, handleKeyboard);
+            s.prevButton.on(event, handleKeyboard);
         };
 
 
@@ -4281,17 +4306,17 @@
      ===========================*/
     var swiperDomPlugins = ['jQuery', 'Zepto', 'Dom7'];
     for (var i = 0; i < swiperDomPlugins.length; i++) {
-    	if (window[swiperDomPlugins[i]]) {
-    		addLibraryPlugin(window[swiperDomPlugins[i]]);
-    	}
+      if (window[swiperDomPlugins[i]]) {
+        addLibraryPlugin(window[swiperDomPlugins[i]]);
+      }
     }
     // Required DOM Plugins
     var domLib;
     if (typeof Dom7 === 'undefined') {
-    	domLib = window.Dom7 || window.Zepto || window.jQuery;
+      domLib = window.Dom7 || window.Zepto || window.jQuery;
     }
     else {
-    	domLib = Dom7;
+      domLib = Dom7;
     }
 
     /*===========================

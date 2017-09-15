@@ -1,3 +1,7 @@
+/// Makes a selector's content cover the entire viewport.
+///
+/// @group Layout
+/// @author Kendrick Arnett
 @mixin overlay {
   position: absolute;
   top:  0;

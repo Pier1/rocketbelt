@@ -1,3 +1,15 @@
+/// Return a "Brand"-approved font stack
+///
+/// @group Typography
+/// @author Kendrick Arnett
+///
+/// @param $family - The type of font stack to return
+///
+/// @example scss - font-family function
+///   font-family(serif);
+///   // 'Brand Sans', sans-serif;
+///   font-family(sans);
+///   // 'Brand Serif', Times New Roman, serif;
 @function font-family($family: sans) {
   // TODO: Extract into variables map
   $sans: 'Brand Sans', sans-serif;

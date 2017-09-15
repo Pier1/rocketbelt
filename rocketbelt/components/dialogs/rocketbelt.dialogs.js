@@ -1,89 +1,147 @@
-(function (global) {
-  'use strict';
+/* global $cache:true element:true closers:true */
+$(function () {
+  var options = initOptions();
+  var focusedBeforeDialog;
+  var firstChild = options.appendTo + '>div:first-of-type';
+  // IE doesn't apply append var to the global scope.
+  $cache = {
+    main: $(options.appendTo),
+    rbDialog: $('.dialog').last(),
+    rbDialogTitle: $('.dialog .dialog_title').last(),
+    rbDialogBody: $('.dialog .dialog_body').last()
+  };
+  element = null;
+  closers = $($cache.rbDialog).find('[data-rb-dialog-hide]');
 
-  function addClass(elements, myClass) {
-    if (!elements) { return; }
-
-    if (typeof(elements) === 'string') {
-      elements = document.querySelectorAll(elements);
-    }
-
-    // If match is a single DOM element, make it an array to simplify behavior
-    else if (elements.tagName) {
-      elements=[elements];
-    }
-
-    // Add class to all chosen elements
-    for (var i = 0; i < elements.length; i++) {
-      if ( (' '+elements[i].className+' ').indexOf(' ' + myClass + ' ') < 0 ) {
-        elements[i].className += ' ' + myClass;
-      }
-    }
+  if (options.appendTo === 'body') {
+    $cache.main = $(firstChild);
+    options.appendTo = firstChild;
   }
 
-  function removeClass(elements, myClass) {
-    if (!elements) { return; }
-
-    if (typeof(elements) === 'string') {
-      elements = document.querySelectorAll(elements);
-    }
-
-    // If match is a single DOM element, make it an array to simplify behavior
-    else if (elements.tagName) {
-      elements=[elements];
-    }
-    // Create pattern to find class name
-    var reg = new RegExp('(^| )'+myClass+'($| )', 'g');
-
-    // Remove class from all chosen elements
-    for (var i = 0; i < elements.length; i++) {
-      elements[i].className = elements[i].className.replace(reg, ' ');
-    }
+  function initOptions() {
+    return {
+      appendTo: 'body',
+      autoOpen: true,
+      buttons: [],
+      classes: {
+        'rbDialog': 'dialog',
+        'rbDialogTitle': 'dialog_title',
+        'rbDialogBody': 'dialog_body'
+      },
+      title: null,
+      beforeClose: null,
+      close: null,
+      open: null
+    };
   }
 
-  // Helper function for dispatching cross browser dispatch events
-  // from http://youmightnotneedjquery.com/#trigger_custom
-  function dispatchEvent (el, eventName, emmiter) {
-    // IE < Edge Polyfill
-    // from https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent
-    function _CustomEvent (event, params) {
-      params = params || { bubbles: false, cancelable: false, detail: undefined };
-      var evt = document.createEvent('CustomEvent');
-      evt.initCustomEvent(event, params.bubbles, params.cancelable, params.detail);
-      return evt;
-    }
+  /**
+   * rbDialog constructor
+   * @param {Object|string} [params] - Either the options object or function call as a string
+   * @returns {undefined} Returns undefined
+   * @description Pops a Rocketbelt modal
+   */
+  $.fn.rbDialog = function (params) {
+    if (typeof params !== 'string') init.call(this, params);
+    if (params === 'close') close();
+    else if (params === 'destroy') destroy();
+    else if (params === 'open' || options.autoOpen) open();
+    else if (params === 'options') return options;
+    else if (params === 'isOpen') return $cache.main.hasClass('is-dialog-open');
+    else return;
+  };
 
-    _CustomEvent.prototype = window.Event.prototype;
-
-    var event;
-
-    if (window.CustomEvent && typeof window.CustomEvent === 'function') {
-      event = new window.CustomEvent(eventName, { detail: emmiter });
+  function init(params) {
+    if ($cache.main.hasClass('is-dialog-open')) return;
+    if (this.hasOwnProperty('defaultElement')) {
+      element = $(this.defaultElement).clone();
+    } else if (this) {
+      element = $(this).clone();
     } else {
-      event = new _CustomEvent(eventName, { bubbles: false, cancelable: false, detail: emmiter });
+      element = $(element).clone();
     }
 
-    event && el.dispatchEvent(event);
+    $.extend(true, options, params);
+
+    if (!params.appendTo) options.appendTo = firstChild;
+    if (options.appendTo) $cache.main = $(options.appendTo);
+    if (options.title) $cache.rbDialogTitle.html(options.title);
+    if (options.classes) addDialogClasses();
+    if (options.buttons.length !== 0) addDialogButtons();
+
+    $cache.rbDialog.data('options', options);
+
+    $.each(closers, function (index, value) {
+      value.addEventListener('click', close);
+    });
+    if (!$.contains($cache.rbDialogBody[0], element[0])) {
+      $cache.rbDialogBody[0].appendChild(element[0]);
+    }
+    element.show();
   }
 
-  // Helper function to get all focusable children from a node
-  function getFocusableChildren (node) {
-    var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'];
+  function addDialogClasses() {
+    if (options.classes.rbDialog) {
+      if (options.classes.rbDialog !== 'dialog') $cache.rbDialog.attr('class', 'dialog ' + options.classes.rbDialog);
+      else $cache.rbDialog.attr('class', 'dialog');
+    }
+    if (options.classes.rbDialogTitle) $cache.rbDialogTitle.addClass(options.classes.rbDialogTitle);
+    if (options.classes.rbDialogBody) $cache.rbDialogBody.addClass(options.classes.rbDialogBody);
+  }
 
-    return $$(focusableElements.join(','), node).filter(function (child) {
-      return !!(child.offsetWidth || child.offsetHeight || child.getClientRects().length);
+  function addDialogButtons() {
+    var buttons = options.buttons;
+
+    // If we already have a button pane, remove it
+
+    if ($.isEmptyObject(buttons) || ($.isArray(buttons) && !buttons.length) || (options.classes.rbDialog.indexOf('dialog-max') !== -1 ) ) {
+      return;
+    }
+
+    if ($cache.rbDialogButtons) $cache.rbDialogButtons.remove();
+    $('.dialog_content').append($('<div class="dialog_buttons"></div>'));
+    $cache.rbDialogButtons = $('.dialog_buttons');
+
+    $.each(buttons, function (name, props) {
+      var click;
+      var buttonOptions;
+      props = $.isFunction(props) ? { click: props, text: name } : props;
+
+      // Default to a non-submitting button
+      props = $.extend({ type: 'button' }, props);
+
+      // Change the context for the click callback to be the main element
+      click = props.click;
+      buttonOptions = {
+        class: 'button ' + props.classes,
+        text: props.text
+      };
+
+      delete props.click;
+      delete props.classes;
+      if (typeof props.text === 'boolean') {
+        delete props.text;
+      }
+
+      $('<button></button>', props)
+        .attr('class', buttonOptions.class)
+        .text(buttonOptions.text)
+        .appendTo($cache.rbDialogButtons)
+        .on('click', function () {
+          click.apply($cache.rbDialog, arguments[0]);
+        });
     });
   }
 
-  // Helper function to get all nodes in context matching selector as an array
-  function $$ (selector, context) {
-    return Array.prototype.slice.call((context || document).querySelectorAll(selector));
+  function getFocusableChildren(node) {
+    var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'];
+    return $(node).find(focusableElements.join(','));
   }
 
   // Helper function trapping the tab key inside a node
-  function trapTabKey (node, event) {
+  function trapTabKey(node, event) {
     var focusableChildren = getFocusableChildren(node);
-    var focusedItemIndex = focusableChildren.indexOf(document.activeElement);
+    var focusedItemIndex = focusableChildren.index($(document.activeElement));
 
     if (event.shiftKey && focusedItemIndex === 0) {
       focusableChildren[focusableChildren.length - 1].focus();
@@ -94,132 +152,112 @@
     }
   }
 
-  // Helper function to focus first focusable item in node
-  function setFocusToFirstItem (node) {
+  function setFocusToFirstItem(node) {
     var focusableChildren = getFocusableChildren(node);
     if (focusableChildren.length) focusableChildren[0].focus();
   }
 
-  var focusedBeforeDialog;
-
-  /**
-   * rbDialog constructor
-   * @param {Node} node - Dialog element
-   * @param {Node} main - Main element of the page
-   */
-  var rbDialog = function (node, main) {
-    main = main || document.querySelector('#main');
-    var that = this;
-    var openers = $$('[data-rb-dialog-show="' + node.id + '"]');
-    var closers = $$('[data-rb-dialog-hide]', node)
-      .concat($$('[data-rb-dialog-hide="' + node.id + '"]'));
-
-    if (node.hasAttribute('aria-hidden')) {
-      this.shown = !JSON.parse(node.getAttribute('aria-hidden'));
+  function bindKeypress(event) {
+    var shown = !$cache.rbDialog[0].hasAttribute('aria-hidden');
+    if (shown && event.which === 27) {
+      event.preventDefault();
+      close();
     }
 
-    this.show = show;
-    this.hide = hide;
-    this.destroy = destroy;
-
-    openers.forEach(function (opener) {
-      opener.addEventListener('click', show);
-    });
-
-    closers.forEach(function (closer) {
-      closer.addEventListener('click', hide);
-    });
-
-    function bindKeypress (event) {
-      if (that.shown && event.which === 27) {
-        event.preventDefault();
-        hide(event.which);
-      }
-
-      if (that.shown && event.which === 9) {
-        trapTabKey(node, event);
-      }
+    if (shown && event.which === 9) {
+      trapTabKey($cache.rbDialog, event);
     }
-
-    function maintainFocus (event) {
-      if (that.shown && !node.contains(event.target)) {
-        setFocusToFirstItem(node);
-      }
-    }
-
-    function show () {
-      if (that.shown) return;
-
-      that.shown = true;
-
-      addClass(main, 'is-dialog-open');
-
-      node.removeAttribute('aria-hidden');
-      main.setAttribute('aria-hidden', 'true');
-      focusedBeforeDialog = document.activeElement;
-      setFocusToFirstItem(node);
-      document.body.addEventListener('focus', maintainFocus, true);
-      document.addEventListener('keydown', bindKeypress);
-      dispatchEvent(node, 'dialog:show', this);
-    }
-
-    function hide (key) {
-      if (!that.shown) return;
-
-      if (event.target.dataset.rbDialogHide !== undefined ||
-          event.target.parentElement.dataset.rbDialogHide !== undefined ||
-          event.target.parentElement.parentElement.dataset.rbDialogHide !== undefined ||
-          key === 27) {
-        that.shown = false;
-
-        removeClass(main, 'is-dialog-open');
-
-        node.setAttribute('aria-hidden', 'true');
-        main.removeAttribute('aria-hidden');
-        focusedBeforeDialog && focusedBeforeDialog.focus();
-        document.body.removeEventListener('focus', maintainFocus, true);
-        document.removeEventListener('keydown', bindKeypress);
-        dispatchEvent(node, 'dialog:hide', this);
-      }
-    }
-
-    function destroy () {
-      hide();
-
-      openers.forEach(function (opener) {
-        opener.removeEventListener('click', show);
-      });
-
-      closers.forEach(function (closer) {
-        closer.removeEventListener('click', hide);
-      });
-    }
-  };
-
-  if (typeof module !== 'undefined' && typeof module.exports !== 'undefined') {
-    module.exports = rbDialog;
-  } else if (typeof define === 'function' && define.amd) {
-    define('rbDialog', [], function () {
-      return rbDialog;
-    });
-  } else if (typeof global === 'object') {
-    global.rbDialog = rbDialog;
   }
-}(this));
 
-(function () {
-  document.addEventListener('DOMContentLoaded', function () {
-    var dialogs = document.querySelectorAll('.dialog');
-
-    var len = dialogs.length;
-    for (var i = 0; i < len; i++) {
-      var dialogEl = dialogs[i];
-      var obscures = dialogEl.dataset.rbDialogObscures;
-      var mainEl = document.getElementById(obscures);
-
-      mainEl.parentNode.insertBefore(dialogEl, mainEl.nextSibling);
-
-      var dialog = new window.rbDialog(dialogEl, mainEl);
+  function maintainFocus(event) {
+    var target;
+    if (event) {
+      if (event.target) {
+        target = event.target;
+      } else if (event.srcElement) {
+        target = event.srcElement;
+      }
     }
-  });
-}());
+
+    if (!$cache.rbDialog[0].hasAttribute('aria-hidden') && !$cache.rbDialog[0].contains(target)) {
+      setFocusToFirstItem($cache.rbDialog);
+    }
+  }
+
+  function open() {
+    if ($cache.main.hasClass('is-dialog-open')) return;
+
+    $cache.main.addClass('is-dialog-open').attr('aria-hidden', true);
+    $cache.rbDialog.removeAttr('aria-hidden');
+    focusedBeforeDialog = $(document.activeElement);
+    setFocusToFirstItem($cache.rbDialog[0]);
+    document.body.addEventListener('focus', maintainFocus, true);
+    $(document).keydown(bindKeypress);
+
+    $cache.rbDialog.trigger('rbDialog:open');
+    _trigger('open');
+  }
+
+  function close() {
+    _trigger('beforeClose');
+
+    if ($cache.rbDialog[0].hasAttribute('aria-hidden')) return;
+
+    $cache.main.removeClass('is-dialog-open').removeAttr('aria-hidden');
+    $cache.rbDialog.attr('aria-hidden', 'true');
+    focusedBeforeDialog && focusedBeforeDialog.focus();
+    document.body.removeEventListener('focus', maintainFocus, true);
+    document.removeEventListener('keydown', bindKeypress);
+
+    // Remove closing
+    $.each(closers, function (index, value) {
+      value.removeEventListener('click', close);
+    });
+
+    $cache.rbDialog.trigger('rbDialog:close');
+    _trigger('close');
+    destroy();
+  }
+
+  function destroy() {
+    if (document.body.style.animation) {
+      $cache.rbDialog.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
+        setTimeout(destroyTheWorld, 200);
+      });
+    } else {
+      setTimeout(destroyTheWorld, 200);
+    }
+  }
+
+  function destroyTheWorld() {
+    if ($cache.rbDialogButtons) $cache.rbDialogButtons.remove();
+    $cache.rbDialogBody.children('*').remove();
+    $cache.rbDialogTitle.text('');
+    options = initOptions();
+  }
+
+  function _trigger(type, event, data) {
+    var prop;
+    var orig;
+    var callback = options[type];
+    data = data || {};
+    event = $.Event(event);
+    event.type = (type === this.widgetEventPrefix ? type : this.widgetEventPrefix + type).toLowerCase();
+    // the original event may come from any element
+    // so we need to reset the target on the new event
+    event.target = element[0];
+
+    // copy original event properties over to the new event
+    orig = event.originalEvent;
+    if (orig) {
+      for (prop in orig) {
+        if (!(prop in event)) {
+          event[prop] = orig[prop];
+        }
+      }
+    }
+
+    element.trigger(event, data);
+    return !($.isFunction(callback) && callback.apply(element[0], [event].concat(data)) === false || event.isDefaultPrevented());
+  }
+});

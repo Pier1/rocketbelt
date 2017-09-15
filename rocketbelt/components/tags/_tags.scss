@@ -4,6 +4,7 @@
   background: color(gray, plus3);
   color: color(black);
   text-transform: uppercase;
+  font-weight: font-weight(semibold);
   font-size: font-size(-2);
   font-family: font-family(sans);
   cursor: default;
@@ -31,12 +32,36 @@
 
   &.tag-success {
     background: color(success);
-    color: color(white);
+    color: contrast(success);
   }
 
   &.tag-sale {
+    background: color(sale);
+    color: contrast(sale);
+  }
+
+  &.tag-error {
     background: color(error);
-    color: color(white);
+    color: contrast(error);
+  }
+
+  &.tag-warning {
+    background: color(warning);
+    color: contrast(warning);
+  }
+
+  &.tag-primary {
+    background: color(primary);
+    color: contrast(primary);
+  }
+
+  &.tag-secondary {
+    background: color(secondary);
+  }
+
+  &.tag-accent {
+    background: color(accent);
+    color: contrast(accent);
   }
 
   &.message-dismissable {

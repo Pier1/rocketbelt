@@ -1,8 +1,18 @@
 (function () {
   'use strict';
 
-  module.exports = function (gulp, plugins, config) {
+  module.exports = function (gulp, plugins, config, taskParams) {
     return function () {
+      var spriteName = 'rocketbelt.icons';
+      var enterprise = false;
+
+      if (taskParams && taskParams.enterprise === true) {
+        spriteName += '.enterprise.svg';
+        enterprise = true;
+      } else {
+        spriteName += '.svg';
+      }
+
       var options = {
         shape: {
           id: {
@@ -25,18 +35,22 @@
           inline: true,
           symbol: {
             dest: './sprite',
-            sprite: '../../rocketbelt.icons.svg',
+            sprite: '../../' + spriteName,
             prefix: '.'
           }
         }
       };
 
-      return gulp.src(config.patternsPath + '/components/icons/**/*.sketch')
+      var iconsPath = config.patternsPath + '/components/icons';
+      var sketchFiles = enterprise ? '/**/*.sketch' : '/**/rocketbelt.icons.sketch';
+
+      return gulp.src(iconsPath + sketchFiles)
         .pipe(plugins.sketch({
           export: 'artboards',
           formats: 'svg'
         }))
-        .pipe(gulp.dest(config.patternsPath + '/components/icons/svg'))
+        .pipe(plugins.removeHtmlComments())
+        .pipe(gulp.dest(iconsPath + '/svg'))
         .pipe(plugins.svgSprite(options))
         .pipe(plugins.htmltidy(
           {
@@ -47,7 +61,7 @@
             wrapAttributes: false
           }
         ))
-        .pipe(gulp.dest(config.patternsPath + '/components/icons/svg'))
+        .pipe(gulp.dest(iconsPath + '/svg'))
       ;
     };
   };

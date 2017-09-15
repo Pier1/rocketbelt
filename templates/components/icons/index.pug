@@ -4,17 +4,37 @@ block vars
   - var title = 'Icons'
 
 block content
-  article
+  article.examples-icons
     h1 Icons
 
-  .grid-fluid
-    .row.xs-center
-      each icon in icons
-        - icon = icon.replace(/\.svg/, '');
-        .col.xs-2.sm-1
-          svg.icon
-            use(xlink:href='./rocketbelt.icons.svg#rb-icon-' + icon)
-          .icon-id.font-monospace.font-minus-2 #{'#rb-icon-' + icon}
+    h2 "Meaningful" Icon
+    .icon-meaningful
+      +exampleWithCode
+        include _icon-meaningful.pug
 
-  +exampleCodeOnly('JS Include')
-    script(src='./rocketbelt.icons.svgxuse.min.js', defer)
+    h2 Icon With Text
+    .icon-with-text
+      +exampleWithCode
+        include _icon-with-text.pug
+
+    h2 Linked Icon Without Text
+    .icon-link-no-text
+      +exampleWithCode
+        include _icon-link-no-text.pug
+
+    h2 Icon With Indicator
+    .icon-link-with-indicator
+      +exampleWithCode
+        include _icon-link-with-indicator.pug
+
+    .grid-fluid
+      .row.xs-center
+        each icon in icons
+          - icon = icon.replace(/\.svg/, '');
+          .col.xs-2.sm-1
+            svg.icon
+              use(xlink:href='./rocketbelt.icons.svg#rb-icon-' + icon)
+            .icon-id.font-monospace.font-minus-2 #{'#rb-icon-' + icon}
+
+    +exampleCodeOnly('JS Include')
+      script(src='./rocketbelt.icons.svgxuse.min.js', defer)
