@@ -1,41 +1,47 @@
-article.grid-article {
-  .example {
-    .col {
-      &:before {
-        content: '';
-        min-height: 2rem;
-        background-color: color(primary);
-        border-radius: 2px;
-        transition: background-color 100ms linear;
+article {
+  &.grid-article {
+    .example {
+      .col {
+        &::before {
+          min-height: 2rem;
+          border-radius: 2px;
+          background-color: color(primary);
+          content: '';
+          transition: background-color 100ms linear;
+        }
+
+        &:hover::before {
+          background-color: color(primary, lighter);
+          transition: background-color 100ms linear;
+        }
+
+        &[class$='first'],
+        &[class$='last'] {
+          &::before {
+            background-color: color(primary, lighter);
+          }
+
+          &:hover::before {
+            background-color: color(primary, lightest);
+          }
+        }
       }
 
-      &:hover:before {
-        background-color: color(primary, lighter);
-        transition: background-color 100ms linear;
-      }
-    }
-
-    .example-col-tall:before {
-      min-height: 10rem;
-    }
-
-    .col[class$="first"],
-    .col[class$="last"] {
-      &:before {
-        background-color: color(primary, lighter);
+      .example-col-tall::before {
+        min-height: 10rem;
       }
 
-      &:hover:before {
-        background-color: color(primary, lightest);
-      }
-    }
+      .row {
+        &[class$='reverse'] {
+          .col {
+            text-align: center;
 
-    .row[class$="reverse"] .col {
-      text-align: center;
-
-      &:before,
-      &:hover:before {
-        background-color: inherit;
+            &::before,
+            &:hover::before {
+              background-color: inherit;
+            }
+          }
+        }
       }
     }
   }

@@ -1,0 +1,78 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Buttons'
+
+block content
+  article
+    h1 Buttons
+    h2 Primary
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _buttons-primary.pug
+    h2 Secondary
+
+    .grid-fluid
+      .row
+        .col.xs
+          div
+            include _buttons-secondary.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _buttons-secondary.pug
+
+    h2 Text
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _buttons-text.pug
+
+    h2 Link
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _buttons-link.pug
+
+    h2 Anchor
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _buttons-anchor.pug
+
+    h2 Block
+
+    +exampleWithCode
+      include _buttons-block.pug
+
+    h2 Dynamic
+    h3 Busy
+    +exampleWithCode
+      include _buttons-dynamic.pug
+
+    h3#success Success
+    +exampleWithCode
+      include _buttons-dynamic-success.pug
+
+    h2 Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.dynamic-button.min.js')
+
+block scripts
+  script.
+    $('button.button-dynamic').dynamicButton();
+    $(window).on('dynamicButton.busy',function(e) {
+      var msg = $(e.el).closest('.exampleWithCode').prev('h3').attr('id');
+      setTimeout(function() {
+        $(e.el).trigger('buttonActionComplete', [msg, 2500])
+      }, 3000);
+    })

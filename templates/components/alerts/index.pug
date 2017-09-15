@@ -1,0 +1,40 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Alerts'
+
+block content
+  article
+    h1 Alerts
+    h2 Flash Messages
+
+    +exampleWithCode
+      include _alerts-flash.pug
+
+    h2 Dismissable Flash Message
+
+    +exampleWithCode
+      include _alerts-dismissable.pug
+
+    +exampleWithCode('js')
+      script(src='./rocketbelt.alerts-dismissable.js')
+
+    h2 Fixed Banner Message
+
+    script.
+      $(document).ready(function () {
+        $('.show-fixed-banner').click(function () {
+          if ($(this).next('.fixed-banner').find('.message-banner').length > 0) {
+            $(this).next('.visuallyhidden.fixed-banner').toggleClass('visuallyhidden');
+            $('.message-banner.message-warning.message-dismissable').css('z-index', '99');
+          }
+          else {
+            $(this).next('.fixed-banner').find('.example').prepend('<div class="message-banner message-warning message-dismissable">Caution! This is a fixed banner message.<div class="message-dismissable_close"></div></div>');
+          }
+        })
+      });
+    button.show-fixed-banner.button-secondary.button-md Show Fixed Banner
+
+    .visuallyhidden.fixed-banner
+      +exampleWithCode
+        include _alerts-banner.pug

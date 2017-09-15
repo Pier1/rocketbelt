@@ -1,0 +1,42 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Tags'
+
+block content
+  article
+    h1 Tags
+    h2 Variations
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-variations.pug
+
+    h2 Sizes
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-sizes.pug
+
+    h2 Dismissable
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-dismissable.pug
+
+    h2 Stretch
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tags-stretch.pug
+
+          +exampleWithCode('js')
+            script(src='../alerts/rocketbelt.alerts-dismissable.js')

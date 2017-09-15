@@ -1,0 +1,37 @@
+.tabcordion.is-tabs.is-static(aria-multiselectable='false')
+  ul.tabcordion_navlist(role='tablist')
+    li.tabcordion_nav-item.is-active(role='presentation')
+      button#tab-label-1.tabcordion_nav-trigger(role='tab', aria-setsize='3', aria-posinset='1', tabindex='0', aria-controls='tab-panel-1', aria-selected='true') Capella Island
+    li.tabcordion_nav-item(role='presentation')
+      button#tab-label-2.tabcordion_nav-trigger(role='tab', aria-setsize='3', aria-posinset='2', tabindex='-1', aria-controls='tab-panel-2', aria-selected='false') Katerina
+    li.tabcordion_nav-item(role='presentation')
+      button#tab-label-3.tabcordion_nav-trigger(role='tab', aria-setsize='3', aria-posinset='3', tabindex='-1', aria-controls='tab-panel-3', aria-selected='false') Echo Beach
+  .tabcordion_panels
+    #tab-panel-1.tabcordion_panel.is-current(role='tabpanel', aria-labelledby='tab-label-1', tabindex='-1')
+      h3 Capella Island
+      .panel-body
+        p
+          | Our lumbar pillow is suited for the perfect mingling of sandy beaches, our super-shiny, super-sized fork is a colorful detailing reminiscent of various breeds.
+        .field
+          label Handcrafted Chevron
+            input(type='text')
+        .field
+          label Handsome Elephant Dip
+            input(type='text')
+    #tab-panel-2.tabcordion_panel(aria-hidden='true', role='tabpanel', aria-labelledby='tab-label-2', tabindex='-1')
+      h3 Katerina
+      .panel-body
+        p
+          | Bring home to your patio furniture—pronto. Chances are exactly what you’ve had Pier 1 exclusive. Time to six bottles, our sweet sugared-effect pumpkins mix that result is suited to remind you realize that plays well as king of chrysanthemum, peppered poppy and our arched wall art. Leaves of the fresh blossoms.
+    #tab-panel-3.tabcordion_panel(aria-hidden='true', role='tabpanel', aria-labelledby='tab-label-3', tabindex='-1')
+      h3 Echo Beach
+      .panel-body
+        .field
+          label Nautical Newbie
+            input(type='text')
+        .form-group
+          input#helper-bovine.invalid
+          label(for='helper-bovine') Beautiful Bovine Patterns
+          .messages
+            small.validation-message Three flatware looks and cheery
+            small.helper-text On a splash of classic dining cushion

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>pause</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="pause" fill="#000000">
+            <path d="M50,40 L110,40 L110,216 L50,216 L50,40 Z M147,40 L207,40 L207,216 L147,216 L147,40 Z"></path>
+        </g>
+    </g>
+</svg>

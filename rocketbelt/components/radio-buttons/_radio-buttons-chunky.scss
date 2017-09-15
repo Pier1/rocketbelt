@@ -63,7 +63,7 @@
         }
       }
 
-      &[type=radio]:checked + label {
+      &[type='radio']:checked + label {
         border: 2px solid $color-selected;
         transition: box-shadow 200ms ease-in;
 

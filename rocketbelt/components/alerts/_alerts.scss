@@ -46,7 +46,7 @@ $message-families: (success, error, warning, info);
 }
 
 @mixin message($family) {
-  border-color: color($family, darker);
+  border-color: color($family, lighter);
   background: color($family, lightest);
   color: color($family, darker);
 }
@@ -88,7 +88,7 @@ $message-families: (success, error, warning, info);
     align-items: center;
 
     &::after {
-      content: '\00d7';
+      content: unicode(multiplication-sign);
     }
   }
 }
