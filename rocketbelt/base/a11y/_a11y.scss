@@ -1,0 +1,19 @@
+.skip {
+  a {
+    @extend %visually-hidden;
+    @extend %focusable;
+
+    min-width: 0;
+    text-transform: none;
+    opacity: 0;
+    transition: opacity 100ms;
+
+    &:focus,
+    &:active {
+      // Don't forget to add top/left positioning properties for your use case!
+      position: absolute;
+      padding: 0.125rem;
+      opacity: 1;
+    }
+  }
+}

@@ -1,166 +1,193 @@
-.tabs {
-  $width-border: 1px;
-  $color-border: color(gray, plus2);
-  $color-bg: color(gray, plus4);
-  $border: $width-border solid $color-border;
+$width-border: 1px;
+$color-border: color(gray, plus2);
+$color-bg: color(gray, plus4);
+$border: $width-border solid $color-border;
 
-  font-size: 0;
-  overflow: hidden;
-  position: relative;
-  border: $border;
-  border-top: 0;
-
-  &:after {
-    clear: both;
-    content: '';
-    display: table;
-  }
-
-  @include media('>=sm') {
-    border: 0;
-  }
-
-  .tab {
-    display: inline;
-
-    .tab_radio {
-      @extend %visuallyhidden;
-
-      &:checked ~ .tab_panel {
-        display: inline;
-        @include fadeIn();
-      }
-
-      &:not(:checked) ~ .tab_panel {
-        @include fadeOut();
-      }
-
-      &:checked + .tab_label {
-        color: color(gray, minus1);
-        // transition: all 200ms;
-        border-bottom: $border;
-
-        @include media('>=sm') {
-          &:after {
-            left: 0;
-            right: 0;
-            height: 4px;
-          }
+html,
+body {
+  &.touchevents {
+    .tabcordion {
+      .tabcordion_nav-item {
+        .tabcordion_nav-trigger {
+          min-height: 44px;
         }
       }
-
-      &:not(:checked) + .tab_label {
-        color: color(brand);
-        // transition: all 200ms;
-
-        @include media('>=sm') {
-          &:after {
-            left: 50%;
-            right: 50%;
-            height: 0;
-          }
-        }
-      }
-    }
-  }
-
-  .tab .tab_radio:checked + .tab_label {
-    &:before {
-      transform: translateY(-50%) rotate(90deg);
-    }
-
-    &:after {
-      transform: translateY(-50%) rotate(180deg);
-    }
-  }
-
-  .tab .tab_label {
-    position: relative;
-    padding: ms(-10) ms(-4);
-    font-size: ms(-1);
-    text-transform: uppercase;
-    width: 100%;
-    display: inline-block;
-    // transition: all 250ms;
-    background: $color-bg;
-
-    border-top: $border;
-
-    &:before,
-    &:after {
-      content: '';
-      position: absolute;
-      border: 0;
-      background: color(brand);
-    }
-
-    // Vertical
-    &:before {
-      border-radius: 0;
-      top: 50%;
-      transform: translateY(-50%);
-      left: calc(100% - 15px);
-      width: 4px;
-      height: 18px;
-    }
-
-    // Horizontal
-    &:after {
-      top: 50%;
-      transform: translateY(-50%);
-      right: 4px;
-      width: 18px;
-      height: 4px;
-    }
-
-    @include media('>=sm') {
-      border: $border;
-      width: auto;
-
-      &:before {
-        border: none;
-        background: transparent;
-      }
-
-      &:after {
-        content: '';
-        position: absolute;
-        bottom: 0;
-        top: calc(100% - 2px);
-        width: 100%;
-        background: color(primary);
-        transition-property: height, left, right;
-        transition-duration: 200ms;
-        transition-timing-function: ease-out;
-      }
-    }
-  }
-
-  .tab_panel {
-    font-size: initial;
-    display: inline-block;
-    overflow: hidden;
-    position: relative;
-    height: 0;
-    width: 0;
-  }
-
-  .tab_content {
-    padding: ms(-4);
-    background: color(white);
-    display: block;
-    float: left;
-    margin-top: -$width-border;
-    width: 100%;
-
-    @include media('>=sm') {
-      border: $border;
     }
   }
 }
 
-.tab:not(:first-of-type) .tab_label {
-  @include media('>=sm') {
-    border-left: 0;
+.tabcordion {
+  .tabcordion_navlist {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    font-size: 0;
+  }
+
+  .tabcordion_nav-item {
+    margin: 0;
+    list-style: none;
+    font-size: font-size(-1);
+    transition: background 100ms ease,
+                color 100ms ease;
+
+    &.is-active {
+      .tabcordion_nav-trigger {
+        background: color(white);
+        color: color(black);
+        font-weight: font-weight(semibold);
+      }
+    }
+
+    .tabcordion_nav-trigger {
+      padding: ms(-14) ms(-2);
+      line-height: normal;
+      border: $border;
+      background: $color-bg;
+      color: color(primary, darker);
+      text-transform: uppercase;
+      transition: background 100ms ease,
+                  color 100ms ease;
+    }
+  }
+
+  .tabcordion_panels {
+    border: $border;
+    border-top: none;
+  }
+
+  .tabcordion_panel {
+    display: none;
+    animation-duration: 500ms;
+
+    &.is-current {
+      display: block;
+    }
+  }
+}
+
+.is-tabs {
+  .tabcordion_navlist {
+    border-bottom: $border;
+
+    .is-active {
+      .tabcordion_nav-trigger {
+        border-bottom: 3px solid color(primary);
+        transition: border-bottom 200ms ease;
+      }
+    }
+
+    .tabcordion_nav-trigger {
+      padding-top: calc(#{ms(-14)} + 3.4px);
+      border-bottom: 3px solid $color-bg;
+      transition: border-bottom 200ms ease;
+    }
+  }
+
+  .tabcordion_nav-item {
+    display: inline-block;
+  }
+
+  .tabcordion_panel {
+    animation-name: fade-out;
+
+    &.is-current {
+      animation-name: fade-in;
+    }
+  }
+}
+
+@keyframes fade-in {
+  0% {
+    display: none;
+    opacity: 0;
+  }
+
+  1% {
+    display: block;
+    opacity: 0;
+  }
+
+  100% {
+    display: block;
+    opacity: 100%;
+  }
+}
+
+.is-accordion {
+  .tabcordion_nav-item {
+    display: block;
+
+    .tabcordion_nav-trigger {
+      position: relative;
+      display: flex;
+      width: 100%;
+      text-align: left;
+
+      &::before {
+        position: absolute;
+        top: 50%;
+        right: 18px;
+        width: 3px;
+        height: 15px;
+        background: color(primary);
+        content: '';
+        transition: transform 200ms;
+        transform: translateY(-50%);
+      }
+
+      &::after {
+        position: absolute;
+        top: 50%;
+        right: 12px;
+        width: 15px;
+        height: 3px;
+        background: color(primary);
+        content: '';
+        transform: translateY(-50%);
+      }
+    }
+
+    &.is-active {
+      .tabcordion_nav-trigger {
+        &::before {
+          transform: translateY(-50%) rotate(270deg);
+        }
+      }
+    }
+  }
+
+  .tabcordion_panels {
+    border: 0;
+  }
+
+  .tabcordion_panel {
+    border: $border;
+    border-top: none;
+    animation-name: slide-up;
+
+    &.is-current {
+      animation-name: slide-down;
+      animation-duration: 1000ms;
+    }
+  }
+}
+
+@keyframes slide-down {
+  0% {
+    display: none;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  1% {
+    display: block;
+    overflow: hidden;
+    max-height: 0;
+  }
+
+  100% {
+    display: block;
+    max-height: 100vh;
   }
 }

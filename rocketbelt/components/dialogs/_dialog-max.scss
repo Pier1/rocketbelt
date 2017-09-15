@@ -1,0 +1,69 @@
+.dialog {
+  &.dialog-max {
+    .dialog_header {
+      padding: 0;
+      border: 0;
+      background-color: color(black);
+      .dialog_title {
+        padding-left: ms(-5);
+        color: color(white); 
+      }
+      .dialog_close {
+        color: color(white);
+      }
+    }
+
+    .dialog_content {
+      position: absolute;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      max-height: 100%;
+      width: 100%;
+      transform: none;
+      animation: dialog-max-in 300ms ease-in-out;
+
+      @include media('>=md') {
+        right: 10%;
+        left: 10%;
+        width: 80%;
+      }
+    }
+  }
+}
+
+#docs-wrapper:not(.is-dialog-open),
+#main:not(.is-dialog-open) {
+  & ~ .dialog {
+    &.dialog-max {
+      .dialog_content {
+        animation: dialog-max-out 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes dialog-max-in {
+  from {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 1);
+  }
+
+  to {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+}
+
+@keyframes dialog-max-out {
+  from {
+    opacity: 1;
+    transform: scale3d(1, 1, 1);
+  }
+
+  to {
+    opacity: 0;
+    transform: scale3d(0.3, 0.3, 1);
+  }
+}

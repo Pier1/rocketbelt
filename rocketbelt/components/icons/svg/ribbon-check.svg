@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>ribbon-check</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="ribbon-check" fill-rule="nonzero" fill="#000000">
+            <path d="M171.913,160.21 L171.913,256 L127.543,222.37 L82.23,256 L82.23,158.943 C95.52,167.343 111.256,172.21 128.105,172.21 C144.088,172.21 159.07,167.83 171.913,160.21 L171.913,160.21 Z M127.553,155.106 C84.8,155.106 50,120.318 50,77.553 C50,34.788 84.8,0 127.553,0 C170.307,0 205.106,34.788 205.106,77.553 C205.106,120.318 170.306,155.106 127.553,155.106 Z M115.467,114.094 L175.897,52.648 L164.447,41.295 L115.257,91.395 L90.457,67.731 L79.207,79.295 L115.467,114.095 L115.467,114.094 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

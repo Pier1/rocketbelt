@@ -20,7 +20,7 @@
       }
 
       & + .expander_label {
-        &:before {
+        &::before {
           position: static;
           border: 0;
           background: 0;
@@ -30,7 +30,7 @@
     }
 
     &:checked + .expander_label {
-      &:before {
+      &::before {
         position: static;
         border: 0;
         background: 0;

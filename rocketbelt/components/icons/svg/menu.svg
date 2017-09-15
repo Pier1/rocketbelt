@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>menu</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="menu" fill="#000000" fill-rule="nonzero">
+            <path d="M256,30 L0,30 L0,70.3883495 L256,70.3883495 L256,30 Z M256,107.669903 L0,107.669903 L0,148.058252 L256,148.058252 L256,107.669903 Z M256,185.339806 L0,185.339806 L0,225.728155 L256,225.728155 L256,185.339806 Z"></path>
+        </g>
+    </g>
+</svg>

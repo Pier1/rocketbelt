@@ -1,51 +1,125 @@
-%button-static-props {
-  border: none;
-  border-radius: 2px;
-  text-transform: uppercase;
-  letter-spacing: 0.1rem;
-  font-weight: font-weight(light);
-  cursor: default;
-  transition: all 100ms ease();
-
-  &:focus {
-    outline: 0;
-  }
+.button + .button,
+button + button,
+.button + button,
+button + .button,
+a[class *= 'button'] + a[class *= 'button'] {
+  margin-left: $gutter-width / 2;
 }
 
-
-.button {
-  @include button-size(md);
+a[class *= 'button'] {
+  display: inline-block;
 }
 
 .button-primary {
-  @include button-style;
-  @include button-inset(primary);
+  outline-color: color(primary, darkest);
+}
+
+.button,
+.button-primary {
+  @include button-size(md);
+  @include button-style(primary);
+  line-height: normal;
 }
 
 .button-secondary {
   @include button-style(secondary);
-  @include button-inset(secondary);
 }
 
-.button-text {
+.button-text,
+%button-text {
   @include button-style(text);
   cursor: pointer;
+
+  &,
+  &:hover,
+  &:active {
+    background: transparent;
+    box-shadow: none;
+  }
+}
+
+.button-link {
+  @extend %button-text;
+
+  font-weight: font-weight(normal);
+}
+
+.button-dynamic {
+  @include button-style(dynamic);
+}
+
+.button-busy {
+  @include button-style(busy);
+}
+
+.button-success {
+  @include button-style(success);
+}
+
+%button-link-props {
+  padding: 0;
+  min-width: 0;
+  text-decoration: underline;
+  text-transform: none;
 }
 
 .button-sm {
   @include button-size(sm);
+
+  &.button-link {
+    @extend %button-link-props;
+  }
 }
 
 .button-md {
   @include button-size(md);
+
+  &.button-link {
+    @extend %button-link-props;
+  }
 }
 
 .button-lg {
   @include button-size(lg);
+
+  &.button-link {
+    @extend %button-link-props;
+  }
 }
 
 .button-block {
   display: block;
   width: 100%;
-  box-shadow: none;
+
+  &.button-secondary:active {
+    background: rgba(color(gray, plus4), 0.6);
+    transition: background 100ms ease();
+  }
+
+  &,
+  &:active,
+  &:hover {
+    box-shadow: none;
+  }
+}
+
+.button,
+.button-primary,
+.button-secondary,
+.button-text,
+.button-link,
+.button-block {
+  &[disabled] {
+    box-shadow: none;
+
+    &:active,
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
+@keyframes spin {
+  0%   { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
 }

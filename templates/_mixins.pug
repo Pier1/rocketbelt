@@ -1,0 +1,162 @@
+//- Escaping HTML in the Jade buffer: https://github.com/pugjs/pug/issues/1468#issuecomment-38195976
+mixin escape
+  - var oldBuf = pug_html;
+  - pug_html = '';
+  block
+  //- This is a little hacky, but it strips <script> tags so that Rocketbelt
+  //- doesn't appear to prefer <script> blocks. The design library itself uses
+  //- <script> blocks because they're short and need to be included (escaped)
+  //- in the page as examples.
+  //- - var addition = _.remove(buf.map(jade.escape), function (o) {
+  //- -   return !o.match(/\s*&lt;\/?script&gt;\s*/gi);
+  //- - });
+
+  - pug_html = oldBuf + pug.escape(pug_html);
+
+mixin wrapInExpander(collapsedLabel, expandedLabel, expanded, id)
+  - collapsedLabel = collapsedLabel || 'Show';
+  - expandedLabel  = expandedLabel  || 'Hide';
+
+  - var hashedId = 'rb-' + shorthash.unique(id);
+
+  .expander
+    input(type='checkbox', id=hashedId, class='expander_checkbox', checked=expanded)
+    label(for=hashedId,
+          class='expander_label',
+          data-collapsed-label=collapsedLabel,
+          data-expanded-label=expandedLabel) #[span.expander_icon]
+    .expander_content
+      block
+
+mixin exampleWithCode(labelText, expanded, inverted)
+  - labelText = labelText || 'html';
+  - inverted = inverted || false;
+  - if (labelText === 'js') labelText = 'javascript';
+  - var seed = escape(block);
+  - var id   = 'rb-' + shorthash.unique(seed);
+
+  - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
+  .exampleWithCode
+    if (!inverted)
+      .example
+        block
+    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
+      .example-code
+        button.copy-code(data-clipboard-target='#' + id) Copy
+        pre
+          code(id=id, class='language-' + labelText.toLowerCase())
+            +escape
+              block
+    if (inverted)
+      .example
+        block
+
+mixin exampleCodeOnly(labelText, expanded, inverted)
+  - labelText = labelText || 'html';
+  - inverted = inverted || false;
+  - if (labelText === 'js') labelText = 'javascript';
+  - var seed = escape(block);
+  - var id   = 'rb-' + shorthash.unique(seed);
+
+  - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
+  .exampleWithCode
+    if (!inverted)
+      .example
+    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
+      .example-code
+        button.copy-code(data-clipboard-target='#' + id) Copy
+        pre
+          code(id=id, class='language-' + labelText.toLowerCase())
+            +escape
+              block
+
+mixin dynamicExampleCode(labelText, expanded)
+  - labelText = labelText || 'html';
+  - inverted = inverted || false;
+  - if (labelText === 'js') labelText = 'javascript';
+  - var seed = escape(block);
+  - var id   = 'example' + ( Math.random() * 10000|0 );
+  - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
+  .exampleWithCode
+    .example
+
+    +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
+      .example-code
+        button.copy-code(data-clipboard-target='#' + id) Copy
+        pre
+          code(id=id, class="language-" + labelText.toLowerCase())
+
+
+- var toTitleCase = function (str) {
+-   return str.replace(/-/g, ' ').replace(/-and-/g, '-&-').replace(/\w\S*/g, function(txt){return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase();});
+- }
+
+mixin buildNav(navObject, rootHref)
+  ul.list-reset.category-contents
+    each item in _.sortBy(navObject, function (o) { return o.name; })
+      - var name = toTitleCase(item.name);
+      unless item.name.indexOf('index.') > -1
+        - var newRootHref = rootHref ? rootHref : '';
+        - var shortName = item.name.replace('jade', '');
+
+        if shortName !== 'img'
+          li.category(ref=shortName)
+            if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
+              a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '').replace('A11y', 'Accessibility')}
+            else
+              input.category-toggle(id=name, type='checkbox', name=name)
+              label.category-label(for=name) #{name}
+
+              if item.children && item.children.length >= 1
+                +buildNav(item.children, newRootHref + '/' + item.name)
+
+
+mixin colorPicker(target, val, type)
+  - var prefix = type === 'background' ? 'bg_' : 'fg_';
+  - var obj = colorFamilies;
+  div.cp_wrapper.playground-item(type="list", data-target=target, data-property="class", value=val)
+    div.cp_eyedropper
+    div.cp_grid.visuallyhidden
+      each family in obj
+        each color in family.variants
+          if (family.familyName === 'white')
+            span(class="playground-list_item bg_" + family.familyName + " color-w-border", title=color.colorName, value=prefix + family.familyName)
+          else if (color.variant === 'base')
+            span(class="playground-list_item bg_" + family.familyName, title=color.colorName, value=prefix + family.familyName)
+          else
+            span(class="playground-list_item bg_" + family.familyName + "-" + color.variant, title=color.colorName, value=prefix + family.familyName + "-" + color.variant)
+
+
+mixin footnoteTerm(name, annotateOnly)
+  - footnotes = footnotes || [];
+  - var note = { name: name, id: footnotes.length + 1, block: '' };
+  - footnotes.push(note);
+  if !annotateOnly
+    span.footnote-term #{note.name}
+      a(href='#footnote_#' + note.id, name='footnote_term_#' + note.id)
+        sup &#91;#{note.id}&#93;
+  else
+    a(href='#footnote_#' + note.id, name='footnote_term_#' + note.id)
+      sup &#91;#{note.id}&#93;
+
+mixin footnoteDefine(name)
+  - var foundnote = null;
+  - footnotes.forEach(function(note){
+  -   if ( note.name == name ) foundnote = note;
+  - });
+  - if (foundnote) {
+      if block
+        - foundnote.block = block;
+      else
+        - foundnote.block = function(){ return ''; }
+  - }
+
+mixin footnoteList()
+  if footnotes
+    each fn in footnotes
+      cite.footnote-definition
+        a(name='footnote_#' + fn.id)
+        | #[sup #{fn.id}] #[b.footnote-term #{fn.name}:]
+        if fn.block
+          - fn.block()
+          span &nbsp;&nbsp;#[a(href='#footnote_term_#' + fn.id).footnote-returner &#8617;]
