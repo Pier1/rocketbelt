@@ -1,3 +1,5 @@
+# =-=-=-=-=-=-=-=- Annotations for rocketbelt.icons.svg -=-=-=-=-=-=-=-= #
+# =-=-=-=-=-=-=-=- See below for enterprise annotations -=-=-=-=-=-=-=-= #
 arrow-down:
   title: Down Arrow
   description: A downward arrow
@@ -29,6 +31,10 @@ bookmark:
 cart:
   title: Shopping Cart
   description: A wheeled shopping cart
+
+cart-add:
+  title: Add to Basket
+  description: A wheeled shopping cart with a plus sign inside
 
 chat-double-o:
   title: Open Double Chat Bubble
@@ -86,6 +92,10 @@ envelope:
   title: Envelope
   description: An envelop
 
+error:
+  title: Error
+  description: An exclamation mark inside an octogon
+
 filter:
   title: Filter
   description: A funnel
@@ -134,9 +144,13 @@ p1logo-alt-1:
   title: Pier 1 Logo (alternate)
   description: An alternate Pier 1 Imports logo
 
-phone:
-  title: Phone
-  description: A phone handset
+pause:
+  title: Pause
+  description: A pause symbol
+
+pause-circle:
+  title: Pause
+  description: A pause symbol in a circle
 
 pin:
   title: Pin
@@ -150,6 +164,10 @@ play:
   title: Play
   description: A triangular play symbol
 
+play-circle:
+  title: Play
+  description: A triangular play symbol inside a circle
+
 plus:
   title: Plus
   description: A plus sign
@@ -158,6 +176,10 @@ question:
   title: Question
   description: A circle with a question mark inside
 
+ribbon-check:
+  title: Ribbon With Check Mark
+  description: A ribbon with a check mark on the front
+
 search:
   title: Search
   description: A magnifying glass
@@ -165,6 +187,10 @@ search:
 shipment:
   title: Shipment
   description: A box with motion lines behind it
+
+sms:
+  title: SMS
+  description: A speech bubble with lines of text inside
 
 sort-both:
   title: Sort Both
@@ -178,6 +204,10 @@ sort-up:
   title: Sort Up
   description: An upward-pointing triangle
 
+specs:
+  title: Specs
+  description: A square with perpendicular arrows that indicate measurements
+
 stack-o:
   title: Stack
   description: A square stacked on another square
@@ -190,9 +220,9 @@ star-o:
   title: Open Star
   description: The outline of a star
 
-star-o-half:
-  title: Half Star
-  description: A half-filled star
+warning:
+  title: Warning
+  description: An exclamation mark inside a triangle
 
 zoom-in:
   title: Zoom In
@@ -201,3 +231,24 @@ zoom-in:
 zoom-out:
   title: Zoom Out
   description: A magnifying glass with a minus sign inside
+
+# =-=-=-=-=-=-=-=- Annotations for rocketbelt.icons.enterprise.svg -=-=-=-=-=-=-=-= #
+a11y:
+  title: Accessibility Logo
+  description: A human figure with arms outstretched
+
+book:
+  title: Book
+  description: A book laying open
+
+dots-circle-o:
+  title: Dots in Circle
+  description: Three dots within a circle
+
+graph-line:
+  title: Line Graph
+  description: An ascending & descending line graph
+
+horizon:
+  title: Horizon Logo
+  description: A rising sun stylistically separated into horizontal pieces

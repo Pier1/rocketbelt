@@ -1,3 +1,4 @@
+// sass-lint:disable force-element-nesting
 $sticker-bkg: rgba(color(white), 0.9);
 
 // BASE (VERTICAL)
@@ -18,11 +19,36 @@ $sticker-bkg: rgba(color(white), 0.9);
       position: relative;
       margin-top: -0.1em;
       line-height: 0.2;
+      // x for $ promo
+      &.promo-for .promo-detail small {
+        margin-left: -1em;
+        vertical-align: 2.2em;
+        font-size: 0.205em;
+      }
+
+      &.promo-for .promo-detail.kern-minus-1 small {
+        margin-left: -.4em;
+        letter-spacing: 0.03em;
+      }
+
+      &.promo-for .promo-detail .promo-sup {
+        position: relative;
+        top: -.4em;
+        margin-right: -.1em;
+        margin-left: 0.1em;
+        vertical-align: baseline;
+        font-size: 0.615em;
+        line-height: 0;
+      }
+
+      &.promo-for .promo-detail.kern-minus-1 .promo-sup {
+        margin-right: 0.05em;
+      }
     }
 
     .promo-detail {
       position: relative;
-      font-size: .87em;
+      font-size: 0.87em;
       line-height: 1;
     }
 
@@ -47,21 +73,21 @@ $sticker-bkg: rgba(color(white), 0.9);
     }
 
     .cta::after {
-      line-height: .2;
+      line-height: 0.2;
     }
 
     // Optional Message
 
     .optional-msg {
       display: block;
-      margin-bottom: .2em;
-      font-size: .16em;
+      margin-bottom: 0.2em;
+      font-size: 0.16em;
       font-family: 'Brand Sans';
       line-height: 1;
     }
 
     .optional-msg:empty {
-      display: none !important;
+      display: none;
     }
 
     // Up To Msg
@@ -84,11 +110,11 @@ $sticker-bkg: rgba(color(white), 0.9);
 
     .promo-msg.promo-percentage .promo-detail::before {
       position: absolute;
-      top: .4em;
+      top: 0.4em;
       right: -.08em;
       content: '%';
       letter-spacing: normal;
-      font-size: .65em;
+      font-size: 0.65em;
       line-height: 1;
     }
 
@@ -97,14 +123,14 @@ $sticker-bkg: rgba(color(white), 0.9);
     }
 
     .promo-msg.promo-percentage .promo-detail::after {
-      margin-left: .15em;
+      margin-left: 0.15em;
       content: 'off';
       letter-spacing: normal;
-      font-size: .2em;
+      font-size: 0.2em;
     }
 
     .promo-msg.promo-percentage .promo-detail.kern-minus-1::after {
-      margin-left: .6em;
+      margin-left: 0.6em;
     }
   }
 }
@@ -114,12 +140,12 @@ $sticker-bkg: rgba(color(white), 0.9);
   .sale-sticker-inner {
     overflow-x: auto;
     overflow-y: hidden;
-    padding: .09em .2em;
+    padding: 0.09em 0.2em;
 
     .sale-sticker-tagline {
       float: left;
-      margin-top: .03em;
-      padding: 0 0 0 .11em;
+      margin-top: 0.03em;
+      padding: 0 0 0 0.11em;
       border-left: 2px solid #030001;
     }
 
@@ -129,11 +155,12 @@ $sticker-bkg: rgba(color(white), 0.9);
     }
 
     .promo-detail {
-      margin: 0 .16em 0 0;
+      margin: 0 0.16em 0 0;
       line-height: 1;
     }
 
-    .cta, .tagline  {
+    .cta,
+    .tagline {
       margin-top: 0;
       text-align: left;
       font-size: 0.18em;
@@ -141,20 +168,19 @@ $sticker-bkg: rgba(color(white), 0.9);
 
     .tagline {
       margin-top: -.1em;
-      margin-bottom: .47em;
+      margin-bottom: 0.47em;
       line-height: 1;
     }
 
     .cta {
-      line-height: .84;
+      line-height: 0.84;
     }
-
 
     // Optional Message
     .optional-msg {
       display: inline-block;
       float: left;
-      margin: .75em .45em 0 0;
+      margin: 0.75em 0.45em 0 0;
       text-align: left;
       line-height: 1;
     }
@@ -171,11 +197,11 @@ $sticker-bkg: rgba(color(white), 0.9);
 
     // Percentage Amounts
     .promo-msg.promo-percentage::after {
-      right: .13em;
+      right: 0.13em;
     }
 
     &.up-to-msg .promo-msg.promo-percentage::after {
-      top:.2em;
+      top: 0.2em;
     }
   }
 }

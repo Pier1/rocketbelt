@@ -24,6 +24,8 @@ if [[ $TRAVIS_PULL_REQUEST = "false" ]] && [[ $TRAVIS_BRANCH = $SOURCE_BRANCH ]]
   eval `ssh-agent -s`
   ssh-add deploy_key
 
+  npm publish
+
   git push $SSH_REPO $TARGET_BRANCH
   git branch -D TEMP_BRANCH
 fi

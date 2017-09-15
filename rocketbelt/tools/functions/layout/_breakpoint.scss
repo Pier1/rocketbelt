@@ -1,0 +1,28 @@
+/// Return a breakpoint from a predefined set.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @param $width [xs] - The viewport width to return
+///
+/// @example scss - breakpoint function
+///   breakpoint(xs)
+@function breakpoint($width: xs) {
+  $width: to-lower-case($width);
+
+  @if (map-has-key($breakpoints, $width)) {
+    @return map-get($breakpoints, $width);
+  }
+  @else {
+    @error 'Breakpoint width `#{$width}` does not exist in `$breakpoints`.';
+  }
+}
+
+@function above($width) {
+  @if (map-has-key($breakpoints, $width)) {
+    @return map-get($above, $width);
+  }
+  @else {
+    @error 'Breakpoint width `#{$width}` does not exist in `$breakpoints`.';
+  }
+}

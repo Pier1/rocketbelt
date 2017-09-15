@@ -1,3 +1,9 @@
+/// Add other styles properties for Rocketbelt buttons such as width, background, color, and fill.
+///
+/// @group Buttons
+/// @author Kendrick Arnett
+///
+/// @param $style [primary] - The type of button to render properties for.
 @mixin button-style($style: primary) {
   $button-base: scale-color(color(primary), $lightness: 0%);
   $button-hover: scale-color(color(primary), $lightness: 10%);
@@ -13,10 +19,12 @@
     fill: $color;
     &:hover {
       background-color: $button-hover;
+      color: $color;
     }
 
     &:active {
       background-color: $button-active;
+      color: $color;
     }
 
     &:visited {

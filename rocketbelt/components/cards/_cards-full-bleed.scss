@@ -1,0 +1,21 @@
+.card-full-bleed {
+  position: relative;
+  padding: 0;
+
+  .card-content {
+    position: absolute;
+    bottom: 0;
+    display: block;
+    width: 100%;
+    background: eased-gradient($direction: to top, $easing: in-out-sine);
+    color: color(white);
+  }
+
+  .card-title {
+    font-weight: font-weight(semibold);
+  }
+
+  .card-body {
+    font-weight: font-weight(regular);
+  }
+}

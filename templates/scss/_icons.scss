@@ -1,0 +1,43 @@
+.examples-icons {
+  .icon-meaningful,
+  .icon-link-no-text {
+    .icon {
+      width: font-size(5);
+      height: font-size(5);
+    }
+  }
+
+  .icon-with-text {
+    font-size: font-size(0);
+  }
+
+  .icon-link-no-text {
+    font-size: font-size(5);
+  }
+
+  .icon-link-with-indicator {
+    font-size: font-size(10);
+
+    .text-with-icon {
+      position: relative;
+      color: color(brand);
+
+      .indicator {
+        position: absolute;
+        top: 0;
+        right: 0;
+        z-index: 1;
+        display: inline-flex;
+        width: font-size(3);
+        height: font-size(3);
+        border-radius: 50%;
+        background: color(sale);
+        color: color(white);
+        text-decoration: none;
+        font-size: font-size(0);
+        justify-content: center;
+        align-content: center;
+      }
+    }
+  }
+}

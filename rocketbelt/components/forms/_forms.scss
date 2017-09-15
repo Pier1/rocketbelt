@@ -11,7 +11,6 @@ fieldset {
   legend {
     font-weight: font-weight(semibold);
     font-size: ms(-1);
-
     align-self: flex-start;
 
     &::after {
@@ -33,7 +32,6 @@ fieldset {
   }
 }
 
-
 .form-group {
   &.inline {
     flex-direction: row;
@@ -43,8 +41,8 @@ fieldset {
       margin-top: ms(-10);
     }
 
-    label,
-    .helper-text {
+    .helper-text,
+    label {
       flex: 0 0 auto;
       align-self: center;
     }
@@ -52,18 +50,18 @@ fieldset {
     label {
       display: flex;
       flex-direction: column;
-      padding-right: padding(-4);
+      padding-right: ms(-4);
     }
 
     .helper-text {
-      padding-left: padding(-4);
+      padding-left: ms(-4);
     }
 
     .messages {
       display: flex;
       flex-direction: column;
       flex: 0 0 auto;
-      padding-left: padding(-4);
+      padding-left: ms(-4);
       order: last;
 
       .helper-text {
@@ -77,7 +75,8 @@ fieldset {
     }
 
     input,
-    select {
+    select,
+    textarea {
       &[required] {
         & + label::after {
           content: '(required)';
@@ -93,12 +92,11 @@ fieldset {
   }
 }
 
-
 html {
   &.touchevents {
+    button,
     input,
-    select,
-    button {
+    select {
       min-height: 44px;
     }
   }
@@ -106,10 +104,15 @@ html {
 
 input,
 select {
+  height: 2rem;
+}
+
+input,
+select,
+textarea {
   display: block;
   padding: ms(-12) ms(-10);
   width: 100%;
-  height: 2rem;
   border: 1px solid color(gray, plus1);
   border-radius: 2px;
   font-size: ms(-1);
@@ -122,7 +125,6 @@ select {
     overflow: hidden;
     outline: 2px solid color(primary);
 
-    &:invalid,
     &.invalid {
       outline-color: color(error);
     }
@@ -133,7 +135,6 @@ select {
     background-color: color(gray, plus3);
   }
 
-  &:invalid,
   &.invalid {
     border-width: 2px;
     border-color: color(error);
@@ -147,7 +148,6 @@ select {
     }
   }
 
-
   &:valid:not(.invalid) {
     & ~ .messages {
       .validation-message {
@@ -157,20 +157,28 @@ select {
     }
   }
   // Character Based Ems - Good Idea??
-  &.field-small { width: 8em; }
-  &.field-medium { width: 16em; }
-  &.field-large { width: 24em; }
+  &.field-small {
+    width: 8em;
+  }
+
+  &.field-medium {
+    width: 16em;
+  }
+
+  &.field-large {
+    width: 24em;
+  }
 }
 
 [disabled] {
   opacity: 0.6;
-  filter: grayscale(0.4);
+  filter: grayscale(0.6);
   transition: opacity 500ms ease;
 }
 
 input {
-  &[type='radio'],
-  &[type='checkbox'] {
+  &[type='checkbox'],
+  &[type='radio'] {
     &[disabled] + label {
       color: color(gray, plus2);
     }
@@ -179,15 +187,11 @@ input {
 
 select {
   $fill: str-replace(quote(color(black)), '#', '%23');
-  background: url('data:image/svg+xml;utf8,
-                <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#{$fill}" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/>
-                </svg>
-              ') no-repeat,
-              color(white);
+  background: url('data:image/svg+xml;utf8, <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg"> <path fill="#{$fill}" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/> </svg> ') no-repeat, color(white);
   background-position: right 0.5rem center;
   background-size: 1rem;
   appearance: none;
+  padding-right: 25px;
 
   &.field-auto {
     width: auto;
@@ -198,7 +202,8 @@ select {
 
 .form-group {
   input,
-  select {
+  select,
+  textarea {
     & + label::after {
       font-size: font-size(-2);
     }
@@ -218,7 +223,8 @@ select {
 
   &.required-suppressed {
     input,
-    select {
+    select,
+    textarea {
       &[required] {
         & + label::after {
           content: '';
