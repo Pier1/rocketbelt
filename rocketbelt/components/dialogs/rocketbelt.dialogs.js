@@ -2,6 +2,7 @@
 $(function () {
   var options = initOptions();
   var focusedBeforeDialog;
+  var firstChild = options.appendTo + '>div:first-of-type';
   // IE doesn't apply append var to the global scope.
   $cache = {
     main: $(options.appendTo),
@@ -13,7 +14,8 @@ $(function () {
   closers = $($cache.rbDialog).find('[data-rb-dialog-hide]');
 
   if (options.appendTo === 'body') {
-    $cache.main = $(options.appendTo + '>div');
+    $cache.main = $(firstChild);
+    options.appendTo = firstChild;
   }
 
   function initOptions() {
@@ -61,6 +63,8 @@ $(function () {
 
     $.extend(true, options, params);
 
+    if (!params.appendTo) options.appendTo = firstChild;
+    if (options.appendTo) $cache.main = $(options.appendTo);
     if (options.title) $cache.rbDialogTitle.html(options.title);
     if (options.classes) addDialogClasses();
     if (options.buttons.length !== 0) addDialogButtons();
