@@ -94,15 +94,12 @@ input {
       &:hover::before {
         $color-fill: str-replace(quote($color-white), '#', '%23');
         border-color: transparent;
-        background: url('data:image/svg+xml;utf8,
-                      <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                      </svg>'
-                    ) no-repeat,
-                    $color-unselected;
+        background-image: svg-url('<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
+        background-color: $color-unselected;
         background-position: center center;
+        background-repeat: no-repeat;
         transition: background-color 100ms ease-in,
-                    border-color 100ms ease-in;;
+                    border-color 100ms ease-in;
 
       }
     }
@@ -111,13 +108,10 @@ input {
       &::before {
         $color-fill: str-replace(quote($color-white), '#', '%23');
         border-color: transparent;
-        background: url('data:image/svg+xml;utf8,
-                      <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                      </svg>'
-                    ) no-repeat,
-                    $color-selected;
+        background-image: svg-url('<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
+        background-color: $color-selected;
         background-position: center center;
+        background-repeat: no-repeat;
         transition: background-color 100ms ease-in,
                     border-color 100ms ease-in;
       }
@@ -127,13 +121,10 @@ input {
       &[checked] + label {
         &::before {
           $color-fill: str-replace(quote(color(gray, plus2)), '#', '%23');
-          background: url('data:image/svg+xml;utf8,
-                        <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                          <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                        </svg>'
-                      ) no-repeat,
-                      color(gray, plus4);
+          background-image: svg-url('<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
+          background-color: color(gray, plus4);
           background-position: center center;
+          background-repeat: no-repeat;
         }
       }
 
