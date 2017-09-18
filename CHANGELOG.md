@@ -1,3 +1,14 @@
+<a name="1.10.5"></a>
+## [1.10.5](https://github.com/Pier1/rocketbelt/compare/1.10.4...v1.10.5) (2017-09-18)
+
+
+### Bug Fixes
+
+* **Forms:** Get around Safari bug by using min-height instead of height for selects & inputs. ([d3e1d8e](https://github.com/Pier1/rocketbelt/commit/d3e1d8e))
+* **SVGs:** Properly encode XML data used in CSS props (ie, `background-image`). ([1c12f3c](https://github.com/Pier1/rocketbelt/commit/1c12f3c))
+
+
+
 <a name="1.10.4"></a>
 ## [1.10.4](https://github.com/Pier1/rocketbelt/compare/1.10.3...v1.10.4) (2017-09-12)
 
