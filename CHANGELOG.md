@@ -1,3 +1,15 @@
+<a name="1.10.6"></a>
+## [1.10.6](https://github.com/Pier1/rocketbelt/compare/1.10.5...v1.10.6) (2017-09-19)
+
+
+### Bug Fixes
+
+* **Forms:** Add namespace to selectively apply checkboxes. ([4a803f1](https://github.com/Pier1/rocketbelt/commit/4a803f1))
+* **Forms:** Add background-size to display missing background-image. ([e62ceb1](https://github.com/Pier1/rocketbelt/commit/e62ceb1))
+* **Forms:** Fix overescaped fill color for checkbox backgrounds. ([d5d0b7b](https://github.com/Pier1/rocketbelt/commit/d5d0b7b))
+
+
+
 <a name="1.10.5"></a>
 ## [1.10.5](https://github.com/Pier1/rocketbelt/compare/1.10.4...v1.10.5) (2017-09-18)
 
