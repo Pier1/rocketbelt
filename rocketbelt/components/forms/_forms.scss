@@ -102,12 +102,12 @@ html {
   }
 }
 
-input,
+input:not([type='checkbox']),
 select {
   min-height: 2rem;
 }
 
-input,
+input:not([type='checkbox']),
 select,
 textarea {
   display: block;
