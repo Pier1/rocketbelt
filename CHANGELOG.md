@@ -1,3 +1,8 @@
+<a name="1.10.7"></a>
+## [1.10.7](https://github.com/Pier1/rocketbelt/compare/1.10.6...v1.10.7) (2017-09-19)
+
+* **Forms:** Remove some default styling from checkboxes. ([f94e6a8](https://github.com/Pier1/rocketbelt/commit/f94e6a8))
+
 <a name="1.10.6"></a>
 ## [1.10.6](https://github.com/Pier1/rocketbelt/compare/1.10.5...v1.10.6) (2017-09-19)
 
