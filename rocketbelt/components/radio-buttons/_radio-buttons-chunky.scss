@@ -15,19 +15,16 @@
         width: 100%;
         border: 2px solid transparent;
         transition: box-shadow 200ms ease-in;
-
         @include z-depth(0);
 
         &:hover {
           z-index: 1;
           transition: box-shadow 200ms ease-in;
-
           @include z-depth(2);
         }
 
         &:active {
           transition: box-shadow 200ms ease-in;
-
           @include z-depth(1);
         }
 
@@ -40,22 +37,17 @@
           background: transparent;
           background-size: 0;
           transition: background-size 50ms ease-in;
-
           align-self: center;
           flex-shrink: 0;
         }
 
         &:hover::before {
-          $color-fill: quote($color-unselected);
-
-           background-image: svg-url('<svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
+          $color-fill: $color-unselected;
+          background-image: svg-url('<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
           background-position: center center;
           background-size: 24px;
           background-repeat: no-repeat;
-          transition: color 200ms ease-in,
-          box-shadow 200ms ease-in,
-          background-image 200ms ease-in,
-          background-size 50ms ease-in;
+          transition: color 200ms ease-in, box-shadow 200ms ease-in, background-image 200ms ease-in;
         }
       }
 
@@ -64,15 +56,14 @@
         transition: box-shadow 200ms ease-in;
 
         &::before {
-          $color-fill: quote(color(white));
+          $color-fill: color(white);
           border-color: transparent;
-           background-image: svg-url('<svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
           background-color: $color-selected;
+          background-image: svg-url('<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
           background-position: center center;
+          background-size: 24px;
           background-repeat: no-repeat;
-          transition: background-color 200ms ease-in,
-          border 200ms ease-in;
-
+          transition: background-color 200ms ease-in, border 200ms ease-in;
         }
       }
     }
