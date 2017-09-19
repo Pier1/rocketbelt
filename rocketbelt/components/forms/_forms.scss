@@ -177,7 +177,7 @@ textarea {
 }
 
 input {
-  &[type='checkbox'],
+  &.rb-checkbox[type='checkbox'],
   &[type='radio'] {
     &[disabled] + label {
       color: color(gray, plus2);

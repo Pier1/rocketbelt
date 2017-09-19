@@ -4,7 +4,7 @@
 }
 
 input {
-  &[type='checkbox'],
+  &.rb-checkbox[type='checkbox'] ,
   &[type='radio'] {
     @extend %visuallyhidden;
 
@@ -69,7 +69,7 @@ input {
     }
   }
 
-  &[type='checkbox'] {
+  &.rb-checkbox[type='checkbox'] {
     $color-white: color(white);
     $color-selected: color(primary);
     $color-unselected: color(gray, plus3);
