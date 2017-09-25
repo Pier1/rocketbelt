@@ -1,0 +1,14 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Tables'
+
+block content
+  article
+    h1 Tables
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables.pug
