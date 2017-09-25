@@ -1,0 +1,37 @@
+table {
+  border-collapse: collapse;
+}
+
+thead {
+  tr {
+    border-top: 1px solid color(gray, plus2);
+    border-bottom: 2px solid color(gray, plus2);
+  }
+}
+
+tbody {
+  tr {
+    border-bottom: 1px solid color(gray, plus2);
+
+    &:last-of-type {
+      border-bottom: 0;
+    }
+  }
+}
+
+th {
+  text-align: left;
+}
+
+th,
+td {
+  padding: padding(2);
+
+  &:first-of-type {
+    padding-left: padding(0);
+  }
+
+  &:last-of-type {
+    padding-right: padding(0);
+  }
+}
