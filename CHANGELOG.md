@@ -1,3 +1,31 @@
+<a name="1.10.7"></a>
+## [1.10.7](https://github.com/Pier1/rocketbelt/compare/1.10.6...v1.10.7) (2017-09-19)
+
+* **Forms:** Remove some default styling from checkboxes. ([f94e6a8](https://github.com/Pier1/rocketbelt/commit/f94e6a8))
+
+<a name="1.10.6"></a>
+## [1.10.6](https://github.com/Pier1/rocketbelt/compare/1.10.5...v1.10.6) (2017-09-19)
+
+
+### Bug Fixes
+
+* **Forms:** Add namespace to selectively apply checkboxes. ([4a803f1](https://github.com/Pier1/rocketbelt/commit/4a803f1))
+* **Forms:** Add background-size to display missing background-image. ([e62ceb1](https://github.com/Pier1/rocketbelt/commit/e62ceb1))
+* **Forms:** Fix overescaped fill color for checkbox backgrounds. ([d5d0b7b](https://github.com/Pier1/rocketbelt/commit/d5d0b7b))
+
+
+
+<a name="1.10.5"></a>
+## [1.10.5](https://github.com/Pier1/rocketbelt/compare/1.10.4...v1.10.5) (2017-09-18)
+
+
+### Bug Fixes
+
+* **Forms:** Get around Safari bug by using min-height instead of height for selects & inputs. ([d3e1d8e](https://github.com/Pier1/rocketbelt/commit/d3e1d8e))
+* **SVGs:** Properly encode XML data used in CSS props (ie, `background-image`). ([1c12f3c](https://github.com/Pier1/rocketbelt/commit/1c12f3c))
+
+
+
 <a name="1.10.4"></a>
 ## [1.10.4](https://github.com/Pier1/rocketbelt/compare/1.10.3...v1.10.4) (2017-09-12)
 

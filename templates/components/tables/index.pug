@@ -1,0 +1,55 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Tables'
+
+block content
+  // TODO:
+  // Always usa a caption or aria-describedby
+  // Identify headers (column & row)
+  // Don't use absolute sizing
+
+  article
+    h1 Tables
+
+    h2 Standard
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-standard.pug
+
+    h2 Condensed
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-condensed.pug
+
+    h2 Striped
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-striped.pug
+
+    h2 Hoverable
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-hoverable.pug
+
+    h2 Bordered
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-bordered.pug
+
+    h2 Contrasting Header
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables_header-contrasting.pug
