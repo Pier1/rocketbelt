@@ -1,3 +1,24 @@
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/Pier1/rocketbelt/compare/1.10.7...v1.11.0) (2017-10-10)
+
+
+### Bug Fixes
+
+* **Dialogs:** Fix cloning and appendTo issues with dialogs. ([45aa36e](https://github.com/Pier1/rocketbelt/commit/45aa36e))
+* **CTAs:** Add specific selector to override anchors with cta's and forced cursor pointer. ([a55ff4f](https://github.com/Pier1/rocketbelt/commit/a55ff4f))
+* **CTAs:** Remove specificity on CTA's ([47913c2](https://github.com/Pier1/rocketbelt/commit/47913c2))
+
+
+### Features
+
+* **Icons:** Update lock-check icon. ([311d317](https://github.com/Pier1/rocketbelt/commit/311d317))
+* **Tables:** Add table a11y guidance. ([547c203](https://github.com/Pier1/rocketbelt/commit/547c203))
+* **Tables:** Add table style variations: condensed, striped, hoverable, etc. ([07a5eb6](https://github.com/Pier1/rocketbelt/commit/07a5eb6))
+* **Tables:** Basic table implementation. ([d28bdfb](https://github.com/Pier1/rocketbelt/commit/d28bdfb))
+* **Tables:** Update table variations. ([2301399](https://github.com/Pier1/rocketbelt/commit/2301399))
+
+
+
 <a name="1.10.7"></a>
 ## [1.10.7](https://github.com/Pier1/rocketbelt/compare/1.10.6...v1.10.7) (2017-09-19)
 
