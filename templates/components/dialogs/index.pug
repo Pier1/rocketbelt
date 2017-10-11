@@ -16,9 +16,10 @@ block content
             | // Defaults:
             | $('selector').rbDialog({
             |   appendTo: 'body', // Wrapper for .is-dialog-open
+            |   blurElement: 'body>div:first', // Wrapper to blur content '.dialog_blur'
             |   autoOpen: true,
             |   buttons: [],
-            |   classes: { // Classes get merged
+            |   classes: { // Classes get merged into each othe
             |     'rbDialog': 'dialog', // Pass in 'dialog-sheet' or 'dialog-max' for variations
             |     'rbDialogTitle': 'dialog_title',
             |     'rbDialogBody': 'dialog_body'
@@ -101,5 +102,3 @@ block content
       .exampleWithCode > .example {
         display: none;
       }
-
-    script(src='./test.dialogs.js')
