@@ -4,16 +4,19 @@
   text-decoration: none;
   text-transform: uppercase;
   font-weight: font-weight(semibold);
+  line-height: initial;
+  cursor: pointer;
   .icon {
-    width: .85em;
-    height: .85em;
+    width: .75em;
+    height: .75em;
+    font-size: 1em;
   }
   &:hover {
-    color: lighten(black, 15%) !important;
+    color: lighten(black, 15%);
   }
   &:active,
   &:focus {
-    color: lighten(black, 30%) !important;
+    color: lighten(black, 30%);
   }
   &:visited {
     color: color(black);

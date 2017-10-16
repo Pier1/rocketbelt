@@ -87,7 +87,7 @@
           </div></a>
         <ul class="list-reset category-contents">
           <li class="category" ref="base">
-            <input class="category-toggle" id="Base" type="checkbox" name="Base"/>
+            <input class="category-toggle visually-hidden" id="Base" type="checkbox" name="Base"/>
             <label class="category-label" for="Base">Base</label>
             <ul class="list-reset category-contents">
               <li class="category" ref="a11y"><a href="../../base/a11y">Accessibility</a>
@@ -107,7 +107,7 @@
             </ul>
           </li>
           <li class="category" ref="components">
-            <input class="category-toggle" id="Components" type="checkbox" name="Components"/>
+            <input class="category-toggle visually-hidden" id="Components" type="checkbox" name="Components"/>
             <label class="category-label" for="Components">Components</label>
             <ul class="list-reset category-contents">
               <li class="category" ref="alerts"><a href="../../components/alerts">Alerts</a>
@@ -134,6 +134,8 @@
               </li>
               <li class="category" ref="tabcordions"><a href="../../components/tabcordions">Tabcordions</a>
               </li>
+              <li class="category" ref="tables"><a href="../../components/tables">Tables</a>
+              </li>
               <li class="category" ref="tags"><a href="../../components/tags">Tags</a>
               </li>
               <li class="category" ref="tooltips"><a href="../../components/tooltips">Tooltips</a>
@@ -141,7 +143,7 @@
             </ul>
           </li>
           <li class="category" ref="creative">
-            <input class="category-toggle" id="Creative" type="checkbox" name="Creative"/>
+            <input class="category-toggle visually-hidden" id="Creative" type="checkbox" name="Creative"/>
             <label class="category-label" for="Creative">Creative</label>
             <ul class="list-reset category-contents">
               <li class="category" ref="coming-soon"><a href="../../creative/coming-soon">Coming Soon</a>
@@ -157,7 +159,7 @@
             </ul>
           </li>
           <li class="category" ref="exposition">
-            <input class="category-toggle" id="Exposition" type="checkbox" name="Exposition"/>
+            <input class="category-toggle visually-hidden" id="Exposition" type="checkbox" name="Exposition"/>
             <label class="category-label" for="Exposition">Exposition</label>
             <ul class="list-reset category-contents">
               <li class="category" ref="homepage-components"><a href="../../exposition/homepage-components">Homepage Components</a>
@@ -705,22 +707,23 @@
           </div>
         </main>
       </div>
-    </div><article class="dialog" tabindex="0" aria-hidden="true">
-<div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide></div>
-<section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
-<header class="dialog_header">
-<h2 class="dialog_title" id="dialog_title"></h2>
-<div class="dialog_close_container">
-<button class="dialog_close" data-rb-dialog-hide aria-label="Close dialog">
-<svg class="icon">
-<use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"></use>
-</svg>
-</button>
-</div>
-</header>
-<div class="dialog_body"></div>
-</section>
-</article>
+    </div>
+    <article class="dialog" tabindex="0" aria-hidden="true">
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+        <header class="dialog_header">
+          <h2 class="dialog_title" id="dialog_title"></h2>
+          <div class="dialog_close_container">
+            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+              <svg class="icon">
+                <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"></use>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="dialog_body"></div>
+      </section>
+    </article>
     <script src="../../js/playground.jquery.js"></script>
     <script src="../../js/site.js"></script>
     <script src="/base/feature-detection/rocketbelt.feature-detection.min.js" async></script>

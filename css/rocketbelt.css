@@ -1,4 +1,5 @@
 @charset "UTF-8";
+/* Full info here: https://codepen.io/jakob-e/pen/doMoML */
 .button,
 .button-primary, .button-sm, .button-md, .button-lg {
   border: 1px solid transparent;
@@ -28,8 +29,8 @@
 .visuallyhidden,
 .expander .expander_checkbox,
 .expander .expander_checkbox:not(:checked) ~ .expander_content,
-input[type='radio'],
-input[type='checkbox'] {
+input.rb-checkbox[type='checkbox'],
+input[type='radio'] {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
@@ -1804,14 +1805,17 @@ ul.horizontal li {
   color: #030001;
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 600; }
+  font-weight: 600;
+  line-height: initial;
+  cursor: pointer; }
   .cta .icon {
-    width: .85em;
-    height: .85em; }
+    width: .75em;
+    height: .75em;
+    font-size: 1em; }
   .cta:hover {
-    color: #262626 !important; }
+    color: #262626; }
   .cta:active, .cta:focus {
-    color: #4d4d4d !important; }
+    color: #4d4d4d; }
   .cta:visited {
     color: #030001; }
 
@@ -2308,7 +2312,7 @@ a[class*='button'] {
   left: 42%;
   width: 1em;
   height: 1em;
-  background: url('data:image/svg+xml;utf8,<svg width="11" height="19" viewBox="190 45 11 19" fill="%23fefdfd" xmlns="http://www.w3.org/2000/svg"><path d="M201 45v2c-4.962 0-9 4.038-9 9 0 2.48 1.01 4.73 2.64 6.36l-1.415 1.415C191.24 61.795 190 59.04 190 56c0-6.065 4.935-11 11-11z" fill-rule="evenodd"/></svg>');
+  background-image: url("data:image/svg+xml,%3Csvg width='11' height='19' viewBox='190 45 11 19' fill='%23fefdfd' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M201 45v2c-4.962 0-9 4.038-9 9 0 2.48 1.01 4.73 2.64 6.36l-1.415 1.415C191.24 61.795 190 59.04 190 56c0-6.065 4.935-11 11-11z' fill-rule='evenodd'/%3E%3C/svg%3E");
   background-size: contain;
   background-repeat: no-repeat;
   -webkit-transform: translate(-50%, -50%);
@@ -2327,7 +2331,7 @@ a[class*='button'] {
     left: 50%;
     width: 1.5em;
     height: 1.5em;
-    background: url('data:image/svg+xml;utf8,<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><g id="check" fill="%23fefdfd"><polygon points="96 224.746667 0 132.608 29.7706667 101.994667 95.4346667 164.650667 225.674667 32 256 62.048"></polygon></g></g></svg>');
+    background-image: url("data:image/svg+xml,%3Csvg width='256px' height='256px' viewBox='0 0 256 256' version='1.1' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3Cg id='Page-1' stroke='none' stroke-width='1' fill='none' fill-rule='evenodd'%3E%3Cg id='check' fill='%23fefdfd'%3E%3Cpolygon points='96 224.746667 0 132.608 29.7706667 101.994667 95.4346667 164.650667 225.674667 32 256 62.048'%3E%3C/polygon%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
     background-position: center center;
     background-size: contain;
     background-repeat: no-repeat;
@@ -2545,8 +2549,8 @@ fieldset {
           align-items: center; }
   .form-group.inline:first-child {
     margin-top: 0.30795rem; }
-  .form-group.inline label,
-  .form-group.inline .helper-text {
+  .form-group.inline .helper-text,
+  .form-group.inline label {
     -webkit-flex: 0 0 auto;
         -ms-flex: 0 0 auto;
             flex: 0 0 auto;
@@ -2594,16 +2598,16 @@ fieldset {
   .form-group.inline textarea:not([required]) + label::after {
     content: '(optional)'; }
 
+html.touchevents button,
 html.touchevents input,
-html.touchevents select,
-html.touchevents button {
+html.touchevents select {
   min-height: 44px; }
 
-input,
+input:not([type='checkbox']),
 select {
-  height: 2rem; }
+  min-height: 2rem; }
 
-input,
+input:not([type='checkbox']),
 select,
 textarea {
   display: block;
@@ -2612,71 +2616,74 @@ textarea {
   border: 1px solid #9b9595;
   border-radius: 2px;
   font-size: 0.88889rem; }
-  input + label,
+  input:not([type='checkbox']) + label,
   select + label,
   textarea + label {
     -webkit-order: -1;
         -ms-flex-order: -1;
             order: -1; }
-  input:focus,
+  input:not([type='checkbox']):focus,
   select:focus,
   textarea:focus {
     overflow: hidden;
     outline: 2px solid #1492d9; }
-    input:focus.invalid,
+    input:not([type='checkbox']):focus.invalid,
     select:focus.invalid,
     textarea:focus.invalid {
       outline-color: #d51c31; }
-  input[disabled],
+  input:not([type='checkbox'])[disabled],
   select[disabled],
   textarea[disabled] {
     border-color: transparent;
     background-color: #cdcaca; }
-  input.invalid,
+  input:not([type='checkbox']).invalid,
   select.invalid,
   textarea.invalid {
     border-width: 2px;
     border-color: #d51c31; }
-    input.invalid ~ .messages .validation-message,
+    input:not([type='checkbox']).invalid ~ .messages .validation-message,
     select.invalid ~ .messages .validation-message,
     textarea.invalid ~ .messages .validation-message {
       display: block;
       visibility: visible;
       color: #d51c31; }
-  input:valid:not(.invalid) ~ .messages .validation-message,
+  input:not([type='checkbox']):valid:not(.invalid) ~ .messages .validation-message,
   select:valid:not(.invalid) ~ .messages .validation-message,
   textarea:valid:not(.invalid) ~ .messages .validation-message {
     display: none;
     visibility: hidden; }
-  input.field-small,
+  input:not([type='checkbox']).field-small,
   select.field-small,
   textarea.field-small {
     width: 8em; }
-  input.field-medium,
+  input:not([type='checkbox']).field-medium,
   select.field-medium,
   textarea.field-medium {
     width: 16em; }
-  input.field-large,
+  input:not([type='checkbox']).field-large,
   select.field-large,
   textarea.field-large {
     width: 24em; }
 
 [disabled] {
   opacity: 0.6;
-  -webkit-filter: grayscale(0.4);
-          filter: grayscale(0.4);
+  -webkit-filter: grayscale(0.6);
+          filter: grayscale(0.6);
   transition: opacity 500ms ease; }
 
-input[type='radio'][disabled] + label, input[type='checkbox'][disabled] + label {
+input.rb-checkbox[type='checkbox'][disabled] + label, input[type='radio'][disabled] + label {
   color: #b4b0b0; }
 
 select {
-  background: url('data:image/svg+xml;utf8,\a                 <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg">\a                   <path fill="%23030001" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/>\a                 </svg>\a               ') no-repeat, #fefdfd;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 6 32 21' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath fill='%23030001' fill-rule='evenodd' d='M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z'/%3E %3C/svg%3E ");
+  background-repeat: no-repeat;
+  background-color: #fefdfd;
   background-position: right 0.5rem center;
   background-size: 1rem;
   -webkit-appearance: none;
      -moz-appearance: none;
-          appearance: none; }
+          appearance: none;
+  padding-right: 25px; }
   select.field-auto {
     width: auto;
     margin-right: auto;
@@ -3078,8 +3085,7 @@ button.swiper-pagination-bullet {
     opacity: 0.5;
     transition: opacity 200ms ease-in-out; }
 
-#docs-wrapper:not(.is-dialog-open) ~ .dialog .dialog_content,
-#main:not(.is-dialog-open) ~ .dialog .dialog_content {
+body:not(.is-dialog-open) .dialog .dialog_content {
   -webkit-animation: dialogOut 300ms ease-in;
           animation: dialogOut 300ms ease-in; }
 
@@ -3118,10 +3124,10 @@ button.swiper-pagination-bullet {
   overflow: hidden;
   -webkit-filter: blur(5px);
           filter: blur(5px); }
-  .is-dialog-open ~ .dialog .dialog_overlay {
+  .is-dialog-open .dialog .dialog_overlay {
     opacity: 1;
     transition: opacity 300ms ease-out; }
-  .is-dialog-open ~ .dialog .dialog_content {
+  .is-dialog-open .dialog .dialog_content {
     -webkit-animation: dialogIn 500ms ease-out;
             animation: dialogIn 500ms ease-out; }
 
@@ -3137,8 +3143,8 @@ button.swiper-pagination-bullet {
   transition: opacity 300ms ease-out; }
 
 .dialog_buttons {
-  border-top: 1px solid #b4b0b0;
-  background: #cdcaca;
+  border-top: 1px solid #cdcaca;
+  background: #e6e5e5;
   -webkit-justify-content: flex-end;
       -ms-flex-pack: end;
           justify-content: flex-end;
@@ -3471,39 +3477,41 @@ button.swiper-pagination-bullet {
         -ms-flex-negative: 0;
             flex-shrink: 0; }
   .radio-group.radio-group-chunky input[type='radio'] + label:hover::before {
-    background: url('data:image/svg+xml;utf8,\a                         <svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">\a                           <path fill="%23cdcaca" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>\a                         </svg>') no-repeat;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='629 458 16 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23cdcaca' fill-rule='evenodd' d='M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z'/%3E%3C/svg%3E");
     background-position: center center;
     background-size: 24px;
     background-repeat: no-repeat;
-    transition: color 200ms ease-in, box-shadow 200ms ease-in, background-image 200ms ease-in, background-size 50ms ease-in; }
+    transition: color 200ms ease-in, box-shadow 200ms ease-in, background-image 200ms ease-in; }
 
 .radio-group.radio-group-chunky input[type='radio']:checked + label {
   border: 2px solid #1492d9;
   transition: box-shadow 200ms ease-in; }
   .radio-group.radio-group-chunky input[type='radio']:checked + label::before {
     border-color: transparent;
-    background: url('data:image/svg+xml;utf8,\a                         <svg width="24" viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">\a                           <path fill="%23fefdfd" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>\a                         </svg>') no-repeat, #1492d9;
+    background-color: #1492d9;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='629 458 16 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fefdfd' fill-rule='evenodd' d='M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z'/%3E%3C/svg%3E");
     background-position: center center;
+    background-size: 24px;
     background-repeat: no-repeat;
     transition: background-color 200ms ease-in, border 200ms ease-in; }
 
-.radio-group,
-.checkbox-group {
+.checkbox-group,
+.radio-group {
   margin: 0;
   padding: 0;
   list-style-type: none; }
-  .radio-group ul,
-  .radio-group ol,
   .checkbox-group ul,
-  .checkbox-group ol {
+  .checkbox-group ol,
+  .radio-group ul,
+  .radio-group ol {
     list-style-type: none; }
 
-input[type='radio'] + label, input[type='checkbox'] + label {
+input.rb-checkbox[type='checkbox'] + label, input[type='radio'] + label {
   position: relative;
   padding-left: 1.25rem;
   font-weight: 400; }
 
-input[type='radio'][disabled] + label::before, input[type='checkbox'][disabled] + label::before {
+input.rb-checkbox[type='checkbox'][disabled] + label::before, input[type='radio'][disabled] + label::before {
   border: 2px solid #e6e5e5;
   background: #e6e5e5; }
 
@@ -3540,7 +3548,7 @@ input[type='radio'][disabled][checked] + label::before {
   border: 6px solid #e6e5e5;
   background: #b4b0b0; }
 
-input[type='checkbox'] + label::before {
+input.rb-checkbox[type='checkbox'] + label::before {
   position: absolute;
   top: 0.1rem;
   left: 0;
@@ -3553,23 +3561,29 @@ input[type='checkbox'] + label::before {
   content: '';
   transition: background-color 200ms ease-in; }
 
-input[type='checkbox'] + label:hover::before {
+input.rb-checkbox[type='checkbox'] + label:hover::before {
   border-color: transparent;
-  background: url('data:image/svg+xml;utf8,\a                       <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">\a                         <path fill="%23fefdfd" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>\a                       </svg>') no-repeat, #cdcaca;
+  background-color: #cdcaca;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='629 458 16 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fefdfd' fill-rule='evenodd' d='M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z'/%3E%3C/svg%3E");
   background-position: center center;
+  background-repeat: no-repeat;
   transition: background-color 100ms ease-in, border-color 100ms ease-in; }
 
-input[type='checkbox']:checked + label::before {
+input.rb-checkbox[type='checkbox']:checked + label::before {
   border-color: transparent;
-  background: url('data:image/svg+xml;utf8,\a                       <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">\a                         <path fill="%23fefdfd" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>\a                       </svg>') no-repeat, #1492d9;
+  background-color: #1492d9;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='629 458 16 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fefdfd' fill-rule='evenodd' d='M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z'/%3E%3C/svg%3E");
   background-position: center center;
+  background-repeat: no-repeat;
   transition: background-color 100ms ease-in, border-color 100ms ease-in; }
 
-input[type='checkbox'][disabled][checked] + label::before {
-  background: url('data:image/svg+xml;utf8,\a                         <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">\a                           <path fill="%23b4b0b0" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>\a                         </svg>') no-repeat, #e6e5e5;
-  background-position: center center; }
+input.rb-checkbox[type='checkbox'][disabled][checked] + label::before {
+  background-color: #e6e5e5;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='629 458 16 12' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23b4b0b0' fill-rule='evenodd' d='M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z'/%3E%3C/svg%3E");
+  background-position: center center;
+  background-repeat: no-repeat; }
 
-input[type='checkbox'][disabled]:not([checked]) + label::before {
+input.rb-checkbox[type='checkbox'][disabled]:not([checked]) + label::before {
   border-color: transparent;
   background: #e6e5e5; }
 
@@ -3594,8 +3608,9 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
     font-weight: 600; }
   .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
     padding: 0.19225rem 0.79012rem;
+    line-height: normal;
     border: 1px solid #b4b0b0;
-    background: #cdcaca;
+    background: #e6e5e5;
     color: #1075ae;
     text-transform: uppercase;
     transition: background 100ms ease, color 100ms ease; }
@@ -3618,7 +3633,7 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
     transition: border-bottom 200ms ease; }
   .is-tabs .tabcordion_navlist .tabcordion_nav-trigger {
     padding-top: calc(0.19225rem + 3.4px);
-    border-bottom: 3px solid #cdcaca;
+    border-bottom: 3px solid #e6e5e5;
     transition: border-bottom 200ms ease; }
 
 .is-tabs .tabcordion_nav-item {
@@ -3731,6 +3746,60 @@ body.touchevents .tabcordion .tabcordion_nav-item .tabcordion_nav-trigger {
   100% {
     display: block;
     max-height: 100vh; } }
+
+table {
+  border-collapse: collapse; }
+  table caption {
+    font-weight: 600; }
+
+thead {
+  color: #686262;
+  font-size: 0.88889rem; }
+  thead tr {
+    border-top: 1px solid #b4b0b0;
+    border-bottom: 2px solid #b4b0b0; }
+
+tbody tr {
+  border-bottom: 1px solid #b4b0b0;
+  transition: background 100ms linear; }
+  tbody tr:last-of-type {
+    border-bottom: 0; }
+
+th {
+  text-align: left; }
+
+th,
+td {
+  padding: 1rem; }
+  th:first-of-type,
+  td:first-of-type {
+    padding-left: 0.5rem; }
+  th:last-of-type,
+  td:last-of-type {
+    padding-right: 0.5rem; }
+
+.table-hoverable tbody tr:hover {
+  background: #f3f2f2;
+  transition: background 100ms linear; }
+
+.table-striped tbody tr:nth-child(odd) {
+  background: #f3f2f2; }
+
+.table_header-contrasting thead {
+  background: #e6e5e5;
+  color: #030001; }
+
+.table-bordered td,
+.table-bordered th {
+  border: 1px solid #b4b0b0; }
+
+.table-condensed {
+  font-size: 0.79012rem; }
+  .table-condensed thead {
+    font-size: 0.70233rem; }
+  .table-condensed th,
+  .table-condensed td {
+    padding: 0.25rem; }
 
 .tag {
   display: inline-block;

@@ -1,6 +1,5 @@
-#docs-wrapper:not(.is-dialog-open),
-#main:not(.is-dialog-open) {
-  & ~ .dialog {
+body:not(.is-dialog-open) {
+  .dialog {
     .dialog_content {
       animation: dialogOut 300ms ease-in;
     }
@@ -45,7 +44,7 @@
   overflow: hidden;
   filter: blur(5px);
 
-  & ~ .dialog {
+  .dialog {
     .dialog_overlay {
       opacity: 1;
       transition: opacity 300ms ease-out;
@@ -70,8 +69,8 @@
 }
 
 .dialog_buttons {
-  border-top: 1px solid color(gray, plus2);
-  background: color(gray, plus3);
+  border-top: 1px solid color(gray, plus3);
+  background: color(gray, plus4);
   justify-content: flex-end;
   align-items: center;
 }

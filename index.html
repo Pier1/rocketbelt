@@ -87,7 +87,7 @@
           </div></a>
         <ul class="list-reset category-contents">
           <li class="category" ref="base">
-            <input class="category-toggle" id="Base" type="checkbox" name="Base"/>
+            <input class="category-toggle visually-hidden" id="Base" type="checkbox" name="Base"/>
             <label class="category-label" for="Base">Base</label>
             <ul class="list-reset category-contents">
               <li class="category" ref="a11y"><a href="../../base/a11y">Accessibility</a>
@@ -107,7 +107,7 @@
             </ul>
           </li>
           <li class="category" ref="components">
-            <input class="category-toggle" id="Components" type="checkbox" name="Components"/>
+            <input class="category-toggle visually-hidden" id="Components" type="checkbox" name="Components"/>
             <label class="category-label" for="Components">Components</label>
             <ul class="list-reset category-contents">
               <li class="category" ref="alerts"><a href="../../components/alerts">Alerts</a>
@@ -134,6 +134,8 @@
               </li>
               <li class="category" ref="tabcordions"><a href="../../components/tabcordions">Tabcordions</a>
               </li>
+              <li class="category" ref="tables"><a href="../../components/tables">Tables</a>
+              </li>
               <li class="category" ref="tags"><a href="../../components/tags">Tags</a>
               </li>
               <li class="category" ref="tooltips"><a href="../../components/tooltips">Tooltips</a>
@@ -141,7 +143,7 @@
             </ul>
           </li>
           <li class="category" ref="creative">
-            <input class="category-toggle" id="Creative" type="checkbox" name="Creative"/>
+            <input class="category-toggle visually-hidden" id="Creative" type="checkbox" name="Creative"/>
             <label class="category-label" for="Creative">Creative</label>
             <ul class="list-reset category-contents">
               <li class="category" ref="coming-soon"><a href="../../creative/coming-soon">Coming Soon</a>
@@ -157,7 +159,7 @@
             </ul>
           </li>
           <li class="category" ref="exposition">
-            <input class="category-toggle" id="Exposition" type="checkbox" name="Exposition"/>
+            <input class="category-toggle visually-hidden" id="Exposition" type="checkbox" name="Exposition"/>
             <label class="category-label" for="Exposition">Exposition</label>
             <ul class="list-reset category-contents">
               <li class="category" ref="homepage-components"><a href="../../exposition/homepage-components">Homepage Components</a>
@@ -182,13 +184,12 @@
             <div class="col xs">
               <article><h1>Rocketbelt</h1>
 <p>Rocketbelt is a UX-focused, responsive, and mobile-first pattern library collaboratively assembled at Pier 1 Imports.</p>
-<p><a href="https://www.npmjs.com/package/rocketbelt"><img src="https://img.shields.io/npm/v/rocketbelt.svg?style=flat-square" alt="npm"></a>
-<a href="https://travis-ci.org/Pier1/rocketbelt"><img src="https://img.shields.io/travis/Pier1/rocketbelt.svg?style=flat-square" alt="Travis"></a></p>
-<p><a href="http://rocketbelt.io">rocketbelt.io</a> | <a href="https://github.com/pier1/rocketbelt">Rocketbelt on GitHub</a></p>
+<p><a href="https://www.npmjs.com/package/rocketbelt"><img src="https://img.shields.io/npm/v/rocketbelt.svg?style=flat-square" alt="npm"></a> <a href="https://travis-ci.org/Pier1/rocketbelt"><img src="https://img.shields.io/travis/Pier1/rocketbelt.svg?style=flat-square" alt="Travis"></a></p>
+<p><a href="http://rocketbelt.design">rocketbelt.design</a> | <a href="https://github.com/pier1/rocketbelt">Rocketbelt on GitHub</a></p>
 <h2>Introduction</h2>
 <p>Rocketbelt is a pattern library that addresses recurring design problems across the ecommerce landscape.</p>
 <p>It strives to be a comprehensive, living document that serves the <strong>clarity</strong> of design decisions. It facilitates a <strong>shared vocabulary</strong> and therefore a <strong>shared understanding</strong> of user interfaces.</p>
-<p>The pattern library guarantees consistency in the online experience—critical since the experience is the brand.</p>
+<p>The pattern library guarantees consistency in the online experience--critical since the experience is the brand.</p>
 <p>Rocketbelt ensures UI components are reusable, efficient, and easily maintained. It accelerates UI development by providing building blocks to quickly build potentially complicated interactions. The pattern library allows rapid prototyping to also be high fidelity.</p>
 <h2>Features</h2>
 <ul>
@@ -201,9 +202,9 @@
 <li>Coming soon: Automated visual regression tests of all patterns</li>
 </ul>
 <h2>Getting Started</h2>
-<p>Browse the pattern library at <a href="http://rocketbelt.io">rocketbelt.io</a> or fork the GitHub repo! Then build your fork and run a local instance by running <code>npm install &amp;&amp; gulp</code>.</p>
+<p>Browse the pattern library at <a href="http://rocketbelt.design">rocketbelt.design</a> or fork the GitHub repo! Then build your fork and run a local instance by running <code>npm install &amp;&amp; gulp</code>.</p>
 <h2>Contributing</h2>
-<p>Rocketbelt is a collaborative, living document and your contributions are valued—please submit <a href="https://github.com/pier1/rocketbelt/issues">GitHub issues</a> and <a href="https://github.com/pier1/rocketbelt/pulls">pull requests</a>.</p>
+<p>Rocketbelt is a collaborative, living document and your contributions are valued--please submit <a href="https://github.com/pier1/rocketbelt/issues">GitHub issues</a> and <a href="https://github.com/pier1/rocketbelt/pulls">pull requests</a>.</p>
 <h2>Acknowledgements</h2>
 <p><a href="https://browserstack.com"><img src="https://cdn.rawgit.com/Pier1/rocketbelt/2ebe7e55/templates/assets/browserstack.svg" alt="BrowserStack"></a></p>
 <p><a href="https://browserstack.com"><strong>BrowserStack</strong></a> generously supports Rocketbelt's goal of cross-browser &amp; cross-device compatibility.</p>
@@ -213,22 +214,23 @@
           </div>
         </main>
       </div>
-    </div><article class="dialog" tabindex="0" aria-hidden="true">
-<div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide></div>
-<section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
-<header class="dialog_header">
-<h2 class="dialog_title" id="dialog_title"></h2>
-<div class="dialog_close_container">
-<button class="dialog_close" data-rb-dialog-hide aria-label="Close dialog">
-<svg class="icon">
-<use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"></use>
-</svg>
-</button>
-</div>
-</header>
-<div class="dialog_body"></div>
-</section>
-</article>
+    </div>
+    <article class="dialog" tabindex="0" aria-hidden="true">
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+        <header class="dialog_header">
+          <h2 class="dialog_title" id="dialog_title"></h2>
+          <div class="dialog_close_container">
+            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+              <svg class="icon">
+                <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"></use>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="dialog_body"></div>
+      </section>
+    </article>
     <script src="../../js/playground.jquery.js"></script>
     <script src="../../js/site.js"></script>
     <script src="/base/feature-detection/rocketbelt.feature-detection.min.js" async></script>

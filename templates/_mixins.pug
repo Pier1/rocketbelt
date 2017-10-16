@@ -22,9 +22,9 @@ mixin wrapInExpander(collapsedLabel, expandedLabel, expanded, id)
   .expander
     input(type='checkbox', id=hashedId, class='expander_checkbox', checked=expanded)
     label(for=hashedId,
-          class='expander_label',
-          data-collapsed-label=collapsedLabel,
-          data-expanded-label=expandedLabel) #[span.expander_icon]
+      class='expander_label',
+      data-collapsed-label=collapsedLabel,
+      data-expanded-label=expandedLabel) #[span.expander_icon]
     .expander_content
       block
 
@@ -104,7 +104,7 @@ mixin buildNav(navObject, rootHref)
             if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
               a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '').replace('A11y', 'Accessibility')}
             else
-              input.category-toggle(id=name, type='checkbox', name=name)
+              input.category-toggle.visually-hidden(id=name, type='checkbox', name=name)
               label.category-label(for=name) #{name}
 
               if item.children && item.children.length >= 1
@@ -145,10 +145,10 @@ mixin footnoteDefine(name)
   -   if ( note.name == name ) foundnote = note;
   - });
   - if (foundnote) {
-      if block
-        - foundnote.block = block;
-      else
-        - foundnote.block = function(){ return ''; }
+    if block
+      - foundnote.block = block;
+    else
+      - foundnote.block = function(){ return ''; }
   - }
 
 mixin footnoteList()

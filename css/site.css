@@ -481,6 +481,7 @@ pre[class*="language-"] {
 .token.entity {
   cursor: help; }
 
+/* Full info here: https://codepen.io/jakob-e/pen/doMoML */
 .example-code .copy-code {
   border: 1px solid transparent;
   text-decoration: none;
@@ -505,14 +506,14 @@ pre[class*="language-"] {
   top: 0.5rem;
   left: 12rem; }
 
-table {
+.a11y-checklist {
   border-spacing: 0;
   table-layout: fixed;
   font-size: 0.88889rem; }
-  table tr td {
+  .a11y-checklist tr td {
     padding: 0.5rem;
     border-top: 1px solid #cdcaca; }
-  table tr td:nth-of-type(1) {
+  .a11y-checklist tr td:nth-of-type(1) {
     overflow: hidden;
     text-align: center;
     text-transform: uppercase;
@@ -520,23 +521,23 @@ table {
     white-space: nowrap;
     font-weight: 600;
     font-size: 0.70233rem; }
-  table tr:nth-child(even) {
+  .a11y-checklist tr:nth-child(even) {
     background-color: #e6e5e5; }
-  table .a11y-principle {
+  .a11y-checklist .a11y-principle {
     padding: 4px;
     border-radius: 2px;
     color: white; }
-    table .a11y-principle.text-alternatives {
+    .a11y-checklist .a11y-principle.text-alternatives {
       background-color: #1492d9; }
-    table .a11y-principle.adaptable {
+    .a11y-checklist .a11y-principle.adaptable {
       background-color: #10ae98; }
-    table .a11y-principle.distinguishable {
+    .a11y-checklist .a11y-principle.distinguishable {
       background-color: #2e0a6d; }
-    table .a11y-principle.navigable {
+    .a11y-checklist .a11y-principle.navigable {
       background-color: #14d9be; }
-    table .a11y-principle.predictable {
+    .a11y-checklist .a11y-principle.predictable {
       background-color: #0a496d; }
-    table .a11y-principle.compatible {
+    .a11y-checklist .a11y-principle.compatible {
       background-color: #5b14d9; }
 
 .rb-badge {
