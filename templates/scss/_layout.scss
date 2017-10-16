@@ -53,7 +53,10 @@
 html,
 body { height: 100%; }
 
-body { min-height: 100%; }
+body {
+  overflow: hidden;
+  min-height: 100%;
+}
 
 #docs-content {
   margin-top: calc(#{ms(4)} + 20%);
@@ -71,6 +74,7 @@ body { min-height: 100%; }
 }
 
 #docs-wrapper {
+  overflow: auto;
   height: 100%;
 }
 
