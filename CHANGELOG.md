@@ -1,3 +1,13 @@
+<a name="1.11.3"></a>
+## [1.11.3](https://github.com/Pier1/rocketbelt/compare/1.11.2...v1.11.3) (2017-10-16)
+
+
+### Bug Fixes
+
+* **Dialogs:** Fix appendTo and add blurElement to dialog options. ([b054ebf](https://github.com/Pier1/rocketbelt/commit/b054ebf))
+
+
+
 <a name="1.11.2"></a>
 ## [1.11.2](https://github.com/Pier1/rocketbelt/compare/1.11.1...v1.11.2) (2017-10-16)
 
