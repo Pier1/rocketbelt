@@ -1,8 +1,12 @@
 #!/bin/bash
 set -e # Exit with nonzero exit code if anything fails
 
+if [ "$TRAVIS_PULL_REQUEST" != "false" -o "$TRAVIS_BRANCH" != "$SOURCE_BRANCH" ]; then
+    echo "Skipping deploy because it's a PR or not on the master branch."
+    exit 0
+fi
+
 # If we're on master, build for gh-pages & push to that branch
-if [[ $TRAVIS_PULL_REQUEST = "false" ]] && [[ $TRAVIS_BRANCH = $SOURCE_BRANCH ]]; then
   mv dist/* .
   rmdir dist
 
@@ -19,13 +23,12 @@ if [[ $TRAVIS_PULL_REQUEST = "false" ]] && [[ $TRAVIS_BRANCH = $SOURCE_BRANCH ]]
   ENCRYPTED_IV_VAR="encrypted_${ENCRYPTION_LABEL}_iv"
   ENCRYPTED_KEY=${!ENCRYPTED_KEY_VAR}
   ENCRYPTED_IV=${!ENCRYPTED_IV_VAR}
-  openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in deploy_key.enc -out deploy_key -d
+  openssl aes-256-cbc -K $ENCRYPTED_KEY -iv $ENCRYPTED_IV -in ../deploy_key.enc -out deploy_key -d
   chmod 600 deploy_key
   eval `ssh-agent -s`
   ssh-add deploy_key
 
-  npm publish
+  # npm publish
 
   git push $SSH_REPO $TARGET_BRANCH
   git branch -D TEMP_BRANCH
-fi
