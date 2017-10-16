@@ -96,63 +96,72 @@ pre[class*="language-"] {
 	opacity: .7;
 }
 
-.token.property,
-.token.tags,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	// color: #905;
-	color: $color-accent-lighter;
-}
+.example-code {
+  .token.property,
+  .token.tag,
+  .token.tags,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+  	// color: #905;
+    padding: inherit;
+    background: inherit;
+    color: $color-accent-lighter;
+    text-transform: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+  }
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	// color: #690;
-	color: $color-secondary-darker;
-}
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+  	// color: #690;
+  	color: $color-secondary-darker;
+  }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: hsla(0, 0%, 100%, .5);
-}
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+  	color: #a67f59;
+  	background: hsla(0, 0%, 100%, .5);
+  }
 
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-	// color: #07a;
-	color: $color-primary;
-}
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+  	// color: #07a;
+  	color: $color-primary;
+  }
 
-.token.function {
-	// color: #DD4A68;
-	color: $color-error-lighter;
-}
+  .token.function {
+  	// color: #DD4A68;
+  	color: $color-error-lighter;
+  }
 
-.token.regex,
-.token.important,
-.token.variable {
-	// color: #e90;
-	color: $color-warning;
-}
+  .token.regex,
+  .token.important,
+  .token.variable {
+  	// color: #e90;
+  	color: $color-warning;
+  }
 
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
+  .token.important,
+  .token.bold {
+  	font-weight: bold;
+  }
+  .token.italic {
+  	font-style: italic;
+  }
 
-.token.entity {
-	cursor: help;
+  .token.entity {
+  	cursor: help;
+  }
 }
