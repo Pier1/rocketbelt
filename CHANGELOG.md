@@ -1,3 +1,18 @@
+<a name="1.11.2"></a>
+## [1.11.2](https://github.com/Pier1/rocketbelt/compare/1.11.1...v1.11.2) (2017-10-16)
+
+
+
+<a name="1.11.1"></a>
+## [1.11.1](https://github.com/Pier1/rocketbelt/compare/1.11.0...v1.11.1) (2017-10-16)
+
+
+### Features
+
+* **Icons:** Add speed icon. ([2e666d4](https://github.com/Pier1/rocketbelt/commit/2e666d4))
+
+
+
 <a name="1.11.0"></a>
 # [1.11.0](https://github.com/Pier1/rocketbelt/compare/1.10.7...v1.11.0) (2017-10-10)
 
