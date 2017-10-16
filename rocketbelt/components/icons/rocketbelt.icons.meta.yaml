@@ -208,6 +208,10 @@ specs:
   title: Specs
   description: A square with perpendicular arrows that indicate measurements
 
+speed:
+  title: Speed
+  description: A stopwatch with motion lines behind it
+
 stack-o:
   title: Stack
   description: A square stacked on another square
