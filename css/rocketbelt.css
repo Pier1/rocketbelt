@@ -3085,7 +3085,7 @@ button.swiper-pagination-bullet {
     opacity: 0.5;
     transition: opacity 200ms ease-in-out; }
 
-body:not(.is-dialog-open) .dialog .dialog_content {
+*:not(.is-dialog-open) .dialog .dialog_content {
   -webkit-animation: dialogOut 300ms ease-in;
           animation: dialogOut 300ms ease-in; }
 
@@ -3121,9 +3121,10 @@ body:not(.is-dialog-open) .dialog .dialog_content {
   padding: 0.55493rem; }
 
 .is-dialog-open {
-  overflow: hidden;
-  -webkit-filter: blur(5px);
-          filter: blur(5px); }
+  overflow: hidden; }
+  .is-dialog-open .dialog_blur {
+    -webkit-filter: blur(5px);
+            filter: blur(5px); }
   .is-dialog-open .dialog .dialog_overlay {
     opacity: 1;
     transition: opacity 300ms ease-out; }
@@ -3242,6 +3243,14 @@ body:not(.is-dialog-open) .dialog .dialog_content {
     width: 1rem;
     height: 100%; }
 
+*:not(.is-dialog-open) .dialog.dialog-max .dialog_content {
+  -webkit-animation: dialog-max-out 300ms ease-in-out;
+          animation: dialog-max-out 300ms ease-in-out; }
+
+.is-dialog-open .dialog.dialog-max .dialog_content {
+  -webkit-animation: dialog-max-in 300ms ease-in-out;
+          animation: dialog-max-in 300ms ease-in-out; }
+
 .dialog.dialog-max .dialog_header {
   padding: 0;
   border: 0;
@@ -3262,19 +3271,12 @@ body:not(.is-dialog-open) .dialog .dialog_content {
   width: 100%;
   -webkit-transform: none;
       -ms-transform: none;
-          transform: none;
-  -webkit-animation: dialog-max-in 300ms ease-in-out;
-          animation: dialog-max-in 300ms ease-in-out; }
+          transform: none; }
   @media (min-width: 48rem) {
     .dialog.dialog-max .dialog_content {
       right: 10%;
       left: 10%;
       width: 80%; } }
-
-#docs-wrapper:not(.is-dialog-open) ~ .dialog.dialog-max .dialog_content,
-#main:not(.is-dialog-open) ~ .dialog.dialog-max .dialog_content {
-  -webkit-animation: dialog-max-out 300ms ease-in-out;
-          animation: dialog-max-out 300ms ease-in-out; }
 
 @-webkit-keyframes dialog-max-in {
   from {
@@ -3316,6 +3318,14 @@ body:not(.is-dialog-open) .dialog .dialog_content {
     -webkit-transform: scale3d(0.3, 0.3, 1);
             transform: scale3d(0.3, 0.3, 1); } }
 
+*:not(.is-dialog-open) .dialog.dialog-sheet .dialog_content {
+  -webkit-animation: dialog-sheet-out 300ms ease-in-out;
+          animation: dialog-sheet-out 300ms ease-in-out; }
+
+.is-dialog-open .dialog.dialog-sheet .dialog_content {
+  -webkit-animation: dialog-sheet-in 300ms ease-in-out;
+          animation: dialog-sheet-in 300ms ease-in-out; }
+
 .dialog.dialog-sheet .dialog_content {
   position: absolute;
   top: auto;
@@ -3328,11 +3338,6 @@ body:not(.is-dialog-open) .dialog .dialog_content {
           transform: none;
   -webkit-animation: dialog-sheet-in 300ms ease-in-out;
           animation: dialog-sheet-in 300ms ease-in-out; }
-
-#docs-wrapper:not(.is-dialog-open) ~ .dialog.dialog-sheet .dialog_content,
-#main:not(.is-dialog-open) ~ .dialog.dialog-sheet .dialog_content {
-  -webkit-animation: dialog-sheet-out 300ms ease-in-out;
-          animation: dialog-sheet-out 300ms ease-in-out; }
 
 @-webkit-keyframes dialog-sheet-in {
   from {

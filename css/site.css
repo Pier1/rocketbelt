@@ -730,6 +730,7 @@ body {
   height: 100%; }
 
 body {
+  overflow: hidden;
   min-height: 100%; }
 
 #docs-content {
@@ -745,6 +746,7 @@ body {
       margin-left: 180px; } }
 
 #docs-wrapper {
+  overflow: auto;
   height: 100%; }
 
 #docs-leftnav {
