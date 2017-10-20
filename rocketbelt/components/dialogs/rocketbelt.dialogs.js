@@ -2,10 +2,10 @@
 $(function () {
   var options = initOptions();
   var focusedBeforeDialog;
-  var firstChild = options.appendTo + '>div:first-of-type';
   // IE doesn't apply append var to the global scope.
   $cache = {
-    main: $(options.appendTo),
+    appendTo: $(options.appendTo),
+    blurElement: $(options.blurElement),
     rbDialog: $('.dialog').last(),
     rbDialogTitle: $('.dialog .dialog_title').last(),
     rbDialogBody: $('.dialog .dialog_body').last()
@@ -13,14 +13,10 @@ $(function () {
   element = null;
   closers = $($cache.rbDialog).find('[data-rb-dialog-hide]');
 
-  if (options.appendTo === 'body') {
-    $cache.main = $(firstChild);
-    options.appendTo = firstChild;
-  }
-
   function initOptions() {
     return {
       appendTo: 'body',
+      blurElement: 'body>div:first',
       autoOpen: true,
       buttons: [],
       classes: {
@@ -47,24 +43,24 @@ $(function () {
     else if (params === 'destroy') destroy();
     else if (params === 'open' || options.autoOpen) open();
     else if (params === 'options') return options;
-    else if (params === 'isOpen') return $cache.main.hasClass('is-dialog-open');
-    else return;
+    else if (params === 'isOpen') return $cache.appendTo.hasClass('is-dialog-open');
+    return null;
   };
 
   function init(params) {
-    if ($cache.main.hasClass('is-dialog-open')) return;
+    if ($cache.appendTo.hasClass('is-dialog-open')) return;
     if (this.hasOwnProperty('defaultElement')) {
-      element = $(this.defaultElement).clone();
+      element = $(this.defaultElement);
     } else if (this) {
-      element = $(this).clone();
+      element = $(this);
     } else {
-      element = $(element).clone();
+      element = $(element);
     }
 
     $.extend(true, options, params);
 
-    if (!params.appendTo) options.appendTo = firstChild;
-    if (options.appendTo) $cache.main = $(options.appendTo);
+    if (options.appendTo) $cache.appendTo = $(options.appendTo);
+    if (options.blurElement) $cache.blurElement = $(options.blurElement);
     if (options.title) $cache.rbDialogTitle.html(options.title);
     if (options.classes) addDialogClasses();
     if (options.buttons.length !== 0) addDialogButtons();
@@ -185,9 +181,10 @@ $(function () {
   }
 
   function open() {
-    if ($cache.main.hasClass('is-dialog-open')) return;
+    if ($cache.appendTo.hasClass('is-dialog-open')) return;
 
-    $cache.main.addClass('is-dialog-open').attr('aria-hidden', true);
+    $cache.appendTo.addClass('is-dialog-open');
+    $cache.blurElement.addClass('dialog_blur').attr('aria-hidden', true);
     $cache.rbDialog.removeAttr('aria-hidden');
     focusedBeforeDialog = $(document.activeElement);
     setFocusToFirstItem($cache.rbDialog[0]);
@@ -203,7 +200,8 @@ $(function () {
 
     if ($cache.rbDialog[0].hasAttribute('aria-hidden')) return;
 
-    $cache.main.removeClass('is-dialog-open').removeAttr('aria-hidden');
+    $cache.appendTo.removeClass('is-dialog-open');
+    $cache.blurElement.removeClass('dialog_blur').removeAttr('aria-hidden');
     $cache.rbDialog.attr('aria-hidden', 'true');
     focusedBeforeDialog && focusedBeforeDialog.focus();
     document.body.removeEventListener('focus', maintainFocus, true);
@@ -231,7 +229,7 @@ $(function () {
 
   function destroyTheWorld() {
     if ($cache.rbDialogButtons) $cache.rbDialogButtons.remove();
-    $cache.rbDialogBody.children('*').remove();
+    $cache.appendTo.append($cache.rbDialogBody.children('*').detach().hide());
     $cache.rbDialogTitle.text('');
     options = initOptions();
   }

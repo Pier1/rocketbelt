@@ -1,3 +1,23 @@
+*:not(.is-dialog-open) {
+  .dialog {
+    &.dialog-max {
+      .dialog_content {
+        animation: dialog-max-out 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.is-dialog-open {
+  .dialog {
+    &.dialog-max {
+      .dialog_content {
+        animation: dialog-max-in 300ms ease-in-out;
+      }
+    }
+  }
+}
+
 .dialog {
   &.dialog-max {
     .dialog_header {
@@ -22,23 +42,11 @@
       max-height: 100%;
       width: 100%;
       transform: none;
-      animation: dialog-max-in 300ms ease-in-out;
 
       @include media('>=md') {
         right: 10%;
         left: 10%;
         width: 80%;
-      }
-    }
-  }
-}
-
-#docs-wrapper:not(.is-dialog-open),
-#main:not(.is-dialog-open) {
-  & ~ .dialog {
-    &.dialog-max {
-      .dialog_content {
-        animation: dialog-max-out 300ms ease-in-out;
       }
     }
   }

@@ -28,6 +28,10 @@ bookmark:
   title: Bookmark
   description: A simple bookmark with a decorative notch
 
+calendar-add:
+  title: Add to Calendar
+  description: A calendar with a plus sign
+
 cart:
   title: Shopping Cart
   description: A wheeled shopping cart
@@ -207,6 +211,10 @@ sort-up:
 specs:
   title: Specs
   description: A square with perpendicular arrows that indicate measurements
+
+speed:
+  title: Speed
+  description: A stopwatch with motion lines behind it
 
 stack-o:
   title: Stack
