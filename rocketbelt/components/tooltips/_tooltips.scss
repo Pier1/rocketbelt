@@ -3,6 +3,11 @@ $tooltip-background-light: color(white);
 
 .tooltip {
   position: relative;
+
+  &.form-group {
+    display: flex;
+  }
+
   &::before,
   &::after,
   .tooltip-content {
@@ -40,12 +45,62 @@ $tooltip-background-light: color(white);
     font-size: ms(-2);
     line-height: 1.2;
   }
+
   &:hover,
   &:focus {
     &::before,
     .tooltip-content {
       visibility: visible;
       opacity: 1;
+    }
+  }
+}
+
+.tooltip {
+  &.tooltip-focus-only {
+    &:hover {
+      .tooltip-content {
+        visibility: hidden;
+        opacity: 0;
+      }
+
+      &::before,
+      &::after {
+        display: none;
+        visibility: hidden;
+      }
+    }
+
+    input:focus,
+    select:focus {
+      & ~ .tooltip-content {
+        visibility: visible;
+        opacity: 1;
+        transform: translate3d(-50%, 14px, 0);
+
+        &::before,
+        &::after {
+          position: absolute;
+          bottom: 0;
+          left: 50%;
+          border: 8px solid transparent;
+          background: transparent;
+          content: '';
+          transform: translate3d(-50%, 6px, 0);
+        }
+
+        &::before {
+          z-index: 1001;
+          margin-bottom: -12px;
+          border-top-color: rgba(0, 0, 0, .12);
+        }
+
+        &::after {
+          z-index: 1002;
+          margin-bottom: -9px;
+          border-top-color: $tooltip-background-light;
+        }
+      }
     }
   }
 }
@@ -177,6 +232,7 @@ $tooltip-background-light: color(white);
     margin-top: 4px;
     margin-bottom: 0;
   }
+
   &:hover,
   &:focus {
     &::before,
@@ -210,6 +266,7 @@ $tooltip-background-light: color(white);
     border: 8px solid transparent;
     border-top-color: rgba(0, 0, 0, .12);
   }
+
   &:hover,
   &:focus {
     &::after {
