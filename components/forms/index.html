@@ -239,15 +239,15 @@
                           <legend>Collection</legend>
                           <ul class="checkbox-group">
                             <li>
-                              <input id="basic-check-1" type="checkbox" checked value="biblioteca" name="basic-check-group">
+                              <input class="rb-checkbox" id="basic-check-1" type="checkbox" checked value="biblioteca" name="basic-check-group">
                               <label for="basic-check-1">Biblioteca</label>
                             </li>
                             <li>
-                              <input id="basic-check-2" type="checkbox" value="marcel" name="basic-check-group">
+                              <input class="rb-checkbox" id="basic-check-2" type="checkbox" value="marcel" name="basic-check-group">
                               <label for="basic-check-2">Marcel</label>
                             </li>
                             <li>
-                              <input id="basic-check-3" type="checkbox" value="pierce" name="basic-check-group">
+                              <input class="rb-checkbox" id="basic-check-3" type="checkbox" value="pierce" name="basic-check-group">
                               <label for="basic-check-3">Pierce</label>
                             </li>
                           </ul>
@@ -261,12 +261,12 @@
                     <div class="exampleWithCode">
                       <div class="example"></div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-ZPmUR8"/>
-                        <label class="expander_label" for="rb-ZPmUR8" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1izKxH"/>
+                        <label class="expander_label" for="rb-Z1izKxH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-rDmaQ">Copy</button>
-                            <pre><code class="language-html" id="rb-rDmaQ">
+                            <button class="copy-code" data-clipboard-target="#rb-Z1JrFp2">Copy</button>
+                            <pre><code class="language-html" id="rb-Z1JrFp2">
                                 &lt;form&gt;
                                   &lt;div class=&quot;form-group&quot;&gt;
                                     &lt;input id=&quot;basic-fname&quot; type=&quot;text&quot;&gt;
@@ -318,15 +318,15 @@
                                     &lt;legend&gt;Collection&lt;/legend&gt;
                                     &lt;ul class=&quot;checkbox-group&quot;&gt;
                                       &lt;li&gt;
-                                        &lt;input id=&quot;basic-check-1&quot; type=&quot;checkbox&quot; checked value=&quot;biblioteca&quot; name=&quot;basic-check-group&quot;&gt;
+                                        &lt;input class=&quot;rb-checkbox&quot; id=&quot;basic-check-1&quot; type=&quot;checkbox&quot; checked value=&quot;biblioteca&quot; name=&quot;basic-check-group&quot;&gt;
                                         &lt;label for=&quot;basic-check-1&quot;&gt;Biblioteca&lt;/label&gt;
                                       &lt;/li&gt;
                                       &lt;li&gt;
-                                        &lt;input id=&quot;basic-check-2&quot; type=&quot;checkbox&quot; value=&quot;marcel&quot; name=&quot;basic-check-group&quot;&gt;
+                                        &lt;input class=&quot;rb-checkbox&quot; id=&quot;basic-check-2&quot; type=&quot;checkbox&quot; value=&quot;marcel&quot; name=&quot;basic-check-group&quot;&gt;
                                         &lt;label for=&quot;basic-check-2&quot;&gt;Marcel&lt;/label&gt;
                                       &lt;/li&gt;
                                       &lt;li&gt;
-                                        &lt;input id=&quot;basic-check-3&quot; type=&quot;checkbox&quot; value=&quot;pierce&quot; name=&quot;basic-check-group&quot;&gt;
+                                        &lt;input class=&quot;rb-checkbox&quot; id=&quot;basic-check-3&quot; type=&quot;checkbox&quot; value=&quot;pierce&quot; name=&quot;basic-check-group&quot;&gt;
                                         &lt;label for=&quot;basic-check-3&quot;&gt;Pierce&lt;/label&gt;
                                       &lt;/li&gt;
                                     &lt;/ul&gt;
@@ -494,6 +494,47 @@
                     </div>
                   </div>
                 </div>
+                <h2>Inline With Button</h2>
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <div class="form-group inline inline-with-button">
+                      <input id="inline-with-button">
+                      <label class="visually-hidden" for="inline-with-button">Search</label>
+                      <button class="button">Go</button>
+                    </div>
+                  </div>
+                  <div class="expander">
+                    <input class="expander_checkbox" type="checkbox" id="rb-Z1ttj16"/>
+                    <label class="expander_label" for="rb-Z1ttj16" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button class="copy-code" data-clipboard-target="#rb-ZQPIwQ">Copy</button>
+                        <pre><code class="language-html" id="rb-ZQPIwQ">
+                            &lt;div class=&quot;form-group inline inline-with-button&quot;&gt;
+                              &lt;input id=&quot;inline-with-button&quot;&gt;
+                              &lt;label class=&quot;visually-hidden&quot; for=&quot;inline-with-button&quot;&gt;Search&lt;/label&gt;
+                              &lt;button class=&quot;button&quot;&gt;Go&lt;/button&gt;
+                            &lt;/div&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <script src="./rocketbelt.forms.inline-with-button.js"></script>
+                  </div>
+                  <div class="expander">
+                    <input class="expander_checkbox" type="checkbox" id="rb-2dhEp0"/>
+                    <label class="expander_label" for="rb-2dhEp0" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button class="copy-code" data-clipboard-target="#rb-1W7RcN">Copy</button>
+                        <pre><code class="language-js include" id="rb-1W7RcN">
+                            &lt;script src=&quot;./rocketbelt.forms.inline-with-button.js&quot;&gt;&lt;/script&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <h2>Disabled Styles</h2>
                 <div class="grid-fluid">
                   <div class="row">
@@ -533,15 +574,15 @@
                           <legend>Collection</legend>
                           <ul class="checkbox-group">
                             <li>
-                              <input id="disabled-check-1" type="checkbox" disabled value="biblioteca" name="disabled-check-group">
+                              <input class="rb-checkbox" id="disabled-check-1" type="checkbox" disabled value="biblioteca" name="disabled-check-group">
                               <label for="disabled-check-1">Biblioteca</label>
                             </li>
                             <li>
-                              <input id="disabled-check-2" type="checkbox" disabled checked value="marcel" name="disabled-check-group">
+                              <input class="rb-checkbox" id="disabled-check-2" type="checkbox" disabled checked value="marcel" name="disabled-check-group">
                               <label for="disabled-check-2">Marcel</label>
                             </li>
                             <li>
-                              <input id="disabled-check-3" type="checkbox" checked value="pierce" name="disabled-check-group">
+                              <input class="rb-checkbox" id="disabled-check-3" type="checkbox" checked value="pierce" name="disabled-check-group">
                               <label for="disabled-check-3">Pierce</label>
                             </li>
                           </ul>
@@ -554,12 +595,12 @@
                       <div class="exampleWithCode">
                         <div class="example"></div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1rMGYT"/>
-                          <label class="expander_label" for="rb-Z1rMGYT" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1r4P1N"/>
+                          <label class="expander_label" for="rb-Z1r4P1N" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Zk8D8Y">Copy</button>
-                              <pre><code class="language-html" id="rb-Zk8D8Y">
+                              <button class="copy-code" data-clipboard-target="#rb-Zv1Jbk">Copy</button>
+                              <pre><code class="language-html" id="rb-Zv1Jbk">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;disabled-fname&quot; type=&quot;text&quot; disabled&gt;
@@ -595,15 +636,15 @@
                                       &lt;legend&gt;Collection&lt;/legend&gt;
                                       &lt;ul class=&quot;checkbox-group&quot;&gt;
                                         &lt;li&gt;
-                                          &lt;input id=&quot;disabled-check-1&quot; type=&quot;checkbox&quot; disabled value=&quot;biblioteca&quot; name=&quot;disabled-check-group&quot;&gt;
+                                          &lt;input class=&quot;rb-checkbox&quot; id=&quot;disabled-check-1&quot; type=&quot;checkbox&quot; disabled value=&quot;biblioteca&quot; name=&quot;disabled-check-group&quot;&gt;
                                           &lt;label for=&quot;disabled-check-1&quot;&gt;Biblioteca&lt;/label&gt;
                                         &lt;/li&gt;
                                         &lt;li&gt;
-                                          &lt;input id=&quot;disabled-check-2&quot; type=&quot;checkbox&quot; disabled checked value=&quot;marcel&quot; name=&quot;disabled-check-group&quot;&gt;
+                                          &lt;input class=&quot;rb-checkbox&quot; id=&quot;disabled-check-2&quot; type=&quot;checkbox&quot; disabled checked value=&quot;marcel&quot; name=&quot;disabled-check-group&quot;&gt;
                                           &lt;label for=&quot;disabled-check-2&quot;&gt;Marcel&lt;/label&gt;
                                         &lt;/li&gt;
                                         &lt;li&gt;
-                                          &lt;input id=&quot;disabled-check-3&quot; type=&quot;checkbox&quot; checked value=&quot;pierce&quot; name=&quot;disabled-check-group&quot;&gt;
+                                          &lt;input class=&quot;rb-checkbox&quot; id=&quot;disabled-check-3&quot; type=&quot;checkbox&quot; checked value=&quot;pierce&quot; name=&quot;disabled-check-group&quot;&gt;
                                           &lt;label for=&quot;disabled-check-3&quot;&gt;Pierce&lt;/label&gt;
                                         &lt;/li&gt;
                                       &lt;/ul&gt;

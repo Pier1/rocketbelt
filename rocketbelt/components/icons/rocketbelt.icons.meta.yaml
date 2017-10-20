@@ -28,6 +28,10 @@ bookmark:
   title: Bookmark
   description: A simple bookmark with a decorative notch
 
+calendar-add:
+  title: Add to Calendar
+  description: A calendar with a plus sign
+
 cart:
   title: Shopping Cart
   description: A wheeled shopping cart

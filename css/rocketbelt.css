@@ -2597,6 +2597,57 @@ fieldset {
   .form-group.inline select:not([required]) + label::after,
   .form-group.inline textarea:not([required]) + label::after {
     content: '(optional)'; }
+  .form-group.inline.inline-with-button {
+    border: 1px solid #9b9595;
+    border-radius: 2px; }
+    .form-group.inline.inline-with-button.focused {
+      border: 2px solid #1492d9;
+      border-radius: 0; }
+    .form-group.inline.inline-with-button input {
+      height: 2rem;
+      outline: 0;
+      border: 0;
+      border-radius: 0; }
+    .form-group.inline.inline-with-button button,
+    .form-group.inline.inline-with-button .button {
+      min-width: 8rem;
+      background: #fefdfd;
+      background-image: none;
+      color: #2b9ddd;
+      fill: #2b9ddd;
+      min-width: auto;
+      height: 2rem;
+      border: 0.1rem solid transparent;
+      border-radius: 0;
+      background: transparent;
+      box-shadow: none; }
+      .form-group.inline.inline-with-button button:hover,
+      .form-group.inline.inline-with-button .button:hover {
+        background: #fefdfd;
+        color: #1ea1ea;
+        fill: #1ea1ea; }
+      .form-group.inline.inline-with-button button:visited,
+      .form-group.inline.inline-with-button .button:visited {
+        color: #2b9ddd; }
+      .form-group.inline.inline-with-button button:active,
+      .form-group.inline.inline-with-button .button:active {
+        border: 0.1rem solid #dbe6ed;
+        background: #fefdfd;
+        color: #1283c3;
+        fill: #1283c3; }
+      .form-group.inline.inline-with-button button[disabled],
+      .form-group.inline.inline-with-button .button[disabled] {
+        border: 0.1rem solid #dbe6ed;
+        color: rgba(43, 157, 221, 0.9);
+        fill: rgba(43, 157, 221, 0.9); }
+        .form-group.inline.inline-with-button button[disabled]:hover,
+        .form-group.inline.inline-with-button .button[disabled]:hover {
+          color: #1492d9;
+          fill: #1492d9; }
+      .form-group.inline.inline-with-button button:hover, .form-group.inline.inline-with-button button:active,
+      .form-group.inline.inline-with-button .button:hover,
+      .form-group.inline.inline-with-button .button:active {
+        box-shadow: none; }
 
 html.touchevents button,
 html.touchevents input,
