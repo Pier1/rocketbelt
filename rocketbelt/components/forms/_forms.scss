@@ -89,6 +89,41 @@ fieldset {
         }
       }
     }
+
+    &.inline-with-button {
+      border: 1px solid color(gray, plus1);
+      border-radius: 2px;
+
+
+      &.focused {
+        border: 2px solid color(primary);
+        border-radius: 0;
+      }
+
+      input {
+        height: 2rem;
+        outline: 0;
+        border: 0;
+        border-radius: 0;
+      }
+
+      button,
+      .button {
+        @include button-style(secondary);
+
+        min-width: auto;
+        height: 2rem;
+        border: 0.1rem solid transparent;
+        border-radius: 0;
+        background: transparent;
+        box-shadow: none;
+
+        &:hover,
+        &:active {
+          box-shadow: none;
+        }
+      }
+    }
   }
 }
 

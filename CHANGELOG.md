@@ -1,3 +1,15 @@
+<a name="1.12.0"></a>
+# [1.12.0](https://github.com/Pier1/rocketbelt/compare/1.11.4...v1.12.0) (2017-10-20)
+
+### Features
+
+* **Forms:** Add "Inline With Button" input pattern. ([adedb4c](https://github.com/Pier1/rocketbelt/commit/adedb4c))
+* **Icons:** Include "Add to Calendar" icon. ([6afe391](https://github.com/Pier1/rocketbelt/commit/6afe391))
+
+### Bug Fixes
+
+* **Forms:** Update demo of `.rb-checkbox`. ([5921f4a](https://github.com/Pier1/rocketbelt/commit/5921f4a))
+
 <a name="1.11.4"></a>
 ## [1.11.4](https://github.com/Pier1/rocketbelt/compare/1.11.3...v1.11.4) (2017-10-17)
 
