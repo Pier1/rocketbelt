@@ -1,3 +1,94 @@
+<a name="1.12.0"></a>
+# [1.12.0](https://github.com/Pier1/rocketbelt/compare/1.11.4...v1.12.0) (2017-10-20)
+
+### Features
+
+* **Forms:** Add "Inline With Button" input pattern. ([adedb4c](https://github.com/Pier1/rocketbelt/commit/adedb4c))
+* **Icons:** Include "Add to Calendar" icon. ([6afe391](https://github.com/Pier1/rocketbelt/commit/6afe391))
+
+### Bug Fixes
+
+* **Forms:** Update demo of `.rb-checkbox`. ([5921f4a](https://github.com/Pier1/rocketbelt/commit/5921f4a))
+
+<a name="1.11.4"></a>
+## [1.11.4](https://github.com/Pier1/rocketbelt/compare/1.11.3...v1.11.4) (2017-10-17)
+
+
+
+<a name="1.11.3"></a>
+## [1.11.3](https://github.com/Pier1/rocketbelt/compare/1.11.2...v1.11.3) (2017-10-16)
+
+
+### Bug Fixes
+
+* **Dialogs:** Fix appendTo and add blurElement to dialog options. ([b054ebf](https://github.com/Pier1/rocketbelt/commit/b054ebf))
+
+
+
+<a name="1.11.2"></a>
+## [1.11.2](https://github.com/Pier1/rocketbelt/compare/1.11.1...v1.11.2) (2017-10-16)
+
+
+
+<a name="1.11.1"></a>
+## [1.11.1](https://github.com/Pier1/rocketbelt/compare/1.11.0...v1.11.1) (2017-10-16)
+
+
+### Features
+
+* **Icons:** Add speed icon. ([2e666d4](https://github.com/Pier1/rocketbelt/commit/2e666d4))
+
+
+
+<a name="1.11.0"></a>
+# [1.11.0](https://github.com/Pier1/rocketbelt/compare/1.10.7...v1.11.0) (2017-10-10)
+
+
+### Bug Fixes
+
+* **Dialogs:** Fix cloning and appendTo issues with dialogs. ([45aa36e](https://github.com/Pier1/rocketbelt/commit/45aa36e))
+* **CTAs:** Add specific selector to override anchors with cta's and forced cursor pointer. ([a55ff4f](https://github.com/Pier1/rocketbelt/commit/a55ff4f))
+* **CTAs:** Remove specificity on CTA's ([47913c2](https://github.com/Pier1/rocketbelt/commit/47913c2))
+
+
+### Features
+
+* **Icons:** Update lock-check icon. ([311d317](https://github.com/Pier1/rocketbelt/commit/311d317))
+* **Tables:** Add table a11y guidance. ([547c203](https://github.com/Pier1/rocketbelt/commit/547c203))
+* **Tables:** Add table style variations: condensed, striped, hoverable, etc. ([07a5eb6](https://github.com/Pier1/rocketbelt/commit/07a5eb6))
+* **Tables:** Basic table implementation. ([d28bdfb](https://github.com/Pier1/rocketbelt/commit/d28bdfb))
+* **Tables:** Update table variations. ([2301399](https://github.com/Pier1/rocketbelt/commit/2301399))
+
+
+
+<a name="1.10.7"></a>
+## [1.10.7](https://github.com/Pier1/rocketbelt/compare/1.10.6...v1.10.7) (2017-09-19)
+
+* **Forms:** Remove some default styling from checkboxes. ([f94e6a8](https://github.com/Pier1/rocketbelt/commit/f94e6a8))
+
+<a name="1.10.6"></a>
+## [1.10.6](https://github.com/Pier1/rocketbelt/compare/1.10.5...v1.10.6) (2017-09-19)
+
+
+### Bug Fixes
+
+* **Forms:** Add namespace to selectively apply checkboxes. ([4a803f1](https://github.com/Pier1/rocketbelt/commit/4a803f1))
+* **Forms:** Add background-size to display missing background-image. ([e62ceb1](https://github.com/Pier1/rocketbelt/commit/e62ceb1))
+* **Forms:** Fix overescaped fill color for checkbox backgrounds. ([d5d0b7b](https://github.com/Pier1/rocketbelt/commit/d5d0b7b))
+
+
+
+<a name="1.10.5"></a>
+## [1.10.5](https://github.com/Pier1/rocketbelt/compare/1.10.4...v1.10.5) (2017-09-18)
+
+
+### Bug Fixes
+
+* **Forms:** Get around Safari bug by using min-height instead of height for selects & inputs. ([d3e1d8e](https://github.com/Pier1/rocketbelt/commit/d3e1d8e))
+* **SVGs:** Properly encode XML data used in CSS props (ie, `background-image`). ([1c12f3c](https://github.com/Pier1/rocketbelt/commit/1c12f3c))
+
+
+
 <a name="1.10.4"></a>
 ## [1.10.4](https://github.com/Pier1/rocketbelt/compare/1.10.3...v1.10.4) (2017-09-12)
 
