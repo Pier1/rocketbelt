@@ -94,9 +94,10 @@ fieldset {
       border: 1px solid color(gray, plus1);
       border-radius: 2px;
 
+
       &.focused {
         border: 2px solid color(primary);
-        border-radius: 0px;
+        border-radius: 0;
       }
 
       input {
