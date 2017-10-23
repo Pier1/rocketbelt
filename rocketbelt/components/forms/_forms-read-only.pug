@@ -1,0 +1,24 @@
+form
+  .form-group
+    input#read-only-email.read-only(type='email', value='info@pier1.com', disabled)
+    label(for='invalid-email') Email Address
+    small.validation-message Email address has been autofilled.
+  .form-group
+    input#invalid-phone.read-only(type='tel', value='(not) a-phone-number', disabled)
+    label(for='invalid-phone') Phone Number
+  .form-group
+    input#invalid-password.read-only(type='password', value="doesn't-meet-regex", required, disabled)
+    label(for='invalid-password') Password
+  .form-group
+    input#invalid-fname.read-only(type='text', value="Pier 1 Imports", disabled)
+    label(for='invalid-fname') First Name
+  .form-group
+    textarea#invalid-message.read-only(disabled=true, readonly=true) This is such a long string that this sentence may be fragmented for my pleasure.
+    label(for='invalid-message') Message
+  .form-group
+    select#invalid-select.read-only(disabled)
+      option(value='', disabled=true, hidden=true) Select a collection
+      option(selected) Biblioteca
+      option Marcel
+      option Pierce
+    label(for='invalid-select') Collection
