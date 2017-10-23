@@ -54,6 +54,22 @@ $tooltip-background-light: color(white);
       opacity: 1;
     }
   }
+
+  &.tooltip-no-hover:hover {
+    &::before,
+    .tooltip-content {
+      visibility: hidden;
+      opacity: 0;
+    }
+
+    :focus {
+      &::before,
+      & ~ .tooltip-content {
+        visibility: visible;
+        opacity: 1;
+      }
+    }
+  }
 }
 
 .tooltip {
