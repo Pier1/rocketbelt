@@ -96,7 +96,8 @@ fieldset {
 
 
       &.focused {
-        border: 2px solid color(primary);
+        border: 1px solid color(primary);
+        outline: 1px solid color(primary);
         border-radius: 0;
       }
 
@@ -117,6 +118,7 @@ fieldset {
         border-radius: 0;
         background: transparent;
         box-shadow: none;
+        line-height: 1;
 
         &:hover,
         &:active {
@@ -203,6 +205,19 @@ textarea {
   &.field-large {
     width: 24em;
   }
+
+  &.read-only {
+    &[disabled] {
+      margin-bottom: 0;
+      padding: 0;
+      border-width: 1px;
+      border-color: transparent;
+      background: transparent;
+      color: color(gray);
+      font-size: 1rem;
+      opacity: 1;
+    }
+  }
 }
 
 [disabled] {
@@ -237,6 +252,14 @@ select {
   }
 }
 
+textarea {
+  &.read-only {
+    &[disabled] {
+      resize: none;
+    }
+  }
+}
+
 .form-group {
   input,
   select,
@@ -254,6 +277,13 @@ select {
     &:not([required]) {
       & + label::after {
         content: unicode(nbsp) + '(optional)';
+      }
+    }
+    &.read-only {
+      &[disabled] {
+        & ~ label::after {
+          content: none;
+        }
       }
     }
   }
