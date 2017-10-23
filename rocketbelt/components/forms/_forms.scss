@@ -96,7 +96,8 @@ fieldset {
 
 
       &.focused {
-        border: 2px solid color(primary);
+        border: 1px solid color(primary);
+        outline: 1px solid color(primary);
         border-radius: 0;
       }
 
@@ -117,6 +118,7 @@ fieldset {
         border-radius: 0;
         background: transparent;
         box-shadow: none;
+        line-height: 1;
 
         &:hover,
         &:active {
