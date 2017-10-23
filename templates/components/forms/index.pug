@@ -57,13 +57,16 @@ block content
             include _forms-inline.pug
 
     h2 Inline With Button
-    +exampleWithCode
-      .form-group.inline.inline-with-button
-        input#inline-with-button
-        label.visually-hidden(for='inline-with-button') Search
-        button.button Go
-    +exampleWithCode('JS Include')
-      script(src='./rocketbelt.forms.inline-with-button.js')
+    grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          +exampleWithCode
+            .form-group.inline.inline-with-button
+              input#inline-with-button
+              label.visually-hidden(for='inline-with-button') Search
+              button.button Go
+          +exampleWithCode('JS Include')
+            script(src='./rocketbelt.forms.inline-with-button.js')
 
     h2 Disabled Styles
     .grid-fluid
@@ -84,3 +87,13 @@ block content
         .col.xs
           +exampleCodeOnly
             include _forms-invalid.pug
+
+    h2 Read Only Styles
+    .grid-fluid
+      .row
+        .col.xs-8.md-6.lg-4
+          include _forms-read-only.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _forms-read-only.pug
