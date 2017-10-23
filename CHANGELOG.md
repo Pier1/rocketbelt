@@ -1,3 +1,14 @@
+<a name="1.13.0"></a>
+# [1.13.0](https://github.com/Pier1/rocketbelt/compare/1.12.0...v1.13.0) (2017-10-23)
+
+
+### Features
+
+* **Forms:** Add read-only styles to inputs, selects, and textareas. ([5c68ec3](https://github.com/Pier1/rocketbelt/commit/5c68ec3))
+* **Tooltips:** Add focus-triggered input/select tooltips. ([d025342](https://github.com/Pier1/rocketbelt/commit/d025342))
+
+
+
 <a name="1.12.0"></a>
 # [1.12.0](https://github.com/Pier1/rocketbelt/compare/1.11.4...v1.12.0) (2017-10-20)
 
