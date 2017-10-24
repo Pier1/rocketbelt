@@ -495,46 +495,52 @@
                   </div>
                 </div>
                 <h2>Inline With Button</h2>
-                <div class="exampleWithCode">
-                  <div class="example">
-                    <div class="form-group inline inline-with-button">
-                      <input id="inline-with-button">
-                      <label class="visually-hidden" for="inline-with-button">Search</label>
-                      <button class="button">Go</button>
-                    </div>
-                  </div>
-                  <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-Z1ttj16"/>
-                    <label class="expander_label" for="rb-Z1ttj16" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
-                    <div class="expander_content">
-                      <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-ZQPIwQ">Copy</button>
-                        <pre><code class="language-html" id="rb-ZQPIwQ">
-                            &lt;div class=&quot;form-group inline inline-with-button&quot;&gt;
-                              &lt;input id=&quot;inline-with-button&quot;&gt;
-                              &lt;label class=&quot;visually-hidden&quot; for=&quot;inline-with-button&quot;&gt;Search&lt;/label&gt;
-                              &lt;button class=&quot;button&quot;&gt;Go&lt;/button&gt;
-                            &lt;/div&gt;</code></pre>
+                <grid-fluid>
+                  <div class="row">
+                    <div class="col xs-8 md-6 lg-4">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <div class="form-group inline inline-with-button">
+                            <input id="inline-with-button">
+                            <label class="visually-hidden" for="inline-with-button">Search</label>
+                            <button class="button">Go</button>
+                          </div>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-2b6TpD"/>
+                          <label class="expander_label" for="rb-2b6TpD" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button class="copy-code" data-clipboard-target="#rb-16CE60">Copy</button>
+                              <pre><code class="language-html" id="rb-16CE60">
+                                  &lt;div class=&quot;form-group inline inline-with-button&quot;&gt;
+                                    &lt;input id=&quot;inline-with-button&quot;&gt;
+                                    &lt;label class=&quot;visually-hidden&quot; for=&quot;inline-with-button&quot;&gt;Search&lt;/label&gt;
+                                    &lt;button class=&quot;button&quot;&gt;Go&lt;/button&gt;
+                                  &lt;/div&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <script src="./rocketbelt.forms.inline-with-button.js"></script>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-2e5tyK"/>
+                          <label class="expander_label" for="rb-2e5tyK" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button class="copy-code" data-clipboard-target="#rb-1av2pu">Copy</button>
+                              <pre><code class="language-js include" id="rb-1av2pu">
+                                  &lt;script src=&quot;./rocketbelt.forms.inline-with-button.js&quot;&gt;&lt;/script&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-                <div class="exampleWithCode">
-                  <div class="example">
-                    <script src="./rocketbelt.forms.inline-with-button.js"></script>
-                  </div>
-                  <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-2dhEp0"/>
-                    <label class="expander_label" for="rb-2dhEp0" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
-                    <div class="expander_content">
-                      <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-1W7RcN">Copy</button>
-                        <pre><code class="language-js include" id="rb-1W7RcN">
-                            &lt;script src=&quot;./rocketbelt.forms.inline-with-button.js&quot;&gt;&lt;/script&gt;</code></pre>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                </grid-fluid>
                 <h2>Disabled Styles</h2>
                 <div class="grid-fluid">
                   <div class="row">
@@ -734,6 +740,92 @@
                                         &lt;option&gt;Pierce&lt;/option&gt;
                                       &lt;/select&gt;
                                       &lt;label for=&quot;invalid-select&quot;&gt;Collection&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please select a collection.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                  &lt;/form&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h2>Read Only Styles</h2>
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs-8 md-6 lg-4">
+                      <form>
+                        <div class="form-group">
+                          <input class="read-only" id="read-only-email" type="email" value="info@pier1.com" disabled>
+                          <label for="invalid-email">Email Address</label><small class="validation-message">Email address has been autofilled.</small>
+                        </div>
+                        <div class="form-group">
+                          <input class="read-only" id="invalid-phone" type="tel" value="(not) a-phone-number" disabled>
+                          <label for="invalid-phone">Phone Number</label>
+                        </div>
+                        <div class="form-group">
+                          <input class="read-only" id="invalid-password" type="password" value="doesn't-meet-regex" required disabled>
+                          <label for="invalid-password">Password</label>
+                        </div>
+                        <div class="form-group">
+                          <input class="read-only" id="invalid-fname" type="text" value="Pier 1 Imports" disabled>
+                          <label for="invalid-fname">First Name</label>
+                        </div>
+                        <div class="form-group">
+                          <textarea class="read-only" id="invalid-message" disabled readonly>This is such a long string that this sentence may be fragmented for my pleasure.</textarea>
+                          <label for="invalid-message">Message</label>
+                        </div>
+                        <div class="form-group">
+                          <select class="read-only" id="invalid-select" disabled>
+                            <option value="" disabled hidden>Select a collection</option>
+                            <option selected>Biblioteca</option>
+                            <option>Marcel</option>
+                            <option>Pierce</option>
+                          </select>
+                          <label for="invalid-select">Collection</label>
+                        </div>
+                      </form>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="exampleWithCode">
+                        <div class="example"></div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1skR2F"/>
+                          <label class="expander_label" for="rb-Z1skR2F" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button class="copy-code" data-clipboard-target="#rb-Zc3LoC">Copy</button>
+                              <pre><code class="language-html" id="rb-Zc3LoC">
+                                  &lt;form&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input class=&quot;read-only&quot; id=&quot;read-only-email&quot; type=&quot;email&quot; value=&quot;info@pier1.com&quot; disabled&gt;
+                                      &lt;label for=&quot;invalid-email&quot;&gt;Email Address&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Email address has been autofilled.&lt;/small&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input class=&quot;read-only&quot; id=&quot;invalid-phone&quot; type=&quot;tel&quot; value=&quot;(not) a-phone-number&quot; disabled&gt;
+                                      &lt;label for=&quot;invalid-phone&quot;&gt;Phone Number&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input class=&quot;read-only&quot; id=&quot;invalid-password&quot; type=&quot;password&quot; value=&quot;doesn't-meet-regex&quot; required disabled&gt;
+                                      &lt;label for=&quot;invalid-password&quot;&gt;Password&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;input class=&quot;read-only&quot; id=&quot;invalid-fname&quot; type=&quot;text&quot; value=&quot;Pier 1 Imports&quot; disabled&gt;
+                                      &lt;label for=&quot;invalid-fname&quot;&gt;First Name&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;textarea class=&quot;read-only&quot; id=&quot;invalid-message&quot; disabled readonly&gt;This is such a long string that this sentence may be fragmented for my pleasure.&lt;/textarea&gt;
+                                      &lt;label for=&quot;invalid-message&quot;&gt;Message&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;form-group&quot;&gt;
+                                      &lt;select class=&quot;read-only&quot; id=&quot;invalid-select&quot; disabled&gt;
+                                        &lt;option value=&quot;&quot; disabled hidden&gt;Select a collection&lt;/option&gt;
+                                        &lt;option selected&gt;Biblioteca&lt;/option&gt;
+                                        &lt;option&gt;Marcel&lt;/option&gt;
+                                        &lt;option&gt;Pierce&lt;/option&gt;
+                                      &lt;/select&gt;
+                                      &lt;label for=&quot;invalid-select&quot;&gt;Collection&lt;/label&gt;
                                     &lt;/div&gt;
                                   &lt;/form&gt;</code></pre>
                             </div>

@@ -2601,7 +2601,8 @@ fieldset {
     border: 1px solid #9b9595;
     border-radius: 2px; }
     .form-group.inline.inline-with-button.focused {
-      border: 2px solid #1492d9;
+      border: 1px solid #1492d9;
+      outline: 1px solid #1492d9;
       border-radius: 0; }
     .form-group.inline.inline-with-button input {
       height: 2rem;
@@ -2620,7 +2621,8 @@ fieldset {
       border: 0.1rem solid transparent;
       border-radius: 0;
       background: transparent;
-      box-shadow: none; }
+      box-shadow: none;
+      line-height: 1; }
       .form-group.inline.inline-with-button button:hover,
       .form-group.inline.inline-with-button .button:hover {
         background: #fefdfd;
@@ -2715,6 +2717,17 @@ textarea {
   select.field-large,
   textarea.field-large {
     width: 24em; }
+  input:not([type='checkbox']).read-only[disabled],
+  select.read-only[disabled],
+  textarea.read-only[disabled] {
+    margin-bottom: 0;
+    padding: 0;
+    border-width: 1px;
+    border-color: transparent;
+    background: transparent;
+    color: #827b7b;
+    font-size: 1rem;
+    opacity: 1; }
 
 [disabled] {
   opacity: 0.6;
@@ -2740,6 +2753,9 @@ select {
     margin-right: auto;
     padding-right: 2em; }
 
+textarea.read-only[disabled] {
+  resize: none; }
+
 .form-group input + label::after,
 .form-group select + label::after,
 .form-group textarea + label::after {
@@ -2754,6 +2770,11 @@ select {
 .form-group select:not([required]) + label::after,
 .form-group textarea:not([required]) + label::after {
   content: " (optional)"; }
+
+.form-group input.read-only[disabled] ~ label::after,
+.form-group select.read-only[disabled] ~ label::after,
+.form-group textarea.read-only[disabled] ~ label::after {
+  content: none; }
 
 .form-group.required-suppressed input[required] + label::after,
 .form-group.required-suppressed select[required] + label::after,
@@ -3916,6 +3937,10 @@ td {
 
 .tooltip {
   position: relative; }
+  .tooltip.form-group {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex; }
   .tooltip::before, .tooltip::after,
   .tooltip .tooltip-content {
     position: absolute;
@@ -3954,6 +3979,50 @@ td {
   .tooltip:focus .tooltip-content {
     visibility: visible;
     opacity: 1; }
+  .tooltip.tooltip-no-hover:hover::before,
+  .tooltip.tooltip-no-hover:hover .tooltip-content {
+    visibility: hidden;
+    opacity: 0; }
+  .tooltip.tooltip-no-hover:hover :focus::before,
+  .tooltip.tooltip-no-hover:hover :focus ~ .tooltip-content {
+    visibility: visible;
+    opacity: 1; }
+
+.tooltip.tooltip-focus-only:hover .tooltip-content {
+  visibility: hidden;
+  opacity: 0; }
+
+.tooltip.tooltip-focus-only:hover::before, .tooltip.tooltip-focus-only:hover::after {
+  display: none;
+  visibility: hidden; }
+
+.tooltip.tooltip-focus-only input:focus ~ .tooltip-content,
+.tooltip.tooltip-focus-only select:focus ~ .tooltip-content {
+  visibility: visible;
+  opacity: 1;
+  -webkit-transform: translate3d(-50%, 14px, 0);
+          transform: translate3d(-50%, 14px, 0); }
+  .tooltip.tooltip-focus-only input:focus ~ .tooltip-content::before, .tooltip.tooltip-focus-only input:focus ~ .tooltip-content::after,
+  .tooltip.tooltip-focus-only select:focus ~ .tooltip-content::before,
+  .tooltip.tooltip-focus-only select:focus ~ .tooltip-content::after {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    border: 8px solid transparent;
+    background: transparent;
+    content: '';
+    -webkit-transform: translate3d(-50%, 6px, 0);
+            transform: translate3d(-50%, 6px, 0); }
+  .tooltip.tooltip-focus-only input:focus ~ .tooltip-content::before,
+  .tooltip.tooltip-focus-only select:focus ~ .tooltip-content::before {
+    z-index: 1001;
+    margin-bottom: -12px;
+    border-top-color: rgba(0, 0, 0, 0.12); }
+  .tooltip.tooltip-focus-only input:focus ~ .tooltip-content::after,
+  .tooltip.tooltip-focus-only select:focus ~ .tooltip-content::after {
+    z-index: 1002;
+    margin-bottom: -9px;
+    border-top-color: #fefdfd; }
 
 .tooltip::before, .tooltip::after,
 .tooltip .tooltip-content,
