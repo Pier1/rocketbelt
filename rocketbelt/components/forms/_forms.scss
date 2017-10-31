@@ -91,21 +91,31 @@ fieldset {
     }
 
     &.inline-with-button {
-      border: 1px solid color(gray, plus1);
-      border-radius: 2px;
-
-
-      &.focused {
-        border: 1px solid color(primary);
-        outline: 1px solid color(primary);
-        border-radius: 0;
-      }
+      font-size: 0;
 
       input {
         height: 2rem;
         outline: 0;
-        border: 0;
-        border-radius: 0;
+        border: 1px solid color(gray, plus1);
+        border-right: 0;
+        border-top-left-radius: 2px;
+        border-top-right-radius: 0;
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 2px;
+
+        &:focus {
+          border: 2px solid color(primary);
+          border-right: 0;
+          border-radius: 0;
+
+          & ~ button,
+          & ~ .button {
+            border: 2px solid color(primary);
+            border-left: 0;
+            border-radius: 0;
+            transition: none;
+          }
+        }
       }
 
       button,
@@ -114,8 +124,12 @@ fieldset {
 
         min-width: auto;
         height: 2rem;
-        border: 0.1rem solid transparent;
-        border-radius: 0;
+        border: 1px solid color(gray, plus1);
+        border-left: 0;
+        border-top-left-radius: 0;
+        border-top-right-radius: 2px;
+        border-bottom-right-radius: 2px;
+        border-bottom-left-radius: 0;
         background: transparent;
         box-shadow: none;
         line-height: 1;
