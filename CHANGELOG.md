@@ -1,3 +1,13 @@
+<a name="1.13.1"></a>
+## [1.13.1](https://github.com/Pier1/rocketbelt/compare/1.13.0...v1.13.1) (2017-10-31)
+
+
+### Bug Fixes
+
+* **Forms:** Update Inline With Button style to remove JS dependency. ([d14a346](https://github.com/Pier1/rocketbelt/commit/d14a346))
+
+
+
 <a name="1.13.0"></a>
 # [1.13.0](https://github.com/Pier1/rocketbelt/compare/1.12.0...v1.13.0) (2017-10-23)
 
