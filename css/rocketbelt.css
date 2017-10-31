@@ -2598,17 +2598,26 @@ fieldset {
   .form-group.inline textarea:not([required]) + label::after {
     content: '(optional)'; }
   .form-group.inline.inline-with-button {
-    border: 1px solid #9b9595;
-    border-radius: 2px; }
-    .form-group.inline.inline-with-button.focused {
-      border: 1px solid #1492d9;
-      outline: 1px solid #1492d9;
-      border-radius: 0; }
+    font-size: 0; }
     .form-group.inline.inline-with-button input {
       height: 2rem;
       outline: 0;
-      border: 0;
-      border-radius: 0; }
+      border: 1px solid #9b9595;
+      border-right: 0;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 2px; }
+      .form-group.inline.inline-with-button input:focus {
+        border: 2px solid #1492d9;
+        border-right: 0;
+        border-radius: 0; }
+        .form-group.inline.inline-with-button input:focus ~ button,
+        .form-group.inline.inline-with-button input:focus ~ .button {
+          border: 2px solid #1492d9;
+          border-left: 0;
+          border-radius: 0;
+          transition: none; }
     .form-group.inline.inline-with-button button,
     .form-group.inline.inline-with-button .button {
       min-width: 8rem;
@@ -2618,8 +2627,12 @@ fieldset {
       fill: #2b9ddd;
       min-width: auto;
       height: 2rem;
-      border: 0.1rem solid transparent;
-      border-radius: 0;
+      border: 1px solid #9b9595;
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 0;
       background: transparent;
       box-shadow: none;
       line-height: 1; }
