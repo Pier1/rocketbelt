@@ -11,12 +11,13 @@ html(lang='en')
 
     block vars
     block title
-     title #{title ? title + ' | ' : ''}Rocketbelt Pattern Library
+      title #{title ? title + ' | ' : ''}Rocketbelt Pattern Library
     block styles
       link(rel='stylesheet', href=prepend + '/css/rocketbelt.creative.min.css')
       link(rel='stylesheet', href=prepend + '/css/rocketbelt.min.css')
       link(rel='stylesheet', href=prepend + '/css/site.min.css')
       script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+      script(src='/base/rocketbelt.js')
 
   body.grid-fluid
     include /base/a11y/_a11y-skip-links.pug
