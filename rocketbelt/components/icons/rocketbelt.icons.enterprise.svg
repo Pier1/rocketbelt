@@ -210,7 +210,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <desc id="axrb-icon-cta-arrow-desc">A slim rightward chevron
     indicating a call-to-action</desc>
     <title id="axrb-icon-cta-arrow-title">CTA Arrow</title>
-    <path d="M193.14 128.248l-88.745 127.256H63.372l84.735-127.256L63.372.713h41.023z"
+    <path d="M176.515 128.105L109.827 224H79l54.672-95.895L79 32h30.827z"
     fill-rule="nonzero" />
   </symbol>
   <symbol viewBox="0 0 256 256"
@@ -268,7 +268,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
   <symbol viewBox="0 0 256 256"
   aria-labelledby="berb-icon-grid-desc berb-icon-grid-title"
   id="rb-icon-grid" xmlns="http://www.w3.org/2000/svg">
+<<<<<<< HEAD
     <desc id="berb-icon-grid-desc">A grid of squares</desc>
+=======
+    <desc id="berb-icon-grid-desc">A grid of 9 squares</desc>
+>>>>>>> a11y
     <title id="berb-icon-grid-title">Grid</title>
     <g fill-rule="evenodd">
       <path d="M16 16h64v64H16zM16 96h64v64H16zM16 176h64v64H16zM96 16h64v64H96zM96 96h64v64H96zM96 176h64v64H96zM176 16h64v64h-64zM176 96h64v64h-64zM176 176h64v64h-64z" />
@@ -328,8 +332,13 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
   <symbol viewBox="0 0 256 256"
   aria-labelledby="blrb-icon-lines-desc blrb-icon-lines-title"
   id="rb-icon-lines" xmlns="http://www.w3.org/2000/svg">
+<<<<<<< HEAD
     <desc id="blrb-icon-lines-desc">Lines stacked on each
     other</desc>
+=======
+    <desc id="blrb-icon-lines-desc">Four lines stacked on top of
+    each other</desc>
+>>>>>>> a11y
     <title id="blrb-icon-lines-title">Lines</title>
     <g fill-rule="evenodd">
       <path d="M19 32h224v32H19zM19 85.333h224v32H19zM19 138.667h224v32H19zM19 192h224v32H19z" />
