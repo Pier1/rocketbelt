@@ -1,4 +1,26 @@
 (function rocketbeltA11yForms(window, document) {
+  function onClassMutation(mutations) {
+    var mutationsLen = mutations.length;
+
+    for (var k = 0; k < mutationsLen; k++) {
+      var mutation = mutations[k];
+      var el = mutation.target;
+      var message = el.parentNode.querySelector('.validation-message');
+
+      if (mutation.oldValue !== 'invalid' && mutation.target.classList.contains('invalid')) {
+        // If "invalid" was added, do the decoratin'
+        el.setAttribute('aria-invalid', 'true');
+        message.setAttribute('role', 'alert');
+        message.setAttribute('aria-live', 'polite');
+      } else if (mutation.oldValue === 'invalid' && !el.classList.contains('invalid')) {
+        // If "invalid" was removed
+        el.setAttribute('aria-invalid', 'false');
+        message.removeAttribute('role');
+        message.removeAttribute('aria-live');
+      }
+    }
+  }
+
   function decorateInputs() {
     var formEls = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea, .form-group fieldset');
     var formElsLen = formEls.length;
@@ -6,49 +28,27 @@
     for (var i = 0; i < formElsLen; i++) {
       var formEl = formEls[i];
 
-      var siblings = Array.prototype.filter.call(formEl.parentNode.children, function isSibling(child) {
-        return child !== formEl;
-      });
-      var sibLen = siblings.length;
-
       // Set an observer to listen for .invalid.
-      var observer = new MutationObserver(function onMutation(mutations) {
-        var mutationsLen = mutations.length;
+      var observer = new MutationObserver(function (mutations) { onClassMutation(mutations); });
+      observer.observe(formEl, { subtree: false, attributes: true, attributeOldValue: true, attributeFilter: ['class'] });
 
-        for (var k = 0; k < mutationsLen; k++) {
-          var mutation = mutations[k];
-          // if oldvalue !== invalid && class list contains invalid
-          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
-            if (mutation.oldValue !== 'invalid' && mutation.target.classList.contains('invalid')) {
-              console.dir(mutation);
-              // Do the decoratin'
-              if (!formEl.hasAttribute('aria-invalid')) {
-                formEl.setAttribute('aria-invalid', 'true');
-              }
-                // role='alert' & aria-live='polite' on the message
-            } else if (mutation.oldValue !== 'invalid' && !mutation.target.classList.contains('invalid')) {
-                    // remove aria-invalid, role, aria-live
-            }
-          }
+      var messages = formEl.parentNode.querySelectorAll('.validation-message, .helper-text');
+      var msgLen = messages.length;
+      var describedByIds = '';
+
+      for (var j = 0; j < msgLen; j++) {
+        var thisMsg = messages[j];
+        var id = 'rb-a11y_' + window.rb.getShortId();
+        describedByIds += id + ' ';
+
+        // Don't clobber any existing attributes!
+        if (!thisMsg.id) {
+          thisMsg.id = id;
         }
-      });
+      }
 
-      observer.observe(formEl, { attributes: true, attributeOldValue: true });
-
-//
-
-      for (var j = 0; j < sibLen; j++) {
-        var thisSib = siblings[j];
-
-        if (thisSib.classList.contains('messages') || thisSib.classList.contains('validation-message')) {
-          // Don't clobber any existing attributes!
-          if (!formEl.hasAttribute('aria-describedby') && !thisSib.id) {
-            // Decorate input & this sibling
-            var id = 'rb-a11y-' + window.rb.getShortId();
-            formEl.setAttribute('aria-describedby', id);
-            thisSib.id = id;
-          }
-        }
+      if (!formEl.hasAttribute('aria-describedby')) {
+        formEl.setAttribute('aria-describedby', describedByIds.trim());
       }
     }
   }
