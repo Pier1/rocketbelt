@@ -104,6 +104,10 @@ filter:
   title: Filter
   description: A funnel
 
+grid:
+  title: Grid
+  description: A grid of 9 squares
+
 heart:
   title: Heart
   description: A heart
@@ -123,6 +127,10 @@ home:
 info:
   title: Info
   description: A circle with an "i" inside
+
+lines:
+  title: Lines
+  description: Four lines stacked on top of each other
 
 lock-check:
   title: Lock With Check
