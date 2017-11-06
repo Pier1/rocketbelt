@@ -1,15 +1,13 @@
 %button-static-props {
   border: 1px solid transparent;
   text-decoration: none;
-  text-transform: uppercase;
-  letter-spacing: 0.05rem;
-  font-weight: font-weight(demi);
+  font-weight: font-weight(semibold);
   cursor: default;
-  transition: color 100ms ease(),
-              border 100ms ease(),
-              background 100ms ease(),
-              box-shadow 100ms ease-out,
-              opacity 500ms ease();
+  transition: color 100ms,
+              border 100ms,
+              background 100ms,
+              box-shadow 100ms,
+              opacity 500ms;
 
   @include button-shadow;
 
