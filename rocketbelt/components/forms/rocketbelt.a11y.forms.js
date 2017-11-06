@@ -1,12 +1,24 @@
-(function () {
-  function generateShortId() {
-    // Break the id into 2 parts to provide enough bits to the random number.
-    // This should be unique up to 1:2.2 bn.
-    var firstPart = (Math.random() * 46656) | 0;
-    var secondPart = (Math.random() * 46656) | 0;
-    firstPart = ('000' + firstPart.toString(36)).slice(-3);
-    secondPart = ('000' + secondPart.toString(36)).slice(-3);
-    return firstPart + secondPart;
+(function rocketbeltA11yForms(window, document) {
+  function onClassMutation(mutations) {
+    var mutationsLen = mutations.length;
+
+    for (var k = 0; k < mutationsLen; k++) {
+      var mutation = mutations[k];
+      var el = mutation.target;
+      var message = el.parentNode.querySelector('.validation-message');
+
+      if (mutation.oldValue !== 'invalid' && mutation.target.classList.contains('invalid')) {
+        // If "invalid" was added, do the decoratin'
+        el.setAttribute('aria-invalid', 'true');
+        message.setAttribute('role', 'alert');
+        message.setAttribute('aria-live', 'polite');
+      } else if (mutation.oldValue === 'invalid' && !el.classList.contains('invalid')) {
+        // If "invalid" was removed
+        el.setAttribute('aria-invalid', 'false');
+        message.removeAttribute('role');
+        message.removeAttribute('aria-live');
+      }
+    }
   }
 
   function decorateInputs() {
@@ -15,33 +27,31 @@
 
     for (var i = 0; i < formElsLen; i++) {
       var formEl = formEls[i];
-      var siblings = Array.prototype.filter.call(formEl.parentNode.children, function (child) {
-        return child !== formEl;
-      });
-      var sibLen = siblings.length;
 
-      for (var j = 0; j < sibLen; j++) {
-        var thisSib = siblings[j];
+      // Set an observer to listen for .invalid.
+      var observer = new MutationObserver(function (mutations) { onClassMutation(mutations); });
+      observer.observe(formEl, { subtree: false, attributes: true, attributeOldValue: true, attributeFilter: ['class'] });
 
-        if (thisSib.classList.contains('messages') || thisSib.classList.contains('validation-message')) {
-          // Don't clobber any existing attributes!
-          if (!formEl.hasAttribute('aria-describedby') && !thisSib.id) {
-            // Decorate input & this sibling
-            var id = 'rb-a11y-' + generateShortId();
-            formEl.setAttribute('aria-describedby', id);
-            thisSib.id = id;
-          }
+      var messages = formEl.parentNode.querySelectorAll('.validation-message, .helper-text');
+      var msgLen = messages.length;
+      var describedByIds = '';
+
+      for (var j = 0; j < msgLen; j++) {
+        var thisMsg = messages[j];
+        var id = 'rb-a11y_' + window.rb.getShortId();
+        describedByIds += id + ' ';
+
+        // Don't clobber any existing attributes!
+        if (!thisMsg.id) {
+          thisMsg.id = id;
         }
+      }
+
+      if (!formEl.hasAttribute('aria-describedby')) {
+        formEl.setAttribute('aria-describedby', describedByIds.trim());
       }
     }
   }
 
-  if (
-    document.readyState === 'complete' ||
-    (document.readyState !== 'loading' && !document.documentElement.doScroll)
-  ) {
-    decorateInputs();
-  } else {
-    document.addEventListener('DOMContentLoaded', decorateInputs);
-  }
-})();
+  window.rb.onDocumentReady(decorateInputs);
+})(window, document);
