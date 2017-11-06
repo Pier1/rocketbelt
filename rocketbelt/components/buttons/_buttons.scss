@@ -8,6 +8,7 @@ a[class *= 'button'] + a[class *= 'button'] {
 
 a[class *= 'button'] {
   display: inline-block;
+  text-align: center;
 }
 
 .button-primary {
@@ -35,6 +36,10 @@ a[class *= 'button'] {
   &:active {
     background: transparent;
     box-shadow: none;
+  }
+
+  &[disabled] {
+    cursor: default;
   }
 }
 
