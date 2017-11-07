@@ -298,6 +298,38 @@ ul {
   }
 }
 
+.text-with-rule {
+  display: flex;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: font-size(-1);
+
+  &.text-with-rule-full {
+    &::before,
+    &::after {
+      flex: 1;
+    }
+
+    &::before {
+      margin-left: 0;
+    }
+
+    &::after {
+      margin-right: 0;
+    }
+  }
+
+  &::before,
+  &::after {
+    display: inline-block;
+    margin: auto 0.6rem;
+    width: 25%;
+    border-top: 1px solid color(gray, plus2);
+    content: '';
+    vertical-align: middle;
+  }
+}
+
 @import 'typography-text-with-icon';
 @import 'typography-cta';
 @import 'typography-link-lists';
