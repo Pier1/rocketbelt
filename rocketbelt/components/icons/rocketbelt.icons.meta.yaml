@@ -88,6 +88,10 @@ cta-arrow:
   title: CTA Arrow
   description: A slim rightward chevron indicating a call-to-action
 
+delete:
+  title: Delete
+  description: A trash can
+
 edit:
   title: Edit
   description: A pencil
@@ -106,11 +110,7 @@ filter:
 
 grid:
   title: Grid
-<<<<<<< HEAD
-  description: A grid of squares
-=======
   description: A grid of 9 squares
->>>>>>> a11y
 
 heart:
   title: Heart
@@ -134,11 +134,7 @@ info:
 
 lines:
   title: Lines
-<<<<<<< HEAD
-  description: Lines stacked on each other
-=======
   description: Four lines stacked on top of each other
->>>>>>> a11y
 
 lock-check:
   title: Lock With Check
