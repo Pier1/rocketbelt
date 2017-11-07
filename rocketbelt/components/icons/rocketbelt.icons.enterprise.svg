@@ -340,7 +340,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     each other</desc>
     <title id="bmrb-icon-lines-title">Lines</title>
     <g fill-rule="evenodd">
-      <path d="M19 32h224v32H19zM19 85.333h224v32H19zM19 138.667h224v32H19zM19 192h224v32H19z" />
+      <path d="M16 32h224v32H16zM16 85h224v32H16zM16 139h224v32H16zM16 192h224v32H16z" />
     </g>
   </symbol>
   <symbol viewBox="0 0 256 256"
