@@ -16,7 +16,7 @@ $color-primary: #0f9dee;
 $color-warning: #ffc300;
 $color-error-lighter: #e7525f;
 
-$font-family-monospace: 'Brand Monospace', Monaco, Consolas, 'Lucida Console', monospace;
+$font-family-monospace: 'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace;
 
 
 code[class*="language-"],
@@ -24,7 +24,7 @@ pre[class*="language-"] {
 	color: $color-gray-darkest;
 	background: none;
 	// text-shadow: 0 1px white;
-	font-family: font-family(monospace);
+	font-family: $font-family-monospace;
 	text-align: left;
 	white-space: pre-wrap;
 	word-spacing: normal;
