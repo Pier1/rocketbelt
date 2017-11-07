@@ -76,6 +76,10 @@ chevron-up:
   title: Up Chevron
   description: An upward chevron
 
+circle-slash:
+  title: Circle Slash
+  description: A circle with a diagonal line through it
+
 close:
   title: Close
   description: An "x" character representing a close action
