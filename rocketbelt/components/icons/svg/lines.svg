@@ -6,10 +6,10 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="lines" fill="#000000">
-            <rect id="Rectangle-3" x="19" y="32" width="224" height="32"></rect>
-            <rect id="Rectangle-3-Copy" x="19" y="85.3333333" width="224" height="32"></rect>
-            <rect id="Rectangle-3-Copy-3" x="19" y="138.666667" width="224" height="32"></rect>
-            <rect id="Rectangle-3-Copy-4" x="19" y="192" width="224" height="32"></rect>
+            <rect id="Rectangle-3" x="16" y="32" width="224" height="32"></rect>
+            <rect id="Rectangle-3-Copy" x="16" y="85" width="224" height="32"></rect>
+            <rect id="Rectangle-3-Copy-3" x="16" y="139" width="224" height="32"></rect>
+            <rect id="Rectangle-3-Copy-4" x="16" y="192" width="224" height="32"></rect>
         </g>
     </g>
 </svg>
