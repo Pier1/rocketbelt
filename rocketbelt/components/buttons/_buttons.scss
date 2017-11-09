@@ -11,6 +11,20 @@ a[class *= 'button'] {
   text-align: center;
 }
 
+.button,
+button {
+  border-radius: 0;
+
+  &[disabled] {
+    box-shadow: none;
+
+    &:active,
+    &:hover {
+      box-shadow: none;
+    }
+  }
+}
+
 .button-primary {
   outline-color: color(primary, darkest);
 }
@@ -105,22 +119,6 @@ a[class *= 'button'] {
   &:active,
   &:hover {
     box-shadow: none;
-  }
-}
-
-.button,
-.button-primary,
-.button-secondary,
-.button-text,
-.button-link,
-.button-block {
-  &[disabled] {
-    box-shadow: none;
-
-    &:active,
-    &:hover {
-      box-shadow: none;
-    }
   }
 }
 
