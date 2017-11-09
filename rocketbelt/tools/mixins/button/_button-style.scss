@@ -108,13 +108,16 @@
   }
   @else if $style == dynamic {
     position: relative;
-    transition: background-color, opacity 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    filter: none;
+    transition: background 150ms linear, background-image 150ms linear;
+
     &.button-state-with-text {
       display: inline-flex;
       white-space: nowrap;
 
       align-items: center;
       justify-content: center;
+
       .button-state-text {
         visibility: visible;
         flex: 1 0 auto;
@@ -153,10 +156,14 @@
     }
   }
   @else if $style == success {
-    background-color: color(success);
+    background: color(success);
+    background-image: none;
+    transition: background 150ms linear, background-image 150ms linear;
+
     .button-state-text {
       visibility: hidden;
     }
+
     .button-state-icon {
       $color-fill: quote(color(white));
       position: absolute;
@@ -170,14 +177,18 @@
       background-repeat: no-repeat;
       transform: translate(-50%, -50%);
     }
+
     &[disabled] {
       opacity: 1;
+      filter: none;
+
       &:hover {
-        background-color: color(success);
+        background: color(success);
       }
     }
+
     &:hover {
-      background-color: color(success);
+      background: color(success);
     }
   }
 }
