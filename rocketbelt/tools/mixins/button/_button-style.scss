@@ -5,9 +5,9 @@
 ///
 /// @param $style [primary] - The type of button to render properties for.
 @mixin button-style($style: primary) {
-  $button-base: scale-color(color(primary), $lightness: 0%);
-  $button-hover: scale-color(color(primary), $lightness: 10%);
-  $button-active: scale-color(color(primary), $lightness: -10%);
+  $button-base: scale-color(color(brand), $lightness: 0%);
+  $button-hover: scale-color(color(brand), $lightness: 10%);
+  $button-active: scale-color(color(brand), $lightness: -10%);
 
   $button-base-secondary: color(brand);
   $button-hover-secondary: color(primary);
@@ -15,7 +15,7 @@
 
   @if $style == primary {
     min-width: 8rem;
-    background: $button-base linear-gradient(-180deg, rgba(255, 255, 255, 0.00) 0%, rgba(0, 0, 0, 0.2) 100%);
+    background: $button-base linear-gradient(-180deg, rgba(color(primary), 0.6) 0%, rgba($button-base, 0) 100%);
 
     $color: mix(color(white), $button-base, 95%);
     color: $color;
