@@ -76,6 +76,10 @@ chevron-up:
   title: Up Chevron
   description: An upward chevron
 
+circle-slash:
+  title: Circle Slash
+  description: A circle with a diagonal line through it
+
 close:
   title: Close
   description: An "x" character representing a close action
@@ -87,6 +91,10 @@ credit-card:
 cta-arrow:
   title: CTA Arrow
   description: A slim rightward chevron indicating a call-to-action
+
+delete:
+  title: Delete
+  description: A trash can
 
 edit:
   title: Edit
@@ -103,6 +111,10 @@ error:
 filter:
   title: Filter
   description: A funnel
+
+grid:
+  title: Grid
+  description: A grid of 9 squares
 
 heart:
   title: Heart
@@ -123,6 +135,10 @@ home:
 info:
   title: Info
   description: A circle with an "i" inside
+
+lines:
+  title: Lines
+  description: Four lines stacked on top of each other
 
 lock-check:
   title: Lock With Check

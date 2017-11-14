@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>delete</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="delete" fill="#000000" fill-rule="nonzero">
+            <path d="M44.3333333,72 L72.3333333,240 L184.333333,240 L212.333333,72 L44.3333333,72 Z M221.666667,34.6666667 L221.666667,53.3333333 L35,53.3333333 L35,34.6666667 L88.3026667,34.6666667 C96.7026667,34.6666667 103.525333,24.4093333 103.525333,16 L153.141333,16 C153.141333,24.4093333 159.954667,34.6666667 168.364,34.6666667 L221.666667,34.6666667 Z"></path>
+        </g>
+    </g>
+</svg>

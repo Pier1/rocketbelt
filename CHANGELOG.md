@@ -1,3 +1,35 @@
+<a name="1.13.2"></a>
+## [1.13.2](https://github.com/Pier1/rocketbelt/compare/1.13.1...v1.13.2) (2017-11-14)
+
+
+### Bug Fixes
+
+* **a11y:** Contrast fixes for buttons. ([f1753e1](https://github.com/Pier1/rocketbelt/commit/f1753e1))
+* **a11y:** Give the default gray proper contrast on a white background. ([fe3228b](https://github.com/Pier1/rocketbelt/commit/fe3228b))
+* **a11y:** Provide better contrast for primary buttons. ([1e2aa72](https://github.com/Pier1/rocketbelt/commit/1e2aa72))
+* **Buttons:** Simplification of standard button styles. ([04f35f8](https://github.com/Pier1/rocketbelt/commit/04f35f8))
+* **Buttons:** Update dynamic button's state transitions & gradient overlay. ([0d3a9ac](https://github.com/Pier1/rocketbelt/commit/0d3a9ac))
+* **Forms:** Change form label font weight to 400 (was 600/semibold). ([56a37c5](https://github.com/Pier1/rocketbelt/commit/56a37c5))
+* **Icons:** Realign lines icon. ([7965cb4](https://github.com/Pier1/rocketbelt/commit/7965cb4))
+* **Icons:** Semantic organization of a11y icon examples. ([a85315c](https://github.com/Pier1/rocketbelt/commit/a85315c))
+* **Tables:** Tweak table padding. ([402f0fd](https://github.com/Pier1/rocketbelt/commit/402f0fd))
+* **Typography:** Move monospace rules out of rocketbelt.css and into the sample site code. ([36eefd2](https://github.com/Pier1/rocketbelt/commit/36eefd2))
+
+
+### Features
+
+* **a11y:** Add accessible form attributes automatically via JS. ([2283288](https://github.com/Pier1/rocketbelt/commit/2283288))
+* **a11y:** Add auto-decoration of tooltips via JS. ([c671021](https://github.com/Pier1/rocketbelt/commit/c671021))
+* **a11y:** Add auto-description of form elements. ([99152e9](https://github.com/Pier1/rocketbelt/commit/99152e9))
+* **Icons:** Add circle-slash icon. ([e14ae11](https://github.com/Pier1/rocketbelt/commit/e14ae11))
+* **Icons:** Add delete icon. ([d93c38c](https://github.com/Pier1/rocketbelt/commit/d93c38c))
+* **Icons:** Add grid & lines icons. ([d6a140a](https://github.com/Pier1/rocketbelt/commit/d6a140a))
+* **Icons:** Add grid & lines icons. ([23c5c11](https://github.com/Pier1/rocketbelt/commit/23c5c11))
+* **Typography:** Add text-with-rule pattern. ([167c9d1](https://github.com/Pier1/rocketbelt/commit/167c9d1))
+* **Typography:** Simplify text-with-rule pattern. ([1ce37e0](https://github.com/Pier1/rocketbelt/commit/1ce37e0))
+
+
+
 <a name="1.13.1"></a>
 ## [1.13.1](https://github.com/Pier1/rocketbelt/compare/1.13.0...v1.13.1) (2017-10-31)
 

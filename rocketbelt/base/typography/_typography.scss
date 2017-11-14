@@ -11,8 +11,9 @@ body {
   font-size: font-size(0);
   font-family: font-family(default);
   line-height: 1.5;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+
+  -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
 }
 
 p {
@@ -137,14 +138,6 @@ h6 {
 
 .font-serif {
   font-family: font-family(serif);
-}
-
-.font-monospace {
-  padding: 0.125rem 0.25rem;
-  border: 1px solid color(gray, plus2);
-  border-radius: 2px;
-  background-color: color(gray, plus4);
-  font-family: font-family(monospace);
 }
 
 h1,
@@ -294,6 +287,32 @@ ul {
     li {
       display: inline-block;
     }
+  }
+}
+
+.text-with-rule {
+  display: flex;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: font-size(-1);
+
+  &::before,
+  &::after {
+    display: inline-block;
+    flex: 1;
+    margin: auto 0.6rem;
+    border-top: 1px solid color(gray, plus2);
+    content: '';
+    vertical-align: middle;
+  }
+
+  &::before {
+    margin-left: 0;
+  }
+
+  &::after {
+    margin-right: 0;
   }
 }
 

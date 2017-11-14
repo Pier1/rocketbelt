@@ -9,13 +9,11 @@ fieldset {
 
   label,
   legend {
-    font-weight: font-weight(semibold);
     font-size: ms(-1);
     align-self: flex-start;
 
     &::after {
       color: color(gray, plus1);
-      font-weight: font-weight(normal);
     }
   }
 }
@@ -77,6 +75,9 @@ fieldset {
     input,
     select,
     textarea {
+      &:focused {
+        overflow: auto;
+      }
       &[required] {
         & + label::after {
           content: '(required)';
