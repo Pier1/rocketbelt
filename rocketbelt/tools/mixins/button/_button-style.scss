@@ -5,16 +5,19 @@
 ///
 /// @param $style [primary] - The type of button to render properties for.
 @mixin button-style($style: primary) {
-  $button-base: scale-color(color(primary), $lightness: 0%);
-  $button-hover: scale-color(color(primary), $lightness: 10%);
-  $button-active: scale-color(color(primary), $lightness: -10%);
+  $button-base: scale-color(color(brand), $lightness: 0%);
+  $button-hover: scale-color(color(brand), $lightness: 10%);
+  $button-active: scale-color(color(brand), $lightness: -10%);
+
+  $button-base-secondary: color(brand);
+  $button-hover-secondary: color(primary);
+  $button-active-secondary: color(primary, darkest);
 
   @if $style == primary {
     min-width: 8rem;
-    background: $button-base;
-    background-image: linear-gradient(-180deg, rgba(255, 255, 255, 0.08) 0%, rgba(0, 0, 0, 0.08) 100%);
+    background: $button-base linear-gradient(-180deg, rgba(color(primary), 0.6) 0%, rgba($button-base, 0) 100%);
 
-    $color: mix(color(white), $button-base, 90%);
+    $color: mix(color(white), $button-base, 95%);
     color: $color;
     fill: $color;
     &:hover {
@@ -45,83 +48,83 @@
     background: color(white);
     background-image: none;
 
-    $color: mix(color(white), $button-base, 10%);
-    color: $color;
-    fill: $color;
+    color: $button-base-secondary;
+    fill: $button-base-secondary;
 
     &:hover {
       background: color(white);
-      color: $button-hover;
-      fill: $button-hover;
+      color: $button-hover-secondary;
+      fill: $button-hover-secondary;
     }
     &:visited {
-      color: $color;
+      color: $button-base-secondary;
     }
 
     &:active {
-      border: 0.1rem solid desaturate(color(primary, lightest), 50%);
+      border: 1px solid desaturate(color(primary, lightest), 50%);
       background: color(white);
-      color: $button-active;
-      fill: $button-active;
+      color: $button-active-secondary;
+      fill: $button-active-secondary;
     }
 
     &[disabled] {
-      border: 0.1rem solid desaturate(color(primary, lightest), 50%);
-      color: rgba($color, 0.9);
-      fill: rgba($color, 0.9);
+      border: 1px solid desaturate(color(primary, lightest), 50%);
+      color: rgba($button-base-secondary, 0.9);
+      fill: rgba($button-base-secondary, 0.9);
 
       &:hover {
-        color: $button-base;
-        fill: $button-base;
+      color: rgba($button-base-secondary, 0.9);
+      fill: rgba($button-base-secondary, 0.9);
       }
     }
   }
   @else if $style == text {
     background: transparent;
-    color: color(primary);
-    fill: color(primary);
+    color: $button-base-secondary;
+    fill: $button-base-secondary;
     &:visited {
-      color: color(primary);
+      color: $button-base-secondary;
     }
 
     &:hover {
-      $c: scale-color(color(primary), $lightness: 10%);
-      color: $c;
-      fill: $c;
+      color: $button-hover-secondary;
+      fill: $button-hover-secondary;
     }
 
     &:active {
-      $c: scale-color(color(primary), $lightness: -10%);
-      color: $c;
-      fill: $c;
+      color: $button-active-secondary;
+      fill: $button-active-secondary;
     }
 
     &[disabled] {
-      $color: rgba(color(primary), 0.9);
-      color: $color;
-      fill: $color;
+      color: rgba($button-base-secondary, 0.9);
+      fill: rgba($button-base-secondary, 0.9);
 
       &:hover {
-        color: $color;
-        fill: $color;
+      color: rgba($button-base-secondary, 0.9);
+      fill: rgba($button-base-secondary, 0.9);
       }
     }
   }
   @else if $style == dynamic {
     position: relative;
-    transition: background-color, opacity 0.25s cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    filter: none;
+    transition: background 150ms linear, background-image 150ms linear;
+
     &.button-state-with-text {
       display: inline-flex;
       white-space: nowrap;
 
       align-items: center;
       justify-content: center;
+
       .button-state-text {
         visibility: visible;
         flex: 1 0 auto;
         overflow: hidden;
         text-overflow: ellipsis;
       }
+
       .button-state-icon {
         position: relative;
         top: auto;
@@ -137,6 +140,7 @@
     .button-state-text {
       visibility: hidden;
     }
+
     .button-state-icon {
       $color-fill: quote(color(white));
       position: absolute;
@@ -152,10 +156,14 @@
     }
   }
   @else if $style == success {
-    background-color: color(success);
+    background: color(success);
+    background-image: none;
+    transition: background 150ms linear, background-image 150ms linear;
+
     .button-state-text {
       visibility: hidden;
     }
+
     .button-state-icon {
       $color-fill: quote(color(white));
       position: absolute;
@@ -169,14 +177,18 @@
       background-repeat: no-repeat;
       transform: translate(-50%, -50%);
     }
+
     &[disabled] {
       opacity: 1;
+      filter: none;
+
       &:hover {
-        background-color: color(success);
+        background: color(success);
       }
     }
+
     &:hover {
-      background-color: color(success);
+      background: color(success);
     }
   }
 }
