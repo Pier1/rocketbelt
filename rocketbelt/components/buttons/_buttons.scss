@@ -8,6 +8,21 @@ a[class *= 'button'] + a[class *= 'button'] {
 
 a[class *= 'button'] {
   display: inline-block;
+  text-align: center;
+}
+
+.button,
+button {
+  border-radius: 0;
+
+  &[disabled] {
+    box-shadow: none;
+
+    &:active,
+    &:hover {
+      box-shadow: none;
+    }
+  }
 }
 
 .button-primary {
@@ -35,6 +50,10 @@ a[class *= 'button'] {
   &:active {
     background: transparent;
     box-shadow: none;
+  }
+
+  &[disabled] {
+    cursor: default;
   }
 }
 
@@ -100,22 +119,6 @@ a[class *= 'button'] {
   &:active,
   &:hover {
     box-shadow: none;
-  }
-}
-
-.button,
-.button-primary,
-.button-secondary,
-.button-text,
-.button-link,
-.button-block {
-  &[disabled] {
-    box-shadow: none;
-
-    &:active,
-    &:hover {
-      box-shadow: none;
-    }
   }
 }
 

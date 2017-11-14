@@ -112,28 +112,28 @@
   color: #2e0a6d; }
 
 .fg_gray {
-  color: #827b7b; }
+  color: #7c7576; }
 
 .fg_gray-plus1 {
-  color: #9b9595; }
+  color: #979091; }
 
 .fg_gray-plus2 {
-  color: #b4b0b0; }
+  color: #b1acad; }
 
 .fg_gray-plus3 {
-  color: #cdcaca; }
+  color: #cbc8c8; }
 
 .fg_gray-plus4 {
-  color: #e6e5e5; }
+  color: #e5e3e4; }
 
 .fg_gray-plus5 {
-  color: #f3f2f2; }
+  color: #f2f1f1; }
 
 .fg_gray-minus1 {
-  color: #686262; }
+  color: #635e5e; }
 
 .fg_gray-minus2 {
-  color: #4e4a4a; }
+  color: #4a4647; }
 
 .fg_success {
   color: #00b575; }
@@ -277,28 +277,28 @@
   background-color: #2e0a6d; }
 
 .bg_gray {
-  background-color: #827b7b; }
+  background-color: #7c7576; }
 
 .bg_gray-plus1 {
-  background-color: #9b9595; }
+  background-color: #979091; }
 
 .bg_gray-plus2 {
-  background-color: #b4b0b0; }
+  background-color: #b1acad; }
 
 .bg_gray-plus3 {
-  background-color: #cdcaca; }
+  background-color: #cbc8c8; }
 
 .bg_gray-plus4 {
-  background-color: #e6e5e5; }
+  background-color: #e5e3e4; }
 
 .bg_gray-plus5 {
-  background-color: #f3f2f2; }
+  background-color: #f2f1f1; }
 
 .bg_gray-minus1 {
-  background-color: #686262; }
+  background-color: #635e5e; }
 
 .bg_gray-minus2 {
-  background-color: #4e4a4a; }
+  background-color: #4a4647; }
 
 .bg_success {
   background-color: #00b575; }
@@ -1515,12 +1515,6 @@
   font-family: 'Brand Serif';
   src: local("Crimson Text Italic"), local("CrimsonText-Italic"), url("//fonts.gstatic.com/s/crimsontext/v6/a5QZnvmn5amyNI-t2BMkWGfrnYWAzH6tTbHZfcsRIsM.woff2") format("woff2"), url("//fonts.gstatic.com/s/crimsontext/v6/a5QZnvmn5amyNI-t2BMkWL52ooqJRs02xO3mONBoqeI.woff") format("woff"); }
 
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-family: 'Brand Monospace';
-  src: local("Inconsolata"), url("//fonts.gstatic.com/s/inconsolata/v12/BjAYBlHtW3CJxDcjzrnZCIgp9Q8gbYrhqGlRav_IXfk.woff2") format("woff2"); }
-
 body {
   margin: 0;
   color: #030001;
@@ -1616,18 +1610,11 @@ h6 {
 .font-serif {
   font-family: "Brand Serif", Times New Roman, serif; }
 
-.font-monospace {
-  padding: 0.125rem 0.25rem;
-  border: 1px solid #b4b0b0;
-  border-radius: 2px;
-  background-color: #e6e5e5;
-  font-family: "Brand Monospace", Monaco, Consolas, "Lucida Console", monospace; }
-
 h1 small,
 h2 small,
 h3 small,
 h4 small {
-  color: #9b9595;
+  color: #979091;
   font-weight: 300; }
   h1 small::before,
   h2 small::before,
@@ -1706,14 +1693,14 @@ a {
 blockquote {
   margin: 0.75rem 0;
   padding: 0.375rem 0.75rem;
-  border-left: 0.75rem solid #b4b0b0;
+  border-left: 0.75rem solid #b1acad;
   border-radius: 2px;
-  background: #e6e5e5;
+  background: #e5e3e4;
   text-align: left;
   font-size: 1.60181rem; }
   blockquote .source {
     display: block;
-    color: #b4b0b0;
+    color: #b1acad;
     font-size: 1.26562rem; }
     blockquote .source::before {
       content: "― "; }
@@ -1745,6 +1732,28 @@ code,
 
 ul.horizontal li {
   display: inline-block; }
+
+.text-with-rule {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  margin: auto;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 0.88889rem; }
+  .text-with-rule::before, .text-with-rule::after {
+    display: inline-block;
+    -webkit-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    margin: auto 0.6rem;
+    border-top: 1px solid #b1acad;
+    content: '';
+    vertical-align: middle; }
+  .text-with-rule::before {
+    margin-left: 0; }
+  .text-with-rule::after {
+    margin-right: 0; }
 
 .text-with-icon {
   position: relative;
@@ -1822,17 +1831,17 @@ ul.horizontal li {
       -webkit-flex: 0 1 auto;
           -ms-flex: 0 1 auto;
               flex: 0 1 auto;
-      color: #827b7b;
+      color: #7c7576;
       text-decoration: none;
       transition: color 100ms linear;
       -webkit-align-items: center;
           -ms-flex-align: center;
               align-items: center; }
       .link-list li a:not(.cta):hover {
-        color: #9b9595;
+        color: #979091;
         transition: color 100ms linear; }
       .link-list li a:not(.cta):active {
-        color: #686262;
+        color: #635e5e;
         transition: color 100ms linear; }
   .link-list .title {
     display: -webkit-flex;

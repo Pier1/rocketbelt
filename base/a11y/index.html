@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/rocketbelt.min.css">
     <link rel="stylesheet" href="../../css/site.min.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/base/rocketbelt.js"></script>
   </head>
   <body class="grid-fluid">
     <ul class="skip list-reset">
@@ -197,27 +198,27 @@
                     <tr>
                       <td><span class="a11y-principle text-alternatives">Text Alternatives</span></td>
                       <td>All images have appropriate, equivalent alternative text.</td>
-                      <td class="guidance">Ensure that <code>alt</code> text is accurate, succinct, not redundant, and doesn't use phrases like "Image of" or "Graphic of".</td>
+                      <td class="guidance">Ensure that <code class="font-monospace">alt</code> text is accurate, succinct, not redundant, and doesn't use phrases like "Image of" or "Graphic of".</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle text-alternatives">Text Alternatives</span></td>
-                      <td>Images that do not convey content, are decorative, or contain content that is already conveyed in text are given null alt text (<code>alt=""</code>) or implemented as CSS backgrounds. All linked images have descriptive alternative text.</td>
-                      <td class="guidance">Ensure <code>alt</code> text doesn't just duplicate existing text.</td>
+                      <td>Images that do not convey content, are decorative, or contain content that is already conveyed in text are given null alt text (<code class="font-monospace">alt=""</code>) or implemented as CSS backgrounds. All linked images have descriptive alternative text.</td>
+                      <td class="guidance">Ensure <code class="font-monospace">alt</code> text doesn't just duplicate existing text.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle text-alternatives">Text Alternatives</span></td>
                       <td>Form buttons have a descriptive value.</td>
-                      <td class="guidance">A button with no text value should have a <code>title</code> tag that indicates what it does.</td>
+                      <td class="guidance">A button with no text value should have a <code class="font-monospace">title</code> tag that indicates what it does.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle text-alternatives">Text Alternatives</span></td>
                       <td>Form inputs have associated text labels.</td>
-                      <td class="guidance">Ensure that every form label is linked to its input with a <code>for</code> attribute.</td>
+                      <td class="guidance">Ensure that every form label is linked to its input with a <code class="font-monospace">for</code> attribute.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle text-alternatives">Text Alternatives</span></td>
                       <td>Embedded multimedia is identified via accessible text.</td>
-                      <td class="guidance">Add a <code>aria-label</code> or <code>aria-labelledby</code> attributes that indicate what the content is.</td>
+                      <td class="guidance">Add a <code class="font-monospace">aria-label</code> or <code class="font-monospace">aria-labelledby</code> attributes that indicate what the content is.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle text-alternatives">Text Alternatives</span></td>
@@ -226,8 +227,8 @@
                     </tr>
                     <tr>
                       <td><span class="a11y-principle adaptable">Adaptable</span></td>
-                      <td>Semantic markup is used appropriately to designate headings, lists, areas of the page (using HTML5 semantic tags such as <code>section</code>, <code>aside</code>, etc.) and emphasized or special text.</td>
-                      <td class="guidance">Semantic markup eliminates the need to add <code>aria-role</code> attributes.</td>
+                      <td>Semantic markup is used appropriately to designate headings, lists, areas of the page (using HTML5 semantic tags such as <code class="font-monospace">section</code>, <code class="font-monospace">aside</code>, etc.) and emphasized or special text.</td>
+                      <td class="guidance">Semantic markup eliminates the need to add <code class="font-monospace">aria-role</code> attributes.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle adaptable">Adaptable</span></td>
@@ -237,7 +238,7 @@
                     <tr>
                       <td><span class="a11y-principle adaptable">Adaptable</span></td>
                       <td>Text labels are associated with form input elements. Related form elements are grouped with fieldset/legend.</td>
-                      <td class="guidance">Ensure that every form label is linked to its input with a <code>for</code> attribute. Group related elements into a <code>fieldset</code> when appropriate.</td>
+                      <td class="guidance">Ensure that every form label is linked to its input with a <code class="font-monospace">for</code> attribute. Group related elements into a <code class="font-monospace">fieldset</code> when appropriate.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle adaptable">Adaptable</span></td>
@@ -262,17 +263,17 @@
                     <tr>
                       <td><span class="a11y-principle distinguishable">Distinguishable</span></td>
                       <td>If the same visual presentation can be made using text alone, an image is not used to present that text.</td>
-                      <td class="guidance">Avoid embedding meaningful text in images at all costs. If it cannot be avoided, use <code>alt</code> text or a <code>visually-hidden</code> element linked with an <code>aria-describedby</code> attribute on the image.</td>
+                      <td class="guidance">Avoid embedding meaningful text in images at all costs. If it cannot be avoided, use <code class="font-monospace">alt</code> text or a <code class="font-monospace">visually-hidden</code> element linked with an <code class="font-monospace">aria-describedby</code> attribute on the image.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle distinguishable">Distinguishable</span></td>
                       <td>Text is used within an image only for decoration (the image does not convey content) or when the information cannot be presented with text alone.</td>
-                      <td class="guidance">Avoid embedding meaningful text in images at all costs. If it cannot be avoided, use <code>alt</code> text or a <code>visually-hidden</code> element linked with an <code>aria-describedby</code> attribute on the image.</td>
+                      <td class="guidance">Avoid embedding meaningful text in images at all costs. If it cannot be avoided, use <code class="font-monospace">alt</code> text or a <code class="font-monospace">visually-hidden</code> element linked with an <code class="font-monospace">aria-describedby</code> attribute on the image.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle navigable">Navigable</span></td>
                       <td>All page functionality is available using the keyboard.</td>
-                      <td class="guidance">Use the <code>TAB</code> key to navigate from element to element. Ensure all elements that can be interacted with via mouse can receive keyboard focus. Ensure all anchor tags have 
+                      <td class="guidance">Use the <code class="font-monospace">TAB</code> key to navigate from element to element. Ensure all elements that can be interacted with via mouse can receive keyboard focus. Ensure all anchor tags have 
                         <href></href> attributes.
                       </td>
                     </tr>
@@ -284,17 +285,17 @@
                     <tr>
                       <td><span class="a11y-principle navigable">Navigable</span></td>
                       <td>The purpose of each link can be determined from the link text alone, or from the link text and the content that surrounds it.</td>
-                      <td class="guidance">Avoid unclear link text like "click here." Add a <code>title</code> attribute to any text that may be unclear.</td>
+                      <td class="guidance">Avoid unclear link text like "click here." Add a <code class="font-monospace">title</code> attribute to any text that may be unclear.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle navigable">Navigable</span></td>
                       <td>Links (or form image buttons) with the same text that go to different locations are readily distinguishable.</td>
-                      <td class="guidance">Use descriptive, clear language in link text. Add a <code>title</code> attribute to any text that may be unclear.</td>
+                      <td class="guidance">Use descriptive, clear language in link text. Add a <code class="font-monospace">title</code> attribute to any text that may be unclear.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle navigable">Navigable</span></td>
                       <td>It is visually apparent which page element has the current keyboard focus (i.e., as you tab through the page, you can see where you are).</td>
-                      <td class="guidance">Never remove CSS <code>outline</code>s. Favor minimal outlining such as Rocketbelt's default (<code>outline: thin dotted;</code>).</td>
+                      <td class="guidance">Never remove CSS <code class="font-monospace">outline</code>s. Favor minimal outlining such as Rocketbelt's default (<code class="font-monospace">outline: thin dotted;</code>).</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle navigable">Navigable</span></td>
@@ -314,12 +315,12 @@
                     <tr>
                       <td><span class="a11y-principle predictable">Predictable</span></td>
                       <td>When a user interacts with the page, it does not result in a substantial change to the page, the spawning of a pop-up window, an additional change of keyboard focus, or any other change that could confuse or disorient the user unless the user is informed of the change ahead of time.</td>
-                      <td class="guidance">Ensure that any link or button that triggers a dialog indicates this behavior with its text or via a <code>title</code> tag. Do not use Javascript to steal keyboard focus.</td>
+                      <td class="guidance">Ensure that any link or button that triggers a dialog indicates this behavior with its text or via a <code class="font-monospace">title</code> tag. Do not use Javascript to steal keyboard focus.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle predictable">Predictable</span></td>
                       <td>Substantial changes to the page, the spawning of pop-up windows, uncontrolled changes of keyboard focus, or any other change that could confuse or disorient the user must be initiated by the user.</td>
-                      <td class="guidance">Ensure that any link or button that triggers a dialog indicates this behavior with its text or via a <code>title</code> tag. Do not use Javascript to steal keyboard focus.</td>
+                      <td class="guidance">Ensure that any link or button that triggers a dialog indicates this behavior with its text or via a <code class="font-monospace">title</code> tag. Do not use Javascript to steal keyboard focus.</td>
                     </tr>
                     <tr>
                       <td><span class="a11y-principle compatible">Compatible</span></td>

@@ -6,6 +6,10 @@ block vars
 block content
   article
     h1 Forms
+    h2 Accessibility
+    +exampleWithCode('Javascript Include')
+      script(src='./rocketbelt.a11y.forms.js')
+
     h2 Standard Form Elements
     .grid-fluid
       .row
@@ -16,7 +20,7 @@ block content
         +exampleCodeOnly
           include _forms-basic.pug
 
-    //- h2 Sized Form Elements
+    h2 Sized Form Elements
     //- .grid-fluid
     //-   .row
     //-     .col.xs-8.md-6.lg-4

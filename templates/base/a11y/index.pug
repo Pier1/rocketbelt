@@ -20,27 +20,27 @@ block content
           td
             span.a11y-principle.text-alternatives Text Alternatives
           td All images have appropriate, equivalent alternative text.
-          td.guidance Ensure that #[code alt] text is accurate, succinct, not redundant, and doesn't use phrases like "Image of" or "Graphic of".
+          td.guidance Ensure that #[code.font-monospace alt] text is accurate, succinct, not redundant, and doesn't use phrases like "Image of" or "Graphic of".
         tr
           td
             span.a11y-principle.text-alternatives Text Alternatives
-          td Images that do not convey content, are decorative, or contain content that is already conveyed in text are given null alt text (#[code alt=""]) or implemented as CSS backgrounds. All linked images have descriptive alternative text.
-          td.guidance Ensure #[code alt] text doesn't just duplicate existing text.
+          td Images that do not convey content, are decorative, or contain content that is already conveyed in text are given null alt text (#[code.font-monospace alt=""]) or implemented as CSS backgrounds. All linked images have descriptive alternative text.
+          td.guidance Ensure #[code.font-monospace alt] text doesn't just duplicate existing text.
         tr
           td
             span.a11y-principle.text-alternatives Text Alternatives
           td Form buttons have a descriptive value.
-          td.guidance A button with no text value should have a #[code title] tag that indicates what it does.
+          td.guidance A button with no text value should have a #[code.font-monospace title] tag that indicates what it does.
         tr
           td
             span.a11y-principle.text-alternatives Text Alternatives
           td Form inputs have associated text labels.
-          td.guidance Ensure that every form label is linked to its input with a #[code for] attribute.
+          td.guidance Ensure that every form label is linked to its input with a #[code.font-monospace for] attribute.
         tr
           td
             span.a11y-principle.text-alternatives Text Alternatives
           td Embedded multimedia is identified via accessible text.
-          td.guidance Add a #[code aria-label] or #[code aria-labelledby] attributes that indicate what the content is.
+          td.guidance Add a #[code.font-monospace aria-label] or #[code.font-monospace aria-labelledby] attributes that indicate what the content is.
         tr
           td
             span.a11y-principle.text-alternatives Text Alternatives
@@ -49,8 +49,8 @@ block content
         tr
           td
             span.a11y-principle.adaptable Adaptable
-          td Semantic markup is used appropriately to designate headings, lists, areas of the page (using HTML5 semantic tags such as #[code section], #[code aside], etc.) and emphasized or special text.
-          td.guidance Semantic markup eliminates the need to add #[code aria-role] attributes.
+          td Semantic markup is used appropriately to designate headings, lists, areas of the page (using HTML5 semantic tags such as #[code.font-monospace section], #[code.font-monospace aside], etc.) and emphasized or special text.
+          td.guidance Semantic markup eliminates the need to add #[code.font-monospace aria-role] attributes.
         tr
           td
             span.a11y-principle.adaptable Adaptable
@@ -60,7 +60,7 @@ block content
           td
             span.a11y-principle.adaptable Adaptable
           td Text labels are associated with form input elements. Related form elements are grouped with fieldset/legend.
-          td.guidance Ensure that every form label is linked to its input with a #[code for] attribute. Group related elements into a #[code fieldset] when appropriate.
+          td.guidance Ensure that every form label is linked to its input with a #[code.font-monospace for] attribute. Group related elements into a #[code.font-monospace fieldset] when appropriate.
         tr
           td
             span.a11y-principle.adaptable Adaptable
@@ -85,17 +85,17 @@ block content
           td
             span.a11y-principle.distinguishable Distinguishable
           td If the same visual presentation can be made using text alone, an image is not used to present that text.
-          td.guidance Avoid embedding meaningful text in images at all costs. If it cannot be avoided, use #[code alt] text or a #[code visually-hidden] element linked with an #[code aria-describedby] attribute on the image.
+          td.guidance Avoid embedding meaningful text in images at all costs. If it cannot be avoided, use #[code.font-monospace alt] text or a #[code.font-monospace visually-hidden] element linked with an #[code.font-monospace aria-describedby] attribute on the image.
         tr
           td
             span.a11y-principle.distinguishable Distinguishable
           td Text is used within an image only for decoration (the image does not convey content) or when the information cannot be presented with text alone.
-          td.guidance Avoid embedding meaningful text in images at all costs. If it cannot be avoided, use #[code alt] text or a #[code visually-hidden] element linked with an #[code aria-describedby] attribute on the image.
+          td.guidance Avoid embedding meaningful text in images at all costs. If it cannot be avoided, use #[code.font-monospace alt] text or a #[code.font-monospace visually-hidden] element linked with an #[code.font-monospace aria-describedby] attribute on the image.
         tr
           td
             span.a11y-principle.navigable Navigable
           td All page functionality is available using the keyboard.
-          td.guidance Use the #[code TAB] key to navigate from element to element. Ensure all elements that can be interacted with via mouse can receive keyboard focus. Ensure all anchor tags have #[href] attributes.
+          td.guidance Use the #[code.font-monospace TAB] key to navigate from element to element. Ensure all elements that can be interacted with via mouse can receive keyboard focus. Ensure all anchor tags have #[href] attributes.
         tr
           td
             span.a11y-principle.navigable Navigable
@@ -105,17 +105,17 @@ block content
           td
             span.a11y-principle.navigable Navigable
           td The purpose of each link can be determined from the link text alone, or from the link text and the content that surrounds it.
-          td.guidance Avoid unclear link text like "click here." Add a #[code title] attribute to any text that may be unclear.
+          td.guidance Avoid unclear link text like "click here." Add a #[code.font-monospace title] attribute to any text that may be unclear.
         tr
           td
             span.a11y-principle.navigable Navigable
           td Links (or form image buttons) with the same text that go to different locations are readily distinguishable.
-          td.guidance Use descriptive, clear language in link text. Add a #[code title] attribute to any text that may be unclear.
+          td.guidance Use descriptive, clear language in link text. Add a #[code.font-monospace title] attribute to any text that may be unclear.
         tr
           td
             span.a11y-principle.navigable Navigable
           td It is visually apparent which page element has the current keyboard focus (i.e., as you tab through the page, you can see where you are).
-          td.guidance Never remove CSS #[code outline]s. Favor minimal outlining such as Rocketbelt's default (#[code outline: thin dotted;]).
+          td.guidance Never remove CSS #[code.font-monospace outline]s. Favor minimal outlining such as Rocketbelt's default (#[code.font-monospace outline: thin dotted;]).
         tr
           td
             span.a11y-principle.navigable Navigable
@@ -135,12 +135,12 @@ block content
           td
             span.a11y-principle.predictable Predictable
           td When a user interacts with the page, it does not result in a substantial change to the page, the spawning of a pop-up window, an additional change of keyboard focus, or any other change that could confuse or disorient the user unless the user is informed of the change ahead of time.
-          td.guidance Ensure that any link or button that triggers a dialog indicates this behavior with its text or via a #[code title] tag. Do not use Javascript to steal keyboard focus.
+          td.guidance Ensure that any link or button that triggers a dialog indicates this behavior with its text or via a #[code.font-monospace title] tag. Do not use Javascript to steal keyboard focus.
         tr
           td
             span.a11y-principle.predictable Predictable
           td Substantial changes to the page, the spawning of pop-up windows, uncontrolled changes of keyboard focus, or any other change that could confuse or disorient the user must be initiated by the user.
-          td.guidance Ensure that any link or button that triggers a dialog indicates this behavior with its text or via a #[code title] tag. Do not use Javascript to steal keyboard focus.
+          td.guidance Ensure that any link or button that triggers a dialog indicates this behavior with its text or via a #[code.font-monospace title] tag. Do not use Javascript to steal keyboard focus.
         tr
           td
             span.a11y-principle.compatible Compatible

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="../../css/rocketbelt.min.css">
     <link rel="stylesheet" href="../../css/site.min.css">
     <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/base/rocketbelt.js"></script>
   </head>
   <body class="grid-fluid">
     <ul class="skip list-reset">
@@ -184,6 +185,23 @@
             <div class="col xs">
               <article>
                 <h1>Tooltips</h1>
+                <h2>Accessibility</h2>
+                <div class="exampleWithCode">
+                  <div class="example">
+                    <script src="./rocketbelt.a11y.tooltips.min.js"></script>
+                  </div>
+                  <div class="expander">
+                    <input class="expander_checkbox" type="checkbox" id="rb-Z1dz5GB"/>
+                    <label class="expander_label" for="rb-Z1dz5GB" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button class="copy-code" data-clipboard-target="#rb-Z2vudLo">Copy</button>
+                        <pre><code class="language-js include" id="rb-Z2vudLo">
+                            &lt;script src=&quot;./rocketbelt.a11y.tooltips.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <h2>Variations</h2>
                 <div class="row">
                   <div class="col xs-12 md-6">
@@ -191,24 +209,24 @@
                       <div class="example">
                         <form>
                           <div class="form-group tooltip tooltip-focus-only tooltip-inverted">
-                            <input id="input-with-tooltip" aria-describedby="input-tooltip-top">
+                            <input class="tooltip_trigger">
                             <label for="input-with-tooltip">Input with Tooltip</label>
-                            <div class="tooltip-content" id="input-tooltip-top" role="tooltip">You'd be the help of open-air luxury.</div>
+                            <div class="tooltip-content">You'd be the help of open-air luxury.</div>
                           </div>
                         </form>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-Z1jY5Dn"/>
-                        <label class="expander_label" for="rb-Z1jY5Dn" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-2gKCsl"/>
+                        <label class="expander_label" for="rb-2gKCsl" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-Z16TCL0">Copy</button>
-                            <pre><code class="language-html" id="rb-Z16TCL0">
+                            <button class="copy-code" data-clipboard-target="#rb-2jxSMD">Copy</button>
+                            <pre><code class="language-html" id="rb-2jxSMD">
                                 &lt;form&gt;
                                   &lt;div class=&quot;form-group tooltip tooltip-focus-only tooltip-inverted&quot;&gt;
-                                    &lt;input id=&quot;input-with-tooltip&quot; aria-describedby=&quot;input-tooltip-top&quot;&gt;
+                                    &lt;input class=&quot;tooltip_trigger&quot;&gt;
                                     &lt;label for=&quot;input-with-tooltip&quot;&gt;Input with Tooltip&lt;/label&gt;
-                                    &lt;div class=&quot;tooltip-content&quot; id=&quot;input-tooltip-top&quot; role=&quot;tooltip&quot;&gt;You'd be the help of open-air luxury.&lt;/div&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;You'd be the help of open-air luxury.&lt;/div&gt;
                                   &lt;/div&gt;
                                 &lt;/form&gt;</code></pre>
                           </div>
@@ -221,18 +239,18 @@
                   <div class="col xs-12 md-6">
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="default-tooltip">Default</h3>
-                          <div class="tooltip-content" id="default-tooltip" role="tooltip">You'd be the help of open-air luxury.</div></span>
+                          <h3 class="tooltip_trigger docs-header">Default</h3>
+                          <div class="tooltip-content">You'd be the help of open-air luxury.</div></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-Z1eDtKk"/>
-                        <label class="expander_label" for="rb-Z1eDtKk" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1gd3PP"/>
+                        <label class="expander_label" for="rb-Z1gd3PP" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-Z2h4zw1">Copy</button>
-                            <pre><code class="language-html" id="rb-Z2h4zw1">&lt;span class=&quot;tooltip&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;default-tooltip&quot;&gt;Default&lt;/h3&gt;
-                                  &lt;div class=&quot;tooltip-content&quot; id=&quot;default-tooltip&quot; role=&quot;tooltip&quot;&gt;You'd be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            <button class="copy-code" data-clipboard-target="#rb-Z1oF7Qr">Copy</button>
+                            <pre><code class="language-html" id="rb-Z1oF7Qr">&lt;span class=&quot;tooltip&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Default&lt;/h3&gt;
+                                  &lt;div class=&quot;tooltip-content&quot;&gt;You'd be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
                       </div>
@@ -241,18 +259,18 @@
                   <div class="col xs-12 md-6">
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip tooltip-inverted" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="inverted-tooltip">Inverted</h3>
-                          <div class="tooltip-content" id="inverted-tooltip" role="tooltip">You'd be the help of open-air luxury.</div></span>
+                          <h3 class="tooltip_trigger docs-header">Inverted</h3>
+                          <div class="tooltip-content">You'd be the help of open-air luxury.</div></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-Z1jJsKy"/>
-                        <label class="expander_label" for="rb-Z1jJsKy" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1sodM6"/>
+                        <label class="expander_label" for="rb-Z1sodM6" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-Z19fNvD">Copy</button>
-                            <pre><code class="language-html" id="rb-Z19fNvD">&lt;span class=&quot;tooltip tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;inverted-tooltip&quot;&gt;Inverted&lt;/h3&gt;
-                                  &lt;div class=&quot;tooltip-content&quot; id=&quot;inverted-tooltip&quot; role=&quot;tooltip&quot;&gt;You'd be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            <button class="copy-code" data-clipboard-target="#rb-ZaVz7c">Copy</button>
+                            <pre><code class="language-html" id="rb-ZaVz7c">&lt;span class=&quot;tooltip tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Inverted&lt;/h3&gt;
+                                  &lt;div class=&quot;tooltip-content&quot;&gt;You'd be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
                       </div>
@@ -264,54 +282,54 @@
                   <div class="col xs-12 md-6">
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip tooltip-left" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="left-tooltip">Left</h3>
-                          <div class="tooltip-content" id="left-tooltip" role="tooltip">Weave a sofa or outdoor seat on display.</div></span>
+                          <h3 class="tooltip_trigger docs-header">Left</h3>
+                          <div class="tooltip-content">Weave a sofa or outdoor seat on display.</div></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-Z1iwFvL"/>
-                        <label class="expander_label" for="rb-Z1iwFvL" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1hLNxk"/>
+                        <label class="expander_label" for="rb-Z1hLNxk" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-Z1KiuRM">Copy</button>
-                            <pre><code class="language-html" id="rb-Z1KiuRM">&lt;span class=&quot;tooltip tooltip-left&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;left-tooltip&quot;&gt;Left&lt;/h3&gt;
-                                  &lt;div class=&quot;tooltip-content&quot; id=&quot;left-tooltip&quot; role=&quot;tooltip&quot;&gt;Weave a sofa or outdoor seat on display.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            <button class="copy-code" data-clipboard-target="#rb-Z1X4dk4">Copy</button>
+                            <pre><code class="language-html" id="rb-Z1X4dk4">&lt;span class=&quot;tooltip tooltip-left&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Left&lt;/h3&gt;
+                                  &lt;div class=&quot;tooltip-content&quot;&gt;Weave a sofa or outdoor seat on display.&lt;/div&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip tooltip-right" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="right-tooltip">Right</h3>
-                          <div class="tooltip-content" id="right-tooltip" role="tooltip">Case in covered with nailhead trim is even more of flowers?</div></span>
+                          <h3 class="tooltip_trigger docs-header">Right</h3>
+                          <div class="tooltip-content">Case in covered with nailhead trim is even more of flowers?</div></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-Z1qYV3E"/>
-                        <label class="expander_label" for="rb-Z1qYV3E" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1eeGE3"/>
+                        <label class="expander_label" for="rb-Z1eeGE3" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-ZvUsvL">Copy</button>
-                            <pre><code class="language-html" id="rb-ZvUsvL">&lt;span class=&quot;tooltip tooltip-right&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;right-tooltip&quot;&gt;Right&lt;/h3&gt;
-                                  &lt;div class=&quot;tooltip-content&quot; id=&quot;right-tooltip&quot; role=&quot;tooltip&quot;&gt;Case in covered with nailhead trim is even more of flowers?&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            <button class="copy-code" data-clipboard-target="#rb-Z2lw9ST">Copy</button>
+                            <pre><code class="language-html" id="rb-Z2lw9ST">&lt;span class=&quot;tooltip tooltip-right&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Right&lt;/h3&gt;
+                                  &lt;div class=&quot;tooltip-content&quot;&gt;Case in covered with nailhead trim is even more of flowers?&lt;/div&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip tooltip-bottom" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="bottom-tooltip">Bottom</h3>
-                          <div class="tooltip-content" id="bottom-tooltip" role="tooltip">Decorated with an almost weightless, firefly-like effect.</div></span>
+                          <h3 class="tooltip_trigger docs-header">Bottom</h3>
+                          <div class="tooltip-content">Decorated with an almost weightless, firefly-like effect.</div></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-Z1hXrfw"/>
-                        <label class="expander_label" for="rb-Z1hXrfw" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-2d3Y1d"/>
+                        <label class="expander_label" for="rb-2d3Y1d" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-Z1SwQL8">Copy</button>
-                            <pre><code class="language-html" id="rb-Z1SwQL8">&lt;span class=&quot;tooltip tooltip-bottom&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;bottom-tooltip&quot;&gt;Bottom&lt;/h3&gt;
-                                  &lt;div class=&quot;tooltip-content&quot; id=&quot;bottom-tooltip&quot; role=&quot;tooltip&quot;&gt;Decorated with an almost weightless, firefly-like effect.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            <button class="copy-code" data-clipboard-target="#rb-24JjjW">Copy</button>
+                            <pre><code class="language-html" id="rb-24JjjW">&lt;span class=&quot;tooltip tooltip-bottom&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Bottom&lt;/h3&gt;
+                                  &lt;div class=&quot;tooltip-content&quot;&gt;Decorated with an almost weightless, firefly-like effect.&lt;/div&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
                       </div>
@@ -320,54 +338,54 @@
                   <div class="col xs-12 md-6">
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip tooltip-left tooltip-inverted" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="inverted-left-tooltip">Inverted Left</h3>
-                          <div class="tooltip-content" id="inverted-left-tooltip" role="tooltip">Weave a sofa or outdoor seat on display.</div></span>
+                          <h3 class="tooltip_trigger docs-header">Inverted Left</h3>
+                          <div class="tooltip-content">Weave a sofa or outdoor seat on display.</div></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-2gntAX"/>
-                        <label class="expander_label" for="rb-2gntAX" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1sp3c2"/>
+                        <label class="expander_label" for="rb-Z1sp3c2" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-2fCgV2">Copy</button>
-                            <pre><code class="language-html" id="rb-2fCgV2">&lt;span class=&quot;tooltip tooltip-left tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;inverted-left-tooltip&quot;&gt;Inverted Left&lt;/h3&gt;
-                                  &lt;div class=&quot;tooltip-content&quot; id=&quot;inverted-left-tooltip&quot; role=&quot;tooltip&quot;&gt;Weave a sofa or outdoor seat on display.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            <button class="copy-code" data-clipboard-target="#rb-Zb2PpN">Copy</button>
+                            <pre><code class="language-html" id="rb-Zb2PpN">&lt;span class=&quot;tooltip tooltip-left tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Inverted Left&lt;/h3&gt;
+                                  &lt;div class=&quot;tooltip-content&quot;&gt;Weave a sofa or outdoor seat on display.&lt;/div&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip tooltip-right tooltip-inverted" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="inverted-right-tooltip">Inverted Right</h3>
-                          <div class="tooltip-content" id="inverted-right-tooltip" role="tooltip">Case in covered with nailhead trim is even more of flowers?</div></span>
+                          <h3 class="tooltip_trigger docs-header">Inverted Right</h3>
+                          <div class="tooltip-content">Case in covered with nailhead trim is even more of flowers?</div></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-Z1dH5Ax"/>
-                        <label class="expander_label" for="rb-Z1dH5Ax" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1rKpkD"/>
+                        <label class="expander_label" for="rb-Z1rKpkD" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-Z2v8egV">Copy</button>
-                            <pre><code class="language-html" id="rb-Z2v8egV">&lt;span class=&quot;tooltip tooltip-right tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;inverted-right-tooltip&quot;&gt;Inverted Right&lt;/h3&gt;
-                                  &lt;div class=&quot;tooltip-content&quot; id=&quot;inverted-right-tooltip&quot; role=&quot;tooltip&quot;&gt;Case in covered with nailhead trim is even more of flowers?&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            <button class="copy-code" data-clipboard-target="#rb-ZkIPp1">Copy</button>
+                            <pre><code class="language-html" id="rb-ZkIPp1">&lt;span class=&quot;tooltip tooltip-right tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Inverted Right&lt;/h3&gt;
+                                  &lt;div class=&quot;tooltip-content&quot;&gt;Case in covered with nailhead trim is even more of flowers?&lt;/div&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
                       </div>
                     </div>
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip tooltip-bottom tooltip-inverted" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="inverted-bottom-tooltip">Inverted Bottom</h3>
-                          <div class="tooltip-content" id="inverted-bottom-tooltip" role="tooltip">Decorated with an almost weightless, firefly-like effect.</div></span>
+                          <h3 class="tooltip_trigger docs-header">Inverted Bottom</h3>
+                          <div class="tooltip-content">Decorated with an almost weightless, firefly-like effect.</div></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-2dcFAd"/>
-                        <label class="expander_label" for="rb-2dcFAd" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-2dW2Qv"/>
+                        <label class="expander_label" for="rb-2dW2Qv" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-1To5WV">Copy</button>
-                            <pre><code class="language-html" id="rb-1To5WV">&lt;span class=&quot;tooltip tooltip-bottom tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;inverted-bottom-tooltip&quot;&gt;Inverted Bottom&lt;/h3&gt;
-                                  &lt;div class=&quot;tooltip-content&quot; id=&quot;inverted-bottom-tooltip&quot; role=&quot;tooltip&quot;&gt;Decorated with an almost weightless, firefly-like effect.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            <button class="copy-code" data-clipboard-target="#rb-1a5HsA">Copy</button>
+                            <pre><code class="language-html" id="rb-1a5HsA">&lt;span class=&quot;tooltip tooltip-bottom tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Inverted Bottom&lt;/h3&gt;
+                                  &lt;div class=&quot;tooltip-content&quot;&gt;Decorated with an almost weightless, firefly-like effect.&lt;/div&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
                       </div>
@@ -377,54 +395,54 @@
                 <h2>Sizes</h2>
                 <div class="exampleWithCode">
                   <div class="example"><span class="tooltip" tabindex="0">
-                      <h3 class="docs-header" aria-describedby="small-tooltip">Small (Default)</h3>
-                      <div class="tooltip-content" id="small-tooltip" role="tooltip">You'd be the help of open-air luxury.</div></span>
+                      <h3 class="tooltip_trigger docs-header">Small (Default)</h3>
+                      <div class="tooltip-content">You'd be the help of open-air luxury.</div></span>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-Z1vynjn"/>
-                    <label class="expander_label" for="rb-Z1vynjn" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-2h3Wah"/>
+                    <label class="expander_label" for="rb-2h3Wah" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-Z1gdTp">Copy</button>
-                        <pre><code class="language-html" id="rb-Z1gdTp">&lt;span class=&quot;tooltip&quot; tabindex=&quot;0&quot;&gt;
-                              &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;small-tooltip&quot;&gt;Small (Default)&lt;/h3&gt;
-                              &lt;div class=&quot;tooltip-content&quot; id=&quot;small-tooltip&quot; role=&quot;tooltip&quot;&gt;You'd be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                        <button class="copy-code" data-clipboard-target="#rb-2pIecs">Copy</button>
+                        <pre><code class="language-html" id="rb-2pIecs">&lt;span class=&quot;tooltip&quot; tabindex=&quot;0&quot;&gt;
+                              &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Small (Default)&lt;/h3&gt;
+                              &lt;div class=&quot;tooltip-content&quot;&gt;You'd be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="exampleWithCode">
                   <div class="example"><span class="tooltip tooltip-md tooltip-right" tabindex="0">
-                      <h3 class="docs-header" aria-describedby="medium-tooltip">Medium</h3>
-                      <div class="tooltip-content" id="medium-tooltip" role="tooltip">Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.</div></span>
+                      <h3 class="tooltip_trigger docs-header">Medium</h3>
+                      <div class="tooltip-content">Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.</div></span>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-Z1vAprc"/>
-                    <label class="expander_label" for="rb-Z1vAprc" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-2g30ke"/>
+                    <label class="expander_label" for="rb-2g30ke" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-Z28tAd">Copy</button>
-                        <pre><code class="language-html" id="rb-Z28tAd">&lt;span class=&quot;tooltip tooltip-md tooltip-right&quot; tabindex=&quot;0&quot;&gt;
-                              &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;medium-tooltip&quot;&gt;Medium&lt;/h3&gt;
-                              &lt;div class=&quot;tooltip-content&quot; id=&quot;medium-tooltip&quot; role=&quot;tooltip&quot;&gt;Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                        <button class="copy-code" data-clipboard-target="#rb-2aBfNi">Copy</button>
+                        <pre><code class="language-html" id="rb-2aBfNi">&lt;span class=&quot;tooltip tooltip-md tooltip-right&quot; tabindex=&quot;0&quot;&gt;
+                              &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Medium&lt;/h3&gt;
+                              &lt;div class=&quot;tooltip-content&quot;&gt;Especially when you’re snuggled up your family and beyond. Did you with a cabinet or to kick back.&lt;/div&gt;&lt;/span&gt;</code></pre>
                       </div>
                     </div>
                   </div>
                 </div>
                 <div class="exampleWithCode">
                   <div class="example"><span class="tooltip tooltip-lg tooltip-right" tabindex="0">
-                      <h3 class="docs-header" aria-describedby="large-tooltip">Large</h3>
-                      <div class="tooltip-content" id="large-tooltip" role="tooltip">Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.</div></span>
+                      <h3 class="tooltip_trigger docs-header">Large</h3>
+                      <div class="tooltip-content">Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.</div></span>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-2ehzGe"/>
-                    <label class="expander_label" for="rb-2ehzGe" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-2bSljv"/>
+                    <label class="expander_label" for="rb-2bSljv" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-1eV8qf">Copy</button>
-                        <pre><code class="language-html" id="rb-1eV8qf">&lt;span class=&quot;tooltip tooltip-lg tooltip-right&quot; tabindex=&quot;0&quot;&gt;
-                              &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;large-tooltip&quot;&gt;Large&lt;/h3&gt;
-                              &lt;div class=&quot;tooltip-content&quot; id=&quot;large-tooltip&quot; role=&quot;tooltip&quot;&gt;Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                        <button class="copy-code" data-clipboard-target="#rb-1B8RYw">Copy</button>
+                        <pre><code class="language-html" id="rb-1B8RYw">&lt;span class=&quot;tooltip tooltip-lg tooltip-right&quot; tabindex=&quot;0&quot;&gt;
+                              &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Large&lt;/h3&gt;
+                              &lt;div class=&quot;tooltip-content&quot;&gt;Our 10-foot battery-powered Pearl Strand Glimmer Strings® use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.&lt;/div&gt;&lt;/span&gt;</code></pre>
                       </div>
                     </div>
                   </div>
@@ -434,17 +452,17 @@
                   <div class="col xs-8 md-6 lg-4">
                     <div class="exampleWithCode">
                       <div class="example"><span class="tooltip tooltip-right tooltip-md tooltip-inverted" tabindex="0">
-                          <h3 class="docs-header" aria-describedby="rich-tooltip">Rich Content</h3><span class="tooltip-content" id="rich-tooltip" role="tooltip"><img src="/exposition/logo-usage/img/normal_logo.png" style="width:85%;display:block;">
+                          <h3 class="tooltip_trigger docs-header">Rich Content</h3><span class="tooltip-content"><img src="/exposition/logo-usage/img/normal_logo.png" style="width:85%;display:block;">
                             <p>Let it a sleek, hand-painted in a little sunshine and proud heritage dating back and hang. We’d say white stoneware mug with bold and a beaded number. You’ll love a nostalgic, weathered sign is either way, our elegant simplicity. Collect a windowsill, but this unit in and it's a naked niche? Nothing spices up the deer pillar of warm colors and plum—all in our classic lines with flashy fringe. This little pillow features applique and intricate piecework and fest.</p></span></span>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-2cQtEF"/>
-                        <label class="expander_label" for="rb-2cQtEF" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-ZTpiB4"/>
+                        <label class="expander_label" for="rb-ZTpiB4" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-1PIDp9">Copy</button>
-                            <pre><code class="language-html" id="rb-1PIDp9">&lt;span class=&quot;tooltip tooltip-right tooltip-md tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
-                                  &lt;h3 class=&quot;docs-header&quot; aria-describedby=&quot;rich-tooltip&quot;&gt;Rich Content&lt;/h3&gt;&lt;span class=&quot;tooltip-content&quot; id=&quot;rich-tooltip&quot; role=&quot;tooltip&quot;&gt;&lt;img src=&quot;/exposition/logo-usage/img/normal_logo.png&quot; style=&quot;width:85%;display:block;&quot;&gt;
+                            <button class="copy-code" data-clipboard-target="#rb-4rIsj">Copy</button>
+                            <pre><code class="language-html" id="rb-4rIsj">&lt;span class=&quot;tooltip tooltip-right tooltip-md tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                  &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Rich Content&lt;/h3&gt;&lt;span class=&quot;tooltip-content&quot;&gt;&lt;img src=&quot;/exposition/logo-usage/img/normal_logo.png&quot; style=&quot;width:85%;display:block;&quot;&gt;
                                     &lt;p&gt;Let it a sleek, hand-painted in a little sunshine and proud heritage dating back and hang. We’d say white stoneware mug with bold and a beaded number. You’ll love a nostalgic, weathered sign is either way, our elegant simplicity. Collect a windowsill, but this unit in and it's a naked niche? Nothing spices up the deer pillar of warm colors and plum—all in our classic lines with flashy fringe. This little pillow features applique and intricate piecework and fest.&lt;/p&gt;&lt;/span&gt;&lt;/span&gt;</code></pre>
                           </div>
                         </div>
@@ -463,12 +481,12 @@
                         </div>
                       </div>
                       <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="rb-2cRjgH"/>
-                        <label class="expander_label" for="rb-2cRjgH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <input class="expander_checkbox" type="checkbox" id="rb-ZRR1z5"/>
+                        <label class="expander_label" for="rb-ZRR1z5" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                         <div class="expander_content">
                           <div class="example-code">
-                            <button class="copy-code" data-clipboard-target="#rb-1Oo10H">Copy</button>
-                            <pre><code class="language-html" id="rb-1Oo10H">
+                            <button class="copy-code" data-clipboard-target="#rb-LXTUw">Copy</button>
+                            <pre><code class="language-html" id="rb-LXTUw">
                                 &lt;div class=&quot;form-group&quot;&gt;
                                   &lt;label for=&quot;fname&quot;&gt;Email Address&lt;/label&gt;
                                   &lt;input id=&quot;fname&quot; type=&quot;text&quot; aria-describedby=&quot;input-tooltip&quot;&gt;&lt;span class=&quot;tooltip&quot; id=&quot;input-tooltip&quot; tabindex=&quot;0&quot; role=&quot;tooltip&quot;&gt;

@@ -33,15 +33,7 @@ th {
 
 th,
 td {
-  padding: padding(2);
-
-  &:first-of-type {
-    padding-left: padding(1);
-  }
-
-  &:last-of-type {
-    padding-right: padding(1);
-  }
+  padding: padding(1);
 }
 
 .table-hoverable {
