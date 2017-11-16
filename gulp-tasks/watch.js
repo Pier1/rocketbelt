@@ -20,8 +20,8 @@
   module.exports = function (gulp, plugins, config) {
     return function () {
       gulp.watch(['./rocketbelt/**/*.scss', './templates/scss/**/*.scss'], ['styles']);
-      gulp.watch('./templates/**/*', ['views']);
-      gulp.watch(['./rocketbelt/**/*.js'], ['uglify']);
+      gulp.watch(['./templates/**/*.pug'], ['views']);
+      gulp.watch(['./rocketbelt/**/*.js'], ['copy-js', 'uglify']);
       gulp.watch(config.buildPath + '/**/*.html')
         .on('change', plugins.browserSync.reload);
       gulp.watch(config.buildPath + '/**/*.js')

@@ -1,3 +1,15 @@
+<a name="1.13.3"></a>
+## [1.13.3](https://github.com/Pier1/rocketbelt/compare/1.13.2...v1.13.3) (2017-11-16)
+
+### Features
+
+* **a11y:** Improve accessibility of dropdown buttons. ([fa61bf5](https://github.com/Pier1/rocketbelt/commit/fa61bf5))
+* **Buttons:** Add dropdown button pattern. ([6a2f7d9](https://github.com/Pier1/rocketbelt/commit/6a2f7d9))
+
+### Bug Fixes
+
+* **Buttons:** Aesthetic update to dropdown button. ([359db1c](https://github.com/Pier1/rocketbelt/commit/359db1c))
+
 <a name="1.13.2"></a>
 ## [1.13.2](https://github.com/Pier1/rocketbelt/compare/1.13.1...v1.13.2) (2017-11-14)
 
