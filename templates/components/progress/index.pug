@@ -1,0 +1,41 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Progress'
+
+block content
+  article
+    h1 Progress
+    h2 Stepped Progress Indicator
+    .grid-fluid
+      .row.xs-center
+        .col.xs-12.md-3
+          button.button.button-secondary.progress_demo Advance the Indicator
+          script.
+            $('.progress_demo').click(function () {
+              var $current = $('.progress-stepped li[aria-current]');
+              var $next = $current.next().length > 0 ? $current.next() : $('.progress-stepped li').first();
+
+              if ($next) {
+                $next.attr('aria-current', 'page');
+                $current.removeAttr('aria-current');
+              }
+
+            });
+      .row
+        .col.xs
+          +exampleWithCode
+            nav.progress-stepped(aria-label='Add a descriptive name appropriate to your context!')
+              ol.progress_steps.list-reset
+                li(aria-current='page')
+                  a(href='#') Basket
+                li
+                  a(href='#') Shipping
+                li
+                  a(href='#') Payment
+                li
+                  a(href='#') Review
+      .row
+        .col.xs
+          +exampleWithCode('JS Include', true)
+            script(src='./rocketbelt.a11y.progress-stepped.min.js')
