@@ -4,8 +4,6 @@
   min-width: 0;
 
   &.button {
-    // @include z-depth(0);
-
     padding: 0;
     border: 0;
   }
@@ -27,6 +25,7 @@
     color: inherit;
 
     & ~ .button-dropdown_icon {
+      border-radius: 2px;
       color: inherit;
     }
   }
@@ -46,6 +45,19 @@
     vertical-align: middle;
     font-size: initial;
     line-height: 2;
+  }
+
+  .button-secondary,
+  .button-text {
+    & ~ .button-dropdown_icon {
+      background-color: transparent;
+      transition: background-color 200ms;
+
+      &:hover {
+        background-color: rgba(color(gray, plus4), 0.5);
+        transition: background-color 200ms;
+      }
+    }
   }
 
   .button-dropdown_trigger {
