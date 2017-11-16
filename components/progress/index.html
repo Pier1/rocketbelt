@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Sale Sticker | Rocketbelt Pattern Library</title>
+    <title>Progress | Rocketbelt Pattern Library</title>
     <link rel="stylesheet" href="../../css/rocketbelt.creative.min.css">
     <link rel="stylesheet" href="../../css/rocketbelt.min.css">
     <link rel="stylesheet" href="../../css/site.min.css">
@@ -186,161 +186,82 @@
           <div class="row">
             <div class="col xs">
               <article>
-                <h1>Sale Sticker</h1>
-                <div class="grid-fluid playground">
+                <h1>Progress</h1>
+                <h2>Stepped Progress Indicator</h2>
+                <div class="grid-fluid">
+                  <div class="row xs-center">
+                    <div class="col xs-12 md-3">
+                      <button class="button button-secondary progress_demo">Advance the Indicator</button>
+                      <script>
+                        $('.progress_demo').click(function () {
+                          var $current = $('.progress-stepped li[aria-current]');
+                          var $next = $current.next().length > 0 ? $current.next() : $('.progress-stepped li').first();
+                        
+                          if ($next) {
+                            $next.attr('aria-current', 'page');
+                            $current.removeAttr('aria-current');
+                          }
+                        
+                        });
+                      </script>
+                    </div>
+                  </div>
                   <div class="row">
                     <div class="col xs">
-                      <div>
-                        <div class="cp_wrapper playground-item" type="list" data-target=".example" data-property="class" value="bg_gray-plus3">
-                          <div class="cp_eyedropper"></div>
-                          <div class="cp_grid visuallyhidden"><span class="playground-list_item bg_brand" title="Brand Blue" value="bg_brand"></span><span class="playground-list_item bg_sale" title="Sale Red" value="bg_sale"></span><span class="playground-list_item bg_primary-lightest" title="Sail Blue" value="bg_primary-lightest"></span><span class="playground-list_item bg_primary-lighter" title="Malibu" value="bg_primary-lighter"></span><span class="playground-list_item bg_primary" title="Curious Blue" value="bg_primary"></span><span class="playground-list_item bg_primary-darker" title="Chambray" value="bg_primary-darker"></span><span class="playground-list_item bg_primary-darkest" title="Astronaut Blue" value="bg_primary-darkest"></span><span class="playground-list_item bg_secondary-lightest" title="Hummingbird" value="bg_secondary-lightest"></span><span class="playground-list_item bg_secondary-lighter" title="Bermuda" value="bg_secondary-lighter"></span><span class="playground-list_item bg_secondary" title="Puerto Rico" value="bg_secondary"></span><span class="playground-list_item bg_secondary-darker" title="Niagara" value="bg_secondary-darker"></span><span class="playground-list_item bg_secondary-darkest" title="Eden" value="bg_secondary-darkest"></span><span class="playground-list_item bg_accent-lightest" title="Fog" value="bg_accent-lightest"></span><span class="playground-list_item bg_accent-lighter" title="Purple Heart" value="bg_accent-lighter"></span><span class="playground-list_item bg_accent" title="Ultramarine" value="bg_accent"></span><span class="playground-list_item bg_accent-darker" title="Pigment Indigo" value="bg_accent-darker"></span><span class="playground-list_item bg_accent-darkest" title="Tolopea" value="bg_accent-darkest"></span><span class="playground-list_item bg_success-lighter" title="Snowy Mint" value="bg_success-lighter"></span><span class="playground-list_item bg_success" title="Chateau Green" value="bg_success"></span><span class="playground-list_item bg_success-darker" title="Parsley" value="bg_success-darker"></span><span class="playground-list_item bg_warning-lighter" title="Linen" value="bg_warning-lighter"></span><span class="playground-list_item bg_warning" title="Jaffa" value="bg_warning"></span><span class="playground-list_item bg_warning-darker" title="Copper Canyon" value="bg_warning-darker"></span><span class="playground-list_item bg_error-lighter" title="Pastel Pink" value="bg_error-lighter"></span><span class="playground-list_item bg_error" title="Carmine" value="bg_error"></span><span class="playground-list_item bg_error-darker" title="Maroon Oak" value="bg_error-darker"></span><span class="playground-list_item bg_black" title="Black" value="bg_black"></span><span class="playground-list_item bg_gray-plus5" title="Seashell" value="bg_gray-plus5"></span><span class="playground-list_item bg_gray-plus4" title="Alabaster" value="bg_gray-plus4"></span><span class="playground-list_item bg_gray-plus3" title="Cloud Gray" value="bg_gray-plus3"></span><span class="playground-list_item bg_gray-plus2" title="Noble Gray" value="bg_gray-plus2"></span><span class="playground-list_item bg_gray-plus1" title="Mountain Gray" value="bg_gray-plus1"></span><span class="playground-list_item bg_gray" title="Boulder" value="bg_gray"></span><span class="playground-list_item bg_gray-minus1" title="Dove Gray" value="bg_gray-minus1"></span><span class="playground-list_item bg_gray-minus2" title="Fuscous Gray" value="bg_gray-minus2"></span><span class="playground-list_item bg_white color-w-border" title="White" value="bg_white"></span>
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <nav class="progress-stepped" aria-label="Add a descriptive name appropriate to your context!">
+                            <ol class="progress_steps list-reset">
+                              <li aria-current="page"><a href="#">Basket</a></li>
+                              <li><a href="#">Shipping</a></li>
+                              <li><a href="#">Payment</a></li>
+                              <li><a href="#">Review</a></li>
+                            </ol>
+                          </nav>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-2goXwn"/>
+                          <label class="expander_label" for="rb-2goXwn" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button class="copy-code" data-clipboard-target="#rb-2g14WN">Copy</button>
+                              <pre><code class="language-html" id="rb-2g14WN">
+                                  &lt;nav class=&quot;progress-stepped&quot; aria-label=&quot;Add a descriptive name appropriate to your context!&quot;&gt;
+                                    &lt;ol class=&quot;progress_steps list-reset&quot;&gt;
+                                      &lt;li aria-current=&quot;page&quot;&gt;&lt;a href=&quot;#&quot;&gt;Basket&lt;/a&gt;&lt;/li&gt;
+                                      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Shipping&lt;/a&gt;&lt;/li&gt;
+                                      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Payment&lt;/a&gt;&lt;/li&gt;
+                                      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Review&lt;/a&gt;&lt;/li&gt;
+                                    &lt;/ol&gt;
+                                  &lt;/nav&gt;</code></pre>
+                            </div>
                           </div>
                         </div>
                       </div>
                     </div>
                   </div>
                   <div class="row">
-                    <div class="col xs-12 ss_util_background">
+                    <div class="col xs">
                       <div class="exampleWithCode">
                         <div class="example">
-                          <div class="copyable-inner">
-                            <div class="sale-sticker-wrapper">
-                              <div class="sale-sticker-inner"><span class="optional-msg"></span>
-                                <div class="promo-msg"><span class="promo-detail">Sale</span></div>
-                                <div class="sale-sticker-tagline">
-                                  <div class="tagline-wrapper">
-                                    <div class="tagline"></div>
-                                    <div class="cta">Shop Now</div>
-                                  </div>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                          <script src="./rocketbelt.a11y.progress-stepped.min.js"></script>
                         </div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1iK3YE"/>
-                          <label class="expander_label" for="rb-Z1iK3YE" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1ipAOo" checked="checked"/>
+                          <label class="expander_label" for="rb-Z1ipAOo" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Z1IC8Eg">Copy</button>
-                              <pre><code class="language-html" id="rb-Z1IC8Eg">
-                                  &lt;div class=&quot;copyable-inner&quot;&gt;
-                                    &lt;div class=&quot;sale-sticker-wrapper&quot;&gt;
-                                      &lt;div class=&quot;sale-sticker-inner&quot;&gt;&lt;span class=&quot;optional-msg&quot;&gt;&lt;/span&gt;
-                                        &lt;div class=&quot;promo-msg&quot;&gt;&lt;span class=&quot;promo-detail&quot;&gt;Sale&lt;/span&gt;&lt;/div&gt;
-                                        &lt;div class=&quot;sale-sticker-tagline&quot;&gt;
-                                          &lt;div class=&quot;tagline-wrapper&quot;&gt;
-                                            &lt;div class=&quot;tagline&quot;&gt;&lt;/div&gt;
-                                            &lt;div class=&quot;cta&quot;&gt;Shop Now&lt;/div&gt;
-                                          &lt;/div&gt;
-                                        &lt;/div&gt;
-                                      &lt;/div&gt;
-                                    &lt;/div&gt;
-                                  &lt;/div&gt;</code></pre>
+                              <button class="copy-code" data-clipboard-target="#rb-Z1MbSbV">Copy</button>
+                              <pre><code class="language-js include" id="rb-Z1MbSbV">
+                                  &lt;script src=&quot;./rocketbelt.a11y.progress-stepped.min.js&quot;&gt;&lt;/script&gt;</code></pre>
                             </div>
                           </div>
                         </div>
-                      </div>
-                    </div>
-                    <div class="col xs-12 md-6">
-                      <h3>Variations</h3>
-                      <div class="playground-control">
-                        <input class="playground-item" id="ss_horizontal-variant" type="checkbox" value="sale-sticker-horizontal" name="Sale Sticker Horizontal Variant" data-property="class" data-target=".sale-sticker-wrapper">
-                        <label for="ss_horizontal-variant">Horizontal</label>
-                      </div>
-                      <div class="playground-control">
-                        <input class="playground-item" id="ss_for" type="checkbox" value="promo-for" name="Sale Sticker # for $$$" data-property="class" data-target=".promo-msg">
-                        <label for="ss_for">2 for $25</label>
-                      </div>
-                      <div class="playground-control">
-                        <input class="playground-item" id="ss_up-to" type="checkbox" value="up-to-msg" name="Sale Sticker Up To Msg" data-property="class" data-target=".sale-sticker-inner">
-                        <label for="ss_up-to">Up To Msg</label>
-                      </div>
-                      <div class="playground-control">
-                        <input class="playground-item" id="ss_percent-variant" type="checkbox" value="promo-percentage" name="Sale Sticker Percent Amount Variant" data-property="class" data-target=".promo-msg">
-                        <label for="ss_percent-variant">Percent Off</label>
-                      </div>
-                      <h3>Style</h3>
-                      <div class="playground-control">
-                        <label for="ss_fsize">Size:
-                          <input class="playground-item" id="ss_fsize" type="range" value="7" min="4" max="12" step=".25" data-target=".sale-sticker-inner" data-property="font-size" data-units="rem"><span class="playground-range-value">7rem</span>
-                        </label>
-                      </div>
-                    </div>
-                    <div class="col xs-12 md-6 messaging">
-                      <h3>Messaging</h3>
-                      <div class="playground-control">
-                        <div class="cp_wrapper playground-item" type="list" data-target=".promo-detail" data-property="class" value="fg_black">
-                          <div class="cp_eyedropper"></div>
-                          <div class="cp_grid visuallyhidden"><span class="playground-list_item bg_brand" title="Brand Blue" value="fg_brand"></span><span class="playground-list_item bg_sale" title="Sale Red" value="fg_sale"></span><span class="playground-list_item bg_primary-lightest" title="Sail Blue" value="fg_primary-lightest"></span><span class="playground-list_item bg_primary-lighter" title="Malibu" value="fg_primary-lighter"></span><span class="playground-list_item bg_primary" title="Curious Blue" value="fg_primary"></span><span class="playground-list_item bg_primary-darker" title="Chambray" value="fg_primary-darker"></span><span class="playground-list_item bg_primary-darkest" title="Astronaut Blue" value="fg_primary-darkest"></span><span class="playground-list_item bg_secondary-lightest" title="Hummingbird" value="fg_secondary-lightest"></span><span class="playground-list_item bg_secondary-lighter" title="Bermuda" value="fg_secondary-lighter"></span><span class="playground-list_item bg_secondary" title="Puerto Rico" value="fg_secondary"></span><span class="playground-list_item bg_secondary-darker" title="Niagara" value="fg_secondary-darker"></span><span class="playground-list_item bg_secondary-darkest" title="Eden" value="fg_secondary-darkest"></span><span class="playground-list_item bg_accent-lightest" title="Fog" value="fg_accent-lightest"></span><span class="playground-list_item bg_accent-lighter" title="Purple Heart" value="fg_accent-lighter"></span><span class="playground-list_item bg_accent" title="Ultramarine" value="fg_accent"></span><span class="playground-list_item bg_accent-darker" title="Pigment Indigo" value="fg_accent-darker"></span><span class="playground-list_item bg_accent-darkest" title="Tolopea" value="fg_accent-darkest"></span><span class="playground-list_item bg_success-lighter" title="Snowy Mint" value="fg_success-lighter"></span><span class="playground-list_item bg_success" title="Chateau Green" value="fg_success"></span><span class="playground-list_item bg_success-darker" title="Parsley" value="fg_success-darker"></span><span class="playground-list_item bg_warning-lighter" title="Linen" value="fg_warning-lighter"></span><span class="playground-list_item bg_warning" title="Jaffa" value="fg_warning"></span><span class="playground-list_item bg_warning-darker" title="Copper Canyon" value="fg_warning-darker"></span><span class="playground-list_item bg_error-lighter" title="Pastel Pink" value="fg_error-lighter"></span><span class="playground-list_item bg_error" title="Carmine" value="fg_error"></span><span class="playground-list_item bg_error-darker" title="Maroon Oak" value="fg_error-darker"></span><span class="playground-list_item bg_black" title="Black" value="fg_black"></span><span class="playground-list_item bg_gray-plus5" title="Seashell" value="fg_gray-plus5"></span><span class="playground-list_item bg_gray-plus4" title="Alabaster" value="fg_gray-plus4"></span><span class="playground-list_item bg_gray-plus3" title="Cloud Gray" value="fg_gray-plus3"></span><span class="playground-list_item bg_gray-plus2" title="Noble Gray" value="fg_gray-plus2"></span><span class="playground-list_item bg_gray-plus1" title="Mountain Gray" value="fg_gray-plus1"></span><span class="playground-list_item bg_gray" title="Boulder" value="fg_gray"></span><span class="playground-list_item bg_gray-minus1" title="Dove Gray" value="fg_gray-minus1"></span><span class="playground-list_item bg_gray-minus2" title="Fuscous Gray" value="fg_gray-minus2"></span><span class="playground-list_item bg_white color-w-border" title="White" value="fg_white"></span>
-                          </div>
-                        </div>
-                        <label for="ss_promo">Discount:
-                          <textarea class="playground-item" id="ss_sale" data-target=".promo-detail" type="text" value="Sale"></textarea>
-                        </label>
-                      </div><span class="playground-control kerning">
-                        <input class="playground-item" id="ss_promo-kerning" type="checkbox" value="kern-minus-1" name="Sale Sticker Promo Kerning Helper" data-property="class" data-target=".promo-detail">
-                        <label for="ss_promo-kerning">Reduce Kerning</label></span>
-                      <div class="playground-control">
-                        <div class="cp_wrapper playground-item" type="list" data-target=".tagline" data-property="class" value="fg_black">
-                          <div class="cp_eyedropper"></div>
-                          <div class="cp_grid visuallyhidden"><span class="playground-list_item bg_brand" title="Brand Blue" value="fg_brand"></span><span class="playground-list_item bg_sale" title="Sale Red" value="fg_sale"></span><span class="playground-list_item bg_primary-lightest" title="Sail Blue" value="fg_primary-lightest"></span><span class="playground-list_item bg_primary-lighter" title="Malibu" value="fg_primary-lighter"></span><span class="playground-list_item bg_primary" title="Curious Blue" value="fg_primary"></span><span class="playground-list_item bg_primary-darker" title="Chambray" value="fg_primary-darker"></span><span class="playground-list_item bg_primary-darkest" title="Astronaut Blue" value="fg_primary-darkest"></span><span class="playground-list_item bg_secondary-lightest" title="Hummingbird" value="fg_secondary-lightest"></span><span class="playground-list_item bg_secondary-lighter" title="Bermuda" value="fg_secondary-lighter"></span><span class="playground-list_item bg_secondary" title="Puerto Rico" value="fg_secondary"></span><span class="playground-list_item bg_secondary-darker" title="Niagara" value="fg_secondary-darker"></span><span class="playground-list_item bg_secondary-darkest" title="Eden" value="fg_secondary-darkest"></span><span class="playground-list_item bg_accent-lightest" title="Fog" value="fg_accent-lightest"></span><span class="playground-list_item bg_accent-lighter" title="Purple Heart" value="fg_accent-lighter"></span><span class="playground-list_item bg_accent" title="Ultramarine" value="fg_accent"></span><span class="playground-list_item bg_accent-darker" title="Pigment Indigo" value="fg_accent-darker"></span><span class="playground-list_item bg_accent-darkest" title="Tolopea" value="fg_accent-darkest"></span><span class="playground-list_item bg_success-lighter" title="Snowy Mint" value="fg_success-lighter"></span><span class="playground-list_item bg_success" title="Chateau Green" value="fg_success"></span><span class="playground-list_item bg_success-darker" title="Parsley" value="fg_success-darker"></span><span class="playground-list_item bg_warning-lighter" title="Linen" value="fg_warning-lighter"></span><span class="playground-list_item bg_warning" title="Jaffa" value="fg_warning"></span><span class="playground-list_item bg_warning-darker" title="Copper Canyon" value="fg_warning-darker"></span><span class="playground-list_item bg_error-lighter" title="Pastel Pink" value="fg_error-lighter"></span><span class="playground-list_item bg_error" title="Carmine" value="fg_error"></span><span class="playground-list_item bg_error-darker" title="Maroon Oak" value="fg_error-darker"></span><span class="playground-list_item bg_black" title="Black" value="fg_black"></span><span class="playground-list_item bg_gray-plus5" title="Seashell" value="fg_gray-plus5"></span><span class="playground-list_item bg_gray-plus4" title="Alabaster" value="fg_gray-plus4"></span><span class="playground-list_item bg_gray-plus3" title="Cloud Gray" value="fg_gray-plus3"></span><span class="playground-list_item bg_gray-plus2" title="Noble Gray" value="fg_gray-plus2"></span><span class="playground-list_item bg_gray-plus1" title="Mountain Gray" value="fg_gray-plus1"></span><span class="playground-list_item bg_gray" title="Boulder" value="fg_gray"></span><span class="playground-list_item bg_gray-minus1" title="Dove Gray" value="fg_gray-minus1"></span><span class="playground-list_item bg_gray-minus2" title="Fuscous Gray" value="fg_gray-minus2"></span><span class="playground-list_item bg_white color-w-border" title="White" value="fg_white"></span>
-                          </div>
-                        </div>
-                        <label for="ss_tagline">Details:
-                          <textarea class="playground-item" id="ss_tagline" data-target=".tagline" type="text" value="All Moorish&lt;br/&gt;Tile Rugs"></textarea>
-                        </label>
-                      </div>
-                      <div class="playground-control">
-                        <div class="cp_wrapper playground-item" type="list" data-target=".optional-msg" data-property="class" value="fg_black">
-                          <div class="cp_eyedropper"></div>
-                          <div class="cp_grid visuallyhidden"><span class="playground-list_item bg_brand" title="Brand Blue" value="fg_brand"></span><span class="playground-list_item bg_sale" title="Sale Red" value="fg_sale"></span><span class="playground-list_item bg_primary-lightest" title="Sail Blue" value="fg_primary-lightest"></span><span class="playground-list_item bg_primary-lighter" title="Malibu" value="fg_primary-lighter"></span><span class="playground-list_item bg_primary" title="Curious Blue" value="fg_primary"></span><span class="playground-list_item bg_primary-darker" title="Chambray" value="fg_primary-darker"></span><span class="playground-list_item bg_primary-darkest" title="Astronaut Blue" value="fg_primary-darkest"></span><span class="playground-list_item bg_secondary-lightest" title="Hummingbird" value="fg_secondary-lightest"></span><span class="playground-list_item bg_secondary-lighter" title="Bermuda" value="fg_secondary-lighter"></span><span class="playground-list_item bg_secondary" title="Puerto Rico" value="fg_secondary"></span><span class="playground-list_item bg_secondary-darker" title="Niagara" value="fg_secondary-darker"></span><span class="playground-list_item bg_secondary-darkest" title="Eden" value="fg_secondary-darkest"></span><span class="playground-list_item bg_accent-lightest" title="Fog" value="fg_accent-lightest"></span><span class="playground-list_item bg_accent-lighter" title="Purple Heart" value="fg_accent-lighter"></span><span class="playground-list_item bg_accent" title="Ultramarine" value="fg_accent"></span><span class="playground-list_item bg_accent-darker" title="Pigment Indigo" value="fg_accent-darker"></span><span class="playground-list_item bg_accent-darkest" title="Tolopea" value="fg_accent-darkest"></span><span class="playground-list_item bg_success-lighter" title="Snowy Mint" value="fg_success-lighter"></span><span class="playground-list_item bg_success" title="Chateau Green" value="fg_success"></span><span class="playground-list_item bg_success-darker" title="Parsley" value="fg_success-darker"></span><span class="playground-list_item bg_warning-lighter" title="Linen" value="fg_warning-lighter"></span><span class="playground-list_item bg_warning" title="Jaffa" value="fg_warning"></span><span class="playground-list_item bg_warning-darker" title="Copper Canyon" value="fg_warning-darker"></span><span class="playground-list_item bg_error-lighter" title="Pastel Pink" value="fg_error-lighter"></span><span class="playground-list_item bg_error" title="Carmine" value="fg_error"></span><span class="playground-list_item bg_error-darker" title="Maroon Oak" value="fg_error-darker"></span><span class="playground-list_item bg_black" title="Black" value="fg_black"></span><span class="playground-list_item bg_gray-plus5" title="Seashell" value="fg_gray-plus5"></span><span class="playground-list_item bg_gray-plus4" title="Alabaster" value="fg_gray-plus4"></span><span class="playground-list_item bg_gray-plus3" title="Cloud Gray" value="fg_gray-plus3"></span><span class="playground-list_item bg_gray-plus2" title="Noble Gray" value="fg_gray-plus2"></span><span class="playground-list_item bg_gray-plus1" title="Mountain Gray" value="fg_gray-plus1"></span><span class="playground-list_item bg_gray" title="Boulder" value="fg_gray"></span><span class="playground-list_item bg_gray-minus1" title="Dove Gray" value="fg_gray-minus1"></span><span class="playground-list_item bg_gray-minus2" title="Fuscous Gray" value="fg_gray-minus2"></span><span class="playground-list_item bg_white color-w-border" title="White" value="fg_white"></span>
-                          </div>
-                        </div>
-                        <label for="ss_optional">Optional:
-                          <textarea class="playground-item" id="ss_optional" data-target=".optional-msg" type="text" value=""></textarea>
-                        </label>
                       </div>
                     </div>
                   </div>
                 </div>
               </article>
-              <style type="text/css">
-                h3 {
-                  margin-bottom:.35em;
-                }
-                .example-code {
-                  max-width: 99999px;
-                }
-                .messaging .cp_wrapper {
-                  position: absolute;
-                  right:5%;
-                  top:3%;
-                }
-                .messaging .playground-control {
-                  width:100%;
-                  max-width:460px;
-                  position:relative;
-                }
-                .messaging label {
-                  display: block;
-                  font-size: 1.15rem;
-                }
-                .messaging textarea{
-                  display: block;
-                  width: 100%;
-                  font-size:.9em;
-                  min-height: 125px;
-                  margin-top: .25em;
-                }
-                span.playground-control.kerning {
-                  margin: -1.21803em 0 1.61803em 0;
-                }
-                span.playground-control.kerning label {
-                  font-size:1em;
-                }
-                
-              </style>
             </div>
           </div>
         </main>
@@ -377,26 +298,6 @@
       
       ga('create', 'UA-1740251-3', 'auto');
       ga('send', 'pageview');
-    </script>
-    <script>
-      var sale = $('#ss_sale'),
-          saleVal = "Sale";
-      $('#ss_optional').on('input', function() {
-        if ($(this).val().length > 0) {
-          $('#ss_up-to').prop("checked") ? $('#ss_up-to').prop("checked", false).change().prop("disabled", true) : $('#ss_up-to').prop("disabled", true)
-        } else {
-          $('#ss_up-to').prop('disabled',false);
-        }
-      })
-      $('#ss_for').on('input',function(){
-        if($(this).is(':checked')){
-          saleVal=sale.val();
-          sale.val('2 <small>for</small><span class="promo-sup">$</span>25').trigger('input');
-        } else if(!$(this).is(':checked')){
-          sale.val(saleVal).trigger('input');
-        }
-      })
-      rb.launchPlayground();
     </script>
   </body>
 </html>

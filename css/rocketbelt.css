@@ -1704,16 +1704,16 @@ h4 small {
     display: inline-block; }
 
 a {
-  color: #1492d9;
+  color: #0a689d;
   transition: color 100ms linear; }
   a:hover {
-    color: #69c0f1;
+    color: #0d88cd;
     transition: color 100ms linear; }
   a:active {
-    color: #0a689d;
+    color: #095885;
     transition: color 100ms linear; }
   a:visited {
-    color: #5b14d9;
+    color: #095885;
     transition: color 100ms linear; }
 
 blockquote {
@@ -3620,6 +3620,71 @@ button.swiper-pagination-bullet {
     margin: 0;
     padding: 0;
     list-style-type: none; }
+
+.progress-stepped .progress_steps {
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-align-content: space-around;
+      -ms-flex-line-pack: distribute;
+          align-content: space-around; }
+
+.progress-stepped li {
+  position: relative;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  min-height: 2.5rem;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end; }
+  .progress-stepped li:first-of-type a::before {
+    display: none; }
+  .progress-stepped li a::before,
+  .progress-stepped li a::after {
+    position: absolute;
+    background-color: #1492d9;
+    content: '';
+    transition: background-color 300ms linear; }
+  .progress-stepped li a::before {
+    top: 0.335rem;
+    right: 50%;
+    z-index: -1;
+    width: 100%;
+    height: 0.33rem; }
+  .progress-stepped li a::after {
+    top: 0;
+    left: 50%;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    content: '';
+    -webkit-transform: translateX(-50%);
+        -ms-transform: translateX(-50%);
+            transform: translateX(-50%); }
+
+.progress-stepped [aria-current='page'] a {
+  color: #030001;
+  text-decoration: none;
+  font-weight: 600;
+  cursor: default;
+  pointer-events: none; }
+
+.progress-stepped [aria-current='page'] ~ li a {
+  color: #7c7576;
+  text-decoration: none;
+  cursor: default;
+  pointer-events: none; }
+
+.progress-stepped [aria-current='page'] ~ li a::before,
+.progress-stepped [aria-current='page'] ~ li a::after {
+  background-color: #cbc8c8; }
 
 .radio-group.radio-group-chunky li {
   display: -webkit-flex;

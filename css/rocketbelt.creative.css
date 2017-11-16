@@ -1678,16 +1678,16 @@ h4 small {
     display: inline-block; }
 
 a {
-  color: #1492d9;
+  color: #0a689d;
   transition: color 100ms linear; }
   a:hover {
-    color: #69c0f1;
+    color: #0d88cd;
     transition: color 100ms linear; }
   a:active {
-    color: #0a689d;
+    color: #095885;
     transition: color 100ms linear; }
   a:visited {
-    color: #5b14d9;
+    color: #095885;
     transition: color 100ms linear; }
 
 blockquote {
