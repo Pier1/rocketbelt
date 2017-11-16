@@ -2,10 +2,9 @@
   position: relative;
   display: inline-flex;
   min-width: 0;
-  font-size: 0;
 
   &.button {
-    @include z-depth(0);
+    // @include z-depth(0);
 
     padding: 0;
     border: 0;
@@ -21,48 +20,74 @@
     padding-right: padding(0.25);
     padding-left: padding(1);
     text-align: left;
+  }
 
-    &.button-text {
-      color: color(gray, minus2);
+  .button-text {
+    border: 0;
+    color: inherit;
 
-      & + button-dropdown_trigger {
-        color: inherit;
-
-        .button {
-          color: inherit;
-        }
-      }
+    & ~ .button-dropdown_icon {
+      color: inherit;
     }
   }
 
+  input:focus {
+    & + .button-dropdown_icon {
+      outline: 1px dotted;
+    }
+  }
+
+  .button-dropdown_icon {
+    display: inline-block;
+    padding-right: padding(0.25);
+    padding-left: padding(0.25);
+    height: 100%;
+    border: 1px transparent solid;
+    vertical-align: middle;
+    font-size: initial;
+    line-height: 2;
+  }
+
   .button-dropdown_trigger {
-    flex: 0;
+    & ~ .button-dropdown_content {
+      display: none;
+      visibility: hidden;
+    }
 
-    button,
-    .button {
-      padding-right: padding(0.25);
-      padding-left: padding(0.25);
+    &:checked {
+      & ~ .button-dropdown_content {
+        @include z-depth(2);
 
-      & + .button-dropdown_content {
-        display: none;
-        visibility: hidden;
-      }
-
-      &:focus {
-        & + .button-dropdown_content {
-          @include z-depth(2);
-
-          position: absolute;
-          z-index: 1;
-          display: block;
-          visibility: visible;
-          padding: padding(1);
-          background: color(white);
-          color: initial;
-          font-weight: initial;
-          font-size: initial;
-        }
+        position: absolute;
+        top: 100%;
+        right: 0;
+        z-index: 1;
+        display: block;
+        visibility: visible;
+        padding: padding(1);
+        background: color(white);
+        color: initial;
+        font-weight: initial;
+        font-size: initial;
+        opacity: 1;
+        animation: appear 0.5s;
       }
     }
+  }
+}
+
+@keyframes appear {
+  0% {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
+  }
+
+  1% {
+    opacity: 0;
+  }
+
+  100% {;
+    opacity: 1;
   }
 }
