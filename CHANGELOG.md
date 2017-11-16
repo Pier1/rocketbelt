@@ -1,3 +1,10 @@
+<a name="1.13.4"></a>
+## [1.13.4](https://github.com/Pier1/rocketbelt/compare/1.13.3...v1.13.4) (2017-11-16)
+
+### Features
+
+* **Progress Indicators:** Add stepped progress indicator. ([622bff6](https://github.com/Pier1/rocketbelt/commit/622bff6))
+
 <a name="1.13.3"></a>
 ## [1.13.3](https://github.com/Pier1/rocketbelt/compare/1.13.2...v1.13.3) (2017-11-16)
 

@@ -208,21 +208,21 @@ h4 {
 }
 
 a {
-  color: color(primary);
+  color: color(brand);
   transition: color 100ms linear;
 
   &:hover {
-    color: color(primary, lighter);
+    color: scale-color(color(brand), $lightness: 15%);
     transition: color 100ms linear;
   }
 
   &:active {
-    color: color(brand);
+    color: scale-color(color(brand), $lightness: -15%);
     transition: color 100ms linear;
   }
 
   &:visited {
-    color: color(accent);
+    color: scale-color(color(brand), $lightness: -15%);
     transition: color 100ms linear;
   }
 }
