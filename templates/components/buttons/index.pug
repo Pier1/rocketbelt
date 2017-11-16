@@ -7,14 +7,13 @@ block content
   article
     h1 Buttons
     h2 Primary
-
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
             include _buttons-primary.pug
-    h2 Secondary
 
+    h2 Secondary
     .grid-fluid
       .row
         .col.xs
@@ -26,15 +25,24 @@ block content
             include _buttons-secondary.pug
 
     h2 Text
-
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
             include _buttons-text.pug
 
-    h2 Link
+    h2 Dropdown
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _buttons-dropdown.pug
 
+    h3 Javascript Include
+    +exampleWithCode('JS Include', true)
+      script(src='./rocketbelt.buttons-dropdown.min.js')
+
+    h2 Link
     .grid-fluid
       .row
         .col.xs
@@ -42,7 +50,6 @@ block content
             include _buttons-link.pug
 
     h2 Anchor
-
     .grid-fluid
       .row
         .col.xs
@@ -50,7 +57,6 @@ block content
             include _buttons-anchor.pug
 
     h2 Block
-
     +exampleWithCode
       include _buttons-block.pug
 
@@ -63,7 +69,7 @@ block content
     +exampleWithCode
       include _buttons-dynamic-success.pug
 
-    h2 Script Include
+    h3 Script Include
     +exampleWithCode('html', true)
       script(src='./rocketbelt.dynamic-button.min.js')
 
