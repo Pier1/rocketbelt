@@ -21,4 +21,18 @@
       document.addEventListener('DOMContentLoaded', fn);
     }
   };
+
+  window.rb.aria = {
+    'current':     'aria-current',
+    'describedby': 'aria-describedby',
+    'disabled':    'aria-disabled',
+    'expanded':    'aria-expanded',
+    'haspopup':    'aria-haspopup',
+    'hidden':      'aria-hidden',
+    'invalid':     'aria-invalid',
+    'label':       'aria-label',
+    'labelledby':  'aria-labelledby',
+    'live':        'aria-live',
+    'role':        'role'
+  };
 })(window, document);
