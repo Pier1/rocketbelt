@@ -43,7 +43,7 @@
         trigger.setAttribute('aria-label', 'Toggle Dropdown');
 
         ddContent.setAttribute(ARIA_HIDDEN, true);
-        ddContent.setAttribute('aria-labellededby', ddLabelledBy);
+        ddContent.setAttribute('aria-labelledby', ddLabelledBy);
       }
 
       trigger.addEventListener('change', function change(e) { onChange(e); });
