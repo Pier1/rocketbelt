@@ -1,4 +1,6 @@
-(function rocketbeltA11yForms(window, document) {
+(function rocketbeltA11yForms(rb, document) {
+  var aria = rb.aria;
+
   function onClassMutation(mutations) {
     var mutationsLen = mutations.length;
 
@@ -9,14 +11,14 @@
 
       if (mutation.oldValue !== 'invalid' && mutation.target.classList.contains('invalid')) {
         // If "invalid" was added, do the decoratin'
-        el.setAttribute('aria-invalid', 'true');
-        message.setAttribute('role', 'alert');
-        message.setAttribute('aria-live', 'polite');
+        el.setAttribute(aria.invalid, 'true');
+        message.setAttribute(aria.role, 'alert');
+        message.setAttribute(aria.live, 'polite');
       } else if (mutation.oldValue === 'invalid' && !el.classList.contains('invalid')) {
         // If "invalid" was removed
-        el.setAttribute('aria-invalid', 'false');
+        el.setAttribute(aria.invalid, 'false');
         message.removeAttribute('role');
-        message.removeAttribute('aria-live');
+        message.removeAttribute(aria.live);
       }
     }
   }
@@ -38,7 +40,7 @@
 
       for (var j = 0; j < msgLen; j++) {
         var thisMsg = messages[j];
-        var id = 'rb-a11y_' + window.rb.getShortId();
+        var id = 'rb-a11y_' + rb.getShortId();
         describedByIds += id + ' ';
 
         // Don't clobber any existing attributes!
@@ -47,11 +49,11 @@
         }
       }
 
-      if (!formEl.hasAttribute('aria-describedby')) {
-        formEl.setAttribute('aria-describedby', describedByIds.trim());
+      if (!formEl.hasAttribute(aria.describedby)) {
+        formEl.setAttribute(aria.describedby, describedByIds.trim());
       }
     }
   }
 
-  window.rb.onDocumentReady(decorateInputs);
-})(window, document);
+  rb.onDocumentReady(decorateInputs);
+})(window.rb, document);
