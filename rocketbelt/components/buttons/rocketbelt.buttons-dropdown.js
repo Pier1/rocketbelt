@@ -48,6 +48,30 @@
 
       trigger.addEventListener('change', function change(e) { onChange(e); });
     }
+
+    document.addEventListener('click', function onclick(e) {
+      var path = e.path;
+      var pathLen = path.length;
+      var shouldClose = true;
+
+      for (var j = 0; j < pathLen; j++) {
+        var el = path[j];
+
+        if (el.classList && (el.classList.contains('button-dropdown_content') || el.classList.contains('button-dropdown_icon') || el.classList.contains('button-dropdown_trigger'))) {
+          shouldClose = false;
+          break;
+        }
+      }
+
+      if (shouldClose) {
+        var ddTriggers = document.querySelectorAll('.button-dropdown_trigger');
+        var ddTriggersLen = ddTriggers.length;
+
+        for (var k = 0; k < ddTriggersLen; k++) {
+          ddTriggers[k].checked = false;
+        }
+      }
+    });
   }
 
   window.rb.onDocumentReady(decorateDropdowns);
