@@ -133,6 +133,10 @@
     &.#{$key} {
       $str: '&';
       @for $i from 1 through $columns {
+        @if ($key != 'xs' and $i == 1) {
+          $str: $str + ', &-offset-0';
+        }
+
         $str: $str + ', &-' + $i + ', &-offset-' + $i;
       }
 
@@ -142,6 +146,10 @@
 
       & {
         @include column-span(auto);
+      }
+
+      &-offset-0 {
+        @include column-offset(0);
       }
 
       @for $i from 1 through $columns {
