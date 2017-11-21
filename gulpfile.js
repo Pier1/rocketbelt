@@ -38,6 +38,7 @@ gulp.task('clean-links', getTask('clean-links'));
 gulp.task('clean', ['clean-links'], getTask('clean'));
 gulp.task('copy-js', getTask('copy-js'));
 gulp.task('copy-resources', getTask('copy-resources'));
+gulp.task('copy-tools', getTask('copy-tools'));
 gulp.task('css-sort', getTask('css-sort'));
 gulp.task('feature-detection', getTask('feature-detection'));
 gulp.task('icons-enterprise', getTask('icons', { enterprise: true }));
