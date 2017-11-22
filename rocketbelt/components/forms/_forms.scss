@@ -276,47 +276,40 @@ textarea {
 }
 
 .form-group {
-  input,
-  select,
-  textarea {
+  label::after {
+    font-size: font-size(-2);
+  }
+
+  [required] {
     & + label::after {
-      font-size: font-size(-2);
+      content: unicode(nbsp) + '(required)';
     }
+  }
 
-    &[required] {
-      & + label::after {
-        content: unicode(nbsp) + '(required)';
-      }
+  :not([required]) {
+    & + label::after {
+      content: unicode(nbsp) + '(optional)';
     }
+  }
 
-    &:not([required]) {
-      & + label::after {
-        content: unicode(nbsp) + '(optional)';
-      }
-    }
-    &.read-only {
-      &[disabled] {
-        & ~ label::after {
-          content: none;
-        }
+  .read-only {
+    &[disabled] {
+      & ~ label::after {
+        content: none;
       }
     }
   }
 
-  &.required-suppressed {
-    input,
-    select,
-    textarea {
-      &[required] {
-        & + label::after {
-          content: '';
-        }
+  .required-suppressed {
+    [required] {
+      & + label::after {
+        content: '';
       }
+    }
 
-      &:not([required]) {
-        & + label::after {
-          content: '';
-        }
+    :not([required]) {
+      & + label::after {
+        content: '';
       }
     }
   }
