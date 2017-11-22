@@ -35,12 +35,13 @@ cite {
   }
 }
 
-p code,
+code,
 .code {
   padding: 0.125rem 0.25rem;
   border: 1px solid color(gray, plus2);
   border-radius: 2px;
   background-color: color(gray, plus4);
+  font-family: 'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace;
 }
 
 .example-code {
