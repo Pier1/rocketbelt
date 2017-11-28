@@ -1,0 +1,76 @@
+.is-busy {
+  position: relative;
+  pointer-events: none;
+  user-select: none;
+
+  .is-busy_overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(color(white), 0.7);
+    content: '';
+    font-size: 1rem;
+    opacity: 0;
+    transition: opacity 100ms linear;
+
+    &.is-busy_overlay-opaque {
+      opacity: 1;
+      transition: opacity 100ms linear;
+    }
+
+    .dot {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 0.5em;
+      height: 0.5em;
+      border-radius: 50%;
+      background-color: color(gray, plus2);
+      transform: translate(-50%, -50%);
+      animation: dotBounce 1.3s ease(out-sine) 0.5s infinite;
+
+      &:first-of-type {
+        left: calc(50% - 0.75em);
+        animation-delay: 0.25s;
+      }
+
+      &:last-of-type {
+        left: calc(50% + 0.75em);
+        animation-delay: 0.75s;
+      }
+    }
+  }
+
+  &.is-busy-inverted {
+    .is-busy_overlay {
+      .dot {
+        $c: rgba(color(white), 0.9);
+        background-color: $c;
+      }
+    }
+  }
+
+  &button,
+  &.button {
+    .is-busy_overlay {
+      background: inherit;
+    }
+  }
+}
+
+@keyframes dotBounce {
+  35% {
+    transform: translate(-50%, 0%);
+  }
+
+  50% {
+    transform: translate(-50%, -75%);
+  }
+
+  55% {
+    transform: translate(-50%, -50%);
+  }
+}
