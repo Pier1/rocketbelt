@@ -9,7 +9,7 @@ block content
     h2 Component-Level
     h3 "Is Busyable"
     p.
-      Whenever possible, add the #[code is-busyable] class to the container that wraps components that may be marked as busy. This will maximize performance by greatly narrowing the scope of DOM elements that will be watched by a #[code MutationObserver]. If no element matches #[code .is-busyable], the observer will be registered against #[code document].
+      Whenever possible, add the #[code is-busyable] class to the container that wraps components that may be marked as busy. This will maximize performance by greatly narrowing the scope of DOM elements that will be watched by a #[code MutationObserver]. If no element matches #[code .is-busyable], the observer will be registered against #[code body].
     h3 Custom Sizing
     p.
       If a large component needs to indicate a busy state, supply a custom rule that targets the #[code font-size] of #[code .is-busy_overlay]. (This element is created &amp; managed via Javascript.) Be sure to use Rocketbelt's #[code font-size()] function!
