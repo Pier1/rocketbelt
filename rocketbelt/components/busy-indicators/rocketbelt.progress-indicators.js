@@ -1,4 +1,4 @@
-(function rocketbeltBusyIndicators(rb, document) {
+(function rocketbeltProgressIndicators(rb, document) {
   function onClassMutation(mutations) {
     var mutationsLen = mutations && mutations.length ? mutations.length : 0;
 

@@ -1,4 +1,4 @@
-(function rocketbeltA11yProgressStepped(rb, document) {
+(function rocketbeltProgressStepped(rb, document) {
   var aria = rb.aria;
 
   function onAttrMutation(mutations) {
@@ -61,5 +61,7 @@
     }
   }
 
-  window.rb.onDocumentReady(decorateProgressStepped);
+  rb.onDocumentReady(decorateProgressStepped);
+  rb.progressIndicators = rb.progressIndicators || {};
+  rb.progressIndicators.decorateProgressStepped = decorateProgressStepped;
 })(window.rb, document);
