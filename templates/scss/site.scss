@@ -37,10 +37,10 @@ cite {
 
 code,
 .code {
-  padding: 0.125rem 0.25rem;
-  border: 1px solid color(gray, plus2);
+  padding: 0.125rem;
+  border: 1px solid color(gray, plus4);
   border-radius: 2px;
-  background-color: color(gray, plus4);
+  background-color: color(gray, plus5);
   font-family: 'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace;
 }
 
@@ -53,6 +53,12 @@ code,
       opacity: 1;
       transition: opacity 100ms linear;
     }
+  }
+
+  code,
+  .code {
+    padding: 0;
+    border: none;
   }
 
   .copy-code {
