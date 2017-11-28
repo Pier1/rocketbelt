@@ -6,10 +6,7 @@
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
         <g id="lines" fill="#000000">
-            <rect id="Rectangle-3" x="16" y="32" width="224" height="32"></rect>
-            <rect id="Rectangle-3-Copy" x="16" y="85" width="224" height="32"></rect>
-            <rect id="Rectangle-3-Copy-3" x="16" y="139" width="224" height="32"></rect>
-            <rect id="Rectangle-3-Copy-4" x="16" y="192" width="224" height="32"></rect>
+            <path d="M16,32 L240,32 L240,64 L16,64 L16,32 Z M16,85 L240,85 L240,117 L16,117 L16,85 Z M16,139 L240,139 L240,171 L16,171 L16,139 Z M16,192 L240,192 L240,224 L16,224 L16,192 Z"></path>
         </g>
     </g>
 </svg>
