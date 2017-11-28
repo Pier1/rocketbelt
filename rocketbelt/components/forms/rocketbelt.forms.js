@@ -1,4 +1,4 @@
-(function rocketbeltA11yForms(rb, document) {
+(function rocketbeltForms(rb, document) {
   var aria = rb.aria;
 
   function onClassMutation(mutations) {
@@ -56,4 +56,6 @@
   }
 
   rb.onDocumentReady(decorateInputs);
+  rb.forms = rb.forms || {};
+  rb.forms.decorateInputs = decorateInputs;
 })(window.rb, document);

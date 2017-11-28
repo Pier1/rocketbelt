@@ -1,4 +1,4 @@
-(function rocketbeltA11yTooltips(rb, document) {
+(function rocketbeltTooltips(rb, document) {
   function decorateTooltipTriggers() {
     var triggers = document.querySelectorAll('.tooltip_trigger');
     var triggersLen = triggers.length;
@@ -22,4 +22,6 @@
   }
 
   rb.onDocumentReady(decorateTooltipTriggers);
+  rb.tooltips = rb.tooltips || {};
+  rb.tooltips.decorateTooltipTriggers = decorateTooltipTriggers;
 })(window.rb, document);

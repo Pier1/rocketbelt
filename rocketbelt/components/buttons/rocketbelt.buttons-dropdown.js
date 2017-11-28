@@ -1,4 +1,4 @@
-(function rocketbeltA11yButtonsDropdown(rb, document) {
+(function rocketbeltButtonsDropdown(rb, document) {
   var aria = rb.aria;
 
   function decorateDropdowns() {
@@ -75,4 +75,6 @@
   }
 
   rb.onDocumentReady(decorateDropdowns);
+  rb.buttons = rb.buttons || {};
+  rb.buttons.decorateDropdowns = decorateDropdowns;
 })(window.rb, document);
