@@ -12,13 +12,19 @@
       if (mutation.oldValue !== 'invalid' && mutation.target.classList.contains('invalid')) {
         // If "invalid" was added, do the decoratin'
         el.setAttribute(aria.invalid, 'true');
-        message.setAttribute(aria.role, 'alert');
-        message.setAttribute(aria.live, 'polite');
+
+        if (message) {
+          message.setAttribute(aria.role, 'alert');
+          message.setAttribute(aria.live, 'polite');
+        }
       } else if (mutation.oldValue === 'invalid' && !el.classList.contains('invalid')) {
         // If "invalid" was removed
         el.setAttribute(aria.invalid, 'false');
-        message.removeAttribute('role');
-        message.removeAttribute(aria.live);
+
+        if (message) {
+          message.removeAttribute('role');
+          message.removeAttribute(aria.live);
+        }
       }
     }
   }
