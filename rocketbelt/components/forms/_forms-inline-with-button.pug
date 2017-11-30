@@ -8,7 +8,9 @@
   label(for='inline-w-button-and-label') Search
   button.button Go
 
-.form-group.inline.inline-with-button
-  input#inline-w-button-and-label-stacked
+.form-group.inline.inline-with-button.inline-with-button-stacked
+  input#inline-w-button-and-label-stacked.invalid(invalid)
   label(for='inline-w-button-and-label-stacked') Search
   button.button Go
+  .messages
+    small.validation-message Please enter a valid search term.

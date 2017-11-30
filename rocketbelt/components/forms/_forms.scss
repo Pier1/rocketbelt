@@ -13,7 +13,7 @@ fieldset {
     align-self: flex-start;
 
     &::after {
-      color: color(gray, plus1);
+      color: color(gray);
     }
   }
 }
@@ -23,8 +23,8 @@ fieldset {
     display: flex;
     flex-wrap: wrap;
 
-    .validation-message::after {
-      color: color(gray, plus1);
+    .validation-message + .helper-text::before {
+      color: color(gray);
       content: unicode(nbsp) + unicode('horizontal-bar') + unicode(nbsp);
     }
   }
@@ -106,16 +106,30 @@ fieldset {
       border-bottom-left-radius: 2px;
 
       &:focus {
+        outline: 0;
         border: 2px solid color(primary);
         border-right: 0;
         border-radius: 0;
 
         & ~ button,
         & ~ .button {
+          outline: 0;
           border: 2px solid color(primary);
           border-left: 0;
           border-radius: 0;
           transition: none;
+        }
+      }
+
+      &[invalid] {
+        outline: 0;
+        border: 2px solid color(error);
+        border-right: 0;
+
+        & ~ button,
+        & ~ .button {
+          border: 2px solid color(error);
+          border-left: 0;
         }
       }
     }
@@ -163,6 +177,11 @@ fieldset {
       button,
       .button {
         flex: 0 1 auto;
+      }
+
+      .messages {
+        padding-left: 0;
+        width: 100%;
       }
     }
   }
@@ -251,6 +270,7 @@ textarea {
       padding: 0;
       border-width: 1px;
       border-color: transparent;
+      border-left-width: 0;
       background: transparent;
       color: color(gray);
       font-size: 1rem;
@@ -339,7 +359,7 @@ textarea {
   }
 
   .helper-text {
-    color: color(gray, plus1);
+    color: color(gray);
   }
 
   .helper-text,
