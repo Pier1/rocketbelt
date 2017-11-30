@@ -5,6 +5,13 @@
   font-weight: font-weight(semibold);
   font-size: font-size(-4);
   flex-shrink: 0;
+
+  code,
+  .code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
 }
 
 .rb-badge-toolbelt {

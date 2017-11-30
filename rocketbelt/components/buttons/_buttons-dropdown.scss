@@ -37,14 +37,18 @@
   }
 
   .button-dropdown_icon {
-    display: inline-block;
+    display: flex;
     padding-right: padding(0.25);
     padding-left: padding(0.25);
-    height: 100%;
     border: 1px transparent solid;
-    vertical-align: middle;
     font-size: initial;
-    line-height: 2;
+    align-items: center;
+
+    .icon {
+      display: inline-block;
+      margin: auto margin(0.125);
+      vertical-align: middle;
+    }
   }
 
   .button-secondary,

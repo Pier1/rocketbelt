@@ -190,16 +190,16 @@
                 <h2>Accessibility</h2>
                 <div class="exampleWithCode">
                   <div class="example">
-                    <script src="./rocketbelt.a11y.forms.js"></script>
+                    <script src="./rocketbelt.forms.js"></script>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-ZRxwqe"/>
-                    <label class="expander_label" for="rb-ZRxwqe" data-collapsed-label="Show Javascript Include" data-expanded-label="Hide Javascript Include"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-Z1kfqzj"/>
+                    <label class="expander_label" for="rb-Z1kfqzj" data-collapsed-label="Show Javascript Include" data-expanded-label="Hide Javascript Include"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-R2dap">Copy</button>
-                        <pre><code class="language-javascript include" id="rb-R2dap">
-                            &lt;script src=&quot;./rocketbelt.a11y.forms.js&quot;&gt;&lt;/script&gt;</code></pre>
+                        <button class="copy-code" data-clipboard-target="#rb-Z12SRGJ">Copy</button>
+                        <pre><code class="language-javascript include" id="rb-Z12SRGJ">
+                            &lt;script src=&quot;./rocketbelt.forms.js&quot;&gt;&lt;/script&gt;</code></pre>
                       </div>
                     </div>
                   </div>
@@ -516,28 +516,55 @@
                   </div>
                 </div>
                 <h2>Inline With Button</h2>
-                <grid-fluid>
+                <div class="grid-fluid">
                   <div class="row">
                     <div class="col xs-8 md-6 lg-4">
+                      <div class="form-group inline inline-with-button">
+                        <input id="inline-with-button">
+                        <label class="visually-hidden" for="inline-with-button">Search</label>
+                        <button class="button">Go</button>
+                      </div>
+                      <div class="form-group inline inline-with-button">
+                        <input id="inline-w-button-and-label">
+                        <label for="inline-w-button-and-label">Search</label>
+                        <button class="button">Go</button>
+                      </div>
+                      <div class="form-group inline inline-with-button inline-with-button-stacked">
+                        <input class="invalid" id="inline-w-button-and-label-stacked" invalid>
+                        <label for="inline-w-button-and-label-stacked">Search</label>
+                        <button class="button">Go</button>
+                        <div class="messages"><small class="validation-message">Please enter a valid search term.</small></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs">
                       <div class="exampleWithCode">
-                        <div class="example">
-                          <div class="form-group inline inline-with-button">
-                            <input id="inline-with-button">
-                            <label class="visually-hidden" for="inline-with-button">Search</label>
-                            <button class="button">Go</button>
-                          </div>
-                        </div>
+                        <div class="example"></div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1hbHAy"/>
-                          <label class="expander_label" for="rb-Z1hbHAy" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1rdsyi"/>
+                          <label class="expander_label" for="rb-Z1rdsyi" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Z1a0fIh">Copy</button>
-                              <pre><code class="language-html" id="rb-Z1a0fIh">
+                              <button class="copy-code" data-clipboard-target="#rb-ZsLQjn">Copy</button>
+                              <pre><code class="language-html" id="rb-ZsLQjn">
                                   &lt;div class=&quot;form-group inline inline-with-button&quot;&gt;
                                     &lt;input id=&quot;inline-with-button&quot;&gt;
                                     &lt;label class=&quot;visually-hidden&quot; for=&quot;inline-with-button&quot;&gt;Search&lt;/label&gt;
                                     &lt;button class=&quot;button&quot;&gt;Go&lt;/button&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class=&quot;form-group inline inline-with-button&quot;&gt;
+                                    &lt;input id=&quot;inline-w-button-and-label&quot;&gt;
+                                    &lt;label for=&quot;inline-w-button-and-label&quot;&gt;Search&lt;/label&gt;
+                                    &lt;button class=&quot;button&quot;&gt;Go&lt;/button&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class=&quot;form-group inline inline-with-button inline-with-button-stacked&quot;&gt;
+                                    &lt;input class=&quot;invalid&quot; id=&quot;inline-w-button-and-label-stacked&quot; invalid&gt;
+                                    &lt;label for=&quot;inline-w-button-and-label-stacked&quot;&gt;Search&lt;/label&gt;
+                                    &lt;button class=&quot;button&quot;&gt;Go&lt;/button&gt;
+                                    &lt;div class=&quot;messages&quot;&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid search term.&lt;/small&gt;&lt;/div&gt;
                                   &lt;/div&gt;</code></pre>
                             </div>
                           </div>
@@ -545,7 +572,7 @@
                       </div>
                     </div>
                   </div>
-                </grid-fluid>
+                </div>
                 <h2>Disabled Styles</h2>
                 <div class="grid-fluid">
                   <div class="row">

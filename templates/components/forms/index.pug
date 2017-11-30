@@ -8,7 +8,7 @@ block content
     h1 Forms
     h2 Accessibility
     +exampleWithCode('Javascript Include')
-      script(src='./rocketbelt.a11y.forms.js')
+      script(src='./rocketbelt.forms.js')
 
     h2 Standard Form Elements
     .grid-fluid
@@ -61,14 +61,15 @@ block content
             include _forms-inline.pug
 
     h2 Inline With Button
-    grid-fluid
+    .grid-fluid
       .row
         .col.xs-8.md-6.lg-4
-          +exampleWithCode
-            .form-group.inline.inline-with-button
-              input#inline-with-button
-              label.visually-hidden(for='inline-with-button') Search
-              button.button Go
+          include _forms-inline-with-button.pug
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _forms-inline-with-button.pug
 
     h2 Disabled Styles
     .grid-fluid

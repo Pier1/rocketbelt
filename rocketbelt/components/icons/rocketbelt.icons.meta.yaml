@@ -200,6 +200,10 @@ ribbon-check:
   title: Ribbon With Check Mark
   description: A ribbon with a check mark on the front
 
+rotate:
+  title: Rotate
+  description: Two arrows spinning in a circle
+
 search:
   title: Search
   description: A magnifying glass

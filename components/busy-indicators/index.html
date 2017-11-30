@@ -187,30 +187,135 @@
             <div class="col xs">
               <article>
                 <h1>Busy Indicators</h1>
-                <h2>Dots</h2>
+                <h2>Component-Level</h2>
+                <h3>"Is Busyable"</h3>
+                <p>Whenever possible, add the <code>is-busyable</code> class to the container that wraps components that may be marked as busy. This will maximize performance by greatly narrowing the scope of DOM elements that will be watched by a <code>MutationObserver</code>. If no element matches <code>.is-busyable</code>, the observer will be registered against <code>body</code>.</p>
+                <h3>Custom Sizing</h3>
+                <p>If a large component needs to indicate a busy state, supply a custom rule that targets the <code>font-size</code> of <code>.is-busy_overlay</code>. (This element is created &amp; managed via Javascript.) Be sure to use Rocketbelt's <code>font-size()</code> function!</p>
+                <p>For example:</p>
+                <div class="exampleWithCode">
+                  <div class="expander">
+                    <input class="expander_checkbox" type="checkbox" id="rb-ZQ1MF8" checked="checked"/>
+                    <label class="expander_label" for="rb-ZQ1MF8" data-collapsed-label="Show CSS" data-expanded-label="Hide CSS"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button class="copy-code" data-clipboard-target="#rb-gk7bV">Copy</button>
+                        <pre><code class="language-css" id="rb-gk7bV">
+                            #component-wrapper .is-busy_overlay {
+                              font-size: font-size(3);
+                            }</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <h3>Script Include</h3>
+                <div class="exampleWithCode">
+                  <div class="expander">
+                    <input class="expander_checkbox" type="checkbox" id="rb-Z1ryu9x" checked="checked"/>
+                    <label class="expander_label" for="rb-Z1ryu9x" data-collapsed-label="Show JS" data-expanded-label="Hide JS"><span class="expander_icon"></span></label>
+                    <div class="expander_content">
+                      <div class="example-code">
+                        <button class="copy-code" data-clipboard-target="#rb-ZnGKdY">Copy</button>
+                        <pre><code class="language-js" id="rb-ZnGKdY">
+                            &lt;script src=&quot;./rocketbelt.progress-indicators.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="example">
+                    <script src="./rocketbelt.progress-indicators.min.js"></script>
+                  </div>
+                </div>
+                <h3>Examples</h3>
+                <style>
+                  .form-group, .radio-group {
+                    width: 360px;
+                    margin-bottom: 2rem !important;
+                  }
+                </style>
                 <div class="grid-fluid">
                   <div class="row">
                     <div class="col xs">
+                      <button class="button button-secondary is-busy_trigger"><span>Click to Trigger Busy</span></button>
+                    </div>
+                    <div class="col xs">
+                      <button class="button button-primary is-busy_trigger is-busy-inverted"><span>Click to Trigger Busy</span></button>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col xs">
                       <div class="exampleWithCode">
-                        <div class="example">
-                          <ul class="busy-dots">
-                            <li></li>
-                            <li></li>
-                            <li></li>
-                          </ul>
-                        </div>
+                        <div class="example"></div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-2cHz5m"/>
-                          <label class="expander_label" for="rb-2cHz5m" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-2cdyIN"/>
+                          <label class="expander_label" for="rb-2cdyIN" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-1NBh9X">Copy</button>
-                              <pre><code class="language-html" id="rb-1NBh9X">
-                                  &lt;ul class=&quot;busy-dots&quot;&gt;
-                                    &lt;li&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;/li&gt;
-                                    &lt;li&gt;&lt;/li&gt;
-                                  &lt;/ul&gt;</code></pre>
+                              <button class="copy-code" data-clipboard-target="#rb-1G6sTJ">Copy</button>
+                              <pre><code class="language-html" id="rb-1G6sTJ">
+                                  &lt;button class=&quot;button button-primary is-busy is-busy-inverted&quot;&gt;&lt;span&gt;Click to Trigger Busy&lt;/span&gt;&lt;/button&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="form-group is-busyable">
+                        <textarea class="is-busy_trigger" id="busy-textarea" placeholder="Blur the textarea to trigger a busy state."></textarea>
+                        <label for="busy-textarea">Message</label>
+                      </div>
+                      <ul class="radio-group radio-group-chunky is-busyable">
+                        <li>
+                          <input class="is-busy_trigger" id="busy-chunky-1" type="radio" name="radio-group-chunky">
+                          <label for="busy-chunky-1">Click an option to trigger a busy state.</label>
+                        </li>
+                        <li>
+                          <input class="is-busy_trigger" id="busy-chunky-2" type="radio" name="radio-group-chunky">
+                          <label for="busy-chunky-2">Click an option to trigger a busy state.</label>
+                        </li>
+                      </ul>
+                      <div class="form-group is-busyable">
+                        <select id="busy-select">
+                          <option value="" disabled="" selected="" hidden="">Change selection to trigger busy</option>
+                          <option class="is-busy_trigger">Biblioteca</option>
+                          <option class="is-busy_trigger">Marcel</option>
+                          <option class="is-busy_trigger">Pierce</option>
+                        </select>
+                        <label for="busy-select">Collection</label>
+                      </div>
+                      <div class="exampleWithCode">
+                        <div class="example"></div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1qOf5j"/>
+                          <label class="expander_label" for="rb-Z1qOf5j" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button class="copy-code" data-clipboard-target="#rb-ZxjDFE">Copy</button>
+                              <pre><code class="language-html" id="rb-ZxjDFE">
+                                  &lt;div class=&quot;form-group is-busyable&quot;&gt;
+                                    &lt;textarea id=&quot;busy-textarea&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot;&gt;&lt;/textarea&gt;
+                                    &lt;label for=&quot;busy-textarea&quot;&gt;Message&lt;/label&gt;
+                                  &lt;/div&gt;
+                                  &lt;ul class=&quot;radio-group radio-group-chunky is-busyable&quot;&gt;
+                                    &lt;li&gt;
+                                      &lt;input id=&quot;busy-chunky-1&quot; type=&quot;radio&quot; name=&quot;radio-group-chunky&quot;&gt;
+                                      &lt;label for=&quot;busy-chunky-1&quot;&gt;Click an option to trigger a busy state.&lt;/label&gt;
+                                    &lt;/li&gt;
+                                    &lt;li&gt;
+                                      &lt;input id=&quot;busy-chunky-2&quot; type=&quot;radio&quot; name=&quot;radio-group-chunky&quot;&gt;
+                                      &lt;label for=&quot;busy-chunky-2&quot;&gt;Click an option to trigger a busy state.&lt;/label&gt;
+                                    &lt;/li&gt;
+                                  &lt;/ul&gt;
+                                  &lt;div class=&quot;form-group is-busyable&quot;&gt;
+                                    &lt;select id=&quot;busy-select&quot;&gt;
+                                      &lt;option value=&quot;&quot; disabled=&quot;&quot; selected=&quot;&quot; hidden=&quot;&quot;&gt;Change selection to trigger busy&lt;/option&gt;
+                                      &lt;option&gt;Biblioteca&lt;/option&gt;
+                                      &lt;option&gt;Marcel&lt;/option&gt;
+                                      &lt;option&gt;Pierce&lt;/option&gt;
+                                    &lt;/select&gt;
+                                    &lt;label for=&quot;busy-select&quot;&gt;Collection&lt;/label&gt;
+                                  &lt;/div&gt;</code></pre>
                             </div>
                           </div>
                         </div>
@@ -218,29 +323,30 @@
                     </div>
                   </div>
                 </div>
-                <h2>Spinner</h2>
-                <div class="grid-fluid">
-                  <div class="row">
-                    <div class="col xs">
-                      <div class="exampleWithCode">
-                        <div class="example">
-                          <div class="busy"></div>
-                        </div>
-                        <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1iPtsN"/>
-                          <label class="expander_label" for="rb-Z1iPtsN" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
-                          <div class="expander_content">
-                            <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Z1GVn3H">Copy</button>
-                              <pre><code class="language-html" id="rb-Z1GVn3H">
-                                  &lt;div class=&quot;busy&quot;&gt;&lt;/div&gt;</code></pre>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+                <script>
+                  $(document).on('click', '.is-busy_trigger', function () {
+                    var $toBusy = $(this).closest('.form-group, .radio-group');
+                    console.dir($toBusy);
+                    $toBusy.addClass('is-busy');
+                    setTimeout(function () {
+                      $toBusy.removeClass('is-busy');
+                    }, 2850)
+                  });
+                  $(document).on('change', 'select#busy-select', function () {
+                    var $toBusy = $(this).closest('.form-group');
+                    $toBusy.addClass('is-busy');
+                    setTimeout(function () {
+                      $toBusy.removeClass('is-busy');
+                    }, 2850)
+                  });
+                  $(document).on('click', 'button.is-busy_trigger', function () {
+                    var $this = $(this);
+                    $this.addClass('is-busy');
+                    setTimeout(function () {
+                      $this.removeClass('is-busy');
+                    }, 2850)
+                  });
+                </script>
               </article>
             </div>
           </div>

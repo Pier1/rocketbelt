@@ -554,6 +554,11 @@ pre[class*="language-"] {
   -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
           flex-shrink: 0; }
+  .rb-badge code,
+  .rb-badge .code {
+    padding: 0;
+    border: 0;
+    background: transparent; }
 
 .rb-badge-toolbelt {
   background: #4910ae; }
@@ -1111,10 +1116,24 @@ article h4 {
   background-color: #e5e3e4;
   font-family: 'RB Monospace'; }
 
-.ellipsis [class*='font-'] {
+.ellipsis {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; }
+
+.ellipsis-mid::before, .ellipsis-mid::after {
+  display: inline-block;
+  overflow: hidden;
+  max-width: 50%;
+  white-space: pre; }
+
+.ellipsis-mid::before {
+  content: attr(data-rb-ellipsis-start);
+  text-overflow: ellipsis; }
+
+.ellipsis-mid::after {
+  content: attr(data-rb-ellipsis-end);
+  text-overflow: clip; }
 
 .footnote-term a,
 .footnote-term a:link {
@@ -1295,12 +1314,13 @@ cite {
   cite b .footnote-returner {
     text-decoration: none; }
 
-p code,
+code,
 .code {
-  padding: 0.125rem 0.25rem;
-  border: 1px solid #b1acad;
+  padding: 0.125rem;
+  border: 1px solid #e5e3e4;
   border-radius: 2px;
-  background-color: #e5e3e4; }
+  background-color: #f2f1f1;
+  font-family: 'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace; }
 
 .example-code {
   position: relative;
@@ -1310,6 +1330,10 @@ p code,
   .example-code:hover .copy-code {
     opacity: 1;
     transition: opacity 100ms linear; }
+  .example-code code,
+  .example-code .code {
+    padding: 0;
+    border: none; }
   .example-code .copy-code {
     min-width: 8rem;
     padding: 0.30795rem 1.125rem;
