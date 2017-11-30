@@ -13,7 +13,7 @@ fieldset {
     align-self: flex-start;
 
     &::after {
-      color: color(gray, plus1);
+      color: color(gray);
     }
   }
 }
@@ -23,8 +23,8 @@ fieldset {
     display: flex;
     flex-wrap: wrap;
 
-    .validation-message::after {
-      color: color(gray, plus1);
+    .validation-message + .helper-text::before {
+      color: color(gray);
       content: unicode(nbsp) + unicode('horizontal-bar') + unicode(nbsp);
     }
   }
@@ -90,55 +90,98 @@ fieldset {
         }
       }
     }
+  }
 
-    &.inline-with-button {
-      font-size: 0;
+  &.inline-with-button {
+    font-size: 0;
+
+    input {
+      height: 2rem;
+      outline: 0;
+      border: 1px solid color(gray, plus1);
+      border-right: 0;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 2px;
+
+      &:focus {
+        outline: 0;
+        border: 2px solid color(primary);
+        border-right: 0;
+        border-radius: 0;
+
+        & ~ button,
+        & ~ .button {
+          outline: 0;
+          border: 2px solid color(primary);
+          border-left: 0;
+          border-radius: 0;
+          transition: none;
+        }
+      }
+
+      &[invalid] {
+        outline: 0;
+        border: 2px solid color(error);
+        border-right: 0;
+
+        & ~ button,
+        & ~ .button {
+          border: 2px solid color(error);
+          border-left: 0;
+        }
+      }
+    }
+
+    button,
+    .button {
+      @include button-style(secondary);
+
+      min-width: auto;
+      height: 2rem;
+      border: 1px solid color(gray, plus1);
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      line-height: 1;
+
+      &:hover,
+      &:active {
+        box-shadow: none;
+      }
+    }
+
+    &.inline-with-button-stacked {
+      flex-wrap: wrap;
 
       input {
-        height: 2rem;
-        outline: 0;
-        border: 1px solid color(gray, plus1);
-        border-right: 0;
-        border-top-left-radius: 2px;
-        border-top-right-radius: 0;
-        border-bottom-right-radius: 0;
-        border-bottom-left-radius: 2px;
+        flex: 1 0 auto;
+        width: auto;
+      }
 
-        &:focus {
-          border: 2px solid color(primary);
-          border-right: 0;
-          border-radius: 0;
+      label {
+        flex-direction: row;
+        width: 100%;
+        align-items: baseline;
 
-          & ~ button,
-          & ~ .button {
-            border: 2px solid color(primary);
-            border-left: 0;
-            border-radius: 0;
-            transition: none;
-          }
+        &::after {
+          margin-left: 0.25em;
         }
       }
 
       button,
       .button {
-        @include button-style(secondary);
+        flex: 0 1 auto;
+      }
 
-        min-width: auto;
-        height: 2rem;
-        border: 1px solid color(gray, plus1);
-        border-left: 0;
-        border-top-left-radius: 0;
-        border-top-right-radius: 2px;
-        border-bottom-right-radius: 2px;
-        border-bottom-left-radius: 0;
-        background: transparent;
-        box-shadow: none;
-        line-height: 1;
-
-        &:hover,
-        &:active {
-          box-shadow: none;
-        }
+      .messages {
+        padding-left: 0;
+        width: 100%;
       }
     }
   }
@@ -227,6 +270,7 @@ textarea {
       padding: 0;
       border-width: 1px;
       border-color: transparent;
+      border-left-width: 0;
       background: transparent;
       color: color(gray);
       font-size: 1rem;
@@ -276,53 +320,46 @@ textarea {
 }
 
 .form-group {
-  input,
-  select,
-  textarea {
+  label::after {
+    font-size: font-size(-2);
+  }
+
+  [required] {
     & + label::after {
-      font-size: font-size(-2);
+      content: unicode(nbsp) + '(required)';
     }
+  }
 
-    &[required] {
-      & + label::after {
-        content: unicode(nbsp) + '(required)';
-      }
+  :not([required]) {
+    & + label::after {
+      content: unicode(nbsp) + '(optional)';
     }
+  }
 
-    &:not([required]) {
-      & + label::after {
-        content: unicode(nbsp) + '(optional)';
-      }
-    }
-    &.read-only {
-      &[disabled] {
-        & ~ label::after {
-          content: none;
-        }
+  .read-only {
+    &[disabled] {
+      & ~ label::after {
+        content: none;
       }
     }
   }
 
-  &.required-suppressed {
-    input,
-    select,
-    textarea {
-      &[required] {
-        & + label::after {
-          content: '';
-        }
+  .required-suppressed {
+    [required] {
+      & + label::after {
+        content: '';
       }
+    }
 
-      &:not([required]) {
-        & + label::after {
-          content: '';
-        }
+    :not([required]) {
+      & + label::after {
+        content: '';
       }
     }
   }
 
   .helper-text {
-    color: color(gray, plus1);
+    color: color(gray);
   }
 
   .helper-text,

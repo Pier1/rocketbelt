@@ -17,6 +17,7 @@ dist/base/
 dist/components/
 dist/exposition/
 dist/index.html
+dist/partials/
 dist/sitemap.xml
 gulp-tasks/
 gulpfile.js

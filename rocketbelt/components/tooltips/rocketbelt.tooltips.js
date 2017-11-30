@@ -1,4 +1,4 @@
-(function rocketbeltA11yTooltips(window, document) {
+(function rocketbeltTooltips(rb, document) {
   function decorateTooltipTriggers() {
     var triggers = document.querySelectorAll('.tooltip_trigger');
     var triggersLen = triggers.length;
@@ -11,15 +11,17 @@
         var id = ttContent.id;
 
         if (!id) {
-          id = 'rb-a11y_' + window.rb.getShortId();
+          id = 'rb-a11y_' + rb.getShortId();
           ttContent.id = id;
         }
 
-        trigger.setAttribute('aria-describedby', id);
+        trigger.setAttribute(rb.aria.describedby, id);
         ttContent.setAttribute('role', 'tooltip');
       }
     }
   }
 
-  window.rb.onDocumentReady(decorateTooltipTriggers);
-})(window, document);
+  rb.onDocumentReady(decorateTooltipTriggers);
+  rb.tooltips = rb.tooltips || {};
+  rb.tooltips.decorateTooltipTriggers = decorateTooltipTriggers;
+})(window.rb, document);
