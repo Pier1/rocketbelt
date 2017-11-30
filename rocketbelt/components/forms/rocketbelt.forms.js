@@ -42,21 +42,24 @@
 
       var messages = formEl.parentNode.querySelectorAll('.validation-message, .helper-text');
       var msgLen = messages.length;
-      var describedByIds = '';
 
-      for (var j = 0; j < msgLen; j++) {
-        var thisMsg = messages[j];
-        var id = 'rb-a11y_' + rb.getShortId();
-        describedByIds += id + ' ';
+      if (msgLen > 0) {
+        var describedByIds = '';
 
-        // Don't clobber any existing attributes!
-        if (!thisMsg.id) {
-          thisMsg.id = id;
+        for (var j = 0; j < msgLen; j++) {
+          var thisMsg = messages[j];
+          var id = 'rb-a11y_' + rb.getShortId();
+          describedByIds += id + ' ';
+
+          // Don't clobber any existing attributes!
+          if (!thisMsg.id) {
+            thisMsg.id = id;
+          }
         }
-      }
 
-      if (!formEl.hasAttribute(aria.describedby)) {
-        formEl.setAttribute(aria.describedby, describedByIds.trim());
+        if (!formEl.hasAttribute(aria.describedby)) {
+          formEl.setAttribute(aria.describedby, describedByIds.trim());
+        }
       }
     }
   }
