@@ -16,10 +16,28 @@
 }
 
 .ellipsis {
-  [class*='font-'] {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis-mid {
+  &::before,
+  &::after {
+    display: inline-block;
     overflow: hidden;
+    max-width: 50%;
+    white-space: pre;
+  }
+
+  &::before {
+    content: attr(data-rb-ellipsis-start);
     text-overflow: ellipsis;
-    white-space: nowrap;
+  }
+
+  &::after {
+    content: attr(data-rb-ellipsis-end);
+    text-overflow: clip;
   }
 }
 

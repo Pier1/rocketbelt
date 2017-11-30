@@ -103,6 +103,21 @@ block content
               .font-plus-3 #[code.font-minus-1 font-size(3):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
               .font-plus-4 #[code.font-minus-1 font-size(4):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
 
+    h2 Ellipsis
+    h3 Standard
+    p Narrow &amp; widen your viewport to see the effect.
+    .grid-fluid
+      .row
+        .col.xs-6
+          +exampleWithCode
+            .ellipsis The fabric that’s as it were salvaged from polyester fabric, our framed piece enhances the hidden zipper.
+    h3 Custom Ellipsis
+    +exampleWithCode
+      .ellipsis-mid(data-rb-ellipsis-start='this_is_a_really_long_email_address', data-rb-ellipsis-end='@pier1.com', title='this_is_a_really_long_email_address@pier1.com')
+    .rb-note
+      include /partials/a11y.pug
+      .rb-note-text Never use the Custom Ellipsis pattern without a #[code title] attribute that combines the two #[code data-rb-ellipsis-] attributes.
+
     h2 Text with Icon
     p This pattern automatically renders an icon that is the same height as the accompanying text. Add an #[code icon-left] or #[code icon-right] class to indicate where the icon should be placed.
     +exampleWithCode

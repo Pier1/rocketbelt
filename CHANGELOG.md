@@ -1,3 +1,29 @@
+<a name="1.13.5"></a>
+## [1.13.5](https://github.com/Pier1/rocketbelt/compare/1.13.4...v1.13.5) (2017-11-30)
+
+### Features
+
+* **a11y:** Add aria key-value pairs so that a bunch of magic strings can be removed. ([3c1bcab](https://github.com/Pier1/rocketbelt/commit/3c1bcab))
+* **Buttons:** Allow clicking away from a dropdown button to close the dropdown. ([de58d05](https://github.com/Pier1/rocketbelt/commit/de58d05))
+* **Forms:** Add inline with button error styles. ([aef6b4a](https://github.com/Pier1/rocketbelt/commit/aef6b4a))
+* **Forms:** Add stacked variant to Inline with Button pattern. ([9ceb406](https://github.com/Pier1/rocketbelt/commit/9ceb406))
+* **Global:** Add component instantiation/decoration functions to window.rb object. ([6c92fac](https://github.com/Pier1/rocketbelt/commit/6c92fac))
+* **Grid:** Add support for offset-0 classes for non-xs breakpoints. ([0443708](https://github.com/Pier1/rocketbelt/commit/0443708))
+* **Grid:** Add support for offset-0 classes for non-xs breakpoints. ([dba01cd](https://github.com/Pier1/rocketbelt/commit/dba01cd))
+* **Icons:** Add "rotate" icon. Give most icons a little breathing room. ([cd9cd32](https://github.com/Pier1/rocketbelt/commit/cd9cd32))
+* **Progress Indicators:** Add component-level busy indicators. Make anything "busy" with one class! ([531206f](https://github.com/Pier1/rocketbelt/commit/531206f))
+* **Typography:** Add ellipsis patterns. ([5063faf](https://github.com/Pier1/rocketbelt/commit/5063faf))
+
+### Bug Fixes
+
+* **a11y:** Add better handling for a11y attributes without a validation message. ([c4eecbd](https://github.com/Pier1/rocketbelt/commit/c4eecbd))
+* **a11y:** Fixed typo in aria-labelledby attribute. ([1413f06](https://github.com/Pier1/rocketbelt/commit/1413f06))
+* **Build:** Update build to include RB tools. ([d826f75](https://github.com/Pier1/rocketbelt/commit/d826f75))
+* **Buttons:** Tweak dropdown button styles. ([26812f2](https://github.com/Pier1/rocketbelt/commit/26812f2))
+* **Forms:** Don't add empty/unnecessary describedby attributes. ([bd06afe](https://github.com/Pier1/rocketbelt/commit/bd06afe))
+* **Forms:** Reduce form selector complexity. ([aca8a4a](https://github.com/Pier1/rocketbelt/commit/aca8a4a))
+* **Progress Indicators:** Add aria-disabled to link for current step. Factor out aria magic strings. ([66e460e](https://github.com/Pier1/rocketbelt/commit/66e460e))
+
 <a name="1.13.4"></a>
 ## [1.13.4](https://github.com/Pier1/rocketbelt/compare/1.13.3...v1.13.4) (2017-11-16)
 

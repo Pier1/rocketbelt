@@ -1,4 +1,6 @@
-(function rocketbeltA11yForms(window, document) {
+(function rocketbeltForms(rb, document) {
+  var aria = rb.aria;
+
   function onClassMutation(mutations) {
     var mutationsLen = mutations.length;
 
@@ -9,14 +11,20 @@
 
       if (mutation.oldValue !== 'invalid' && mutation.target.classList.contains('invalid')) {
         // If "invalid" was added, do the decoratin'
-        el.setAttribute('aria-invalid', 'true');
-        message.setAttribute('role', 'alert');
-        message.setAttribute('aria-live', 'polite');
+        el.setAttribute(aria.invalid, 'true');
+
+        if (message) {
+          message.setAttribute(aria.role, 'alert');
+          message.setAttribute(aria.live, 'polite');
+        }
       } else if (mutation.oldValue === 'invalid' && !el.classList.contains('invalid')) {
         // If "invalid" was removed
-        el.setAttribute('aria-invalid', 'false');
-        message.removeAttribute('role');
-        message.removeAttribute('aria-live');
+        el.setAttribute(aria.invalid, 'false');
+
+        if (message) {
+          message.removeAttribute('role');
+          message.removeAttribute(aria.live);
+        }
       }
     }
   }
@@ -34,24 +42,29 @@
 
       var messages = formEl.parentNode.querySelectorAll('.validation-message, .helper-text');
       var msgLen = messages.length;
-      var describedByIds = '';
 
-      for (var j = 0; j < msgLen; j++) {
-        var thisMsg = messages[j];
-        var id = 'rb-a11y_' + window.rb.getShortId();
-        describedByIds += id + ' ';
+      if (msgLen > 0) {
+        var describedByIds = '';
 
-        // Don't clobber any existing attributes!
-        if (!thisMsg.id) {
-          thisMsg.id = id;
+        for (var j = 0; j < msgLen; j++) {
+          var thisMsg = messages[j];
+          var id = 'rb-a11y_' + rb.getShortId();
+          describedByIds += id + ' ';
+
+          // Don't clobber any existing attributes!
+          if (!thisMsg.id) {
+            thisMsg.id = id;
+          }
         }
-      }
 
-      if (!formEl.hasAttribute('aria-describedby')) {
-        formEl.setAttribute('aria-describedby', describedByIds.trim());
+        if (!formEl.hasAttribute(aria.describedby)) {
+          formEl.setAttribute(aria.describedby, describedByIds.trim());
+        }
       }
     }
   }
 
-  window.rb.onDocumentReady(decorateInputs);
-})(window, document);
+  rb.onDocumentReady(decorateInputs);
+  rb.forms = rb.forms || {};
+  rb.forms.decorateInputs = decorateInputs;
+})(window.rb, document);
