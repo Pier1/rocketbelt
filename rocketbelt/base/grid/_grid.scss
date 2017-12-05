@@ -100,13 +100,14 @@
 }
 
 @mixin column-order($position) {
-  order: $position;
   @if ($position == last) {
     $position: 9999;
   }
   @else if ($position == first) {
     $position: -9999;
   }
+
+  order: $position;
 }
 
 .grid {
