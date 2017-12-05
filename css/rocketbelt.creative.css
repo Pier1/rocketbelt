@@ -578,14 +578,14 @@
           justify-content: space-between; }
 
 .col.xs-first {
-  -webkit-order: first;
-      -ms-flex-order: first;
-          order: first; }
+  -webkit-order: -9999;
+      -ms-flex-order: -9999;
+          order: -9999; }
 
 .col.xs-last {
-  -webkit-order: last;
-      -ms-flex-order: last;
-          order: last; }
+  -webkit-order: 9999;
+      -ms-flex-order: 9999;
+          order: 9999; }
 
 @media (min-width: 34rem) {
   .col.sm, .col.sm-offset-0, .col.sm-1, .col.sm-offset-1, .col.sm-2, .col.sm-offset-2, .col.sm-3, .col.sm-offset-3, .col.sm-4, .col.sm-offset-4, .col.sm-5, .col.sm-offset-5, .col.sm-6, .col.sm-offset-6, .col.sm-7, .col.sm-offset-7, .col.sm-8, .col.sm-offset-8, .col.sm-9, .col.sm-offset-9, .col.sm-10, .col.sm-offset-10, .col.sm-11, .col.sm-offset-11, .col.sm-12, .col.sm-offset-12 {
@@ -734,13 +734,13 @@
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .col.sm-first {
-    -webkit-order: first;
-        -ms-flex-order: first;
-            order: first; }
+    -webkit-order: -9999;
+        -ms-flex-order: -9999;
+            order: -9999; }
   .col.sm-last {
-    -webkit-order: last;
-        -ms-flex-order: last;
-            order: last; }
+    -webkit-order: 9999;
+        -ms-flex-order: 9999;
+            order: 9999; }
   .grid {
     width: 34rem; } }
 
@@ -891,13 +891,13 @@
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .col.md-first {
-    -webkit-order: first;
-        -ms-flex-order: first;
-            order: first; }
+    -webkit-order: -9999;
+        -ms-flex-order: -9999;
+            order: -9999; }
   .col.md-last {
-    -webkit-order: last;
-        -ms-flex-order: last;
-            order: last; }
+    -webkit-order: 9999;
+        -ms-flex-order: 9999;
+            order: 9999; }
   .grid {
     width: 48rem; } }
 
@@ -1048,13 +1048,13 @@
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .col.lg-first {
-    -webkit-order: first;
-        -ms-flex-order: first;
-            order: first; }
+    -webkit-order: -9999;
+        -ms-flex-order: -9999;
+            order: -9999; }
   .col.lg-last {
-    -webkit-order: last;
-        -ms-flex-order: last;
-            order: last; }
+    -webkit-order: 9999;
+        -ms-flex-order: 9999;
+            order: 9999; }
   .grid {
     width: 62rem; } }
 
@@ -1205,13 +1205,13 @@
         -ms-flex-pack: justify;
             justify-content: space-between; }
   .col.xl-first {
-    -webkit-order: first;
-        -ms-flex-order: first;
-            order: first; }
+    -webkit-order: -9999;
+        -ms-flex-order: -9999;
+            order: -9999; }
   .col.xl-last {
-    -webkit-order: last;
-        -ms-flex-order: last;
-            order: last; }
+    -webkit-order: 9999;
+        -ms-flex-order: 9999;
+            order: 9999; }
   .grid {
     width: 75rem; } }
 
@@ -1396,14 +1396,14 @@
           justify-content: space-between; }
 
 .grid-fluid.static .col.static-first, .grid.static .col.static-first {
-  -webkit-order: first;
-      -ms-flex-order: first;
-          order: first; }
+  -webkit-order: -9999;
+      -ms-flex-order: -9999;
+          order: -9999; }
 
 .grid-fluid.static .col.static-last, .grid.static .col.static-last {
-  -webkit-order: last;
-      -ms-flex-order: last;
-          order: last; }
+  -webkit-order: 9999;
+      -ms-flex-order: 9999;
+          order: 9999; }
 
 .fadeInDown {
   -webkit-animation-name: fadeInDown;
