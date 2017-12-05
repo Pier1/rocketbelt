@@ -1,3 +1,13 @@
+<a name="1.13.6"></a>
+## [1.13.6](https://github.com/Pier1/rocketbelt/compare/1.13.5...v1.13.6) (2017-12-05)
+
+
+### Bug Fixes
+
+* **Grid:** Fix -first and -last column order classes. ([da537bd](https://github.com/Pier1/rocketbelt/commit/da537bd))
+
+
+
 <a name="1.13.5"></a>
 ## [1.13.5](https://github.com/Pier1/rocketbelt/compare/1.13.4...v1.13.5) (2017-11-30)
 
