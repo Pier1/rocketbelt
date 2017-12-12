@@ -1,3 +1,13 @@
+<a name="1.13.7"></a>
+## [1.13.7](https://github.com/Pier1/rocketbelt/compare/1.13.6...v1.13.7) (2017-12-12)
+
+
+### Bug Fixes
+
+* **Tabcordions:** Polyfill CustomEvent for IE9 and up. ([8cf0fa3](https://github.com/Pier1/rocketbelt/commit/8cf0fa3))
+
+
+
 <a name="1.13.6"></a>
 ## [1.13.6](https://github.com/Pier1/rocketbelt/compare/1.13.5...v1.13.6) (2017-12-05)
 
