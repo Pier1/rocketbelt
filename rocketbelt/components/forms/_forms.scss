@@ -22,11 +22,6 @@ fieldset {
   .messages {
     display: flex;
     flex-wrap: wrap;
-
-    .validation-message + .helper-text::before {
-      color: color(gray);
-      content: unicode(nbsp) + unicode('horizontal-bar') + unicode(nbsp);
-    }
   }
 }
 
@@ -239,6 +234,11 @@ textarea {
         display: block;
         visibility: visible;
         color: color(error);
+
+        + .helper-text::before {
+          color: color(gray);
+          content: unicode(nbsp) + unicode('horizontal-bar') + unicode(nbsp);
+        }
       }
     }
   }
@@ -360,6 +360,10 @@ textarea {
 
   .helper-text {
     color: color(gray);
+  }
+
+  .validation-message {
+    color: color(error);
   }
 
   .helper-text,
