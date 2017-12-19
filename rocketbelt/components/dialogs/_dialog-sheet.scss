@@ -21,12 +21,12 @@
 .dialog {
   &.dialog-sheet {
     .dialog_content {
-      position: absolute;
       top: auto;
       right: 0;
       bottom: 0;
       left: 0;
-      width: 100%;
+      min-width: 100%;
+      max-width: 100%;
       transform: none;
       animation: dialog-sheet-in 300ms ease-in-out;
     }
