@@ -1,0 +1,11 @@
+// Constrained via the grid with .xs.lg-6
+.card.card-image.card-image-thumbnail.z-depth-1
+  each alt in ['2443389_1']
+    - var base = 'https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/';
+    - var short = alt.substring(0, alt.indexOf('_'));
+    .card-image_image.lazyload-wrapper(data-src-lg=base + short + '/' + alt + '.jpg?sw=400&sh=400')
+      img.lazyload-small(src=base + short + '/' + alt + '.jpg?sw=10&sh=10')
+      .lazyload-pad(style='padding-bottom: 100%')
+  .card-content
+    .card-title Thumbnail Cards
+    .card-body Put content and an image side-by-side. Constrain the width via the grid…
