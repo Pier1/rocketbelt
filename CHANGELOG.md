@@ -1,3 +1,18 @@
+<a name="1.13.8"></a>
+## [1.13.8](https://github.com/Pier1/rocketbelt/compare/1.13.7...v1.13.8) (2017-12-19)
+
+
+### Bug Fixes
+
+* **Dialogs:** Default all dialogs to position: fixed; ([721ea5d](https://github.com/Pier1/rocketbelt/commit/721ea5d))
+
+
+### Features
+
+* **a11y:** Update auto-accessibility of aria-describedby attributes. ([6b113e3](https://github.com/Pier1/rocketbelt/commit/6b113e3))
+
+
+
 <a name="1.13.7"></a>
 ## [1.13.7](https://github.com/Pier1/rocketbelt/compare/1.13.6...v1.13.7) (2017-12-12)
 
