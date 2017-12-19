@@ -49,6 +49,7 @@
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.7",
     "gulp-webserver": "^0.9.1",
+    "hoverintent": "^2.0.0",
     "js-yaml": "^3.7.0",
     "jstransformer": "^1.0.0",
     "jstransformer-markdown-it": "^2.0.0",
