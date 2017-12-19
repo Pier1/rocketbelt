@@ -86,8 +86,9 @@
   left: 50%;
   z-index: 3;
   overflow-y: auto;
+  min-width: 95%;
+  max-width: 990px;
   max-height: 90%;
-  width: 95%;
   border-radius: 2px;
   background-color: color(white);
   transform: translate3d(-50%, -50%, 0);
@@ -99,11 +100,11 @@
   }
 
   @include media('>=md') {
-    width: 60%;
+    min-width: 75%;
   }
 
   @include media('>=lg') {
-    width: 40%;
+    min-width: 40%;
   }
 }
 
