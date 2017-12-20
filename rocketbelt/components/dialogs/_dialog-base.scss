@@ -43,6 +43,11 @@
 .is-dialog-open {
   overflow: hidden;
 
+  // Resolves iOS bug
+  position: fixed;
+  left: 0;
+  right: 0;
+
   .dialog_blur {
     filter: blur(5px);
   }
