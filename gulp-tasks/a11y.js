@@ -1,9 +1,8 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config) {
-    return function () {
-      var firstRun = plugins.cached.caches['html'] ? false : true;
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config) => {
+    return () => {
+      const firstRun = plugins.cached.caches['html'] ? false : true;
 
       return gulp.src(config.buildPath + '/**/*.html')
         .pipe(plugins.if(global.isWatching, plugins.cached('html')))
