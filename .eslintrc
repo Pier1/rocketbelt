@@ -1,5 +1,8 @@
 /* Based on https://github.com/FreeCodeCamp/freecodecamp/blob/staging/.eslintrc */
 {
+  "parserOptions": {
+    "ecmaVersion": 6
+    },
   "ecmaFeatures": {
     },
   "env": { // http://eslint.org/docs/user-guide/configuring.html#specifying-environments
@@ -15,7 +18,7 @@
 /**
  * Strict mode
  */
-    "strict": 0,                     // http://eslint.org/docs/rules/strict
+    "strict": 1,                     // http://eslint.org/docs/rules/strict
 
 /**
  * Variables
@@ -111,7 +114,7 @@
  */
     "indent": [2, 2],                // http://eslint.org/docs/rules/indent
     "brace-style": ["error",
-      "1tbs", { 
+      "1tbs", {
         "allowSingleLine": true
       }],
     "quotes": [                      // http://eslint.org/docs/rules/quotes
