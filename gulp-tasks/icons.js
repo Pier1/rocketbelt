@@ -1,10 +1,9 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config, taskParams) {
-    return function () {
-      var spriteName = 'rocketbelt.icons';
-      var enterprise = false;
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config, taskParams) => {
+    return () => {
+      let spriteName = 'rocketbelt.icons';
+      let enterprise = false;
 
       if (taskParams && taskParams.enterprise === true) {
         spriteName += '.enterprise.svg';
@@ -13,10 +12,10 @@
         spriteName += '.svg';
       }
 
-      var options = {
+      let options = {
         shape: {
           id: {
-            generator: function (file) {
+            generator: (file) => {
               return 'rb-icon-' + file.replace(/\.svg/, '');
             }
           },
@@ -41,8 +40,8 @@
         }
       };
 
-      var iconsPath = config.patternsPath + '/components/icons';
-      var sketchFiles = enterprise ? '/**/*.sketch' : '/**/rocketbelt.icons.sketch';
+      const iconsPath = config.patternsPath + '/components/icons';
+      const sketchFiles = enterprise ? '/**/*.sketch' : '/**/rocketbelt.icons.sketch';
 
       return gulp.src(iconsPath + sketchFiles)
         .pipe(plugins.sketch({

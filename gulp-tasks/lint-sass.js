@@ -1,8 +1,7 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config) {
-    return function () {
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config) => {
+    return () => {
       return gulp.src([config.patternsPath + '/**/*.scss', config.templatesPath + '/**/*.scss', '!**/vendor/**/*.scss', '!' + config.patternsPath + '/**/animation/**/*.scss'])
         .pipe(plugins.sassLint())
         .pipe(plugins.sassLint.format())

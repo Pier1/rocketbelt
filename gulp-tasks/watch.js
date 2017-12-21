@@ -1,24 +1,25 @@
-(function () {
-  'use strict';
+'use strict';
+(() => {
+  const debounce = (func, wait, immediate) => {
+    let timeout;
+    return () => {
+      const context = this;
+      const args = arguments;
 
-  var debounce = function (func, wait, immediate) {
-    var timeout;
-    return function () {
-      var context = this,
-        args = arguments;
-      var later = function () {
+      const later = () => {
         timeout = null;
         if (!immediate) func.apply(context, args);
       };
-      var callNow = immediate && !timeout;
+
+      const callNow = immediate && !timeout;
       clearTimeout(timeout);
       timeout = setTimeout(later, wait);
-      if (callNow) func.apply(context, args);
+      if (callNow) { func.apply(context, args); }
     };
   };
 
-  module.exports = function (gulp, plugins, config) {
-    return function () {
+  module.exports = (gulp, plugins, config) => {
+    return () => {
       gulp.watch(['./rocketbelt/**/*.scss', './templates/scss/**/*.scss'], ['styles']);
       gulp.watch(['./templates/**/*.pug'], ['views']);
       gulp.watch(['./rocketbelt/**/*.js'], ['copy-js', 'uglify']);

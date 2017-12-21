@@ -1,8 +1,8 @@
 exclude:
   - '**/vendor/**/*'
-  - ".git/**"
-  - "node_modules/**"
-  - "bower_components/**"
+  - .git/**
+  - node_modules/**
+  - bower_components/**
 rules:
   class-name-format: 0
   no-trailing-zero: 0
@@ -26,6 +26,8 @@ rules:
   property-sort-order:
     - 1
     - order:
+        - $import
+        - $extend
         - $include
         - $variable
         - position

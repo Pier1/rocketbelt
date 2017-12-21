@@ -1,8 +1,7 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config) {
-    return function () {
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config) => {
+    return () => {
       return gulp.src([config.patternsPath + '/**/*.js', '!' + config.patternsPath + '/**/*.min.js'])
         .pipe(plugins.changed(config.buildPath))
         .pipe(plugins.plumber({ errorHandler: plugins.notify.onError('Error: <%= error.message %>') }))

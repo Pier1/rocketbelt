@@ -1,3 +1,4 @@
+'use strict';
 (function rocketbelt(window, document) {
   window.rb = window.rb || {};
 

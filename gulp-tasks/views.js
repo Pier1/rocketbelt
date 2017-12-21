@@ -1,16 +1,16 @@
-(function () {
-  'use strict';
-
-  var directoryTreeToObj = function(dir, done) {
+'use strict';
+(() => {
+  var directoryTreeToObj = (dir, done) => {
     var fs = require('fs');
     var path = require('path');
     var results = [];
 
-    fs.readdir(dir, function(err, files) {
-      if (err)
+    fs.readdir(dir, (err, files) => {
+      if (err) {
         return done(err);
+      }
 
-      files = files.filter(function (file) {
+      files = files.filter((file) => {
         if (fs.lstatSync(dir + '/' + file).isDirectory()) {
           if (file === 'js' || file === 'scss' || file === 'assets' || file === 'partials') return false;
         }
@@ -23,31 +23,33 @@
 
       var pending = files.length;
 
-      if (!pending)
+      if (!pending) {
         return done(null, { name: path.basename(dir), type: 'folder', children: results });
+      }
 
-      files.forEach(function(file) {
+      files.forEach((file) => {
         file = path.resolve(dir, file);
-        fs.stat(file, function(err, stat) {
+        fs.stat(file, (err, stat) => {
           if ( true /* file.indexOf('/img') === -1  */) {
             if (stat && stat.isDirectory() ) {
-              directoryTreeToObj(file, function(err, res) {
+              directoryTreeToObj(file, (err, res) => {
                 results.push({
                   name: path.basename(file),
                   type: 'folder',
                   children: res
                 });
-                if (!--pending)
+                if (!--pending) {
                   done(null, results);
+                }
               });
-            }
-            else {
+            } else {
               results.push({
                 type: 'file',
                 name: path.basename(file)
               });
-              if (!--pending)
+              if (!--pending) {
                 done(null, results);
+              }
             }
           }
         });
@@ -55,14 +57,15 @@
     });
   };
 
-  module.exports = function (gulp, plugins, config) {
-    return function () {
+  module.exports = (gulp, plugins, config) => {
+    return () => {
       var fs = require('fs');
       var icons = fs.readdirSync(config.patternsPath + '/components/icons/svg');
 
-      return directoryTreeToObj(config.templatesPath, function (err, res) {
-        if (err)
+      return directoryTreeToObj(config.templatesPath, (err, res) => {
+        if (err) {
           console.error(err);
+        }
 
         return gulp.src([config.templatesPath + '/**/*.pug', '!' + config.templatesPath + '/**/_*.pug'])
           .pipe(plugins.plumber({ errorHandler: plugins.notify.onError('Error: <%= error.message %>') }))
