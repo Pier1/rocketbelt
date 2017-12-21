@@ -2,6 +2,7 @@
 $(function () {
   var options = initOptions();
   var focusedBeforeDialog;
+  var scrollBeforeDialog;
   // IE doesn't apply append var to the global scope.
   $cache = {
     appendTo: $(options.appendTo),
@@ -183,6 +184,10 @@ $(function () {
   function open() {
     if ($cache.appendTo.hasClass('is-dialog-open')) return;
 
+    // Preserve scroll position
+    scrollBeforeDialog = $(window).scrollTop();
+    $cache.appendTo.css('top', '-' + scrollBeforeDialog + 'px');
+
     $cache.appendTo.addClass('is-dialog-open');
     $cache.blurElement.addClass('dialog_blur').attr('aria-hidden', true);
     $cache.rbDialog.removeAttr('aria-hidden');
@@ -201,6 +206,11 @@ $(function () {
     if ($cache.rbDialog[0].hasAttribute('aria-hidden')) return;
 
     $cache.appendTo.removeClass('is-dialog-open');
+
+    // Preserve scroll position
+    $cache.appendTo.css('top', '0');
+    $(window).scrollTop(scrollBeforeDialog);
+
     $cache.blurElement.removeClass('dialog_blur').removeAttr('aria-hidden');
     $cache.rbDialog.attr('aria-hidden', 'true');
     focusedBeforeDialog && focusedBeforeDialog.focus();
