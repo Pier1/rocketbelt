@@ -21,9 +21,9 @@
         // If "is-busy" was removed
         var overlay = el.querySelectorAll('.is-busy_overlay')[0];
 
-        if (overlay) {
-          overlay.parentNode.removeChild(overlay);
-        }
+        if (overlay && !overlay.parentNode.classList.contains('is-busy')) {
+		overlay.parentNode.removeChild(overlay);
+	}
       }
     }
   }
