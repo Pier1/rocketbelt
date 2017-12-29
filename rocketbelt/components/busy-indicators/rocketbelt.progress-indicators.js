@@ -8,12 +8,15 @@
 
       if (mutation.target.classList.contains('is-busy')) {
         // If "is-busy" was added, do the decoratin'
-        var dot = '<div class="dot" aria-hidden="true"></div>';
-        var a11yAttrs = 'aria-label="Loading." role="alert" aria-live="polite" aria-busy="true"';
-        var elType = el.nodeName === 'UL' || el.nodeName === 'OL' ? 'li' : 'div';
-        var fragment = '<' + elType + ' class="is-busy_overlay is-busy_overlay-opaque" ' + a11yAttrs + '>' + dot + dot + dot + '</' + elType + '>';
+		if (mutation.target.getElementsByClassName('is-busy_overlay').length === 0) {
+		// Only add overlay if one doesn't already exist
+			var dot = '<div class="dot" aria-hidden="true"></div>';
+			var a11yAttrs = 'aria-label="Loading." role="alert" aria-live="polite" aria-busy="true"';
+			var elType = el.nodeName === 'UL' || el.nodeName === 'OL' ? 'li' : 'div';
+			var fragment = '<' + elType + ' class="is-busy_overlay is-busy_overlay-opaque" ' + a11yAttrs + '>' + dot + dot + dot + '</' + elType + '>';
 
-        el.innerHTML = el.innerHTML + fragment;
+			el.innerHTML = el.innerHTML + fragment;
+		}
       } else {
         // If "is-busy" was removed
         var overlay = el.querySelectorAll('.is-busy_overlay')[0];
