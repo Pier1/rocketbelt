@@ -21,10 +21,11 @@ $dialog-dark-header-sides: calc(-#{$dialog-close-height} - #{ms(-5)});
     left: $dialog-dark-header-sides;
     z-index: 1;
     border-bottom: 0;
+    justify-content: flex-end;
   }
 
   .dialog_title {
-    visibility: hidden;
+    @extend %visuallyhidden;
   }
 
   .dialog_close {
