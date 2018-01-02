@@ -98,7 +98,7 @@ $dialog-close-height: 44px;
   max-height: 90%;
   border-radius: 2px;
   background-color: color(white);
-  transform: translate(-50%, -50%);
+  transform: translate3d(-50%, -50%, 0);
 
   .dialog_close_container {
     flex-grow: 0;
@@ -119,24 +119,24 @@ $dialog-close-height: 44px;
 @keyframes dialogIn {
   from {
     opacity: 0;
-    transform: translate(-50%, -70%);
+    transform: translate3d(-50%, -70%, 0);
   }
 
   to {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
   }
 }
 
 @keyframes dialogOut {
   from {
     opacity: 1;
-    transform: translate(-50%, -50%);
+    transform: translate3d(-50%, -50%, 0);
   }
 
   to {
     opacity: 0;
-    transform: translate(-50%, 0%);
+    transform: translate3d(-50%, 0%, 0);
   }
 }
 
