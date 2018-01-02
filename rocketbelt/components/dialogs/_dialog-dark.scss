@@ -1,0 +1,35 @@
+$dialog-dark-header-top: calc(-#{$dialog-close-height} - #{2 * ms(-5)});
+$dialog-dark-header-sides: calc(-#{$dialog-close-height} - #{ms(-5)});
+
+.dialog-dark {
+  .dialog_overlay {
+    background-color: rgba(color(black), 0.75);
+  }
+
+  .dialog_content {
+    overflow-y: visible;
+  }
+
+  .dialog_body {
+    padding: 0;
+  }
+
+  .dialog_header {
+    position: absolute;
+    top: $dialog-dark-header-top;
+    right: $dialog-dark-header-sides;
+    left: $dialog-dark-header-sides;
+    z-index: 1;
+    border-bottom: 0;
+  }
+
+  .dialog_title {
+    visibility: hidden;
+  }
+
+  .dialog_close {
+    color: color(white);
+    filter: drop-shadow(0 0 1px color(black));
+    fill: color(white);
+  }
+}

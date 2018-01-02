@@ -68,6 +68,17 @@ block content
           +exampleWithCode
             include _dialog-sheet.pug
 
+    h3 Dark Dialogs
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(onclick="$('#dark-dialog').rbDialog({ title: 'Dark Dialog', classes: { 'rbDialog': 'dialog-dark' } })") Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-dark.pug
+
     h3 Max Dialog
     .grid-fluid
       .row
@@ -79,7 +90,6 @@ block content
             | <strong>Max dialogs don't support buttons.</strong>
             | <br/>
             | Button option included to illustrate non-support.
-
       .row
         .col.xs
           +exampleWithCode
