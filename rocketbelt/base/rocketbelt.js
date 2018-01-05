@@ -43,6 +43,14 @@
     'role':        'role'
   };
 
+  // Self-removing event listener.
+  window.rb.once = (node, type, callback) => {
+    node.addEventListener(type, function handler(e) {
+      e.target.removeEventListener(e.type, handler);
+      return callback(e);
+    });
+  };
+
   window.rb.getShortId = function getShortId() {
     // Break the id into 2 parts to provide enough bits to the random number.
     // This should be unique up to 1:2.2 bn.
