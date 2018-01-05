@@ -64,7 +64,7 @@ style.
 script.
   $(document).on('click', '.is-busy_trigger', function () {
     var $toBusy = $(this).closest('.form-group, .radio-group');
-    console.dir($toBusy);
+
     $toBusy.addClass('is-busy');
     setTimeout(function () {
       $toBusy.removeClass('is-busy');

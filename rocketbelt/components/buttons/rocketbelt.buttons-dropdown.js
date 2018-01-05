@@ -1,16 +1,17 @@
-(function rocketbeltButtonsDropdown(rb, document) {
-  var aria = rb.aria;
+'use strict';
+((rb, document) => {
+  const aria = rb.aria;
 
   function decorateDropdowns() {
-    var triggers = document.querySelectorAll('.button-dropdown_trigger');
-    var triggersLen = triggers.length;
+    const triggers = document.querySelectorAll('.button-dropdown_trigger');
+    const triggersLen = triggers.length;
 
-    var DEFAULT_BUTTON_SELECTOR = '.button, button';
+    const DEFAULT_BUTTON_SELECTOR = '.button, button';
 
-    var onChange = function onFocusIn(e) {
-      var input = e.target;
-      var checked = input.checked;
-      var ddContent = e.target.parentNode.querySelector('.button-dropdown_content');
+    const onChange = (e) => {
+      const input = e.target;
+      const checked = input.checked;
+      const ddContent = e.target.parentNode.querySelector('.button-dropdown_content');
 
       if (checked) {
         input.setAttribute(aria.expanded, true);
@@ -21,17 +22,17 @@
       }
     };
 
-    for (var i = 0; i < triggersLen; i++) {
-      var trigger = triggers[i];
-      var label = trigger.parentNode.querySelector('label');
-      var ddContent = trigger.parentNode.querySelector('.button-dropdown_content');
-      var defaultButton = trigger.parentNode.querySelector(DEFAULT_BUTTON_SELECTOR);
-      var ddLabelledBy = defaultButton.id ? defaultButton.id : 'rb-a11y_' + rb.getShortId();
+    for (let i = 0; i < triggersLen; i++) {
+      const trigger = triggers[i];
+      const label = trigger.parentNode.querySelector('label');
+      const ddContent = trigger.parentNode.querySelector('.button-dropdown_content');
+      const defaultButton = trigger.parentNode.querySelector(DEFAULT_BUTTON_SELECTOR);
+      const ddLabelledBy = defaultButton.id ? defaultButton.id : `rb-a11y_${rb.getShortId()}`;
 
-      var icon = trigger.parentNode.querySelector('.button-dropdown_icon .icon');
+      const icon = trigger.parentNode.querySelector('.button-dropdown_icon .icon');
       icon.setAttribute(aria.hidden, true);
 
-      var triggerId = trigger.id ? trigger.id : 'rb-a11y_' + rb.getShortId();
+      const triggerId = trigger.id ? trigger.id : `rb-a11y_${rb.getShortId()}`;
       trigger.id = triggerId;
       label.setAttribute('for', triggerId);
 
@@ -46,16 +47,16 @@
         ddContent.setAttribute(aria.labelledby, ddLabelledBy);
       }
 
-      trigger.addEventListener('change', function change(e) { onChange(e); });
+      trigger.addEventListener('change', (e) => { onChange(e); });
     }
 
-    document.addEventListener('click', function onclick(e) {
-      var path = e.path;
-      var pathLen = path.length;
-      var shouldClose = true;
+    document.addEventListener('click', (e) => {
+      const path = e.path;
+      const pathLen = path.length;
+      let shouldClose = true;
 
-      for (var j = 0; j < pathLen; j++) {
-        var el = path[j];
+      for (let j = 0; j < pathLen; j++) {
+        const el = path[j];
 
         if (el.classList && (el.classList.contains('button-dropdown_content') || el.classList.contains('button-dropdown_icon') || el.classList.contains('button-dropdown_trigger'))) {
           shouldClose = false;
@@ -64,10 +65,10 @@
       }
 
       if (shouldClose) {
-        var ddTriggers = document.querySelectorAll('.button-dropdown_trigger');
-        var ddTriggersLen = ddTriggers.length;
+        const ddTriggers = document.querySelectorAll('.button-dropdown_trigger');
+        const ddTriggersLen = ddTriggers.length;
 
-        for (var k = 0; k < ddTriggersLen; k++) {
+        for (let k = 0; k < ddTriggersLen; k++) {
           ddTriggers[k].checked = false;
         }
       }

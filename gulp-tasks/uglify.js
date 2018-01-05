@@ -8,7 +8,9 @@
         .pipe(plugins.rename({ suffix: '.min' }))
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.babel({
-          presets: ['env']
+          presets: [
+            ['env', { 'modules': false }]
+          ]
         }))
         .pipe(plugins.uglify())
         .pipe(plugins.size(config.sizeOptions))
