@@ -140,8 +140,9 @@
     "func-names": 1,                 // http://eslint.org/docs/rules/func-names
     "key-spacing": [1, {             // http://eslint.org/docs/rules/key-spacing
         "beforeColon": false,
-        "afterColon": true
-        }],
+        "afterColon": true,
+        "mode": "minimum"
+    }],
     "new-cap": [2, {                 // http://eslint.org/docs/rules/new-cap
       "newIsCap": true
       }],

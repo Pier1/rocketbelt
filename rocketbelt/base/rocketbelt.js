@@ -2,6 +2,47 @@
 ((window, document) => {
   window.rb = window.rb || {};
 
+  window.rb.keys = {
+    ALT: 18,
+    ARROWS: [37, 38, 39, 40],
+    ARROW_LEFT: 37,
+    ARROW_UP: 38,
+    ARROW_RIGHT: 39,
+    ARROW_DOWN: 40,
+    BACKSPACE: 8,
+    CMD: 91,
+    CTRL: 17,
+    DELETE: 46,
+    END: 35,
+    ENTER: 13,
+    ESC: 27,
+    HOME: 36,
+    PAGE_DOWN: 34,
+    PAGE_UP: 33,
+    SHIFT: 16,
+    SPACE: 32,
+    TAB: 9
+  };
+
+  window.rb.focusables =
+   'a[href], area[href], input:not([disabled]), select:not([disabled]),' +
+   'textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex],' +
+   '*[contenteditable]';
+
+  window.rb.aria = {
+    'current':     'aria-current',
+    'describedby': 'aria-describedby',
+    'disabled':    'aria-disabled',
+    'expanded':    'aria-expanded',
+    'haspopup':    'aria-haspopup',
+    'hidden':      'aria-hidden',
+    'invalid':     'aria-invalid',
+    'label':       'aria-label',
+    'labelledby':  'aria-labelledby',
+    'live':        'aria-live',
+    'role':        'role'
+  };
+
   window.rb.getShortId = function getShortId() {
     // Break the id into 2 parts to provide enough bits to the random number.
     // This should be unique up to 1:2.2 bn.
@@ -26,12 +67,12 @@
   // Adds "more correct" CustomEvent support to IE >= 9
   // See https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
   (() => {
-    if (typeof window.CustomEvent === 'function' ) return false;
+    if (typeof window.CustomEvent === 'function') return false;
 
     function CustomEvent(event, params) {
       const p = params || { bubbles: false, cancelable: false, detail: undefined };
-      const evt = document.createEvent( 'CustomEvent' );
-      evt.initCustomEvent( event, p.bubbles, p.cancelable, p.detail );
+      const evt = document.createEvent('CustomEvent');
+      evt.initCustomEvent(event, p.bubbles, p.cancelable, p.detail);
       return evt;
     }
 
@@ -41,17 +82,40 @@
     return e;
   })();
 
-  window.rb.aria = {
-    'current':     'aria-current',
-    'describedby': 'aria-describedby',
-    'disabled':    'aria-disabled',
-    'expanded':    'aria-expanded',
-    'haspopup':    'aria-haspopup',
-    'hidden':      'aria-hidden',
-    'invalid':     'aria-invalid',
-    'label':       'aria-label',
-    'labelledby':  'aria-labelledby',
-    'live':        'aria-live',
-    'role':        'role'
-  };
+  // Polyfill vendor-prefixed Element.matches and Element.closest in IE.
+  // See https://github.com/jonathantneal/closest.
+  ((ElementProto) => {
+    if (typeof ElementProto.matches !== 'function') {
+      ElementProto.matches =
+        ElementProto.msMatchesSelector ||
+        function matches(selector) {
+          const element = this;
+          const elements = (element.document || element.ownerDocument).querySelectorAll(selector);
+          let index = 0;
+
+          while (elements[index] && elements[index] !== element) {
+            ++index;
+          }
+
+          return Boolean(elements[index]);
+        }
+      ;
+    }
+
+    if (typeof ElementProto.closest !== 'function') {
+      ElementProto.closest = (selector) => {
+        let element = this;
+
+        while (element && element.nodeType === 1) {
+          if (element.matches(selector)) {
+            return element;
+          }
+
+          element = element.parentNode;
+        }
+
+        return null;
+      };
+    }
+  })(window.Element.prototype);
 })(window, document);
