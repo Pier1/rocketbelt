@@ -51,23 +51,10 @@
     }
 
     document.addEventListener('click', (e) => {
-      const path = e.path;
-      const pathLen = path.length;
-      let shouldClose = true;
-
-      for (let j = 0; j < pathLen; j++) {
-        const el = path[j];
-
-        if (el.classList && (el.classList.contains('button-dropdown_content') || el.classList.contains('button-dropdown_icon') || el.classList.contains('button-dropdown_trigger'))) {
-          shouldClose = false;
-          break;
-        }
-      }
-
-      if (shouldClose) {
+      const el = $(e.target);
+      if (!el.closest('.button-dropdown').length && !el.is('.button-dropdown')) {
         const ddTriggers = document.querySelectorAll('.button-dropdown_trigger');
         const ddTriggersLen = ddTriggers.length;
-
         for (let k = 0; k < ddTriggersLen; k++) {
           ddTriggers[k].checked = false;
         }
