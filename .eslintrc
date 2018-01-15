@@ -38,7 +38,7 @@
  */
     "comma-dangle": [2, "only-multiline"],    // http://eslint.org/docs/rules/comma-dangle
     "no-cond-assign": [2, "always"], // http://eslint.org/docs/rules/no-cond-assign
-    "no-console": 1,                 // http://eslint.org/docs/rules/no-console
+    "no-console": [1, { allow: ["warn", "error"]}], // http://eslint.org/docs/rules/no-console
     "no-debugger": 1,                // http://eslint.org/docs/rules/no-debugger
     "no-alert": 1,                   // http://eslint.org/docs/rules/no-alert
     "no-const-assign": 2,
@@ -107,7 +107,7 @@
     "no-throw-literal": 2,           // http://eslint.org/docs/rules/no-throw-literal
     "no-undef": 2,                   // http://eslint.org/docs/rules/no-undef
     "no-undef-init": 2,              // http://eslint.org/docs/rules/no-undef-init
-    "no-undefined": 1,               // http://eslint.org/docs/rules/no-undefined
+    "no-undefined": 0,               // http://eslint.org/docs/rules/no-undefined
     "no-useless-escape": 2,          // https://eslint.org/docs/rules/no-useless-escape
     "no-with": 2,                    // http://eslint.org/docs/rules/no-with
     "handle-callback-err": 1,        // http://eslint.org/docs/rules/handle-callback-err
