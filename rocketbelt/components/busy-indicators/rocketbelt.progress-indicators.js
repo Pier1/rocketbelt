@@ -7,7 +7,7 @@
       const mutation = mutations[k];
       const el = mutation.target;
 
-      if (mutation.target.classList.contains('is-busy')) {
+      if (mutation.target.classList && mutation.target.classList.contains('is-busy')) {
         // If "is-busy" was added, do the decoratin'
         if (mutation.target.getElementsByClassName('is-busy_overlay').length === 0) {
           // Only add overlay if one doesn't already exist
