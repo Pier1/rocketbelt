@@ -4,15 +4,15 @@ $(function () {
   var focusedBeforeDialog;
   var scrollBeforeDialog;
   // IE doesn't apply append var to the global scope.
-  $cache = {
+  var $cache = {
     appendTo: $(options.appendTo),
     blurElement: $(options.blurElement),
     rbDialog: $('.dialog').last(),
     rbDialogTitle: $('.dialog .dialog_title').last(),
     rbDialogBody: $('.dialog .dialog_body').last()
   };
-  element = null;
-  closers = $($cache.rbDialog).find('[data-rb-dialog-hide]');
+  var element = null;
+  var closers = $($cache.rbDialog).find('[data-rb-dialog-hide]');
 
   function initOptions() {
     return {
@@ -91,7 +91,7 @@ $(function () {
 
     // If we already have a button pane, remove it
 
-    if ($.isEmptyObject(buttons) || ($.isArray(buttons) && !buttons.length) || (options.classes.rbDialog.indexOf('dialog-max') !== -1 ) ) {
+    if ($.isEmptyObject(buttons) || ($.isArray(buttons) && !buttons.length) || (options.classes.rbDialog.indexOf('dialog-max') !== -1)) {
       return;
     }
 
@@ -248,9 +248,14 @@ $(function () {
     var prop;
     var orig;
     var callback = options[type];
+
     data = data || {};
     event = $.Event(event);
-    event.type = (type === this.widgetEventPrefix ? type : this.widgetEventPrefix + type).toLowerCase();
+    if (this) {
+      event.type = (type === this.widgetEventPrefix ? type : this.widgetEventPrefix + type).toLowerCase();
+    } else {
+      event.type = type;
+    }
     // the original event may come from any element
     // so we need to reset the target on the new event
     event.target = element[0];

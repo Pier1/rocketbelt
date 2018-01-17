@@ -1,3 +1,5 @@
+$dialog-close-height: 44px;
+
 *:not(.is-dialog-open) {
   .dialog {
     .dialog_content {
@@ -108,6 +110,7 @@
     min-width: 75%;
   }
 
+
   @include media('>=lg') {
     min-width: 40%;
   }
@@ -140,8 +143,8 @@
 .dialog_close {
   display: flex;
   padding: 0;
-  width: 44px;
-  height: 44px;
+  width: $dialog-close-height;
+  height: $dialog-close-height;
   border: none;
   background: transparent;
   cursor: pointer;
