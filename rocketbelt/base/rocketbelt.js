@@ -29,26 +29,19 @@
    'textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex],' +
    '*[contenteditable]';
 
+  const aria = 'aria-';
   window.rb.aria = {
-    'current':     'aria-current',
-    'describedby': 'aria-describedby',
-    'disabled':    'aria-disabled',
-    'expanded':    'aria-expanded',
-    'haspopup':    'aria-haspopup',
-    'hidden':      'aria-hidden',
-    'invalid':     'aria-invalid',
-    'label':       'aria-label',
-    'labelledby':  'aria-labelledby',
-    'live':        'aria-live',
+    'current':     `${aria}current`,
+    'describedby': `${aria}describedby`,
+    'disabled':    `${aria}disabled`,
+    'expanded':    `${aria}expanded`,
+    'haspopup':    `${aria}haspopup`,
+    'hidden':      `${aria}hidden`,
+    'invalid':     `${aria}invalid`,
+    'label':       `${aria}label`,
+    'labelledby':  `${aria}labelledby`,
+    'live':        `${aria}live`,
     'role':        'role'
-  };
-
-  // Self-removing event listener.
-  window.rb.once = (node, type, callback) => {
-    node.addEventListener(type, function handler(e) {
-      e.target.removeEventListener(e.type, handler);
-      return callback(e);
-    });
   };
 
   window.rb.getShortId = function getShortId() {
@@ -56,8 +49,8 @@
     // This should be unique up to 1:2.2 bn.
     let firstPart = (Math.random() * 46656) | 0;
     let secondPart = (Math.random() * 46656) | 0;
-    firstPart = ('000' + firstPart.toString(36)).slice(-3);
-    secondPart = ('000' + secondPart.toString(36)).slice(-3);
+    firstPart = (`000${firstPart.toString(36)}`).slice(-3);
+    secondPart = (`000${secondPart.toString(36)}`).slice(-3);
     return firstPart + secondPart;
   };
 
@@ -89,6 +82,14 @@
 
     return e;
   })();
+
+  // Self-removing event listener.
+  window.rb.once = (node, type, callback) => {
+    node.addEventListener(type, function handler(e) {
+      e.target.removeEventListener(e.type, handler);
+      return callback(e);
+    });
+  };
 
   // Polyfill vendor-prefixed Element.matches and Element.closest in IE.
   // See https://github.com/jonathantneal/closest.
