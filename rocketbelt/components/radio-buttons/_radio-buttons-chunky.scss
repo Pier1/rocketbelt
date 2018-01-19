@@ -43,7 +43,7 @@
 
         &:hover::before {
           $color-fill: $color-unselected;
-          background-image: svg-url('<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
+          background-image: icon-as-data-uri(check, $color-fill);
           background-position: center center;
           background-size: 24px;
           background-repeat: no-repeat;
@@ -59,7 +59,7 @@
           $color-fill: color(white);
           border-color: transparent;
           background-color: $color-selected;
-          background-image: svg-url('<svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg"><path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/></svg>');
+          background-image: icon-as-data-uri(check, $color-fill);
           background-position: center center;
           background-size: 24px;
           background-repeat: no-repeat;
