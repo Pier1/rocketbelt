@@ -1,19 +1,18 @@
 'use strict';
-var gulp = require('gulp');
+const gulp = require('gulp');
 
-var plugins = require('gulp-load-plugins')({ DEBUG: false, pattern: '*' });
+const plugins = require('gulp-load-plugins')({ DEBUG: false, pattern: '*' });
 
-var buildPath = './dist';
-var buildCssPath = buildPath + '/css';
-var patternsPath = './rocketbelt';
-var templatesPath = './templates';
-var tasksPath = './gulp-tasks';
-var utilsPath = tasksPath + '/utils';
+const buildPath = './dist';
+const buildCssPath = `${buildPath}/css`;
+const patternsPath = './rocketbelt';
+const templatesPath = './templates';
+const tasksPath = './gulp-tasks';
 
-var config = {
+const config = {
   buildPath: buildPath,
   buildCssPath: buildCssPath,
-  colorFamilies: require(templatesPath + '/base/color/_color-families.json'),
+  colorFamilies: require(`${templatesPath}/base/color/_color-families.json`),
   patternsPath: patternsPath,
   templatesPath: templatesPath,
   sizeOptions: {
@@ -22,12 +21,8 @@ var config = {
   }
 };
 
-var utils = {
-  getTask: require(utilsPath + '/getTask')
-};
-
 function getTask(task, taskParams) {
-  return require('./gulp-tasks/' + task)(gulp, plugins, config, taskParams);
+  return require(`${tasksPath}/${task}`)(gulp, plugins, config, taskParams);
 }
 
 gulp.task('default', getTask('default'));
@@ -58,13 +53,13 @@ gulp.task('uglify', getTask('uglify'));
 gulp.task('views', ['copy-js', 'copy-resources'], getTask('views'));
 gulp.task('watch', getTask('watch'));
 
-function throttle (callback, limit) {
-  var wait = false;
-  return function () {
+function throttle(callback, limit) {
+  let wait = false;
+  return () => {
     if (!wait) {
       callback.call();
       wait = true;
-      setTimeout(function () {
+      setTimeout(() => {
         wait = false;
       }, limit);
     }
