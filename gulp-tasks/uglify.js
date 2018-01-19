@@ -16,7 +16,8 @@
           ],
           ignore: [
             // Keep these files from breaking until they're refactored to ES6 code.
-            `${config.patternsPath}/components/dialogs/**/*.js`
+            `${config.patternsPath}/components/dialogs/**/*.js`,
+            `${config.patternsPath}/components/buttons/rocketbelt.dynamic-button.js`
           ]
         }))
         .pipe(plugins.uglify())
