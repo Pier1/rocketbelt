@@ -11,10 +11,27 @@
          'iOS >= 8',
          'Android >= 4.4'];
 
-      const source = gulp.src([config.patternsPath + '/**/*.scss', config.templatesPath + '/scss/**/*.scss'])
-        .pipe(plugins.plumber({ errorHandler: plugins.notify.onError('Error: <%= error.message %>') }))
+      const source = gulp.src([
+        `${config.patternsPath}/**/*.scss`,
+        `${config.templatesPath}/scss/**/*.scss`
+      ])
+        .pipe(plugins.plumber({
+          errorHandler: plugins.notify.onError('Error: <%= error.message %>')
+        }))
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.sass())
+        .pipe(plugins.postcss([
+          require('postcss-svg')({
+            dirs: `${config.patternsPath}/components/icons`,
+            svgo: {
+              plugins: [{
+                removeDesc: true,
+                removeTitle: true,
+                cleanupAttrs: true
+              }]
+            }
+          })
+        ]))
         .pipe(plugins.autoprefixer({
           browsers: supported
         }))
