@@ -1,0 +1,18 @@
+@function icon-as-data-uri($icon-name, $color) {
+  @if (not(str-index($icon-name, 'rb-icon-'))) {
+    $icon-name: 'rb-icon-' + $icon-name;
+  }
+
+  $color-param: '';
+  @if ($color != '') {
+    $color-param: 'param(--color #{$color})';
+  }
+
+  @if ($color-param != '') {
+    @return url('rocketbelt.icons##{$icon-name}' unquote($color-param));
+  }
+  @else {
+    @return url('rocketbelt.icons##{$icon-name}');
+  }
+
+}
