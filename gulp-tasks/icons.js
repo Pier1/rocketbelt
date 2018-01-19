@@ -58,7 +58,6 @@
           run: ($) => {
             $('symbol[id^=rb-icon-]').each(function elHandler() {
               const $symbol = $(this);
-              // const grayMinus2 = '#4a4647';
               $symbol.css('fill', 'var(--color, inherit)');
 
               // The following lines are necessary because cheerio lowercases attribute names,
