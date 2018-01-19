@@ -62,6 +62,7 @@
     "moment-timezone": "^0.5.9",
     "phantomcss": "^1.1.4",
     "phantomjs-prebuilt": "^2.1.13",
+    "ra11y": "^1.0.0",
     "recursive-readdir": "^2.1.0",
     "run-sequence": "^1.2.2",
     "shorthash": "0.0.2",
