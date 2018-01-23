@@ -1,5 +1,6 @@
 /* global $cache:true element:true closers:true */
-(function ($) {
+'use strict';
+(jQuery(function ($) {
   var options = initOptions();
   var focusedBeforeDialog;
   var scrollBeforeDialog;
@@ -273,4 +274,4 @@
     element.trigger(event, data);
     return !($.isFunction(callback) && callback.apply(element[0], [event].concat(data)) === false || event.isDefaultPrevented());
   }
-})(jQuery);
+})());
