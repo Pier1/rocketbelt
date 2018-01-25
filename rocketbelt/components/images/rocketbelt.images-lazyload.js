@@ -1,4 +1,4 @@
-(function () {
+(function ($) {
   var ctrl = new ScrollMagic.Controller();
 
   $(document).ready(function () {
@@ -11,6 +11,10 @@
       img.onload = function () {
         small.classList.add('loaded');
       };
+      img.onerror = function(){
+		    small.src = wrapper.dataset.srcErr;
+        small.classList.add('errored');
+	    };
     });
 
     $('.lazyload-wrapper .lazyload-small').each(function () {
@@ -34,4 +38,4 @@
         .addTo(ctrl);
     });
   });
-})();
+})(jQuery);
