@@ -46,12 +46,15 @@
 
     &.lazyload-small {
       opacity: 0.5;
-      transition: opacity 200ms ease-in-out;
-      
-      &.errored{
-        opacity: 1;
-        height: 100%;
-        width: 100%;
+      transition: opacity 200ms ease-in-out;     
     }
-  }
+    
+    &.errored{
+      background: none;
+      animation: none;
+      
+      & img.lazyload-small{
+        opacity: 1;
+      }
+    }
 }
