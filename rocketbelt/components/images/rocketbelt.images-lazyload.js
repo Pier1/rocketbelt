@@ -12,9 +12,9 @@
         small.classList.add('loaded');
       };
       img.onerror = function(){
-		    small.src = wrapper.dataset.srcErr;
-        small.classList.add('errored');
-	    };
+	small.src = wrapper.dataset.srcErr;
+        wrapper.classList.add('errored');
+      };
     });
 
     $('.lazyload-wrapper .lazyload-small').each(function () {
