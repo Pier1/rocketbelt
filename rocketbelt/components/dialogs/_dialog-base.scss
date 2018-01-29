@@ -30,9 +30,14 @@ $dialog-close-height: 44px;
     }
   }
 
+  .dialog_body {
+    overflow: auto;
+  }
+
   .dialog_header,
   .dialog_buttons {
     display: flex;
+    flex-shrink: 0;
   }
 
   .dialog_header,
@@ -99,6 +104,9 @@ $dialog-close-height: 44px;
   border-radius: 2px;
   background-color: color(white);
   transform: translate3d(-50%, -50%, 0);
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
 
   .dialog_close_container {
     flex-grow: 0;
