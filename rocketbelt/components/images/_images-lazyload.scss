@@ -49,11 +49,11 @@
       transition: opacity 200ms ease-in-out;     
     }
     
-    &.errored{
+    &.errored {
       background: none;
       animation: none;
       
-      & img.lazyload-small{
+      & img.lazyload-small {
         opacity: 1;
       }
     }
