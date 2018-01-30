@@ -72,7 +72,7 @@ $(function () {
       value.addEventListener('click', close);
     });
     if (!$.contains($cache.rbDialogBody[0], element[0])) {
-      $cache.rbDialogBody[0].appendChild(element[0]);
+      $cache.rbDialogBody.append(element);
     }
     element.show();
   }
