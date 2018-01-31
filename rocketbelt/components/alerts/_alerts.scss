@@ -48,7 +48,7 @@ $message-families: (success, error, warning, info);
 @mixin message($family) {
   border-color: color($family, lighter);
   background: color($family, lightest);
-  color: color($family, darker);
+  color: color($family, darkest);
 }
 
 
