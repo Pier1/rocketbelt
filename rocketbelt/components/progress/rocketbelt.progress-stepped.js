@@ -12,8 +12,18 @@
       const hasAriaCurrent = attributes.getNamedItem(aria.current) ? true : false;
       // If target's attributes include aria-current
       if (hasAriaCurrent) {
+        // Add visually-hidden descriptor
+        const span = document.createElement('span');
+        span.textContent = 'Current Step: ';
+        span.setAttribute('class', 'visually-hidden');
+        mutation.target.insertBefore(span, mutation.target.querySelector('a'));
+
         // Decorate current & subsequent links with aria-disabled
-        const linksToDisable = mutation.target.parentNode.querySelectorAll(`[${aria.current}] a, [${aria.current}] ~ li a`);
+        const linksToDisable =
+          mutation
+            .target
+            .parentNode
+            .querySelectorAll(`[${aria.current}] a, [${aria.current}] ~ li a`);
         const linksLen = linksToDisable.length;
 
         for (let j = 0; j < linksLen; j++) {
@@ -24,6 +34,11 @@
       // If target doesn't have aria-current, remove aria-disabled from child link
         const linkToEnable = mutation.target.querySelector('a');
         linkToEnable.removeAttribute(aria.disabled);
+        const hiddenText = linkToEnable.parentNode.querySelector('.visually-hidden');
+
+        if (hiddenText) {
+          hiddenText.textContent = 'Completed: ';
+        }
       }
     }
   }
@@ -40,9 +55,15 @@
       }
 
       progressIndicator.setAttribute('role', 'nav');
+      progressIndicator.setAttribute('tabindex', '0');
 
       const observer = new MutationObserver((mutations) => { onAttrMutation(mutations); });
-      observer.observe(progressIndicator, { subtree: true, attributes: true, attributeOldValue: true, attributeFilter: [aria.current] });
+      observer.observe(progressIndicator, {
+        subtree: true,
+        attributes: true,
+        attributeOldValue: true,
+        attributeFilter: [aria.current]
+      });
 
       let current = progressIndicator.querySelector(`[${aria.current}]`);
       if (!current) {
