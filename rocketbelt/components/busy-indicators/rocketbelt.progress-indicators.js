@@ -11,10 +11,21 @@
         // If "is-busy" was added, do the decoratin'
         if (mutation.target.getElementsByClassName('is-busy_overlay').length === 0) {
           // Only add overlay if one doesn't already exist
-          const dot = '<div class="dot" aria-hidden="true"></div>';
-          const a11yAttrs = 'aria-label="Loading." role="alert" aria-live="polite" aria-busy="true"';
+          let markup = '';
+
+          if (mutation.target.classList.contains('is-busyable-page')) {
+            markup = '<div class="box-loader"><div class="border"></div><div class="border"></div><div class="border"></div><div class="border"></div></div>';
+          } else {
+            markup = '<div class="dot" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div>';
+          }
+
+          const a11yAttrs =
+            'aria-label="Loading." role="alert" aria-live="polite" aria-busy="true"';
           const elType = el.nodeName === 'UL' || el.nodeName === 'OL' ? 'li' : 'div';
-          const fragment = `<${elType} class="is-busy_overlay is-busy_overlay-opaque" ${a11yAttrs}>${dot}${dot}${dot}</${elType}>`;
+          const fragment =
+            `<${elType} class="is-busy_overlay is-busy_overlay-opaque" ${a11yAttrs}>\
+              ${markup}\
+            </${elType}>`;
 
           el.innerHTML = el.innerHTML + fragment;
         }
