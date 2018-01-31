@@ -197,6 +197,16 @@ select {
   min-height: 2rem;
 }
 
+input[type='radio'],
+input[type='checkbox'] {
+  &:focus {
+    ~ label {
+      outline: thin dotted color(brand);
+    }
+  }
+}
+
+input:not([type='radio']),
 input:not([type='checkbox']),
 select,
 textarea {
