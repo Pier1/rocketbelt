@@ -197,11 +197,13 @@ select {
   min-height: 2rem;
 }
 
-input[type='radio'],
-input[type='checkbox'] {
-  &:focus {
-    ~ label {
-      outline: thin dotted color(brand);
+input {
+  &[type='radio'],
+  &[type='checkbox'] {
+    &:focus {
+      ~ label {
+        outline: thin dotted color(brand);
+      }
     }
   }
 }
