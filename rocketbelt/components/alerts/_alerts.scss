@@ -58,13 +58,17 @@ $message-families: (success, error, warning, info);
     transition: color 200ms ease-in-out;
 
     & .message-dismissable_close {
+      color: color($family, darkest);
+      border: 0;
+      background: transparent;
+
       &:hover {
-        color: color($family);
+        color: color($family, darker);
         transition: color 200ms ease-in-out;
       }
 
       &:active {
-        color: color($family, darker);
+        color: color($family, darkest);
         transition: color 200ms ease-in-out;
       }
     }
