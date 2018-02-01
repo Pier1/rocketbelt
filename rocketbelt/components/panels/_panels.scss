@@ -1,0 +1,7 @@
+.panel {
+  background-color: color(gray, plus5);
+
+  &:not(.nopad) {
+    padding: 1rem;
+  }
+}
