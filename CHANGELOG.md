@@ -1,3 +1,13 @@
+<a name="1.13.10"></a>
+## [1.13.10](https://github.com/Pier1/rocketbelt/compare/1.13.9...v1.13.10) (2018-02-01)
+
+
+### Features
+
+* **Icons:** Update `play-circle` & `pause-circle` icons. ([aa0cce6](https://github.com/Pier1/rocketbelt/commit/aa0cce6))
+
+
+
 <a name="1.13.9"></a>
 ## [1.13.9](https://github.com/Pier1/rocketbelt/compare/1.13.8...v1.13.9) (2018-02-01)
 
