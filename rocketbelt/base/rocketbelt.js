@@ -91,6 +91,19 @@
     });
   };
 
+  // Polyfill NodeList.forEach in IE (all versions) and Safari (pre-10).
+  // See https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
+  ((NodeListProto) => {
+    if (window.NodeList && !NodeListProto.forEach) {
+      NodeListProto.foreach = (callback, thisArg) => {
+        const arg = thisArg || window;
+        for (let i = 0; i < this.length; i++) {
+          callback.call(arg, this[i], i, this);
+        }
+      };
+    }
+  })(window.NodeList.prototype);
+
   // Polyfill vendor-prefixed Element.matches and Element.closest in IE.
   // See https://github.com/jonathantneal/closest.
   ((ElementProto) => {
