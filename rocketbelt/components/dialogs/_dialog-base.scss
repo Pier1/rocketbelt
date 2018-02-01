@@ -1,3 +1,5 @@
+$dialog-close-height: 44px;
+
 *:not(.is-dialog-open) {
   .dialog {
     .dialog_content {
@@ -28,9 +30,14 @@
     }
   }
 
+  .dialog_body {
+    overflow: auto;
+  }
+
   .dialog_header,
   .dialog_buttons {
     display: flex;
+    flex-shrink: 0;
   }
 
   .dialog_header,
@@ -42,6 +49,11 @@
 
 .is-dialog-open {
   overflow: hidden;
+
+  // Resolves iOS bug
+  position: fixed;
+  left: 0;
+  right: 0;
 
   .dialog_blur {
     filter: blur(5px);
@@ -92,6 +104,9 @@
   border-radius: 2px;
   background-color: color(white);
   transform: translate3d(-50%, -50%, 0);
+  display: flex;
+  flex-flow: column;
+  overflow: hidden;
 
   .dialog_close_container {
     flex-grow: 0;
@@ -102,6 +117,7 @@
   @include media('>=md') {
     min-width: 75%;
   }
+
 
   @include media('>=lg') {
     min-width: 40%;
@@ -135,8 +151,8 @@
 .dialog_close {
   display: flex;
   padding: 0;
-  width: 44px;
-  height: 44px;
+  width: $dialog-close-height;
+  height: $dialog-close-height;
   border: none;
   background: transparent;
   cursor: pointer;

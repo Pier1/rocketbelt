@@ -99,7 +99,7 @@ mixin buildNav(navObject, rootHref)
         - var newRootHref = rootHref ? rootHref : '';
         - var shortName = item.name.replace('jade', '');
 
-        if shortName !== 'img'
+        if (shortName !== 'img' && shortName !== 'vendor')
           li.category(ref=shortName)
             if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
               a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '').replace('A11y', 'Accessibility')}

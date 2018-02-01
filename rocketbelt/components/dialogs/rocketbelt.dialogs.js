@@ -2,16 +2,17 @@
 $(function () {
   var options = initOptions();
   var focusedBeforeDialog;
+  var scrollBeforeDialog;
   // IE doesn't apply append var to the global scope.
-  $cache = {
+  var $cache = {
     appendTo: $(options.appendTo),
     blurElement: $(options.blurElement),
     rbDialog: $('.dialog').last(),
     rbDialogTitle: $('.dialog .dialog_title').last(),
     rbDialogBody: $('.dialog .dialog_body').last()
   };
-  element = null;
-  closers = $($cache.rbDialog).find('[data-rb-dialog-hide]');
+  var element = null;
+  var closers = $($cache.rbDialog).find('[data-rb-dialog-hide]');
 
   function initOptions() {
     return {
@@ -71,7 +72,7 @@ $(function () {
       value.addEventListener('click', close);
     });
     if (!$.contains($cache.rbDialogBody[0], element[0])) {
-      $cache.rbDialogBody[0].appendChild(element[0]);
+      $cache.rbDialogBody.append(element);
     }
     element.show();
   }
@@ -90,7 +91,7 @@ $(function () {
 
     // If we already have a button pane, remove it
 
-    if ($.isEmptyObject(buttons) || ($.isArray(buttons) && !buttons.length) || (options.classes.rbDialog.indexOf('dialog-max') !== -1 ) ) {
+    if ($.isEmptyObject(buttons) || ($.isArray(buttons) && !buttons.length) || (options.classes.rbDialog.indexOf('dialog-max') !== -1)) {
       return;
     }
 
@@ -183,6 +184,10 @@ $(function () {
   function open() {
     if ($cache.appendTo.hasClass('is-dialog-open')) return;
 
+    // Preserve scroll position
+    scrollBeforeDialog = $(window).scrollTop();
+    $cache.appendTo.css('top', '-' + scrollBeforeDialog + 'px');
+
     $cache.appendTo.addClass('is-dialog-open');
     $cache.blurElement.addClass('dialog_blur').attr('aria-hidden', true);
     $cache.rbDialog.removeAttr('aria-hidden');
@@ -201,6 +206,11 @@ $(function () {
     if ($cache.rbDialog[0].hasAttribute('aria-hidden')) return;
 
     $cache.appendTo.removeClass('is-dialog-open');
+
+    // Preserve scroll position
+    $cache.appendTo.css('top', '0');
+    $(window).scrollTop(scrollBeforeDialog);
+
     $cache.blurElement.removeClass('dialog_blur').removeAttr('aria-hidden');
     $cache.rbDialog.attr('aria-hidden', 'true');
     focusedBeforeDialog && focusedBeforeDialog.focus();
@@ -238,9 +248,14 @@ $(function () {
     var prop;
     var orig;
     var callback = options[type];
+
     data = data || {};
     event = $.Event(event);
-    event.type = (type === this.widgetEventPrefix ? type : this.widgetEventPrefix + type).toLowerCase();
+    if (this) {
+      event.type = (type === this.widgetEventPrefix ? type : this.widgetEventPrefix + type).toLowerCase();
+    } else {
+      event.type = type;
+    }
     // the original event may come from any element
     // so we need to reset the target on the new event
     event.target = element[0];

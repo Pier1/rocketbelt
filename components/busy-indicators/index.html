@@ -93,6 +93,10 @@
             <ul class="list-reset category-contents">
               <li class="category" ref="a11y"><a href="../../base/a11y">Accessibility</a>
               </li>
+              <li class="category" ref="animation">
+                <input class="category-toggle visually-hidden" id="Animation" type="checkbox" name="Animation"/>
+                <label class="category-label" for="Animation">Animation</label>
+              </li>
               <li class="category" ref="color"><a href="../../base/color">Color</a>
               </li>
               <li class="category" ref="feature-detection"><a href="../../base/feature-detection">Feature Detection</a>
@@ -326,7 +330,7 @@
                 <script>
                   $(document).on('click', '.is-busy_trigger', function () {
                     var $toBusy = $(this).closest('.form-group, .radio-group');
-                    console.dir($toBusy);
+                  
                     $toBusy.addClass('is-busy');
                     setTimeout(function () {
                       $toBusy.removeClass('is-busy');
@@ -347,6 +351,11 @@
                     }, 2850)
                   });
                 </script>
+                <h2>Page-Level</h2>
+                <div class="form-group is-busyable is-busyable-page" style="width: 100%;">
+                  <textarea class="is-busy_trigger" id="busy-large" placeholder="Blur the textarea to trigger a busy state." style="height: 50rem;"></textarea>
+                  <label for="busy-large">Message</label>
+                </div>
               </article>
             </div>
           </div>

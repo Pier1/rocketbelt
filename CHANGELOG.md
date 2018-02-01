@@ -1,3 +1,47 @@
+<a name="1.13.9"></a>
+## [1.13.9](https://github.com/Pier1/rocketbelt/compare/1.13.8...v1.13.9) (2018-02-01)
+
+
+### Features
+
+* **a11y:** Add P1 a11y helpers. ([5746a87](https://github.com/Pier1/rocketbelt/commit/5746a87))
+* **a11y:** Sufficiently increase contrast of alert text. ([10615b1](https://github.com/Pier1/rocketbelt/commit/10615b1))
+* **Animation:** Add animation helper functions. ([f40e59a](https://github.com/Pier1/rocketbelt/commit/f40e59a))
+* **Busy Indicators:** Page-level busy indicator! ([df9fa55](https://github.com/Pier1/rocketbelt/commit/df9fa55))
+* **Buttons:** Remove jQuery dependency from dropdown buttons ([18874f3](https://github.com/Pier1/rocketbelt/commit/18874f3))
+* **Cards:** Build thumbnail cards & examples. ([7595176](https://github.com/Pier1/rocketbelt/commit/7595176))
+* **Dialogs:** Contain dialog scrolling within dialog_body (Fix header and footer) ([1b6946b](https://github.com/Pier1/rocketbelt/commit/1b6946b))
+* **Dialogs:** Add dark/video dialogs to dialog variations :: IE fixes ([9cb0259](https://github.com/Pier1/rocketbelt/commit/9cb0259))
+* **Global:** Add rocketbelt.legacy.scss to facilitate support for older browsers. ([e01e10d](https://github.com/Pier1/rocketbelt/commit/e01e10d))
+* **Global:** Include hover intent vendor script. ([f5e96b1](https://github.com/Pier1/rocketbelt/commit/f5e96b1))
+* **Icons:** Add postcss-svg to allow background-image data URIs from sprite SVG. ([0f49e3b](https://github.com/Pier1/rocketbelt/commit/0f49e3b))
+* **Icons:** Replace background image SVG with calls to `icon-as-data-uri`. ([84a6a08](https://github.com/Pier1/rocketbelt/commit/84a6a08))
+* **Javascript:** Add `matches` & `closest` polyfills for IE. Linting fixes. ([77cddb5](https://github.com/Pier1/rocketbelt/commit/77cddb5))
+* **Javascript:** Add vanilla self-removing event handler. ([a9c3071](https://github.com/Pier1/rocketbelt/commit/a9c3071))
+* **Javascript:** Update JS build tasks to accept ES6. ([46994f8](https://github.com/Pier1/rocketbelt/commit/46994f8))
+* **Javascript:** Update scripts to ES6 syntax. ([a4ecdc1](https://github.com/Pier1/rocketbelt/commit/a4ecdc1))
+* **Lazyload:** Append alt to large image from small image. ([524a293](https://github.com/Pier1/rocketbelt/commit/524a293))
+
+### Bug Fixes
+* **Busy Indicators:** Prevent multiple busy indicators from being added to the same element. ([a693e19](https://github.com/Pier1/rocketbelt/commit/a693e19))
+* **Busy Indicators:** Prevent parent elements from incorrectly removing is-busy of a child. ([81e1a24](https://github.com/Pier1/rocketbelt/commit/81e1a24))
+* **Busy Indicators:** Fix background color of inverted busy indicators. ([abbef5c](https://github.com/Pier1/rocketbelt/commit/abbef5c))
+* **Busy Indicators:** Verify classList exists before checking for is-busy class. ([2e6ba3a](https://github.com/Pier1/rocketbelt/commit/2e6ba3a))
+* **Dialogs:** Preserve scroll position of page before dialog is opened. ([80d2590](https://github.com/Pier1/rocketbelt/commit/80d2590))
+* **Dialogs:** Update dialog to use `append` instead of `appendChild` so script tags in html get executed. ([a99f2de](https://github.com/Pier1/rocketbelt/commit/a99f2de))
+* **Dialogs:** Use visually hidden for dark dialogs and fix breakage. ([87835e5](https://github.com/Pier1/rocketbelt/commit/87835e5))
+* **Forms:** Fix unintentional 100% width for restyled radio buttons. ([5a547ab](https://github.com/Pier1/rocketbelt/commit/5a547ab))
+* **Forms:** Style `outline` for the labels of radio buttons/checkboxes. ([31ef356](https://github.com/Pier1/rocketbelt/commit/31ef356)), closes [#166](https://github.com/Pier1/rocketbelt/issues/166)
+* **Global:** Add rocketbelt.legacy.js to facilitate support for older browsers. ([bcc6a00](https://github.com/Pier1/rocketbelt/commit/bcc6a00))
+* **Icons:** Update icons via new build process. ([b59a433](https://github.com/Pier1/rocketbelt/commit/b59a433))
+
+### Reverts
+
+* **Dialogs:** Revert dialog positioning to translate3d. ([22ae343](https://github.com/Pier1/rocketbelt/commit/22ae343))
+* **Buttons:** Exclude dynamic buttons from ES6ification. ([e9ea09d](https://github.com/Pier1/rocketbelt/commit/e9ea09d))
+* **Buttons:** Revert ES6ification of dynamic button JS. ([9e0b292](https://github.com/Pier1/rocketbelt/commit/9e0b292))
+
+
 <a name="1.13.8"></a>
 ## [1.13.8](https://github.com/Pier1/rocketbelt/compare/1.13.7...v1.13.8) (2017-12-19)
 

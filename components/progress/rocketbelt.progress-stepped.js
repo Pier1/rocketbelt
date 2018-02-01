@@ -1,49 +1,71 @@
-(function rocketbeltProgressStepped(rb, document) {
-  var aria = rb.aria;
+'use strict';
+((rb, document) => {
+  const aria = rb.aria;
 
   function onAttrMutation(mutations) {
-    var mutationsLen = mutations.length;
+    const mutationsLen = mutations.length;
 
-    for (var i = 0; i < mutationsLen; i++) {
-      var mutation = mutations[i];
-      var attributes = mutation.target.attributes;
+    for (let i = 0; i < mutationsLen; i++) {
+      const mutation = mutations[i];
+      const attributes = mutation.target.attributes;
 
-      var hasAriaCurrent = attributes.getNamedItem(aria.current) ? true : false;
+      const hasAriaCurrent = attributes.getNamedItem(aria.current) ? true : false;
       // If target's attributes include aria-current
       if (hasAriaCurrent) {
-        // Decorate current & subsequent links with aria-disabled
-        var linksToDisable = mutation.target.parentNode.querySelectorAll('[' + aria.current + '] a, [' + aria.current + '] ~ li a');
-        var linksLen = linksToDisable.length;
+        // Add visually-hidden descriptor
+        const span = document.createElement('span');
+        span.textContent = 'Current Step: ';
+        span.setAttribute('class', 'visually-hidden');
+        mutation.target.insertBefore(span, mutation.target.querySelector('a'));
 
-        for (var j = 0; j < linksLen; j++) {
-          var link = linksToDisable[j];
+        // Decorate current & subsequent links with aria-disabled
+        const linksToDisable =
+          mutation
+            .target
+            .parentNode
+            .querySelectorAll(`[${aria.current}] a, [${aria.current}] ~ li a`);
+        const linksLen = linksToDisable.length;
+
+        for (let j = 0; j < linksLen; j++) {
+          const link = linksToDisable[j];
           link.setAttribute(aria.disabled, true);
         }
       } else {
       // If target doesn't have aria-current, remove aria-disabled from child link
-        var linkToEnable = mutation.target.querySelector('a');
+        const linkToEnable = mutation.target.querySelector('a');
         linkToEnable.removeAttribute(aria.disabled);
+        const hiddenText = linkToEnable.parentNode.querySelector('.visually-hidden');
+
+        if (hiddenText) {
+          hiddenText.textContent = 'Completed: ';
+        }
       }
     }
   }
 
   function decorateProgressStepped() {
-    var progressIndicators = document.querySelectorAll('.progress-stepped');
-    var progressIndicatorsLen = progressIndicators.length;
+    const progressIndicators = document.querySelectorAll('.progress-stepped');
+    const progressIndicatorsLen = progressIndicators.length;
 
-    for (var i = 0; i < progressIndicatorsLen; i++) {
-      var progressIndicator = progressIndicators[i];
+    for (let i = 0; i < progressIndicatorsLen; i++) {
+      const progressIndicator = progressIndicators[i];
 
       if (!progressIndicator.hasAttribute(aria.label)) {
         progressIndicator.setAttribute(aria.label, 'Progress Indicator');
       }
 
       progressIndicator.setAttribute('role', 'nav');
+      progressIndicator.setAttribute('tabindex', '0');
 
-      var observer = new MutationObserver(function onmutate(mutations) { onAttrMutation(mutations); });
-      observer.observe(progressIndicator, { subtree: true, attributes: true, attributeOldValue: true, attributeFilter: [aria.current] });
+      const observer = new MutationObserver((mutations) => { onAttrMutation(mutations); });
+      observer.observe(progressIndicator, {
+        subtree: true,
+        attributes: true,
+        attributeOldValue: true,
+        attributeFilter: [aria.current]
+      });
 
-      var current = progressIndicator.querySelector('[' + aria.current + ']');
+      let current = progressIndicator.querySelector(`[${aria.current}]`);
       if (!current) {
         current = progressIndicator.querySelector('li');
         current.setAttribute(aria.current, 'page');
@@ -51,11 +73,11 @@
 
       current.querySelector('a').setAttribute(aria.disabled, 'true');
 
-      var sibs = progressIndicator.querySelectorAll('[' + aria.current + '] ~ li a');
-      var sibsLen = sibs.length;
+      const sibs = progressIndicator.querySelectorAll(`[${aria.current}] ~ li a`);
+      const sibsLen = sibs.length;
 
-      for (var j = 0; j < sibsLen; j++) {
-        var sib = sibs[j];
+      for (let j = 0; j < sibsLen; j++) {
+        const sib = sibs[j];
         sib.setAttribute(aria.disabled, 'true');
       }
     }

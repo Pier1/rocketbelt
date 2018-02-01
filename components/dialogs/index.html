@@ -93,6 +93,10 @@
             <ul class="list-reset category-contents">
               <li class="category" ref="a11y"><a href="../../base/a11y">Accessibility</a>
               </li>
+              <li class="category" ref="animation">
+                <input class="category-toggle visually-hidden" id="Animation" type="checkbox" name="Animation"/>
+                <label class="category-label" for="Animation">Animation</label>
+              </li>
               <li class="category" ref="color"><a href="../../base/color">Color</a>
               </li>
               <li class="category" ref="feature-detection"><a href="../../base/feature-detection">Feature Detection</a>
@@ -415,6 +419,44 @@
                     </div>
                   </div>
                 </div>
+                <h3>Dark Dialogs</h3>
+                <div class="grid-fluid">
+                  <div class="row">
+                    <div class="col xs-8">
+                      <div>
+                        <button class="button button-secondary button-md" onclick="$('#dark-dialog').rbDialog({ title: 'Dark Dialog', classes: { 'rbDialog': 'dialog-dark' } })">Trigger Dialog</button>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col xs">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <div id="dark-dialog" style="display:none;" aria-hidden="true">
+                            <div style="position:relative;padding-top:56.25%;">
+                              <iframe src="https://player.vimeo.com/video/208738177?color=ffffff&amp;title=0&amp;byline=0&amp;portrait=0" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen style="display:block;position:absolute;top:0;left:0;width:100%;height:100%;"></iframe>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1eIEE5"/>
+                          <label class="expander_label" for="rb-Z1eIEE5" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <button class="copy-code" data-clipboard-target="#rb-Z2fLNQr">Copy</button>
+                              <pre><code class="language-html" id="rb-Z2fLNQr">
+                                  &lt;div id=&quot;dark-dialog&quot; style=&quot;display:none;&quot; aria-hidden=&quot;true&quot;&gt;
+                                    &lt;div style=&quot;position:relative;padding-top:56.25%;&quot;&gt;
+                                      &lt;iframe src=&quot;https://player.vimeo.com/video/208738177?color=ffffff&amp;amp;title=0&amp;amp;byline=0&amp;amp;portrait=0&quot; frameborder=&quot;0&quot; webkitallowfullscreen mozallowfullscreen allowfullscreen style=&quot;display:block;position:absolute;top:0;left:0;width:100%;height:100%;&quot;&gt;&lt;/iframe&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
                 <h3>Max Dialog</h3>
                 <div class="grid-fluid">
                   <div class="row">
@@ -545,12 +587,12 @@
                     <script src="./rocketbelt.dialogs.min.js"></script>
                   </div>
                   <div class="expander">
-                    <input class="expander_checkbox" type="checkbox" id="rb-Z1vqJqx" checked="checked"/>
-                    <label class="expander_label" for="rb-Z1vqJqx" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                    <input class="expander_checkbox" type="checkbox" id="rb-Z1epeMN" checked="checked"/>
+                    <label class="expander_label" for="rb-Z1epeMN" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                     <div class="expander_content">
                       <div class="example-code">
-                        <button class="copy-code" data-clipboard-target="#rb-Z4EKQn">Copy</button>
-                        <pre><code class="language-html" id="rb-Z4EKQn">
+                        <button class="copy-code" data-clipboard-target="#rb-Z2jclit">Copy</button>
+                        <pre><code class="language-html" id="rb-Z2jclit">
                             &lt;script src=&quot;./rocketbelt.dialogs.min.js&quot;&gt;&lt;/script&gt;</code></pre>
                       </div>
                     </div>

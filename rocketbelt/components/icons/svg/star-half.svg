@@ -5,7 +5,7 @@
     <desc>Created with sketchtool.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="star-half" fill-rule="nonzero" fill="#000000">
+        <g id="star-half" fill="#000000" fill-rule="nonzero">
             <polygon id="Shape" points="88.8746667 86.9866667 0 99.264 64.6826667 161.429333 48.896 249.738667 128 207.424 128 6.26133333"></polygon>
         </g>
     </g>

@@ -1,18 +1,19 @@
-(function rocketbeltForms(rb, document) {
-  var aria = rb.aria;
-  var DESCRIBED_BY_ERROR_ID_ATTR = 'data-rb-describedbyerrorid';
+'use strict';
+((rb, document) => {
+  const aria = rb.aria;
+  const DESCRIBED_BY_ERROR_ID_ATTR = 'data-rb-describedbyerrorid';
 
   function onClassMutation(mutations) {
-    var mutationsLen = mutations.length;
+    const mutationsLen = mutations.length;
 
-    for (var k = 0; k < mutationsLen; k++) {
-      var mutation = mutations[k];
-      var el = mutation.target;
-      var message = el.parentNode.querySelector('.validation-message');
+    for (let k = 0; k < mutationsLen; k++) {
+      const mutation = mutations[k];
+      const el = mutation.target;
+      const message = el.parentNode.querySelector('.validation-message');
 
-      var describedByErrorId = '';
-      var describedByIds = [];
-      var i = -1;
+      let describedByErrorId = '';
+      let describedByIds = [];
+      let i = -1;
 
       if (mutation.oldValue !== 'invalid' && mutation.target.classList.contains('invalid')) {
         // If "invalid" was added, do the decoratin'
@@ -55,30 +56,30 @@
   }
 
   function decorateInputs() {
-    var formEls = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea, .form-group fieldset');
-    var formElsLen = formEls.length;
+    const formEls = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea, .form-group fieldset');
+    const formElsLen = formEls.length;
 
-    for (var i = 0; i < formElsLen; i++) {
-      var formEl = formEls[i];
+    for (let i = 0; i < formElsLen; i++) {
+      const formEl = formEls[i];
 
       // Set an observer to listen for .invalid.
-      var observer = new MutationObserver(function (mutations) { onClassMutation(mutations); });
+      const observer = new MutationObserver(mutations => { onClassMutation(mutations); });
       observer.observe(formEl, { subtree: false, attributes: true, attributeOldValue: true, attributeFilter: ['class'] });
 
-      var messages = formEl.parentNode.querySelectorAll('.validation-message, .helper-text');
-      var msgLen = messages.length;
+      const messages = formEl.parentNode.querySelectorAll('.validation-message, .helper-text');
+      const msgLen = messages.length;
 
       if (msgLen > 0) {
-        var describedByIds = '';
+        let describedByIds = '';
 
         if (formEl.hasAttribute(aria.describedby)) {
-          describedByIds = formEl.getAttribute(aria.describedby) + ' ';
+          describedByIds = `${formEl.getAttribute(aria.describedby)} `;
         }
 
-        for (var j = 0; j < msgLen; j++) {
-          var thisMsg = messages[j];
-          var id = thisMsg.id ? thisMsg.id : 'rb-a11y_' + rb.getShortId();
-          describedByIds += id + ' ';
+        for (let j = 0; j < msgLen; j++) {
+          const thisMsg = messages[j];
+          const id = thisMsg.id ? thisMsg.id : `rb-a11y_${rb.getShortId()}`;
+          describedByIds += `${id} `;
 
           if (thisMsg.classList.contains('validation-message')) {
             formEl.setAttribute(DESCRIBED_BY_ERROR_ID_ATTR, id);

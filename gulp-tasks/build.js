@@ -1,8 +1,7 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config) {
-    return function (done) {
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config) => {
+    return (done) => {
       return plugins.runSequence('uglify', 'link', 'feature-detection', ['styles', 'views', 'copy-tools'], 'sitemap', done);
     };
   };

@@ -1,14 +1,13 @@
-(function () {
-  'use strict';
-
-  $(document).ready(function () {
+'use strict';
+(() => {
+  $(document).ready(() => {
     $('body').on('click', '.message-dismissable .message-dismissable_close',
-      function () {
-        var $message = $(this).parent();
+      (e) => {
+        const $message = $(e.target).parent();
         $message.toggleClass('slideOutUp');
         $message.one('webkitAnimationEnd oanimationend oAnimationEnd msAnimationEnd animationend',
-          function(e) {
-            $message.slideUp('300', function () { $message.remove(); });
+          () => {
+            $message.slideUp('300', () => { $message.remove(); });
           }
         );
       }

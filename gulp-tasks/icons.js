@@ -1,10 +1,9 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config, taskParams) {
-    return function () {
-      var spriteName = 'rocketbelt.icons';
-      var enterprise = false;
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config, taskParams) => {
+    return () => {
+      let spriteName = 'rocketbelt.icons';
+      let enterprise = false;
 
       if (taskParams && taskParams.enterprise === true) {
         spriteName += '.enterprise.svg';
@@ -13,11 +12,11 @@
         spriteName += '.svg';
       }
 
-      var options = {
+      const options = {
         shape: {
           id: {
-            generator: function (file) {
-              return 'rb-icon-' + file.replace(/\.svg/, '');
+            generator: (file) => {
+              return `rb-icon-${file.replace(/\.svg/, '')}`;
             }
           },
           meta: './rocketbelt/components/icons/rocketbelt.icons.meta.yaml',
@@ -35,14 +34,14 @@
           inline: true,
           symbol: {
             dest: './sprite',
-            sprite: '../../' + spriteName,
+            sprite: `../../${spriteName}`,
             prefix: '.'
           }
         }
       };
 
-      var iconsPath = config.patternsPath + '/components/icons';
-      var sketchFiles = enterprise ? '/**/*.sketch' : '/**/rocketbelt.icons.sketch';
+      const iconsPath = `${config.patternsPath}/components/icons`;
+      const sketchFiles = enterprise ? '/**/*.sketch' : '/**/rocketbelt.icons.sketch';
 
       return gulp.src(iconsPath + sketchFiles)
         .pipe(plugins.sketch({
@@ -50,8 +49,25 @@
           formats: 'svg'
         }))
         .pipe(plugins.removeHtmlComments())
-        .pipe(gulp.dest(iconsPath + '/svg'))
+        .pipe(gulp.dest(`${iconsPath}/svg`))
         .pipe(plugins.svgSprite(options))
+        .pipe(plugins.cheerio({
+          xmlMode: true,
+          recognizeSelfClosing: true,
+          // lowerCaseAttributeNames: false,
+          run: ($) => {
+            $('symbol[id^=rb-icon-]').each(function elHandler() {
+              const $symbol = $(this);
+              $symbol.css('fill', 'var(--color, inherit)');
+
+              // The following lines are necessary because cheerio lowercases attribute names,
+              // despite the value of the `lowerCaseAttributeNames` option above…
+              // and `viewBox` is case-sensitive. 😿
+              $symbol.attr('viewBox', $symbol.attr('viewbox'));
+              $symbol.removeAttr('viewbox');
+            });
+          }
+        }))
         .pipe(plugins.htmltidy(
           {
             inputXml: true,
@@ -61,7 +77,7 @@
             wrapAttributes: false
           }
         ))
-        .pipe(gulp.dest(iconsPath + '/svg'))
+        .pipe(gulp.dest(`${iconsPath}/svg`))
       ;
     };
   };

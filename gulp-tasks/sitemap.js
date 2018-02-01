@@ -1,11 +1,10 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config) {
-    return function () {
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config) => {
+    return () => {
       return gulp.src(config.buildPath + '/**/*.html', {
-          read: false
-        })
+        read: false
+      })
         .pipe(plugins.sitemap({
           siteUrl: 'http://rocketbelt.design/'
         }))

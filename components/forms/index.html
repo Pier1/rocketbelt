@@ -93,6 +93,10 @@
             <ul class="list-reset category-contents">
               <li class="category" ref="a11y"><a href="../../base/a11y">Accessibility</a>
               </li>
+              <li class="category" ref="animation">
+                <input class="category-toggle visually-hidden" id="Animation" type="checkbox" name="Animation"/>
+                <label class="category-label" for="Animation">Animation</label>
+              </li>
               <li class="category" ref="color"><a href="../../base/color">Color</a>
               </li>
               <li class="category" ref="feature-detection"><a href="../../base/feature-detection">Feature Detection</a>
@@ -414,11 +418,11 @@
                       <form>
                         <div class="form-group">
                           <input id="required-email" type="email" required value="help@pier1.com">
-                          <label for="required-email">Email Address</label><small class="validation-message">Please enter a valid email address.</small>
+                          <label for="required-email">Email Address</label><small class="helper-text">Please enter a valid email address.</small>
                         </div>
                         <div class="form-group">
                           <input id="required-mobile" value="(555) 555-1212">
-                          <label for="required-mobile">Mobile Phone</label><small class="validation-message">Please enter a valid Mobile Phone.</small>
+                          <label for="required-mobile">Mobile Phone</label><small class="helper-text">Please enter a valid Mobile Phone.</small>
                         </div>
                       </form>
                     </div>
@@ -428,20 +432,20 @@
                       <div class="exampleWithCode">
                         <div class="example"></div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-2drYD5"/>
-                          <label class="expander_label" for="rb-2drYD5" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1gY78Q"/>
+                          <label class="expander_label" for="rb-Z1gY78Q" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-1Xfhl0">Copy</button>
-                              <pre><code class="language-html" id="rb-1Xfhl0">
+                              <button class="copy-code" data-clipboard-target="#rb-Z1d4FXR">Copy</button>
+                              <pre><code class="language-html" id="rb-Z1d4FXR">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;required-email&quot; type=&quot;email&quot; required value=&quot;help@pier1.com&quot;&gt;
-                                      &lt;label for=&quot;required-email&quot;&gt;Email Address&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid email address.&lt;/small&gt;
+                                      &lt;label for=&quot;required-email&quot;&gt;Email Address&lt;/label&gt;&lt;small class=&quot;helper-text&quot;&gt;Please enter a valid email address.&lt;/small&gt;
                                     &lt;/div&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input id=&quot;required-mobile&quot; value=&quot;(555) 555-1212&quot;&gt;
-                                      &lt;label for=&quot;required-mobile&quot;&gt;Mobile Phone&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Please enter a valid Mobile Phone.&lt;/small&gt;
+                                      &lt;label for=&quot;required-mobile&quot;&gt;Mobile Phone&lt;/label&gt;&lt;small class=&quot;helper-text&quot;&gt;Please enter a valid Mobile Phone.&lt;/small&gt;
                                     &lt;/div&gt;
                                   &lt;/form&gt;</code></pre>
                             </div>
@@ -788,7 +792,7 @@
                       <form>
                         <div class="form-group">
                           <input class="read-only" id="read-only-email" type="email" value="info@pier1.com" disabled>
-                          <label for="invalid-email">Email Address</label><small class="validation-message">Email address has been autofilled.</small>
+                          <label for="invalid-email">Email Address</label><small class="helper-text">Email address has been autofilled.</small>
                         </div>
                         <div class="form-group">
                           <input class="read-only" id="invalid-phone" type="tel" value="(not) a-phone-number" disabled>
@@ -823,16 +827,16 @@
                       <div class="exampleWithCode">
                         <div class="example"></div>
                         <div class="expander">
-                          <input class="expander_checkbox" type="checkbox" id="rb-Z1skR2F"/>
-                          <label class="expander_label" for="rb-Z1skR2F" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1eTXcs"/>
+                          <label class="expander_label" for="rb-Z1eTXcs" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                           <div class="expander_content">
                             <div class="example-code">
-                              <button class="copy-code" data-clipboard-target="#rb-Zc3LoC">Copy</button>
-                              <pre><code class="language-html" id="rb-Zc3LoC">
+                              <button class="copy-code" data-clipboard-target="#rb-Z2d4K4u">Copy</button>
+                              <pre><code class="language-html" id="rb-Z2d4K4u">
                                   &lt;form&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input class=&quot;read-only&quot; id=&quot;read-only-email&quot; type=&quot;email&quot; value=&quot;info@pier1.com&quot; disabled&gt;
-                                      &lt;label for=&quot;invalid-email&quot;&gt;Email Address&lt;/label&gt;&lt;small class=&quot;validation-message&quot;&gt;Email address has been autofilled.&lt;/small&gt;
+                                      &lt;label for=&quot;invalid-email&quot;&gt;Email Address&lt;/label&gt;&lt;small class=&quot;helper-text&quot;&gt;Email address has been autofilled.&lt;/small&gt;
                                     &lt;/div&gt;
                                     &lt;div class=&quot;form-group&quot;&gt;
                                       &lt;input class=&quot;read-only&quot; id=&quot;invalid-phone&quot; type=&quot;tel&quot; value=&quot;(not) a-phone-number&quot; disabled&gt;
