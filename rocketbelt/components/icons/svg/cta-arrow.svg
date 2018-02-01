@@ -5,7 +5,7 @@
     <desc>Created with sketchtool.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="cta-arrow" fill-rule="nonzero" fill="#000000">
+        <g id="cta-arrow" fill="#000000" fill-rule="nonzero">
             <polygon id="Shape" points="176.514526 128.105129 109.827073 224 79 224 133.672358 128.105129 79 32 109.827073 32"></polygon>
         </g>
     </g>

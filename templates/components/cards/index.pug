@@ -30,12 +30,10 @@ block content
     +exampleWithCode
       include _cards-z-depth.pug
 
-
     h2 Hover Cards
     | Combine #[span.code z-depth] classes with #[span.code hover] for engaging feedback.
     +exampleWithCode
       include _cards-hover.pug
-
 
     h2 Image Cards
     .grid-fluid
@@ -46,6 +44,27 @@ block content
         .col.xs
           +exampleCodeOnly
             include _cards-image.pug
+      .row
+        .col.xs.lg-6
+          include _cards-image-thumbnail-grid.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _cards-image-thumbnail-grid.pug
+      .row
+        .col.xs
+          include _cards-image-thumbnail-width.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _cards-image-thumbnail-width.pug
+      .row
+        .col.xs
+          include _cards-image-thumbnail-image-width.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _cards-image-thumbnail-image-width.pug
 
     h2 "Full Bleed" Cards
     .grid-fluid
@@ -59,8 +78,3 @@ block content
 
     script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js')
     script(src='../images/rocketbelt.images-lazyload.js')
-
-    h2 Thumbnail Cards
-    h2 Expandable Thumbnail Cards
-    h2 Reveal
-    h2 Heights

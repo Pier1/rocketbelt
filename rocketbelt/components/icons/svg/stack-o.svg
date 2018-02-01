@@ -5,7 +5,7 @@
     <desc>Created with sketchtool.</desc>
     <defs></defs>
     <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="stack-o" fill-rule="nonzero" fill="#000000">
+        <g id="stack-o" fill="#000000" fill-rule="nonzero">
             <path d="M221.333333,72 L221.333333,221.333333 L72,221.333333 L72,72 L221.333333,72 Z M240,53.3333333 L53.3333333,53.3333333 L53.3333333,240 L240,240 L240,53.3333333 Z M16,16 L16,202.666667 L34.6666667,202.666667 L34.6666667,34.6666667 L202.666667,34.6666667 L202.666667,16 L16,16 Z" id="Shape"></path>
         </g>
     </g>

@@ -1,17 +1,18 @@
-(function rocketbeltTooltips(rb, document) {
+'use strict';
+((rb, document) => {
   function decorateTooltipTriggers() {
-    var triggers = document.querySelectorAll('.tooltip_trigger');
-    var triggersLen = triggers.length;
+    const triggers = document.querySelectorAll('.tooltip_trigger');
+    const triggersLen = triggers.length;
 
-    for (var i = 0; i < triggersLen; i++) {
-      var trigger = triggers[i];
-      var ttContent = trigger.parentNode.querySelector('.tooltip-content');
+    for (let i = 0; i < triggersLen; i++) {
+      const trigger = triggers[i];
+      const ttContent = trigger.parentNode.querySelector('.tooltip-content');
 
       if (ttContent) {
-        var id = ttContent.id;
+        let id = ttContent.id;
 
         if (!id) {
-          id = 'rb-a11y_' + rb.getShortId();
+          id = `rb-a11y_${rb.getShortId()}`;
           ttContent.id = id;
         }
 
