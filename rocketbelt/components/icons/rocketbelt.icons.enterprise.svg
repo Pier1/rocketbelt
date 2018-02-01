@@ -417,8 +417,8 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <desc id="bvrb-icon-pause-circle-desc">A pause symbol in a
     circle</desc>
     <title id="bvrb-icon-pause-circle-title">Pause</title>
-    <path d="M142.875 73.75h36.75v107.8h-36.75V73.75zm-66.5 0h36.75v107.8h-36.75V73.75zM128 16C66.148 16 16 66.148 16 128s50.148 112 112 112 112-50.148 112-112S189.852 16 128 16z"
-    fill-rule="evenodd" />
+    <path d="M128 34.667c51.464 0 93.333 41.869 93.333 93.333S179.464 221.333 128 221.333 34.667 179.464 34.667 128 76.536 34.667 128 34.667zM128 16C66.148 16 16 66.148 16 128s50.148 112 112 112 112-50.148 112-112S189.852 16 128 16zM87 83h30.79v90H87V83zm49.737 0h30.79v90h-30.79V83z"
+    fill-rule="nonzero" />
   </symbol>
   <symbol id="rb-icon-phone" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
@@ -457,7 +457,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <desc id="carb-icon-play-circle-desc">A triangular play symbol
     inside a circle</desc>
     <title id="carb-icon-play-circle-title">Play</title>
-    <path d="M128 16C66.148 16 16 66.148 16 128s50.148 112 112 112 112-50.148 112-112S189.852 16 128 16zm-28 158.667V81.333l84 48.03-84 45.304z"
+    <path d="M128 34.667c51.464 0 93.333 41.869 93.333 93.333S179.464 221.333 128 221.333 34.667 179.464 34.667 128 76.536 34.667 128 34.667zM128 16C66.148 16 16 66.148 16 128s50.148 112 112 112 112-50.148 112-112S189.852 16 128 16zm-28 158.667V81.333l84 48.03-84 45.304z"
     fill-rule="nonzero" />
   </symbol>
   <symbol aria-labelledby="cbrb-icon-plus-desc cbrb-icon-plus-title"
