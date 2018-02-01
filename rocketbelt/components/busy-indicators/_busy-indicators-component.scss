@@ -46,6 +46,8 @@
 
   &.is-busy-inverted {
     .is-busy_overlay {
+      background-color: transparent;
+      
       .dot {
         $c: rgba(color(white), 0.9);
         background-color: $c;

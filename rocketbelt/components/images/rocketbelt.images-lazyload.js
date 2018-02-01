@@ -4,7 +4,7 @@
   $(document).ready(function () {
     $('.lazyload-wrapper').each(function () {
       var wrapper = this,
-            small = wrapper.querySelector('.lazyload-small');
+        small = wrapper.querySelector('.lazyload-small');
 
       var img = new Image();
       img.src = small.src;
@@ -22,9 +22,11 @@
         })
         .on('enter', function () {
           var wrapper = this.triggerElement().parentElement;
+          var alt = this.triggerElement().getAttribute('alt');
           var imgLarge = new Image();
 
           imgLarge.src = wrapper.dataset.srcLg;
+          imgLarge.alt = alt;
           imgLarge.onload = function () {
             imgLarge.classList.add('loaded');
           };

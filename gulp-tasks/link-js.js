@@ -1,8 +1,7 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config) {
-    return function () {
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config) => {
+    return () => {
       return plugins.vinylFs.src([config.patternsPath + '/**/*.js',
                                   config.patternsPath + '/**/*.json',
                                   '!' + config.patternsPath + '/**/rocketbelt.slipsum-cache.json'])

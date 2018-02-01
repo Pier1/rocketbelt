@@ -1,10 +1,9 @@
-(function () {
-  'use strict';
-
-  module.exports = function (gulp, plugins, config) {
-    return function () {
-      var exec = require('child_process').exec;
-      return exec('find ' + config.templatesPath +  ' -type l -delete', function (err, stdout, stderr) { });
+'use strict';
+(() => {
+  module.exports = (gulp, plugins, config) => {
+    return () => {
+      const exec = require('child_process').exec;
+      return exec('find ' + config.templatesPath +  ' -type l -delete', (err, stdout, stderr) => { });
     };
   };
 })();
