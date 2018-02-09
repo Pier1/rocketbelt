@@ -10,7 +10,8 @@
     "node": true                     // Node.js global variables and Node.js-specific rules
     },
     "globals": {
-      "$": true
+      "$": true,
+      "jQuery": true
     },
   "plugins": [
     # "dollar-sign"
