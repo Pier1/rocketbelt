@@ -68,6 +68,7 @@
     "recursive-readdir": "^2.1.0",
     "run-sequence": "^1.2.2",
     "shorthash": "0.0.2",
+    "slug": "^0.9.1",
     "vinyl-fs": "^2.4.4"
   },
   "dependencies": {
