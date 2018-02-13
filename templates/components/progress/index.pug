@@ -13,11 +13,11 @@ block content
           button.button.button-secondary.progress_demo Advance the Indicator
           script.
             $('.progress_demo').click(function () {
-              var $current = $('.progress-stepped li[aria-current]');
-              var $next = $current.next().length > 0 ? $current.next() : $('.progress-stepped li').first();
+              var $current = $('.progress-stepped a[aria-current]');
+              var $next = $current.parent().next().length > 0 ? $current.parent().next() : $('.progress-stepped a[aria-current]').first();
 
               if ($next) {
-                $next.attr('aria-current', 'page');
+                $next.attr('aria-current', 'step');
                 $current.removeAttr('aria-current');
               }
 
@@ -27,8 +27,8 @@ block content
           +exampleWithCode
             nav.progress-stepped(aria-label='Add a descriptive name appropriate to your context!')
               ol.progress_steps.list-reset
-                li(aria-current='page')
-                  a(href='#') Basket
+                li
+                  a(href='#', aria-current='step') Basket
                 li
                   a(href='#') Shipping
                 li
