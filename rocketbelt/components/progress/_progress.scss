@@ -47,14 +47,12 @@
     }
   }
 
-  [aria-current='page'] {
-    a {
-      color: color(black);
-      text-decoration: none;
-      font-weight: font-weight(semibold);
-      cursor: default;
-      pointer-events: none;
-    }
+  [aria-current='step'] {
+    color: color(black);
+    text-decoration: none;
+    font-weight: font-weight(semibold);
+    cursor: default;
+    pointer-events: none;
 
     & ~ li {
       a {

@@ -32,7 +32,7 @@
         }
       } else {
       // If target doesn't have aria-current, remove aria-disabled from child link
-        const linkToEnable = mutation.target.querySelector('a');
+        const linkToEnable = mutation.target;
         linkToEnable.removeAttribute(aria.disabled);
         const hiddenText = linkToEnable.parentNode.querySelector('.visually-hidden');
 
@@ -67,13 +67,14 @@
 
       let current = progressIndicator.querySelector(`[${aria.current}]`);
       if (!current) {
-        current = progressIndicator.querySelector('li');
-        current.setAttribute(aria.current, 'page');
+        current = progressIndicator.querySelector('li a');
+        current.setAttribute(aria.current, 'step');
       }
 
-      current.querySelector('a').setAttribute(aria.disabled, 'true');
+      current.setAttribute(aria.disabled, 'true');
 
-      const sibs = progressIndicator.querySelectorAll(`[${aria.current}] ~ li a`);
+      const parent = current.parentNode;
+      const sibs = parent.querySelectorAll(`[${aria.current}] ~ li a`);
       const sibsLen = sibs.length;
 
       for (let j = 0; j < sibsLen; j++) {
