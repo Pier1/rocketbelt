@@ -5,14 +5,14 @@
  * @author Lea Verou
  */
 
-$color-accent-lighter: #9f6ef6;
-$color-gray: #827b7b;
-$color-gray-darkest: #0d0c0c;
+$color-accent-lighter: #5b14d9;
+$color-gray: #635e5e;
+$color-gray-darkest: #635e5e;
 $color-gray-lightest: #f9f8f8;
 $color-gray-plus2: #4e4a4a;
 $color-secondary-lightest: #cffcf6;
-$color-secondary-darker: #0cbea5;
-$color-primary: #0f9dee;
+$color-secondary-darker: #0a6d5f;
+$color-primary: #0a689d;
 $color-warning: #ffc300;
 $color-error-lighter: #e7525f;
 
@@ -59,17 +59,17 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
+	// padding: 1em;
+	// margin: .5em 0;
 	overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	// background: #f5f2f0;
-	background: $color-gray-lightest;
-	border: 1px solid $color-gray-plus2;
-	border-radius: 2px;
+	// background: $color-gray-lightest;
+	// border: 1px solid $color-gray-plus2;
+	// border-radius: 2px;
 }
 
 /* Inline code */
