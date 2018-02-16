@@ -65,7 +65,7 @@
     }
   };
 
-  // Adds "more correct" CustomEvent support to IE >= 9
+  // Polyfill for "more correct" CustomEvent support to IE >= 9
   // See https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
   (() => {
     if (typeof window.CustomEvent === 'function') return false;
