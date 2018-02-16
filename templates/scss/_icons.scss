@@ -1,4 +1,31 @@
 .examples-icons {
+  .icon-container {
+    @include z-depth(0);
+
+    margin: 0.4rem;
+    padding-bottom: 0.4rem;
+    max-width: 160px;
+    width: 160px;
+    transition: box-shadow 100ms ease-out;
+    color: color(gray, minus2);
+
+    &:hover {
+      @include z-depth(2);
+      transition: box-shadow 100ms ease-out;
+    }
+
+    .icon {
+      margin: 0.4rem 0;
+      height: 72px;
+    }
+
+    .icon-id {
+      margin-top: 0.5rem;
+      color: color(black);
+      font-family: font-family(monospace);
+    }
+  }
+
   .icon-meaningful,
   .icon-link-no-text {
     .icon {
