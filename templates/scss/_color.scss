@@ -9,6 +9,11 @@
     .color-name {
       font-weight: font-weight(normal);
     }
+
+    .color-map {
+      white-space: nowrap;
+      font-size: font-size(-1);
+    }
   }
 
   .swatch {
