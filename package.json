@@ -61,6 +61,7 @@
     "lodash": "^4.17.2",
     "merge-stream": "^1.0.0",
     "moment-timezone": "^0.5.9",
+    "mutationobserver-shim": "^0.3.2",
     "phantomcss": "^1.1.4",
     "phantomjs-prebuilt": "^2.1.13",
     "postcss-svg": "^2.4.0",
