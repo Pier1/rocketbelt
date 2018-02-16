@@ -29,13 +29,13 @@ block content
         include _icon-link-with-indicator.pug
 
     .grid-fluid
-      .row.xs-center
+      .row
         each icon in icons
           - icon = icon.replace(/\.svg/, '');
-          .col.xs-2.sm-1
+          .col.xs-2.sm-1.icon-container.examples-icons
             svg.icon
               use(xlink:href='./rocketbelt.icons.svg#rb-icon-' + icon)
-            .icon-id.font-monospace.font-minus-2 #{'#rb-icon-' + icon}
+            .icon-id.font-minus-2 #{'#rb-icon-' + icon}
 
     +exampleCodeOnly('JS Include')
       script(src='./rocketbelt.icons.svgxuse.min.js', defer)
