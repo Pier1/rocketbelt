@@ -49,10 +49,6 @@ var rb = rb || {};
               .replace(' | rocketbelt pattern library', '')
               .replace(/\ & /g," and ")
               .replace(/\s+/g,'-');
-    $('.is-active', '#docs-leftnav').removeClass('is-active');
-  	$category = $('#docs-leftnav').find('li[ref="' + pageTitle + '"]');
-    $category.addClass('is-active');
-    $category.parent('.category-contents').siblings('.category-toggle').prop('checked', true);
 
     // Play button for gifs
     $('img.gipho').on('click', function(){

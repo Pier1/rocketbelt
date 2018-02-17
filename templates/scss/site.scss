@@ -13,8 +13,8 @@
         'playground';
 
 ::selection {
-  background: color(secondary, lightest);
-  color: color(secondary);
+  background: color(accent);
+  color: color(accent, lightest);
 }
 
 html {
@@ -46,7 +46,45 @@ code,
 
 .example-code {
   position: relative;
-  display: flex;
+  display: inline-flex;
+  padding: 16px;
+  padding-top: 48px;
+  border: 1px solid color(gray, plus5);
+  border-radius: 4px;
+  background: mix(color(white), color(black), 99%);
+
+  @include z-depth(0);
+
+  .dots {
+    $color: #fdbc40;
+    $left-base: 32px;
+    top: 1rem;
+    left: $left-base;
+    background: #fdbc40;
+
+    &::before {
+      $color: #fc625d;
+      left: -20px;
+      background: $color;
+    }
+
+    &::after {
+      $color: #34c84a;
+      left: 20px;
+      background: $color;
+    }
+
+    &,
+    &::before,
+    &::after {
+      $size: 12px;
+      position: absolute;
+      width: $size;
+      height: $size;
+      border-radius: 50%;
+      content: '';
+    }
+  }
 
   &:hover {
     .copy-code {
@@ -70,11 +108,12 @@ code,
     top: 1em;
     right: 0.5em;
     border: none;
-    opacity: 0.66;
+    opacity: 0;
     transition: opacity 100ms linear;
   }
 
   pre {
     flex: 1;
+    margin: 0;
   }
 }
