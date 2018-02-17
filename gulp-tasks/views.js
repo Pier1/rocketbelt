@@ -83,6 +83,28 @@
               _: plugins.lodash
             }
           }))
+          .pipe(plugins.cheerio(($) => {
+            const $exampleHeaders = $('.example h1, .example h2, .example h3, .example h4');
+            const $headers =
+              $('h1, h2, h3, h4, h5, h6')
+                .not('.dialog_title')
+                .not($exampleHeaders);
+
+            const slug = require('slug');
+
+            $headers.each(function eachHeader() {
+              const $this = $(this);
+              const id = $this.id || slug($this.text().toLowerCase());
+              $this.attr('id', id);
+              $this.addClass('heading-with-link');
+              $this.append(
+                `<a href="#${id}" class="heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"></use>
+                  </svg>
+                </a>`);
+            });
+          }))
           .pipe(gulp.dest(config.buildPath))
         ;
       });
