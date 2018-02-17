@@ -1,6 +1,6 @@
 {
   "name": "rocketbelt",
-  "version": "1.13.9",
+  "version": "1.13.10",
   "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively assembled at Pier 1 Imports.",
   "homepage": "http://rocketbelt.design",
   "bugs": "https://github.com/pier1/rocketbelt/issues",
@@ -44,7 +44,7 @@
     "gulp-pug": "^3.1.0",
     "gulp-remove-html-comments": "^1.0.1",
     "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
+    "gulp-sass": "^3.1.0",
     "gulp-sass-lint": "^1.3.2",
     "gulp-sitemap": "^4.2.0",
     "gulp-size": "^2.1.0",
@@ -61,6 +61,7 @@
     "lodash": "^4.17.2",
     "merge-stream": "^1.0.0",
     "moment-timezone": "^0.5.9",
+    "mutationobserver-shim": "^0.3.2",
     "phantomcss": "^1.1.4",
     "phantomjs-prebuilt": "^2.1.13",
     "postcss-svg": "^2.4.0",
@@ -68,6 +69,7 @@
     "recursive-readdir": "^2.1.0",
     "run-sequence": "^1.2.2",
     "shorthash": "0.0.2",
+    "slug": "^0.9.1",
     "vinyl-fs": "^2.4.4"
   },
   "dependencies": {

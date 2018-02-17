@@ -27,7 +27,7 @@
               ${markup}\
             </${elType}>`;
 
-          el.innerHTML = el.innerHTML + fragment;
+          el.insertAdjacentHTML('beforeend', fragment);
         }
       } else {
         // If "is-busy" was removed
