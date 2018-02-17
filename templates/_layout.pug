@@ -9,9 +9,20 @@ html(lang='en')
     meta(charset='UTF-8')
     meta(name='viewport', content='width=device-width, initial-scale=1')
 
+    link(rel='apple-touch-icon', sizes='180x180', href='/assets/favicons/apple-touch-icon.png?v=gAapeRjXG7')
+    link(rel='icon', type='image/png', sizes='32x32', href='/assets/favicons/favicon-32x32.png?v=gAapeRjXG7')
+    link(rel='icon', type='image/png', sizes='16x16', href='/assets/favicons/favicon-16x16.png?v=gAapeRjXG7')
+    link(rel='manifest', href='/assets/favicons/site.webmanifest?v=gAapeRjXG7')
+    link(rel='mask-icon', href='/assets/favicons/safari-pinned-tab.svg?v=gAapeRjXG7', color='#5b14d9')
+    link(rel='shortcut icon', href='/assets/favicons/favicon.ico?v=gAapeRjXG7')
+    meta(name='msapplication-TileColor', content='#5b14d9')
+    meta(name='msapplication-config', content='/assets/favicons/browserconfig.xml?v=gAapeRjXG7')
+    meta(name='theme-color', content='#ffffff')
+
+  body
     block vars
     block title
-      title #{title ? title + ' | ' : ''}Rocketbelt Pattern Library
+      title #{title ? title + ' | Rocketbelt' : 'Rocketbelt Pattern Library'}
     block styles
       link(rel='stylesheet', href=prepend + '/css/rocketbelt.creative.min.css')
       link(rel='stylesheet', href=prepend + '/css/rocketbelt.min.css')
