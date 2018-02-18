@@ -370,6 +370,7 @@ body {
 
 .docs-wrapper {
   flex-direction: column;
+  min-height: 100%;
 
   .docs-wrapper_main {
     flex: 1;
