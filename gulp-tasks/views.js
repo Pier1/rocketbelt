@@ -94,6 +94,10 @@
 
             $headers.each(function eachHeader() {
               const $this = $(this);
+              const contents = $this.html();
+
+              $this.html(`<span class='heading_text'>${contents}</span>`);
+
               const id = $this.id || slug($this.text().toLowerCase());
               $this.attr('id', id);
               $this.addClass('heading-with-link');
