@@ -65,6 +65,7 @@ mixin exampleCodeOnly(labelText, expanded, inverted)
       .example
     +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
       .example-code
+        .dots
         button.copy-code(data-clipboard-target='#' + id) Copy
         pre
           code(id=id, class='language-' + labelText.toLowerCase())
@@ -83,6 +84,7 @@ mixin dynamicExampleCode(labelText, expanded)
 
     +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
       .example-code
+        .dots
         button.copy-code(data-clipboard-target='#' + id) Copy
         pre
           code(id=id, class="language-" + labelText.toLowerCase())
