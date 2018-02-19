@@ -165,28 +165,21 @@ body {
 }
 
 .heading-with-link {
-  position: relative;
+  display: flex;
+  align-items: center;
 
   &:hover {
     .heading_link {
+      position: relative;
+      display: flex;
       overflow: visible;
       clip: auto;
       margin: 0;
       white-space: inherit;
+      align-items: center;
+      justify-content: center;
       clip-path: none;
     }
-  }
-}
-
-h1 {
-  .heading_link {
-    top: 0.7rem;
-  }
-}
-
-h2 {
-  .heading_link {
-    top: 0.3rem;
   }
 }
 
@@ -194,17 +187,10 @@ h2 {
   @extend %visually-hidden;
   @extend %focusable;
 
-  position: absolute;
-  display: inline-flex;
   width: 30px;
-  height: 1.6rem;
+  height: 1rem;
   color: color(gray, plus1);
   text-decoration: none;
-
-  &:focus,
-  &:active {
-    position: absolute;
-  }
 
   &:visited {
     color: color(gray);
