@@ -101,23 +101,23 @@
             <div class="col xs">
               <div class="grid">
                 <article>
-                  <h1 id="busy-indicators" class="heading-with-link">Busy Indicators<a href="#busy-indicators" class="heading_link">
+                  <h1 id="busy-indicators" class="heading-with-link"><span class="heading_text">Busy Indicators</span><a href="#busy-indicators" class="heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </a></h1>
-                  <h2 id="component-level" class="heading-with-link">Component-Level<a href="#component-level" class="heading_link">
+                  <h2 id="component-level" class="heading-with-link"><span class="heading_text">Component-Level</span><a href="#component-level" class="heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </a></h2>
-                  <h3 id="is-busyable" class="heading-with-link">&quot;Is Busyable&quot;<a href="#is-busyable" class="heading_link">
+                  <h3 id="is-busyable" class="heading-with-link"><span class="heading_text">&quot;Is Busyable&quot;</span><a href="#is-busyable" class="heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </a></h3>
                   <p>Whenever possible, add the <code>is-busyable</code> class to the container that wraps components that may be marked as busy. This will maximize performance by greatly narrowing the scope of DOM elements that will be watched by a <code>MutationObserver</code>. If no element matches <code>.is-busyable</code>, the observer will be registered against <code>body</code>.</p>
-                  <h3 id="custom-sizing" class="heading-with-link">Custom Sizing<a href="#custom-sizing" class="heading_link">
+                  <h3 id="custom-sizing" class="heading-with-link"><span class="heading_text">Custom Sizing</span><a href="#custom-sizing" class="heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
@@ -130,6 +130,7 @@
                       <label class="expander_label" for="rb-ZQ1MF8" data-collapsed-label="Show CSS" data-expanded-label="Hide CSS"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
+                          <div class="dots"></div>
                           <button class="copy-code" data-clipboard-target="#rb-gk7bV">Copy</button>
                           <pre><code class="language-css" id="rb-gk7bV">
                               #component-wrapper .is-busy_overlay {
@@ -139,7 +140,7 @@
                       </div>
                     </div>
                   </div>
-                  <h3 id="script-include" class="heading-with-link">Script Include<a href="#script-include" class="heading_link">
+                  <h3 id="script-include" class="heading-with-link"><span class="heading_text">Script Include</span><a href="#script-include" class="heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
@@ -161,7 +162,7 @@
                       <script src="./rocketbelt.progress-indicators.min.js"></script>
                     </div>
                   </div>
-                  <h3 id="examples" class="heading-with-link">Examples<a href="#examples" class="heading_link">
+                  <h3 id="examples" class="heading-with-link"><span class="heading_text">Examples</span><a href="#examples" class="heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
@@ -175,10 +176,10 @@
                   <div class="grid-fluid">
                     <div class="row exampleWithoutCode">
                       <div class="col xs">
-                        <button class="button button-secondary is-busy_trigger"><span>Click to Trigger Busy</span></button>
+                        <button class="button button-secondary is-busyable is-busy_trigger"><span>Click to Trigger Busy</span></button>
                       </div>
                       <div class="col xs">
-                        <button class="button button-primary is-busy_trigger is-busy-inverted"><span>Click to Trigger Busy</span></button>
+                        <button class="button button-primary is-busyable is-busy_trigger is-busy-inverted"><span>Click to Trigger Busy</span></button>
                       </div>
                     </div>
                     <div class="row">
@@ -190,6 +191,7 @@
                             <label class="expander_label" for="rb-2cdyIN" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
+                                <div class="dots"></div>
                                 <button class="copy-code" data-clipboard-target="#rb-1G6sTJ">Copy</button>
                                 <pre><code class="language-html" id="rb-1G6sTJ">
                                     &lt;button class=&quot;button button-primary is-busy is-busy-inverted&quot;&gt;&lt;span&gt;Click to Trigger Busy&lt;/span&gt;&lt;/button&gt;</code></pre>
@@ -231,6 +233,7 @@
                             <label class="expander_label" for="rb-Z1qOf5j" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
+                                <div class="dots"></div>
                                 <button class="copy-code" data-clipboard-target="#rb-ZxjDFE">Copy</button>
                                 <pre><code class="language-html" id="rb-ZxjDFE">
                                     &lt;div class=&quot;form-group is-busyable&quot;&gt;
@@ -287,14 +290,33 @@
                       }, 2850)
                     });
                   </script>
-                  <h2 id="page-level" class="heading-with-link">Page-Level<a href="#page-level" class="heading_link">
+                  <h2 id="page-level" class="heading-with-link"><span class="heading_text">Page-Level</span><a href="#page-level" class="heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </a></h2>
-                  <div class="form-group is-busyable is-busyable-page" style="width: 100%;">
-                    <textarea class="is-busy_trigger" id="busy-large" placeholder="Blur the textarea to trigger a busy state." style="height: 50rem;"></textarea>
-                    <label for="busy-large">Message</label>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="form-group is-busyable is-busyable-page" style="width: 100%;">
+                        <textarea class="is-busy_trigger" id="busy-large" placeholder="Blur the textarea to trigger a busy state." style="height: 50rem;"></textarea>
+                        <label for="busy-large">Message</label>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZRtDya">
+                      <label class="expander_label" for="rb-ZRtDya" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-RQ8fq">Copy</button>
+                          <pre><code class="language-html" id="rb-RQ8fq">
+                              &lt;div class=&quot;form-group is-busyable is-busyable-page&quot; style=&quot;width: 100%;&quot;&gt;
+                                &lt;textarea class=&quot;is-busy_trigger&quot; id=&quot;busy-large&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot; style=&quot;height: 50rem;&quot;&gt;&lt;/textarea&gt;
+                                &lt;label for=&quot;busy-large&quot;&gt;Message&lt;/label&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </article>
               </div>
@@ -305,7 +327,7 @@
       <footer class="site-footer">
         <div class="grid-fluid footer_wrapper">
           <div class="row xs-center xs-middle footer_row">
-            <div class="col xs footer_content">
+            <div class="col xs-12 footer_content">
               <div class="links_off-site"><a class="link" href="https://www.pier1.com">
                   <svg class="icon p1-logo">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-p1logo-alt-1"/>
@@ -313,7 +335,7 @@
             </div>
           </div>
           <div class="row xs-center xs-middle footer_row">
-            <div class="col xs footer_content">
+            <div class="col xs-12 footer_content">
               <div class="copyright">&#xA9; 2018 Pier 1 Imports. Rocketbelt is distributed under an <a href="https://github.com/Pier1/rocketbelt/blob/develop/LICENSE">MIT license</a>.</div>
             </div>
           </div>

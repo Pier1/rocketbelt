@@ -164,29 +164,29 @@ body {
   margin-top: $header-height;
 }
 
-.heading-with-link {
+%heading-link-visible {
   position: relative;
+  display: flex;
+  overflow: visible;
+  clip: auto;
+  margin: 0;
+  white-space: inherit;
+  opacity: 1;
+  transition: opacity 200ms linear;
+  transition-delay: 200ms;
+  align-items: center;
+  justify-content: center;
+  clip-path: none;
+}
+
+.heading-with-link {
+  display: flex;
+  align-items: center;
 
   &:hover {
     .heading_link {
-      overflow: visible;
-      clip: auto;
-      margin: 0;
-      white-space: inherit;
-      clip-path: none;
+      @extend %heading-link-visible;
     }
-  }
-}
-
-h1 {
-  .heading_link {
-    top: 0.7rem;
-  }
-}
-
-h2 {
-  .heading_link {
-    top: 0.3rem;
   }
 }
 
@@ -194,16 +194,15 @@ h2 {
   @extend %visually-hidden;
   @extend %focusable;
 
-  position: absolute;
-  display: inline-flex;
   width: 30px;
-  height: 1.6rem;
+  height: 1rem;
   color: color(gray, plus1);
   text-decoration: none;
+  opacity: 0;
+  transition: opacity 200ms linear;
 
-  &:focus,
-  &:active {
-    position: absolute;
+  &:focus {
+    @extend %heading-link-visible;
   }
 
   &:visited {
@@ -220,7 +219,7 @@ h2 {
 
   .icon {
     width: 1.6rem;
-    height: 1.6rem;
+    height: 1em;
   }
 }
 
@@ -370,6 +369,7 @@ body {
 
 .docs-wrapper {
   flex-direction: column;
+  min-height: 100%;
 
   .docs-wrapper_main {
     flex: 1;

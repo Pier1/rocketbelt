@@ -7,13 +7,13 @@
   font-weight: 600;
   cursor: default;
   transition: color 100ms, border 100ms, background 100ms, box-shadow 100ms, opacity 500ms;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .button:hover,
   .button-primary:hover, .button-sm:hover, .button-md:hover, .button-lg:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .button:active,
   .button-primary:active, .button-sm:active, .button-md:active, .button-lg:active {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .button svg,
   .button-primary svg, .button-sm svg, .button-md svg, .button-lg svg {
     margin-right: 0.25rem;
@@ -26,7 +26,6 @@
 .visually-hidden,
 .visuallyhidden,
 .expander .expander_checkbox,
-.expander .expander_checkbox:not(:checked) ~ .expander_content,
 .dialog-dark .dialog_title,
 input.rb-checkbox[type='checkbox'],
 input[type='radio'] {
@@ -2716,7 +2715,7 @@ button {
     display: none;
     visibility: hidden; }
   .button-dropdown .button-dropdown_trigger:checked ~ .button-dropdown_content {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23);
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23), -2px -2px 2px rgba(0, 0, 0, 0.04);
     position: absolute;
     top: 100%;
     right: 0;
@@ -2784,7 +2783,7 @@ button {
   border-radius: 2px;
   font-weight: 300; }
   .card:not([class*='z-depth-']) {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09); }
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09), -2px -2px 2px rgba(0, 0, 0, 0.04); }
 
 .card-full-bleed {
   position: relative;
@@ -2804,27 +2803,27 @@ button {
 .hover {
   transition: box-shadow 150ms ease-out; }
   .hover.z-depth-0:hover {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .hover.z-depth-1:hover {
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .hover.z-depth-2:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.17), 0 3px 10px rgba(0, 0, 0, 0.15); }
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.17), 0 3px 10px rgba(0, 0, 0, 0.15), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .hover.z-depth-3:hover {
-    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.19), 0 5px 12px rgba(0, 0, 0, 0.1); }
+    box-shadow: 0 8px 14px rgba(0, 0, 0, 0.19), 0 5px 12px rgba(0, 0, 0, 0.1), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .hover.z-depth-4:hover {
-    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09); }
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09), -2px -2px 2px rgba(0, 0, 0, 0.04); }
 
 .z-depth-0 {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09); }
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09), -2px -2px 2px rgba(0, 0, 0, 0.04); }
 
 .z-depth-1 {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04); }
 
 .z-depth-2 {
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23), -2px -2px 2px rgba(0, 0, 0, 0.04); }
 
 .z-depth-3 {
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.17), 0 3px 10px rgba(0, 0, 0, 0.15); }
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.17), 0 3px 10px rgba(0, 0, 0, 0.15), -2px -2px 2px rgba(0, 0, 0, 0.04); }
 
 .expander {
   font-size: initial; }
@@ -2837,16 +2836,72 @@ button {
        -moz-user-select: none;
         -ms-user-select: none;
             user-select: none; }
-  .expander .expander_checkbox:not(:checked) + .expander_label::before {
+  .expander .expander_checkbox:checked ~ .expander_content {
+    display: block;
+    max-height: 2000px;
+    opacity: 1;
+    -webkit-animation: expandIn 200ms ease-in-out;
+            animation: expandIn 200ms ease-in-out; }
+  .expander .expander_checkbox:not(:checked) ~ .expander_content {
+    display: none;
+    max-height: 0;
+    opacity: 0;
+    -webkit-animation: expandOut 200ms ease-in-out;
+            animation: expandOut 200ms ease-in-out; }
+  .expander .expander_checkbox:not(:checked) + .expander_label::after {
     position: static;
     border: 0;
     background: 0;
     content: attr(data-collapsed-label); }
-  .expander .expander_checkbox:checked + .expander_label::before {
+  .expander .expander_checkbox:checked + .expander_label::after {
     position: static;
     border: 0;
     background: 0;
     content: attr(data-expanded-label); }
+
+@-webkit-keyframes expandIn {
+  0% {
+    display: none;
+    max-height: 0;
+    opacity: 0; }
+  1% {
+    display: block; }
+  100% {
+    max-height: 2000px;
+    opacity: 1; } }
+
+@keyframes expandIn {
+  0% {
+    display: none;
+    max-height: 0;
+    opacity: 0; }
+  1% {
+    display: block; }
+  100% {
+    max-height: 2000px;
+    opacity: 1; } }
+
+@-webkit-keyframes expandOut {
+  0% {
+    display: block;
+    max-height: 2000px;
+    opacity: 1; }
+  99% {
+    max-height: 0;
+    opacity: 0; }
+  100% {
+    display: none; } }
+
+@keyframes expandOut {
+  0% {
+    display: block;
+    max-height: 2000px;
+    opacity: 1; }
+  99% {
+    max-height: 0;
+    opacity: 0; }
+  100% {
+    display: none; } }
   .expander .expander_checkbox:checked + .chevron {
     transition: -webkit-transform 200ms ease-in-out;
     transition: transform 200ms ease-in-out;
@@ -3652,7 +3707,7 @@ button.swiper-pagination-bullet {
           align-items: center; }
 
 .dialog_content {
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04);
   position: fixed;
   top: 50%;
   left: 50%;
@@ -3955,7 +4010,7 @@ button.swiper-pagination-bullet {
   padding: 0.88889rem;
   border: 1px solid #cbc8c8;
   background-color: #fefdfd;
-  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .sub-nav.wide {
     left: 3%;
     width: 94%; }
@@ -4059,14 +4114,14 @@ button.swiper-pagination-bullet {
   width: 100%;
   border: 2px solid transparent;
   transition: box-shadow 200ms ease-in;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09); }
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .radio-group.radio-group-chunky input[type='radio'] + label:hover {
     z-index: 1;
     transition: box-shadow 200ms ease-in;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23); }
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .radio-group.radio-group-chunky input[type='radio'] + label:active {
     transition: box-shadow 200ms ease-in;
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24); }
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04); }
   .radio-group.radio-group-chunky input[type='radio'] + label::before {
     position: static;
     margin: 0.25rem 0.5rem 0.25rem 0.25rem;
@@ -4486,7 +4541,7 @@ td {
     background: transparent;
     content: ''; }
   .tooltip .tooltip-content {
-    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04);
     z-index: 1000;
     padding: 0.79012rem;
     min-width: 150px;

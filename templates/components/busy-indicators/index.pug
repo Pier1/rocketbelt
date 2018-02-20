@@ -25,6 +25,7 @@ block content
     include _busy-indicators-component.pug
 
     h2 Page-Level
-    .form-group.is-busyable.is-busyable-page(style='width: 100%;')
-      textarea#busy-large.is-busy_trigger(placeholder='Blur the textarea to trigger a busy state.', style='height: 50rem;')
-      label(for='busy-large') Message
+    +exampleWithCode
+      .form-group.is-busyable.is-busyable-page(style='width: 100%;')
+        textarea#busy-large.is-busy_trigger(placeholder='Blur the textarea to trigger a busy state.', style='height: 50rem;')
+        label(for='busy-large') Message
