@@ -80,7 +80,7 @@ block content
       });
 
 mixin swatch(family)
-  .col.xs-12.sm-6.md-4.lg-3.xl-2
+  .col.xs-12.sm-6.md-4.xl-3
     .family.card.card-panel.z-depth-1
       .swatch(class='bg_' + family.familyName)
         .variants
@@ -105,6 +105,10 @@ mixin swatch(family)
                 svg.icon(class=`icon_fill-for-${family.familyName + variantSuffix}`)
                   use(xlink:href='/components/icons/rocketbelt.icons.enterprise.svg#rb-icon-copy')
       .card-content.variant-info
-        .card-title.color-name
+        .card-header
+          .card-title.color-name
+          .card-buttons
+            button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(${family.familyName})`) Sass
+            button.button-sm.button-text.copy-button.copy-button-hex Hex
         .card-body #[span.family-name #{family.familyName}] #[small.variant-title.fg_gray-lighter base]
           div #[span.code.color-map color(#{family.familyName})]

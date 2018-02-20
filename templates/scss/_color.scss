@@ -85,7 +85,7 @@
 
             &-gray-plus5,
             &-gray-plus4,
-            &-gray-plus3, {
+            &-gray-plus3 {
               color: color(gray, minus2);
             }
 
@@ -117,6 +117,56 @@
         .copy-button {
           display: flex;
         }
+      }
+    }
+  }
+
+  .card-header {
+    display: flex;
+  }
+
+  .card-title {
+    display: inline;
+  }
+
+  .card-buttons {
+    display: inline-flex;
+    flex: 1;
+    justify-content: flex-end;
+
+    .copy-button {
+      @extend %visually-hidden;
+      @extend %focusable;
+
+      padding: 0;
+      min-width: auto;
+      border: 0;
+      background: transparent;
+      text-transform: uppercase;
+      font-weight: font-weight(normal);
+      opacity: 0;
+      transition: opacity 200ms linear;
+      transition-delay: 100ms;
+    }
+  }
+}
+
+.family {
+  &.card:hover {
+    .card-buttons {
+      .copy-button {
+        position: static;
+        display: block;
+        overflow: visible;
+        clip: auto;
+        margin: 0 0.5rem;
+        width: auto;
+        height: auto;
+        white-space: inherit;
+        opacity: 1;
+        transition: opacity 200ms linear;
+        transition-delay: 100ms;
+        clip-path: none;
       }
     }
   }
