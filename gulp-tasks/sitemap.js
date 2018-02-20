@@ -6,7 +6,7 @@
         read: false
       })
         .pipe(plugins.sitemap({
-          siteUrl: 'http://rocketbelt.design/'
+          siteUrl: 'http://rocketbelt.io/'
         }))
         .pipe(gulp.dest(config.buildPath));
     };
