@@ -31,10 +31,82 @@
     align-self: flex-end;
 
     .variant {
-      display: inline-block;
+      display: inline-flex;
+      flex-direction: column;
       flex: 1;
       height: 100%;
       transition: transform 300ms ease-out;
+      align-items: center;
+      justify-content: center;
+
+      .copy-button {
+        display: none;
+        margin: 0;
+        padding: 0;
+        min-width: 44px;
+        height: 100%;
+        border: none;
+        background: transparent;
+        font-size: font-size(-4);
+        cursor: pointer;
+        align-items: center;
+        justify-content: center;
+
+        &:hover {
+          @include z-depth(3);
+          transition: box-shadow 100ms ease-out;
+        }
+
+        &:active {
+          @include z-depth(1);
+          transition: box-shadow 100ms ease-out;
+        }
+
+        .icon {
+          width: 50%;
+          height: 50%;
+          color: color(white);
+
+          &.icon_fill-for {
+            &-primary-lightest,
+            &-primary-lighter {
+              color: color(primary, darkest);
+            }
+
+            &-secondary-lightest,
+            &-secondary-lighter {
+              color: color(secondary, darkest);
+            }
+
+            &-accent-lightest,
+            &-accent-lighter {
+              color: color(accent, darkest);
+            }
+
+            &-gray-plus5,
+            &-gray-plus4,
+            &-gray-plus3, {
+              color: color(gray, minus2);
+            }
+
+            &-white {
+              color: color(black);
+            }
+
+            &-success-lighter {
+              color: scale-color(color(success, darker), $lightness: -20%);
+            }
+
+            &-warning-lighter {
+              color: scale-color(color(warning, darker), $lightness: -20%);
+            }
+
+            &-error-lighter {
+              color: scale-color(color(error, darker), $lightness: -20%);
+            }
+          }
+        }
+      }
 
       &:hover {
         position: relative;
@@ -42,7 +114,9 @@
         transition: transform 100ms ease-out, z-index 100ms ease-out;
         transform: scale(1.2);
 
-        @include z-depth(2);
+        .copy-button {
+          display: flex;
+        }
       }
     }
   }
