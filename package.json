@@ -2,7 +2,7 @@
   "name": "rocketbelt",
   "version": "1.13.10",
   "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively assembled at Pier 1 Imports.",
-  "homepage": "http://rocketbelt.design",
+  "homepage": "http://rocketbelt.io",
   "bugs": "https://github.com/pier1/rocketbelt/issues",
   "license": "MIT",
   "main": "gulpfile.js",
