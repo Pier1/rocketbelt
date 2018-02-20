@@ -1,28 +1,42 @@
 .examples-icons {
   .icon-container {
-    @include z-depth(0);
-
     margin: 0.4rem;
-    padding-bottom: 0.4rem;
+    padding: 0;
     max-width: 160px;
-    width: 160px;
+    min-width: 160px;
     transition: box-shadow 100ms ease-out;
     color: color(gray, minus2);
+
+    .icon {
+      width: 50%;
+      height: 50%;
+    }
+
+    .icon-id {
+      margin: 0.5rem;
+      color: color(black);
+      user-select: text;
+      text-align: left;
+      font-family: font-family(monospace);
+    }
+  }
+
+  .copy-button {
+    @include z-depth(0);
+
+    padding: 0;
+    height: 100%;
+    border: 0;
+    background: transparent;
 
     &:hover {
       @include z-depth(2);
       transition: box-shadow 100ms ease-out;
     }
 
-    .icon {
-      margin: 0.4rem 0;
-      height: 72px;
-    }
-
-    .icon-id {
-      margin-top: 0.5rem;
-      color: color(black);
-      font-family: font-family(monospace);
+    &:active {
+      @include z-depth(1);
+      transition: box-shadow 100ms ease-out;
     }
   }
 

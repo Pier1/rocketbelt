@@ -28,14 +28,42 @@ block content
       +exampleWithCode
         include _icon-link-with-indicator.pug
 
+    h2 Standard Icons
     .grid-fluid
       .row
         each icon in icons
           - icon = icon.replace(/\.svg/, '');
+          if icon !== 'enterprise'
+            .col.xs-2.sm-1.icon-container.examples-icons
+              button.copy-button(data-clipboard-text=`#rb-icon-${icon}`)
+                svg.icon
+                  use(xlink:href='./rocketbelt.icons.svg#rb-icon-' + icon)
+                .icon-id.font-minus-2 #{'#rb-icon-' + icon}
+
+    h2 Enterprise Icons
+    .grid-fluid
+      .row
+        each icon in iconsEnt
+          - icon = icon.replace(/\.svg/, '');
           .col.xs-2.sm-1.icon-container.examples-icons
-            svg.icon
-              use(xlink:href='./rocketbelt.icons.svg#rb-icon-' + icon)
-            .icon-id.font-minus-2 #{'#rb-icon-' + icon}
+            button.copy-button(data-clipboard-text=`#rb-icon-${icon}`)
+              svg.icon
+                use(xlink:href='./rocketbelt.icons.enterprise.svg#rb-icon-' + icon)
+              .icon-id.font-minus-2 #{'#rb-icon-' + icon}
 
     +exampleCodeOnly('JS Include')
       script(src='./rocketbelt.icons.svgxuse.min.js', defer)
+
+    script.
+      $(document).ready(function () {
+        var clipboard = new Clipboard('.copy-button');
+
+        clipboard.on('success', function(e) {
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+      });
