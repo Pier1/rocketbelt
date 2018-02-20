@@ -164,21 +164,28 @@ body {
   margin-top: $header-height;
 }
 
+%heading-link-visible {
+  position: relative;
+  display: flex;
+  overflow: visible;
+  clip: auto;
+  margin: 0;
+  white-space: inherit;
+  opacity: 1;
+  transition: opacity 200ms linear;
+  transition-delay: 200ms;
+  align-items: center;
+  justify-content: center;
+  clip-path: none;
+}
+
 .heading-with-link {
   display: flex;
   align-items: center;
 
   &:hover {
     .heading_link {
-      position: relative;
-      display: flex;
-      overflow: visible;
-      clip: auto;
-      margin: 0;
-      white-space: inherit;
-      align-items: center;
-      justify-content: center;
-      clip-path: none;
+      @extend %heading-link-visible;
     }
   }
 }
@@ -191,6 +198,12 @@ body {
   height: 1rem;
   color: color(gray, plus1);
   text-decoration: none;
+  opacity: 0;
+  transition: opacity 200ms linear;
+
+  &:focus {
+    @extend %heading-link-visible;
+  }
 
   &:visited {
     color: color(gray);
@@ -206,7 +219,7 @@ body {
 
   .icon {
     width: 1.6rem;
-    height: 1.6rem;
+    height: 1em;
   }
 }
 
