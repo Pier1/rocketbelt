@@ -61,6 +61,7 @@
     return () => {
       var fs = require('fs');
       var icons = fs.readdirSync(config.patternsPath + '/components/icons/svg');
+      var iconsEnt = fs.readdirSync(config.patternsPath + '/components/icons/svg/enterprise');
 
       return directoryTreeToObj(config.templatesPath, (err, res) => {
         if (err) {
@@ -78,6 +79,7 @@
               buildPath: '',
               nav: res,
               icons: icons,
+              iconsEnt: iconsEnt,
               colorFamilies: config.colorFamilies,
               shorthash: plugins.shorthash,
               _: plugins.lodash
