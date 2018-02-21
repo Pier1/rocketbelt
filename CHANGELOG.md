@@ -1,3 +1,25 @@
+<a name="1.13.11"></a>
+## [1.13.11](https://github.com/Pier1/rocketbelt/compare/1.13.10...v1.13.11) (2018-02-21)
+
+
+### Bug Fixes
+
+* **a11y:** Update alerts JS to provide better accessibility. ([c0f1ceb](https://github.com/Pier1/rocketbelt/commit/c0f1ceb))
+* **Alerts:** Fix alert close button colors. ([e4a919b](https://github.com/Pier1/rocketbelt/commit/e4a919b))
+* **Cards:** Update z-depth to better support low-DPI screens. ([a97aa45](https://github.com/Pier1/rocketbelt/commit/a97aa45))
+* **Dynamic Buttons:** Add event to dynamic button to allow it to be triggered via other page elements. ([e7abe72](https://github.com/Pier1/rocketbelt/commit/e7abe72))
+* **Forms:** Add unit to zero-value flex-basis property to keep IE from breaking. ([3cbb9d9](https://github.com/Pier1/rocketbelt/commit/3cbb9d9))
+* **Forms:** Fix flex basis and min width of stacked input with button. ([670f79e](https://github.com/Pier1/rocketbelt/commit/670f79e))
+* **Progress Indicators:** Change innerHTML call to insertAdjacentHTML to prevent progress indicator from destroying existing UI. ([5e0650a](https://github.com/Pier1/rocketbelt/commit/5e0650a))
+
+### Features
+
+* **Icons:** Add `copy` and `puzzle` enterprise icons. ([a87169a](https://github.com/Pier1/rocketbelt/commit/a87169a))
+* **Icons:** Add flask icon to enterprise. ([d102a24](https://github.com/Pier1/rocketbelt/commit/d102a24))
+* **Javascript:** Add MutationObserver polyfill for older browsers. ([299a0f2](https://github.com/Pier1/rocketbelt/commit/299a0f2))
+* **Javascript:** Add NodeList.forEach polyfill. ([b217592](https://github.com/Pier1/rocketbelt/commit/b217592))
+
+
 <a name="1.13.10"></a>
 ## [1.13.10](https://github.com/Pier1/rocketbelt/compare/1.13.9...v1.13.10) (2018-02-01)
 
