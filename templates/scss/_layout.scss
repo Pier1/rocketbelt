@@ -117,6 +117,7 @@ body {
   @extend %horizontal-scrollable;
 
   display: flex;
+  overflow: visible;
   min-height: $header-height;
   color: color(white);
   align-items: center;
