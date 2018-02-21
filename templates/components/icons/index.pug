@@ -28,6 +28,10 @@ block content
       +exampleWithCode
         include _icon-link-with-indicator.pug
 
+    h2 Javascript (Javascript? #[em Yes, Javascript.])
+    +exampleCodeOnly('JS Include')
+      script(src='./rocketbelt.icons.svgxuse.min.js', defer)
+
     h2 Standard Icons
     .grid-fluid
       .row
@@ -50,9 +54,6 @@ block content
               svg.icon
                 use(xlink:href='./rocketbelt.icons.enterprise.svg#rb-icon-' + icon)
               .icon-id.font-minus-2 #{'#rb-icon-' + icon}
-
-    +exampleCodeOnly('JS Include')
-      script(src='./rocketbelt.icons.svgxuse.min.js', defer)
 
     script.
       $(document).ready(function () {
