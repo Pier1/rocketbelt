@@ -3,6 +3,7 @@
   module.exports = (gulp, plugins, config) => {
     return () => {
       return plugins.vinylFs.src([
+        config.templatesPath + '/**/assets/**/*',
         config.templatesPath + '/**/img/*.*',
         config.templatesPath + '/**/*.svg',
         config.templatesPath + '/**/*.zip'

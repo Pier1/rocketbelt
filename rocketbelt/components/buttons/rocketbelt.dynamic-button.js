@@ -33,7 +33,7 @@
       var baseWidth = base.$el.outerWidth();
 
       // Event attachment
-      base.$el.on('click', function (e) {
+      base.$el.on('click buttonActionBusy', function (e) {
         buttonActionBusy.call(this, btnClass, baseWidth);
       });
 

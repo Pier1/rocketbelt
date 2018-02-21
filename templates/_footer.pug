@@ -1,0 +1,13 @@
+.grid-fluid.footer_wrapper
+  .row.xs-center.xs-middle.footer_row
+    .col.xs-12.footer_content
+      .links_off-site
+        a.link(href='https://www.pier1.com')
+          svg.icon.p1-logo
+            use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-p1logo-alt-1')
+        a.link(href='https://github.com/pier1/rocketbelt')
+          span.visually-hidden Rocketbelt on GitHub
+          +rawSvgFor('github')
+  .row.xs-center.xs-middle.footer_row
+    .col.xs-12.footer_content
+      .copyright &copy; #{new Date().getFullYear()} Pier 1 Imports. Rocketbelt is distributed under an #[a(href='https://github.com/Pier1/rocketbelt/blob/develop/LICENSE') MIT license].

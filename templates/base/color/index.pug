@@ -65,9 +65,22 @@ block content
         each family in _.filter(colorFamilies, function (o) { return o.familyName === 'brand'; })
           +swatch(family)
     script(src='./color.js')
+    script.
+      $(document).ready(function () {
+        var clipboard = new Clipboard('.copy-button');
+
+        clipboard.on('success', function(e) {
+            e.clearSelection();
+        });
+
+        clipboard.on('error', function(e) {
+            console.error('Action:', e.action);
+            console.error('Trigger:', e.trigger);
+        });
+      });
 
 mixin swatch(family)
-  .col.xs-12.sm-6.md-4.lg-3.xl-2
+  .col.xs-12.sm-6.md-4.xl-3
     .family.card.card-panel.z-depth-1
       .swatch(class='bg_' + family.familyName)
         .variants
@@ -79,15 +92,23 @@ mixin swatch(family)
             - var fg = 'fg_' + family.familyName + variantSuffix
             - var bg = 'bg_' + family.familyName + variantSuffix
             - var mapSuffix = isBase ? '' : ', ' + variant.variant
+            - var mapVal = 'color(' + family.familyName + mapSuffix + ')'
             .variant(
               class=bg,
               data-color-name=name,
               data-color-variant=variant.variant,
-              data-color-map='color(' + family.familyName + mapSuffix + ')'
+              data-color-map=mapVal,
               data-color-fg=fg,
               data-color-bg=bg
             )
+              button.copy-button(data-clipboard-text=mapVal)
+                svg.icon(class=`icon_fill-for-${family.familyName + variantSuffix}`)
+                  use(xlink:href='/components/icons/rocketbelt.icons.enterprise.svg#rb-icon-copy')
       .card-content.variant-info
-        .card-title.color-name
+        .card-header
+          .card-title.color-name
+          .card-buttons
+            button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(${family.familyName})`) Sass
+            button.button-sm.button-text.copy-button.copy-button-hex Hex
         .card-body #[span.family-name #{family.familyName}] #[small.variant-title.fg_gray-lighter base]
           div #[span.code.color-map color(#{family.familyName})]
