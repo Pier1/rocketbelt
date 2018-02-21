@@ -1,0 +1,37 @@
+/// Get a cubic bezier easing curve or the Y value of that curve, if $x is supplied.
+///
+/// @author Kendrick Arnett
+///
+/// @link https://css-tricks.com/easing-linear-gradients/ See examples/rationale at CSS Tricks.
+///
+/// @param $direction - The gradient's direction (standard CSS3 syntax).
+/// @param $color-start [color(black)] - The gradient's beginning value.
+/// @param $color-end [rgba(color(black), 0)] - The gradient's ending value.
+/// @param $easing [default] - The easing curve to use.
+/// @param $num-stops [12] - The number of stops to calculate. More stops will give a higher-quality gradient at the expense of performance.
+///
+/// @example scss - eased-gradient function
+///   eased-gradient(to top);
+///   eased-gradient($color-start: color(primary), $color-end: color(primary, lightest));
+///   eased-gradient($easing: in-out-quad);
+@function eased-gradient($direction: '', $color-start: color(black), $color-end: rgba(color(black), 0), $easing: default, $num-stops: 12) {
+  @if $direction != '' { $direction: $direction + ', '; }
+
+  $gradient-stops: $direction;
+
+  @if ($easing == 'scrim') {
+    $easing: 'in-sine';
+  }
+
+  @for $i from 1 through $num-stops + 1 {
+    $x: decimal-round(($i - 1) / $num-stops, 3);
+    $color: mix($color-end, $color-start, percentage($x));
+    $stop-percentage: percentage(decimal-round(ease($easing, $x), 3));
+
+    $separator: if($i != ($num-stops + 1), ', ', '');
+
+    $gradient-stops: $gradient-stops + $color + ' ' + $stop-percentage + $separator;
+  }
+
+  @return linear-gradient(#{$gradient-stops});
+}
