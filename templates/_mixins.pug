@@ -95,31 +95,24 @@ mixin dynamicExampleCode(labelText, expanded)
 - }
 
 mixin buildNav(navObject, rootHref)
-  ul.list-reset.category-contents
-    each item in navObject.sort()
-      - var name = toTitleCase(item.name);
-      unless item.name.indexOf('index.') > -1
-        - var newRootHref = rootHref ? rootHref : '';
-        - var shortName = item.name.replace('pug', '');
+  nav#main-nav
+    ul.nav-menu
+      each item in navObject.sort()
+        - var name = toTitleCase(item.name);
+        unless item.name.indexOf('index.') > -1
+          - var newRootHref = rootHref ? rootHref : '';
+          - var shortName = item.name.replace('pug', '');
 
-        //- Hide Animation category for now…
-        if (shortName !== 'img' && shortName !== 'vendor' && shortName !== 'animation')
-          li.category.nav_category(ref=shortName, data-nav-id=shortName, aria-controls=`nav_cat-${shortName}`)
-            if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
-              a(href=newRootHref + '/' + item.name.replace('pug', 'html')) #{name.replace('.pug', '').replace('A11y', 'Accessibility')}
-            else
-              //- input.category-toggle.visually-hidden(id=name, type='checkbox', name=name)
-              button.category-label(for=name) #{name}
-
-mixin buildNavItemsFor(category)
-  if category.children
-    ul.nav_items(id=`nav_cat-${category.name}`)
-      each item in category.children.sort((i, j) => i.name > j.name ? 1 : -1)
-        - const shortName = item.name.replace('pug', '');
-        if item.children && item.children.length
-          each child in item.children.filter(i => i.type === 'file' && i.name === 'index.pug')
-            li.nav_item
-              a(href='/' + category.name + '/' + shortName) #{toTitleCase(item.name.replace('.pug', '')).replace('A11y', 'Accessibility')}
+          //- Hide Animation category for now…
+          if (shortName !== 'img' && shortName !== 'vendor' && shortName !== 'animation')
+            li.nav-item.nav_level-1(ref=shortName)
+              //- if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
+              button.category-label #{name.replace('.pug', '').replace('A11y', 'Accessibility')}
+              .sub-nav
+                ul.sub-nav-group
+                  each child in item.children
+                    li.sub-nav-item
+                      a.sub-nav-link(href=`/${item.name}/${child.name}`) #{toTitleCase(child.name)}
 
 mixin colorPicker(target, val, type)
   - var prefix = type === 'background' ? 'bg_' : 'fg_';
