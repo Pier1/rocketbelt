@@ -42,6 +42,7 @@ mixin exampleWithCode(labelText, expanded, inverted)
         block
     +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
       .example-code
+        .dots
         button.copy-code(data-clipboard-target='#' + id) Copy
         pre
           code(id=id, class='language-' + labelText.toLowerCase())
@@ -64,6 +65,7 @@ mixin exampleCodeOnly(labelText, expanded, inverted)
       .example
     +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
       .example-code
+        .dots
         button.copy-code(data-clipboard-target='#' + id) Copy
         pre
           code(id=id, class='language-' + labelText.toLowerCase())
@@ -82,6 +84,7 @@ mixin dynamicExampleCode(labelText, expanded)
 
     +wrapInExpander('Show ' + expanderAppend, 'Hide ' + expanderAppend, expanded, id)
       .example-code
+        .dots
         button.copy-code(data-clipboard-target='#' + id) Copy
         pre
           code(id=id, class="language-" + labelText.toLowerCase())
@@ -93,23 +96,30 @@ mixin dynamicExampleCode(labelText, expanded)
 
 mixin buildNav(navObject, rootHref)
   ul.list-reset.category-contents
-    each item in _.sortBy(navObject, function (o) { return o.name; })
+    each item in navObject.sort()
       - var name = toTitleCase(item.name);
       unless item.name.indexOf('index.') > -1
         - var newRootHref = rootHref ? rootHref : '';
-        - var shortName = item.name.replace('jade', '');
+        - var shortName = item.name.replace('pug', '');
 
-        if (shortName !== 'img' && shortName !== 'vendor')
-          li.category(ref=shortName)
+        //- Hide Animation category for now…
+        if (shortName !== 'img' && shortName !== 'vendor' && shortName !== 'animation')
+          li.category.nav_category(ref=shortName, data-nav-id=shortName, aria-controls=`nav_cat-${shortName}`)
             if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
-              a(href=newRootHref + '/' + item.name.replace('jade', 'html')) #{name.replace('.jade', '').replace('A11y', 'Accessibility')}
+              a(href=newRootHref + '/' + item.name.replace('pug', 'html')) #{name.replace('.pug', '').replace('A11y', 'Accessibility')}
             else
-              input.category-toggle.visually-hidden(id=name, type='checkbox', name=name)
-              label.category-label(for=name) #{name}
+              //- input.category-toggle.visually-hidden(id=name, type='checkbox', name=name)
+              button.category-label(for=name) #{name}
 
-              if item.children && item.children.length >= 1
-                +buildNav(item.children, newRootHref + '/' + item.name)
-
+mixin buildNavItemsFor(category)
+  if category.children
+    ul.nav_items(id=`nav_cat-${category.name}`)
+      each item in category.children.sort((i, j) => i.name > j.name ? 1 : -1)
+        - const shortName = item.name.replace('pug', '');
+        if item.children && item.children.length
+          each child in item.children.filter(i => i.type === 'file' && i.name === 'index.pug')
+            li.nav_item
+              a(href='/' + category.name + '/' + shortName) #{toTitleCase(item.name.replace('.pug', '')).replace('A11y', 'Accessibility')}
 
 mixin colorPicker(target, val, type)
   - var prefix = type === 'background' ? 'bg_' : 'fg_';
@@ -160,3 +170,7 @@ mixin footnoteList()
         if fn.block
           - fn.block()
           span &nbsp;&nbsp;#[a(href='#footnote_term_#' + fn.id).footnote-returner &#8617;]
+
+mixin rawSvgFor(icon)
+  if icon === 'github'
+    include /assets/github.svg

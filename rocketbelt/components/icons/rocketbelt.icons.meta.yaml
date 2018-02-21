@@ -84,6 +84,10 @@ close:
   title: Close
   description: An "x" character representing a close action
 
+copy:
+  title: Copy
+  description: An object with an arrow pointing to a copy of itself
+
 credit-card:
   title: Credit Card
   description: The back side of a credit card
@@ -111,6 +115,10 @@ error:
 filter:
   title: Filter
   description: A funnel
+
+flask:
+  title: Flask
+  description: A bubbling flask
 
 grid:
   title: Grid
@@ -191,6 +199,10 @@ play-circle:
 plus:
   title: Plus
   description: A plus sign
+
+puzzle:
+  title: Puzzle Piece
+  description: A puzzle piece
 
 question:
   title: Question
