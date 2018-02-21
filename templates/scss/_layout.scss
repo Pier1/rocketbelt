@@ -109,10 +109,6 @@ body {
   -ms-overflow-style: -ms-autohiding-scrollbar; // sass-lint:disable-line no-vendor-prefixes
 }
 
-%nav-shadowed {
-  box-shadow: 0 4px 6px 0 rgba(mix(color(black), color(accent), 80%), 0.2);
-}
-
 .site-nav {
   @extend %horizontal-scrollable;
 
@@ -124,7 +120,7 @@ body {
   justify-content: space-between;
 
   &.nav-shadowed {
-    @extend %nav-shadowed;
+    box-shadow: 0 4px 6px 0 rgba(mix(color(black), color(accent), 80%), 0.2);
   }
 }
 
