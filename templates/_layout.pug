@@ -34,8 +34,7 @@ html(lang='en')
     include /base/a11y/_a11y-skip-links.pug
     .docs-wrapper.row
       header.site-header
-        nav.site-nav.nav-shadowed
-
+        .site-nav.nav-shadowed
           .nav_on-site
             a.rb-header(href='/')
               span.visually-hidden Return to rocketbelt.io
@@ -49,9 +48,23 @@ html(lang='en')
             a.link.link-github(href='https://github.com/pier1/rocketbelt')
               span.visually-hidden Rocketbelt on GitHub
               +rawSvgFor('github')
-        .submenus
-          each category in nav
-            +buildNavItemsFor(category)
+        //- .submenus
+        //-   each category in nav
+        //-     +buildNavItemsFor(category)
+        script(src=prepend + '/components/navigation/rocketbelt.navigation-xl.js')
+        script.
+          $(document).ready(function () {
+            $('#main-nav').accessibleMegaMenu({
+              uuidPrefix: 'rb-navigation',
+              menuClass: 'nav-menu',
+              topNavItemClass: 'nav-item',
+              panelClass: 'sub-nav',
+              panelGroupClass: 'sub-nav-group',
+              hoverClass: 'hover',
+              focusClass: 'focus',
+              openClass: 'open'
+            })
+          });
 
       .pad-5.col.xs.docs-wrapper_main
         block main
@@ -66,8 +79,6 @@ html(lang='en')
       footer.site-footer
         include _footer.pug
     include /components/dialogs/_dialog-template.pug
-
-    script(src=prepend + '/js/nav.js')
 
     script(src=prepend + '/js/playground.jquery.js')
     script(src=prepend + '/js/site.js')
