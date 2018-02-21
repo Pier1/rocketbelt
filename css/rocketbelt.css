@@ -3086,9 +3086,9 @@ fieldset {
         -ms-flex-wrap: wrap;
             flex-wrap: wrap; }
     .form-group.inline-with-button.inline-with-button-stacked input {
-      -webkit-flex: 1 0 0;
+      -webkit-flex: 1 0 0px;
           -ms-flex: 1 0 0px;
-              flex: 1 0 0;
+              flex: 1 0 0px;
       min-width: 0;
       width: auto; }
     .form-group.inline-with-button.inline-with-button-stacked label {

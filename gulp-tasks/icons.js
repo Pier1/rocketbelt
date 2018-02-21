@@ -16,7 +16,7 @@
         shape: {
           id: {
             generator: (file) => {
-              return `rb-icon-${file.replace(/\.svg/, '')}`;
+              return `rb-icon-${file.replace(/enterprise\//, '').replace(/\.svg/, '')}`;
             }
           },
           meta: './rocketbelt/components/icons/rocketbelt.icons.meta.yaml',
@@ -41,20 +41,25 @@
       };
 
       const iconsPath = `${config.patternsPath}/components/icons`;
-      const sketchFiles = enterprise ? '/**/*.sketch' : '/**/rocketbelt.icons.sketch';
+      const sketchFiles =
+        enterprise ?
+          '/**/rocketbelt.icons.enterprise.sketch' :
+          '/**/rocketbelt.icons.sketch';
 
-      return gulp.src(iconsPath + sketchFiles)
+      gulp.src(iconsPath + sketchFiles)
         .pipe(plugins.sketch({
           export: 'artboards',
           formats: 'svg'
         }))
         .pipe(plugins.removeHtmlComments())
-        .pipe(gulp.dest(`${iconsPath}/svg`))
+        .pipe(gulp.dest(`${iconsPath}/svg${ enterprise ? '/enterprise' : '' }`));
+
+      const iconsForSprite = enterprise ? `${iconsPath}/svg/**/*.svg` : `${iconsPath}/svg/*.svg`;
+      return gulp.src(iconsForSprite)
         .pipe(plugins.svgSprite(options))
         .pipe(plugins.cheerio({
           xmlMode: true,
           recognizeSelfClosing: true,
-          // lowerCaseAttributeNames: false,
           run: ($) => {
             $('symbol[id^=rb-icon-]').each(function elHandler() {
               const $symbol = $(this);

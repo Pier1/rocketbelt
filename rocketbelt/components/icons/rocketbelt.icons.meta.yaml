@@ -116,6 +116,10 @@ filter:
   title: Filter
   description: A funnel
 
+flask:
+  title: Flask
+  description: A bubbling flask
+
 grid:
   title: Grid
   description: A grid of 9 squares

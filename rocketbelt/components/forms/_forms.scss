@@ -155,7 +155,9 @@ fieldset {
       flex-wrap: wrap;
 
       input {
-        flex: 1 0 0;
+        // Must keep unit on zero-value for flex-basis here to avoid an IE bug.
+        // See https://github.com/Pier1/rocketbelt/pull/182.
+        flex: 1 0 0px; // sass-lint:disable-line zero-unit
         min-width: 0;
         width: auto;
       }

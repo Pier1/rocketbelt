@@ -765,23 +765,40 @@ article.grid-article .example .row[class$='reverse'] .col {
     background-color: inherit; }
 
 .examples-icons .icon-container {
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09), -2px -2px 2px rgba(0, 0, 0, 0.04);
   margin: 0.4rem;
-  padding-bottom: 0.4rem;
+  padding: 0;
+  min-width: 160px;
   max-width: 160px;
-  width: 160px;
-  transition: box-shadow 100ms ease-out;
-  color: #4a4647; }
-  .examples-icons .icon-container:hover {
+  color: #4a4647;
+  transition: box-shadow 100ms ease-out; }
+  .examples-icons .icon-container .icon {
+    width: 50%;
+    height: 50%; }
+  .examples-icons .icon-container .icon-id {
+    margin: 0.5rem;
+    color: #030001;
+    text-align: left;
+    font-family: "RB Monospace", Monaco, Consolas, "Lucida Console", monospace;
+    -webkit-user-select: text;
+       -moz-user-select: text;
+        -ms-user-select: text;
+            user-select: text; }
+
+.examples-icons .copy-button {
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09), -2px -2px 2px rgba(0, 0, 0, 0.04);
+  padding: 0;
+  height: 100%;
+  border: 0;
+  background: #fefdfd;
+  cursor: pointer;
+  transition: background 100ms linear; }
+  .examples-icons .copy-button:hover {
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23), -2px -2px 2px rgba(0, 0, 0, 0.04);
     transition: box-shadow 100ms ease-out; }
-  .examples-icons .icon-container .icon {
-    margin: 0.4rem 0;
-    height: 72px; }
-  .examples-icons .icon-container .icon-id {
-    margin-top: 0.5rem;
-    color: #030001;
-    font-family: "RB Monospace", Monaco, Consolas, "Lucida Console", monospace; }
+  .examples-icons .copy-button:active {
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04);
+    background: #f6f5f5;
+    transition: box-shadow 100ms ease-out, background 100ms linear; }
 
 .examples-icons .icon-meaningful .icon,
 .examples-icons .icon-link-no-text .icon {
