@@ -27,8 +27,9 @@
     padding: 0;
     height: 100%;
     border: 0;
-    background: transparent;
+    background: color(white);
     cursor: pointer;
+    transition: background 100ms linear;
 
     &:hover {
       @include z-depth(2);
@@ -37,7 +38,8 @@
 
     &:active {
       @include z-depth(1);
-      transition: box-shadow 100ms ease-out;
+      background: scale-color(color(gray, plus5), $lightness: 30%);
+      transition: box-shadow 100ms ease-out, background 100ms linear;
     }
   }
 
