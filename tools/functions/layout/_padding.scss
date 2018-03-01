@@ -1,0 +1,15 @@
+/// Returns a padding as a number of steps along a scale.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @param $factor - The number of steps to scale up or down
+///
+/// @example scss - padding function
+///   padding(1);
+///   // $padding-default
+///   padding(3);
+///   // $padding-default * 3
+@function padding($factor) {
+  @return $factor * $padding-default;
+}

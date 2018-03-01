@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAapeRjXG7">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAapeRjXG7">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAapeRjXG7" color="#5b14d9">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAapeRjXG7">
+    <meta name="msapplication-TileColor" content="#5b14d9">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml?v=gAapeRjXG7">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <title>Busy Indicators | Rocketbelt</title>
+    <link rel="stylesheet" href="../../css/rocketbelt.creative.min.css">
+    <link rel="stylesheet" href="../../css/rocketbelt.min.css">
+    <link rel="stylesheet" href="../../css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/base/rocketbelt.js"></script>
+  </body>
+  <body class="grid-fluid">
+    <ul class="skip list-reset">
+      <li><a class="button-sm button-secondary" href="#content">Skip to Main Content</a></li>
+      <li><a class="button-sm button-secondary" href="#footer">Skip to Footer</a></li>
+    </ul>
+    <div class="docs-wrapper row">
+      <header class="site-header">
+        <div class="site-nav nav-shadowed">
+          <div class="nav_on-site"><a class="rb-header" href="/"><span class="visually-hidden">Return to rocketbelt.io</span>
+              <picture><img srcset="/assets/rocketbelt.svg" alt=""></picture><span class="rb-title">Rocketbelt</span></a>
+            <nav id="main-nav">
+              <ul class="nav-menu">
+                <li class="nav-item nav_level-1" ref="base">
+                  <button class="category-label">Base</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/animation">Animation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/vendor">Vendor</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/a11y">A11y</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/color">Color</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/feature-detection">Feature Detection</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/layout">Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/slipsum">Slipsum</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/typography">Typography</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/grid">Grid</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="creative">
+                  <button class="category-label">Creative</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/playground">Playground</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/sale-sticker">Sale Sticker</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/product-tag">Product Tag</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/seo-banner">Seo Banner</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="components">
+                  <button class="category-label">Components</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="exposition">
+                  <button class="category-label">Exposition</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/homepage-components">Homepage Components</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/links-and-buttons">Links And Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/logo-usage">Logo Usage</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/web-typography">Web Typography</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/page-layout">Page Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/site-content">Site Content</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="nav_off-site links">
+            <div class="link link-npm"></div><a class="link link-github" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          </div>
+        </div>
+        <script src="../../components/navigation/rocketbelt.navigation-xl.js"></script>
+        <script>
+          $(document).ready(function () {
+            $('#main-nav').accessibleMegaMenu({
+              uuidPrefix: 'rb-navigation',
+              menuClass: 'nav-menu',
+              topNavItemClass: 'nav-item',
+              panelClass: 'sub-nav',
+              panelGroupClass: 'sub-nav-group',
+              hoverClass: 'hover',
+              focusClass: 'focus',
+              openClass: 'open'
+            })
+          });
+          
+        </script>
+      </header>
+      <div class="pad-5 col xs docs-wrapper_main">
+        <main class="site-main grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <div class="grid">
+                <article>
+                  <h1 id="busy-indicators" class="heading-with-link"><span class="heading_text">Busy Indicators</span><button data-clipboard-text="#busy-indicators" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h1>
+                  <h2 id="component-level" class="heading-with-link"><span class="heading_text">Component-Level</span><button data-clipboard-text="#component-level" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h3 id="is-busyable" class="heading-with-link"><span class="heading_text">&quot;Is Busyable&quot;</span><button data-clipboard-text="#is-busyable" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <p>Whenever possible, add the <code>is-busyable</code> class to the container that wraps components that may be marked as busy. This will maximize performance by greatly narrowing the scope of DOM elements that will be watched by a <code>MutationObserver</code>. If no element matches <code>.is-busyable</code>, the observer will be registered against <code>body</code>.</p>
+                  <h3 id="custom-sizing" class="heading-with-link"><span class="heading_text">Custom Sizing</span><button data-clipboard-text="#custom-sizing" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <p>If a large component needs to indicate a busy state, supply a custom rule that targets the <code>font-size</code> of <code>.is-busy_overlay</code>. (This element is created &amp; managed via Javascript.) Be sure to use Rocketbelt&apos;s <code>font-size()</code> function!</p>
+                  <p>For example:</p>
+                  <div class="exampleWithCode">
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZQ1MF8" checked="checked">
+                      <label class="expander_label" for="rb-ZQ1MF8" data-collapsed-label="Show CSS" data-expanded-label="Hide CSS"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-gk7bV">Copy</button>
+                          <pre><code class="language-css" id="rb-gk7bV">
+                              #component-wrapper .is-busy_overlay {
+                                font-size: font-size(3);
+                              }</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="script-include" class="heading-with-link"><span class="heading_text">Script Include</span><button data-clipboard-text="#script-include" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1ryu9x" checked="checked">
+                      <label class="expander_label" for="rb-Z1ryu9x" data-collapsed-label="Show JS" data-expanded-label="Hide JS"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-ZnGKdY">Copy</button>
+                          <pre><code class="language-js" id="rb-ZnGKdY">
+                              &lt;script src=&quot;./rocketbelt.progress-indicators.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="example">
+                      <script src="./rocketbelt.progress-indicators.min.js"></script>
+                    </div>
+                  </div>
+                  <h3 id="examples" class="heading-with-link"><span class="heading_text">Examples</span><button data-clipboard-text="#examples" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <style>
+                    .form-group, .radio-group {
+                      width: 360px;
+                      margin-bottom: 2rem !important;
+                    }
+                  </style>
+                  <div class="grid-fluid">
+                    <div class="row exampleWithoutCode">
+                      <div class="col xs">
+                        <button class="button button-secondary is-busyable is-busy_trigger"><span>Click to Trigger Busy</span></button>
+                      </div>
+                      <div class="col xs">
+                        <button class="button button-primary is-busyable is-busy_trigger is-busy-inverted"><span>Click to Trigger Busy</span></button>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="exampleWithCode">
+                          <div class="example"></div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-2cdyIN">
+                            <label class="expander_label" for="rb-2cdyIN" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-1G6sTJ">Copy</button>
+                                <pre><code class="language-html" id="rb-1G6sTJ">
+                                    &lt;button class=&quot;button button-primary is-busy is-busy-inverted&quot;&gt;&lt;span&gt;Click to Trigger Busy&lt;/span&gt;&lt;/button&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row exampleWithoutCode">
+                      <div class="col xs">
+                        <div class="form-group is-busyable is-busy">
+                          <textarea class="is-busy_trigger" id="busy-textarea" placeholder="Blur the textarea to trigger a busy state."></textarea>
+                          <label for="busy-textarea">Message</label>
+                        </div>
+                        <ul class="radio-group radio-group-chunky is-busyable">
+                          <li>
+                            <input class="is-busy_trigger" id="busy-chunky-1" type="radio" name="radio-group-chunky">
+                            <label for="busy-chunky-1">Click an option to trigger a busy state.</label>
+                          </li>
+                          <li>
+                            <input class="is-busy_trigger" id="busy-chunky-2" type="radio" name="radio-group-chunky">
+                            <label for="busy-chunky-2">Click an option to trigger a busy state.</label>
+                          </li>
+                        </ul>
+                        <div class="form-group is-busyable">
+                          <select id="busy-select">
+                            <option value="" disabled selected hidden>Change selection to trigger busy</option>
+                            <option class="is-busy_trigger">Biblioteca</option>
+                            <option class="is-busy_trigger">Marcel</option>
+                            <option class="is-busy_trigger">Pierce</option>
+                          </select>
+                          <label for="busy-select">Collection</label>
+                        </div>
+                        <div class="exampleWithCode">
+                          <div class="example"></div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1qOf5j">
+                            <label class="expander_label" for="rb-Z1qOf5j" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-ZxjDFE">Copy</button>
+                                <pre><code class="language-html" id="rb-ZxjDFE">
+                                    &lt;div class=&quot;form-group is-busyable&quot;&gt;
+                                      &lt;textarea id=&quot;busy-textarea&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot;&gt;&lt;/textarea&gt;
+                                      &lt;label for=&quot;busy-textarea&quot;&gt;Message&lt;/label&gt;
+                                    &lt;/div&gt;
+                                    &lt;ul class=&quot;radio-group radio-group-chunky is-busyable&quot;&gt;
+                                      &lt;li&gt;
+                                        &lt;input id=&quot;busy-chunky-1&quot; type=&quot;radio&quot; name=&quot;radio-group-chunky&quot;&gt;
+                                        &lt;label for=&quot;busy-chunky-1&quot;&gt;Click an option to trigger a busy state.&lt;/label&gt;
+                                      &lt;/li&gt;
+                                      &lt;li&gt;
+                                        &lt;input id=&quot;busy-chunky-2&quot; type=&quot;radio&quot; name=&quot;radio-group-chunky&quot;&gt;
+                                        &lt;label for=&quot;busy-chunky-2&quot;&gt;Click an option to trigger a busy state.&lt;/label&gt;
+                                      &lt;/li&gt;
+                                    &lt;/ul&gt;
+                                    &lt;div class=&quot;form-group is-busyable&quot;&gt;
+                                      &lt;select id=&quot;busy-select&quot;&gt;
+                                        &lt;option value=&quot;&quot; disabled=&quot;&quot; selected=&quot;&quot; hidden=&quot;&quot;&gt;Change selection to trigger busy&lt;/option&gt;
+                                        &lt;option&gt;Biblioteca&lt;/option&gt;
+                                        &lt;option&gt;Marcel&lt;/option&gt;
+                                        &lt;option&gt;Pierce&lt;/option&gt;
+                                      &lt;/select&gt;
+                                      &lt;label for=&quot;busy-select&quot;&gt;Collection&lt;/label&gt;
+                                    &lt;/div&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script>
+                    $(document).on('click', '.is-busy_trigger', function () {
+                      var $toBusy = $(this).closest('.form-group, .radio-group');
+                    
+                      $toBusy.addClass('is-busy');
+                      setTimeout(function () {
+                        $toBusy.removeClass('is-busy');
+                      }, 2850)
+                    });
+                    $(document).on('change', 'select#busy-select', function () {
+                      var $toBusy = $(this).closest('.form-group');
+                      $toBusy.addClass('is-busy');
+                      setTimeout(function () {
+                        $toBusy.removeClass('is-busy');
+                      }, 2850)
+                    });
+                    $(document).on('click', 'button.is-busy_trigger', function () {
+                      var $this = $(this);
+                      $this.addClass('is-busy');
+                      setTimeout(function () {
+                        $this.removeClass('is-busy');
+                      }, 2850)
+                    });
+                  </script>
+                  <h2 id="page-level" class="heading-with-link"><span class="heading_text">Page-Level</span><button data-clipboard-text="#page-level" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="form-group is-busyable is-busyable-page" style="width: 100%;">
+                        <textarea class="is-busy_trigger" id="busy-large" placeholder="Blur the textarea to trigger a busy state." style="height: 50rem;"></textarea>
+                        <label for="busy-large">Message</label>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZRtDya">
+                      <label class="expander_label" for="rb-ZRtDya" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-RQ8fq">Copy</button>
+                          <pre><code class="language-html" id="rb-RQ8fq">
+                              &lt;div class=&quot;form-group is-busyable is-busyable-page&quot; style=&quot;width: 100%;&quot;&gt;
+                                &lt;textarea class=&quot;is-busy_trigger&quot; id=&quot;busy-large&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot; style=&quot;height: 50rem;&quot;&gt;&lt;/textarea&gt;
+                                &lt;label for=&quot;busy-large&quot;&gt;Message&lt;/label&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="site-footer">
+        <div class="grid-fluid footer_wrapper">
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="links_off-site"><a class="link" href="https://www.pier1.com">
+                  <svg class="icon p1-logo">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-p1logo-alt-1"/>
+                  </svg></a><a class="link" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div>
+            </div>
+          </div>
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="copyright">&#xA9; 2018 Pier 1 Imports. Rocketbelt is distributed under an <a href="https://github.com/Pier1/rocketbelt/blob/develop/LICENSE">MIT license</a>.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <article class="dialog" tabindex="0" aria-hidden="true">
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+        <header class="dialog_header">
+          <h2 class="dialog_title" id="dialog_title"></h2>
+          <div class="dialog_close_container">
+            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+              <svg class="icon">
+                <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="dialog_body"></div>
+      </section>
+    </article>
+    <script src="../../js/playground.jquery.js"></script>
+    <script src="../../js/site.js"></script>
+    <script src="/base/feature-detection/rocketbelt.feature-detection.min.js" async></script>
+    <script src="/components/icons/rocketbelt.icons.svgxuse.min.js" defer></script>
+    <script src="../../js/preCode.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard('.heading-copy-button', {
+          text: function(trigger) {
+              return window.location.href.split(/[?#]/)[0] + trigger.getAttribute('data-clipboard-text');
+          }
+      });
+      
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
