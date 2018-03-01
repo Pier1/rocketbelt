@@ -89,5 +89,12 @@ html(lang='en')
     script(src=prepend + '/js/prism.js')
     script(src=prepend + '/js/clipboard.min.js')
 
+    script.
+      var clipboard = new Clipboard('.heading-copy-button', {
+          text: function(trigger) {
+              return window.location.href.split(/[?#]/)[0] + trigger.getAttribute('data-clipboard-text');
+          }
+      });
+
     include _analytics.pug
     block scripts
