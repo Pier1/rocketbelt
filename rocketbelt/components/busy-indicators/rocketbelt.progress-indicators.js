@@ -7,13 +7,13 @@
       const mutation = mutations[k];
       const el = mutation.target;
 
-      if (mutation.target.classList && mutation.target.classList.contains('is-busy')) {
+      if (el.classList && el.classList.contains('is-busy')) {
         // If "is-busy" was added, do the decoratin'
-        if (mutation.target.getElementsByClassName('is-busy_overlay').length === 0) {
+        if (el.getElementsByClassName('is-busy_overlay').length === 0) {
           // Only add overlay if one doesn't already exist
           let markup = '';
 
-          if (mutation.target.classList.contains('is-busyable-page')) {
+          if (el.classList.contains('is-busyable-page')) {
             markup = '<div class="box-loader"><div class="border"></div><div class="border"></div><div class="border"></div><div class="border"></div></div>';
           } else {
             markup = '<div class="dot" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div>';
