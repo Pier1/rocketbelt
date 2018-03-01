@@ -22,13 +22,13 @@
     height: 1em;
     vertical-align: baseline; }
 
-.skip a,
-.visually-hidden,
-.visuallyhidden,
-.expander .expander_checkbox,
-.dialog-dark .dialog_title,
-input.rb-checkbox[type='checkbox'],
-input[type='radio'] {
+.skip a:not(:focus):not(:active),
+.visually-hidden:not(:focus):not(:active),
+.visuallyhidden:not(:focus):not(:active),
+.expander .expander_checkbox:not(:focus):not(:active),
+.dialog-dark .dialog_title:not(:focus):not(:active),
+input.rb-checkbox[type='checkbox']:not(:focus):not(:active),
+input[type='radio']:not(:focus):not(:active) {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);

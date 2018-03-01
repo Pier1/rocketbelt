@@ -42,10 +42,10 @@
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/base/a11y">A11y</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/base/color">Color</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/base/feature-detection">Feature Detection</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/grid">Grid</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/base/layout">Layout</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/typography">Typography</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/base/slipsum">Slipsum</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/typography">Typography</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/grid">Grid</a></li>
                     </ul>
                   </div>
                 </li>
@@ -54,8 +54,8 @@
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/playground">Playground</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/product-tag">Product Tag</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/sale-sticker">Sale Sticker</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/product-tag">Product Tag</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/seo-banner">Seo Banner</a></li>
                     </ul>
                   </div>
@@ -66,18 +66,18 @@
                     <ul class="sub-nav-group">
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
@@ -91,9 +91,9 @@
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/homepage-components">Homepage Components</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/links-and-buttons">Links And Buttons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/logo-usage">Logo Usage</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/web-typography">Web Typography</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/page-layout">Page Layout</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/site-content">Site Content</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/web-typography">Web Typography</a></li>
                     </ul>
                   </div>
                 </li>
@@ -127,11 +127,11 @@
             <div class="col xs">
               <div class="grid">
                 <article>
-                  <h1 id="slipsum" class="heading-with-link"><span class="heading_text">Slipsum</span><a href="#slipsum" class="heading_link">
+                  <h1 id="slipsum" class="heading-with-link"><span class="heading_text">Slipsum</span><button data-clipboard-text="#slipsum" class="heading-copy-button heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
-                </a></h1>
+                </button></h1>
                   <p>Slipsum is Pier 1&apos;s very own lorem ipsum generator&#x2014;a <a href="https://en.wikipedia.org/wiki/Markov_chain">Markov chain generator</a> that&apos;s seeded with about half of Pier 1&apos;s product descriptions. The result is more readable than lorem text but still decidedly nonsense.</p><span>Build</span>
                   <select class="slipsum-num">
                     <option value="1">1</option>
@@ -229,6 +229,14 @@
     <script src="../../js/preCode.js"></script>
     <script src="../../js/prism.js"></script>
     <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard('.heading-copy-button', {
+          text: function(trigger) {
+              return window.location.href.split(/[?#]/)[0] + trigger.getAttribute('data-clipboard-text');
+          }
+      });
+      
+    </script>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
