@@ -92,6 +92,8 @@ body {
 }
 
 .site-header {
+  // @extend %horizontal-scrollable;
+
   position: fixed;
   top: 0;
   right: 0;
@@ -111,9 +113,9 @@ body {
 
 .site-nav {
   @extend %horizontal-scrollable;
-
+  // Need to add min-height: 110px when nav open
+  position: relative;
   display: flex;
-  overflow: visible;
   min-height: $header-height;
   color: color(white);
   align-items: center;
@@ -125,6 +127,7 @@ body {
 }
 
 .nav_on-site {
+  // When nav open, need to set flex: 1; align-self: flex-start;
   display: flex;
   padding-right: 1rem;
   padding-left: 1rem;
@@ -188,6 +191,8 @@ body {
   }
 
   .nav-menu {
+    position: relative;
+    z-index: unset;
     display: flex;
     height: 100%;
     align-items: center;
@@ -206,20 +211,27 @@ body {
 
 .site-main {
   margin-top: $header-height;
+
+  .row {
+    margin: 0;
+  }
 }
 
 %heading-link-visible {
-  position: relative;
+  position: static;
   display: flex;
   overflow: visible;
   clip: auto;
   margin: 0;
+  padding: inherit;
+  width: unset;
+  height: unset;
+  border: 0;
+  background: transparent;
   white-space: inherit;
   opacity: 1;
   transition: opacity 200ms linear;
   transition-delay: 200ms;
-  align-items: center;
-  justify-content: center;
   clip-path: none;
 }
 
@@ -236,18 +248,18 @@ body {
 
 .heading_link {
   @extend %visually-hidden;
-  @extend %focusable;
 
+  display: flex;
   width: 30px;
   height: 1rem;
+  border: 0;
+  background: transparent;
   color: color(gray, plus1);
   text-decoration: none;
   opacity: 0;
   transition: opacity 200ms linear;
-
-  &:focus {
-    @extend %heading-link-visible;
-  }
+  justify-content: center;
+  align-items: center;
 
   &:visited {
     color: color(gray);
