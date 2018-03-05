@@ -25,7 +25,7 @@
         }
 
         const a11yAttrs =
-          'aria-label="Loading." role="alert" aria-live="polite" aria-busy="true"';
+          'aria-label="Loading." role="alert" aria-live="assertive" aria-busy="true"';
         const elType = el.nodeName === 'UL' || el.nodeName === 'OL' ? 'li' : 'div';
         const fragment =
           `<${elType} class="is-busy_overlay is-busy_overlay-opaque" ${a11yAttrs}>\
