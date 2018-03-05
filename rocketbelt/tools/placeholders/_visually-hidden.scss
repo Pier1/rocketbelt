@@ -4,18 +4,20 @@
 /// @author Kendrick Arnett
 ///
 /// @see http://a11yproject.com/posts/how-to-hide-content/
-%visually-hidden:not(:focus):not(:active),
+%visually-hidden,
 %visuallyhidden {
-  position: absolute;
-  overflow: hidden;
-  clip: rect(0 0 0 0);
-  margin: -1px;
-  padding: 0;
-  width: 1px;
-  height: 1px;
-  border: 0;
-  white-space: nowrap;
-  clip-path: inset(50%);
+  &:not(:focus):not(:active) {
+    position: absolute;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    margin: -1px;
+    padding: 0;
+    width: 1px;
+    height: 1px;
+    border: 0;
+    white-space: nowrap;
+    clip-path: inset(50%);
+  }
 }
 
 // Genius idea from H5BP. See https://github.com/h5bp/html5-boilerplate/blob/024b8a05ee9acf99393469c0622e55a694542493/src/css/main.css#L147
