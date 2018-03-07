@@ -499,7 +499,7 @@ pre[class*="language-"] {
     height: 1em;
     vertical-align: baseline; }
 
-.swatch-cards .card-buttons .copy-button:not(:focus):not(:active), .heading_link:not(:focus):not(:active) {
+.swatch-cards .card-buttons .copy-button, .heading_link {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);

@@ -1,8 +1,8 @@
 @charset "UTF-8";
 /* Full info here: https://codepen.io/jakob-e/pen/doMoML */
-.skip a:not(:focus):not(:active),
-.visually-hidden:not(:focus):not(:active),
-.visuallyhidden:not(:focus):not(:active) {
+.skip a,
+.visually-hidden,
+.visuallyhidden {
   position: absolute;
   overflow: hidden;
   clip: rect(0 0 0 0);
