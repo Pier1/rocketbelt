@@ -1,0 +1,695 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAapeRjXG7">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAapeRjXG7">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAapeRjXG7" color="#5b14d9">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAapeRjXG7">
+    <meta name="msapplication-TileColor" content="#5b14d9">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml?v=gAapeRjXG7">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <title>Grid | Rocketbelt</title>
+    <link rel="stylesheet" href="../../css/rocketbelt.creative.min.css">
+    <link rel="stylesheet" href="../../css/rocketbelt.min.css">
+    <link rel="stylesheet" href="../../css/site.min.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/base/rocketbelt.js"></script>
+  </body>
+  <body class="grid-fluid">
+    <ul class="skip list-reset">
+      <li><a class="button-sm button-secondary" href="#content">Skip to Main Content</a></li>
+      <li><a class="button-sm button-secondary" href="#footer">Skip to Footer</a></li>
+    </ul>
+    <div class="docs-wrapper row">
+      <header class="site-header">
+        <div class="site-nav nav-shadowed">
+          <div class="nav_on-site"><a class="rb-header" href="/"><span class="visually-hidden">Return to rocketbelt.io</span>
+              <picture><img srcset="/assets/rocketbelt.svg" alt=""></picture><span class="rb-title">Rocketbelt</span></a>
+            <nav id="main-nav">
+              <ul class="nav-menu">
+                <li class="nav-item nav_level-1" ref="base">
+                  <button class="category-label">Base</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/animation">Animation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/vendor">Vendor</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/a11y">A11y</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/color">Color</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/feature-detection">Feature Detection</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/grid">Grid</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/layout">Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/slipsum">Slipsum</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/typography">Typography</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="creative">
+                  <button class="category-label">Creative</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/product-tag">Product Tag</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/playground">Playground</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/sale-sticker">Sale Sticker</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/seo-banner">Seo Banner</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="components">
+                  <button class="category-label">Components</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="exposition">
+                  <button class="category-label">Exposition</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/homepage-components">Homepage Components</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/logo-usage">Logo Usage</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/links-and-buttons">Links And Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/site-content">Site Content</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/page-layout">Page Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/web-typography">Web Typography</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="nav_off-site links">
+            <div class="link link-npm"></div><a class="link link-github" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          </div>
+        </div>
+        <script src="../../components/navigation/rocketbelt.navigation-xl.js"></script>
+        <script>
+          $(document).ready(function () {
+            $('#main-nav').accessibleMegaMenu({
+              uuidPrefix: 'rb-navigation',
+              menuClass: 'nav-menu',
+              topNavItemClass: 'nav-item',
+              panelClass: 'sub-nav',
+              panelGroupClass: 'sub-nav-group',
+              hoverClass: 'hover',
+              focusClass: 'focus',
+              openClass: 'open'
+            })
+          });
+          
+        </script>
+      </header>
+      <div class="pad-5 col xs docs-wrapper_main">
+        <main class="site-main grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <div class="grid">
+                <article class="grid-article">
+                  <h1 id="grid" class="heading-with-link"><span class="heading_text">Grid</span><button data-clipboard-text="#grid" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h1>Here is some short front matter about the grid.
+                  <h2 id="simple-syntax" class="heading-with-link"><span class="heading_text">Simple Syntax</span><button data-clipboard-text="#simple-syntax" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>Get started with as few as four classes.
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row">
+                          <div class="col xs"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1voQSH">
+                      <label class="expander_label" for="rb-Z1voQSH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z3qsb9">Copy</button>
+                          <pre><code class="language-html" id="rb-Z3qsb9">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="mobile-first-and-responsive" class="heading-with-link"><span class="heading_text">Mobile-First &amp; Responsive</span><button data-clipboard-text="#mobile-first-and-responsive" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>Start with <span class="code">xs</span>, then mix and match responsive modifiers.
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row">
+                          <div class="col xs-12 md-2 xl-4"></div>
+                          <div class="col xs-6 md-2 xl-4"></div>
+                          <div class="col xs-6 md-2 xl-4"></div>
+                          <div class="col xs-12 md-2 xl-3"></div>
+                          <div class="col xs-3 md-2 xl-3"></div>
+                          <div class="col xs-3 md-2 xl-3"></div>
+                          <div class="col xs-3 md-4 xl-3"></div>
+                          <div class="col xs-3 md-4 xl-6"></div>
+                          <div class="col xs-12 md-4 xl-6"></div>
+                          <div class="col xs-6 md-6 xl-12"></div>
+                          <div class="col xs-6 md-6 xl-12"></div>
+                          <div class="col xs-12 md-12 xl-12"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZPY7Mn">
+                      <label class="expander_label" for="rb-ZPY7Mn" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-iABWu">Copy</button>
+                          <pre><code class="language-html" id="rb-iABWu">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-12 md-2 xl-4&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-6 md-2 xl-4&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-6 md-2 xl-4&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-12 md-2 xl-3&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-3 md-2 xl-3&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-3 md-2 xl-3&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-3 md-4 xl-3&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-3 md-4 xl-6&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-12 md-4 xl-6&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-6 md-6 xl-12&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-6 md-6 xl-12&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-12 md-12 xl-12&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="automatic-widths" class="heading-with-link"><span class="heading_text">Automatic Widths</span><button data-clipboard-text="#automatic-widths" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>Leave off a column width if it needs to grow or shrink. The grid will size
+                  it automatically.
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row">
+                          <div class="col xs-1"></div>
+                          <div class="col xs"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col xs-3"></div>
+                          <div class="col xs"></div>
+                          <div class="col xs-3"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col xs xl-1"></div>
+                          <div class="col xs xl"></div>
+                          <div class="col xs xl-1"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1qWtaz">
+                      <label class="expander_label" for="rb-Z1qWtaz" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Zvhkar">Copy</button>
+                          <pre><code class="language-html" id="rb-Zvhkar">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-1&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-3&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-3&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs xl-1&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs xl&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs xl-1&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="column-offsets" class="heading-with-link"><span class="heading_text">Column Offsets</span><button data-clipboard-text="#column-offsets" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>Nudge a column to the right with an `-offset` class.
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row">
+                          <div class="col xs-offset-2 xs-4 md-offset-3 md-6 xl-offset-8 xl-4"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col xs-offset-3 xs-4 md-offset-3 md-6 xl-offset-6 xl-4"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col xs-offset-4 xs-4 md-offset-3 md-6 xl-offset-4 xl-4"></div>
+                        </div>
+                        <div class="row">
+                          <div class="col xs-offset-5 xs-4 md-offset-3 md-6 xl-offset-2 xl-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZRJMtE">
+                      <label class="expander_label" for="rb-ZRJMtE" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-O394U">Copy</button>
+                          <pre><code class="language-html" id="rb-O394U">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-offset-2 xs-4 md-offset-3 md-6 xl-offset-8 xl-4&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-offset-3 xs-4 md-offset-3 md-6 xl-offset-6 xl-4&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-offset-4 xs-4 md-offset-3 md-6 xl-offset-4 xl-4&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-offset-5 xs-4 md-offset-3 md-6 xl-offset-2 xl-4&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="nesting" class="heading-with-link"><span class="heading_text">Nesting</span><button data-clipboard-text="#nesting" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row">
+                          <div class="col xs-8">
+                            <div class="row">
+                              <div class="col xs"></div>
+                            </div>
+                          </div>
+                          <div class="col xs-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2dfLjk">
+                      <label class="expander_label" for="rb-2dfLjk" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-1VGfOR">Copy</button>
+                          <pre><code class="language-html" id="rb-1VGfOR">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-8&quot;&gt;
+                                    &lt;div class=&quot;row&quot;&gt;
+                                      &lt;div class=&quot;col xs&quot;&gt;&lt;/div&gt;
+                                    &lt;/div&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class=&quot;col xs-4&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="alignment-classes" class="heading-with-link"><span class="heading_text">Alignment Classes</span><button data-clipboard-text="#alignment-classes" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h3 id="horizontal" class="heading-with-link"><span class="heading_text">Horizontal</span><button data-clipboard-text="#horizontal" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <h4 id="-start-center-end" class="heading-with-link"><span class="heading_text">-start, -center, -end</span><button data-clipboard-text="#-start-center-end" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h4>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row xs-start md-center xl-end">
+                          <div class="col xs-4"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1inLGG">
+                      <label class="expander_label" for="rb-Z1inLGG" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z1O2Ojm">Copy</button>
+                          <pre><code class="language-html" id="rb-Z1O2Ojm">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row xs-start md-center xl-end&quot;&gt;
+                                  &lt;div class=&quot;col xs-4&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="vertical" class="heading-with-link"><span class="heading_text">Vertical</span><button data-clipboard-text="#vertical" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <h4 id="-top-middle-bottom" class="heading-with-link"><span class="heading_text">-top, -middle, -bottom</span><button data-clipboard-text="#-top-middle-bottom" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h4>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row xs-top md-middle xl-bottom">
+                          <div class="col xs-6 example-col-tall"></div>
+                          <div class="col xs-6"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2fjLJq">
+                      <label class="expander_label" for="rb-2fjLJq" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-1tfHjz">Copy</button>
+                          <pre><code class="language-html" id="rb-1tfHjz">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row xs-top md-middle xl-bottom&quot;&gt;
+                                  &lt;div class=&quot;col xs-6 example-col-tall&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-6&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="column-distribution" class="heading-with-link"><span class="heading_text">Column Distribution</span><button data-clipboard-text="#column-distribution" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h3 id="space-between" class="heading-with-link"><span class="heading_text">space-between</span><button data-clipboard-text="#space-between" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>Space columns evenly across the row, with no space at the beginning or end
+                  of the row.
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row xs-between">
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1k6U7y">
+                      <label class="expander_label" for="rb-Z1k6U7y" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z156lot">Copy</button>
+                          <pre><code class="language-html" id="rb-Z156lot">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row xs-between&quot;&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="space-around" class="heading-with-link"><span class="heading_text">space-around</span><button data-clipboard-text="#space-around" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>Space columns evenly across the row, including space at the beginning &amp; end
+                  of the row.
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row xs-around">
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1ety7Q">
+                      <label class="expander_label" for="rb-Z1ety7Q" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z2jCQX8">Copy</button>
+                          <pre><code class="language-html" id="rb-Z2jCQX8">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row xs-around&quot;&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="column-order" class="heading-with-link"><span class="heading_text">Column Order</span><button data-clipboard-text="#column-order" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h3 id="first-and-last" class="heading-with-link"><span class="heading_text">first &amp; last</span><button data-clipboard-text="#first-and-last" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row">
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2 xs-first"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1ee6Jj">
+                      <label class="expander_label" for="rb-Z1ee6Jj" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z2lzh6N">Copy</button>
+                          <pre><code class="language-html" id="rb-Z2lzh6N">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2 xs-first&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row">
+                          <div class="col xs-2 xs-last"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                          <div class="col xs-2"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2dgRpJ">
+                      <label class="expander_label" for="rb-2dgRpJ" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-27Q4JK">Copy</button>
+                          <pre><code class="language-html" id="rb-27Q4JK">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-2 xs-last&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="reverse" class="heading-with-link"><span class="heading_text">reverse</span><button data-clipboard-text="#reverse" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row reverse">
+                          <div class="col xs-2">1</div>
+                          <div class="col xs-2">2</div>
+                          <div class="col xs-2">3</div>
+                          <div class="col xs-2">4</div>
+                          <div class="col xs-2">5</div>
+                          <div class="col xs-2">6</div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1hUE1k">
+                      <label class="expander_label" for="rb-Z1hUE1k" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z26NYOd">Copy</button>
+                          <pre><code class="language-html" id="rb-Z26NYOd">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row reverse&quot;&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;1&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;2&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;3&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;4&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;5&lt;/div&gt;
+                                  &lt;div class=&quot;col xs-2&quot;&gt;6&lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="site-footer">
+        <div class="grid-fluid footer_wrapper">
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="links_off-site"><a class="link" href="https://www.pier1.com">
+                  <svg class="icon p1-logo">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-p1logo-alt-1"/>
+                  </svg></a><a class="link" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div>
+            </div>
+          </div>
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="copyright">&#xA9; 2018 Pier 1 Imports. Rocketbelt is distributed under an <a href="https://github.com/Pier1/rocketbelt/blob/develop/LICENSE">MIT license</a>.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <article class="dialog" tabindex="0" aria-hidden="true">
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+        <header class="dialog_header">
+          <h2 class="dialog_title" id="dialog_title"></h2>
+          <div class="dialog_close_container">
+            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+              <svg class="icon">
+                <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="dialog_body"></div>
+      </section>
+    </article>
+    <script src="../../js/playground.jquery.js"></script>
+    <script src="../../js/site.js"></script>
+    <script src="/base/feature-detection/rocketbelt.feature-detection.min.js" async></script>
+    <script src="/components/icons/rocketbelt.icons.svgxuse.min.js" defer></script>
+    <script src="../../js/preCode.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard('.heading-copy-button', {
+          text: function(trigger) {
+              return window.location.href.split(/[?#]/)[0] + trigger.getAttribute('data-clipboard-text');
+          }
+      });
+      
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
