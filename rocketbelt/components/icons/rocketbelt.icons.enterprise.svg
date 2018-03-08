@@ -502,109 +502,118 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <path d="M128 16c-15.405 0-29.903 2.945-43.495 8.835-13.592 5.89-25.463 13.91-35.612 24.058-10.149 10.15-18.168 22.02-24.058 35.612C18.945 98.097 16 112.595 16 128c0 15.405 2.945 29.903 8.835 43.495 5.89 13.592 13.91 25.463 24.058 35.612 10.15 10.149 22.02 18.168 35.612 24.058C98.097 237.055 112.595 240 128 240c15.405 0 29.903-2.945 43.495-8.835 13.592-5.89 25.463-13.91 35.612-24.058 10.149-10.15 18.168-22.02 24.058-35.612C237.055 157.903 240 143.405 240 128c0-15.405-2.945-29.903-8.835-43.495-5.89-13.592-13.91-25.463-24.058-35.612-10.15-10.149-22.02-18.168-35.612-24.058C157.903 18.945 143.405 16 128 16zm1.087 186.485c-4.35 0-8.064-1.54-11.145-4.62-3.081-3.082-4.622-6.888-4.622-11.418 0-4.35 1.54-8.065 4.622-11.146 3.08-3.081 6.796-4.621 11.145-4.621 4.531 0 8.337 1.54 11.418 4.621 3.08 3.08 4.621 6.796 4.621 11.146 0 4.53-1.54 8.336-4.621 11.417-3.081 3.081-6.796 4.621-11.146 4.621h-.272zm12.777-47.029v2.719h-26.369v-2.719c0-4.168.59-8.699 1.767-13.592 1.178-4.893 4.123-9.514 8.835-13.864a626.528 626.528 0 0 1 14.136-13.184c4.712-4.26 7.068-9.198 7.068-14.816 0-6.162-1.903-10.874-5.709-14.136-3.806-3.262-8.427-4.893-13.864-4.893-9.061 0-14.589 3.307-16.582 9.922-1.994 6.615-3.081 11.01-3.263 13.185H82.33c.363-9.787 3.489-20.117 9.379-30.99 5.89-10.874 17.896-16.311 36.02-16.311 15.947 0 27.591 4.35 34.931 13.048 7.34 8.7 11.01 18.033 11.01 28 0 15.767-5.301 26.777-15.903 33.03-10.602 6.252-15.903 14.452-15.903 24.601z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="cgrb-icon-ribbon-check-desc cgrb-icon-ribbon-check-title"
+  <symbol aria-labelledby="cgrb-icon-refresh-desc cgrb-icon-refresh-title"
+  id="rb-icon-refresh" xmlns="http://www.w3.org/2000/svg"
+  style="fill: var(--color, inherit);" viewBox="0 0 256 256">
+    <desc id="cgrb-icon-refresh-desc">Two arrows making a
+    circle</desc>
+    <title id="cgrb-icon-refresh-title">Refresh</title>
+    <path d="M217.44 137.79C212.55 182.88 174.38 218 128 218c-26.98 0-51.12-11.94-67.63-30.75l12.45-16.33C85.65 187.37 105.58 198 128 198c35.26 0 64.44-26.24 69.23-60.21H168l40-52.5 40 52.5h-30.56zM58.8 118c4.87-33.87 34-60 69.2-60 22.37 0 42.28 10.59 55.1 26.98l12.44-16.32C179.04 49.9 154.93 38 128 38c-46.32 0-84.43 35.01-89.41 80H8l40 52.5L88 118H58.8z"
+    fill-rule="nonzero" />
+  </symbol>
+  <symbol aria-labelledby="chrb-icon-ribbon-check-desc chrb-icon-ribbon-check-title"
   id="rb-icon-ribbon-check" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cgrb-icon-ribbon-check-desc">A ribbon with a check
+    <desc id="chrb-icon-ribbon-check-desc">A ribbon with a check
     mark on the front</desc>
-    <title id="cgrb-icon-ribbon-check-title">Ribbon With Check
+    <title id="chrb-icon-ribbon-check-title">Ribbon With Check
     Mark</title>
     <path d="M166.674 156.184V240l-38.824-29.426L88.201 240v-84.925a74.898 74.898 0 0 0 40.14 11.609 74.896 74.896 0 0 0 38.333-10.5zm-38.815-4.466C90.45 151.718 60 121.278 60 83.858 60 46.44 90.45 16 127.859 16c37.41 0 67.859 30.44 67.859 67.859 0 37.42-30.45 67.859-67.86 67.859zm-10.575-35.886l52.876-53.765-10.019-9.934L117.1 95.971 95.4 75.265l-9.844 10.118 31.728 30.45z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="chrb-icon-rotate-desc chrb-icon-rotate-title"
+  <symbol aria-labelledby="cirb-icon-rotate-desc cirb-icon-rotate-title"
   id="rb-icon-rotate" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="chrb-icon-rotate-desc">Two arrows spinning in a
+    <desc id="cirb-icon-rotate-desc">Two arrows spinning in a
     circle</desc>
-    <title id="chrb-icon-rotate-title">Rotate</title>
+    <title id="cirb-icon-rotate-title">Rotate</title>
     <path d="M125 189.293c-64.888-.484-117-16.645-117-36.51v-46.957c0 19.865 52.112 36.026 117 36.51v-29.032l52.055 52.082L125 217.467v-28.174zm68.217-5.848v-46.957C226.19 129.98 248 118.678 248 105.826v46.957c0 12.851-21.811 24.153-54.783 30.662zM121.583 56.312A404.53 404.53 0 0 1 128 56.26c66.274 0 120 16.178 120 36.135 0 4.063-2.227 7.97-6.333 11.614C225.603 89.752 180.78 79.49 128 79.49c-2.153 0-4.292.017-6.417.051v20.704L89 67.603l32.583-32.524v21.233zm-44.973 3.42v23.23C47.477 87.126 24.8 94.72 14.333 104.01 10.227 100.365 8 96.46 8 92.396c0-14.42 28.047-26.866 68.61-32.663z"
     fill-rule="evenodd" />
   </symbol>
-  <symbol aria-labelledby="cirb-icon-search-desc cirb-icon-search-title"
+  <symbol aria-labelledby="cjrb-icon-search-desc cjrb-icon-search-title"
   id="rb-icon-search" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cirb-icon-search-desc">A magnifying glass</desc>
-    <title id="cirb-icon-search-title">Search</title>
+    <desc id="cjrb-icon-search-desc">A magnifying glass</desc>
+    <title id="cjrb-icon-search-title">Search</title>
     <path d="M213.605 240l-68.945-68.945C131.705 179.212 116.436 184 100 184c-46.396 0-84-37.604-84-84s37.604-84 84-84 84 37.604 84 84c0 16.436-4.797 31.715-12.945 44.66L240 213.605 213.605 240zM100 165.333c36.017 0 65.333-29.306 65.333-65.333S136.017 34.667 100 34.667c-36.017 0-65.333 29.306-65.333 65.333S63.983 165.333 100 165.333z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="cjrb-icon-shipment-desc cjrb-icon-shipment-title"
+  <symbol aria-labelledby="ckrb-icon-shipment-desc ckrb-icon-shipment-title"
   id="rb-icon-shipment" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cjrb-icon-shipment-desc">A box with motion lines
+    <desc id="ckrb-icon-shipment-desc">A box with motion lines
     behind it</desc>
-    <title id="cjrb-icon-shipment-title">Shipment</title>
+    <title id="ckrb-icon-shipment-title">Shipment</title>
     <path d="M192.317 162.42l2.44-1.33v12.862l-2.44 1.331V162.42zm-4.436 2.661l2.662-1.552v12.863l-2.662 1.553V165.08zm18.852-10.867l2.44-1.553v12.864l-2.44 1.33v-12.641zM240 89.897v86.052l-71.414 41.695-89.6-52.341V79.251L150.622 38 240 89.897zM137.093 60.844l69.861 41.251 14.195-7.984L150.4 53.303l-13.307 7.54zm24.618 73.631L92.07 94.111v63.651l69.64 40.587v-63.874zm20.626-18.851l-68.753-41.03-14.637 8.428 69.64 40.364 13.75-7.762zm44.578-9.759l-12.42 7.097v23.288h-.222v.221L189.655 150v-.222.222-23.509l-14.859 8.428v63.873l52.119-30.162v-62.765zm-28.61 53.228l2.44-1.552v12.863l-2.44 1.552v-12.863zm14.638-8.65l2.44-1.33v12.863l-2.44 1.33v-12.862zm-10.424 6.21l2.44-1.552v12.863l-2.44 1.553v-12.864zM24.87 94.333H65.68v13.085H29.307L24.87 94.333zM16 115.623h49.68v13.086H20.435L16 115.624zm26.17 34.599l-4.214-13.085H65.68v13.085H42.17z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="ckrb-icon-sms-desc ckrb-icon-sms-title"
+  <symbol aria-labelledby="clrb-icon-sms-desc clrb-icon-sms-title"
   id="rb-icon-sms" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="ckrb-icon-sms-desc">A speech bubble with lines of
+    <desc id="clrb-icon-sms-desc">A speech bubble with lines of
     text inside</desc>
-    <title id="ckrb-icon-sms-title">SMS</title>
+    <title id="clrb-icon-sms-title">SMS</title>
     <path d="M127.995 43.666c51.462 0 93.33 33.524 93.33 74.729 0 45.89-48.018 74.3-92.49 74.3-18.078 0-31.573-3.706-41.009-6.011-9.333 5.721-14.886 9.678-39.87 16.986 4.993-12.814 6.748-25.647 5.618-39.805-7.82-9.333-18.899-22.4-18.899-45.47-.01-41.205 41.858-74.73 93.32-74.73zm0-18.666C68.843 25 16 64.441 16 118.395c0 19.132 6.888 37.92 19.105 52.498.513 17.079-9.548 41.587-18.601 59.432 24.284-4.387 58.807-14.074 74.458-23.669 13.234 3.22 25.9 4.695 37.883 4.695 66.114 0 111.155-45.144 111.155-92.966C239.99 64.152 186.784 25 127.995 25zM95.33 118.33c0 7.736-6.262 13.999-14 13.999-7.727 0-13.999-6.263-13.999-14s6.272-13.999 14-13.999c7.737 0 13.999 6.262 13.999 14zm32.665-14c-7.727 0-14 6.262-14 14 0 7.736 6.273 13.999 14 13.999 7.737 0 14-6.263 14-14s-6.263-13.999-14-13.999zm46.665 0c-7.728 0-14 6.262-14 14 0 7.736 6.272 13.999 14 13.999 7.737 0 14-6.263 14-14s-6.263-13.999-14-13.999z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="clrb-icon-sort-both-desc clrb-icon-sort-both-title"
+  <symbol aria-labelledby="cmrb-icon-sort-both-desc cmrb-icon-sort-both-title"
   id="rb-icon-sort-both" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="clrb-icon-sort-both-desc">An upward-pointing triangle
+    <desc id="cmrb-icon-sort-both-desc">An upward-pointing triangle
     above a downward-pointing triangle</desc>
-    <title id="clrb-icon-sort-both-title">Sort Both</title>
+    <title id="cmrb-icon-sort-both-title">Sort Both</title>
     <path d="M127.767 16l71.767 95.69H56L127.767 16zm0 224L56 144.31h143.534L127.767 240z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="cmrb-icon-sort-down-desc cmrb-icon-sort-down-title"
+  <symbol aria-labelledby="cnrb-icon-sort-down-desc cnrb-icon-sort-down-title"
   id="rb-icon-sort-down" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cmrb-icon-sort-down-desc">A downward-pointing
+    <desc id="cnrb-icon-sort-down-desc">A downward-pointing
     triangle</desc>
-    <title id="cmrb-icon-sort-down-title">Sort Down</title>
+    <title id="cnrb-icon-sort-down-title">Sort Down</title>
     <path d="M127.767 240L56 144.31h143.534z"
     fill-rule="evenodd" />
   </symbol>
-  <symbol aria-labelledby="cnrb-icon-sort-up-desc cnrb-icon-sort-up-title"
+  <symbol aria-labelledby="corb-icon-sort-up-desc corb-icon-sort-up-title"
   id="rb-icon-sort-up" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cnrb-icon-sort-up-desc">An upward-pointing
+    <desc id="corb-icon-sort-up-desc">An upward-pointing
     triangle</desc>
-    <title id="cnrb-icon-sort-up-title">Sort Up</title>
+    <title id="corb-icon-sort-up-title">Sort Up</title>
     <path d="M127.767 16l71.767 95.69H56z" fill-rule="evenodd" />
   </symbol>
-  <symbol aria-labelledby="corb-icon-specs-desc corb-icon-specs-title"
+  <symbol aria-labelledby="cprb-icon-specs-desc cprb-icon-specs-title"
   id="rb-icon-specs" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="corb-icon-specs-desc">A square with perpendicular
+    <desc id="cprb-icon-specs-desc">A square with perpendicular
     arrows that indicate measurements</desc>
-    <title id="corb-icon-specs-title">Specs</title>
+    <title id="cprb-icon-specs-title">Specs</title>
     <path d="M28.497 76.825v138.642h11.249L22.827 246 6 215.467h11.249V76.825H6l16.918-30.533 16.828 30.533H28.497zm48.256-59.583H215.46V5.993l30.533 16.828-30.533 16.918V28.49H76.753V39.74L46.219 22.821 76.753 5.993v11.249zm169.216 28.737v199.896H45.995V45.98h199.974zM225.97 65.97H65.992v159.916h159.98V65.97z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="cprb-icon-speed-desc cprb-icon-speed-title"
+  <symbol aria-labelledby="cqrb-icon-speed-desc cqrb-icon-speed-title"
   id="rb-icon-speed" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cprb-icon-speed-desc">A stopwatch with motion lines
+    <desc id="cqrb-icon-speed-desc">A stopwatch with motion lines
     behind it</desc>
-    <title id="cprb-icon-speed-title">Speed</title>
+    <title id="cqrb-icon-speed-title">Speed</title>
     <path d="M164.493 140.507l24.603-37.576-4.237-3.79-34.282 28.924c-6.3-1.288-13.085.635-17.677 5.768-6.87 7.682-6.207 19.488 1.484 26.358 7.69 6.869 19.488 6.206 26.357-1.484 4.592-5.134 5.74-12.087 3.752-18.2zM128 41.144V16h37.333v25.144c-13.43-2.268-24.192-2.221-37.333 0zm82.61 19.264l13.131-13.132 13.198 13.197-12.33 12.33a112.488 112.488 0 0 0-14-12.395zM34.666 100h74.666v18.667H34.667V100zM16 137.333h74.667V156H16v-18.667zm28 37.334h65.333v18.666H44v-18.666zm196-28C240 198.215 198.215 240 146.667 240c-26.04 0-49.467-10.78-66.37-28h30.614c10.621 5.89 22.764 9.333 35.756 9.333 41.169 0 74.666-33.497 74.666-74.666 0-41.17-33.497-74.667-74.666-74.667-12.992 0-25.135 3.444-35.756 9.333H80.297c16.903-17.22 40.33-28 66.37-28 51.548 0 93.333 41.786 93.333 93.334z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="cqrb-icon-stack-o-desc cqrb-icon-stack-o-title"
+  <symbol aria-labelledby="crrb-icon-stack-o-desc crrb-icon-stack-o-title"
   id="rb-icon-stack-o" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cqrb-icon-stack-o-desc">A square stacked on another
+    <desc id="crrb-icon-stack-o-desc">A square stacked on another
     square</desc>
-    <title id="cqrb-icon-stack-o-title">Stack</title>
+    <title id="crrb-icon-stack-o-title">Stack</title>
     <path d="M223.136 91.066v132.07H91.066V91.066h132.07zM240 74.912H74.912V240H240V74.912zM45.438 45.438v165.088h16.51V61.947h148.578V45.438H45.438zM16 16v165.09h16.509V32.51H181.09V16H16z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="crrb-icon-star-desc crrb-icon-star-title"
+  <symbol aria-labelledby="csrb-icon-star-desc csrb-icon-star-title"
   id="rb-icon-star" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="crrb-icon-star-desc">A star</desc>
-    <title id="crrb-icon-star-title">Star</title>
+    <desc id="csrb-icon-star-desc">A star</desc>
+    <title id="csrb-icon-star-title">Star</title>
     <path d="M128 6l39.146 80.777L256 98.893l-64.621 62.447 15.844 88.233L128 207.32l-79.223 42.253L64.62 161.34 0 99.204l88.854-12.427z"
     fill-rule="nonzero" />
   </symbol>
@@ -614,11 +623,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <path d="M88.875 86.987L0 99.264l64.683 62.165-15.787 88.31L128 207.424V6.261z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="ctrb-icon-star-o-desc ctrb-icon-star-o-title"
+  <symbol aria-labelledby="curb-icon-star-o-desc curb-icon-star-o-title"
   id="rb-icon-star-o" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="ctrb-icon-star-o-desc">The outline of a star</desc>
-    <title id="ctrb-icon-star-o-title">Open Star</title>
+    <desc id="curb-icon-star-o-desc">The outline of a star</desc>
+    <title id="curb-icon-star-o-title">Open Star</title>
     <path d="M128 55.179l24.907 51.381 56.586 7.808-41.184 39.573 10.048 56.214L128 183.232l-50.357 26.933 10.048-56.213-41.184-39.573 56.586-7.819L128 55.179zm0-48.918L88.875 86.987 0 99.264l64.683 62.165-15.787 88.31L128 207.424l79.104 42.304-15.787-88.31L256 99.265l-88.875-12.267L128 6.261z"
     fill-rule="nonzero" />
   </symbol>
@@ -631,12 +640,12 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
       fill-rule="nonzero" />
     </g>
   </symbol>
-  <symbol aria-labelledby="cvrb-icon-warning-desc cvrb-icon-warning-title"
+  <symbol aria-labelledby="cwrb-icon-warning-desc cwrb-icon-warning-title"
   id="rb-icon-warning" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cvrb-icon-warning-desc">An exclamation mark inside a
+    <desc id="cwrb-icon-warning-desc">An exclamation mark inside a
     triangle</desc>
-    <title id="cvrb-icon-warning-title">Warning</title>
+    <title id="cwrb-icon-warning-title">Warning</title>
     <path d="M125.367 26.88L16.565 226.348a3 3 0 0 0 2.634 4.436h217.603a3 3 0 0 0 2.633-4.436L130.634 26.879a3 3 0 0 0-5.267 0zm7.202 141.549a4.997 4.997 0 0 1-4.969 4.5 4.997 4.997 0 0 1-4.969-4.5l-7.237-72.367c-.722-7.228 4.97-13.48 12.206-13.48 7.237 0 12.928 6.252 12.206 13.489l-7.237 72.358zm-5.04 40.637c-6.234 0-11.293-5.059-11.293-11.293 0-6.234 5.06-11.293 11.293-11.293 6.234 0 11.293 5.06 11.293 11.293 0 6.234-5.06 11.293-11.293 11.293z"
     fill-rule="nonzero" />
   </symbol>
@@ -646,21 +655,21 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <path d="M52.316 3.037l43.867 43.88c4.76 21.98-27.112 54.223-49.36 49.36L2.956 52.396C.954 59.204 0 66.232 0 73.26c0 18.641 7.017 37.259 21.247 51.501 15.72 15.72 36.817 22.772 57.378 21.19a37.334 37.334 0 0 1 29.253 10.833l88.678 88.561c6.714 6.726 15.557 10.647 24.389 10.647 19.327 0 35.455-16.418 35.047-35.804-.186-8.575-4.095-17.105-10.635-23.656L156.68 107.96a37.36 37.36 0 0 1-10.833-29.253c1.594-20.56-5.48-41.657-21.178-57.366C110.414 7.098 91.797 0 73.156 0c-7.017 0-14.045 1.047-20.84 3.037zm179.88 217.5a11.625 11.625 0 0 1-11.635 11.637c-6.435 0-11.636-5.213-11.636-11.637 0-6.423 5.201-11.636 11.636-11.636a11.625 11.625 0 0 1 11.636 11.636z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="cxrb-icon-zoom-in-desc cxrb-icon-zoom-in-title"
+  <symbol aria-labelledby="cyrb-icon-zoom-in-desc cyrb-icon-zoom-in-title"
   id="rb-icon-zoom-in" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cxrb-icon-zoom-in-desc">A magnifying glass with a
+    <desc id="cyrb-icon-zoom-in-desc">A magnifying glass with a
     plus sign inside</desc>
-    <title id="cxrb-icon-zoom-in-title">Zoom In</title>
+    <title id="cyrb-icon-zoom-in-title">Zoom In</title>
     <path d="M137.333 109.333h-28v28H90.667v-28h-28V90.667h28v-28h18.666v28h28v18.666zM213.605 240l-68.945-68.945C131.705 179.212 116.436 184 100 184c-46.396 0-84-37.604-84-84s37.604-84 84-84 84 37.604 84 84c0 16.436-4.797 31.715-12.945 44.66L240 213.605 213.605 240zM100 165.333c36.017 0 65.333-29.306 65.333-65.333S136.017 34.667 100 34.667c-36.017 0-65.333 29.306-65.333 65.333S63.983 165.333 100 165.333z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="cyrb-icon-zoom-out-desc cyrb-icon-zoom-out-title"
+  <symbol aria-labelledby="czrb-icon-zoom-out-desc czrb-icon-zoom-out-title"
   id="rb-icon-zoom-out" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <desc id="cyrb-icon-zoom-out-desc">A magnifying glass with a
+    <desc id="czrb-icon-zoom-out-desc">A magnifying glass with a
     minus sign inside</desc>
-    <title id="cyrb-icon-zoom-out-title">Zoom Out</title>
+    <title id="czrb-icon-zoom-out-title">Zoom Out</title>
     <path d="M137.333 109.333H62.667V90.667h74.666v18.666zM213.605 240l-68.945-68.945C131.705 179.212 116.436 184 100 184c-46.396 0-84-37.604-84-84s37.604-84 84-84 84 37.604 84 84c0 16.436-4.797 31.715-12.945 44.66L240 213.605 213.605 240zM100 165.333c36.017 0 65.333-29.306 65.333-65.333S136.017 34.667 100 34.667c-36.017 0-65.333 29.306-65.333 65.333S63.983 165.333 100 165.333z"
     fill-rule="nonzero" />
   </symbol>
