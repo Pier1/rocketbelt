@@ -208,6 +208,10 @@ question:
   title: Question
   description: A circle with a question mark inside
 
+refresh:
+  title: Refresh
+  description: Two arrows making a circle
+
 ribbon-check:
   title: Ribbon With Check Mark
   description: A ribbon with a check mark on the front

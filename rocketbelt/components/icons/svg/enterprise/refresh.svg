@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>refresh</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="refresh" fill="#000000" fill-rule="nonzero">
+            <path d="M217.44,137.79 C212.55,182.88 174.38,218 128,218 C101.02,218 76.88,206.06 60.37,187.25 L72.82,170.92 C85.65,187.37 105.58,198 128,198 C163.26,198 192.44,171.76 197.23,137.79 L168,137.79 L208,85.29 L248,137.79 L217.44,137.79 Z M58.8,118 C63.67,84.13 92.8,58 128,58 C150.37,58 170.28,68.59 183.1,84.98 L195.54,68.66 C179.04,49.9 154.93,38 128,38 C81.68,38 43.57,73.01 38.59,118 L8,118 L48,170.5 L88,118 L58.8,118 Z"></path>
+        </g>
+    </g>
+</svg>
