@@ -527,7 +527,7 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <desc id="cirb-icon-stack-o-desc">A square stacked on another
     square</desc>
     <title id="cirb-icon-stack-o-title">Stack</title>
-    <path d="M221.333 72v149.333H72V72h149.333zM240 53.333H53.333V240H240V53.333zM16 16v186.667h18.667v-168h168V16H16z"
+    <path d="M223.136 91.066v132.07H91.066V91.066h132.07zM240 74.912H74.912V240H240V74.912zM45.438 45.438v165.088h16.51V61.947h148.578V45.438H45.438zM16 16v165.09h16.509V32.51H181.09V16H16z"
     fill-rule="nonzero" />
   </symbol>
   <symbol aria-labelledby="cjrb-icon-star-desc cjrb-icon-star-title"
