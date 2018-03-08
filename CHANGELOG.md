@@ -1,3 +1,18 @@
+<a name="1.13.12"></a>
+## [1.13.12](https://github.com/Pier1/rocketbelt/compare/1.13.11...v1.13.12) (2018-03-08)
+### Features
+
+* **Busy Indicators:** Check for .is-busy elements on page load. Fixes [#185](https://github.com/Pier1/rocketbelt/issues/185). ([f9ce5bb](https://github.com/Pier1/rocketbelt/commit/f9ce5bb))
+* **Icons:** Update `#rb-icon-stack-o` to make it more stacky. ([b00a02b](https://github.com/Pier1/rocketbelt/commit/b00a02b))
+
+### Bug Fixes
+
+* **Busy Indicators:** Fix aria-live value. ([ae47336](https://github.com/Pier1/rocketbelt/commit/ae47336))
+* **Busy Indicators:** Give busy elements the proper aria-live value. ([6603cba](https://github.com/Pier1/rocketbelt/commit/6603cba))
+* **Icons:** Rebuild icons file with updated `stack-o` icon. ([6c4236b](https://github.com/Pier1/rocketbelt/commit/6c4236b))
+
+
+
 <a name="1.13.11"></a>
 ## [1.13.11](https://github.com/Pier1/rocketbelt/compare/1.13.10...v1.13.11) (2018-02-21)
 
