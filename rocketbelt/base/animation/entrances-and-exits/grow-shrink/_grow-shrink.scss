@@ -1,11 +1,13 @@
 .animation_in_grow,
 .animation_in_shrink {
   animation-name: rb-grow;
+  animation-timing-function: ease(in-out-quad);
 }
 
 .animation_out_grow,
 .animation_out_shrink {
   animation-name: rb-grow;
+  animation-timing-function: ease(in-out-quad);
   animation-direction: reverse;
 }
 
