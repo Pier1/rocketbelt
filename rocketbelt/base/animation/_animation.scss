@@ -2,10 +2,8 @@
         'entrances-and-exits/entrances-and-exits',
         'state-change/state-change';
 
-@import 'properties';
-@import
-  'fading-entrances/fading-entrances',
-  'fading-exits/fading-exits';
+@import 'properties',
+        './~legacy/legacy';
 
 .animatable {
   animation-duration: animation-duration(md);
