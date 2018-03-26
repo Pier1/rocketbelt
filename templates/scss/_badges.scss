@@ -12,6 +12,10 @@
     border: 0;
     background: transparent;
   }
+
+  &.tag {
+    font-family: $system-font-stack;
+  }
 }
 
 .rb-badge-toolbelt {
@@ -20,6 +24,10 @@
 
 .rb-badge-ux {
   background: color(secondary, darker);
+}
+
+.rb-badge-labs {
+  background: color(success, darker);
 }
 
 .rb-note {
