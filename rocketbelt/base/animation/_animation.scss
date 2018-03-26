@@ -6,7 +6,9 @@
         './~legacy/legacy';
 
 .animatable {
-  animation-duration: animation-duration(md);
+  $duration: animation-duration(md);
+  transition-duration: $duration;
+  animation-duration: $duration;
   animation-fill-mode: both;
 
   &.animatable-infinite {
@@ -22,28 +24,32 @@
   }
 
   &.animation_duration_xs {
-    animation-duration: animation-duration(xs);
+    $duration: animation-duration(xs);
+    transition-duration: $duration;
+    animation-duration: $duration;
   }
 
   &.animation_duration_sm {
-    animation-duration: animation-duration(sm);
+    $duration: animation-duration(sm);
+    transition-duration: $duration;
+    animation-duration: $duration;
   }
 
   &.animation_duration_lg {
-    animation-duration: animation-duration(lg);
+    $duration: animation-duration(lg);
+    transition-duration: $duration;
+    animation-duration: $duration;
   }
 
   &.animation_duration_xl {
-    animation-duration: animation-duration(xl);
+    $duration: animation-duration(xl);
+    transition-duration: $duration;
+    animation-duration: $duration;
   }
 
   &.animation_easing_motion {
-    animation-timing-function: ease(in-out-quad);
+    $easing: ease(in-out-quad);
+    transition-timing-function: $easing;
+    animation-timing-function: $easing;
   }
 }
-
-// State
-// opacity, color, size
-
-// Emphasis
-// pulse
