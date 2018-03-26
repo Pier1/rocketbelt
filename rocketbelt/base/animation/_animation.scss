@@ -1,20 +1,13 @@
-@import 'properties';
+@import 'expand-collapse/expand-collapse',
+        'fade/fade',
+        'fade-slide/fade-slide',
+        'grow-shrink/grow-shrink',
+        'slide/slide';
 
+@import 'properties';
 @import
-  'attention-seekers/attention-seekers',
-  'bouncing-entrances/bouncing-entrances',
-  'bouncing-exits/bouncing-exits',
   'fading-entrances/fading-entrances',
-  'fading-exits/fading-exits',
-  'flippers/flippers',
-  'lightspeed/lightspeed',
-  'rotating-entrances/rotating-entrances',
-  'rotating-exits/rotating-exits',
-  'sliding-entrances/sliding-entrances',
-  'sliding-exits/sliding-exits',
-  'specials/specials',
-  'zooming-entrances/zooming-entrances',
-  'zooming-exits/zooming-exits';
+  'fading-exits/fading-exits';
 
 .animatable {
   animation-duration: 1s;
@@ -53,106 +46,8 @@
   }
 }
 
-// opacity
+// State
+// opacity, color, size
 
-// color
-
-// size
-
+// Emphasis
 // pulse
-
-.animation_out_fade {
-  animation-name: rb-fade;
-}
-
-.animation_in_fade {
-  animation-name: rb-fade;
-  animation-direction: reverse;
-}
-
-@keyframes rb-fade {
-  from {
-    opacity: 1;
-  }
-
-  to {
-    opacity: 0;
-  }
-}
-
-.animation_out_slide {
-  animation-name: rb-slide;
-}
-
-.animation_in_slide {
-  animation-name: rb-slide;
-  animation-direction: reverse;
-}
-
-@keyframes rb-slide {
-  0% {
-    transform: translate3d(0, 0, 0);
-  }
-
-  50% {
-    opacity: 1;
-  }
-
-  100% {
-    opacity: 0;
-    transform: translate3d(0, 1000%, 0);
-  }
-}
-
-.animation_out_fade-slide {
-  animation-name: rb-fade-slide;
-}
-
-.animation_in_fade-slide {
-  animation-name: rb-fade-slide;
-  animation-direction: reverse;
-}
-
-@keyframes rb-fade-slide {
-  from {
-    opacity: 1;
-    transform: translate3d(0, 0, 0);
-  }
-
-  to {
-    opacity: 0;
-    transform: translate3d(0, 66%, 0);
-  }
-}
-
-.animation_in_grow,
-.animation_in_shrink {
-  animation-name: rb-grow;
-}
-
-.animation_out_grow,
-.animation_out_shrink {
-  animation-name: rb-grow;
-  animation-direction: reverse;
-}
-
-@keyframes rb-grow {
-  from {
-    transform: scale(0);
-  }
-
-  to {
-    transform: scale(1);
-  }
-}
-
-.animation_in_collapse,
-.animation_in_expand {
-  animation-name: rb-expand;
-}
-
-.animation_out_collapse,
-.animation_out_expand {
-  animation-name: rb-expand;
-  animation-direction: reverse;
-}

@@ -1,0 +1,20 @@
+.animation_out_fade-slide {
+  animation-name: rb-fade-slide;
+}
+
+.animation_in_fade-slide {
+  animation-name: rb-fade-slide;
+  animation-direction: reverse;
+}
+
+@keyframes rb-fade-slide {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+  }
+
+  to {
+    opacity: 0;
+    transform: translate3d(0, 66%, 0);
+  }
+}

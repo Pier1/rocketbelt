@@ -1,0 +1,23 @@
+.animation_out_slide {
+  animation-name: rb-slide;
+}
+
+.animation_in_slide {
+  animation-name: rb-slide;
+  animation-direction: reverse;
+}
+
+@keyframes rb-slide {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate3d(0, 1000%, 0);
+  }
+}
