@@ -1,12 +1,2 @@
-// INDEX OF FADING EXITS
-
-@import
-  'fadeOut',
-  'fadeOutDown',
-  'fadeOutDownBig',
-  'fadeOutLeft',
-  'fadeOutLeftBig',
-  'fadeOutRight',
-  'fadeOutRightBig',
-  'fadeOutUp',
-  'fadeOutUpBig';
+@import '_fadeInDown.scss',
+        '_fadeOutUp.scss';
