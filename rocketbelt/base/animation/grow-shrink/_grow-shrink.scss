@@ -1,0 +1,20 @@
+.animation_in_grow,
+.animation_in_shrink {
+  animation-name: rb-grow;
+}
+
+.animation_out_grow,
+.animation_out_shrink {
+  animation-name: rb-grow;
+  animation-direction: reverse;
+}
+
+@keyframes rb-grow {
+  from {
+    transform: scale(0);
+  }
+
+  to {
+    transform: scale(1);
+  }
+}
