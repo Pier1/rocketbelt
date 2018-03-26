@@ -1,9 +1,11 @@
 .animation_out_slide {
   animation-name: rb-slide;
+  animation-timing-function: ease(in-out-quad);
 }
 
 .animation_in_slide {
   animation-name: rb-slide;
+  animation-timing-function: ease(in-out-quad);
   animation-direction: reverse;
 }
 
