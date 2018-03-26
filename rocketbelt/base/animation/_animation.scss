@@ -1,8 +1,6 @@
-@import 'expand-collapse/expand-collapse',
-        'fade/fade',
-        'fade-slide/fade-slide',
-        'grow-shrink/grow-shrink',
-        'slide/slide';
+@import 'emphasis/emphasis',
+        'entrances-and-exits/entrances-and-exits',
+        'state-change/state-change';
 
 @import 'properties';
 @import
@@ -10,7 +8,7 @@
   'fading-exits/fading-exits';
 
 .animatable {
-  animation-duration: 1s;
+  animation-duration: animation-duration(md);
   animation-fill-mode: both;
 
   &.animatable-infinite {
