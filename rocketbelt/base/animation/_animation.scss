@@ -1,17 +1,49 @@
-@import 'properties';
+@import 'emphasis/emphasis',
+        'entrances-and-exits/entrances-and-exits',
+        'state-change/state-change';
 
-@import
-  'attention-seekers/attention-seekers',
-  'bouncing-entrances/bouncing-entrances',
-  'bouncing-exits/bouncing-exits',
-  'fading-entrances/fading-entrances',
-  'fading-exits/fading-exits',
-  'flippers/flippers',
-  'lightspeed/lightspeed',
-  'rotating-entrances/rotating-entrances',
-  'rotating-exits/rotating-exits',
-  'sliding-entrances/sliding-entrances',
-  'sliding-exits/sliding-exits',
-  'specials/specials',
-  'zooming-entrances/zooming-entrances',
-  'zooming-exits/zooming-exits';
+@import 'properties',
+        './~legacy/legacy';
+
+.animatable {
+  animation-duration: animation-duration(md);
+  animation-fill-mode: both;
+
+  &.animatable-infinite {
+    animation-iteration-count: infinite;
+  }
+
+  &.animatable-reset {
+    animation-fill-mode: backwards;
+  }
+
+  &.animating {
+    animation-play-state: running;
+  }
+
+  &.animation_duration_xs {
+    animation-duration: animation-duration(xs);
+  }
+
+  &.animation_duration_sm {
+    animation-duration: animation-duration(sm);
+  }
+
+  &.animation_duration_lg {
+    animation-duration: animation-duration(lg);
+  }
+
+  &.animation_duration_xl {
+    animation-duration: animation-duration(xl);
+  }
+
+  &.animation_easing_motion {
+    animation-timing-function: ease(in-out-quad);
+  }
+}
+
+// State
+// opacity, color, size
+
+// Emphasis
+// pulse

@@ -10,6 +10,16 @@
     ]
   },
   {
+    "familyName": "sale",
+    "variants": [
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Sale Red"
+      }
+    ]
+  },
+  {
     "familyName": "primary",
     "variants": [
       {
@@ -173,14 +183,19 @@
     "familyName": "gray",
     "variants": [
       {
+        "variant": "plus5",
+        "lightness": 5,
+        "colorName": "Seashell"
+      },
+      {
         "variant": "plus4",
         "lightness": 4,
-        "colorName": "Seashell"
+        "colorName": "Alabaster"
       },
       {
         "variant": "plus3",
         "lightness": 3,
-        "colorName": "Alabaster"
+        "colorName": "Cloud Gray"
       },
       {
         "variant": "plus2",

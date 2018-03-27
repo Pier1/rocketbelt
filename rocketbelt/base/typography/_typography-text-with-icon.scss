@@ -1,0 +1,23 @@
+.text-with-icon {
+  position: relative;
+  display: inline-flex;
+  vertical-align: middle;
+  align-self: center;
+  align-items: center;
+
+  .icon {
+    position: relative;
+    width: 1em;
+    height: 1em;
+
+    &.icon-left {
+      margin-right: .3em;
+      order: -1;
+    }
+
+    &.icon-right {
+      margin-left: .3em;
+      order: 999;
+    }
+  }
+}

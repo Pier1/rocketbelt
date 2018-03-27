@@ -49,10 +49,6 @@ var rb = rb || {};
               .replace(' | rocketbelt pattern library', '')
               .replace(/\ & /g," and ")
               .replace(/\s+/g,'-');
-    $('.isActive', '#docs-leftnav').removeClass('isActive');
-  	$category = $('#docs-leftnav').find('li[ref="' + pageTitle + '"]');
-    $category.addClass('isActive');
-    $category.parent('.category-contents').siblings('.category-toggle').prop('checked', true);
 
     // Play button for gifs
     $('img.gipho').on('click', function(){
@@ -64,7 +60,7 @@ var rb = rb || {};
 
     // Mobile heuristic. 48rem == 'md' breakpoint.
     if (window.matchMedia('(min-width: 48rem)')) {
-      $('.isActive').parent().siblings('.category-toggle').prop('checked', true);
+      $('.is-active').parent().siblings('.category-toggle').prop('checked', true);
     }
 
     $('.nav .category-label').click(function (e) {
@@ -73,6 +69,12 @@ var rb = rb || {};
         e.preventDefault();
         $('.nav .category-toggle').prop('checked', false);
         $(this).siblings('.category-toggle').prop('checked', true);
+
+        var height = $(this).siblings('.category-contents').height() + $(this).height() + 4;
+        $(this).closest('.category-contents').css('height', height);
+      } else if (!window.matchMedia('(min-width: 48rem)').matches) {
+        var height = $(this).height() + 4;
+        $(this).closest('.category-contents').css('height', height);
       }
     });
   });
@@ -82,8 +84,26 @@ var rb = rb || {};
 
   // Sets up all playground elements and makes the code copy function for dynamic elements
   function launchPlayground(){
-    $('.playground-range,.playground-text').playground();
-    $('body').on('playgroundUpdated', '.playground-range,.playground-text', function(){
+    $('.playground-item').playground();
+
+    // Eyedropper Helper Functions
+    $('.cp_eyedropper').on('click', function() {
+      if ($(this).next('.cp_grid').hasClass('visuallyhidden')) {
+        $(".cp_grid").addClass('visuallyhidden');
+        $(this).next(".cp_grid").removeClass('visuallyhidden');
+      } else {
+        $(this).next(".cp_grid").addClass('visuallyhidden');
+      }
+    })
+    // Hides eyedropper if you click outside eyedropper
+    $(document).on('click', function(event) {
+      if (!$(event.target).closest('.cp_eyedropper').length && !$(event.target).hasClass('playground-list_item')) {
+        $(".cp_grid").addClass('visuallyhidden');
+      }
+    });
+
+    // Playground Event Handler
+    $('body').on('playgroundUpdated', '.playground-item', function(){
       var $input = $(this),
           base = $input.data('playground'),
           $playground = $input.closest('.playground'),
@@ -104,9 +124,8 @@ var rb = rb || {};
       Prism.highlightElement($codeEl[0]);
 
     });
-
     // Sets the code section on page load.
-    $('.playground-range').trigger('input');
+    $('.playground-item').trigger('input');
   }
 
   // Exposes playground setup to a global so that it only gets setup when necessary.

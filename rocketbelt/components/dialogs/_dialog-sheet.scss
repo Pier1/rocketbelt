@@ -1,0 +1,56 @@
+*:not(.is-dialog-open) {
+  .dialog {
+    &.dialog-sheet {
+      .dialog_content {
+        animation: dialog-sheet-out 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.is-dialog-open {
+  .dialog {
+    &.dialog-sheet {
+      .dialog_content {
+        animation: dialog-sheet-in 300ms ease-in-out;
+      }
+    }
+  }
+}
+
+.dialog {
+  &.dialog-sheet {
+    .dialog_content {
+      top: auto;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      min-width: 100%;
+      max-width: 100%;
+      transform: none;
+      animation: dialog-sheet-in 300ms ease-in-out;
+    }
+  }
+}
+
+@keyframes dialog-sheet-in {
+  from {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+  to {
+    opacity: 1;
+    transform: translate3d(0, 0%, 0);
+  }
+}
+
+@keyframes dialog-sheet-out {
+  from {
+    opacity: 1;
+    transform: translate3d(0, 0%, 0);
+  }
+  to {
+    opacity: 0;
+    transform: translate3d(0, 100%, 0);
+  }
+}

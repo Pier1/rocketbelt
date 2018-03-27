@@ -1,0 +1,41 @@
+.rb-badge {
+  border-radius: 2px;
+  color: color(white);
+  text-transform: none;
+  font-weight: font-weight(semibold);
+  font-size: font-size(-4);
+  flex-shrink: 0;
+
+  code,
+  .code {
+    padding: 0;
+    border: 0;
+    background: transparent;
+  }
+
+  &.tag {
+    font-family: $system-font-stack;
+  }
+}
+
+.rb-badge-toolbelt {
+  background: color(accent, darker);
+}
+
+.rb-badge-ux {
+  background: color(secondary, darker);
+}
+
+.rb-badge-labs {
+  background: color(success, darker);
+}
+
+.rb-note {
+  display: flex;
+  font-size: font-size(-1);
+  align-items: center;
+
+  .rb-note-text::before {
+    content: unicode(nbsp);
+  }
+}

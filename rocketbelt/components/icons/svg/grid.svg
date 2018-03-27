@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>grid</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="grid" fill="#000000">
+            <path d="M16,16 L80,16 L80,80 L16,80 L16,16 Z M16,96 L80,96 L80,160 L16,160 L16,96 Z M16,176 L80,176 L80,240 L16,240 L16,176 Z M96,16 L160,16 L160,80 L96,80 L96,16 Z M96,96 L160,96 L160,160 L96,160 L96,96 Z M96,176 L160,176 L160,240 L96,240 L96,176 Z M176,16 L240,16 L240,80 L176,80 L176,16 Z M176,96 L240,96 L240,160 L176,160 L176,96 Z M176,176 L240,176 L240,240 L176,240 L176,176 Z"></path>
+        </g>
+    </g>
+</svg>

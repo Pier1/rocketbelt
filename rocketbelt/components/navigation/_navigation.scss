@@ -1,0 +1,96 @@
+.nav-menu {
+  position: relative;
+  z-index: 15;
+  display: block;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: font-size(-2);
+
+  & a {
+    color: color(gray, minus1);
+    text-decoration: none;
+
+    &:visited {
+      color: color(gray, minus1);
+    }
+    &:hover {
+      color: color(gray, plus1);
+    }
+
+    &:active {
+      color: color(gray, minus1);
+    }
+  }
+}
+
+// Top-level nav item
+.nav-item {
+  display: inline-block;
+  margin: 0;
+  padding: 0;
+
+  list-style: none;
+}
+
+// Descendant link within a top-level nav item
+.nav-item > a {
+  position: relative;
+  display: inline-block;
+  margin: 0 0 -1px 0;
+  padding: ms(-2) ms(0);
+  border: 1px solid transparent;
+
+  &:focus,
+  &.open {
+    border: 1px solid color(gray, plus3);
+  }
+
+  &.open {
+    z-index: 1;
+    border-bottom: none;
+    background-color: color(white);
+  }
+}
+
+// Sub-nav panel
+.sub-nav {
+  position: absolute;
+  display: none;
+  margin-top: 1px; // Compensate for border width
+  padding: ms(-1);
+  border: 1px solid color(gray, plus3);
+  background-color: color(white);
+
+  @include z-depth(1);
+
+  &.wide {
+    left: 3%;
+    width: 94%;
+
+    .row {
+      margin: 0;
+    }
+
+    .col {
+      padding: 0;
+    }
+  }
+
+  &.open {
+    display: block;
+  }
+
+  .sub-nav-group {
+    display: inline-block;
+    padding: 0;
+    vertical-align: top;
+  }
+
+  li {
+    display: block;
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+  }
+}

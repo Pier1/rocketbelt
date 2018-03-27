@@ -1,3 +1,9 @@
+/// Turn off overflow for a text element.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @param $overflow [ellipsis] - Indicates the type of overflow to render: `clip`, `ellipsis`, or a string.
 @mixin truncate-text($overflow: ellipsis) {
   overflow: hidden;
   text-overflow: $overflow; // values are: clip, ellipsis, or a string

@@ -1,8 +1,3 @@
-$columns: 12;
-$gutter-width: 1rem;
-$half-gutter-width: $gutter-width / 2;
-$gutter-compensation: -1 * $half-gutter-width;
-
 @mixin row($reverse: false) {
   @include row-direction($reverse);
 
@@ -35,7 +30,6 @@ $gutter-compensation: -1 * $half-gutter-width;
 
 @mixin row-alignment-horizontal($alignment) {
   $justify: inherit;
-  justify-content: $justify;
 
   @if ($alignment == center) {
     $justify: center;
@@ -46,6 +40,7 @@ $gutter-compensation: -1 * $half-gutter-width;
   @elseif ($alignment == start) {
     $justify: flex-start;
   }
+  justify-content: $justify;
 }
 
 @mixin row-alignment-vertical($alignment) {
@@ -105,13 +100,14 @@ $gutter-compensation: -1 * $half-gutter-width;
 }
 
 @mixin column-order($position) {
-  order: $position;
   @if ($position == last) {
     $position: 9999;
   }
   @else if ($position == first) {
     $position: -9999;
   }
+
+  order: $position;
 }
 
 .grid {
@@ -138,6 +134,10 @@ $gutter-compensation: -1 * $half-gutter-width;
     &.#{$key} {
       $str: '&';
       @for $i from 1 through $columns {
+        @if ($key != 'xs' and $i == 1) {
+          $str: $str + ', &-offset-0';
+        }
+
         $str: $str + ', &-' + $i + ', &-offset-' + $i;
       }
 
@@ -147,6 +147,12 @@ $gutter-compensation: -1 * $half-gutter-width;
 
       & {
         @include column-span(auto);
+      }
+
+      @if ($key != 'xs') {
+        &-offset-0 {
+          @include column-offset(0);
+        }
       }
 
       @for $i from 1 through $columns {
@@ -219,5 +225,11 @@ $gutter-compensation: -1 * $half-gutter-width;
         width: $value;
       }
     }
+  }
+}
+
+.grid-fluid, .grid {
+  &.static {
+    @include example-viewport('static');
   }
 }

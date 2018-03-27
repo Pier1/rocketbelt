@@ -1,0 +1,61 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Tables'
+
+block content
+  article
+    h1 Tables
+    p Tables aren't suitable for layout on the modern web but they still serve an important purpose.
+
+    p
+      .rb-note
+        include /partials/a11y.pug
+        .rb-note-text When building a table…
+      ul
+        li Always use a #[span.font-monospace &lt;caption&gt;] or an #[span.font-monospace aria-describedby] attribute to make the table's purpose clear.
+        li Always identify column &amp; row headers with the #[span.font-monospace &lt;th scope="…"&gt;] element.
+        li Don't use absolute (pixel) sizing for table content.
+
+
+    h2 Standard
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-standard.pug
+
+    h2 Striped
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-striped.pug
+
+    h2 Hoverable
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-hoverable.pug
+
+    h2 Bordered
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-bordered.pug
+
+    h2 Contrasting Header
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables_header-contrasting.pug
+
+    h2 Condensed
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _tables-condensed.pug

@@ -1,7 +1,12 @@
-@import 'animation/animation',
+@import 'a11y/a11y',
+        'animation/animation',
         'color/color',
         'grid/grid',
         'layout/layout',
         'slipsum/slipsum',
-        'box-sizing',
-        'typography';
+        'typography/typography',
+        'box-sizing';
+
+:focus {
+  outline: dotted thin;
+}

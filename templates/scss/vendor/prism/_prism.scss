@@ -5,18 +5,18 @@
  * @author Lea Verou
  */
 
-$color-accent-lighter: #9f6ef6;
-$color-gray: #827b7b;
-$color-gray-darkest: #0d0c0c;
+$color-accent-lighter: #5b14d9;
+$color-gray: #635e5e;
+$color-gray-darkest: #635e5e;
 $color-gray-lightest: #f9f8f8;
 $color-gray-plus2: #4e4a4a;
 $color-secondary-lightest: #cffcf6;
-$color-secondary-darker: #0cbea5;
-$color-primary: #0f9dee;
+$color-secondary-darker: #0a6d5f;
+$color-primary: #0a689d;
 $color-warning: #ffc300;
 $color-error-lighter: #e7525f;
 
-$font-family-monospace: 'Brand Monospace', Monaco, Consolas, 'Lucida Console', monospace;
+$font-family-monospace: 'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace;
 
 
 code[class*="language-"],
@@ -24,7 +24,7 @@ pre[class*="language-"] {
 	color: $color-gray-darkest;
 	background: none;
 	// text-shadow: 0 1px white;
-	font-family: font-family(monospace);
+	font-family: $font-family-monospace;
 	text-align: left;
 	white-space: pre-wrap;
 	word-spacing: normal;
@@ -40,14 +40,14 @@ pre[class*="language-"]::-moz-selection, pre[class*="language-"] ::-moz-selectio
 code[class*="language-"]::-moz-selection, code[class*="language-"] ::-moz-selection {
 	text-shadow: none;
 	// background: #b3d4fc;
-	background: rgba($color-secondary-lightest, 0.8);
+	background: $color-accent-lighter;
 }
 
 pre[class*="language-"]::selection, pre[class*="language-"] ::selection,
 code[class*="language-"]::selection, code[class*="language-"] ::selection {
 	text-shadow: none;
 	// background: #b3d4fc;
-	background: rgba($color-secondary-lightest, 0.8);
+	background: $color-accent-lighter;
 }
 
 @media print {
@@ -59,17 +59,17 @@ code[class*="language-"]::selection, code[class*="language-"] ::selection {
 
 /* Code blocks */
 pre[class*="language-"] {
-	padding: 1em;
-	margin: .5em 0;
+	// padding: 1em;
+	// margin: .5em 0;
 	overflow: auto;
 }
 
 :not(pre) > code[class*="language-"],
 pre[class*="language-"] {
 	// background: #f5f2f0;
-	background: $color-gray-lightest;
-	border: 1px solid $color-gray-plus2;
-	border-radius: 2px;
+	// background: $color-gray-lightest;
+	// border: 1px solid $color-gray-plus2;
+	// border-radius: 2px;
 }
 
 /* Inline code */
@@ -96,63 +96,72 @@ pre[class*="language-"] {
 	opacity: .7;
 }
 
-.token.property,
-.token.tags,
-.token.boolean,
-.token.number,
-.token.constant,
-.token.symbol,
-.token.deleted {
-	// color: #905;
-	color: $color-accent-lighter;
-}
+.example-code {
+  .token.property,
+  .token.tag,
+  .token.tags,
+  .token.boolean,
+  .token.number,
+  .token.constant,
+  .token.symbol,
+  .token.deleted {
+  	// color: #905;
+    padding: inherit;
+    background: inherit;
+    color: $color-accent-lighter;
+    text-transform: inherit;
+    font-weight: inherit;
+    font-size: inherit;
+    font-family: inherit;
+  }
 
-.token.selector,
-.token.attr-name,
-.token.string,
-.token.char,
-.token.builtin,
-.token.inserted {
-	// color: #690;
-	color: $color-secondary-darker;
-}
+  .token.selector,
+  .token.attr-name,
+  .token.string,
+  .token.char,
+  .token.builtin,
+  .token.inserted {
+  	// color: #690;
+  	color: $color-secondary-darker;
+  }
 
-.token.operator,
-.token.entity,
-.token.url,
-.language-css .token.string,
-.style .token.string {
-	color: #a67f59;
-	background: hsla(0, 0%, 100%, .5);
-}
+  .token.operator,
+  .token.entity,
+  .token.url,
+  .language-css .token.string,
+  .style .token.string {
+  	color: #a67f59;
+  	background: hsla(0, 0%, 100%, .5);
+  }
 
-.token.atrule,
-.token.attr-value,
-.token.keyword {
-	// color: #07a;
-	color: $color-primary;
-}
+  .token.atrule,
+  .token.attr-value,
+  .token.keyword {
+  	// color: #07a;
+  	color: $color-primary;
+  }
 
-.token.function {
-	// color: #DD4A68;
-	color: $color-error-lighter;
-}
+  .token.function {
+  	// color: #DD4A68;
+  	color: $color-error-lighter;
+  }
 
-.token.regex,
-.token.important,
-.token.variable {
-	// color: #e90;
-	color: $color-warning;
-}
+  .token.regex,
+  .token.important,
+  .token.variable {
+  	// color: #e90;
+  	color: $color-warning;
+  }
 
-.token.important,
-.token.bold {
-	font-weight: bold;
-}
-.token.italic {
-	font-style: italic;
-}
+  .token.important,
+  .token.bold {
+  	font-weight: bold;
+  }
+  .token.italic {
+  	font-style: italic;
+  }
 
-.token.entity {
-	cursor: help;
+  .token.entity {
+  	cursor: help;
+  }
 }

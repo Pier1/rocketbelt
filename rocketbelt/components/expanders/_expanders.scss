@@ -13,14 +13,25 @@
       user-select: none;
     }
 
+    &:checked {
+      & ~ .expander_content {
+        display: block;
+        max-height: 2000px;
+        opacity: 1;
+        animation: expandIn 200ms ease-in-out;
+      }
+    }
 
     &:not(:checked) {
       & ~ .expander_content {
-        @extend %visuallyhidden;
+        display: none;
+        max-height: 0;
+        opacity: 0;
+        animation: expandOut 200ms ease-in-out;
       }
 
       & + .expander_label {
-        &:before {
+        &::after {
           position: static;
           border: 0;
           background: 0;
@@ -30,12 +41,46 @@
     }
 
     &:checked + .expander_label {
-      &:before {
+      &::after {
         position: static;
         border: 0;
         background: 0;
         content: attr(data-expanded-label);
       }
+    }
+  }
+
+  @keyframes expandIn {
+    0% {
+      display: none;
+      max-height: 0;
+      opacity: 0;
+    }
+
+    1% {
+      display: block;
+    }
+
+    100% {
+      max-height: 2000px;
+      opacity: 1;
+    }
+  }
+
+  @keyframes expandOut {
+    0% {
+      display: block;
+      max-height: 2000px;
+      opacity: 1;
+    }
+
+    99% {
+      max-height: 0;
+      opacity: 0;
+    }
+
+    100% {
+      display: none;
     }
   }
 

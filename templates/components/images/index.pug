@@ -1,0 +1,58 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Images'
+
+block content
+  article
+    - var base = 'https://images.pier1.com/dis/dw/image/v2/AAID_PRD/on/demandware.static/-/Sites-pier1_master/default/images/'
+
+    h1 Images
+
+    h2 Gallery
+
+    h3 Default
+    .grid-fluid
+      .row.xs-center
+        .col.xs-4
+          include _images-gallery.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _images-gallery.pug
+          +exampleWithCode('JS Include')
+            script(src='./rocketbelt.images-gallery.js')
+            script(src='./rocketbelt.images-gallery.init.js')
+
+    h3 With Thumbnails
+    .grid-fluid
+      .row.xs-center
+        .col.xs-4
+          include _images-gallery-with-thumbs.pug
+      .row
+        .col.xs
+          +exampleCodeOnly
+            include _images-gallery-with-thumbs.pug
+          +exampleWithCode('JS Include')
+            script(src='./rocketbelt.images-gallery.js')
+            script(src='./rocketbelt.images-gallery-with-thumbs.init.js')
+
+    h2 Lazy-Loading With Low-Quality Image Previews (LQIP)
+
+    +exampleWithCode('JS Include')
+      script(src='https://cdnjs.cloudflare.com/ajax/libs/ScrollMagic/2.0.5/ScrollMagic.min.js')
+      script(src='./rocketbelt.images-lazyload.js')
+
+    .grid-fluid
+      .row.xs-center
+        .col.xs.example-lqip
+          - var skus = ['ODR09_1'];
+          +exampleWithCode('html', null, true)
+            each alt in skus
+              - var short = alt.substring(0, alt.indexOf('_'));
+              include _images-lazyload.pug
+
+          - skus = ['ODR09_2', '2587987_14', 'ODS001_3', 'ODS001_1', 'ODS005_12', '2437340_14', '2580054_13', '2437340_13', '2580054_14', 'ODS005_14', 'ODR14_1', '2757667_13', '2757667_14', '2756976_13', '2662334_12', 'PS64654_10A', '2506440_10A']
+          each alt in skus
+            - var short = alt.substring(0, alt.indexOf('_'));
+            include _images-lazyload.pug

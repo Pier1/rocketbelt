@@ -1,0 +1,73 @@
+.progress-stepped {
+  .progress_steps {
+    display: flex;
+    align-content: space-around;
+  }
+
+  li {
+    position: relative;
+    display: inline-flex;
+    flex: 1;
+    min-height: 2.5rem;
+    justify-content: center;
+    align-items: flex-end;
+
+    &:first-of-type {
+      a::before {
+        display: none;
+      }
+    }
+
+    a::before,
+    a::after {
+      position: absolute;
+      background-color: color(primary);
+      content: '';
+      transition: background-color 300ms linear;
+    }
+
+    $indicator-radius: 1rem;
+    $indicator-connector-height: 0.33rem;
+    a::before {
+      top: ($indicator-radius - $indicator-connector-height) * 0.5;
+      right: 50%;
+      z-index: -1;
+      width: 100%;
+      height: $indicator-connector-height;
+    }
+
+    a::after {
+      top: 0;
+      left: 50%;
+      width: $indicator-radius;
+      height: $indicator-radius;
+      border-radius: 50%;
+      content: '';
+      transform: translateX(-50%);
+    }
+  }
+
+  [aria-current='page'] {
+    a {
+      color: color(black);
+      text-decoration: none;
+      font-weight: font-weight(semibold);
+      cursor: default;
+      pointer-events: none;
+    }
+
+    & ~ li {
+      a {
+        color: color(gray);
+        text-decoration: none;
+        cursor: default;
+        pointer-events: none;
+      }
+
+      a::before,
+      a::after {
+        background-color: color(gray, plus3);
+      }
+    }
+  }
+}
