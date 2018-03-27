@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>arrow-down</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="arrow-down" fill="#000000" fill-rule="nonzero">
+            <polygon transform="translate(128.000000, 127.584071) rotate(90.000000) translate(-128.000000, -127.584071) " points="137.566667 25 110.994667 51.373432 168.637333 108.969725 16 108.969725 16 146.198417 168.637333 146.198417 110.994667 203.79471 137.566667 230.168142 240 127.584071"></polygon>
+        </g>
+    </g>
+</svg>

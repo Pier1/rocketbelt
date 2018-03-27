@@ -1,0 +1,100 @@
+include _mixins.pug
+
+- var prepend = buildPath ? buildPath : '../..';
+- var iconsPath = '/components/icons/rocketbelt.icons.svg';
+
+doctype html
+html(lang='en')
+  head
+    meta(charset='UTF-8')
+    meta(name='viewport', content='width=device-width, initial-scale=1')
+
+    link(rel='apple-touch-icon', sizes='180x180', href='/assets/favicons/apple-touch-icon.png?v=gAapeRjXG7')
+    link(rel='icon', type='image/png', sizes='32x32', href='/assets/favicons/favicon-32x32.png?v=gAapeRjXG7')
+    link(rel='icon', type='image/png', sizes='16x16', href='/assets/favicons/favicon-16x16.png?v=gAapeRjXG7')
+    link(rel='manifest', href='/assets/favicons/site.webmanifest?v=gAapeRjXG7')
+    link(rel='mask-icon', href='/assets/favicons/safari-pinned-tab.svg?v=gAapeRjXG7', color='#5b14d9')
+    link(rel='shortcut icon', href='/assets/favicons/favicon.ico?v=gAapeRjXG7')
+    meta(name='msapplication-TileColor', content='#5b14d9')
+    meta(name='msapplication-config', content='/assets/favicons/browserconfig.xml?v=gAapeRjXG7')
+    meta(name='theme-color', content='#ffffff')
+
+  body
+    block vars
+    block title
+      title #{title ? title + ' | Rocketbelt' : 'Rocketbelt Pattern Library'}
+    block styles
+      link(rel='stylesheet', href=prepend + '/css/rocketbelt.creative.min.css')
+      link(rel='stylesheet', href=prepend + '/css/rocketbelt.min.css')
+      link(rel='stylesheet', href=prepend + '/css/site.min.css')
+      script(src='https://code.jquery.com/jquery-2.2.4.min.js')
+      script(src='/base/rocketbelt.js')
+
+  body.grid-fluid
+    include /base/a11y/_a11y-skip-links.pug
+    .docs-wrapper.row
+      header.site-header
+        .site-nav.nav-shadowed
+          .nav_on-site
+            a.rb-header(href='/')
+              span.visually-hidden Return to rocketbelt.io
+              picture
+                img(srcset='/assets/rocketbelt.svg', alt='')
+              span.rb-title Rocketbelt
+            block sidebar
+              +buildNav(nav, prepend)
+          .nav_off-site.links
+            .link.link-npm
+            a.link.link-github(href='https://github.com/pier1/rocketbelt')
+              span.visually-hidden Rocketbelt on GitHub
+              +rawSvgFor('github')
+        //- .submenus
+        //-   each category in nav
+        //-     +buildNavItemsFor(category)
+        script(src=prepend + '/components/navigation/rocketbelt.navigation-xl.js')
+        script.
+          $(document).ready(function () {
+            $('#main-nav').accessibleMegaMenu({
+              uuidPrefix: 'rb-navigation',
+              menuClass: 'nav-menu',
+              topNavItemClass: 'nav-item',
+              panelClass: 'sub-nav',
+              panelGroupClass: 'sub-nav-group',
+              hoverClass: 'hover',
+              focusClass: 'focus',
+              openClass: 'open'
+            })
+          });
+
+      .pad-5.col.xs.docs-wrapper_main
+        block main
+          main.site-main.grid-fluid.no-margin
+            .row
+              .col.xs
+                .grid
+                  block content
+                  if footnotes
+                    h4 Reference
+                    +footnoteList()
+      footer.site-footer
+        include _footer.pug
+    include /components/dialogs/_dialog-template.pug
+
+    script(src=prepend + '/js/playground.jquery.js')
+    script(src=prepend + '/js/site.js')
+    script(src='/base/feature-detection/rocketbelt.feature-detection.min.js', async)
+    script(src='/components/icons/rocketbelt.icons.svgxuse.min.js', defer)
+
+    script(src=prepend + '/js/preCode.js')
+    script(src=prepend + '/js/prism.js')
+    script(src=prepend + '/js/clipboard.min.js')
+
+    script.
+      var clipboard = new Clipboard('.heading-copy-button', {
+          text: function(trigger) {
+              return window.location.href.split(/[?#]/)[0] + trigger.getAttribute('data-clipboard-text');
+          }
+      });
+
+    include _analytics.pug
+    block scripts

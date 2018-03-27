@@ -1,0 +1,200 @@
+// IE Grid fallback. Contains a few empty mixins in case we ever need to fulfill said mixins.
+@import 'tools/tools';
+
+.row {
+  @include clearfix;
+  .row {
+    margin-right: $gutter-compensation;
+    margin-left: $gutter-compensation;
+  }
+
+  &.reverse {
+  }
+}
+
+@mixin row-alignment-horizontal($alignment) {
+  @if ($alignment == center) {
+    text-align: center;
+    & .col{
+      display: inline-block;
+      float: none;
+      text-align: left;
+      margin-left: auto;
+      margin-right: auto;
+    }
+  }
+  @elseif ($alignment == end) {
+   float: right;
+  }
+  @elseif ($alignment == start) {
+    float: left;
+  }
+}
+
+@mixin row-alignment-vertical($alignment) {
+  @if ($alignment == middle) {
+    
+  }
+}
+
+@mixin row-spacing($spacing) {
+  
+}
+
+@mixin column($reverse: false) {
+  float: left;
+  padding-right: $half-gutter-width;
+  padding-bottom: $gutter-width;
+  padding-left: $half-gutter-width;
+  position: relative;
+}
+
+@mixin column-direction($reverse: false) {
+  @if ($reverse) {
+    float: right;
+  }
+  @else {
+    float: left;
+  }
+}
+
+@mixin column-span($columns-to-span: $columns, $total-columns-in-row: $columns) {
+  @if ($columns-to-span == auto) {
+    width: 100%;
+  }
+  @else {
+    $span-percentage: $columns-to-span / $total-columns-in-row;
+    width: $span-percentage * 100%;
+  }
+}
+
+@mixin column-offset($columns-to-offset, $total-columns-in-row: $columns) {
+  left: ($columns-to-offset / $total-columns-in-row) * 100%;
+  margin-left: auto;
+}
+// As a duplicate of the offset, may not be necessary. Keeping as separate entities makes sense to me, however. - JK
+@mixin column-push($columns-to-offset, $total-columns-in-row: $columns) {
+  left: ($columns-to-offset / $total-columns-in-row) * 100%;
+  margin-left: auto;
+}
+@mixin column-pull($columns-to-offset, $total-columns-in-row: $columns) {
+  right: ($columns-to-offset / $total-columns-in-row) * 100%;
+  margin-right: auto;
+}
+
+@mixin column-order($position) {
+  
+  @if ($position == last) {
+   
+  }
+  @else if ($position == first) {
+    
+  }
+}
+
+
+  .grid {
+  margin-right: auto;
+  margin-left: auto;
+
+  &.no-margin {
+    margin: 0;
+  }
+
+  &.fluid {
+    width: inherit;
+  }
+}
+
+
+
+  .row{
+  &.reverse{
+    .col {
+      @include column-direction($reverse: true);
+    }
+  }
+}
+
+@mixin example-viewport($key) {
+   .col {
+    &.#{$key} {
+      $str: '&';
+      @for $i from 1 through $columns {
+        $str: $str + ', &-' + $i + ', &-offset-' + $i;
+      }
+
+      @at-root #{$str} {
+        @include column;
+      }
+
+      & {
+        @include column-span(auto);
+      }
+
+      @for $i from 1 through $columns {
+        &-#{$i} {
+          @include column-span($i);
+        }
+
+        &-offset-#{$i} {
+          @include column-offset($i);
+        }
+        &-pull-#{$i}{
+          @include column-pull($i);
+        }
+        &-push-#{$i}{
+          @include column-push($i);
+        }
+      }
+    }
+  }
+
+  .row {
+    &.#{$key}-start .col{
+      @include row-alignment-horizontal(start);
+    }
+
+    &.#{$key}-center {
+      @include row-alignment-horizontal(center);
+    }
+
+    &.#{$key}-end .col{
+      @include row-alignment-horizontal(end);
+    }
+  }
+
+
+    .col {
+    &.#{$key}-first {
+      @include column-order(first);
+    }
+
+    &.#{$key}-last {
+      @include column-order(last);
+    }
+  }
+}
+
+@each $key, $value in $breakpoints {
+  @if ($key == xs) {
+    @include example-viewport($key);
+  }
+  @else {
+    $min-width: '>=' + $value;
+    @include media($min-width) {
+      @include example-viewport($key);
+
+      .grid {
+        width: $value;
+      }
+    }
+  }
+}
+
+
+  .grid-fluid, .grid {
+  &.static {
+    @include example-viewport('static');
+  }
+}

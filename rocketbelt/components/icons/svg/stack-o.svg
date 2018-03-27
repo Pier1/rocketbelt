@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>stack-o</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="stack-o" fill="#000000" fill-rule="nonzero">
+            <path d="M223.135907,91.0658739 L223.135907,223.135907 L91.0658739,223.135907 L91.0658739,91.0658739 L223.135907,91.0658739 Z M240,74.912458 L74.912458,74.912458 L74.912458,240 L240,240 L240,74.912458 Z M45.4384359,45.4384359 L45.4384359,210.525978 L61.9471901,210.525978 L61.9471901,61.9471901 L210.525978,61.9471901 L210.525978,45.4384359 L45.4384359,45.4384359 Z M16,16 L16,181.090488 L32.5090488,181.090488 L32.5090488,32.5090488 L181.090488,32.5090488 L181.090488,16 L16,16 Z" id="Shape"></path>
+        </g>
+    </g>
+</svg>

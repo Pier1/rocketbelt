@@ -1,3 +1,9 @@
+/// Gets the depth of a map.
+///
+/// @group Debug
+/// @author Kendrick Arnett
+///
+/// @param $map - A map to measure the depth of
 @function map-depth($map) {
   $level: 1;
 

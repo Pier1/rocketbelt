@@ -1,17 +1,23 @@
+/// Add size properties for Rocketbelt buttons.
+///
+/// @group Buttons
+/// @author Kendrick Arnett
+///
+/// @param $size [md] - The size of button properties to render.
 @mixin button-size($size: md) {
   @extend %button-static-props;
   $size: to_lower_case($size);
-
+  min-width: 8rem;
   @if $size == lg {
-    padding: 0.375rem 0.75rem;
-    font-size: 1.2rem;
+    padding: ms(-6) ms(1);
+    font-size: font-size(0);
   }
   @else if $size == md {
-    padding: 0.2895rem 0.579rem;
-    font-size: 1rem;
+    padding: ms(-8) ms(1);
+    font-size: font-size(-1);
   }
   @else {
-    padding: 0.241rem 0.482rem;
-    font-size: 0.833rem;
+    padding: ms(-10) ms(1);
+    font-size: font-size(-2);
   }
 }

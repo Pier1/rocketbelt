@@ -1,0 +1,225 @@
+// sass-lint:disable force-element-nesting
+$sticker-bkg: rgba(color(white), 0.9);
+
+// BASE (VERTICAL)
+.sale-sticker-wrapper {
+  display: inline-block;
+  padding: 0.05em;
+  font-size: 7rem;
+
+  .sale-sticker-inner {
+    position: relative;
+    padding: 0.2em 0.1em;
+    background: $sticker-bkg;
+    text-align: center;
+    text-transform: uppercase;
+    font-family: 'Brand Serif';
+
+    .promo-msg {
+      position: relative;
+      margin-top: -0.1em;
+      line-height: 0.2;
+      // x for $ promo
+      &.promo-for .promo-detail small {
+        margin-left: -1em;
+        vertical-align: 2.2em;
+        font-size: 0.205em;
+      }
+
+      &.promo-for .promo-detail.kern-minus-1 small {
+        margin-left: -.4em;
+        letter-spacing: 0.03em;
+      }
+
+      &.promo-for .promo-detail .promo-sup {
+        position: relative;
+        top: -.4em;
+        margin-right: -.1em;
+        margin-left: 0.1em;
+        vertical-align: baseline;
+        font-size: 0.615em;
+        line-height: 0;
+      }
+
+      &.promo-for .promo-detail.kern-minus-1 .promo-sup {
+        margin-right: 0.05em;
+      }
+    }
+
+    .promo-detail {
+      position: relative;
+      font-size: 0.87em;
+      line-height: 1;
+    }
+
+    .tagline-wrapper {
+      font-family: 'Brand Sans';
+    }
+
+    .tagline {
+      margin: 0.1em 0 0;
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.18em;
+      line-height: 1.2;
+    }
+
+    .cta {
+      margin-top: 0.39em;
+      text-align: center;
+      font-size: 0.18em;
+      font-family: 'Brand Sans';
+      line-height: 1.2;
+    }
+
+    .cta::after {
+      line-height: 0.2;
+    }
+
+    // Optional Message
+
+    .optional-msg {
+      display: block;
+      margin-bottom: 0.2em;
+      font-size: 0.16em;
+      font-family: 'Brand Sans';
+      line-height: 1;
+    }
+
+    .optional-msg:empty {
+      display: none;
+    }
+
+    // Up To Msg
+    &.up-to-msg .promo-msg::before {
+      display: block;
+      margin-bottom: -0.6em;
+      padding: 0.6em 0 0;
+      content: 'Up To';
+      text-align: center;
+      text-transform: uppercase;
+      font-size: 0.16em;
+      font-family: 'Brand Sans';
+      line-height: 0.9;
+    }
+
+    // Percentage Amounts
+    .promo-msg.promo-percentage {
+      margin-bottom: -0.06em;
+    }
+
+    .promo-msg.promo-percentage .promo-detail::before {
+      position: absolute;
+      top: 0.4em;
+      right: -.08em;
+      content: '%';
+      letter-spacing: normal;
+      font-size: 0.65em;
+      line-height: 1;
+    }
+
+    &.up-to-msg .promo-msg.promo-percentage::after {
+      top: 0.31em;
+    }
+
+    .promo-msg.promo-percentage .promo-detail::after {
+      margin-left: 0.15em;
+      content: 'off';
+      letter-spacing: normal;
+      font-size: 0.2em;
+    }
+
+    .promo-msg.promo-percentage .promo-detail.kern-minus-1::after {
+      margin-left: 0.6em;
+    }
+  }
+}
+
+// HORIZONTAL VARIANT
+.sale-sticker-wrapper.sale-sticker-horizontal {
+  .sale-sticker-inner {
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: 0.09em 0.2em;
+
+    .sale-sticker-tagline {
+      float: left;
+      margin-top: 0.03em;
+      padding: 0 0 0 0.11em;
+      border-left: 2px solid #030001;
+    }
+
+    .promo-msg {
+      float: left;
+      margin: -.147em 0 -.09em;
+    }
+
+    .promo-detail {
+      margin: 0 0.16em 0 0;
+      line-height: 1;
+    }
+
+    .cta,
+    .tagline {
+      margin-top: 0;
+      text-align: left;
+      font-size: 0.18em;
+    }
+
+    .tagline {
+      margin-top: -.1em;
+      margin-bottom: 0.47em;
+      line-height: 1;
+    }
+
+    .cta {
+      line-height: 0.84;
+    }
+
+    // Optional Message
+    .optional-msg {
+      display: inline-block;
+      float: left;
+      margin: 0.75em 0.45em 0 0;
+      text-align: left;
+      line-height: 1;
+    }
+
+    // Up To Msg
+    &.up-to-msg .promo-msg::before {
+      display: inline-block;
+      float: left;
+      margin: 1.2em 0 0;
+      padding: 0;
+      width: 2em;
+      line-height: 1;
+    }
+
+    // Percentage Amounts
+    .promo-msg.promo-percentage::after {
+      right: 0.13em;
+    }
+
+    &.up-to-msg .promo-msg.promo-percentage::after {
+      top: 0.2em;
+    }
+  }
+}
+
+// FULL WIDTH VARIANT
+
+.sale-sticker-wrapper.sale-sticker-stretch {
+  width: 100%;
+
+  .sale-sticker-inner {
+    width: 100%;
+  }
+
+  .promo-msg {
+    margin: 0 auto;
+  }
+
+  &.sale-sticker-horizontal .tagline-wrapper {
+    width: auto;
+  }
+}

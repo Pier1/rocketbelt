@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>circle-slash</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="circle-slash" fill="#000000" fill-rule="nonzero">
+            <path d="M128,16 C66.148,16 16,66.148 16,128 C16,189.852 66.148,240 128,240 C189.852,240 240,189.852 240,128 C240,66.148 189.852,16 128,16 Z M212,128 C212,146.106667 206.176,162.86 196.394667,176.598667 L79.4013333,59.6053333 C93.14,49.824 109.893333,44 128,44 C174.312,44 212,81.688 212,128 Z M44,128 C44,109.893333 49.824,93.14 59.6053333,79.4013333 L176.589333,196.385333 C162.86,206.176 146.106667,212 128,212 C81.688,212 44,174.312 44,128 Z" id="Shape" transform="translate(128.000000, 128.000000) scale(-1, 1) translate(-128.000000, -128.000000) "></path>
+        </g>
+    </g>
+</svg>

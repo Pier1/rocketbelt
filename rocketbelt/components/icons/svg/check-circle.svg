@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>check-circle</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="check-circle" fill="#000000" fill-rule="nonzero">
+            <path d="M128,16 C66.148,16 16,66.148 16,128 C16,189.852 66.148,240 128,240 C189.852,240 240,189.852 240,128 C240,66.148 189.852,16 128,16 Z M116.333333,170.168 L74.3333333,129.857333 L87.3626667,116.464 L116.090667,143.876 L173.070667,85.8413333 L186.333333,98.992 L116.333333,170.168 Z"></path>
+        </g>
+    </g>
+</svg>

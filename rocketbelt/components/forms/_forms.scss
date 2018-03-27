@@ -9,14 +9,11 @@ fieldset {
 
   label,
   legend {
-    font-weight: font-weight(semibold);
     font-size: ms(-1);
-
     align-self: flex-start;
 
     &::after {
-      color: color(gray, plus1);
-      font-weight: font-weight(normal);
+      color: color(gray);
     }
   }
 }
@@ -25,70 +22,164 @@ fieldset {
   .messages {
     display: flex;
     flex-wrap: wrap;
-
-    .validation-message::after {
-      color: color(gray, plus1);
-      content: '\00A0\2014\00A0';
-    }
   }
 }
 
-form {
-  .form-group {
-    &.inline {
-      flex-direction: row;
-      align-items: center;
+.form-group {
+  &.inline {
+    flex-direction: row;
+    align-items: center;
 
-      &:first-child {
-        margin-top: ms(-10);
+    &:first-child {
+      margin-top: ms(-10);
+    }
+
+    .helper-text,
+    label {
+      flex: 0 0 auto;
+      align-self: center;
+    }
+
+    label {
+      display: flex;
+      flex-direction: column;
+      padding-right: ms(-4);
+    }
+
+    .helper-text {
+      padding-left: ms(-4);
+    }
+
+    .messages {
+      display: flex;
+      flex-direction: column;
+      flex: 0 0 auto;
+      padding-left: ms(-4);
+      order: last;
+
+      .helper-text {
+        padding-left: 0;
       }
 
-      label,
-      .helper-text {
-        flex: 0 0 auto;
-        align-self: center;
+      .helper-text,
+      .validation-message {
+        align-self: flex-start;
+      }
+    }
+
+    input,
+    select,
+    textarea {
+      &:focused {
+        overflow: auto;
+      }
+      &[required] {
+        & + label::after {
+          content: '(required)';
+        }
+      }
+
+      &:not([required]) {
+        & + label::after {
+          content: '(optional)';
+        }
+      }
+    }
+  }
+
+  &.inline-with-button {
+    font-size: 0;
+
+    input {
+      height: 2rem;
+      outline: 0;
+      border: 1px solid color(gray, plus1);
+      border-right: 0;
+      border-top-left-radius: 2px;
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      border-bottom-left-radius: 2px;
+
+      &:focus {
+        outline: 0;
+        border: 2px solid color(primary);
+        border-right: 0;
+        border-radius: 0;
+
+        & ~ button,
+        & ~ .button {
+          outline: 0;
+          border: 2px solid color(primary);
+          border-left: 0;
+          border-radius: 0;
+          transition: none;
+        }
+      }
+
+      &[invalid] {
+        outline: 0;
+        border: 2px solid color(error);
+        border-right: 0;
+
+        & ~ button,
+        & ~ .button {
+          border: 2px solid color(error);
+          border-left: 0;
+        }
+      }
+    }
+
+    button,
+    .button {
+      @include button-style(secondary);
+
+      min-width: auto;
+      height: 2rem;
+      border: 1px solid color(gray, plus1);
+      border-left: 0;
+      border-top-left-radius: 0;
+      border-top-right-radius: 2px;
+      border-bottom-right-radius: 2px;
+      border-bottom-left-radius: 0;
+      background: transparent;
+      box-shadow: none;
+      line-height: 1;
+
+      &:hover,
+      &:active {
+        box-shadow: none;
+      }
+    }
+
+    &.inline-with-button-stacked {
+      flex-wrap: wrap;
+
+      input {
+        // Must keep unit on zero-value for flex-basis here to avoid an IE bug.
+        // See https://github.com/Pier1/rocketbelt/pull/182.
+        flex: 1 0 0px; // sass-lint:disable-line zero-unit
+        min-width: 0;
+        width: auto;
       }
 
       label {
-        display: flex;
-        flex-direction: column;
-        padding-right: padding(-4);
+        flex-direction: row;
+        width: 100%;
+        align-items: baseline;
+
+        &::after {
+          margin-left: 0.25em;
+        }
       }
 
-      .helper-text {
-        padding-left: padding(-4);
+      button,
+      .button {
+        flex: 0 1 auto;
       }
 
       .messages {
-        display: flex;
-        flex-direction: column;
-        flex: 0 0 auto;
-        padding-left: padding(-4);
-        order: last;
-
-        .helper-text {
-          padding-left: 0;
-        }
-
-        .helper-text,
-        .validation-message {
-          align-self: flex-start;
-        }
-      }
-
-      input,
-      select {
-        &[required] {
-          & + label::after {
-            content: '(required)';
-          }
-        }
-
-        &:not([required]) {
-          & + label::after {
-            content: '(optional)';
-          }
-        }
+        padding-left: 0;
+        width: 100%;
       }
     }
   }
@@ -96,6 +187,7 @@ form {
 
 html {
   &.touchevents {
+    button,
     input,
     select {
       min-height: 44px;
@@ -103,12 +195,29 @@ html {
   }
 }
 
-input,
+input:not([type='checkbox']),
 select {
+  min-height: 2rem;
+}
+
+input {
+  &[type='radio'],
+  &[type='checkbox'] {
+    &:focus {
+      ~ label {
+        outline: thin dotted color(brand);
+      }
+    }
+  }
+}
+
+input:not([type='radio']),
+input:not([type='checkbox']),
+select,
+textarea {
   display: block;
   padding: ms(-12) ms(-10);
   width: 100%;
-  height: 2rem;
   border: 1px solid color(gray, plus1);
   border-radius: 2px;
   font-size: ms(-1);
@@ -119,10 +228,8 @@ select {
 
   &:focus {
     overflow: hidden;
-    outline-width: 3px;
-    outline-color: color(primary);
+    outline: 2px solid color(primary);
 
-    &:invalid,
     &.invalid {
       outline-color: color(error);
     }
@@ -133,7 +240,6 @@ select {
     background-color: color(gray, plus3);
   }
 
-  &:invalid,
   &.invalid {
     border-width: 2px;
     border-color: color(error);
@@ -143,10 +249,14 @@ select {
         display: block;
         visibility: visible;
         color: color(error);
+
+        + .helper-text::before {
+          color: color(gray);
+          content: unicode(nbsp) + unicode('horizontal-bar') + unicode(nbsp);
+        }
       }
     }
   }
-
 
   &:valid:not(.invalid) {
     & ~ .messages {
@@ -156,16 +266,43 @@ select {
       }
     }
   }
+  // Character Based Ems - Good Idea??
+  &.field-small {
+    width: 8em;
+  }
+
+  &.field-medium {
+    width: 16em;
+  }
+
+  &.field-large {
+    width: 24em;
+  }
+
+  &.read-only {
+    &[disabled] {
+      margin-bottom: 0;
+      padding: 0;
+      border-width: 1px;
+      border-color: transparent;
+      border-left-width: 0;
+      background: transparent;
+      color: color(gray);
+      font-size: 1rem;
+      opacity: 1;
+    }
+  }
 }
 
 [disabled] {
   opacity: 0.6;
-  filter: grayscale(0.4);
+  filter: grayscale(0.6);
+  transition: opacity 500ms ease;
 }
 
 input {
-  &[type='radio'],
-  &[type='checkbox'] {
+  &.rb-checkbox[type='checkbox'],
+  &[type='radio'] {
     &[disabled] + label {
       color: color(gray, plus2);
     }
@@ -173,58 +310,75 @@ input {
 }
 
 select {
-  $fill: str-replace(quote(color(black)), '#', '%23');
-  background: url('data:image/svg+xml;utf8,
-                <svg viewBox="0 6 32 21" xmlns="http://www.w3.org/2000/svg">
-                  <path fill="#{$fill}" fill-rule="evenodd" d="M27.728 6L32 10.272 16 26.194 0 10.272 4.272 6 16 17.69z"/>
-                </svg>
-              ') no-repeat,
-              color(white);
+  $fill: color(black);
+  padding-right: 25px;
+  background-color: color(white);
+  background-image: icon-as-data-uri(chevron-down, $fill);
   background-position: right 0.5rem center;
   background-size: 1rem;
-
+  background-repeat: no-repeat;
   appearance: none;
+
+  &.field-auto {
+    margin-right: auto;
+    padding-right: 2em;
+    width: auto;
+  }
+}
+
+textarea {
+  &.read-only {
+    &[disabled] {
+      resize: none;
+    }
+  }
 }
 
 .form-group {
-  input,
-  select {
+  label::after {
+    font-size: font-size(-2);
+  }
+
+  [required] {
     & + label::after {
-      font-size: font-size(-2);
+      content: unicode(nbsp) + '(required)';
     }
+  }
 
-    &[required] {
-      & + label::after {
-        content: '\00a0(required)';
-      }
+  :not([required]) {
+    & + label::after {
+      content: unicode(nbsp) + '(optional)';
     }
+  }
 
-    &:not([required]) {
-      & + label::after {
-        content: '\00a0(optional)';
+  .read-only {
+    &[disabled] {
+      & ~ label::after {
+        content: none;
       }
     }
   }
 
-  &.required-suppressed {
-    input,
-    select {
-      &[required] {
-        & + label::after {
-          content: '';
-        }
+  .required-suppressed {
+    [required] {
+      & + label::after {
+        content: '';
       }
+    }
 
-      &:not([required]) {
-        & + label::after {
-          content: '';
-        }
+    :not([required]) {
+      & + label::after {
+        content: '';
       }
     }
   }
 
   .helper-text {
-    color: color(gray, plus1);
+    color: color(gray);
+  }
+
+  .validation-message {
+    color: color(error);
   }
 
   .helper-text,
@@ -240,13 +394,13 @@ fieldset {
 
   &[required] {
     legend::after {
-      content: '\00a0(required)';
+      content: unicode(nbsp) + '(required)';
     }
   }
 
   &:not([required]) {
     legend::after {
-      content: '\00a0(optional)';
+      content: unicode(nbsp) + '(optional)';
     }
   }
 }

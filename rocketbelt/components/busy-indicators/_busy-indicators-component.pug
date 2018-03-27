@@ -1,0 +1,86 @@
+style.
+  .form-group, .radio-group {
+    width: 360px;
+    margin-bottom: 2rem !important;
+  }
+.grid-fluid
+  .row.exampleWithoutCode
+    .col.xs
+      button.button.button-secondary.is-busyable.is-busy_trigger
+        span Click to Trigger Busy
+
+    .col.xs
+      button.button.button-primary.is-busyable.is-busy_trigger.is-busy-inverted
+        span Click to Trigger Busy
+
+  .row
+    .col.xs
+      +exampleCodeOnly
+        button.button.button-primary.is-busy.is-busy-inverted
+          span Click to Trigger Busy
+
+  .row.exampleWithoutCode
+    .col.xs
+      .form-group.is-busyable.is-busy
+        textarea#busy-textarea.is-busy_trigger(placeholder='Blur the textarea to trigger a busy state.')
+        label(for='busy-textarea') Message
+
+      ul.radio-group.radio-group-chunky.is-busyable
+        li
+          input#busy-chunky-1.is-busy_trigger(type='radio', name='radio-group-chunky')
+          label(for='busy-chunky-1') Click an option to trigger a busy state.
+        li
+          input#busy-chunky-2.is-busy_trigger(type='radio', name='radio-group-chunky')
+          label(for='busy-chunky-2') Click an option to trigger a busy state.
+
+      .form-group.is-busyable
+        select#busy-select
+          option(value='', disabled='', selected='', hidden='') Change selection to trigger busy
+          option.is-busy_trigger Biblioteca
+          option.is-busy_trigger Marcel
+          option.is-busy_trigger Pierce
+        label(for='busy-select') Collection
+      +exampleCodeOnly
+        .form-group.is-busyable
+          textarea#busy-textarea(placeholder='Blur the textarea to trigger a busy state.')
+          label(for='busy-textarea') Message
+
+        ul.radio-group.radio-group-chunky.is-busyable
+          li
+            input#busy-chunky-1(type='radio', name='radio-group-chunky')
+            label(for='busy-chunky-1') Click an option to trigger a busy state.
+          li
+            input#busy-chunky-2(type='radio', name='radio-group-chunky')
+            label(for='busy-chunky-2') Click an option to trigger a busy state.
+
+        .form-group.is-busyable
+          select#busy-select
+            option(value='', disabled='', selected='', hidden='') Change selection to trigger busy
+            option Biblioteca
+            option Marcel
+            option Pierce
+          label(for='busy-select') Collection
+
+script.
+  $(document).on('click', '.is-busy_trigger', function () {
+    var $toBusy = $(this).closest('.form-group, .radio-group');
+
+    $toBusy.addClass('is-busy');
+    setTimeout(function () {
+      $toBusy.removeClass('is-busy');
+    }, 2850)
+  });
+  $(document).on('change', 'select#busy-select', function () {
+    var $toBusy = $(this).closest('.form-group');
+    $toBusy.addClass('is-busy');
+    setTimeout(function () {
+      $toBusy.removeClass('is-busy');
+    }, 2850)
+  });
+  $(document).on('click', 'button.is-busy_trigger', function () {
+    var $this = $(this);
+    $this.addClass('is-busy');
+    setTimeout(function () {
+      $this.removeClass('is-busy');
+    }, 2850)
+  });

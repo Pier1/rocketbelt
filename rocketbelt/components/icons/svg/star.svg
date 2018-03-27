@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>star</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="star" fill="#000000" fill-rule="nonzero">
+            <polygon points="128 6 167.145631 86.776699 256 98.8932039 191.378641 161.339806 207.223301 249.572816 128 207.320388 48.776699 249.572816 64.6213592 161.339806 0 99.2038835 88.8543689 86.776699"></polygon>
+        </g>
+    </g>
+</svg>

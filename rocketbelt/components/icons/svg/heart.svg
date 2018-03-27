@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>heart</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="heart" fill="#000000" fill-rule="nonzero">
+            <path d="M128,55.3161788 C98.6186667,4.89751215 16,19.6161788 16,82.7935121 C16,126.296179 67.996,170.778845 128,230.334845 C188.013333,170.778845 240,126.296179 240,82.7935121 C240,19.4015121 157.166667,5.27084548 128,55.3161788 Z"></path>
+        </g>
+    </g>
+</svg>

@@ -1,0 +1,60 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Product Tag'
+
+block content
+  article
+    h1 Product Tag
+
+    .grid-fluid.playground
+      .row
+        .col.xs
+          .pt-img.pt-hide
+            +exampleWithCode
+              include _product-tag.pug
+        .col.xs
+          div.playground-control
+            input#pt_img.playground-item(
+              type="checkbox"
+              checked=false
+              value="pt-hide"
+              name="Percent Off"
+              data-property="class"
+              data-target=".pt-img"
+            )
+            label(for="pt_img") With Image
+          div.playground-control
+            input#pt_variant.playground-item(
+              type="checkbox"
+              checked=false
+              value="percent-off"
+              name="Percent Off"
+              data-property="class"
+              data-target=".product-tag"
+            )
+            label(for="pt_variant") Percent Off
+          div.playground-control
+            label(for="pt_msg") Tag Message:
+              input#pt_msg.playground-item(
+                data-target=".product-tag_text"
+                type="text"
+                maxlength="20"
+                value = "Sale"
+              )
+
+block scripts
+  script.
+    rb.launchPlayground();
+    $('#pt_img').on('change', function() { $('.product-tag').toggleClass('on-img');})
+    $('#pt_variant').on('change', function() {
+      console.log('change');
+      var msg = $('#pt_msg');
+      msg.toggleClass('pt_msg_num');
+      console.log(msg);
+      if(msg.hasClass('pt_msg_num')){
+        msg.val('20').trigger('input');
+      } else {
+        msg.val('Sale').trigger('input');
+      }
+    })

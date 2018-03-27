@@ -1,0 +1,114 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Dialogs'
+
+block content
+  article
+    h1 Dialogs
+
+    p Dialogs contain text and UI controls focused on a specific task. They inform users about critical information, require users to make decisions, or involve multiple tasks.
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode('Javascript', true)
+            | // Defaults:
+            | $('selector').rbDialog({
+            |   appendTo: 'body', // Wrapper for .is-dialog-open
+            |   blurElement: 'body>div:first', // Wrapper to blur content '.dialog_blur'
+            |   autoOpen: true,
+            |   buttons: [],
+            |   classes: { // Classes get merged into each othe
+            |     'rbDialog': 'dialog', // Pass in 'dialog-sheet' or 'dialog-max' for variations
+            |     'rbDialogTitle': 'dialog_title',
+            |     'rbDialogBody': 'dialog_body'
+            |   },
+            |   title: null,
+            |   beforeClose: null,
+            |   close: null,
+            |   open: null
+            | });
+      .row
+        .col.xs
+          +exampleWithCode('Javascript', true)
+            | // You can pass in a button that will display at the button of the modal:
+            | $('selector').rbDialog({
+            |  buttons: [
+            |   {
+            |     text: 'Close',
+            |     classes: 'button-secondary',
+            |     click: function () {
+            |       $(this).rbDialog('close');
+            |     }
+            |   }
+            | ]
+            | });
+
+    h2 Dialog Types:
+    h3 Standard Dialog
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(onclick="$('#standard-dialog').rbDialog({title: 'Base Dialog', buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-standard.pug
+
+    h3 Sheet Dialog
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(onclick="$('#sheet-dialog').rbDialog({title: 'Sheet Dialog', classes: { 'rbDialog': 'dialog-sheet' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-sheet.pug
+
+    h3 Dark Dialogs
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(onclick="$('#dark-dialog').rbDialog({ title: 'Dark Dialog', classes: { 'rbDialog': 'dialog-dark' } })") Trigger Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-dark.pug
+
+    h3 Max Dialog
+    .grid-fluid
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(onclick="$('#max-dialog').rbDialog({title: 'Max Dialog', classes: { 'rbDialog': 'dialog-max' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+          small.fg_error
+            | <br/>
+            | <strong>Max dialogs don't support buttons.</strong>
+            | <br/>
+            | Button option included to illustrate non-support.
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-max.pug
+
+    h3 Dialog Template
+    .grid-fluid
+      .row
+        .col.xs
+          p Include this template below your main element that #[code .is-dialog-open] is going to be appended to:
+          +exampleWithCode('html')
+            include _dialog-template.pug
+
+
+    h3 Script Include
+    +exampleWithCode('html', true)
+      script(src='./rocketbelt.dialogs.min.js')
+
+    style(type='text/css').
+      .exampleWithCode > .example {
+        display: none;
+      }

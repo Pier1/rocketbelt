@@ -1,11 +1,11 @@
-.radio-group,
-.checkbox-group {
+.checkbox-group,
+.radio-group {
   @include list-reset;
 }
 
 input {
-  &[type='radio'],
-  &[type='checkbox'] {
+  &.rb-checkbox[type='checkbox'] ,
+  &[type='radio'] {
     @extend %visuallyhidden;
 
     & + label {
@@ -32,18 +32,17 @@ input {
         left: 0;
         width: 1rem;
         height: 1rem;
-        border: 2px solid transparent;
+        border: 2px solid color(gray, plus2);
         border-radius: 100%;
-        background: color(gray, plus3);
+        background: color(white);
         content: '';
-        transition: all 200ms ease-in;
+        transition: border 200ms ease-in, background 200ms ease-in;
       }
 
       &:hover::before {
         border: 6px solid rgba(color(gray), 0.2);
         background: color(white);
-        transition: color 200ms ease-in,
-        background 200ms ease-in;
+        transition: color 200ms ease-in, background 200ms ease-in;
       }
     }
 
@@ -51,12 +50,16 @@ input {
       &::before {
         border: 6px solid color(primary);
         background: color(white);
-        transition: border 200ms ease-in,
-        background 200ms ease-in;
+        transition: border 200ms ease-in, background 200ms ease-in;
       }
     }
 
     &[disabled] {
+      & + label:hover::before {
+        border: none;
+        background: color(gray, plus4);
+      }
+
       &[checked] + label {
         &::before {
           border: 6px solid color(gray, plus4);
@@ -66,7 +69,7 @@ input {
     }
   }
 
-  &[type='checkbox'] {
+  &.rb-checkbox[type='checkbox'] {
     $color-white: color(white);
     $color-selected: color(primary);
     $color-unselected: color(gray, plus3);
@@ -78,52 +81,53 @@ input {
         left: 0;
         width: 1rem;
         height: 1rem;
-        border: 2px solid transparent;
+        border: 2px solid color(gray, plus2);
         border-radius: 2px;
-        background: color(gray, plus3);
+        background: color(white);
         background-position: center center;
         content: '';
         transition: background-color 200ms ease-in;
       }
 
       &:hover::before {
-        $color-fill: str-replace(quote($color-white), '#', '%23');
-        background: url('data:image/svg+xml;utf8,
-                      <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                      </svg>'
-                    ) no-repeat,
-                    $color-unselected;
+        $color-fill: $color-white;
+        border-color: transparent;
+        background-color: $color-unselected;
+        background-image: icon-as-data-uri(check, $color-fill);
         background-position: center center;
-        transition: background-color 100ms ease-in;
-
+        background-repeat: no-repeat;
+        transition: background-color 100ms ease-in, border-color 100ms ease-in;
       }
     }
 
     &:checked + label {
       &::before {
-        $color-fill: str-replace(quote($color-white), '#', '%23');
-        background: url('data:image/svg+xml;utf8,
-                      <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                      </svg>'
-                    ) no-repeat,
-                    $color-selected;
+        $color-fill: $color-white;
+        border-color: transparent;
+        background-color: $color-selected;
+        background-image: icon-as-data-uri(check, $color-fill);
         background-position: center center;
-        transition: background-color 100ms ease-in;
+        background-repeat: no-repeat;
+        transition: background-color 100ms ease-in, border-color 100ms ease-in;
       }
     }
 
-    &[disabled][checked] + label {
-      &::before {
-        $color-fill: str-replace(quote(color(gray, plus2)), '#', '%23');
-        background: url('data:image/svg+xml;utf8,
-                      <svg viewBox="629 458 16 12" xmlns="http://www.w3.org/2000/svg">
-                        <path fill="#{$color-fill}" fill-rule="evenodd" d="M641.992 458.395l-6.978 6.978-3.006-3.023-2.25 2.232 5.256 5.273 9.228-9.228z"/>
-                      </svg>'
-                    ) no-repeat,
-                    color(gray, plus4);
-        background-position: center center;
+    &[disabled] {
+      &[checked] + label {
+        &::before {
+          $color-fill: color(gray, plus2);
+          background-color: color(gray, plus4);
+          background-image: icon-as-data-uri(check, $color-fill);
+          background-position: center center;
+          background-repeat: no-repeat;
+        }
+      }
+
+      &:not([checked]) + label {
+        &::before {
+          border-color: transparent;
+          background: color(gray, plus4);
+        }
       }
     }
   }
