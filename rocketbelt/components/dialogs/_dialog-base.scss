@@ -164,3 +164,7 @@ $dialog-close-height: 44px;
     height: 100%;
   }
 }
+
+.dialog_required .dialog_close { 
+  display: none; 
+}
