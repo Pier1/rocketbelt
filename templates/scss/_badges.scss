@@ -42,7 +42,7 @@ $pct: 20%;
     background-image: radial-gradient(circle at top right, #d914cf 0%, rgba(154, 105, 241, 0.00) 65%);
     content: '';
     opacity: 1;
-    animation: before 23s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    animation: before 16s infinite cubic-bezier(0.68, -0.55, 0.265, 1.55);
     animation-direction: alternate;
   }
 
@@ -57,7 +57,7 @@ $pct: 20%;
     content: '';
     opacity: 1;
     transform: translateY(-1 * $pct) translateX(-1 * $pct) rotateX(10rem);
-    animation: after 45s infinite linear;
+    animation: after 35s infinite linear;
   }
 
   @keyframes before {
@@ -89,23 +89,23 @@ $pct: 20%;
 
   @keyframes after {
     0% {
-      transform: translateY(-20%) translateX(-20%);
+      transform: translateY(-20%) translateX(-20%) rotate(-5deg);
     }
 
     25% {
-      transform: translateY(20%) translateX(20%);
+      transform: translateY(20%) translateX(20%) rotate(0deg);
     }
 
     50% {
-      transform: translateY(-20%) translateX(20%);
+      transform: translateY(-20%) translateX(20%) rotate(5deg);
     }
 
     75% {
-      transform: translateY(20%) translateX(-20%);
+      transform: translateY(20%) translateX(-20%) rotate(0deg);
     }
 
     100% {
-      transform: translateY(-20%) translateX(-20%);
+      transform: translateY(-20%) translateX(-20%) rotate(-5deg);
     }
   }
 }
