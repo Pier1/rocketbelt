@@ -28,7 +28,8 @@ $(function () {
       title: null,
       beforeClose: null,
       close: null,
-      open: null
+      open: null,
+      required: false
     };
   }
 
@@ -60,6 +61,7 @@ $(function () {
 
     $.extend(true, options, params);
 
+    if (options.required) options.classes['rbDialog'] += ' dialog_required';
     if (options.appendTo) $cache.appendTo = $(options.appendTo);
     if (options.blurElement) $cache.blurElement = $(options.blurElement);
     if (options.title) $cache.rbDialogTitle.html(options.title);
@@ -68,8 +70,10 @@ $(function () {
 
     $cache.rbDialog.data('options', options);
 
-    $.each(closers, function (index, value) {
-      value.addEventListener('click', close);
+    $.each(closers, function (index, el) {
+      if ( options.required && $(el).is('.dialog_overlay, .dialog_close') ) return;
+      
+      el.addEventListener('click', close);
     });
     if (!$.contains($cache.rbDialogBody[0], element[0])) {
       $cache.rbDialogBody.append(element);
@@ -156,7 +160,7 @@ $(function () {
 
   function bindKeypress(event) {
     var shown = !$cache.rbDialog[0].hasAttribute('aria-hidden');
-    if (shown && event.which === 27) {
+    if (shown && !options.required && event.which === 27) {
       event.preventDefault();
       close();
     }
