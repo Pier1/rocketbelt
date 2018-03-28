@@ -187,7 +187,6 @@ fieldset {
 
 html {
   &.touchevents {
-    button,
     input,
     select {
       min-height: 44px;
@@ -385,7 +384,7 @@ textarea {
   .validation-message {
     font-size: font-size(-2);
   }
-}
+} 
 
 fieldset {
   margin: 0;
