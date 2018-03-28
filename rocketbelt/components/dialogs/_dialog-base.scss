@@ -149,6 +149,9 @@ $dialog-close-height: 44px;
 }
 
 .dialog_close {
+  position: absolute;
+  top: 0;
+  right: 0;
   display: flex;
   padding: 0;
   width: $dialog-close-height;
