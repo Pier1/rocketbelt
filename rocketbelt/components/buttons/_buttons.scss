@@ -82,6 +82,14 @@ button {
   text-transform: none;
 }
 
+.button-mini {
+  @include button-size(mini);
+  min-width: 44px;
+  &.button-link {
+    @extend %button-link-props;
+  }
+}
+
 .button-sm {
   @include button-size(sm);
 
@@ -119,6 +127,23 @@ button {
   &:active,
   &:hover {
     box-shadow: none;
+  }
+}
+
+.touchevents {
+  /* Enlarges the click area without enlarging the UI element */
+  .button-sm, 
+  .button-mini {
+    position: relative;
+    &:after {
+      content: '';
+      position: absolute;
+      top: -10px; 
+      bottom: -10px; 
+      left: -10px; 
+      right: -10px; 
+      min-height: 44px;
+    }
   }
 }
 
