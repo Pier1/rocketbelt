@@ -178,7 +178,7 @@
       }],
     "arrow-spacing": 2,              // https://eslint.org/docs/rules/arrow-spacing
     "no-confusing-arrow": 2,         // https://eslint.org/docs/rules/no-confusing-arrow
-    "prefer-destructuring": 1,       // https://eslint.org/docs/rules/prefer-destructuring
+    "prefer-destructuring": 0,       // https://eslint.org/docs/rules/prefer-destructuring
     "prefer-rest-params": 1,         // https://eslint.org/docs/rules/prefer-rest-params
     "prefer-template": 1,            // https://eslint.org/docs/rules/prefer-template
     "newline-per-chained-call": [1, { "ignoreChainWithDepth": 3 }], // https://eslint.org/docs/rules/newline-per-chained-call
