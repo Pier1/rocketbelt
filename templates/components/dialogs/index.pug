@@ -27,7 +27,8 @@ block content
             |   title: null,
             |   beforeClose: null,
             |   close: null,
-            |   open: null
+            |   open: null,
+            |   required: false
             | });
       .row
         .col.xs
@@ -56,6 +57,15 @@ block content
         .col.xs
           +exampleWithCode
             include _dialog-standard.pug
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(onclick="$('#required-dialog').rbDialog({title: 'Required Dialog', required: true, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Required Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-required.pug
+      
 
     h3 Sheet Dialog
     .grid-fluid
