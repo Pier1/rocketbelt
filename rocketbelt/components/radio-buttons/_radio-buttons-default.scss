@@ -4,7 +4,7 @@
 }
 
 input {
-  &.rb-checkbox[type='checkbox'] ,
+  &.rb-checkbox[type='checkbox'],
   &[type='radio'] {
     @extend %visuallyhidden;
 
@@ -112,6 +112,16 @@ input {
       }
     }
 
+    &:not(:checked) + label {
+      &:hover::before {
+        .touchevents & {
+          border-color: color(gray, plus2);
+          background-image: none;
+          background-color: white;
+        }
+      }
+    }
+    
     &[disabled] {
       &[checked] + label {
         &::before {
