@@ -7,16 +7,23 @@
 @mixin button-size($size: md) {
   @extend %button-static-props;
   $size: to_lower_case($size);
-  min-width: 8rem;
   @if $size == lg {
+    min-width: 8rem;
     padding: ms(-6) ms(1);
     font-size: font-size(0);
   }
   @else if $size == md {
+    min-width: 8rem;
     padding: ms(-8) ms(1);
     font-size: font-size(-1);
   }
+  @else if $size == mini {
+    min-width: 2.8rem;
+    padding: ms(-14) ms(1); 
+    font-size: font-size(-2);
+  }
   @else {
+    min-width: 6rem;
     padding: ms(-10) ms(1);
     font-size: font-size(-2);
   }
