@@ -21,7 +21,7 @@
   module.exports = (gulp, plugins, config) => {
     return () => {
       gulp.watch(['./rocketbelt/**/*.scss', './templates/scss/**/*.scss'], ['styles']);
-      gulp.watch(['./templates/**/*.pug'], ['views']);
+      gulp.watch(['./templates/**/*.pug'], ['views', 'link-templates']);
       gulp.watch(['./rocketbelt/**/*.js'], ['copy-js', 'uglify']);
       gulp.watch(config.buildPath + '/**/*.html')
         .on('change', plugins.browserSync.reload);
