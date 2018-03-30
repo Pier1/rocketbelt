@@ -52,7 +52,7 @@
 
     document.addEventListener('click', (e) => {
       const el = e.target;
-      if (!el.closest('.button-dropdown') && !el.classList.contains('.button-dropdown')) {
+      if (!el.closest('.button-dropdown').length && !el.is('.button-dropdown') || el.closest('.button-dropdown').length && el.is('.dropdown_content-item')) {
         const ddTriggers = document.querySelectorAll('.button-dropdown_trigger');
         const ddTriggersLen = ddTriggers.length;
         for (let k = 0; k < ddTriggersLen; k++) {
