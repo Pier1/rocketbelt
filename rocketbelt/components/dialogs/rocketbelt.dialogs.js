@@ -208,14 +208,9 @@ $(function () {
 
     if ($cache.rbDialog[0].classList.contains('dialog_headerless')) {
       var $closeContainer = $('.dialog_headerless .dialog_close_container').detach();
-      console.dir($closeContainer);
-
       var $headerlessDialog = $('.dialog_headerless .dialog_content');
-      console.dir($headerlessDialog);
-      console.dir($headerlessDialog.children('.dialog_close_container'));
 
       if (!$headerlessDialog.children('.dialog_close_container').length) {
-        console.dir($closeContainer);
         $closeContainer.insertAfter('.dialog_headerless .dialog_content .dialog_header');
       }
     }
