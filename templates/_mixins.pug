@@ -97,22 +97,22 @@ mixin dynamicExampleCode(labelText, expanded)
 mixin buildNav(navObject, rootHref)
   nav#main-nav
     ul.nav-menu
-      each item in navObject.sort()
+      each item in navObject.sort((a, b) => a.name > b.name)
         - var name = toTitleCase(item.name);
+        - console.dir(name);
         unless item.name.indexOf('index.') > -1
           - var newRootHref = rootHref ? rootHref : '';
           - var shortName = item.name.replace('pug', '');
 
-          //- Hide Animation category for now…
-          if (shortName !== 'img' && shortName !== 'vendor' && shortName !== 'animation')
+          if (shortName !== 'img' && shortName !== 'vendor')
             li.nav-item.nav_level-1(ref=shortName)
               //- if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
-              button.category-label #{name.replace('.pug', '').replace('A11y', 'Accessibility')}
+              button.category-label #{name.replace('.pug', '')}
               .sub-nav
                 ul.sub-nav-group
-                  each child in item.children
+                  each child in item.children.sort((a, b) => a.name > b.name)
                     li.sub-nav-item
-                      a.sub-nav-link(href=`/${item.name}/${child.name}`) #{toTitleCase(child.name)}
+                      a.sub-nav-link(href=`/${item.name}/${child.name}`) #{toTitleCase(child.name.replace('a11y', 'Accessibility'))}
 
 mixin colorPicker(target, val, type)
   - var prefix = type === 'background' ? 'bg_' : 'fg_';
