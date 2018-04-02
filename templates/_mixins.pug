@@ -99,14 +99,13 @@ mixin buildNav(navObject, rootHref)
     ul.nav-menu
       each item in navObject.sort((a, b) => a.name > b.name)
         - var name = toTitleCase(item.name);
-        - console.dir(name);
+
         unless item.name.indexOf('index.') > -1
           - var newRootHref = rootHref ? rootHref : '';
           - var shortName = item.name.replace('pug', '');
 
           if (shortName !== 'img' && shortName !== 'vendor')
             li.nav-item.nav_level-1(ref=shortName)
-              //- if _.find(item.children, function (i) { return ( i.name && i.name.indexOf('index.') > -1 ) })
               button.category-label #{name.replace('.pug', '')}
               .sub-nav
                 ul.sub-nav-group
