@@ -26,7 +26,7 @@ $dialog-close-height: 44px;
 
     .dialog_title {
       font-weight: font-weight(normal);
-      font-size: font-size(4);
+      font-size: font-size(2);
     }
   }
 
@@ -164,6 +164,16 @@ $dialog-close-height: 44px;
   .icon {
     width: 1rem;
     height: 100%;
+  }
+}
+
+.dialog_headerless {
+  .dialog_header {
+    @extend %visually-hidden;
+  }
+
+  .dialog_close {
+    background: linear-gradient(to right, rgba(color(white), 0), color(white) 30%);
   }
 }
 
