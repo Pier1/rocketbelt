@@ -65,7 +65,14 @@ block content
         .col.xs
           +exampleWithCode
             include _dialog-required.pug
-      
+      .row
+        .col.xs-8
+          div
+            button.button.button-secondary.button-md(onclick="$('#headerless-dialog').rbDialog({title: 'Headerless Dialog', headerless: true, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Headerless Dialog
+      .row
+        .col.xs
+          +exampleWithCode
+            include _dialog-headerless.pug
 
     h3 Sheet Dialog
     .grid-fluid

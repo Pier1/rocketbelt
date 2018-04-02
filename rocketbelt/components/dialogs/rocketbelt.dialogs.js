@@ -29,7 +29,8 @@ $(function () {
       beforeClose: null,
       close: null,
       open: null,
-      required: false
+      required: false,
+      headerless: false
     };
   }
 
@@ -62,6 +63,11 @@ $(function () {
     $.extend(true, options, params);
 
     if (options.required) options.classes['rbDialog'] += ' dialog_required';
+
+    if (options.headerless) {
+      options.classes['rbDialog'] += ' dialog_headerless';
+    }
+
     if (options.appendTo) $cache.appendTo = $(options.appendTo);
     if (options.blurElement) $cache.blurElement = $(options.blurElement);
     if (options.title) $cache.rbDialogTitle.html(options.title);
@@ -72,7 +78,7 @@ $(function () {
 
     $.each(closers, function (index, el) {
       if ( options.required && $(el).is('.dialog_overlay, .dialog_close') ) return;
-      
+
       el.addEventListener('click', close);
     });
     if (!$.contains($cache.rbDialogBody[0], element[0])) {
@@ -199,6 +205,20 @@ $(function () {
     setFocusToFirstItem($cache.rbDialog[0]);
     document.body.addEventListener('focus', maintainFocus, true);
     $(document).keydown(bindKeypress);
+
+    if ($cache.rbDialog[0].classList.contains('dialog_headerless')) {
+      var $closeContainer = $('.dialog_headerless .dialog_close_container').detach();
+      console.dir($closeContainer);
+
+      var $headerlessDialog = $('.dialog_headerless .dialog_content');
+      console.dir($headerlessDialog);
+      console.dir($headerlessDialog.children('.dialog_close_container'));
+
+      if (!$headerlessDialog.children('.dialog_close_container').length) {
+        console.dir($closeContainer);
+        $closeContainer.insertAfter('.dialog_headerless .dialog_content .dialog_header');
+      }
+    }
 
     $cache.rbDialog.trigger('rbDialog:open');
     _trigger('open');
