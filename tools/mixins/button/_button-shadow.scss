@@ -1,0 +1,15 @@
+/// Return box-shadow styles for Rocketbelt buttons.
+///
+/// @group Buttons
+/// @author Kendrick Arnett
+@mixin button-shadow {
+  @include z-depth(1);
+
+  &:hover {
+    @include z-depth(2);
+  }
+
+  &:active {
+    @include z-depth(1);
+  }
+}

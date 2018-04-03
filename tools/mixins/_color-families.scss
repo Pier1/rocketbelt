@@ -1,0 +1,51 @@
+/// Emits foreground & background selectors that correspond to Rocketbelt palette colors.
+///
+/// @group Color
+/// @author Kendrick Arnett
+///
+/// @see {function} color
+///
+/// @access private
+///
+/// @param $families [$color-families] - Map of palette color families & variants.
+@mixin color-families($families: $color-families) {
+  .fg_ {
+    @each $family, $variants in $families {
+      &#{$family} {
+        @each $variant, $color in $variants {
+          $variant-selector: $variant;
+          @if ($variant == base) {
+            $variant-selector: '';
+          }
+          @else {
+            $variant-selector: '-#{$variant}';
+          }
+
+          &#{$variant-selector} {
+            color: $color;
+          }
+        }
+      }
+    }
+  }
+
+  .bg_ {
+    @each $family, $variants in $families {
+      &#{$family} {
+        @each $variant, $color in $variants {
+          $variant-selector: $variant;
+          @if ($variant == base) {
+            $variant-selector: '';
+          }
+          @else {
+            $variant-selector: '-#{$variant}';
+          }
+
+          &#{$variant-selector} {
+            background-color: $color;
+          }
+        }
+      }
+    }
+  }
+}
