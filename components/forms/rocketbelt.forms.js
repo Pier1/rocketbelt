@@ -56,24 +56,39 @@
   }
 
   function decorateInputs() {
-    const formEls = document.querySelectorAll('.form-group input, .form-group select, .form-group textarea, .form-group fieldset');
+    const formEls = document.querySelectorAll(
+      '.form-group input, .form-group select, .form-group textarea, .form-group fieldset'
+    );
     const formElsLen = formEls.length;
 
     for (let i = 0; i < formElsLen; i++) {
-      const formEl = formEls[i];
+      const el = formEls[i];
+
+      // "invalid" will be raised by the checkValidity() call below.
+      // .invalid is added and will be handled by the MutationObserver
+      // created by this function.
+      // https://daverupert.com/2017/11/happier-html5-forms/
+      el.addEventListener('invalid', () => {
+        el.classList.add('invalid');
+      }, false);
 
       // Set an observer to listen for .invalid.
       const observer = new MutationObserver(mutations => { onClassMutation(mutations); });
-      observer.observe(formEl, { subtree: false, attributes: true, attributeOldValue: true, attributeFilter: ['class'] });
+      observer.observe(el, {
+        subtree: false,
+        attributes: true,
+        attributeOldValue: true,
+        attributeFilter: ['class']
+      });
 
-      const messages = formEl.parentNode.querySelectorAll('.validation-message, .helper-text');
+      const messages = el.parentNode.querySelectorAll('.validation-message, .helper-text');
       const msgLen = messages.length;
 
       if (msgLen > 0) {
         let describedByIds = '';
 
-        if (formEl.hasAttribute(aria.describedby)) {
-          describedByIds = `${formEl.getAttribute(aria.describedby)} `;
+        if (el.hasAttribute(aria.describedby)) {
+          describedByIds = `${el.getAttribute(aria.describedby)} `;
         }
 
         for (let j = 0; j < msgLen; j++) {
@@ -82,7 +97,7 @@
           describedByIds += `${id} `;
 
           if (thisMsg.classList.contains('validation-message')) {
-            formEl.setAttribute(DESCRIBED_BY_ERROR_ID_ATTR, id);
+            el.setAttribute(DESCRIBED_BY_ERROR_ID_ATTR, id);
           }
 
           // Don't clobber any existing attributes!
@@ -91,10 +106,18 @@
           }
         }
 
-        if (!formEl.hasAttribute(aria.describedby)) {
-          formEl.setAttribute(aria.describedby, describedByIds.trim());
+        if (!el.hasAttribute(aria.describedby)) {
+          el.setAttribute(aria.describedby, describedByIds.trim());
         }
       }
+    }
+
+    const formsAndGroups =
+      document.querySelectorAll('form.validate-on-blur, .form-group.validate-on-blur');
+    for (const el of formsAndGroups) {
+      el.addEventListener('blur', () => {
+        el.checkValidity();
+      });
     }
   }
 

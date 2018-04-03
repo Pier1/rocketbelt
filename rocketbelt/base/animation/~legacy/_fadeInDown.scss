@@ -1,0 +1,27 @@
+@mixin keyframes-fadeInDown {
+  @include keyframes(fadeInDown) {
+    0% {
+      opacity: 0;
+      @include transform(translateY(-20px));
+    }
+    100% {
+      opacity: 1;
+      @include transform(translateY(0));
+    }
+  }
+}
+
+@mixin fadeInDown($count: $countDefault, $duration: $durationDefault, $delay: $delayDefault, $timingFunction: $timingFunctionDefault, $fill: $fillDefault, $visibility: $visibilityDefault) {
+  $name: fadeInDown;
+
+  @if (index($included-keyframes, $name) == null) {
+    @include keyframes-fadeInDown;
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+  @else {
+    $included-keyframes: append($included-keyframes, $name) !global;
+  }
+
+  @include animation-name($name);
+  @include animation-properties($count, $duration, $delay, $timingFunction, $fill, $visibility);
+}
