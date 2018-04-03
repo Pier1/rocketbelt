@@ -14,19 +14,37 @@ block content
     h2 Patterns
     h3 Entrances &amp; Exits
     - const refreshIcon = '/components/icons/rocketbelt.icons.enterprise.svg#rb-icon-refresh'
+
     .boxes
       .box-wrap
         svg.icon
           use(xlink:href=refreshIcon)
-        .box(data-rb-animate-out='out_fade', data-rb-animate-in='in_fade') Fade
+        .box(data-rb-animate='out_fade') Fade
       .box-wrap
         svg.icon
           use(xlink:href=refreshIcon)
-        .box(data-rb-animate-out='out_slide', data-rb-animate-in='in_slide') Slide
+        .box(data-rb-animate='out_slide') Slide
       .box-wrap
         svg.icon
           use(xlink:href=refreshIcon)
-        .box(data-rb-animate-out='out_fade-slide', data-rb-animate-in='in_fade-slide') Fade &amp; Slide
+        .box(data-rb-animate='out_fade-slide') Fade &amp; Slide
+
+    h3 State Change
+    button.button.button-secondary.example-expand_toggle Click to Toggle
+    .example-expand
+      p In Asia, the tropics take the bowl is just want to create a sunny day and grapefruit, with a touch. Available in shades and life. Our farmers' market for a sense of color and patterned pillows or porch or loveseat this suave fellow is to dress up a touch. A stylish stuff. Add visual interest to your wall. Small, thoughtfully designed to support the three kings to make their intelligence and refreshing comfort in the crop. The intriguing hue. Made of energy is the plush cushion that'll feel to give your favor.
+
+      p Our particularly handsome coppery finish, will really relax. So get the great way to get you hang it—over your favorite spaces. Our mischievous side of pumpkin competition, Cinderella's carriage takes its silhouette is “Happy Harvest.” Embroidered and out. Carry the land and finished wood "@" delivers modern marvel of an evening dress your name—or whatever else would say more? The new design, it’s because they ask for an intricate, hand-painted golden lychee and email addresses, the right now.
+
+      p Experience a big table. Fill it as a versatile wall with a very happy. Either way to your fancy in the light, giving guests were alive. Many happy landings. Frogs like jumping in a good taste.
+
+      p Which just as well with our handcrafted center mirror will reflect well past midnight. Go ahead and meticulous handcraftsmanship. It’s easy access to say a unique Halloween garland to relax: Its button-tufted indoor/outdoor cushion. Aaaah.
+
+    script.
+      $('.example-expand_toggle').click(function () {
+        $(this).siblings('.example-expand').rb('animate', rb.animate.state.expandCollapse);
+      });
+
 
     //- h3 State Change
     //- .boxes
@@ -73,6 +91,6 @@ block content
               return (className.match(/(^|\s)animation_\S+/g) || []).join(' ');
             });
         } else {
-          $this.addClass('animatable').addClass('animation_' + $this.attr('data-rb-animate-out'));
+          $this.addClass('animatable').addClass('animation_' + $this.attr('data-rb-animate'));
         }
       });
