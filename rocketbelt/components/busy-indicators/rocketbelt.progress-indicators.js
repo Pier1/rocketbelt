@@ -6,13 +6,14 @@
     for (let k = 0; k < mutationsLen; k++) {
       const mutation = mutations[k];
       const el = mutation.target;
+      const oldValue = mutation.oldValue;
 
-      setIndicators(el);
+      setIndicators(el, oldValue);
     }
   }
 
-  function setIndicators(el) {
-    if (el.classList && el.classList.contains('is-busy')) {
+  function setIndicators(el, oldValue) {
+    if ((!oldValue || !oldValue.match(/\bis-busy\b/)) && el.classList && el.classList.contains('is-busy')) {
       // If "is-busy" was added, do the decoratin'
       if (el.getElementsByClassName('is-busy_overlay').length === 0) {
         // Only add overlay if one doesn't already exist

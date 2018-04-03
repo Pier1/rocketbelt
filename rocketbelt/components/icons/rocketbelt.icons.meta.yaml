@@ -166,11 +166,11 @@ p1apron:
 
 p1logo:
   title: Pier 1 Logo
-  description: The Pier 1 Imports logo
+  description: Pier 1 Imports logo
 
 p1logo-alt-1:
-  title: Pier 1 Logo (alternate)
-  description: An alternate Pier 1 Imports logo
+  title: Pier 1 Logo
+  description: Pier 1 Imports logo
 
 pause:
   title: Pause
@@ -207,6 +207,10 @@ puzzle:
 question:
   title: Question
   description: A circle with a question mark inside
+
+refresh:
+  title: Refresh
+  description: Two arrows making a circle
 
 ribbon-check:
   title: Ribbon With Check Mark

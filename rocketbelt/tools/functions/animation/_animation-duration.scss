@@ -1,0 +1,17 @@
+$durations: (
+  xs:  100ms,
+  sm:  250ms,
+  md:  400ms,
+  lg:  600ms,
+  xl:  1s
+);
+
+@function animation-duration($duration: 'md') {
+  @if map-has-key($durations, $duration) {
+    @return map-get($durations, $duration);
+  }
+  @else {
+    @error 'Unknown '#{$duration}' in $durations.';
+    @return null;
+  }
+}

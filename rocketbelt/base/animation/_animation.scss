@@ -1,17 +1,55 @@
-@import 'properties';
+@import 'emphasis/emphasis',
+        'entrances-and-exits/entrances-and-exits',
+        'state-change/state-change';
 
-@import
-  'attention-seekers/attention-seekers',
-  'bouncing-entrances/bouncing-entrances',
-  'bouncing-exits/bouncing-exits',
-  'fading-entrances/fading-entrances',
-  'fading-exits/fading-exits',
-  'flippers/flippers',
-  'lightspeed/lightspeed',
-  'rotating-entrances/rotating-entrances',
-  'rotating-exits/rotating-exits',
-  'sliding-entrances/sliding-entrances',
-  'sliding-exits/sliding-exits',
-  'specials/specials',
-  'zooming-entrances/zooming-entrances',
-  'zooming-exits/zooming-exits';
+@import 'properties',
+        './~legacy/legacy';
+
+.animatable {
+  $duration: animation-duration(md);
+  transition-duration: $duration;
+  animation-duration: $duration;
+  animation-fill-mode: both;
+
+  &.animatable-infinite {
+    animation-iteration-count: infinite;
+  }
+
+  &.animatable-reset {
+    animation-fill-mode: backwards;
+  }
+
+  &.animating {
+    animation-play-state: running;
+  }
+
+  &.animation_duration_xs {
+    $duration: animation-duration(xs);
+    transition-duration: $duration;
+    animation-duration: $duration;
+  }
+
+  &.animation_duration_sm {
+    $duration: animation-duration(sm);
+    transition-duration: $duration;
+    animation-duration: $duration;
+  }
+
+  &.animation_duration_lg {
+    $duration: animation-duration(lg);
+    transition-duration: $duration;
+    animation-duration: $duration;
+  }
+
+  &.animation_duration_xl {
+    $duration: animation-duration(xl);
+    transition-duration: $duration;
+    animation-duration: $duration;
+  }
+
+  &.animation_easing_motion {
+    $easing: ease(in-out-quad);
+    transition-timing-function: $easing;
+    animation-timing-function: $easing;
+  }
+}
