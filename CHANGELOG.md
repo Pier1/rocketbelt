@@ -1,3 +1,13 @@
+<a name="1.13.15"></a>
+## [1.13.15](https://github.com/Pier1/rocketbelt/compare/1.13.14...v1.13.15) (2018-04-04)
+
+
+### Bug Fixes
+
+* **Forms:** Fix chunky header border. ([1dce157](https://github.com/Pier1/rocketbelt/commit/1dce157))
+
+
+
 <a name="1.13.14"></a>
 ## [1.13.14](https://github.com/Pier1/rocketbelt/compare/1.13.13...v1.13.14) (2018-04-04)
 
