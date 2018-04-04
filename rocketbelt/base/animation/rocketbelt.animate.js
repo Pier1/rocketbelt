@@ -3,27 +3,38 @@
   const rb = window.rb;
 
   const prefix = 'animation_';
+  const animTypes = {
+    in: 'in_',
+    out: 'out_',
+    state: 'state_',
+    emphasis: 'emphasis_'
+  };
+
   const getAnimationNames = (inOrOut) => {
     return {
       // Entrances & Exits
       fade:      `${prefix}${inOrOut}fade`,
       slide:     `${prefix}${inOrOut}slide`,
       fadeSlide: `${prefix}${inOrOut}fade-slide`,
-      expand:    `${prefix}${inOrOut}expand`,
-      collapse:  `${prefix}${inOrOut}collapse`,
       grow:      `${prefix}${inOrOut}grow`,
-      shrink:    `${prefix}${inOrOut}shrink`,
-
-      // Emphasis
-      //
-      // State Change
-      //
+      shrink:    `${prefix}${inOrOut}shrink`
     };
   };
 
   rb.animate = rb.animate || {};
-  rb.animate.in  = rb.animate.in  || getAnimationNames('in_');
-  rb.animate.out = rb.animate.out || getAnimationNames('out_');
+  rb.animate.in  = rb.animate.in  || getAnimationNames(animTypes.in);
+  rb.animate.out = rb.animate.out || getAnimationNames(animTypes.out);
+
+  rb.animate.state = rb.animate.state || {
+    expandCollapse: `${prefix}${animTypes.state}expand-collapse`,
+    scale:   `${prefix}${animTypes.state}scale`,
+    opacity: `${prefix}${animTypes.state}opacity`,
+    color:   `${prefix}${animTypes.state}color`
+  };
+
+  rb.animate.emphasis = rb.animate.emphasis || {
+    pulse: `${prefix}${animTypes.emphasis}pulse`
+  };
 
   const easingPrefix = `${prefix}easing_`;
   rb.animate.easing = rb.animate.easing || {
@@ -45,7 +56,11 @@
         e.target.removeEventListener(e.type, animationHandler);
       }
 
-      return callback(e);
+      if (callback) {
+        return callback(e);
+      }
+
+      return el;
     });
   };
 
@@ -55,7 +70,11 @@
         e.target.removeEventListener(e.type, transitionHandler);
       }
 
-      return callback(e);
+      if (callback) {
+        return callback(e);
+      }
+
+      return el;
     });
   };
 
@@ -63,6 +82,7 @@
     const classesToRemove = ['animatable', animationName];
     let callback = null;
     let resetAfterAnimating = false;
+    let isAnimation = !(animationName.includes('expand') || animationName.includes('collapse'));
 
     if (typeof configOrCallback === 'function') {
       callback = configOrCallback;
@@ -99,7 +119,16 @@
       }
     };
 
-    rb.animate.onAnimationEnd(el, cb, true);
+    if (isAnimation) {
+      rb.animate.onAnimationEnd(el, cb, true);
+    } else {
+      rb.animate.onTransitionEnd(el, cb, true);
+    }
+
+    if (animationName.includes('expand') || animationName.includes('collapse')) {
+      isAnimation = false;
+      expandOrCollapse(el);
+    }
   };
 
   if ($) {
@@ -160,4 +189,44 @@
       return $.error(`Function ${functionAndOptions} does not exist on jQuery.rb`);
     };
   }
+
+  const expandOrCollapse = (el) => {
+    // See https://css-tricks.com/using-css-transitions-auto-dimensions/
+    const collapsedDataAttr = 'data-rb-is-collapsed';
+    const isCollapsed = el.getAttribute(collapsedDataAttr) === 'true';
+
+    if (isCollapsed) {
+      el.addEventListener('transitionend', function onExpandEnd() {
+        el.removeEventListener('transitionend', onExpandEnd);
+      });
+
+      // Expand
+      el.style.height = null;
+
+      // Mark the element as expanded
+      el.setAttribute(collapsedDataAttr, 'false');
+    } else {
+      // Collapse
+      const elHeight = el.scrollHeight;
+
+      // Temporarily disable all css transitions
+      const elementTransition = el.style.transition;
+      el.style.transition = '';
+
+      // On the next frame, explicitly set the element's height to its
+      // current pixel height, so we aren't transitioning out of 'auto'
+      requestAnimationFrame(() => {
+        el.style.height = `${elHeight}px`;
+        el.style.transition = elementTransition;
+
+        // On the next frame, have the element transition to height: 0
+        requestAnimationFrame(() => {
+          el.style.height = '0px';
+        });
+      });
+
+      // Mark the element as expanded
+      el.setAttribute(collapsedDataAttr, 'true');
+    }
+  };
 })(window, document, jQuery);

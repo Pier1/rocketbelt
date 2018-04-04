@@ -8,6 +8,7 @@
 .animatable {
   $duration: animation-duration(md);
   transition-duration: $duration;
+  // transition-property: transform;
   animation-duration: $duration;
   animation-fill-mode: both;
 
