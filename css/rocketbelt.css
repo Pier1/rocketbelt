@@ -186,17 +186,21 @@ input[type='radio'] {
     -webkit-transform: translate3d(0, 1000%, 0);
             transform: translate3d(0, 1000%, 0); } }
 
+.animation_out_collapse,
+.animation_out_expand,
 .animation_in_collapse,
 .animation_in_expand {
-  -webkit-animation-name: rb-expand;
-          animation-name: rb-expand; }
+  overflow: hidden;
+  height: auto;
+  transition-property: height; }
 
-.animation_out_collapse,
-.animation_out_expand {
-  -webkit-animation-name: rb-expand;
-          animation-name: rb-expand;
-  -webkit-animation-direction: reverse;
-          animation-direction: reverse; }
+.animation_state_scale {
+  transition-property: -webkit-transform;
+  transition-property: transform;
+  transition-property: transform, -webkit-transform;
+  -webkit-transform: scale(1.3);
+      -ms-transform: scale(1.3);
+          transform: scale(1.3); }
 
 .animatable {
   transition-duration: 400ms;
@@ -4082,23 +4086,19 @@ button.swiper-pagination-bullet {
     background-repeat: no-repeat;
     transition: background-color 200ms ease-in, border 200ms ease-in; }
 
-.radio-group.radio-group-chunky-with-header li:not(:first-of-type) label {
-  margin-top: 1rem; }
-
-.radio-group.radio-group-chunky-with-header label {
-  padding: 0 !important;
+.radio-group.radio-group-chunky.radio-group-chunky-with-header input + label {
+  margin-top: 1rem;
+  padding: 0;
   border-radius: 4px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap; }
-  .radio-group.radio-group-chunky-with-header label::before {
-    margin-left: 1rem !important;
-    -ms-flex-item-align: start;
-        align-self: flex-start; }
+  .radio-group.radio-group-chunky.radio-group-chunky-with-header input + label::before {
+    margin-left: 0.75rem; }
 
-.radio-group.radio-group-chunky-with-header input[type='radio'] {
+.radio-group.radio-group-chunky.radio-group-chunky-with-header input[type='radio'] {
   -ms-flex-item-align: start;
       align-self: flex-start; }
-  .radio-group.radio-group-chunky-with-header input[type='radio']:checked + label .chunky-radio_header {
+  .radio-group.radio-group-chunky.radio-group-chunky-with-header input[type='radio']:checked .chunky-radio_header {
     margin-top: 0;
     margin-right: 0;
     margin-left: 0;
@@ -4107,7 +4107,7 @@ button.swiper-pagination-bullet {
     -ms-flex-preferred-size: 100%;
         flex-basis: 100%; }
 
-.radio-group.radio-group-chunky-with-header .chunky-radio_header {
+.radio-group.radio-group-chunky.radio-group-chunky-with-header .chunky-radio_header {
   margin-top: -2px;
   margin-right: -2px;
   margin-left: -2px;
@@ -4119,7 +4119,7 @@ button.swiper-pagination-bullet {
   -ms-flex-order: -1;
       order: -1; }
 
-.radio-group.radio-group-chunky-with-header .chunky-radio_body {
+.radio-group.radio-group-chunky.radio-group-chunky-with-header .chunky-radio_body {
   -ms-flex: 1;
       flex: 1;
   padding: 0.5rem 0.5rem 0.5rem 0; }

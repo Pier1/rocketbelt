@@ -1,3 +1,48 @@
+<a name="1.13.14"></a>
+## [1.13.14](https://github.com/Pier1/rocketbelt/compare/1.13.13...v1.13.14) (2018-04-04)
+
+
+### Bug Fixes
+
+* **Forms:** Boost specificity of chunky radio buttons with headers to fix layout issues. ([b8e3280](https://github.com/Pier1/rocketbelt/commit/b8e3280))
+
+
+### Features
+
+* **Animation:** Add animation basics & expand/collapse animation. ([0570dcd](https://github.com/Pier1/rocketbelt/commit/0570dcd))
+* **Variables:** Export Sass variables to JSON for client-side usage. ([2cbe7d6](https://github.com/Pier1/rocketbelt/commit/2cbe7d6))
+
+
+
+<a name="1.13.13"></a>
+## [1.13.13](https://github.com/Pier1/rocketbelt/compare/1.13.12...v1.13.13) (2018-04-03)
+
+### Bug Fixes
+* **Busy Indicators:** Check for is-busy class addition instead of existence. ([ce866a8](https://github.com/Pier1/rocketbelt/commit/ce866a8))
+* **Dialogs:** Replace `translate3d` properties with `translate` to fix blurriness due to pixel round ([85e5dc3](https://github.com/Pier1/rocketbelt/commit/85e5dc3))
+* **Dialogs:** Tweak position of dialog close button. ([2af46f6](https://github.com/Pier1/rocketbelt/commit/2af46f6))
+* **Icons:** Update #rb-icon-lock-check icon. ([777e051](https://github.com/Pier1/rocketbelt/commit/777e051))
+* **Icons:** Update #rb-icon-refresh. ([055a45c](https://github.com/Pier1/rocketbelt/commit/055a45c))
+* **Icons:** Update `title` tags for Pier 1 logos. ([fa70dfd](https://github.com/Pier1/rocketbelt/commit/fa70dfd))
+
+
+### Features
+
+* **a11y:** Add color contrast helpers. ([0c196c9](https://github.com/Pier1/rocketbelt/commit/0c196c9))
+* **Animation:** Add default transition duration. ([cab54cf](https://github.com/Pier1/rocketbelt/commit/cab54cf))
+* **Animation:** Add initial animation helpers. ([18a70f0](https://github.com/Pier1/rocketbelt/commit/18a70f0))
+* **Buttons:** Added Mini Buttons. ([1617d55](https://github.com/Pier1/rocketbelt/commit/1617d55))
+* **Dialogs:** Add headerless dialog. ([a517969](https://github.com/Pier1/rocketbelt/commit/a517969))
+* **Dialogs:** Add "required" dialog variation. ([44170d2](https://github.com/Pier1/rocketbelt/commit/44170d2))
+* **Forms:** Add "Chunky Radio w/ Header" variation. ([d9916b1](https://github.com/Pier1/rocketbelt/commit/d9916b1))
+* **Forms:** Update form error handling to better support HTML5 `invalid` attribute. ([7c014ec](https://github.com/Pier1/rocketbelt/commit/7c014ec))
+* **Forms:** Fixed checkbox hover on touch devices. ([57e5880](https://github.com/Pier1/rocketbelt/commit/57e5880))
+* **Global:** Update browser compatibility list in CSS build. ([78dcc33](https://github.com/Pier1/rocketbelt/commit/78dcc33))
+* **Icons:** Add `#rb-icon-refresh` enterprise icon. ([101937f](https://github.com/Pier1/rocketbelt/commit/101937f))
+* **Sample Site:** Add "Labs" tag for functionality-in-progress. ([06fb8f5](https://github.com/Pier1/rocketbelt/commit/06fb8f5))
+
+
+
 <a name="1.13.12"></a>
 ## [1.13.12](https://github.com/Pier1/rocketbelt/compare/1.13.11...v1.13.12) (2018-03-08)
 ### Features

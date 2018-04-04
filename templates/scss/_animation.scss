@@ -46,3 +46,18 @@
     }
   }
 }
+
+.example-expand {
+  overflow: auto;
+  height: 10rem;
+  border: 4px solid color(accent);
+  background: color(white);
+
+  &[data-rb-is-collapsed='true'] {
+    padding: 0;
+  }
+}
+
+.example-expand_toggle {
+  margin-bottom: 1rem;
+}
