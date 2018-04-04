@@ -1,3 +1,19 @@
+<a name="1.13.14"></a>
+## [1.13.14](https://github.com/Pier1/rocketbelt/compare/1.13.13...v1.13.14) (2018-04-04)
+
+
+### Bug Fixes
+
+* **Forms:** Boost specificity of chunky radio buttons with headers to fix layout issues. ([b8e3280](https://github.com/Pier1/rocketbelt/commit/b8e3280))
+
+
+### Features
+
+* **Animation:** Add animation basics & expand/collapse animation. ([0570dcd](https://github.com/Pier1/rocketbelt/commit/0570dcd))
+* **Variables:** Export Sass variables to JSON for client-side usage. ([2cbe7d6](https://github.com/Pier1/rocketbelt/commit/2cbe7d6))
+
+
+
 <a name="1.13.13"></a>
 ## [1.13.13](https://github.com/Pier1/rocketbelt/compare/1.13.12...v1.13.13) (2018-04-03)
 
