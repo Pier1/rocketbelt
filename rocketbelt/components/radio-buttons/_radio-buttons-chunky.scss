@@ -69,21 +69,15 @@
     }
   }
 
-  &.radio-group-chunky-with-header {
-    li:not(:first-of-type) {
-      label {
-        margin-top: 1rem;
-      }
-    }
-
-    label {
-      padding: 0 !important;
+  &.radio-group-chunky.radio-group-chunky-with-header {
+    input + label {
+      margin-top: 1rem;
+      padding: 0;
       border-radius: 4px;
       flex-wrap: wrap;
 
       &::before {
-        margin-left: 1rem !important;
-        align-self: flex-start;
+        margin-left: 0.75rem;
       }
     }
 
