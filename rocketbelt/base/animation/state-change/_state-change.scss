@@ -1,1 +1,9 @@
 @import 'expand-collapse/expand-collapse';
+
+.animation_state_scale {
+  transition-property: transform;
+  transform: scale(1.3);
+}
+
+// State
+// opacity, color, size

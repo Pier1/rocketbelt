@@ -1,10 +1,8 @@
+.animation_out_collapse,
+.animation_out_expand,
 .animation_in_collapse,
 .animation_in_expand {
-  animation-name: rb-expand;
-}
-
-.animation_out_collapse,
-.animation_out_expand {
-  animation-name: rb-expand;
-  animation-direction: reverse;
+  overflow: hidden;
+  height: auto;
+  transition-property: height;
 }
