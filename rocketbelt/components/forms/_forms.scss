@@ -73,6 +73,7 @@ fieldset {
       &:focused {
         overflow: auto;
       }
+
       &[required] {
         & + label::after {
           content: '(required)';
@@ -265,6 +266,7 @@ textarea {
       }
     }
   }
+
   // Character Based Ems - Good Idea??
   &.field-small {
     width: 8em;
@@ -310,6 +312,7 @@ input {
 
 select {
   $fill: color(black);
+
   padding-right: 25px;
   background-color: color(white);
   background-image: icon-as-data-uri(chevron-down, $fill);
@@ -359,13 +362,13 @@ textarea {
   }
 
   .required-suppressed {
-    [required] {
+    &[required] {
       & + label::after {
         content: '';
       }
     }
 
-    :not([required]) {
+    &:not([required]) {
       & + label::after {
         content: '';
       }
@@ -384,7 +387,7 @@ textarea {
   .validation-message {
     font-size: font-size(-2);
   }
-} 
+}
 
 fieldset {
   margin: 0;
