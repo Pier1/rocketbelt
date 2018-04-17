@@ -15,7 +15,7 @@ $tooltip-background-light: color(white);
     visibility: hidden;
     opacity: 0;
     transition: opacity 250ms linear, visibility 250ms linear, transform 250ms cubic-bezier(0.71, 1.7, 0.77, 1.24);
-    transform: translate3d(0, 0, 0);
+    transform: translate(0, 0);
   }
 
   // Base styles for the tooltip's directional arrow
@@ -95,7 +95,7 @@ $tooltip-background-light: color(white);
       & ~ .tooltip-content {
         visibility: visible;
         opacity: 1;
-        transform: translate3d(-50%, 14px, 0);
+        transform: translate(-50%, 14px);
 
         &::before,
         &::after {
@@ -105,7 +105,7 @@ $tooltip-background-light: color(white);
           border: 8px solid transparent;
           background: transparent;
           content: '';
-          transform: translate3d(-50%, 6px, 0);
+          transform: translate(-50%, 6px);
         }
 
         &::before {
@@ -132,7 +132,7 @@ $tooltip-background-light: color(white);
   .tooltip-content {
     bottom: 100%;
     left: 50%;
-    transform: translate3d(-50%, 6px, 0);
+    transform: translate(-50%, 6px);
   }
 
   &::before {
@@ -154,7 +154,7 @@ $tooltip-background-light: color(white);
     &::before,
     &::after,
     .tooltip-content {
-      transform: translate3d(-50%, -6px, 0);
+      transform: translate(-50%, -6px);
     }
   }
 }
@@ -166,7 +166,7 @@ $tooltip-background-light: color(white);
     right: 100%;
     bottom: 50%;
     left: auto;
-    transform: translate3d(6px, 50%, 0);
+    transform: translate(6px, 50%);
   }
 
   &::before {
@@ -195,7 +195,7 @@ $tooltip-background-light: color(white);
     &::before,
     &::after,
     .tooltip-content {
-      transform: translate3d(-6px, 50%, 0);
+      transform: translate(-6px, 50%);
     }
   }
 }
@@ -206,7 +206,7 @@ $tooltip-background-light: color(white);
   .tooltip-content {
     bottom: 50%;
     left: 100%;
-    transform: translate3d(-6px, 50%, 0);
+    transform: translate(-6px, 50%);
   }
 
   &::before {
@@ -233,7 +233,7 @@ $tooltip-background-light: color(white);
     &::before,
     &::after,
     .tooltip-content {
-      transform: translate3d(6px, 50%, 0);
+      transform: translate(6px, 50%);
     }
   }
 }
@@ -245,7 +245,7 @@ $tooltip-background-light: color(white);
     top: 100%;
     bottom: auto;
     left: 50%;
-    transform: translate3d(-50%, -6px, 0);
+    transform: translate(-50%, -6px);
   }
 
   &::before {
@@ -272,7 +272,7 @@ $tooltip-background-light: color(white);
     &::before,
     &::after,
     .tooltip-content {
-      transform: translate3d(-50%, 6px, 0);
+      transform: translate(-50%, 6px);
     }
   }
 }
