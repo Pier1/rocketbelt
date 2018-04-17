@@ -293,8 +293,11 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <desc id="bhrb-icon-info-desc">A circle with an "i"
     inside</desc>
     <title id="bhrb-icon-info-title">Info</title>
-    <path d="M128 240c61.852 0 112-50.148 112-112S189.852 16 128 16 16 66.148 16 128s50.148 112 112 112zm9.333-56h-18.666v-74.667h18.666V184zM128 69.667c6.44 0 11.667 5.226 11.667 11.666S134.44 93 128 93c-6.44 0-11.667-5.227-11.667-11.667 0-6.44 5.227-11.666 11.667-11.666z"
-    fill-rule="nonzero" />
+    <defs>
+      <path d="M128 16C66.148 16 16 66.148 16 128s50.148 112 112 112 112-50.148 112-112S189.852 16 128 16zm-.01 53.667c6.44 0 11.677 5.226 11.677 11.666S134.43 93 127.99 93s-11.658-5.227-11.658-11.667c0-6.44 5.218-11.666 11.658-11.666zM146.668 184h-37.334v-9.333c4.518-1.671 9.334-1.876 9.334-6.86v-41.692c0-4.984-4.816-5.768-9.334-7.439v-9.333h28v58.473c0 4.993 4.826 5.208 9.334 6.86V184z"
+      id="bha" />
+    </defs>
+    <use fill-rule="nonzero" xlink:href="#bha" />
   </symbol>
   <symbol aria-labelledby="birb-icon-lines-desc birb-icon-lines-title"
   id="rb-icon-lines" xmlns="http://www.w3.org/2000/svg"
