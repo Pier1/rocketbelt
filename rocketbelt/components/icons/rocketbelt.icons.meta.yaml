@@ -144,6 +144,14 @@ info:
   title: Info
   description: A circle with an "i" inside
 
+info-circle:
+  title: Info
+  description: A circle with an "i" inside
+
+javascript:
+  title: Javascript
+  description: The Javascript logo—a square with the letters "JS" inside
+
 lines:
   title: Lines
   description: Four lines stacked on top of each other
