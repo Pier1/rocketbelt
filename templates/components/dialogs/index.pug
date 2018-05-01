@@ -52,7 +52,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(onclick="$('#standard-dialog').rbDialog({title: 'Base Dialog', buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#standard-dialog-template').rbDialog({title: 'Base Dialog', buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
       .row
         .col.xs
           +exampleWithCode
@@ -60,7 +60,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(onclick="$('#required-dialog').rbDialog({title: 'Required Dialog', required: true, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Required Dialog
+            button.button.button-secondary.button-md(onclick="$('#required-dialog-template').rbDialog({title: 'Required Dialog', required: true, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Required Dialog
       .row
         .col.xs
           +exampleWithCode
@@ -68,7 +68,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(onclick="$('#headerless-dialog').rbDialog({title: 'Headerless Dialog', headerless: true, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Headerless Dialog
+            button.button.button-secondary.button-md(onclick="$('#headerless-dialog-template').rbDialog({title: 'Headerless Dialog', headerless: true, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Headerless Dialog
       .row
         .col.xs
           +exampleWithCode
@@ -79,7 +79,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(onclick="$('#sheet-dialog').rbDialog({title: 'Sheet Dialog', classes: { 'rbDialog': 'dialog-sheet' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#sheet-dialog-template').rbDialog({title: 'Sheet Dialog', classes: { 'rbDialog': 'dialog-sheet' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
       .row
         .col.xs
           +exampleWithCode
@@ -90,7 +90,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(onclick="$('#dark-dialog').rbDialog({ title: 'Dark Dialog', classes: { 'rbDialog': 'dialog-dark' } })") Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#dark-dialog-template').rbDialog({ title: 'Dark Dialog', classes: { 'rbDialog': 'dialog-dark' } })") Trigger Dialog
       .row
         .col.xs
           +exampleWithCode
@@ -101,7 +101,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(onclick="$('#max-dialog').rbDialog({title: 'Max Dialog', classes: { 'rbDialog': 'dialog-max' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#max-dialog-template').rbDialog({title: 'Max Dialog', classes: { 'rbDialog': 'dialog-max' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
           small.fg_error
             | <br/>
             | <strong>Max dialogs don't support buttons.</strong>

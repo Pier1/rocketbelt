@@ -1,5 +1,5 @@
 /* global $cache:true element:true closers:true */
-$(function () {
+$(function() {
   var options = initOptions();
   var focusedBeforeDialog;
   var scrollBeforeDialog;
@@ -40,7 +40,7 @@ $(function () {
    * @returns {undefined} Returns undefined
    * @description Pops a Rocketbelt modal
    */
-  $.fn.rbDialog = function (params) {
+  $.fn.rbDialog = function(params) {
     if (typeof params !== 'string') init.call(this, params);
     if (params === 'close') close();
     else if (params === 'destroy') destroy();
@@ -76,8 +76,8 @@ $(function () {
 
     $cache.rbDialog.data('options', options);
 
-    $.each(closers, function (index, el) {
-      if ( options.required && $(el).is('.dialog_overlay, .dialog_close') ) return;
+    $.each(closers, function(index, el) {
+      if (options.required && $(el).is('.dialog_overlay, .dialog_close')) return;
 
       el.addEventListener('click', close);
     });
@@ -109,7 +109,7 @@ $(function () {
     $('.dialog_content').append($('<div class="dialog_buttons"></div>'));
     $cache.rbDialogButtons = $('.dialog_buttons');
 
-    $.each(buttons, function (name, props) {
+    $.each(buttons, function(name, props) {
       var click;
       var buttonOptions;
       props = $.isFunction(props) ? { click: props, text: name } : props;
@@ -134,7 +134,7 @@ $(function () {
         .attr('class', buttonOptions.class)
         .text(buttonOptions.text)
         .appendTo($cache.rbDialogButtons)
-        .on('click', function () {
+        .on('click', function() {
           click.apply($cache.rbDialog, arguments[0]);
         });
     });
@@ -192,6 +192,7 @@ $(function () {
   }
 
   function open() {
+    $cache.rbDialog.trigger('rbDialog:beforeOpen');
     if ($cache.appendTo.hasClass('is-dialog-open')) return;
 
     // Preserve scroll position
@@ -220,6 +221,7 @@ $(function () {
   }
 
   function close() {
+    $cache.rbDialog.trigger('rbDialog:beforeClose');
     _trigger('beforeClose');
 
     if ($cache.rbDialog[0].hasAttribute('aria-hidden')) return;
@@ -237,7 +239,7 @@ $(function () {
     document.removeEventListener('keydown', bindKeypress);
 
     // Remove closing
-    $.each(closers, function (index, value) {
+    $.each(closers, function(index, value) {
       value.removeEventListener('click', close);
     });
 
@@ -247,8 +249,9 @@ $(function () {
   }
 
   function destroy() {
+    $cache.rbDialog.trigger('rbDialog:beforeDestroy');
     if (document.body.style.animation) {
-      $cache.rbDialog.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
+      $cache.rbDialog.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function() {
         setTimeout(destroyTheWorld, 200);
       });
     } else {
@@ -261,6 +264,7 @@ $(function () {
     $cache.appendTo.append($cache.rbDialogBody.children('*').detach().hide());
     $cache.rbDialogTitle.text('');
     options = initOptions();
+    $cache.rbDialog.trigger('rbDialog:destroy');
   }
 
   function _trigger(type, event, data) {
