@@ -1,3 +1,23 @@
+<a name="1.13.16"></a>
+## [1.13.16](https://github.com/Pier1/rocketbelt/compare/1.13.15...v1.13.16) (2018-05-04)
+
+
+### Bug Fixes
+
+* **Animation:** Replace `translate3d` with `translate` in tooltips & sheet dialogs. ([00434d5](https://github.com/Pier1/rocketbelt/commit/00434d5))
+* **Build:** Exclude JS files in tools directory from symlinking. ([4ec78b2](https://github.com/Pier1/rocketbelt/commit/4ec78b2))
+* **Forms:** Fix missing '&' SCSS selector for suppressing required/optional labels. ([740c22f](https://github.com/Pier1/rocketbelt/commit/740c22f))
+
+
+### Features
+
+* **Color:** Tweak success-base color. ([267e49e](https://github.com/Pier1/rocketbelt/commit/267e49e))
+* **Icons:** Add info-circle icon; adjust info icon. ([12eac81](https://github.com/Pier1/rocketbelt/commit/12eac81))
+* **Icons:** Add social & link icons. ([62a51b5](https://github.com/Pier1/rocketbelt/commit/62a51b5))
+* **Icons:** Update info icon. ([f304aaa](https://github.com/Pier1/rocketbelt/commit/f304aaa))
+
+
+
 <a name="1.13.15"></a>
 ## [1.13.15](https://github.com/Pier1/rocketbelt/compare/1.13.14...v1.13.15) (2018-04-04)
 

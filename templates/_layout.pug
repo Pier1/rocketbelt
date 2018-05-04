@@ -48,9 +48,6 @@ html(lang='en')
             a.link.link-github(href='https://github.com/pier1/rocketbelt')
               span.visually-hidden Rocketbelt on GitHub
               +rawSvgFor('github')
-        //- .submenus
-        //-   each category in nav
-        //-     +buildNavItemsFor(category)
         script(src=prepend + '/components/navigation/rocketbelt.navigation-xl.js')
         script.
           $(document).ready(function () {
