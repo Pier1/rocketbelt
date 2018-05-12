@@ -106,7 +106,11 @@ edit:
 
 envelope:
   title: Envelope
-  description: An envelop
+  description: An envelope
+
+envelope-circle:
+  title: Envelope
+  description: An envelope in a circle
 
 error:
   title: Error
@@ -163,6 +167,10 @@ lines:
 link:
   title: Link
   description: Two links from a chain
+
+link-circle:
+  title: Link
+  description: Two chain links inside a circle
 
 lock-check:
   title: Lock With Check
