@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>envelope-circle</title>
+    <desc>Created with sketchtool.</desc>
+    <defs></defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="envelope-circle" fill="#000000">
+            <path d="M128,240 C66.144108,240 16,189.855892 16,128 C16,66.144108 66.144108,16 128,16 C189.855892,16 240,66.144108 240,128 C240,189.855892 189.855892,240 128,240 Z M128,133.640777 L193,80 L63.315534,80 L128,133.640777 Z M193,97.3543689 L128,151.152913 L63,97.1966019 L63,176.237864 L193,176.237864 L193,97.3543689 Z"></path>
+        </g>
+    </g>
+</svg>
