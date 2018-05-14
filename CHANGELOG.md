@@ -1,3 +1,12 @@
+<a name="1.13.17"></a>
+## [1.13.17](https://github.com/Pier1/rocketbelt/compare/1.13.16...v1.13.17) (2018-05-14)
+
+
+### Features
+
+* **Icons:** Add link-circle & envelope-circle icons. ([a9be366](https://github.com/Pier1/rocketbelt/commit/a9be366))
+
+
 <a name="1.13.16"></a>
 ## [1.13.16](https://github.com/Pier1/rocketbelt/compare/1.13.15...v1.13.16) (2018-05-04)
 
