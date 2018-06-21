@@ -205,7 +205,7 @@ input {
   &[type='checkbox'] {
     &:focus {
       ~ label {
-        outline: thin dotted color(brand);
+        outline: thin dotted color(primary);
       }
     }
   }

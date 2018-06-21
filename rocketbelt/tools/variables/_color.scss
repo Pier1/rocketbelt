@@ -1,20 +1,35 @@
-$brand-blue: #0a689d;
-$gray: mix(#a11622, #7a7a7a, 5%);
-$primary: mix(scale-color($brand-blue, $lightness: 20%), gray, 95%);
+$primary: #009ee1;
+
+$brand-palette: (
+  base: $primary,
+  deepBlue:  #2e2b70,
+  warmRed:   #f04e37,
+  sand:      #fed4a0,
+  deepBrown: #431e1b,
+  sunYellow: #fdb913,
+  paleRed:   #e58d83,
+  mint:      #7cccbf
+);
+
+$contrast-palette: (
+  base:     #1078a7,
+  deepBlue: #201e4e,
+  warmRed:  #e42b11,
+  mint:     #338275
+);
 
 $base-families: (
-  brand: $brand-blue,
-  sale: #a21f35,
+  sale: map-get($contrast-palette, warmRed),
   primary: $primary,
-  secondary: adjust-hue($primary, -30),
+  secondary: map-get($brand-palette, mint),
   accent: adjust-hue($primary, 60),
-  gray: $gray,
-  success: #00a86d,
-  warning: #ffc300,
-  error: #d51c31,
-  info: $brand-blue,
-  black: mix(#a11622, #000, 2%),
-  white: mix(#a11622, #fff, 1%)
+  gray: #767676,
+  success: #2ca658,
+  warning: map-get($brand-palette, sunYellow),
+  error: map-get($contrast-palette, warmRed),
+  info: map-get($contrast-palette, deepBlue),
+  black: scale-color(#000, $lightness: 10%),
+  white: scale-color(#fff, $lightness: 0%)
 );
 
 $base-variants: (
@@ -39,7 +54,10 @@ $gray-variants: (
 $black-white-variants: (base: 0);
 
 @function build-families() {
-  $families: ();
+  $families: (
+    brand: $brand-palette,
+    contrast: $contrast-palette
+  );
 
   @each $family, $color in $base-families {
     $variants: ();
