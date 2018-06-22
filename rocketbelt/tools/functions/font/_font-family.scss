@@ -12,8 +12,8 @@
 ///   // 'Brand Serif', Times New Roman, serif;
 @function font-family($family: sans) {
   // TODO: Extract into variables map
-  $sans: 'Brand Sans', sans-serif;
-  $serif: 'Brand Serif', Times New Roman, serif;
+  $sans: 'Brand Sans', 'Trebuchet MS', sans-serif;
+  $serif: 'Brand Serif', Georgia, serif;
   $monospace: 'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace;
 
   $family: to_lower_case($family);
