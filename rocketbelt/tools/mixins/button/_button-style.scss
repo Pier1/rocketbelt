@@ -5,7 +5,7 @@
 ///
 /// @param $style [primary] - The type of button to render properties for.
 @mixin button-style($style: primary) {
-  $contrast-primary: color(contrast, primary);
+  $contrast-primary: color(contrast, base);
 
   $button-base: scale-color($contrast-primary, $lightness: 0%);
   $button-hover: scale-color($contrast-primary, $lightness: 5%);

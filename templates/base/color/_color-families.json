@@ -41,17 +41,17 @@
         "variant": "mint",
         "lightness": 0,
         "colorName": "Mint"
-      },
-      {
-        "variant": "newBlue",
-        "lightness": 0,
-        "colorName": "New Blue"
       }
     ]
   },
   {
     "familyName": "contrast",
     "variants": [
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Contrasting Brand Blue"
+      },
       {
         "variant": "warmRed",
         "lightness": 0,
