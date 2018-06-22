@@ -54,15 +54,15 @@ block content
       .row.swatch-cards
         .col.xs-12
           h2.docs-header Indicating Colors
-        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'success' || o.familyName === 'warning' || o.familyName === 'error' || o.familyName === 'sale'; })
+        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'success' || o.familyName === 'warning' || o.familyName === 'error' || o.familyName === 'info' || o.familyName === 'sale'; })
           +swatch(family)
       .row.swatch-cards
         .col.xs-12
-          h2.docs-header Brand Color
+          h2.docs-header Branded Colors
           .rb-note
             include /partials/ux.pug
             .rb-note-text Use Brand Blue sparingly &amp; lean more toward other palette options.
-        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'brand'; })
+        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'brand' || o.familyName === 'contrast'; })
           +swatch(family)
     script(src='./color.js')
     script.
