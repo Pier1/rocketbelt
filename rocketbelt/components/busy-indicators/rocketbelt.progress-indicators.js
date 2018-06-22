@@ -13,7 +13,7 @@
   }
 
   function setIndicators(el, oldValue) {
-    if ((!oldValue || !oldValue.match(/\bis-busy\b/)) && el.classList && el.classList.contains('is-busy')) {
+    if ((!oldValue || !oldValue.match(/\bis-busy($| )/)) && el.classList && el.classList.contains('is-busy')) {
       // If "is-busy" was added, do the decoratin'
       if (el.getElementsByClassName('is-busy_overlay').length === 0) {
         // Only add overlay if one doesn't already exist
