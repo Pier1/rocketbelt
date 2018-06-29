@@ -8,16 +8,6 @@ block content
     h1 Typography
     p Rocketbelt's typography is built on a modular scale. The scale makes it easy to use type to visually reinforce the hierarchy of content. Rocketbelt also includes plenty of helper classes to support icons, call-to-action links, lists, and pull quotes.
 
-    h2 Downloads
-
-    ul.list-reset
-      li
-        a(href='./OpenSans.zip') Open Sans
-        |—Brand Sans
-      li
-        a(href='./CrimsonText.zip') Crimson Text
-        |—Brand Serif
-
     h2 Headings
     p Headings are responsive and use a modular scale—this means that a giant heading on desktop isn't quite so dominant on a smaller viewport. See #[em #[a(href='https://typecast.com/blog/a-more-modern-scale-for-web-typography') A More Modern Scale for Web Typography]] for background information on this design decision.
     +exampleWithCode
@@ -46,7 +36,7 @@ block content
           h3.docs-header Sans Serif
           +exampleWithCode
             .font-sans
-              h4 Open Sans
+              h4 Rubik
               p.
                 Let it a sleek, hand-painted in a little sunshine and proud
                 heritage dating back and hang. We’d say white stoneware mug with
@@ -56,25 +46,6 @@ block content
                 spices up the deer pillar of warm colors and plum—all in our
                 classic lines with flashy fringe. This little pillow features
                 applique and intricate piecework and fest.
-
-          a(href='./OpenSans.zip') Download Open Sans—Brand Sans
-      .row
-        .col.sm-12.md
-          h3.docs-header Serif
-          +exampleWithCode
-            .font-serif
-              h4 Crimson Text
-              p.
-                Self-welting and just a favorite chair, sofa something good to
-                smell the holiday entertaining with built-in timers for extra
-                limber draft stopper makes it instantly brighten your affinity
-                for exceptional comfort, our embroidered in every bird) is crafted
-                with oversized pillow has a soft, polyester construction ensures
-                long-lasting comfort. Whether you just the wood and kitchen or a
-                touch to hang anything but you at a braided wire, and stops. Buy
-                one bouquet of a hint of textures to be the right rhythm.
-                Flaunting iron and sharing, rich hues of sophistication?
-          a(href='./CrimsonText.zip') Download Crimson Text—Brand Serif
 
     h2 Text Sizes
     p Always use the #[code font-size] helper function (found in the #[code tools] Sass partial) or a corresponding helper class to render different text sizes. #[em Never] use pixels to size text.
@@ -89,19 +60,6 @@ block content
             .font-plus-2 #[code.font-minus-1 font-size(2):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
             .font-plus-3 #[code.font-minus-1 font-size(3):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
             .font-plus-4 #[code.font-minus-1 font-size(4):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-
-    .grid.margin-0
-      .row
-        .col.xs.ellipsis
-          +exampleWithCode
-            .font-serif
-              .font-minus-2 #[code.font-minus-1 font-size(-2):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-minus-1 #[code.font-minus-1 font-size(-1):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              div #[code.font-minus-1 font-size(0):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-1 #[code.font-minus-1 font-size(1):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-2 #[code.font-minus-1 font-size(2):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-3 #[code.font-minus-1 font-size(3):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
-              .font-plus-4 #[code.font-minus-1 font-size(4):] We concur with zesty orange, vanilla musk—all in shades of life, but plays well with perfectly suited for you.
 
     h2 Ellipsis
     h3 Standard
@@ -137,7 +95,7 @@ block content
 
     h2 CTA
     +exampleWithCode
-      a.cta.text-with-icon(href='#') Shop Now
+      a.cta.text-with-icon(href='#') #[span.cta_text Shop Now]
         svg.icon.icon-right(aria-hidden='true')
           use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow')
 
@@ -246,23 +204,10 @@ block content
       +exampleWithCode
         .font-style-italic
           div For a stunning mosaic design will add a carefree pattern really impressive.
-    .font-plus-3
-      +exampleWithCode
-        .font-serif
-          div For a stunning mosaic design will add a carefree pattern really impressive.
-
-    .font-plus-3
-      +exampleWithCode
-        .font-serif.font-style-italic
-          div For a stunning mosaic design will add a carefree pattern really impressive.
 
     h3 Block Quotes
     .grid-fluid
       .row
-        .col.xs-12.md-6
-          +exampleWithCode
-            blockquote.font-serif Simply because we were licked a hundred years before we started is no reason for us not to try to win.
-              .source Harper Lee, #[span.font-style-italic To Kill A Mockingbird]
         .col.xs-12.md-6
           +exampleWithCode
             .group
