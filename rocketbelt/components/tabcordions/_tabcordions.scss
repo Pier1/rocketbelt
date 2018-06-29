@@ -1,20 +1,7 @@
 $width-border: 1px;
-$color-border: color(gray, plus2);
-$color-bg: color(gray, plus4);
+$color-border: color(gray, plus3);
+$color-bg: color(gray, plus5);
 $border: $width-border solid $color-border;
-
-html,
-body {
-  &.touchevents {
-    .tabcordion {
-      .tabcordion_nav-item {
-        .tabcordion_nav-trigger {
-          min-height: 44px;
-        }
-      }
-    }
-  }
-}
 
 .tabcordion {
   .tabcordion_navlist {
@@ -33,19 +20,18 @@ body {
 
     &.is-active {
       .tabcordion_nav-trigger {
-        background: color(white);
         color: color(black);
         font-weight: font-weight(semibold);
+        cursor: default;
       }
     }
 
     .tabcordion_nav-trigger {
       padding: ms(-14) ms(-2);
-      line-height: normal;
+      min-height: 44px;
       border: $border;
-      background: $color-bg;
-      color: color(primary, darker);
-      text-transform: uppercase;
+      color: color(contrast);
+      line-height: normal;
       transition: background 100ms ease,
                   color 100ms ease;
     }
@@ -86,6 +72,14 @@ body {
 
   .tabcordion_nav-item {
     display: inline-block;
+
+    &:not(.is-active) {
+      &:hover {
+        .tabcordion_nav-trigger {
+          border-bottom: 3px solid color(primary, lighter);
+        }
+      }
+    }
   }
 
   .tabcordion_panel {
@@ -121,6 +115,7 @@ body {
     .tabcordion_nav-trigger {
       position: relative;
       display: flex;
+      min-height: 44px;
       width: 100%;
       text-align: left;
 
@@ -130,7 +125,7 @@ body {
         right: 18px;
         width: 3px;
         height: 15px;
-        background: color(primary);
+        background: color(contrast);
         content: '';
         transition: transform 200ms;
         transform: translateY(-50%);
@@ -142,7 +137,7 @@ body {
         right: 12px;
         width: 15px;
         height: 3px;
-        background: color(primary);
+        background: color(contrast);
         content: '';
         transform: translateY(-50%);
       }
