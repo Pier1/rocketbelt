@@ -17,7 +17,7 @@
 
   @if $style == primary {
     min-width: 8rem;
-    background: $button-base linear-gradient(-180deg, rgba(color(primary), 0) 0%, rgba(color(brand, deepBlue), 0.2) 100%);
+    background: $button-base ;//linear-gradient(-180deg, rgba(color(primary), 0) 0%, rgba(color(brand, deepBlue), 0.2) 100%);
 
     $color: mix(color(white), $button-base, 95%);
     color: $color;
