@@ -26,4 +26,5 @@
     }
   }
   box-shadow: $box-shadow;
+  transition: box-shadow 150ms ease-out;
 }
