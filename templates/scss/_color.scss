@@ -151,23 +151,118 @@
   }
 }
 
-.family {
-  &.card:hover {
-    .card-buttons {
+.card:hover {
+  .card-buttons {
+    .copy-button {
+      position: static;
+      display: block;
+      overflow: visible;
+      clip: auto;
+      margin: 0 0.5rem;
+      width: auto;
+      height: auto;
+      white-space: inherit;
+      opacity: 1;
+      transition: opacity 200ms linear;
+      transition-delay: 100ms;
+      clip-path: none;
+    }
+  }
+}
+
+.branded-colors {
+  display: grid;
+  line-height: 1.25;
+  grid-auto-flow: dense;
+
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+
+  @include media('>sm') {
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  @include media('>md') {
+    grid-template-columns: repeat(8, 1fr);
+    grid-template-rows: repeat(4, 1fr);
+  }
+
+  .branded-color {
+    margin: margin(0.5);
+    padding: padding(0.5);
+    min-height: 4rem;
+    border-radius: 2px;
+
+    @include z-depth(0);
+
+    &:hover {
+      @include z-depth(2);
+
       .copy-button {
-        position: static;
-        display: block;
-        overflow: visible;
-        clip: auto;
-        margin: 0 0.5rem;
-        width: auto;
-        height: auto;
-        white-space: inherit;
-        opacity: 1;
-        transition: opacity 200ms linear;
-        transition-delay: 100ms;
-        clip-path: none;
+        margin: 0 0.25rem;
       }
     }
+
+    .copy-button {
+      color: currentColor;
+      text-decoration: underline;
+
+      &:first-of-type {
+        margin-left: 0;
+      }
+    }
+
+    &-brand-blue {
+      background: color(brand);
+      color: color(brand, deepBrown);
+      grid-column: span 3;
+      grid-row: span 4;
+    }
+
+    &-mint {
+      background: color(brand, mint);
+      color: color(contrast, deepBlue);
+      grid-column: span 2;
+    }
+
+    &-deep-blue {
+      background: color(brand, deepBlue);
+      color: color(white);
+      grid-column: span 2;
+      grid-row: span 3;
+    }
+
+    &-sand {
+      background: color(brand, sand);
+      color: color(brand, deepBrown);
+      grid-row: span 4;
+    }
+
+    &-sun-yellow {
+      background: color(brand, sunYellow);
+      color: color(brand, deepBlue);
+      grid-row: span 3;
+    }
+
+    &-deep-brown {
+      background: color(brand, deepBrown);
+      color: color(brand, sand);
+      grid-column: span 1;
+      grid-row: span 2;
+    }
+
+    &-pale-red {
+      background: color(brand, paleRed);
+      grid-row: span 2;
+    }
+
+    &-warm-red {
+      background: color(brand, warmRed);
+      color: color(contrast, deepBlue);
+      grid-column: span 2;
+    }
+
+
   }
 }

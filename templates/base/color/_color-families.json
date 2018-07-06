@@ -6,6 +6,66 @@
         "variant": "base",
         "lightness": 0,
         "colorName": "Brand Blue"
+      },
+      {
+        "variant": "warmRed",
+        "lightness": 0,
+        "colorName": "Warm Red"
+      },
+      {
+        "variant": "deepBlue",
+        "lightness": 0,
+        "colorName": "Deep Blue"
+      },
+      {
+        "variant": "sand",
+        "lightness": 0,
+        "colorName": "Sand"
+      },
+      {
+        "variant": "deepBrown",
+        "lightness": 0,
+        "colorName": "Deep Brown"
+      },
+      {
+        "variant": "sunYellow",
+        "lightness": 0,
+        "colorName": "Sun Yellow"
+      },
+      {
+        "variant": "paleRed",
+        "lightness": 0,
+        "colorName": "Pale Red"
+      },
+      {
+        "variant": "mint",
+        "lightness": 0,
+        "colorName": "Mint"
+      }
+    ]
+  },
+  {
+    "familyName": "contrast",
+    "variants": [
+      {
+        "variant": "base",
+        "lightness": 0,
+        "colorName": "Contrasting Brand Blue"
+      },
+      {
+        "variant": "warmRed",
+        "lightness": 0,
+        "colorName": "Contrasting Red"
+      },
+      {
+        "variant": "deepBlue",
+        "lightness": 0,
+        "colorName": "Contrasting Blue"
+      },
+      {
+        "variant": "mint",
+        "lightness": 0,
+        "colorName": "Contrasting Mint"
       }
     ]
   },
