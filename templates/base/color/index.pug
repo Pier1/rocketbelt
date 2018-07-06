@@ -41,6 +41,50 @@ block content
       //-   or Spectrum https://chrome.google.com/webstore/detail/spectrum/ofclemegkcmilinpcimpjkfhjfgmhieb
 
     .grid-fluid
+      .row.swatch-cards.colors_brand
+        .col.xs-12
+          h2.docs-header Branded Colors
+        .col.xs-12.branded-colors_column
+          ul.branded-colors.list-reset
+            li.card.branded-color.branded-color-brand-blue Brand Blue
+              .card-buttons
+                button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(brand)`) Sass
+                button.button-sm.button-text.copy-button.copy-button-hex(data-clipboard-text=`#009ee1`) Hex
+            li.card.branded-color.branded-color-mint Mint
+              .card-buttons
+                button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(brand, mint)`) Sass
+                button.button-sm.button-text.copy-button.copy-button-hex(data-clipboard-text=`#7cccbf`) Hex
+            li.card.branded-color.branded-color-deep-blue Deep Blue
+              .card-buttons
+                button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(brand, deepBlue)`) Sass
+                button.button-sm.button-text.copy-button.copy-button-hex(data-clipboard-text=`#2e2b70`) Hex
+            li.card.branded-color.branded-color-sand Sand
+              .card-buttons
+                button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(brand, sand)`) Sass
+                button.button-sm.button-text.copy-button.copy-button-hex(data-clipboard-text=`#fed4a0`) Hex
+            li.card.branded-color.branded-color-sun-yellow Sun Yellow
+              .card-buttons
+                button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(brand, sunYellow)`) Sass
+                button.button-sm.button-text.copy-button.copy-button-hex(data-clipboard-text=`#fdb913`) Hex
+            li.card.branded-color.branded-color-deep-brown Deep Brown
+              .card-buttons
+                button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(brand, deepBrown)`) Sass
+                button.button-sm.button-text.copy-button.copy-button-hex(data-clipboard-text=`#431e1b`) Hex
+            li.card.branded-color.branded-color-pale-red Pale Red
+              .card-buttons
+                button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(brand, paleRed)`) Sass
+                button.button-sm.button-text.copy-button.copy-button-hex(data-clipboard-text=`#e58d83`) Hex
+            li.card.branded-color.branded-color-warm-red Warm Red
+              .card-buttons
+                button.button-sm.button-text.copy-button.copy-button-sass(data-clipboard-text=`color(brand, warmRed)`) Sass
+                button.button-sm.button-text.copy-button.copy-button-hex(data-clipboard-text=`#f04e37`) Hex
+        .col.xs-12
+          .rb-note
+            include /partials/ux.pug
+            .rb-note-text Use Brand Blue sparingly &amp; lean more toward other palette options.
+      .row.swatch-cards
+        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'contrast'; })
+          +swatch(family)
       .row.swatch-cards
         .col.xs-12
           h2.docs-header UI Colors
@@ -54,15 +98,7 @@ block content
       .row.swatch-cards
         .col.xs-12
           h2.docs-header Indicating Colors
-        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'success' || o.familyName === 'warning' || o.familyName === 'error' || o.familyName === 'sale'; })
-          +swatch(family)
-      .row.swatch-cards
-        .col.xs-12
-          h2.docs-header Brand Color
-          .rb-note
-            include /partials/ux.pug
-            .rb-note-text Use Brand Blue sparingly &amp; lean more toward other palette options.
-        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'brand'; })
+        each family in _.filter(colorFamilies, function (o) { return o.familyName === 'success' || o.familyName === 'warning' || o.familyName === 'error' || o.familyName === 'info' || o.familyName === 'sale'; })
           +swatch(family)
     script(src='./color.js')
     script.

@@ -213,334 +213,382 @@
             animation-timing-function: cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
 .fg_brand {
-  color: #0a689d; }
+  color: #009ee1; }
 
-.fg_brand-lighter {
-  color: #3eb1f3; }
+.fg_brand-deepBlue {
+  color: #2e2b70; }
 
-.fg_brand-lightest {
-  color: #bfe5fb; }
+.fg_brand-warmRed {
+  color: #f04e37; }
 
-.fg_brand-darker {
-  color: #08537e; }
+.fg_brand-sand {
+  color: #fed4a0; }
 
-.fg_brand-darkest {
-  color: #05344f; }
+.fg_brand-deepBrown {
+  color: #431e1b; }
+
+.fg_brand-sunYellow {
+  color: #fdb913; }
+
+.fg_brand-paleRed {
+  color: #e58d83; }
+
+.fg_brand-mint {
+  color: #7cccbf; }
+
+.fg_contrast-brand {
+  color: #1078a7; }
+
+.fg_contrast {
+  color: #1078a7; }
+
+.fg_contrast-deepBlue {
+  color: #201e4e; }
+
+.fg_contrast-warmRed {
+  color: #e42b11; }
+
+.fg_contrast-mint {
+  color: #338275; }
 
 .fg_sale {
-  color: #a21f35; }
+  color: #e42b11; }
 
 .fg_sale-lighter {
-  color: #e05f75; }
+  color: #f47c6b; }
 
 .fg_sale-lightest {
-  color: #f5cad1; }
+  color: #fbd3ce; }
 
 .fg_sale-darker {
-  color: #82192a; }
+  color: #b6220e; }
 
 .fg_sale-darkest {
-  color: #51101b; }
+  color: #721609; }
 
 .fg_primary {
-  color: #1492d9; }
+  color: #009ee1; }
 
 .fg_primary-lighter {
-  color: #69c0f1; }
+  color: #54ccff; }
 
 .fg_primary-lightest {
-  color: #cdeafa; }
+  color: #c6eeff; }
 
 .fg_primary-darker {
-  color: #1075ae; }
+  color: #007eb4; }
 
 .fg_primary-darkest {
-  color: #0a496d; }
+  color: #004f71; }
 
 .fg_secondary {
-  color: #14d9be; }
+  color: #7cccbf; }
 
 .fg_secondary-lighter {
-  color: #69f1de; }
+  color: #b0e0d9; }
 
 .fg_secondary-lightest {
-  color: #cdfaf4; }
+  color: #e5f5f2; }
 
 .fg_secondary-darker {
-  color: #10ae98; }
+  color: #4dbaa8; }
 
 .fg_secondary-darkest {
-  color: #0a6d5f; }
+  color: #2e766a; }
 
 .fg_accent {
-  color: #5b14d9; }
+  color: #4300e1; }
 
 .fg_accent-lighter {
-  color: #9a69f1; }
+  color: #8754ff; }
 
 .fg_accent-lightest {
-  color: #ddcdfa; }
+  color: #d7c6ff; }
 
 .fg_accent-darker {
-  color: #4910ae; }
+  color: #3600b4; }
 
 .fg_accent-darkest {
-  color: #2e0a6d; }
+  color: #220071; }
 
 .fg_gray {
-  color: #7c7576; }
+  color: #767676; }
 
 .fg_gray-plus1 {
-  color: #979091; }
+  color: #919191; }
 
 .fg_gray-plus2 {
-  color: #b1acad; }
+  color: #adadad; }
 
 .fg_gray-plus3 {
-  color: #cbc8c8; }
+  color: #c8c8c8; }
 
 .fg_gray-plus4 {
-  color: #e5e3e4; }
+  color: #e4e4e4; }
 
 .fg_gray-plus5 {
-  color: #f2f1f1; }
+  color: #f1f1f1; }
 
 .fg_gray-minus1 {
-  color: #635e5e; }
+  color: #5e5e5e; }
 
 .fg_gray-minus2 {
-  color: #4a4647; }
+  color: #474747; }
 
 .fg_success {
-  color: #00b575; }
+  color: #2ca658; }
 
 .fg_success-lighter {
-  color: #3affb9; }
+  color: #71d996; }
 
 .fg_success-lightest {
-  color: #bdffe8; }
+  color: #d0f2dc; }
 
 .fg_success-darker {
-  color: #00915e; }
+  color: #238546; }
 
 .fg_success-darkest {
-  color: #005b3b; }
+  color: #16532c; }
 
 .fg_warning {
-  color: #ffc300; }
+  color: #fdb913; }
 
 .fg_warning-lighter {
-  color: #ffdb66; }
+  color: #fed571; }
 
 .fg_warning-lightest {
-  color: #fff3cc; }
+  color: #fff1d0; }
 
 .fg_warning-darker {
-  color: #cc9c00; }
+  color: #d89a02; }
 
 .fg_warning-darkest {
-  color: #806200; }
+  color: #876001; }
 
 .fg_error {
-  color: #d51c31; }
+  color: #e42b11; }
 
 .fg_error-lighter {
-  color: #ec707e; }
+  color: #f47c6b; }
 
 .fg_error-lightest {
-  color: #f9cfd4; }
+  color: #fbd3ce; }
 
 .fg_error-darker {
-  color: #aa1627; }
+  color: #b6220e; }
 
 .fg_error-darkest {
-  color: #6b0e19; }
+  color: #721609; }
 
 .fg_info {
-  color: #0a689d; }
+  color: #201e4e; }
 
 .fg_info-lighter {
-  color: #3eb1f3; }
+  color: #5551bc; }
 
 .fg_info-lightest {
-  color: #bfe5fb; }
+  color: #c6c5e9; }
 
 .fg_info-darker {
-  color: #08537e; }
+  color: #1a183e; }
 
 .fg_info-darkest {
-  color: #05344f; }
+  color: #100f27; }
 
 .fg_black {
-  color: #030001; }
+  color: #1a1a1a; }
 
 .fg_white {
-  color: #fefdfd; }
+  color: white; }
 
 .bg_brand {
-  background-color: #0a689d; }
+  background-color: #009ee1; }
 
-.bg_brand-lighter {
-  background-color: #3eb1f3; }
+.bg_brand-deepBlue {
+  background-color: #2e2b70; }
 
-.bg_brand-lightest {
-  background-color: #bfe5fb; }
+.bg_brand-warmRed {
+  background-color: #f04e37; }
 
-.bg_brand-darker {
-  background-color: #08537e; }
+.bg_brand-sand {
+  background-color: #fed4a0; }
 
-.bg_brand-darkest {
-  background-color: #05344f; }
+.bg_brand-deepBrown {
+  background-color: #431e1b; }
+
+.bg_brand-sunYellow {
+  background-color: #fdb913; }
+
+.bg_brand-paleRed {
+  background-color: #e58d83; }
+
+.bg_brand-mint {
+  background-color: #7cccbf; }
+
+.bg_contrast-brand {
+  background-color: #1078a7; }
+
+.bg_contrast {
+  background-color: #1078a7; }
+
+.bg_contrast-deepBlue {
+  background-color: #201e4e; }
+
+.bg_contrast-warmRed {
+  background-color: #e42b11; }
+
+.bg_contrast-mint {
+  background-color: #338275; }
 
 .bg_sale {
-  background-color: #a21f35; }
+  background-color: #e42b11; }
 
 .bg_sale-lighter {
-  background-color: #e05f75; }
+  background-color: #f47c6b; }
 
 .bg_sale-lightest {
-  background-color: #f5cad1; }
+  background-color: #fbd3ce; }
 
 .bg_sale-darker {
-  background-color: #82192a; }
+  background-color: #b6220e; }
 
 .bg_sale-darkest {
-  background-color: #51101b; }
+  background-color: #721609; }
 
 .bg_primary {
-  background-color: #1492d9; }
+  background-color: #009ee1; }
 
 .bg_primary-lighter {
-  background-color: #69c0f1; }
+  background-color: #54ccff; }
 
 .bg_primary-lightest {
-  background-color: #cdeafa; }
+  background-color: #c6eeff; }
 
 .bg_primary-darker {
-  background-color: #1075ae; }
+  background-color: #007eb4; }
 
 .bg_primary-darkest {
-  background-color: #0a496d; }
+  background-color: #004f71; }
 
 .bg_secondary {
-  background-color: #14d9be; }
+  background-color: #7cccbf; }
 
 .bg_secondary-lighter {
-  background-color: #69f1de; }
+  background-color: #b0e0d9; }
 
 .bg_secondary-lightest {
-  background-color: #cdfaf4; }
+  background-color: #e5f5f2; }
 
 .bg_secondary-darker {
-  background-color: #10ae98; }
+  background-color: #4dbaa8; }
 
 .bg_secondary-darkest {
-  background-color: #0a6d5f; }
+  background-color: #2e766a; }
 
 .bg_accent {
-  background-color: #5b14d9; }
+  background-color: #4300e1; }
 
 .bg_accent-lighter {
-  background-color: #9a69f1; }
+  background-color: #8754ff; }
 
 .bg_accent-lightest {
-  background-color: #ddcdfa; }
+  background-color: #d7c6ff; }
 
 .bg_accent-darker {
-  background-color: #4910ae; }
+  background-color: #3600b4; }
 
 .bg_accent-darkest {
-  background-color: #2e0a6d; }
+  background-color: #220071; }
 
 .bg_gray {
-  background-color: #7c7576; }
+  background-color: #767676; }
 
 .bg_gray-plus1 {
-  background-color: #979091; }
+  background-color: #919191; }
 
 .bg_gray-plus2 {
-  background-color: #b1acad; }
+  background-color: #adadad; }
 
 .bg_gray-plus3 {
-  background-color: #cbc8c8; }
+  background-color: #c8c8c8; }
 
 .bg_gray-plus4 {
-  background-color: #e5e3e4; }
+  background-color: #e4e4e4; }
 
 .bg_gray-plus5 {
-  background-color: #f2f1f1; }
+  background-color: #f1f1f1; }
 
 .bg_gray-minus1 {
-  background-color: #635e5e; }
+  background-color: #5e5e5e; }
 
 .bg_gray-minus2 {
-  background-color: #4a4647; }
+  background-color: #474747; }
 
 .bg_success {
-  background-color: #00b575; }
+  background-color: #2ca658; }
 
 .bg_success-lighter {
-  background-color: #3affb9; }
+  background-color: #71d996; }
 
 .bg_success-lightest {
-  background-color: #bdffe8; }
+  background-color: #d0f2dc; }
 
 .bg_success-darker {
-  background-color: #00915e; }
+  background-color: #238546; }
 
 .bg_success-darkest {
-  background-color: #005b3b; }
+  background-color: #16532c; }
 
 .bg_warning {
-  background-color: #ffc300; }
+  background-color: #fdb913; }
 
 .bg_warning-lighter {
-  background-color: #ffdb66; }
+  background-color: #fed571; }
 
 .bg_warning-lightest {
-  background-color: #fff3cc; }
+  background-color: #fff1d0; }
 
 .bg_warning-darker {
-  background-color: #cc9c00; }
+  background-color: #d89a02; }
 
 .bg_warning-darkest {
-  background-color: #806200; }
+  background-color: #876001; }
 
 .bg_error {
-  background-color: #d51c31; }
+  background-color: #e42b11; }
 
 .bg_error-lighter {
-  background-color: #ec707e; }
+  background-color: #f47c6b; }
 
 .bg_error-lightest {
-  background-color: #f9cfd4; }
+  background-color: #fbd3ce; }
 
 .bg_error-darker {
-  background-color: #aa1627; }
+  background-color: #b6220e; }
 
 .bg_error-darkest {
-  background-color: #6b0e19; }
+  background-color: #721609; }
 
 .bg_info {
-  background-color: #0a689d; }
+  background-color: #201e4e; }
 
 .bg_info-lighter {
-  background-color: #3eb1f3; }
+  background-color: #5551bc; }
 
 .bg_info-lightest {
-  background-color: #bfe5fb; }
+  background-color: #c6c5e9; }
 
 .bg_info-darker {
-  background-color: #08537e; }
+  background-color: #1a183e; }
 
 .bg_info-darkest {
-  background-color: #05344f; }
+  background-color: #100f27; }
 
 .bg_black {
-  background-color: #030001; }
+  background-color: #1a1a1a; }
 
 .bg_white {
-  background-color: #fefdfd; }
+  background-color: white; }
 
 .row {
   -ms-flex-direction: row;
@@ -1240,6 +1288,134 @@
   .grid {
     width: 75rem; } }
 
+@media (min-width: 90rem) {
+  .col.xxl, .col.xxl-offset-0, .col.xxl-1, .col.xxl-offset-1, .col.xxl-2, .col.xxl-offset-2, .col.xxl-3, .col.xxl-offset-3, .col.xxl-4, .col.xxl-offset-4, .col.xxl-5, .col.xxl-offset-5, .col.xxl-6, .col.xxl-offset-6, .col.xxl-7, .col.xxl-offset-7, .col.xxl-8, .col.xxl-offset-8, .col.xxl-9, .col.xxl-offset-9, .col.xxl-10, .col.xxl-offset-10, .col.xxl-11, .col.xxl-offset-11, .col.xxl-12, .col.xxl-offset-12 {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex: 0 1 auto;
+        flex: 0 1 auto;
+    padding-right: 0.5rem;
+    padding-bottom: 1rem;
+    padding-left: 0.5rem;
+    -ms-flex-direction: column;
+        flex-direction: column;
+    -ms-flex-positive: 0;
+        flex-grow: 0;
+    -ms-flex-negative: 0;
+        flex-shrink: 0; }
+  .col.xxl {
+    max-width: 100%;
+    -ms-flex-preferred-size: 0;
+        flex-basis: 0;
+    -ms-flex-positive: 1;
+        flex-grow: 1; }
+  .col.xxl-offset-0 {
+    margin-left: 0%; }
+  .col.xxl-1 {
+    max-width: 8.33333%;
+    -ms-flex-preferred-size: 8.33333%;
+        flex-basis: 8.33333%; }
+  .col.xxl-offset-1 {
+    margin-left: 8.33333%; }
+  .col.xxl-2 {
+    max-width: 16.66667%;
+    -ms-flex-preferred-size: 16.66667%;
+        flex-basis: 16.66667%; }
+  .col.xxl-offset-2 {
+    margin-left: 16.66667%; }
+  .col.xxl-3 {
+    max-width: 25%;
+    -ms-flex-preferred-size: 25%;
+        flex-basis: 25%; }
+  .col.xxl-offset-3 {
+    margin-left: 25%; }
+  .col.xxl-4 {
+    max-width: 33.33333%;
+    -ms-flex-preferred-size: 33.33333%;
+        flex-basis: 33.33333%; }
+  .col.xxl-offset-4 {
+    margin-left: 33.33333%; }
+  .col.xxl-5 {
+    max-width: 41.66667%;
+    -ms-flex-preferred-size: 41.66667%;
+        flex-basis: 41.66667%; }
+  .col.xxl-offset-5 {
+    margin-left: 41.66667%; }
+  .col.xxl-6 {
+    max-width: 50%;
+    -ms-flex-preferred-size: 50%;
+        flex-basis: 50%; }
+  .col.xxl-offset-6 {
+    margin-left: 50%; }
+  .col.xxl-7 {
+    max-width: 58.33333%;
+    -ms-flex-preferred-size: 58.33333%;
+        flex-basis: 58.33333%; }
+  .col.xxl-offset-7 {
+    margin-left: 58.33333%; }
+  .col.xxl-8 {
+    max-width: 66.66667%;
+    -ms-flex-preferred-size: 66.66667%;
+        flex-basis: 66.66667%; }
+  .col.xxl-offset-8 {
+    margin-left: 66.66667%; }
+  .col.xxl-9 {
+    max-width: 75%;
+    -ms-flex-preferred-size: 75%;
+        flex-basis: 75%; }
+  .col.xxl-offset-9 {
+    margin-left: 75%; }
+  .col.xxl-10 {
+    max-width: 83.33333%;
+    -ms-flex-preferred-size: 83.33333%;
+        flex-basis: 83.33333%; }
+  .col.xxl-offset-10 {
+    margin-left: 83.33333%; }
+  .col.xxl-11 {
+    max-width: 91.66667%;
+    -ms-flex-preferred-size: 91.66667%;
+        flex-basis: 91.66667%; }
+  .col.xxl-offset-11 {
+    margin-left: 91.66667%; }
+  .col.xxl-12 {
+    max-width: 100%;
+    -ms-flex-preferred-size: 100%;
+        flex-basis: 100%; }
+  .col.xxl-offset-12 {
+    margin-left: 100%; }
+  .row.xxl-start {
+    -ms-flex-pack: start;
+        justify-content: flex-start; }
+  .row.xxl-center {
+    -ms-flex-pack: center;
+        justify-content: center; }
+  .row.xxl-end {
+    -ms-flex-pack: end;
+        justify-content: flex-end; }
+  .row.xxl-top {
+    -ms-flex-align: start;
+        align-items: flex-start; }
+  .row.xxl-middle {
+    -ms-flex-align: center;
+        align-items: center; }
+  .row.xxl-bottom {
+    -ms-flex-align: end;
+        align-items: flex-end; }
+  .row.xxl-around {
+    -ms-flex-pack: distribute;
+        justify-content: space-around; }
+  .row.xxl-between {
+    -ms-flex-pack: justify;
+        justify-content: space-between; }
+  .col.xxl-first {
+    -ms-flex-order: -9999;
+        order: -9999; }
+  .col.xxl-last {
+    -ms-flex-order: 9999;
+        order: 9999; }
+  .grid {
+    width: 90rem; } }
+
 .grid-fluid.static .col.static, .grid-fluid.static .col.static-offset-0, .grid-fluid.static .col.static-1, .grid-fluid.static .col.static-offset-1, .grid-fluid.static .col.static-2, .grid-fluid.static .col.static-offset-2, .grid-fluid.static .col.static-3, .grid-fluid.static .col.static-offset-3, .grid-fluid.static .col.static-4, .grid-fluid.static .col.static-offset-4, .grid-fluid.static .col.static-5, .grid-fluid.static .col.static-offset-5, .grid-fluid.static .col.static-6, .grid-fluid.static .col.static-offset-6, .grid-fluid.static .col.static-7, .grid-fluid.static .col.static-offset-7, .grid-fluid.static .col.static-8, .grid-fluid.static .col.static-offset-8, .grid-fluid.static .col.static-9, .grid-fluid.static .col.static-offset-9, .grid-fluid.static .col.static-10, .grid-fluid.static .col.static-offset-10, .grid-fluid.static .col.static-11, .grid-fluid.static .col.static-offset-11, .grid-fluid.static .col.static-12, .grid-fluid.static .col.static-offset-12, .grid.static .col.static, .grid.static .col.static-offset-0, .grid.static .col.static-1, .grid.static .col.static-offset-1, .grid.static .col.static-2, .grid.static .col.static-offset-2, .grid.static .col.static-3, .grid.static .col.static-offset-3, .grid.static .col.static-4, .grid.static .col.static-offset-4, .grid.static .col.static-5, .grid.static .col.static-offset-5, .grid.static .col.static-6, .grid.static .col.static-offset-6, .grid.static .col.static-7, .grid.static .col.static-offset-7, .grid.static .col.static-8, .grid.static .col.static-offset-8, .grid.static .col.static-9, .grid.static .col.static-offset-9, .grid.static .col.static-10, .grid.static .col.static-offset-10, .grid.static .col.static-11, .grid.static .col.static-offset-11, .grid.static .col.static-12, .grid.static .col.static-offset-12 {
   display: -ms-flexbox;
   display: flex;
@@ -1524,9 +1700,9 @@
 
 body {
   margin: 0;
-  color: #030001;
+  color: #1a1a1a;
   font-size: 1rem;
-  font-family: "Brand Sans", sans-serif;
+  font-family: "Brand Sans", "Trebuchet MS", sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1612,16 +1788,16 @@ h6 {
     font-size: 1.42383rem; } }
 
 .font-sans {
-  font-family: "Brand Sans", sans-serif; }
+  font-family: "Brand Sans", "Trebuchet MS", sans-serif; }
 
 .font-serif {
-  font-family: "Brand Serif", Times New Roman, serif; }
+  font-family: "Brand Serif", Georgia, serif; }
 
 h1 small,
 h2 small,
 h3 small,
 h4 small {
-  color: #979091;
+  color: #919191;
   font-weight: 300; }
   h1 small::before,
   h2 small::before,
@@ -1685,29 +1861,29 @@ h4 small {
     display: inline-block; }
 
 a {
-  color: #0a689d;
+  color: #1078a7;
   transition: color 100ms linear; }
   a:hover {
-    color: #0d88cd;
+    color: #1498d4;
     transition: color 100ms linear; }
   a:active {
-    color: #095885;
+    color: #0e668e;
     transition: color 100ms linear; }
   a:visited {
-    color: #095885;
+    color: #0e668e;
     transition: color 100ms linear; }
 
 blockquote {
   margin: 0.75rem 0;
   padding: 0.375rem 0.75rem;
-  border-left: 0.75rem solid #b1acad;
+  border-left: 0.75rem solid #adadad;
   border-radius: 2px;
-  background: #e5e3e4;
+  background: #e4e4e4;
   text-align: left;
   font-size: 1.60181rem; }
   blockquote .source {
     display: block;
-    color: #b1acad;
+    color: #adadad;
     font-size: 1.26562rem; }
     blockquote .source::before {
       content: "― "; }
@@ -1720,8 +1896,8 @@ blockquote {
       font-weight: 300; }
     blockquote.pull .quote {
       display: inline;
-      background: rgba(105, 241, 222, 0.1);
-      box-shadow: 0 -0.25rem 0 rgba(20, 217, 190, 0.3);
+      background: rgba(176, 224, 217, 0.1);
+      box-shadow: 0 -0.25rem 0 rgba(124, 204, 191, 0.3);
       line-height: 1.75; }
     blockquote.pull .source {
       text-align: right; }
@@ -1752,7 +1928,7 @@ ul.horizontal li {
     -ms-flex: 1;
         flex: 1;
     margin: auto 0.6rem;
-    border-top: 1px solid #b1acad;
+    border-top: 1px solid #adadad;
     content: '';
     vertical-align: middle; }
   .text-with-rule::before {
@@ -1783,22 +1959,23 @@ ul.horizontal li {
           order: 999; }
 
 .cta {
-  color: #030001;
   text-decoration: none;
   text-transform: uppercase;
   font-weight: 600;
   line-height: initial;
   cursor: pointer; }
+  .cta:hover .cta_text {
+    box-shadow: inset 0 -3px 0 currentColor;
+    transition: box-shadow 100ms; }
+  .cta_text {
+    box-shadow: inset 0 -2px 0 currentColor;
+    transition: box-shadow 100ms; }
   .cta .icon {
-    width: .75em;
-    height: .75em;
+    width: 0.75em;
+    height: 0.75em;
     font-size: 1em; }
-  .cta:hover {
-    color: #262626; }
-  .cta:active, .cta:focus {
-    color: #4d4d4d; }
-  .cta:visited {
-    color: #030001; }
+    .cta .icon.icon-right {
+      margin-left: 0.1em; }
 
 .link-list {
   margin: 0;
@@ -1827,16 +2004,16 @@ ul.horizontal li {
       display: flex;
       -ms-flex: 0 1 auto;
           flex: 0 1 auto;
-      color: #7c7576;
+      color: #767676;
       text-decoration: none;
       transition: color 100ms linear;
       -ms-flex-align: center;
           align-items: center; }
       .link-list li a:not(.cta):hover {
-        color: #979091;
+        color: #919191;
         transition: color 100ms linear; }
       .link-list li a:not(.cta):active {
-        color: #635e5e;
+        color: #5e5e5e;
         transition: color 100ms linear; }
   .link-list .title {
     display: -ms-flexbox;
@@ -1900,7 +2077,7 @@ html {
   .sale-sticker-wrapper .sale-sticker-inner {
     position: relative;
     padding: 0.2em 0.1em;
-    background: rgba(254, 253, 253, 0.9);
+    background: rgba(255, 255, 255, 0.9);
     text-align: center;
     text-transform: uppercase;
     font-family: 'Brand Serif'; }
@@ -2042,7 +2219,7 @@ html {
   -ms-flex-direction: column;
       flex-direction: column;
   padding: 0.49327rem 0.88889rem;
-  border: 1px solid #030001;
+  border: 1px solid #1a1a1a;
   font-size: 1rem; }
   @media (min-width: 34rem) {
     .seo-banner {
@@ -2050,11 +2227,11 @@ html {
           flex-direction: row; } }
   .seo-banner .seo-banner_title {
     padding: 0 0 0.38974rem 0;
-    border-bottom: 1px solid #030001;
+    border-bottom: 1px solid #1a1a1a;
     text-align: center;
     text-transform: uppercase;
     font-size: 1.80203rem;
-    font-family: "Brand Serif", Times New Roman, serif;
+    font-family: "Brand Serif", Georgia, serif;
     line-height: 1.1; }
     @media (min-width: 34rem) {
       .seo-banner .seo-banner_title {
@@ -2063,7 +2240,7 @@ html {
         -ms-flex: 0 0 30%;
             flex: 0 0 30%;
         padding: 0 0.88889rem 0 0;
-        border-right: 1px solid #030001;
+        border-right: 1px solid #1a1a1a;
         border-bottom: none;
         -ms-flex-align: center;
             align-items: center;
@@ -2079,11 +2256,11 @@ html {
 .product-tag {
   display: inline-block;
   padding: 0 0.6243rem;
-  background: rgba(213, 28, 49, 0.9);
-  color: #fefdfd;
+  background: rgba(228, 43, 17, 0.9);
+  color: white;
   font-style: italic;
   font-size: 2.2807rem;
-  font-family: "Brand Serif", Times New Roman, serif; }
+  font-family: "Brand Serif", Georgia, serif; }
   .product-tag .product-tag_wrap {
     display: -ms-flexbox;
     display: flex;
@@ -2093,7 +2270,7 @@ html {
     line-height: 1.3; }
   .product-tag .percent-off {
     font-style: normal;
-    font-family: "Brand Sans", sans-serif; }
+    font-family: "Brand Sans", "Trebuchet MS", sans-serif; }
     .product-tag .percent-off .product-tag_wrap::after {
       margin-left: 0.35em;
       content: "%\aoff";

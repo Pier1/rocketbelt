@@ -106,11 +106,19 @@ edit:
 
 envelope:
   title: Envelope
-  description: An envelop
+  description: An envelope
+
+envelope-circle:
+  title: Envelope
+  description: An envelope in a circle
 
 error:
   title: Error
   description: An exclamation mark inside an octogon
+
+facebook:
+  title: Facebook
+  description: Facebook logo
 
 filter:
   title: Filter
@@ -144,9 +152,25 @@ info:
   title: Info
   description: A circle with an "i" inside
 
+info-circle:
+  title: Info
+  description: A circle with an "i" inside
+
+javascript:
+  title: Javascript
+  description: The Javascript logo—a square with the letters "JS" inside
+
 lines:
   title: Lines
   description: Four lines stacked on top of each other
+
+link:
+  title: Link
+  description: Two links from a chain
+
+link-circle:
+  title: Link
+  description: Two chain links inside a circle
 
 lock-check:
   title: Lock With Check
@@ -187,6 +211,10 @@ pin:
 pin-map:
   title: Pin On Map
   description: A pin indicating a location on a map
+
+pinterest:
+  title: Pinterest
+  description: Pinterest logo
 
 play:
   title: Play
@@ -263,6 +291,10 @@ star:
 star-o:
   title: Open Star
   description: The outline of a star
+
+twitter:
+  title: Twitter
+  description: Twitter logo
 
 warning:
   title: Warning

@@ -208,21 +208,23 @@ h4 {
 }
 
 a {
-  color: color(brand);
+  $base-link-color: color(contrast, base);
+
+  color: $base-link-color;
   transition: color 100ms linear;
 
   &:hover {
-    color: scale-color(color(brand), $lightness: 15%);
+    color: scale-color($base-link-color, $lightness: 15%);
     transition: color 100ms linear;
   }
 
   &:active {
-    color: scale-color(color(brand), $lightness: -15%);
+    color: scale-color($base-link-color, $lightness: -15%);
     transition: color 100ms linear;
   }
 
   &:visited {
-    color: scale-color(color(brand), $lightness: -15%);
+    color: scale-color($base-link-color, $lightness: -15%);
     transition: color 100ms linear;
   }
 }

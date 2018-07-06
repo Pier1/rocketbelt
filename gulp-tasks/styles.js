@@ -11,10 +11,11 @@
          'iOS >= 9',
          'Android >= 4.4'];
 
-      const source = gulp.src([
-        `${config.patternsPath}/**/*.scss`,
-        `${config.templatesPath}/scss/**/*.scss`
-      ])
+      const source =
+        gulp.src([
+          `${config.patternsPath}/**/*.scss`,
+          `${config.templatesPath}/scss/**/*.scss`,
+        ])
         .pipe(plugins.plumber({
           errorHandler: plugins.notify.onError('Error: <%= error.message %>')
         }))
