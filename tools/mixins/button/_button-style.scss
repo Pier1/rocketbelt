@@ -1,0 +1,196 @@
+/// Add other styles properties for Rocketbelt buttons such as width, background, color, and fill.
+///
+/// @group Buttons
+/// @author Kendrick Arnett
+///
+/// @param $style [primary] - The type of button to render properties for.
+@mixin button-style($style: primary) {
+  $contrast-primary: color(contrast, base);
+
+  $button-base: scale-color($contrast-primary, $lightness: 0%);
+  $button-hover: scale-color($contrast-primary, $lightness: 5%);
+  $button-active: scale-color($contrast-primary, $lightness: -5%);
+
+  $button-base-secondary: $contrast-primary;
+  $button-hover-secondary: color(primary);
+  $button-active-secondary: color(primary, darkest);
+
+  @if $style == primary {
+    min-width: 8rem;
+    background: $button-base ;//linear-gradient(-180deg, rgba(color(primary), 0) 0%, rgba(color(brand, deepBlue), 0.2) 100%);
+
+    $color: mix(color(white), $button-base, 95%);
+    color: $color;
+    fill: $color;
+    &:hover {
+      background-color: $button-hover;
+      color: $color;
+    }
+
+    &:active {
+      background-color: $button-active;
+      color: $color;
+    }
+
+    &:visited {
+      color: $color;
+    }
+
+    &[disabled] {
+      color: rgba($color, 0.9);
+      fill: rgba($color, 0.9);
+
+      &:hover {
+        background-color: $button-base;
+      }
+    }
+  }
+  @else if $style == secondary {
+    min-width: 8rem;
+    background: color(white);
+    background-image: none;
+
+    color: $button-base-secondary;
+    fill: $button-base-secondary;
+
+    &:hover {
+      background: color(white);
+      color: $button-hover-secondary;
+      fill: $button-hover-secondary;
+    }
+    &:visited {
+      color: $button-base-secondary;
+    }
+
+    &:active {
+      border: 1px solid desaturate(color(primary, lightest), 50%);
+      background: color(white);
+      color: $button-active-secondary;
+      fill: $button-active-secondary;
+    }
+
+    &[disabled] {
+      border: 1px solid desaturate(color(primary, lightest), 50%);
+      color: rgba($button-base-secondary, 0.9);
+      fill: rgba($button-base-secondary, 0.9);
+
+      &:hover {
+      color: rgba($button-base-secondary, 0.9);
+      fill: rgba($button-base-secondary, 0.9);
+      }
+    }
+  }
+  @else if $style == text {
+    background: transparent;
+    color: $button-base-secondary;
+    fill: $button-base-secondary;
+    &:visited {
+      color: $button-base-secondary;
+    }
+
+    &:hover {
+      color: $button-hover-secondary;
+      fill: $button-hover-secondary;
+    }
+
+    &:active {
+      color: $button-active-secondary;
+      fill: $button-active-secondary;
+    }
+
+    &[disabled] {
+      color: rgba($button-base-secondary, 0.9);
+      fill: rgba($button-base-secondary, 0.9);
+
+      &:hover {
+      color: rgba($button-base-secondary, 0.9);
+      fill: rgba($button-base-secondary, 0.9);
+      }
+    }
+  }
+  @else if $style == dynamic {
+    position: relative;
+    filter: none;
+    transition: background 150ms linear, background-image 150ms linear;
+
+    &.button-state-with-text {
+      display: inline-flex;
+      white-space: nowrap;
+
+      align-items: center;
+      justify-content: center;
+
+      .button-state-text {
+        visibility: visible;
+        flex: 1 0 auto;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .button-state-icon {
+        position: relative;
+        top: auto;
+        left: auto;
+        flex: 0 0 1em;
+        margin-left: 1em;
+        width: auto;
+        transform: none;
+      }
+    }
+  }
+  @else if $style == busy {
+    .button-state-text {
+      visibility: hidden;
+    }
+
+    .button-state-icon {
+      $color-fill: quote(color(white));
+      position: absolute;
+      top: 31%;
+      left: 42%;
+      width: 1em;
+      height: 1em;
+      background-image: svg-url('<svg width="11" height="19" viewBox="190 45 11 19" fill="#{$color-fill}" xmlns="http://www.w3.org/2000/svg"><path d="M201 45v2c-4.962 0-9 4.038-9 9 0 2.48 1.01 4.73 2.64 6.36l-1.415 1.415C191.24 61.795 190 59.04 190 56c0-6.065 4.935-11 11-11z" fill-rule="evenodd"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translate(-50%, -50%);
+      animation: spin 1s cubic-bezier(0.78, 0.38, 0.49, 0.88) infinite;
+    }
+  }
+  @else if $style == success {
+    background: color(success);
+    background-image: none;
+    transition: background 150ms linear, background-image 150ms linear;
+
+    .button-state-text {
+      visibility: hidden;
+    }
+
+    .button-state-icon {
+      $color-fill: quote(color(white));
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 1.5em;
+      height: 1.5em;
+      background-image: icon-as-data-uri(check, $color-fill);
+      background-position: center center;
+      background-size: contain;
+      background-repeat: no-repeat;
+      transform: translate(-50%, -50%);
+    }
+
+    &[disabled] {
+      opacity: 1;
+      filter: none;
+
+      &:hover {
+        background: color(success);
+      }
+    }
+
+    &:hover {
+      background: color(success);
+    }
+  }
+}
