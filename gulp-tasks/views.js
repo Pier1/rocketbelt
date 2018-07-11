@@ -104,7 +104,7 @@
               $this.attr('id', id);
               $this.addClass('heading-with-link');
               $this.append(
-                `<button data-clipboard-text="#${id}" class="heading-copy-button heading_link">
+                `<button data-clipboard-text="#${id}" class="button-base heading-copy-button heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"></use>
                   </svg>

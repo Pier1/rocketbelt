@@ -106,7 +106,7 @@ mixin buildNav(navObject, rootHref)
 
           if (shortName !== 'img' && shortName !== 'vendor')
             li.nav-item.nav_level-1(ref=shortName)
-              button.category-label #{name.replace('.pug', '')}
+              button.button-base.category-label #{name.replace('.pug', '')}
               .sub-nav
                 ul.sub-nav-group
                   each child in item.children.sort((a, b) => a.name > b.name)
