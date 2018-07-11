@@ -116,19 +116,6 @@ button,
   }
 }
 
-button,
-.button {
-  &.button-base {
-    min-width: auto;
-
-    &,
-    &:active,
-    &:hover {
-      box-shadow: none;
-    }
-  }
-}
-
 .button-block {
   display: block;
   width: 100%;
