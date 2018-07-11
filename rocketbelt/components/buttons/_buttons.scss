@@ -31,7 +31,6 @@ button {
   outline-color: color(primary, darkest);
 }
 
-button,
 .button,
 .button-primary {
   @include button-size(md);
