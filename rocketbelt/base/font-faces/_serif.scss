@@ -1,17 +1,19 @@
-@font-face {
-  font-weight: font-weight(normal);
-  font-style: normal;
-  font-family: 'Brand Serif';
-  src: local('Crimson Text'), local('CrimsonText-Roman'),
-       url('//fonts.gstatic.com/s/crimsontext/v6/3IFMwfRa07i-auYR-B-zNRampu5_7CjHW5spxoeN3Vs.woff2') format('woff2'),
-       url('//fonts.gstatic.com/s/crimsontext/v6/3IFMwfRa07i-auYR-B-zNaRDOzjiPcYnFooOUGCOsRk.woff')  format('woff');
-}
+@if ($serif-uri != '') {
+  @font-face {
+    font-weight: 300;
+    font-style: normal;
+    font-family: 'Brand Serif';
+    font-display: swap;
+    src: url('#{$serif-uri}/BrandSerifSubset-Light.woff2') format('woff2'),
+         url('#{$serif-uri}/BrandSerifSubset-Light.woff')  format('woff');
+  }
 
-@font-face {
-  font-weight: font-weight(normal);
-  font-style: italic;
-  font-family: 'Brand Serif';
-  src: local('Crimson Text Italic'), local('CrimsonText-Italic'),
-       url('//fonts.gstatic.com/s/crimsontext/v6/a5QZnvmn5amyNI-t2BMkWGfrnYWAzH6tTbHZfcsRIsM.woff2') format('woff2'),
-       url('//fonts.gstatic.com/s/crimsontext/v6/a5QZnvmn5amyNI-t2BMkWL52ooqJRs02xO3mONBoqeI.woff')  format('woff');
+  @font-face {
+    font-weight: 300;
+    font-style: italic;
+    font-family: 'Brand Serif';
+    font-display: swap;
+    src: url('#{$serif-uri}/BrandSerifSubset-LightItalic.woff2') format('woff2'),
+         url('#{$serif-uri}/BrandSerifSubset-LightItalic.woff')  format('woff');
+  }
 }

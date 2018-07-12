@@ -12,12 +12,15 @@
 ///   // 'Brand Serif', Times New Roman, serif;
 @function font-family($family: sans) {
   // TODO: Extract into variables map
-  $sans: 'Brand Sans', 'Trebuchet MS', sans-serif;
-  $serif: 'Brand Serif', Georgia, serif;
+  $sans-loading: Arial, sans-serif;
+  $sans: 'Brand Sans', #{$sans-loading};
+  $serif: 'Brand Serif', 'Times New Roman', serif;
   $monospace: 'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace;
 
   $family: to_lower_case($family);
   $families: (
+    loading: $sans-loading,
+
     // Sans Serif synonyms
     default:      $sans,
     sans:         $sans,
