@@ -228,7 +228,7 @@
 
     &-deep-blue {
       background: color(brand, deepBlue);
-      color: color(white);
+      color: color(brand, mint);
       grid-column: span 2;
       grid-row: span 3;
     }
@@ -247,7 +247,7 @@
 
     &-deep-brown {
       background: color(brand, deepBrown);
-      color: color(brand, sand);
+      color: color(brand);
       grid-column: span 1;
       grid-row: span 2;
     }
