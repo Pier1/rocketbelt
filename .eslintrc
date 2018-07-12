@@ -11,7 +11,8 @@
     },
     "globals": {
       "$": true,
-      "jQuery": true
+      "jQuery": true,
+      "Promise": true
     },
   "plugins": [
     # "dollar-sign"
