@@ -20,7 +20,10 @@
         let markup = '';
 
         if (el.classList.contains('is-busyable-page')) {
-          markup = '<div class="box-loader"><div class="border"></div><div class="border"></div><div class="border"></div><div class="border"></div></div>';
+          const segmentClass = 'flip-loader_segment';
+          const segmentMarkup = `<div class="${segmentClass}"></div>`;
+
+          markup = `<div class="flip-loader">${segmentMarkup}${segmentMarkup}${segmentMarkup}${segmentMarkup}${segmentMarkup}</div>`;
         } else {
           markup = '<div class="dot" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div>';
         }
