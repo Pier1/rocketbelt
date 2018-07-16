@@ -26,7 +26,7 @@
         background-color: transparent;
         transform-origin: 0% 50%;
         animation-duration: 3s;
-        animation-timing-function: cubic-bezier(0.550, 0.085, 0.680, 0.530);
+        animation-timing-function: ease(in-cubic);
         animation-iteration-count: infinite;
       }
 
