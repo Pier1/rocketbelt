@@ -13,16 +13,40 @@
   }
 
   function setIndicators(el, oldValue) {
-    if ((!oldValue || !oldValue.match(/\bis-busy\b/)) && el.classList && el.classList.contains('is-busy')) {
+    if ((!oldValue || !oldValue.match(/\bis-busy\b/)) &&
+        el.classList &&
+        el.classList.contains('is-busy')) {
       // If "is-busy" was added, do the decoratin'
       if (el.getElementsByClassName('is-busy_overlay').length === 0) {
         // Only add overlay if one doesn't already exist
         let markup = '';
 
         if (el.classList.contains('is-busyable-page')) {
-          markup = '<div class="box-loader"><div class="border"></div><div class="border"></div><div class="border"></div><div class="border"></div></div>';
+          const segmentClass = 'flip-loader_segment';
+          const segment = `<div class="${segmentClass}"></div>`;
+
+          const message = el.dataset.rbIsBusyMessage;
+          const messageAttr = message ? ` data-rb-is-busy-message="${message}"` : '';
+
+          markup = `<div class="flip-loader"${messageAttr}>\
+                      <div class="flip-loader_segments">\
+                        ${segment.repeat(5)}\
+                      </div>\
+                    </div>`;
+
+          let delay = el.dataset.rbIsBusyMessageAfterSeconds;
+
+          if (message) {
+            if (!delay) {
+              delay = 0;
+            }
+
+            setTimeout(() => {
+              el.querySelector('.flip-loader').classList.add('is-busy_message-shown');
+            }, delay * 1000);
+          }
         } else {
-          markup = '<div class="dot" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div><div class="dot" aria-hidden="true"></div>';
+          markup = '<div class="dot" aria-hidden="true"></div>'.repeat(3);
         }
 
         const a11yAttrs =
@@ -59,7 +83,10 @@
 
       // Set an observer to listen for .invalid.
       const observer = new MutationObserver((mutations) => { onClassMutation(mutations); });
-      observer.observe(busyableEl, { subtree: true, attributes: true, attributeOldValue: true, attributeFilter: ['class'] });
+      observer.observe(
+        busyableEl,
+        { subtree: true, attributes: true, attributeOldValue: true, attributeFilter: ['class'] }
+      );
     }
   }
 

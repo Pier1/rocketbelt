@@ -25,7 +25,9 @@ block content
     include _busy-indicators-component.pug
 
     h2 Page-Level
+    p.
+      Use a page-level indicator to show a busy state for the entire page or for a bigger piece of UI like a large form. An optional busy message can be shown by adding a #[code data-rb-is-busy-message] attribute. The message will be shown after a configurable delay specified in #[code data-rb-is-busy-message-after-seconds]. The message is shown immediately if this attribute isn't specified.
     +exampleWithCode
-      .form-group.is-busyable.is-busyable-page(style='width: 100%;')
+      .form-group.is-busyable.is-busyable-page(style='width: 100%;', data-rb-is-busy-message='This is taking longer than we expected!', data-rb-is-busy-message-after-seconds='3')
         textarea#busy-large.is-busy_trigger(placeholder='Blur the textarea to trigger a busy state.', style='height: 50rem;')
         label(for='busy-large') Message

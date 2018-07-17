@@ -543,7 +543,7 @@ pre[class*="language-"] {
     text-transform: uppercase;
     text-overflow: ellipsis;
     white-space: nowrap;
-    font-weight: 600;
+    font-weight: 500;
     font-size: 0.70233rem; }
   .a11y-checklist tr:nth-child(even) {
     background-color: #e4e4e4; }
@@ -630,7 +630,7 @@ pre[class*="language-"] {
   border-radius: 2px;
   color: white;
   text-transform: none;
-  font-weight: 600;
+  font-weight: 500;
   font-size: 0.6243rem;
   -ms-flex-negative: 0;
       flex-shrink: 0; }
@@ -954,7 +954,7 @@ pre[class*="language-"] {
           grid-column: span 2; }
     .branded-colors .branded-color-deep-blue {
       background: #2e2b70;
-      color: white;
+      color: #7cccbf;
       -ms-grid-column: span 2;
           grid-column: span 2;
       -ms-grid-row: span 3;
@@ -971,7 +971,7 @@ pre[class*="language-"] {
           grid-row: span 3; }
     .branded-colors .branded-color-deep-brown {
       background: #431e1b;
-      color: #fed4a0;
+      color: #009ee1;
       -ms-grid-column: span 1;
           grid-column: span 1;
       -ms-grid-row: span 2;
@@ -1128,7 +1128,7 @@ article.grid-article .example .row[class$='reverse'] .col {
 
 .exampleWithCode,
 .exampleWithoutCode {
-  font-family: "Brand Sans", "Trebuchet MS", sans-serif; }
+  font-family: "Brand Sans", Arial, sans-serif; }
   .exampleWithCode .expander,
   .exampleWithoutCode .expander {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important; }
@@ -1383,9 +1383,6 @@ body {
     .footer_wrapper .links_off-site svg {
       height: 2rem;
       fill: #919191; }
-
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen-Sans, Ubuntu, Cantarell, "Helvetica Neue", sans-serif !important; }
 
 .docs-center {
   -ms-flex-align: center;

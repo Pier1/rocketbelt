@@ -12,6 +12,7 @@
     <meta name="msapplication-TileColor" content="#5b14d9">
     <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml?v=gAapeRjXG7">
     <meta name="theme-color" content="#ffffff">
+    <script src="/base/typography/rocketbelt.typography.font-loader.js"></script>
   </head>
   <body>
     <title>Busy Indicators | Rocketbelt</title>
@@ -53,15 +54,15 @@
                   <button class="category-label">Components</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
@@ -293,27 +294,38 @@
                     </div>
                   </div>
                   <script>
-                    $(document).on('click', '.is-busy_trigger', function () {
+                    $(document).on('click', '.is-busy_trigger:not(#busy-large)', function () {
                       var $toBusy = $(this).closest('.form-group, .radio-group');
                     
                       $toBusy.addClass('is-busy');
                       setTimeout(function () {
                         $toBusy.removeClass('is-busy');
-                      }, 2850)
+                      }, 3000)
                     });
+                    
+                    $(document).on('click', '#busy-large.is-busy_trigger', function () {
+                      var $toBusy = $(this).closest('.form-group, .radio-group');
+                    
+                      $toBusy.toggleClass('is-busy');
+                      setTimeout(function () {
+                        $toBusy.removeClass('is-busy');
+                      }, 7500)
+                    });
+                    
                     $(document).on('change', 'select#busy-select', function () {
                       var $toBusy = $(this).closest('.form-group');
                       $toBusy.addClass('is-busy');
                       setTimeout(function () {
                         $toBusy.removeClass('is-busy');
-                      }, 2850)
+                      }, 3000)
                     });
+                    
                     $(document).on('click', 'button.is-busy_trigger', function () {
                       var $this = $(this);
                       $this.addClass('is-busy');
                       setTimeout(function () {
                         $this.removeClass('is-busy');
-                      }, 2850)
+                      }, 3000)
                     });
                   </script>
                   <h2 id="page-level" class="heading-with-link"><span class="heading_text">Page-Level</span><button data-clipboard-text="#page-level" class="heading-copy-button heading_link">
@@ -321,22 +333,23 @@
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </button></h2>
+                  <p>Use a page-level indicator to show a busy state for the entire page or for a bigger piece of UI like a large form. An optional busy message can be shown by adding a <code>data-rb-is-busy-message</code> attribute. The message will be shown after a configurable delay specified in <code>data-rb-is-busy-message-after-seconds</code>. The message is shown immediately if this attribute isn&apos;t specified.</p>
                   <div class="exampleWithCode">
                     <div class="example">
-                      <div class="form-group is-busyable is-busyable-page" style="width: 100%;">
+                      <div class="form-group is-busyable is-busyable-page" style="width: 100%;" data-rb-is-busy-message="This is taking longer than we expected!" data-rb-is-busy-message-after-seconds="3">
                         <textarea class="is-busy_trigger" id="busy-large" placeholder="Blur the textarea to trigger a busy state." style="height: 50rem;"></textarea>
                         <label for="busy-large">Message</label>
                       </div>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-ZRtDya">
-                      <label class="expander_label" for="rb-ZRtDya" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZOMPP8">
+                      <label class="expander_label" for="rb-ZOMPP8" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="copy-code" data-clipboard-target="#rb-RQ8fq">Copy</button>
-                          <pre><code class="language-html" id="rb-RQ8fq">
-                              &lt;div class=&quot;form-group is-busyable is-busyable-page&quot; style=&quot;width: 100%;&quot;&gt;
+                          <button class="copy-code" data-clipboard-target="#rb-yx8go">Copy</button>
+                          <pre><code class="language-html" id="rb-yx8go">
+                              &lt;div class=&quot;form-group is-busyable is-busyable-page&quot; style=&quot;width: 100%;&quot; data-rb-is-busy-message=&quot;This is taking longer than we expected!&quot; data-rb-is-busy-message-after-seconds=&quot;3&quot;&gt;
                                 &lt;textarea class=&quot;is-busy_trigger&quot; id=&quot;busy-large&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot; style=&quot;height: 50rem;&quot;&gt;&lt;/textarea&gt;
                                 &lt;label for=&quot;busy-large&quot;&gt;Message&lt;/label&gt;
                               &lt;/div&gt;</code></pre>

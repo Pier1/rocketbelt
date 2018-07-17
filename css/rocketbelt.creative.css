@@ -1666,43 +1666,76 @@
   font-weight: 300;
   font-style: normal;
   font-family: 'Brand Sans';
-  src: local("Open Sans Light"), local("OpenSans-Light"), url("//fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTRampu5_7CjHW5spxoeN3Vs.woff2") format("woff2"), url("//fonts.gstatic.com/s/opensans/v13/DXI1ORHCpsQm3Vp6mXoaTXhCUOGz7vYGh680lGh-uXM.woff") format("woff"); }
+  src: url("https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Fqj2md8WD07oB-.woff2") format("woff2"), url("https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Fqj2md8WY.woff") format("woff"); }
 
 @font-face {
   font-weight: 400;
   font-style: normal;
   font-family: 'Brand Sans';
-  src: local("Open Sans"), local("OpenSans"), url("//fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3ZBw1xU1rKptJj_0jans920.woff2") format("woff2"), url("//fonts.gstatic.com/s/opensans/v13/cJZKeOuBrn4kERxqtaUH3T8E0i7KZn-EPnyo3HZu7kw.woff") format("woff"); }
+  src: url("https://fonts.gstatic.com/s/rubik/v7/iJWKBXyIfDnIV7nBrXyw023e.woff2") format("woff2"), url("https://fonts.gstatic.com/s/rubik/v7/iJWKBXyIfDnIV7nBrXo.woff") format("woff"); }
 
 @font-face {
   font-weight: 400;
   font-style: italic;
   font-family: 'Brand Sans';
-  src: local("Open Sans Italic"), local("OpenSans-Italic"), url("//fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBogp9Q8gbYrhqGlRav_IXfk.woff2") format("woff2"), url("//fonts.gstatic.com/s/opensans/v13/xjAJXh38I15wypJXxuGMBobN6UDyHWBl620a-IRfuBk.woff") format("woff"); }
+  src: url("https://fonts.gstatic.com/s/rubik/v7/iJWEBXyIfDnIV7nEnX661E_c5Ig.woff2") format("woff2"), url("https://fonts.gstatic.com/s/rubik/v7/iJWEBXyIfDnIV7nEnX660g.woff") format("woff"); }
 
 @font-face {
-  font-weight: 600;
+  font-weight: 500;
   font-style: normal;
   font-family: 'Brand Sans';
-  src: local("Open Sans Semibold"), local("OpenSans-Semibold"), url("//fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNShampu5_7CjHW5spxoeN3Vs.woff2") format("woff2"), url("//fonts.gstatic.com/s/opensans/v13/MTP_ySUJH_bn48VBG8sNSnhCUOGz7vYGh680lGh-uXM.woff") format("woff"); }
+  src: url("https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Eyjmmd8WD07oB-.woff2") format("woff2"), url("https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Eyjmmd8WY.woff") format("woff"); }
 
 @font-face {
-  font-weight: 400;
+  font-weight: 300;
   font-style: normal;
   font-family: 'Brand Serif';
-  src: local("Crimson Text"), local("CrimsonText-Roman"), url("//fonts.gstatic.com/s/crimsontext/v6/3IFMwfRa07i-auYR-B-zNRampu5_7CjHW5spxoeN3Vs.woff2") format("woff2"), url("//fonts.gstatic.com/s/crimsontext/v6/3IFMwfRa07i-auYR-B-zNaRDOzjiPcYnFooOUGCOsRk.woff") format("woff"); }
+  font-display: swap;
+  src: url("https://www.pier1.com/static/on/demandware.static/-/Library-Sites-pier1_shared/default/fonts/BrandSerifSubset-Light.woff2") format("woff2"), url("https://www.pier1.com/static/on/demandware.static/-/Library-Sites-pier1_shared/default/fonts/BrandSerifSubset-Light.woff") format("woff"); }
 
 @font-face {
-  font-weight: 400;
+  font-weight: 300;
   font-style: italic;
   font-family: 'Brand Serif';
-  src: local("Crimson Text Italic"), local("CrimsonText-Italic"), url("//fonts.gstatic.com/s/crimsontext/v6/a5QZnvmn5amyNI-t2BMkWGfrnYWAzH6tTbHZfcsRIsM.woff2") format("woff2"), url("//fonts.gstatic.com/s/crimsontext/v6/a5QZnvmn5amyNI-t2BMkWL52ooqJRs02xO3mONBoqeI.woff") format("woff"); }
+  font-display: swap;
+  src: url("https://www.pier1.com/static/on/demandware.static/-/Library-Sites-pier1_shared/default/fonts/BrandSerifSubset-LightItalic.woff2") format("woff2"), url("https://www.pier1.com/static/on/demandware.static/-/Library-Sites-pier1_shared/default/fonts/BrandSerifSubset-LightItalic.woff") format("woff"); }
+
+.fonts-loaded-subset body,
+.fonts-loaded body {
+  word-spacing: initial;
+  letter-spacing: initial;
+  font-size: 1rem;
+  font-family: "Brand Sans", Arial, sans-serif; }
+
+.fonts-loaded-subset h1,
+.fonts-loaded-subset h2,
+.fonts-loaded h1,
+.fonts-loaded h2 {
+  letter-spacing: initial; }
+
+.fonts-loaded-subset strong,
+.fonts-loaded-subset h1,
+.fonts-loaded-subset h2,
+.fonts-loaded-subset h3,
+.fonts-loaded-subset h4,
+.fonts-loaded-subset h5,
+.fonts-loaded-subset h6,
+.fonts-loaded strong,
+.fonts-loaded h1,
+.fonts-loaded h2,
+.fonts-loaded h3,
+.fonts-loaded h4,
+.fonts-loaded h5,
+.fonts-loaded h6 {
+  font-weight: 500; }
 
 body {
   margin: 0;
   color: #1a1a1a;
+  word-spacing: 0.025em;
+  letter-spacing: 0.0125em;
   font-size: 1rem;
-  font-family: "Brand Sans", "Trebuchet MS", sans-serif;
+  font-family: Arial, sans-serif;
   line-height: 1.5;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale; }
@@ -1712,10 +1745,12 @@ p {
 
 h1 {
   margin: 0;
+  letter-spacing: -0.02em;
   font-size: 1.42383rem; }
 
 h2 {
   margin: 0;
+  letter-spacing: -0.008em;
   font-size: 1.26562rem; }
 
 h3 {
@@ -1788,10 +1823,10 @@ h6 {
     font-size: 1.42383rem; } }
 
 .font-sans {
-  font-family: "Brand Sans", "Trebuchet MS", sans-serif; }
+  font-family: "Brand Sans", Arial, sans-serif; }
 
 .font-serif {
-  font-family: "Brand Serif", Georgia, serif; }
+  font-family: "Brand Serif", "Times New Roman", serif; }
 
 h1 small,
 h2 small,
@@ -1832,8 +1867,9 @@ h4 small {
 .font-weight-normal {
   font-weight: 400; }
 
+.font-weight-medium,
 .font-weight-semibold {
-  font-weight: 600; }
+  font-weight: 500; }
 
 .kern-minus-1 {
   letter-spacing: -.08em; }
@@ -1961,12 +1997,15 @@ ul.horizontal li {
 .cta {
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: 600;
+  font-weight: 500;
   line-height: initial;
   cursor: pointer; }
   .cta:hover .cta_text {
     box-shadow: inset 0 -3px 0 currentColor;
     transition: box-shadow 100ms; }
+  .cta:hover .icon {
+    -webkit-animation: cta-hover 1s infinite;
+            animation: cta-hover 1s infinite; }
   .cta_text {
     box-shadow: inset 0 -2px 0 currentColor;
     transition: box-shadow 100ms; }
@@ -1976,6 +2015,28 @@ ul.horizontal li {
     font-size: 1em; }
     .cta .icon.icon-right {
       margin-left: 0.1em; }
+
+@-webkit-keyframes cta-hover {
+  0% {
+    -webkit-transform: translateX(-1px);
+            transform: translateX(-1px); }
+  50% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  100% {
+    -webkit-transform: translateX(-1px);
+            transform: translateX(-1px); } }
+
+@keyframes cta-hover {
+  0% {
+    -webkit-transform: translateX(-1px);
+            transform: translateX(-1px); }
+  50% {
+    -webkit-transform: translateX(0);
+            transform: translateX(0); }
+  100% {
+    -webkit-transform: translateX(-1px);
+            transform: translateX(-1px); } }
 
 .link-list {
   margin: 0;
@@ -2231,7 +2292,7 @@ html {
     text-align: center;
     text-transform: uppercase;
     font-size: 1.80203rem;
-    font-family: "Brand Serif", Georgia, serif;
+    font-family: "Brand Serif", "Times New Roman", serif;
     line-height: 1.1; }
     @media (min-width: 34rem) {
       .seo-banner .seo-banner_title {
@@ -2260,7 +2321,7 @@ html {
   color: white;
   font-style: italic;
   font-size: 2.2807rem;
-  font-family: "Brand Serif", Georgia, serif; }
+  font-family: "Brand Serif", "Times New Roman", serif; }
   .product-tag .product-tag_wrap {
     display: -ms-flexbox;
     display: flex;
@@ -2270,7 +2331,7 @@ html {
     line-height: 1.3; }
   .product-tag .percent-off {
     font-style: normal;
-    font-family: "Brand Sans", "Trebuchet MS", sans-serif; }
+    font-family: "Brand Sans", Arial, sans-serif; }
     .product-tag .percent-off .product-tag_wrap::after {
       margin-left: 0.35em;
       content: "%\aoff";

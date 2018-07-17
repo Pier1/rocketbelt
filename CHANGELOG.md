@@ -1,3 +1,27 @@
+<a name="1.14.1"></a>
+## [1.14.1](https://github.com/Pier1/rocketbelt/compare/1.14.0...v1.14.1) (2018-07-17)
+
+
+### Features
+
+* **Branding:** Add font loader to minimize FOIT. Update font stack with brand refresh typefaces. ([11aff7c](https://github.com/Pier1/rocketbelt/commit/11aff7c))
+* **Branding:** Add subtle CTA arrow animation. ([3579a09](https://github.com/Pier1/rocketbelt/commit/3579a09))
+* **Branding:** Update dialog styles for brand refresh. ([efda4fc](https://github.com/Pier1/rocketbelt/commit/efda4fc))
+* **Branding:** Update global busy indicator with brand refresh styles. ([50c89f7](https://github.com/Pier1/rocketbelt/commit/50c89f7))
+* **Branding:** Update page-level loader for brand refresh. ([2423237](https://github.com/Pier1/rocketbelt/commit/2423237))
+* **Branding:** Update semibold font-weight references to medium to support new typefaces. ([2e2ba46](https://github.com/Pier1/rocketbelt/commit/2e2ba46))
+* **Branding:** Updated instances of old brand blue to new. ([e1a145b](https://github.com/Pier1/rocketbelt/commit/e1a145b))
+* **Global:** Add `String.prototype.repeat` polyfill for legacy browser support. ([af388ab](https://github.com/Pier1/rocketbelt/commit/af388ab))
+
+### Bug Fixes
+
+* **Branding:** Update easing of page-level loader. ([016044d](https://github.com/Pier1/rocketbelt/commit/016044d))
+* **Branding:** Update references to pre-brand refresh colors. ([d8a7dcf](https://github.com/Pier1/rocketbelt/commit/d8a7dcf))
+* **Buttons:** Add .button-base to support button elements without hover styles. ([a656ebc](https://github.com/Pier1/rocketbelt/commit/a656ebc))
+* **Buttons:** Add button element to default selector. ([a872013](https://github.com/Pier1/rocketbelt/commit/a872013))
+* **Icons:** Update info and info-circle icons for better teeny-sized scaling. ([51519ff](https://github.com/Pier1/rocketbelt/commit/51519ff))
+
+
 <a name="1.14.0"></a>
 # [1.14.0](https://github.com/Pier1/rocketbelt/compare/1.13.17...v1.14.0) (2018-07-06)
 

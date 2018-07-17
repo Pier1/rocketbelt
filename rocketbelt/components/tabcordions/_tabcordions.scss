@@ -21,7 +21,7 @@ $border: $width-border solid $color-border;
     &.is-active {
       .tabcordion_nav-trigger {
         color: color(black);
-        font-weight: font-weight(semibold);
+        font-weight: font-weight(medium);
         cursor: default;
       }
     }
