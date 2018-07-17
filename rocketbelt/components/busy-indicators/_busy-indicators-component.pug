@@ -70,14 +70,16 @@ script.
       $toBusy.removeClass('is-busy');
     }, 3000)
   });
-  $(document).on('click', '#busy-large.is-busy_trigger', function () {
-  var $toBusy = $(this).closest('.form-group, .radio-group');
 
-  $toBusy.toggleClass('is-busy');
-  setTimeout(function () {
-    $toBusy.removeClass('is-busy');
-  }, 6000)
+  $(document).on('click', '#busy-large.is-busy_trigger', function () {
+    var $toBusy = $(this).closest('.form-group, .radio-group');
+
+    $toBusy.toggleClass('is-busy');
+    setTimeout(function () {
+      $toBusy.removeClass('is-busy');
+    }, 7500)
   });
+
   $(document).on('change', 'select#busy-select', function () {
     var $toBusy = $(this).closest('.form-group');
     $toBusy.addClass('is-busy');
@@ -85,6 +87,7 @@ script.
       $toBusy.removeClass('is-busy');
     }, 3000)
   });
+
   $(document).on('click', 'button.is-busy_trigger', function () {
     var $this = $(this);
     $this.addClass('is-busy');
