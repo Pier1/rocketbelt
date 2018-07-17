@@ -70,8 +70,6 @@
 
         return gulp.src([config.templatesPath + '/**/*.pug', '!' + config.templatesPath + '/**/_*.pug'])
           .pipe(plugins.plumber({ errorHandler: plugins.notify.onError('Error: <%= error.message %>') }))
-          .pipe(plugins.jadeFindAffected())
-          .pipe(plugins.jadeInheritance({ basedir: config.templatesPath }))
           .pipe(plugins.pug({
             basedir: __dirname + '/../' + config.templatesPath,
             pretty: true,
