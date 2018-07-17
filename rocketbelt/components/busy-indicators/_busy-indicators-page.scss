@@ -1,126 +1,363 @@
 .is-busyable-page {
   &.is-busy {
-    $width: 5.85em;
-    $height: 7.25em;
-    $color: color(primary);
-    $skinny: scaleX(1);
-    $wide: scaleX(8.5);
-    $short: scaleY(1);
-    $tall: scaleY(10.75);
-    $timing-function: cubic-bezier(0.45, -0.275, 0.55, 1.275);
+    .flip-loader {
+      $colors: (
+        1: color(brand),
+        2: color(brand, sunYellow),
+        3: color(brand, warmRed),
+        4: color(brand, paleRed),
+        5: color(brand, mint)
+      );
 
-    .box-loader {
-      position: relative;
-
-      // Only doing this because IE. If/when we're off of IE, make the parent a
-      // flex container and position via that.
+      position: absolute;
       top: 50%;
       left: 50%;
-      margin-top: -2.425em;
-      margin-left: -3.8125em;
+      display: flex;
+      flex-direction: column;
+      max-width: 300px;
+      transform: translateX(-50%) translateY(-50%);
+      perspective: 250px;
+      perspective-origin: 50% 50%;
 
-      width: $width;
-      height: $height;
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='106' height='129' viewBox='0 0 106 129'%3E %3Cg fill='%230a689d' fill-rule='evenodd'%3E %3Cpath d='M72.42 19.84L84.76 19.84 84.76 109.08 71.28 109.08 71.28 46.62 62.23 46.62 62.23 35.34C70.08 34.18 72.42 27.84 72.42 19.84zM48.77 21.67C52.92 24.01 56.57 28.15 56.58 36.92L56.58 56.49C56.58 65.27 52.93 69.41 48.78 71.74 47.1208016 72.5799381 45.3268087 73.1215209 43.48 73.34 42.25 73.51 39.42 73.57 37.76 73.57L37.01 73.57 37.01 65.2C40.3 65.6 41.75 64.76 42.43 63.81 42.8603163 63.1403441 43.0765697 62.3555533 43.05 61.56L43.05 31.84C43.0745294 31.0478255 42.8583587 30.2668216 42.43 29.6 41.75 28.65 40.3 27.81 37.01 28.21L37.01 19.84 37.75 19.84C39.41 19.85 42.24 19.9 43.47 20.07 45.3166812 20.2890907 47.1105694 20.8306418 48.77 21.67z'%3E%3C/path%3E %3Cpolygon points='20.56 109.08 20.56 109.09 20.56 19.84 35.01 19.84 35.01 109.08'%3E%3C/polygon%3E %3C/g%3E %3C/svg%3E");
-      background-position: center center;
-      background-size: cover;
-      background-repeat: no-repeat;
-      font-size: .75rem;
-      animation-timing-function: ease-in-out;
-    }
+      &.is-busy_message-shown {
+        &::before {
+          animation: messageIn 600ms ease(out-back);
+          animation-fill-mode: both;
+        }
 
-    .border {
-      background: $color;
-    }
+        @keyframes messageIn {
+          0% {
+            display: none;
+            opacity: 0;
+            transform: translateX(-50%) translateY(1.5rem);
+          }
 
-    $duration: 3s;
+          1% {
+            display: block;
+          }
 
-    .border:nth-of-type(1),
-    .border:nth-of-type(3) {
-      position: absolute;
-      width: 0.6em;
-      height: 0.5em;
-      transform: scaleX(1);
-      animation: ns $duration infinite $timing-function;
-    }
-
-    .border:nth-of-type(1) {
-      top: 0;
-      right: 0;
-      transform-origin: right;
-      animation-delay: $duration / 4;
-    }
-
-    .border:nth-of-type(3) {
-      bottom: 0;
-      left: 0;
-      transform-origin: left;
-      animation-delay: $duration / 12;
-    }
-
-    .border:nth-of-type(2),
-    .border:nth-of-type(4) {
-      position: absolute;
-      width: 0.5em;
-      height: 0.6em;
-      transform: scaleY(1);
-      animation: ew $duration infinite $timing-function;
-    }
-
-    .border:nth-of-type(2) {
-      right: 0;
-      bottom: 0;
-      transform-origin: bottom;
-      animation-delay: $duration / 6;
-    }
-
-    .border:nth-of-type(4) {
-      top: 0;
-      left: 0;
-      transform-origin: top;
-    }
-
-    @keyframes ns {
-      0% {
-        transform: $skinny;
+          100% {
+            opacity: 1;
+            transform: translateX(-50%);
+          }
+        }
       }
 
-      20% {
-        transform: $wide;
+      &::before {
+        position: relative;
+        top: 0;
+        left: 50%;
+        display: block;
+        flex: 1;
+        margin-bottom: margin(0.5);
+        width: 100vw;
+        color: color(gray, minus1);
+        content: attr(data-rb-is-busy-message);
+        text-align: center;
+        font-size: font-size(-1);
+        opacity: 0;
+        transform: translateX(-50%);
       }
 
-      50% {
-        transform: $wide;
+      &_segment {
+        position: absolute;
+        left: 0%;
+        width: 20%;
+        height: 10px;
+        background-color: transparent;
+        transform-origin: 0% 50%;
+        animation-duration: 3s;
+        animation-timing-function: ease(in-cubic);
+        animation-iteration-count: infinite;
       }
 
-      65% {
-        transform: $skinny;
+      $left: 0;
+      @for $i from 1 through 5 {
+        &_segment:nth-child(#{$i}) {
+          left: percentage($left / 100);
+          z-index: $i;
+          background-color: map-get($colors, $i);
+          animation-name: flipLoader + $i;
+        }
+
+        $left: $left + 20;
       }
 
-      100% {
-        transform: $skinny;
+      @keyframes flipLoader1 {
+        0% {
+          background-color: map-get($colors, 1);
+          opacity: 0;
+          transform: rotateY(-180deg);
+          transform-origin: 0% 50%;
+        }
+        4% {
+          background-color: map-get($colors, 1);
+        }
+        5% {
+          background-color: map-get($colors, 5);
+        }
+        10% {
+          background-color: map-get($colors, 5);
+          opacity: 1;
+          transform: rotateY(0deg);
+          transform-origin: 0% 50%;
+        }
+        11% {
+          background-color: map-get($colors, 1);
+          transform-origin: 100% 50%;
+        }
+        48% { z-index: 1; }
+        49% { z-index: 10; }
+        50% {
+          transform: rotateY(0deg);
+        }
+        51% {
+          transform-origin: 100% 50%;
+        }
+        60% {
+          background-color: map-get($colors, 1);
+          opacity: 1;
+          transform: rotateY(180deg);
+        }
+        61% {
+          opacity: 0;
+        }
+        100% {
+          z-index: 10;
+          background-color: map-get($colors, 1);
+          opacity: 0;
+          transform: rotateY(180deg);
+          transform-origin: 100% 50%;
+        }
       }
-    }
 
-    @keyframes ew {
-      0% {
-        transform: $short;
+      @keyframes flipLoader2 {
+        0% {
+          background-color: map-get($colors, 5);
+          opacity: 0;
+          transform: rotateY(-180deg);
+          transform-origin: 0% 50%;
+        }
+        9% {
+          opacity: 0;
+        }
+        10% {
+          opacity: 1;
+          transform: rotateY(-180deg);
+        }
+        15% {
+          background-color: map-get($colors, 5);
+        }
+        20% {
+          background-color: map-get($colors, 5);
+          transform: rotateY(0deg);
+          transform-origin: 0% 50%;
+        }
+        21% {
+          background-color: map-get($colors, 2);
+          transform-origin: 100% 50%;
+        }
+        48% { z-index: 2; }
+        49% { z-index: 9; }
+        60% {
+          background-color: map-get($colors, 2);
+          opacity: 1;
+          transform: rotateY(0deg);
+        }
+        61% {
+          background-color: map-get($colors, 1);
+          transform-origin: 100% 50%;
+        }
+        64% {
+          background-color: map-get($colors, 1);
+        }
+        65% {
+          background-color: map-get($colors, 2);
+        }
+        70% {
+          opacity: 1;
+          transform: rotateY(180deg);
+        }
+        71% {
+          opacity: 0;
+        }
+        100% {
+          z-index: 9;
+          background-color: map-get($colors, 2);
+          opacity: 0;
+          transform: rotateY(180deg);
+          transform-origin: 100% 50%;
+        }
       }
 
-      20% {
-        transform: $tall;
+      @keyframes flipLoader3 {
+        0% {
+          background-color: map-get($colors, 5);
+          opacity: 0;
+          transform: rotateY(-180deg);
+          transform-origin: 0% 50%;
+        }
+        19% {
+          opacity: 0;
+        }
+        20% {
+          opacity: 1;
+          transform: rotateY(-180deg);
+        }
+        25% {
+          background-color: map-get($colors, 5);
+        }
+        30% {
+          background-color: map-get($colors, 5);
+          transform: rotateY(0deg);
+          transform-origin: 0% 50%;
+        }
+        31% {
+          background-color: map-get($colors, 3);
+          transform-origin: 100% 50%;
+        }
+        48% { z-index: 3; }
+        49% { z-index: 8; }
+        70% {
+          background-color: map-get($colors, 3);
+          opacity: 1;
+          transform: rotateY(0deg);
+        }
+        71% {
+          background-color: map-get($colors, 2);
+          transform-origin: 100% 50%;
+        }
+        74% {
+          background-color: map-get($colors, 2);
+        }
+        75% {
+          background-color: map-get($colors, 3);
+        }
+        80% {
+          transform: rotateY(180deg);
+          opacity: 1;
+        }
+        81% {
+          opacity: 0;
+        }
+        100% {
+          z-index: 8;
+          background-color: map-get($colors, 3);
+          opacity: 0;
+          transform: rotateY(180deg);
+          transform-origin: 100% 50%;
+        }
       }
 
-      50% {
-        transform: $tall;
+      @keyframes flipLoader4 {
+        0% {
+          background-color: map-get($colors, 5);
+          opacity: 0;
+          transform: rotateY(-180deg);
+          transform-origin: 0% 50%;
+        }
+        29% {
+          opacity: 0;
+        }
+        30% {
+          opacity: 1;
+          transform: rotateY(-180deg);
+        }
+        35% {
+          background-color: map-get($colors, 5);
+        }
+        40% {
+          background-color: map-get($colors, 5);
+          transform: rotateY(0deg);
+          transform-origin: 0% 50%;
+        }
+        41% {
+          background-color: map-get($colors, 4);
+          transform-origin: 100% 50%;
+        }
+        48% { z-index: 4; }
+        49% { z-index: 7; }
+        80% {
+          background-color: map-get($colors, 4);
+          opacity: 1;
+          transform: rotateY(0deg);
+        }
+        81% {
+          background-color: map-get($colors, 3);
+          transform-origin: 100% 50%;
+        }
+        84% {
+          background-color: map-get($colors, 3);
+        }
+        85% {
+          background-color: map-get($colors, 4);
+        }
+        90% {
+          opacity: 1;
+          transform: rotateY(180deg);
+        }
+        91% {
+          opacity: 0;
+        }
+        100% {
+          z-index: 7;
+          background-color: map-get($colors, 4);
+          opacity: 0;
+          transform: rotateY(180deg);
+          transform-origin: 100% 50%;
+        }
       }
 
-      65% {
-        transform: $short;
-      }
-
-      100% {
-        transform: $short;
+      @keyframes flipLoader5 {
+        0% {
+          background-color: map-get($colors, 5);
+          opacity: 0;
+          transform: rotateY(-180deg);
+          transform-origin: 0% 50%;
+        }
+        39% {
+          opacity: 0;
+        }
+        40% {
+          opacity: 1;
+          transform: rotateY(-180deg);
+        }
+        45% {
+          background-color: map-get($colors, 5);
+        }
+        48% { z-index: 5; }
+        49% { z-index: 6; }
+        50% {
+          background-color: map-get($colors, 5);
+          transform: rotateY(0deg);
+          transform-origin: 0% 50%;
+        }
+        51% {
+          background-color: map-get($colors, 5);
+          transform-origin: 100% 50%;
+        }
+        90% {
+          background-color: map-get($colors, 5);
+          opacity: 1;
+          transform: rotateY(0deg);
+        }
+        91% {
+          background-color: map-get($colors, 4);
+          transform-origin: 100% 50%;
+        }
+        94% {
+          background-color: map-get($colors, 4);
+        }
+        95% {
+          background-color: map-get($colors, 5);
+        }
+        100% {
+          z-index: 6;
+          background-color: map-get($colors, 5);
+          opacity: 0;
+          transform: rotateY(180deg);
+          transform-origin: 100% 50%;
+        }
       }
     }
   }

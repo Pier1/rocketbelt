@@ -1056,4 +1056,18 @@ limitations under the License.
             return (isTabIndexNaN || tabIndex >= 0) && focusable(element, !isTabIndexNaN);
         }
     });
+
+    $(window).on('load resize', function subNavScroll() {
+        let subNav = $('.sub-nav')
+
+        for (let i = 0; i < subNav.length; i++){
+            if($(subNav[i]).height() > $(window).height()) {
+                $(subNav[i]).css({
+                    'height': '80vh',
+                    'overflow-y': 'scroll'
+                })
+            }
+        }
+    })
+
 }(jQuery, window, document));
