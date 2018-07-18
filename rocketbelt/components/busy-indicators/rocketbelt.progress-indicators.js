@@ -46,22 +46,30 @@
             }, delay * 1000);
           }
         } else {
-          markup = '<div class="dot" aria-hidden="true"></div>'.repeat(3);
+          markup = '<div class="dot" aria-hidden="true"></div>'.repeat(5);
         }
 
         const a11yAttrs =
           'aria-label="Loading." role="alert" aria-live="assertive" aria-busy="true"';
         const elType = el.nodeName === 'UL' || el.nodeName === 'OL' ? 'li' : 'div';
         const fragment =
-          `<${elType} class="is-busy_overlay is-busy_overlay-opaque" ${a11yAttrs}>\
+          `<${elType} class="is-busy_overlay" ${a11yAttrs}>\
             ${markup}\
           </${elType}>`;
 
         el.insertAdjacentHTML('beforeend', fragment);
+
+        requestAnimationFrame(() => {
+          el.querySelector('.is-busy_overlay').classList.add('is-busy_overlay-opaque');
+        });
       }
     } else {
       // If "is-busy" was removed
       const overlay = el.querySelectorAll('.is-busy_overlay')[0];
+
+      requestAnimationFrame(() => {
+        overlay.classList.remove('is-busy_overlay-opaque');
+      });
 
       if (overlay && !overlay.parentNode.classList.contains('is-busy')) {
         overlay.parentNode.removeChild(overlay);

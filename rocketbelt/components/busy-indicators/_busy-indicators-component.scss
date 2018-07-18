@@ -14,32 +14,42 @@
     content: '';
     font-size: 1rem;
     opacity: 0;
-    transition: opacity 100ms linear;
+    transition: opacity 200ms linear;
 
     &.is-busy_overlay-opaque {
       opacity: 1;
-      transition: opacity 100ms linear;
+      transition: opacity 200ms linear;
     }
 
     .dot {
+      $colors: (
+        1: color(brand),
+        2: color(brand, sunYellow),
+        3: color(brand, warmRed),
+        4: color(brand, paleRed),
+        5: color(brand, mint)
+      );
+
       position: absolute;
       top: 50%;
-      left: 50%;
       width: 0.5em;
       height: 0.5em;
       border-radius: 50%;
-      background-color: color(gray, plus2);
       transform: translate(-50%, -50%);
-      animation: dotBounce 1.3s ease(out-sine) 0.5s infinite;
+      animation: dotBounce 1.4s ease(out-quad) infinite;
 
-      &:first-of-type {
-        left: calc(50% - 0.75em);
-        animation-delay: 0.25s;
-      }
+      $num-dots: 5;
+      $midpoint: ($num-dots + 1) / 2;
+      @for $i from 1 through $num-dots {
+        $distance-from-mid: $i - $midpoint;
 
-      &:last-of-type {
-        left: calc(50% + 0.75em);
-        animation-delay: 0.75s;
+        &:nth-of-type(#{$i}) {
+          $left-val: if($i == $midpoint, 50%, calc(50% + (#{$distance-from-mid} * 0.75em)));
+
+          left: $left-val;
+          background-color: map-get($colors, $i);
+          animation-delay: 0.5s + ($distance-from-mid * 0.125);
+        }
       }
     }
   }
@@ -47,7 +57,7 @@
   &.is-busy-inverted {
     .is-busy_overlay {
       background-color: transparent;
-      
+
       .dot {
         $c: rgba(color(white), 0.9);
         background-color: $c;
@@ -64,15 +74,17 @@
 }
 
 @keyframes dotBounce {
-  35% {
+  30% {
+    opacity: 0.7;
     transform: translate(-50%, 0%);
   }
 
   50% {
-    transform: translate(-50%, -75%);
+    opacity: 1;
+    transform: translate(-50%, -80%);
   }
 
-  55% {
+  75% {
     transform: translate(-50%, -50%);
   }
 }
