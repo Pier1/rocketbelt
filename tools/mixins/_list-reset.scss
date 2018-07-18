@@ -1,0 +1,22 @@
+/// Removes user agent styles from list elements and child list items.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @param $horizontal [false] - Indicates whether to style list items as inline-block elements.
+@mixin list-reset($horizontal: false) {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+
+  ul,
+  ol {
+    list-style-type: none;
+  }
+
+  @if $horizontal {
+    li {
+      display: inline-block;
+    }
+  }
+}
