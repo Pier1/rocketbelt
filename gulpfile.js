@@ -47,8 +47,6 @@ gulp.task('lint-sass', ['css-sort'], getTask('lint-sass'));
 gulp.task('server', getTask('server'));
 gulp.task('sitemap', getTask('sitemap'));
 gulp.task('styles', getTask('styles'));
-gulp.task('test-webserver', getTask('test-webserver'));
-gulp.task('test-visual', ['test-webserver'], getTask('test-visual'));
 gulp.task('uglify', getTask('uglify'));
 gulp.task('views', ['copy-js', 'copy-resources'], getTask('views'));
 gulp.task('watch', getTask('watch'));

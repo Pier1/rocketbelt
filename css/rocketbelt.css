@@ -17,8 +17,7 @@
   .button-primary:active, .button-mini:active, .button-sm:active, .button-md:active, .button-lg:active {
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04);
     transition: box-shadow 150ms ease-out; }
-  .button svg,
-  .button-primary svg, .button-mini svg, .button-sm svg, .button-md svg, .button-lg svg {
+  .button svg, .button-primary svg, .button-mini svg, .button-sm svg, .button-md svg, .button-lg svg {
     margin-right: 0.25rem;
     margin-bottom: -0.1em;
     width: 1em;
@@ -3237,11 +3236,11 @@ button {
     color: #004f71;
     fill: #004f71; }
   .button-text[disabled],
-  [disabled].button-link {
+  .button-link[disabled] {
     color: rgba(16, 120, 167, 0.9);
     fill: rgba(16, 120, 167, 0.9); }
     .button-text[disabled]:hover,
-    [disabled].button-link:hover {
+    .button-link[disabled]:hover {
       color: rgba(16, 120, 167, 0.9);
       fill: rgba(16, 120, 167, 0.9); }
   .button-text, .button-text:hover, .button-text:active,
@@ -3251,7 +3250,7 @@ button {
     background: transparent;
     box-shadow: none; }
   .button-text[disabled],
-  [disabled].button-link {
+  .button-link[disabled] {
     cursor: default; }
 
 .button-link {
