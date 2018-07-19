@@ -3,7 +3,7 @@
   pointer-events: none;
   user-select: none;
 
-  .is-busy_overlay {
+  .is-busy_overlay { // rb-emit-class-as-json
     position: absolute;
     top: 0;
     left: 0;
