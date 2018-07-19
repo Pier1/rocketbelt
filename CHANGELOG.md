@@ -1,3 +1,13 @@
+<a name="1.15.0"></a>
+# [1.15.0](https://github.com/Pier1/rocketbelt/compare/1.14.1...v1.15.0) (2018-07-19)
+
+
+### Features
+
+* **Branding:** Refresh component-level busy indicators. ([9e23ab9](https://github.com/Pier1/rocketbelt/commit/9e23ab9))
+
+
+
 <a name="1.14.1"></a>
 ## [1.14.1](https://github.com/Pier1/rocketbelt/compare/1.14.0...v1.14.1) (2018-07-17)
 
