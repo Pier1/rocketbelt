@@ -4,6 +4,7 @@
   const fontsLoadedClass = 'fonts-loaded';
 
   if (sessionStorage.fontsLoaded) {
+    document.documentElement.classList.add(fontsLoadedSubsetClass);
     document.documentElement.classList.add(fontsLoadedClass);
     return;
   }
@@ -46,7 +47,6 @@
       .then(() => {
         // All fonts loaded
         document.documentElement.classList.add(fontsLoadedClass);
-        document.documentElement.classList.remove(fontsLoadedSubsetClass);
 
         // Optimization for Repeat Views
         sessionStorage.fontsLoaded = true;
