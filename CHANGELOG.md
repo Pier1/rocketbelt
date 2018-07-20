@@ -1,3 +1,14 @@
+<a name="1.15.1"></a>
+## [1.15.1](https://github.com/Pier1/rocketbelt/compare/1.15.0...v1.15.1) (2018-07-20)
+
+
+### Bug Fixes
+
+* **Busy Indicators:** Remove unnecessary class removal. ([fc26bb2](https://github.com/Pier1/rocketbelt/commit/fc26bb2))
+* **Typography:** Prevent "www" from being removed from webfont URI. ([c5fb36d](https://github.com/Pier1/rocketbelt/commit/c5fb36d))
+
+
+
 <a name="1.15.0"></a>
 # [1.15.0](https://github.com/Pier1/rocketbelt/compare/1.14.1...v1.15.0) (2018-07-19)
 
