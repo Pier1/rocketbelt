@@ -67,10 +67,6 @@
       // If "is-busy" was removed
       const overlay = el.querySelectorAll('.is-busy_overlay')[0];
 
-      requestAnimationFrame(() => {
-        overlay.classList.remove('is-busy_overlay-opaque');
-      });
-
       if (overlay && !overlay.parentNode.classList.contains('is-busy')) {
         overlay.parentNode.removeChild(overlay);
       }
