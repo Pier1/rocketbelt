@@ -49,7 +49,16 @@
       const min = source.pipe(plugins.clone())
         .pipe(plugins.sourcemaps.init())
         .pipe(plugins.rename({ suffix: '.min' }))
-        .pipe(plugins.postcss([plugins.cssnano({ autoprefixer: { browsers: supported } })]))
+        .pipe(plugins.postcss([
+          plugins.cssnano(
+            {
+              autoprefixer: { browsers: supported },
+              normalizeUrl: {
+                stripWWW: false
+              }
+            }
+          )
+        ]))
         .pipe(plugins.size(config.sizeOptions))
         .pipe(plugins.sourcemaps.write('.', { sourceRoot: null }))
         .pipe(gulp.dest(config.buildCssPath))
