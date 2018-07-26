@@ -42,7 +42,10 @@
             }
 
             setTimeout(() => {
-              el.querySelector('.flip-loader').classList.add('is-busy_message-shown');
+              const loader = el.querySelector('.flip-loader');
+              if (loader && loader.classList) {
+                loader.classList.add('is-busy_message-shown');
+              }
             }, delay * 1000);
           }
         } else {
@@ -60,7 +63,10 @@
         el.insertAdjacentHTML('beforeend', fragment);
 
         requestAnimationFrame(() => {
-          el.querySelector('.is-busy_overlay').classList.add('is-busy_overlay-opaque');
+          const overlay = el.querySelector('.is-busy_overlay');
+          if (overlay  && overlay.classList) {
+            overlay.classList.add('is-busy_overlay-opaque');
+          }
         });
       }
     } else {
