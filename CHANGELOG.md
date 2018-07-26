@@ -1,3 +1,8 @@
+<a name="1.15.2"></a>
+## [1.15.2](https://github.com/Pier1/rocketbelt/compare/1.15.1...v1.15.2) (2018-07-26)
+
+
+
 <a name="1.15.1"></a>
 ## [1.15.1](https://github.com/Pier1/rocketbelt/compare/1.15.0...v1.15.1) (2018-07-20)
 
