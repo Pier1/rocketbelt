@@ -14,6 +14,7 @@ a[class *= 'button'] {
 .button,
 button {
   border-radius: 0;
+  background: inherit;
   cursor: pointer;
 
   &[disabled] {
