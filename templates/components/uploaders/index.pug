@@ -1,0 +1,19 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Uploaders'
+
+block content
+  article
+    h1 File Upload
+
+    .uploader
+      form.uploader_form
+        p.uploader_text
+          | Drag &amp; drop images into this area
+          | or #[label.uploader_file-label.button-lg.button-link(for='uploader_file-input', aria-role='button', tabindex=0) browse your computer] for them.
+        input#uploader_file-input(type='file', multiple='', accept='*')
+      progress(max='100', value='0')
+      .uploader_thumbs
+
+  script(src='./rocketbelt.uploaders.js')
