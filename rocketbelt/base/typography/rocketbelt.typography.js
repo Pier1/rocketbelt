@@ -8,6 +8,13 @@
     const maxHeight = numLines * lineHeight;
 
     shave(target, maxHeight, opts);
+
+    if (opts.onUntruncate) {
+      const els = document.querySelectorAll(target);
+      els.forEach((el) => {
+        rb.once(el, 'rb.typography.untruncate', opts.onUntruncate);
+      });
+    }
   };
 
   const shave = (target, maxHeight, opts = {}) => {
@@ -105,7 +112,7 @@
 
     const els = document.querySelectorAll(selector);
     els.forEach((el) => {
-      el.dispatchEvent(new CustomEvent('rb.typography.untruncated'));
+      el.dispatchEvent(new CustomEvent('rb.typography.untruncate'));
     });
   };
 
