@@ -1,5 +1,5 @@
 'use strict';
-((rb, document) => {
+((rb, document, $) => {
   rb.typography = rb.typography || {};
 
   const clamp = (target, numLines, opts) => {
@@ -9,12 +9,19 @@
 
     shave(target, maxHeight, opts);
 
-    if (opts.onUnclamp) {
-      const els = document.querySelectorAll(target);
-      els.forEach((el) => {
+    const els = document.querySelectorAll(target);
+    els.forEach((el) => {
+      if (opts.onUnclamp) {
         rb.once(el, 'rb.typography.unclamp', opts.onUnclamp);
-      });
-    }
+      }
+
+      const button = el.querySelector('button');
+      if (button) {
+        $(button).click(function buttonClick() {
+          rb.typography.unclamp($(this).closest('.clampable').first());
+        });
+      }
+    });
   };
 
   const shave = (target, maxHeight, opts = {}) => {
@@ -110,12 +117,13 @@
   const unclamp = (selector) => {
     shave(selector, 'auto');
 
-    const els = document.querySelectorAll(selector);
-    els.forEach((el) => {
+    const els = (typeof selector === 'string') ? document.querySelectorAll(selector) : selector;
+    for (let i = 0; i < els.length; i++) {
+      const el = els[i];
       el.dispatchEvent(new CustomEvent('rb.typography.unclamp'));
-    });
+    }
   };
 
   rb.typography.clamp = clamp;
   rb.typography.unclamp = unclamp;
-})(window.rb, document);
+})(window.rb, document, jQuery);
