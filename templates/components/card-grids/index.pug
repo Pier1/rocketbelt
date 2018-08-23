@@ -1,0 +1,14 @@
+
+extends /_layout.pug
+
+block vars
+  - var title = 'Card Grids'
+
+block content
+  article
+    h1 Card Grids
+    include _card-grids.pug
+
+  +exampleWithCode('Javascript Include', true)
+    //- script(src='../../base/typography/rocketbelt.typography.js')
+    script(src='./rocketbelt.card-grids.js')
