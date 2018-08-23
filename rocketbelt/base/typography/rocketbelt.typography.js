@@ -1,18 +1,18 @@
 'use strict';
-((rb, document, $) => {
+((rb, document) => {
   rb.typography = rb.typography || {};
 
-  const truncate = (target, numLines, opts) => {
+  const clamp = (target, numLines, opts) => {
     const lineHeight =
-      getComputedStyle(document.querySelector('.truncatable')).lineHeight.replace('px', '');
+      getComputedStyle(document.querySelectorAll(target)[0]).lineHeight.replace('px', '');
     const maxHeight = numLines * lineHeight;
 
     shave(target, maxHeight, opts);
 
-    if (opts.onUntruncate) {
+    if (opts.onUnclamp) {
       const els = document.querySelectorAll(target);
       els.forEach((el) => {
-        rb.once(el, 'rb.typography.untruncate', opts.onUntruncate);
+        rb.once(el, 'rb.typography.unclamp', opts.onUnclamp);
       });
     }
   };
@@ -31,9 +31,9 @@
     if (!els) return
 
     const character = opts.character || '…'
-    const classname = opts.classname || 'truncatable_truncated-text'
-    const charClassname = 'truncatable_truncation-placeholder'
-    const truncationMarkup = opts.truncationMarkup
+    const classname = opts.classname || 'clampable_clamped-text'
+    const charClassname = 'clampable_clamped-placeholder'
+    const truncationMarkup = opts.clampedMarkup
     const spaces = typeof opts.spaces === 'boolean' ? opts.spaces : true
     const charHtml =
       truncationMarkup ?
@@ -43,7 +43,7 @@
     if (!('length' in els)) els = [els]
     for (let i = 0; i < els.length; i += 1) {
       const el = els[i]
-      el.classList.add('truncatable-truncated');
+      el.classList.add('clampable-clamped');
 
       const styles = el.style
       const span = el.querySelector(`.${classname}`)
@@ -107,15 +107,15 @@
     /* eslint-enable */
   };
 
-  const untruncate = (selector) => {
+  const unclamp = (selector) => {
     shave(selector, 'auto');
 
     const els = document.querySelectorAll(selector);
     els.forEach((el) => {
-      el.dispatchEvent(new CustomEvent('rb.typography.untruncate'));
+      el.dispatchEvent(new CustomEvent('rb.typography.unclamp'));
     });
   };
 
-  rb.typography.truncate = truncate;
-  rb.typography.untruncate = untruncate;
-})(window.rb, document, jQuery);
+  rb.typography.clamp = clamp;
+  rb.typography.unclamp = unclamp;
+})(window.rb, document);
