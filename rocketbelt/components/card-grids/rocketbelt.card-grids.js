@@ -35,8 +35,14 @@
     });
   };
 
-  // TODO: On document ready, set rAF-throttled resize listener to call resizeAllGridItems
 
   rb.cardGrids.resizeGridItem = resizeGridItem;
   rb.cardGrids.resizeAllGridItems = resizeAllGridItems;
+
+  rb.onDocumentReady(() => rb.cardGrids.resizeAllGridItems('.card-grid'));
+
+  // Set rAF-throttled resize listener to call resizeAllGridItems.
+  window.addEventListener('rb.optimizedResize', () => {
+    rb.cardGrids.resizeAllGridItems('.card-grid');
+  });
 })(window.rb, document, jQuery);
