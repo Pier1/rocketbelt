@@ -11,14 +11,22 @@
 
     const els = document.querySelectorAll(target);
     els.forEach((el) => {
-      if (opts.onUnclamp) {
-        rb.once(el, 'rb.typography.unclamp', opts.onUnclamp);
+      el.dispatchEvent(new CustomEvent('rb.typography.clamp'));
+
+      if (opts) {
+        if (opts.onClamp) {
+          opts.onClamp(el);
+        }
+
+        if (opts.onUnclamp) {
+          rb.once(el, 'rb.typography.unclamp', opts.onUnclamp);
+        }
       }
 
       const button = el.querySelector('button');
       if (button) {
         $(button).click(function buttonClick() {
-          rb.typography.unclamp($(this).closest('.clampable').first());
+          rb.typography.unclamp($(this).closest('.clampable-clamped').first());
         });
       }
     });
