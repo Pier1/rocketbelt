@@ -1,7 +1,9 @@
-(function ($) {
-  var $tabcordions = $('.tabcordion');
+'use strict';
 
-  var keys = {
+((rb, document, $) => {
+  const $tabcordions = $('.tabcordion');
+
+  const keys = {
     ARROWS: [37, 38, 39, 40],
     ARROW_LEFT: 37,
     ARROW_UP: 38,
@@ -13,8 +15,13 @@
     PAGE_DOWN: 34
   };
 
-  $tabcordions.each(function () {
-    var $tabcordion = $(this);
+  const init = function init(selector) {
+    let $tabcordion = $(this);
+
+    if (selector) {
+      $tabcordion = $(selector);
+    }
+
     var $navlist = $tabcordion.find('.tabcordion_navlist');
 
     $navlist.on('keydown', '.tabcordion_nav-item .tabcordion_nav-trigger', function (keyVent) {
@@ -48,13 +55,18 @@
       var currentTarget = $navlist.find('.tabcordion_nav-item.is-active .tabcordion_nav-trigger')[0];
       if (currentTarget != $(this)[0]) {
         var eventData = {'previousTarget': currentTarget, 'newTarget': $(this)[0]};
-        var event = new CustomEvent('rb.tabcordion.tabChanged', {detail: eventData});
+        var event = new CustomEvent('rb.tabcordion.tabChanged', { detail: eventData });
         $(this)[0].dispatchEvent(event);
       }
 
       setActiveAndInactive(this, $navlist);
     });
-  });
+
+    // Initial configuration based on viewport width
+    determineView();
+  };
+
+  $tabcordions.each(init);
 
   $(document.body).on('keydown', '.tabcordion_panel', function (e) {
     if (e.which === keys.PAGE_UP) {
@@ -112,9 +124,6 @@
       }
     });
   }
-
-  // Initial configuration based on viewport width
-  determineView();
 
   // Debounced Resize() jQuery Plugin
   // Author: Paul Irish
@@ -197,4 +206,7 @@
       }
     });
   }
-})(jQuery);
+
+  rb.tabcordions = rb.tabcordions || {};
+  rb.tabcordions.init = init;
+})(window.rb, document, jQuery);
