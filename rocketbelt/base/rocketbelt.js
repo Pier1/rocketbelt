@@ -91,6 +91,28 @@
     });
   };
 
+  // Throttle super-chatty events with requestAnimationFrame for better performance.
+  // See https://developer.mozilla.org/en-US/docs/Web/Events/resize
+  (() => {
+    const throttle = (type, name, obj) => {
+      obj = obj || window;
+      let running = false;
+      const func = () => {
+        if (running) { return; }
+        running = true;
+
+        requestAnimationFrame(() => {
+          obj.dispatchEvent(new CustomEvent(name));
+          running = false;
+        });
+      };
+      obj.addEventListener(type, func);
+    };
+
+    // Any event can be rAF'ed, not just resize.
+    throttle('resize', 'rb.optimizedResize');
+  })();
+
   // Polyfill String.prototype.repeat for IE11. This block can be deleted when
   // IE11 support is no longer needed in the future.
   // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat

@@ -33,6 +33,15 @@ $base-families: (
   white: scale-color(#fff, $lightness: 0%)
 );
 
+$contrast-palette: map-merge($map1: $contrast-palette,
+  $map2: (
+    info: map-get($base-families, info),
+    warning: scale-color(map-get($base-families, warning), $lightness: -42.5%),
+    error: map-get($base-families, error),
+    success: map-get($base-families, success)
+  )
+);
+
 $base-variants: (
   base: 0,
   lighter: 0.4,
