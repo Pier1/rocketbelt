@@ -18,7 +18,9 @@
   const init = function init(selector) {
     let $tabcordion = $(this);
 
-    if (selector) {
+    // Check Number.isInteger because the init function is called
+    // from $.each, which passes the array index.
+    if (selector && !(Number.isInteger(selector))) {
       $tabcordion = $(selector);
     }
 
