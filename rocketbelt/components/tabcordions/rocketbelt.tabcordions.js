@@ -1,8 +1,6 @@
 'use strict';
 
 ((rb, document, $) => {
-  const $tabcordions = $('.tabcordion');
-
   const keys = {
     ARROWS: [37, 38, 39, 40],
     ARROW_LEFT: 37,
@@ -73,8 +71,6 @@
     determineView();
   };
 
-  $tabcordions.each(init);
-
   $(document.body).on('keydown', '.tabcordion_panel', function onKeydown(e) {
     if (e.which === keys.PAGE_UP) {
       e.preventDefault();
@@ -133,43 +129,6 @@
     });
   }
 
-  // Debounced Resize() jQuery Plugin
-  // Author: Paul Irish
-  /* eslint-disable */
-  (function ($, sr) {
-    // debouncing function from John Hann
-    // http://unscriptable.com/index.php/2009/03/20/debouncing-javascript-methods/
-    var debounce = function (func, threshold, execAsap) {
-      var timeout;
-
-      return function debounced() {
-        var obj = this;
-        var args = arguments;
-        function delayed() {
-          if (!execAsap) {
-            func.apply(obj, args);
-          }
-          timeout = null;
-        }
-
-        if (timeout) {
-          clearTimeout(timeout);
-        }
-        else if (execAsap) {
-          func.apply(obj, args);
-        }
-
-        timeout = setTimeout(delayed, threshold || 100);
-      };
-    };
-    // smartresize
-    jQuery.fn[sr] = function (fn) { return fn ? this.bind('resize', debounce(fn)) : this.trigger(sr); };
-  })(jQuery, 'smartresize');
-  /* eslint-enable */
-
-  // Resize event:
-  $(window).smartresize(determineView);
-
   function determineView() {
     const $tabContainer = $('.tabcordion');
     const breakpointOverride = $tabContainer.data('breakpoint');
@@ -217,6 +176,10 @@
       }
     });
   }
+
+  const $tabcordions = $('.tabcordion');
+  $tabcordions.each(init);
+  window.addEventListener('rb.optimizedResize', determineView);
 
   rb.tabcordions = rb.tabcordions || {};
   rb.tabcordions.init = init;
