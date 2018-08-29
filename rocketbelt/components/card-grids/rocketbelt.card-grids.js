@@ -18,7 +18,7 @@
 
     const rowSpan =
       Math.ceil(
-        (itemContentHeight + itemContentMargin + rowGap - itemPadding) / (rowHeight + rowGap)
+        (itemContentHeight + itemContentMargin + itemPadding + rowGap) / (rowHeight + rowGap)
       );
     item.style.gridRowEnd = `span ${rowSpan}`;
   };
