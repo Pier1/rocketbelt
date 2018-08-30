@@ -1,48 +1,57 @@
 'use strict';
-((rb, document, $) => {
+((rb, window, $) => {
   rb.cardGrids = rb.cardGrids || {};
 
-  const resizeGridItem = (item) => {
-    const grid = $(item).closest('.card-grid')[0];
-    const rowHeight =
-      parseInt($(grid).css('grid-auto-rows'), 10);
-    const rowGap = parseInt($(grid).css('grid-row-gap'), 10);
-    const itemPadding =
-      parseInt($(item).css('paddingTop'), 10) +
-      parseInt($(item).css('paddingBottom'), 10);
+  const CSS = window.CSS;
 
-    const itemContentHeight = item.firstElementChild.getBoundingClientRect().height;
-    const itemContentMargin =
-      parseInt($(item.firstElementChild).css('marginTop'), 10) +
-      parseInt($(item.firstElementChild).css('marginBottom'), 10);
+  if (CSS &&
+      (CSS.supports('display', 'grid') ||
+       CSS.supports('display', '-ms-grid'))) {
+    const document = window.document;
 
-    const rowSpan =
-      Math.ceil(
-        (itemContentHeight + itemContentMargin + itemPadding + rowGap) / (rowHeight + rowGap)
-      );
-    item.style.gridRowEnd = `span ${rowSpan}`;
-  };
+    const resizeGridItem = (item) => {
+      const grid = $(item).closest('.card-grid')[0];
+      const rowHeight =
+        parseInt($(grid).css('grid-auto-rows'), 10);
+      const rowGap = parseInt($(grid).css('grid-row-gap'), 10);
+      const itemPadding =
+        parseInt($(item).css('paddingTop'), 10) +
+        parseInt($(item).css('paddingBottom'), 10);
 
-  const resizeAllGridItems = (gridSelector) => {
-    const grids = document.querySelectorAll(gridSelector);
+      const itemContentHeight = item.firstElementChild.getBoundingClientRect().height;
+      const itemContentMargin =
+        parseInt($(item.firstElementChild).css('marginTop'), 10) +
+        parseInt($(item.firstElementChild).css('marginBottom'), 10);
 
-    grids.forEach((grid) => {
-      const items = grid.querySelectorAll('.card-grid_item');
+      const rowSpan =
+        Math.ceil(
+          (itemContentHeight + itemContentMargin + itemPadding + rowGap) / (rowHeight + rowGap)
+        );
+      item.style.gridRowEnd = `span ${rowSpan}`;
+    };
 
-      items.forEach((item) => {
-        rb.cardGrids.resizeGridItem(item);
+    const resizeAllGridItems = (gridSelector) => {
+      const grids = document.querySelectorAll(gridSelector);
+
+      grids.forEach((grid) => {
+        const items = grid.querySelectorAll('.card-grid_item');
+
+        items.forEach((item) => {
+          rb.cardGrids.resizeGridItem(item);
+        });
       });
+    };
+
+    const warnAboutGridSupport = () => { console.warn('Browser doesn\'t support CSS grid.'); };
+
+    rb.cardGrids.resizeGridItem = resizeGridItem || warnAboutGridSupport;
+    rb.cardGrids.resizeAllGridItems = resizeAllGridItems || warnAboutGridSupport;
+
+    rb.onDocumentReady(() => rb.cardGrids.resizeAllGridItems('.card-grid'));
+
+    // Set rAF-throttled resize listener to call resizeAllGridItems.
+    window.addEventListener('rb.optimizedResize', () => {
+      rb.cardGrids.resizeAllGridItems('.card-grid');
     });
-  };
-
-
-  rb.cardGrids.resizeGridItem = resizeGridItem;
-  rb.cardGrids.resizeAllGridItems = resizeAllGridItems;
-
-  rb.onDocumentReady(() => rb.cardGrids.resizeAllGridItems('.card-grid'));
-
-  // Set rAF-throttled resize listener to call resizeAllGridItems.
-  window.addEventListener('rb.optimizedResize', () => {
-    rb.cardGrids.resizeAllGridItems('.card-grid');
-  });
-})(window.rb, document, jQuery);
+  }
+})(window.rb, window, jQuery);

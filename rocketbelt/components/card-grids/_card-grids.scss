@@ -1,9 +1,11 @@
 .card-grid {
-  #{--grid-column-width}: 250px;
+  @supports (display: grid) {
+    #{--grid-column-width}: 250px;
 
-  display: grid;
-  grid-gap: 1rem;
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-  grid-template-columns: repeat(auto-fill, minmax(var(--grid-column-width), 1fr)); // sass-lint:disable-line no-duplicate-properties
-  grid-auto-rows: 0.5rem;
+    display: grid;
+    grid-gap: 1rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(var(--grid-column-width), 1fr)); // sass-lint:disable-line no-duplicate-properties
+    grid-auto-rows: 0.5rem;
+  }
 }
