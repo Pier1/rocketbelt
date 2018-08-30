@@ -1,3 +1,13 @@
+<a name="1.16.3"></a>
+## [1.16.3](https://github.com/Pier1/rocketbelt/compare/1.16.2...v1.16.3) (2018-08-30)
+
+
+### Bug Fixes
+
+* **Buttons:** Fix alternate buttons. ([ab00168](https://github.com/Pier1/rocketbelt/commit/ab00168))
+
+
+
 <a name="1.16.2"></a>
 ## [1.16.2](https://github.com/Pier1/rocketbelt/compare/1.16.1...v1.16.2) (2018-08-30)
 
