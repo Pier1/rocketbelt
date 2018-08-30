@@ -1,3 +1,13 @@
+<a name="1.16.2"></a>
+## [1.16.2](https://github.com/Pier1/rocketbelt/compare/1.16.1...v1.16.2) (2018-08-30)
+
+
+### Bug Fixes
+
+* **Buttons:** Rename "tertiary" buttons to "alternate." ([1f3d489](https://github.com/Pier1/rocketbelt/commit/1f3d489))
+
+
+
 <a name="1.16.1"></a>
 ## [1.16.1](https://github.com/Pier1/rocketbelt/compare/1.16.0...v1.16.1) (2018-08-30)
 
