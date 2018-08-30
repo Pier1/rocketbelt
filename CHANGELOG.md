@@ -1,3 +1,17 @@
+<a name="1.16.1"></a>
+## [1.16.1](https://github.com/Pier1/rocketbelt/compare/1.16.0...v1.16.1) (2018-08-30)
+
+### Features
+
+* **Card Grids:** Add feature detection for CSS grid properties. ([f588a27](https://github.com/Pier1/rocketbelt/commit/f588a27))
+* **Tabcordions:** Factor out an init function so tabcordions can be made dynamic. ([b9038ac](https://github.com/Pier1/rocketbelt/commit/b9038ac))
+
+### Bug Fixes
+
+* **Card Grids:** Update row span calculation. ([1243bb7](https://github.com/Pier1/rocketbelt/commit/1243bb7)), closes [#200](https://github.com/Pier1/rocketbelt/issues/200)
+* **Tabcordions:** Check selector for proper value in init function. ([d9e3818](https://github.com/Pier1/rocketbelt/commit/d9e3818))
+
+
 <a name="1.16.0"></a>
 # [1.16.0](https://github.com/Pier1/rocketbelt/compare/1.15.2...v1.16.0) (2018-08-27)
 
