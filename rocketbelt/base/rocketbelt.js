@@ -158,7 +158,7 @@
   // See https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
   ((NodeListProto) => {
     if (window.NodeList && !NodeListProto.forEach) {
-      NodeListProto.foreach = (callback, thisArg) => {
+      NodeListProto.forEach = (callback, thisArg) => {
         const arg = thisArg || window;
         for (let i = 0; i < this.length; i++) {
           callback.call(arg, this[i], i, this);
