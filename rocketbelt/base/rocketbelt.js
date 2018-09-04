@@ -41,7 +41,9 @@
     'label':       `${aria}label`,
     'labelledby':  `${aria}labelledby`,
     'live':        `${aria}live`,
-    'role':        'role'
+    'posinset':    `${aria}posinset`,
+    'role':        'role',
+    'setsize':     `${aria}setsize`
   };
 
   window.rb.getShortId = function getShortId() {
