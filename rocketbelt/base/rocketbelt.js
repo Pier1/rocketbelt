@@ -41,7 +41,9 @@
     'label':       `${aria}label`,
     'labelledby':  `${aria}labelledby`,
     'live':        `${aria}live`,
-    'role':        'role'
+    'posinset':    `${aria}posinset`,
+    'role':        'role',
+    'setsize':     `${aria}setsize`
   };
 
   window.rb.getShortId = function getShortId() {
@@ -158,7 +160,7 @@
   // See https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
   ((NodeListProto) => {
     if (window.NodeList && !NodeListProto.forEach) {
-      NodeListProto.foreach = (callback, thisArg) => {
+      NodeListProto.forEach = (callback, thisArg) => {
         const arg = thisArg || window;
         for (let i = 0; i < this.length; i++) {
           callback.call(arg, this[i], i, this);

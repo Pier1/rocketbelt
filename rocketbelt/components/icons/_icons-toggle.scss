@@ -1,0 +1,169 @@
+$color-bubble-from: #fdb913;
+$color-bubble-to: rgba(#13fdd6, 0.2);
+$color-star: #fdb913;
+
+$bubble-d: 2.5rem; // bubble diameter
+$bubble-r: 0.5 * $bubble-d; // bubble-radius
+$sparkle-d: 0.375rem / 1.5;
+$sparkle-r: 0.5 * $sparkle-d;
+
+@mixin sparkles($k) {
+  $shadow-list: ();
+  $n-groups: 6;
+  $group-base-angle: 360deg / $n-groups;
+  $group-distr-r: (1.125 + $k) * $bubble-r;
+  $n-sparkles: 2;
+  $sparkle-base-angle: 360deg / $n-sparkles;
+  $sparkle-off-angle: 60deg; // offset angle from radius
+  $spread-r: -$k * $sparkle-r;
+
+  @for $i from 0 to $n-groups {
+    $group-curr-angle: $i * $group-base-angle - 90deg;
+    $xg: $group-distr-r * cos($group-curr-angle);
+    $yg: $group-distr-r * sin($group-curr-angle);
+
+    @for $j from 0 to $n-sparkles {
+      $sparkle-curr-angle: $group-curr-angle +
+        $sparkle-off-angle + $j * $sparkle-base-angle;
+      $xs: $xg + $sparkle-d * cos($sparkle-curr-angle);
+      $ys: $yg + $sparkle-d * sin($sparkle-curr-angle);
+
+      $scolor: currentColor;
+
+      // @if $i % 2 != 1 {
+      //   $scolor: rgba($color-star, 1);
+      // } @else {
+      //   $scolor: rgba($color-star, 0.8);
+      // }
+
+      $shadow-list: $shadow-list, $xs $ys 0 $spread-r
+        $scolor;
+    }
+  }
+
+  box-shadow: $shadow-list;
+}
+
+@mixin bubble($ext) {
+  border-width: $ext;
+  border-color: $color-bubble-to;
+  transform: scale(1);
+}
+
+.icon-toggle_input {
+  @extend %visually-hidden;
+
+  &:checked + label {
+    filter: none;
+    // animation: emphasis-size 0.6s linear;
+    // will-change: font-size;
+
+    &::before,
+    &::after {
+      animation: inherit;
+      animation-timing-function: ease(out-quad);
+    }
+
+    // &::before {
+    //   animation-name: emphasis-bubble;
+    //   will-change: transform, border-width, border-color;
+    // }
+
+    // &::after {
+    //   animation-name: emphasis-sparkle;
+    //   will-change: opacity, box-shadow;
+    // }
+  }
+}
+
+.icon-toggle_input + label {
+  outline-color: currentColor;
+  color: color(gray, plus3);
+}
+
+.icon-toggle_input:checked + label {
+  color: $color-star;
+}
+
+.icon-toggle_label {
+  position: relative;
+  display: flex;
+  width: 1em;
+  height: 1em;
+  font-size: 2rem;
+  line-height: 1;
+  cursor: inherit;
+  user-select: none;
+  align-items: center;
+  justify-content: center;
+  align-self: center;
+
+  &::before,
+  &::after {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    z-index: -1;
+    border-radius: 50%;
+    content: '';
+  }
+
+  &::before {
+    box-sizing: border-box;
+    margin: -$bubble-r;
+    width: $bubble-d;
+    height: $bubble-d;
+    border: solid $bubble-r $color-bubble-from;
+    transform: scale(0);
+  }
+
+  &::after {
+    margin: -$sparkle-r;
+    width: $sparkle-d;
+    height: $sparkle-d;
+    @include sparkles(1);
+  }
+
+  .icon {
+    width: 1em;
+    height: 1em;
+  }
+}
+
+@keyframes emphasis-size {
+  0% {
+    transform: scale(1);
+  }
+  5% {
+    transform: scale(0.85);
+  }
+  60% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+@keyframes emphasis-bubble {
+  20% { @include bubble($bubble-r); }
+  30%,
+  100% { @include bubble(0); }
+}
+
+@keyframes emphasis-sparkle {
+  0%,
+  20% {
+    opacity: 0;
+  }
+
+  10% {
+    transform: rotate(10deg);
+  }
+
+  25% {
+    opacity: 1;
+    @include sparkles(0);
+    transform: rotate(12.5deg);
+  }
+}

@@ -1,3 +1,17 @@
+<a name="1.16.4"></a>
+## [1.16.4](https://github.com/Pier1/rocketbelt/compare/1.16.3...v1.16.4) (2018-09-05)
+
+
+### Features
+
+* **Global:** Add `aria-posinset` & `aria-setsize` to ARIA constants. ([382256d](https://github.com/Pier1/rocketbelt/commit/382256d))
+* **Icons:** Add Single Toggle Icon pattern. ([39259cb](https://github.com/Pier1/rocketbelt/commit/39259cb))
+* **Tabcordions:** Add ARIA decorating function to support dynamic tab count. ([1ba7579](https://github.com/Pier1/rocketbelt/commit/1ba7579))
+### Bug Fixes
+
+* **Radio Buttons:** Fix radio button positioning within container. ([d67f2f0](https://github.com/Pier1/rocketbelt/commit/d67f2f0))
+* **Tabcordions:** Add proper eventing when tabs are changed via keyboard. ([9184a35](https://github.com/Pier1/rocketbelt/commit/9184a35))
+
 <a name="1.16.3"></a>
 ## [1.16.3](https://github.com/Pier1/rocketbelt/compare/1.16.2...v1.16.3) (2018-08-30)
 

@@ -36,6 +36,12 @@
             keyVent.preventDefault();
             adjacentTab.focus();
 
+            if (target != $(this)[0]) {
+              const eventData = { 'previousTarget': target, 'newTarget': adjacentTab };
+              const event = new CustomEvent('rb.tabcordion.tabChanged', { detail: eventData });
+              $(this)[0].dispatchEvent(event);
+            }
+
             setActiveAndInactive(adjacentTab, $navlist);
           }
         } else if (which === keys.ENTER || which === keys.SPACE) {
@@ -67,8 +73,19 @@
       }
     );
 
+    addAriaAttributes($tabcordion);
+
     // Initial configuration based on viewport width
     determineView();
+  };
+
+  const addAriaAttributes = ($tabcordion) => {
+    const $tabTriggers = $tabcordion.find('.tabcordion_nav-trigger');
+
+    $tabTriggers.each((i, el) => {
+      $(el).attr(rb.aria.setsize, $tabTriggers.length);
+      $(el).attr(rb.aria.posinset, i + 1);
+    });
   };
 
   $(document.body).on('keydown', '.tabcordion_panel', function onKeydown(e) {
@@ -183,4 +200,5 @@
 
   rb.tabcordions = rb.tabcordions || {};
   rb.tabcordions.init = init;
+  rb.tabcordions.addAriaAttributes = addAriaAttributes;
 })(window.rb, document, jQuery);
