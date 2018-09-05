@@ -36,11 +36,9 @@
             keyVent.preventDefault();
             adjacentTab.focus();
 
-            if (target != $(this)[0]) {
-              const eventData = { 'previousTarget': target, 'newTarget': adjacentTab };
-              const event = new CustomEvent('rb.tabcordion.tabChanged', { detail: eventData });
-              $(this)[0].dispatchEvent(event);
-            }
+            const eventData = { 'previousTarget': target, 'newTarget': adjacentTab };
+            const event = new CustomEvent('rb.tabcordion.tabChanged', { detail: eventData });
+            $(this)[0].dispatchEvent(event);
 
             setActiveAndInactive(adjacentTab, $navlist);
           }
