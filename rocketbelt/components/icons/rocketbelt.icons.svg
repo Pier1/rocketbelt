@@ -609,29 +609,38 @@ xmlns:xlink="http://www.w3.org/1999/xlink">
     <path d="M128 16C66.148 16 16 66.148 16 128s50.148 112 112 112 112-50.148 112-112S189.852 16 128 16zm56.616 90.02c1.708 37.707-26.413 79.744-76.197 79.744-15.139 0-29.223-4.443-41.086-12.05 14.224 1.68 28.42-2.277 39.686-11.097-11.723-.214-21.626-7.97-25.051-18.62 4.21.803 8.353.57 12.115-.457-12.89-2.595-21.794-14.205-21.504-26.628a26.743 26.743 0 0 0 12.142 3.35c-11.937-7.98-15.316-23.743-8.297-35.793 13.216 16.222 32.975 26.89 55.253 28.01-3.91-16.763 8.811-32.919 26.124-32.919 7.7 0 14.672 3.257 19.563 8.465a53.472 53.472 0 0 0 17.024-6.505c-2.007 6.263-6.253 11.508-11.788 14.83a53.479 53.479 0 0 0 15.39-4.227 53.808 53.808 0 0 1-13.374 13.897z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="ctrb-icon-warning-desc ctrb-icon-warning-title"
+  <symbol aria-labelledby="ctrb-icon-upload-desc ctrb-icon-upload-title"
+  id="rb-icon-upload" xmlns="http://www.w3.org/2000/svg"
+  style="fill: var(--color, inherit);" viewBox="0 0 256 256">
+    <title id="ctrb-icon-upload-title">Upload</title>
+    <desc id="ctrb-icon-upload-desc">An arrow pointing up to a
+    cloud</desc>
+    <path d="M168 168h-30v50h-20v-50H88l40-40 40 40zm34.79-59.08C200.67 69.41 168.06 38 128 38c-40.06 0-72.67 31.41-74.79 70.92C27.51 113.55 8 135.98 8 163c0 30.37 24.63 55 55 55h35v-20H63c-19.3 0-35-15.7-35-35 0-27.97 24.79-38.33 44.33-37.2C70.66 83.62 94.41 58 128 58c34.53 0 58.91 27.97 55.67 67.8 17.45-.46 44.33 7.51 44.33 37.2 0 19.3-15.7 35-35 35h-35v20h35c30.37 0 55-24.63 55-55 0-27.02-19.51-49.45-45.21-54.08z"
+    fill-rule="nonzero" />
+  </symbol>
+  <symbol aria-labelledby="curb-icon-warning-desc curb-icon-warning-title"
   id="rb-icon-warning" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <title id="ctrb-icon-warning-title">Warning</title>
-    <desc id="ctrb-icon-warning-desc">An exclamation mark inside a
+    <title id="curb-icon-warning-title">Warning</title>
+    <desc id="curb-icon-warning-desc">An exclamation mark inside a
     triangle</desc>
     <path d="M125.367 26.88L16.565 226.348a3 3 0 0 0 2.634 4.436h217.603a3 3 0 0 0 2.633-4.436L130.634 26.879a3 3 0 0 0-5.267 0zm7.202 141.549a4.997 4.997 0 0 1-4.969 4.5 4.997 4.997 0 0 1-4.969-4.5l-7.237-72.367c-.722-7.228 4.97-13.48 12.206-13.48 7.237 0 12.928 6.252 12.206 13.489l-7.237 72.358zm-5.04 40.637c-6.234 0-11.293-5.059-11.293-11.293 0-6.234 5.06-11.293 11.293-11.293 6.234 0 11.293 5.06 11.293 11.293 0 6.234-5.06 11.293-11.293 11.293z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="curb-icon-zoom-in-desc curb-icon-zoom-in-title"
+  <symbol aria-labelledby="cvrb-icon-zoom-in-desc cvrb-icon-zoom-in-title"
   id="rb-icon-zoom-in" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <title id="curb-icon-zoom-in-title">Zoom In</title>
-    <desc id="curb-icon-zoom-in-desc">A magnifying glass with a
+    <title id="cvrb-icon-zoom-in-title">Zoom In</title>
+    <desc id="cvrb-icon-zoom-in-desc">A magnifying glass with a
     plus sign inside</desc>
     <path d="M137.333 109.333h-28v28H90.667v-28h-28V90.667h28v-28h18.666v28h28v18.666zM213.605 240l-68.945-68.945C131.705 179.212 116.436 184 100 184c-46.396 0-84-37.604-84-84s37.604-84 84-84 84 37.604 84 84c0 16.436-4.797 31.715-12.945 44.66L240 213.605 213.605 240zM100 165.333c36.017 0 65.333-29.306 65.333-65.333S136.017 34.667 100 34.667c-36.017 0-65.333 29.306-65.333 65.333S63.983 165.333 100 165.333z"
     fill-rule="nonzero" />
   </symbol>
-  <symbol aria-labelledby="cvrb-icon-zoom-out-desc cvrb-icon-zoom-out-title"
+  <symbol aria-labelledby="cwrb-icon-zoom-out-desc cwrb-icon-zoom-out-title"
   id="rb-icon-zoom-out" xmlns="http://www.w3.org/2000/svg"
   style="fill: var(--color, inherit);" viewBox="0 0 256 256">
-    <title id="cvrb-icon-zoom-out-title">Zoom Out</title>
-    <desc id="cvrb-icon-zoom-out-desc">A magnifying glass with a
+    <title id="cwrb-icon-zoom-out-title">Zoom Out</title>
+    <desc id="cwrb-icon-zoom-out-desc">A magnifying glass with a
     minus sign inside</desc>
     <path d="M137.333 109.333H62.667V90.667h74.666v18.666zM213.605 240l-68.945-68.945C131.705 179.212 116.436 184 100 184c-46.396 0-84-37.604-84-84s37.604-84 84-84 84 37.604 84 84c0 16.436-4.797 31.715-12.945 44.66L240 213.605 213.605 240zM100 165.333c36.017 0 65.333-29.306 65.333-65.333S136.017 34.667 100 34.667c-36.017 0-65.333 29.306-65.333 65.333S63.983 165.333 100 165.333z"
     fill-rule="nonzero" />
