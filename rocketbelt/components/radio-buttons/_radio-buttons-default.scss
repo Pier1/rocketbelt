@@ -28,7 +28,7 @@ input {
 
       &::before {
         position: absolute;
-        top: 0.15rem;
+        top: 0.10rem;
         left: 0;
         width: 1rem;
         height: 1rem;
@@ -121,7 +121,7 @@ input {
         }
       }
     }
-    
+
     &[disabled] {
       &[checked] + label {
         &::before {
