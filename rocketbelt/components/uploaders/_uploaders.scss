@@ -1,4 +1,8 @@
-.uploader {
+.uploader:not(.uploader-expanded) {
+  @extend %button-alternate;
+}
+
+.uploader.uploader-expanded {
   position: relative;
   display: flex;
   flex-direction: column;
@@ -18,6 +22,7 @@
     right: 0;
     bottom: 0;
     left: 0;
+    z-index: -1;
     opacity: 0;
   }
 
@@ -126,10 +131,10 @@
     }
 
     img {
-      margin-right: 10px;
-      margin-bottom: 10px;
+      margin-right: 1rem;
+      margin-bottom: 1rem;
       width: 150px;
-      vertical-align: middle;
+      vertical-align: top;
     }
   }
 

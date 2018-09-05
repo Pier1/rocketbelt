@@ -55,15 +55,7 @@
         }
       });
 
-      $(uploader).find('input[type="file"]').change(function fileInputOnchange(e) {
-        const dropArea =
-          $(e.target).hasClass(activeClass) ? e.target : $(e.target).closest('.uploader');
-
-        const id = dropArea.id;
-        const config = getUploaderConfig(id);
-
-        rb.uploaders.handleFiles(this.files, config);
-      });
+      $(uploader).find('input[type="file"]').change(fileInputOnchange);
 
       // Add scrim elements
       const scrim = document.createElement('div');
@@ -76,6 +68,16 @@
       scrim.insertAdjacentElement('afterend', scrimIcon);
     }
   };
+
+  function fileInputOnchange(e) {
+    const dropArea =
+      $(e.target).hasClass(activeClass) ? e.target : $(e.target).closest('.uploader');
+
+    const id = dropArea.id;
+    const config = getUploaderConfig(id);
+
+    rb.uploaders.handleFiles(this.files, config);
+  }
 
   function preventDefaults(e) {
     e.preventDefault();
@@ -112,7 +114,7 @@
     const id = dropArea.id;
     const uploaderConfig = getUploaderConfig(id);
 
-    rb.uploaders.handleFiles(this.files, uploaderConfig);
+    rb.uploaders.handleFiles(files, uploaderConfig);
   }
 
   function getUploaderConfig(id) {
