@@ -36,11 +36,9 @@
             keyVent.preventDefault();
             adjacentTab.focus();
 
-            if (target != $(this)[0]) {
-              const eventData = { 'previousTarget': target, 'newTarget': adjacentTab };
-              const event = new CustomEvent('rb.tabcordion.tabChanged', { detail: eventData });
-              $(this)[0].dispatchEvent(event);
-            }
+            const eventData = { 'previousTarget': target, 'newTarget': adjacentTab };
+            const event = new CustomEvent('rb.tabcordion.tabChanged', { detail: eventData });
+            $tabcordion.dispatchEvent(event);
 
             setActiveAndInactive(adjacentTab, $navlist);
           }
@@ -66,7 +64,7 @@
         if (currentTarget != $(this)[0]) {
           const eventData = { 'previousTarget': currentTarget, 'newTarget': $(this)[0] };
           const event = new CustomEvent('rb.tabcordion.tabChanged', { detail: eventData });
-          $(this)[0].dispatchEvent(event);
+          $tabcordion.dispatchEvent(event);
         }
 
         setActiveAndInactive(this, $navlist);
