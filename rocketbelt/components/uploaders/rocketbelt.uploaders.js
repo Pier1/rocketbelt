@@ -141,9 +141,15 @@
     reader.onloadend = () => {
       const img = document.createElement('img');
       img.src = reader.result;
-      rb.uploaders.files.push(reader.result);
+      img.id = `rb_${rb.getShortId()}`;
+      rb.uploaders.files.push({ id: img.id, file: reader.result });
+
+      const button = document.createElement('button');
+      button.dataset.targetElement = img.id;
 
       document.querySelector('.uploader_thumbs').appendChild(img);
+      document.querySelector(`#${img.id}`).insertAdjacentElement('afterend', button);
+
       document.querySelector(`#${rb.uploaders.config.id}`).classList.add('uploader-has-thumbs');
     };
   }
