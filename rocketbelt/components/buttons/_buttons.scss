@@ -92,6 +92,7 @@ button {
   }
 }
 
+%button-sm,
 .button-sm {
   @include button-size(sm);
 
@@ -100,6 +101,7 @@ button {
   }
 }
 
+%button-md,
 .button-md {
   @include button-size(md);
 
@@ -108,6 +110,7 @@ button {
   }
 }
 
+%button-lg,
 .button-lg {
   @include button-size(lg);
 
