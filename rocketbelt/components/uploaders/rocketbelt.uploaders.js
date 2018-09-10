@@ -11,25 +11,23 @@
 
   rb.uploaders.addUploader = (uploaderConfig) => {
     if (uploaderConfig &&
-        uploaderConfig.selector &&
-        uploaderConfig.formData &&
-        uploaderConfig.postUri) {
-      rb.uploaders.instances = rb.uploaders.instances || [];
-
-      const instanceConfig = {
-        selector:  uploaderConfig.selector,
-        formData:  uploaderConfig.formData,
-        postUri:   uploaderConfig.postUri,
-        onError:   uploaderConfig.onError,
-        onSuccess: uploaderConfig.onSuccess
-      };
-
+        uploaderConfig.selector) {
       const uploader = document.querySelector(uploaderConfig.selector);
       uploader.id = uploader.id || `rb_${rb.getShortId()}`;
-      instanceConfig.id = uploader.id;
+      uploaderConfig.id = uploader.id;
 
-      // TODO: Check that the instance isn't already in instances
-      rb.uploaders.instances.push(instanceConfig);
+      if (!uploader.classList.contains('uploader-expanded')) {
+        uploader.setAttribute(rb.aria.role, 'button');
+        uploader.setAttribute('tabindex', 0);
+
+        uploader.addEventListener('click', () => {
+          uploader.classList.add('uploader-expanded');
+          uploader.removeAttribute(rb.aria.role);
+          uploader.removeAttribute('tabindex');
+        });
+      }
+
+      rb.uploaders.config = uploaderConfig;
 
       ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
         uploader.addEventListener(eventName, preventDefaults);
@@ -70,13 +68,7 @@
   };
 
   function fileInputOnchange(e) {
-    const dropArea =
-      $(e.target).hasClass(activeClass) ? e.target : $(e.target).closest('.uploader');
-
-    const id = dropArea.id;
-    const config = getUploaderConfig(id);
-
-    rb.uploaders.handleFiles(this.files, config);
+    rb.uploaders.handleFiles(this.files, rb.uploaders.config);
   }
 
   function preventDefaults(e) {
@@ -108,19 +100,7 @@
     const dt = e.dataTransfer;
     const files = dt.files;
 
-    const dropArea =
-      $(e.target).hasClass(activeClass) ? e.target : $(e.target).closest('.uploader');
-
-    const id = dropArea.id;
-    const uploaderConfig = getUploaderConfig(id);
-
-    rb.uploaders.handleFiles(files, uploaderConfig);
-  }
-
-  function getUploaderConfig(id) {
-    return rb.uploaders.instances.filter((instance) => {
-      return instance.id === id;
-    })[0];
+    rb.uploaders.handleFiles(files, rb.uploaders.config);
   }
 
   let uploadProgress = [];
@@ -145,31 +125,40 @@
   rb.uploaders.handleFiles = function handleFiles(files) {
     files = [...files];
     initializeProgress(files.length);
-    files.forEach(uploadFile);
+
+    if (rb.uploaders.config.autoUpload) {
+      files.forEach(uploadFile);
+    }
+
     files.forEach(previewFile);
   };
 
   function previewFile(file) {
+    rb.uploaders.files = rb.uploaders.files || [];
+
     const reader = new FileReader();
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       const img = document.createElement('img');
       img.src = reader.result;
+      rb.uploaders.files.push(reader.result);
+
       document.querySelector('.uploader_thumbs').appendChild(img);
+      document.querySelector(`#${rb.uploaders.config.id}`).classList.add('uploader-has-thumbs');
     };
   }
 
   function uploadFile(file, i) {
-    const url = rb.uploaders.postUri;
-    const formData = new FormData(); // rb.uploaders.formData
-    // const onError = rb.uploaders.onError
+    let formData = new FormData();
+    let xhr = new XMLHttpRequest();
 
-    if (!formData) {
-      // rb.uploaders.onError
+    formData = rb.uploaders.config.prepFormData(formData);
+
+    if (rb.uploaders.config.prepXhr) {
+      xhr = rb.uploaders.config.prepXhr(xhr);
     }
 
-    const xhr = new XMLHttpRequest();
-    xhr.open('POST', url, true);
+    xhr.open('POST', rb.uploaders.config.postUri, true);
     xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
 
     xhr.upload.addEventListener('progress', (e) => {
@@ -181,11 +170,9 @@
         updateProgress(i, 100);
         // rb.uploaders.onSuccess();
       } else if (xhr.readyState === 4 && xhr.status !== 200) {
-        // rb.uploaders.onError();
+        // rb.uploaders.onError(e);
       }
     });
-
-    formData.append('file', file);
 
     xhr.send(formData);
   }
