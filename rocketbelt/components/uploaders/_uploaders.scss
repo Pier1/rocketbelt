@@ -91,6 +91,28 @@
   }
 }
 
+.uploader_thumbs_remove-button,
+.uploader_thumbs_remove-button:focus {
+  position: relative;
+  top: -0.7rem;
+  left: -1.65rem;
+  padding: 0.125rem;
+  width: 24px;
+  height: 24px;
+  border: 1px solid color(gray, plus4);
+  border-radius: 50%;
+  background: color(white);
+  color: color(error, darker);
+  line-height: 1;
+
+  @include z-depth(1);
+
+  &:hover {
+    @include z-depth(2);
+    color: color(error);
+  }
+}
+
 .uploader {
   &.uploader-expanded {
     position: relative;

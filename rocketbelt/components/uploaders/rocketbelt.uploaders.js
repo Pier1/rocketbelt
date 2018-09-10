@@ -142,10 +142,31 @@
       const img = document.createElement('img');
       img.src = reader.result;
       img.id = `rb_${rb.getShortId()}`;
+      img.classList.add('uploader_thumb');
       rb.uploaders.files.push({ id: img.id, file: reader.result });
 
       const button = document.createElement('button');
-      button.dataset.targetElement = img.id;
+      button.dataset.targetId = img.id;
+      button.classList.add('uploader_thumbs_remove-button');
+      button.innerHTML = '&times;';
+      button.setAttribute(rb.aria.label, 'Remove this image');
+
+      rb.once(button, 'click', (e) => {
+        const id = e.target.dataset.targetId;
+        const imgToRemove = document.querySelector(`#${id}`);
+        const container = e.target.closest('.uploader');
+
+        imgToRemove.parentNode.removeChild(imgToRemove);
+        e.target.parentNode.removeChild(e.target);
+
+        if (container.querySelectorAll('.uploader_thumb').length === 0) {
+          container.classList.remove('uploader-has-thumbs');
+        }
+
+        rb.uploaders.files = rb.uploaders.files.filter((el) => {
+          return el.id !== id;
+        });
+      });
 
       document.querySelector('.uploader_thumbs').appendChild(img);
       document.querySelector(`#${img.id}`).insertAdjacentElement('afterend', button);
