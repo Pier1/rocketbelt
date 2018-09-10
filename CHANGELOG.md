@@ -1,3 +1,13 @@
+<a name="1.16.5"></a>
+## [1.16.5](https://github.com/Pier1/rocketbelt/compare/1.16.4...v1.16.5) (2018-09-10)
+
+
+### Features
+
+* **Color:** Update contrasting brand blue. ([a193a84](https://github.com/Pier1/rocketbelt/commit/a193a84))
+
+
+
 <a name="1.16.4"></a>
 ## [1.16.4](https://github.com/Pier1/rocketbelt/compare/1.16.3...v1.16.4) (2018-09-05)
 
