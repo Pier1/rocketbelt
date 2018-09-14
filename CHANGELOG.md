@@ -1,3 +1,130 @@
+<a name="1.16.7"></a>
+## [1.16.7](https://github.com/Pier1/rocketbelt/compare/1.16.6...v1.16.7) (2018-09-14)
+
+
+### Bug Fixes
+
+* **Tabcordions:** Declare explicit background color for Safari & PC. ([dfffc3e](https://github.com/Pier1/rocketbelt/commit/dfffc3e))
+
+
+### Features
+
+* **Buttons:** Add placeholder selectors for sized buttons to enable style reuse. ([bfd04ce](https://github.com/Pier1/rocketbelt/commit/bfd04ce))
+* **Buttons:** Share button-alternate styles via placeholder selector. ([729f087](https://github.com/Pier1/rocketbelt/commit/729f087))
+* **Global:** Add "hidden-from-everything" placeholder. ([0d3d17f](https://github.com/Pier1/rocketbelt/commit/0d3d17f))
+* **Icons:** Add upload icon. ([000fa0b](https://github.com/Pier1/rocketbelt/commit/000fa0b))
+* **Uploaders:** Add button element to support removing items. ([6bc1c2f](https://github.com/Pier1/rocketbelt/commit/6bc1c2f))
+* **Uploaders:** Add initial uploader implementation. ([f08bda6](https://github.com/Pier1/rocketbelt/commit/f08bda6))
+* **Uploaders:** Add support for removing pending images. ([a651d65](https://github.com/Pier1/rocketbelt/commit/a651d65))
+* **Uploaders:** Wrap up (nearly) desktop uploader. ([f56e87c](https://github.com/Pier1/rocketbelt/commit/f56e87c))
+
+
+
+<a name="1.16.6"></a>
+## [1.16.6](https://github.com/Pier1/rocketbelt/compare/1.16.5...v1.16.6) (2018-09-10)
+
+
+
+<a name="1.16.5"></a>
+## [1.16.5](https://github.com/Pier1/rocketbelt/compare/1.16.4...v1.16.5) (2018-09-10)
+
+
+### Features
+
+* **Color:** Update contrasting brand blue. ([a193a84](https://github.com/Pier1/rocketbelt/commit/a193a84))
+
+
+
+<a name="1.16.4"></a>
+## [1.16.4](https://github.com/Pier1/rocketbelt/compare/1.16.3...v1.16.4) (2018-09-05)
+
+
+### Features
+
+* **Global:** Add `aria-posinset` & `aria-setsize` to ARIA constants. ([382256d](https://github.com/Pier1/rocketbelt/commit/382256d))
+* **Icons:** Add Single Toggle Icon pattern. ([39259cb](https://github.com/Pier1/rocketbelt/commit/39259cb))
+* **Tabcordions:** Add ARIA decorating function to support dynamic tab count. ([1ba7579](https://github.com/Pier1/rocketbelt/commit/1ba7579))
+### Bug Fixes
+
+* **Radio Buttons:** Fix radio button positioning within container. ([d67f2f0](https://github.com/Pier1/rocketbelt/commit/d67f2f0))
+* **Tabcordions:** Add proper eventing when tabs are changed via keyboard. ([9184a35](https://github.com/Pier1/rocketbelt/commit/9184a35))
+
+<a name="1.16.3"></a>
+## [1.16.3](https://github.com/Pier1/rocketbelt/compare/1.16.2...v1.16.3) (2018-08-30)
+
+
+### Bug Fixes
+
+* **Buttons:** Fix alternate buttons. ([ab00168](https://github.com/Pier1/rocketbelt/commit/ab00168))
+
+
+
+<a name="1.16.2"></a>
+## [1.16.2](https://github.com/Pier1/rocketbelt/compare/1.16.1...v1.16.2) (2018-08-30)
+
+
+### Bug Fixes
+
+* **Buttons:** Rename "tertiary" buttons to "alternate." ([1f3d489](https://github.com/Pier1/rocketbelt/commit/1f3d489))
+
+
+
+<a name="1.16.1"></a>
+## [1.16.1](https://github.com/Pier1/rocketbelt/compare/1.16.0...v1.16.1) (2018-08-30)
+
+### Features
+
+* **Card Grids:** Add feature detection for CSS grid properties. ([f588a27](https://github.com/Pier1/rocketbelt/commit/f588a27))
+* **Tabcordions:** Factor out an init function so tabcordions can be made dynamic. ([b9038ac](https://github.com/Pier1/rocketbelt/commit/b9038ac))
+
+### Bug Fixes
+
+* **Card Grids:** Update row span calculation. ([1243bb7](https://github.com/Pier1/rocketbelt/commit/1243bb7)), closes [#200](https://github.com/Pier1/rocketbelt/issues/200)
+* **Tabcordions:** Check selector for proper value in init function. ([d9e3818](https://github.com/Pier1/rocketbelt/commit/d9e3818))
+
+
+<a name="1.16.0"></a>
+# [1.16.0](https://github.com/Pier1/rocketbelt/compare/1.15.2...v1.16.0) (2018-08-27)
+
+
+### Features
+* **Buttons:** Add tertiary/desired action buttons. ([dcca0be](https://github.com/Pier1/rocketbelt/commit/dcca0be))
+* **Card Grids:** Add CSS custom prop to define column width (and fallback for older browsers). ([d42c71e](https://github.com/Pier1/rocketbelt/commit/d42c71e))
+* **Card Grids:** Add grid initialization & throttled resize listener. ([cf90c1c](https://github.com/Pier1/rocketbelt/commit/cf90c1c))
+* **Card Grids:** Initial card grid implementation. ([9dc92d7](https://github.com/Pier1/rocketbelt/commit/9dc92d7))
+* **Card Grids:** Tweak default grid config. ([7c0ed51](https://github.com/Pier1/rocketbelt/commit/7c0ed51))
+* **Color:** Add adequate-contrast indicating colors. ([b5cd540](https://github.com/Pier1/rocketbelt/commit/b5cd540))
+* **Dialogs:** Reposition sheet dialog to support better touchability. ([a2eb278](https://github.com/Pier1/rocketbelt/commit/a2eb278))
+* **Global:** Add mixin to fix native scrolling when it breaks in iOS. ([7cb940c](https://github.com/Pier1/rocketbelt/commit/7cb940c))
+* **Global:** Add throttled event helper. ([edecd8b](https://github.com/Pier1/rocketbelt/commit/edecd8b))
+* **Icons:** Update basket icon. ([64591d1](https://github.com/Pier1/rocketbelt/commit/64591d1))
+* **Icons:** Update CTA arrow & chevrons for better brand alignment. ([74332f8](https://github.com/Pier1/rocketbelt/commit/74332f8))
+* **Typography:** Add `onUntruncate` callback support when truncating text. ([67f3ec0](https://github.com/Pier1/rocketbelt/commit/67f3ec0))
+* **Typography:** Add an `onClamp` callback for line clamping. ([5d4acd4](https://github.com/Pier1/rocketbelt/commit/5d4acd4))
+* **Typography:** Add built-in unclamping. ([079e606](https://github.com/Pier1/rocketbelt/commit/079e606))
+* **Typography:** Basic implmentation of cross-browser line clamping. ([7433db2](https://github.com/Pier1/rocketbelt/commit/7433db2))
+
+### Bug Fixes
+
+* **Card Grids:** Add typography script for card line clamping. ([f800333](https://github.com/Pier1/rocketbelt/commit/f800333))
+* **Dialogs:** Add -webkit property to enable native scrolling in dialogs. ([c18a881](https://github.com/Pier1/rocketbelt/commit/c18a881))
+
+<a name="1.15.2"></a>
+## [1.15.2](https://github.com/Pier1/rocketbelt/compare/1.15.1...v1.15.2) (2018-07-26)
+
+
+
+<a name="1.15.1"></a>
+## [1.15.1](https://github.com/Pier1/rocketbelt/compare/1.15.0...v1.15.1) (2018-07-20)
+
+
+### Bug Fixes
+
+* **Busy Indicators:** Remove unnecessary class removal. ([fc26bb2](https://github.com/Pier1/rocketbelt/commit/fc26bb2))
+* **Typography:** Prevent "www" from being removed from webfont URI. ([c5fb36d](https://github.com/Pier1/rocketbelt/commit/c5fb36d))
+
+
+
 <a name="1.15.0"></a>
 # [1.15.0](https://github.com/Pier1/rocketbelt/compare/1.14.1...v1.15.0) (2018-07-19)
 

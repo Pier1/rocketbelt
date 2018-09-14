@@ -9,6 +9,8 @@ $dialog-close-height: 44px;
 }
 
 .dialog {
+  -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
+
   &[aria-hidden='true'] {
     visibility: hidden;
     transition: visibility 300ms ease-out;

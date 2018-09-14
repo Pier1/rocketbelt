@@ -483,6 +483,7 @@ pre[class*="language-"] {
 /* Full info here: https://codepen.io/jakob-e/pen/doMoML */
 .example-code .copy-code {
   border: 1px solid transparent;
+  background: inherit;
   text-decoration: none;
   font-weight: 400;
   cursor: pointer;
@@ -985,6 +986,11 @@ pre[class*="language-"] {
       color: #201e4e;
       -ms-grid-column: span 2;
           grid-column: span 2; }
+
+.card-grid .card-grid_item {
+  padding: 1rem; }
+  .card-grid .card-grid_item p {
+    margin: 0; }
 
 article.grid-article .example .col::before {
   min-height: 2rem;
@@ -1804,8 +1810,8 @@ code,
     min-width: 8rem;
     background: white;
     background-image: none;
-    color: #1078a7;
-    fill: #1078a7;
+    color: #1965af;
+    fill: #1965af;
     box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04);
     transition: box-shadow 150ms ease-out;
     position: absolute;
@@ -1819,7 +1825,7 @@ code,
       color: #009ee1;
       fill: #009ee1; }
     .example-code .copy-code:visited {
-      color: #1078a7; }
+      color: #1965af; }
     .example-code .copy-code:active {
       border: 1px solid #d4e8f1;
       background: white;
@@ -1827,11 +1833,11 @@ code,
       fill: #004f71; }
     .example-code .copy-code[disabled] {
       border: 1px solid #d4e8f1;
-      color: rgba(16, 120, 167, 0.9);
-      fill: rgba(16, 120, 167, 0.9); }
+      color: rgba(25, 101, 175, 0.9);
+      fill: rgba(25, 101, 175, 0.9); }
       .example-code .copy-code[disabled]:hover {
-        color: rgba(16, 120, 167, 0.9);
-        fill: rgba(16, 120, 167, 0.9); }
+        color: rgba(25, 101, 175, 0.9);
+        fill: rgba(25, 101, 175, 0.9); }
     .example-code .copy-code:hover {
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23), -2px -2px 2px rgba(0, 0, 0, 0.04);
       transition: box-shadow 150ms ease-out; }

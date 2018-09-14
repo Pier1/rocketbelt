@@ -41,7 +41,9 @@
     'label':       `${aria}label`,
     'labelledby':  `${aria}labelledby`,
     'live':        `${aria}live`,
-    'role':        'role'
+    'posinset':    `${aria}posinset`,
+    'role':        'role',
+    'setsize':     `${aria}setsize`
   };
 
   window.rb.getShortId = function getShortId() {
@@ -91,6 +93,28 @@
     });
   };
 
+  // Throttle super-chatty events with requestAnimationFrame for better performance.
+  // See https://developer.mozilla.org/en-US/docs/Web/Events/resize
+  (() => {
+    const throttle = (type, name, obj) => {
+      obj = obj || window;
+      let running = false;
+      const func = () => {
+        if (running) { return; }
+        running = true;
+
+        requestAnimationFrame(() => {
+          obj.dispatchEvent(new CustomEvent(name));
+          running = false;
+        });
+      };
+      obj.addEventListener(type, func);
+    };
+
+    // Any event can be rAF'ed, not just resize.
+    throttle('resize', 'rb.optimizedResize');
+  })();
+
   // Polyfill String.prototype.repeat for IE11. This block can be deleted when
   // IE11 support is no longer needed in the future.
   // See https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String/repeat
@@ -136,7 +160,7 @@
   // See https://developer.mozilla.org/en-US/docs/Web/API/NodeList/forEach
   ((NodeListProto) => {
     if (window.NodeList && !NodeListProto.forEach) {
-      NodeListProto.foreach = (callback, thisArg) => {
+      NodeListProto.forEach = (callback, thisArg) => {
         const arg = thisArg || window;
         for (let i = 0; i < this.length; i++) {
           callback.call(arg, this[i], i, this);

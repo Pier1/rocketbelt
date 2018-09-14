@@ -22,11 +22,9 @@
   &.dialog-sheet {
     .dialog_content {
       top: auto;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      min-width: 100%;
-      max-width: 100%;
+      right: calc(100vw - 16px);
+      bottom: 32px;
+      left: 16px;
       transform: none;
       animation: dialog-sheet-in 300ms ease-in-out;
     }

@@ -14,6 +14,7 @@ a[class *= 'button'] {
 .button,
 button {
   border-radius: 0;
+  background: inherit;
   cursor: pointer;
 
   &[disabled] {
@@ -91,6 +92,7 @@ button {
   }
 }
 
+%button-sm,
 .button-sm {
   @include button-size(sm);
 
@@ -99,6 +101,7 @@ button {
   }
 }
 
+%button-md,
 .button-md {
   @include button-size(md);
 
@@ -107,6 +110,7 @@ button {
   }
 }
 
+%button-lg,
 .button-lg {
   @include button-size(lg);
 
@@ -153,4 +157,5 @@ button {
   100% { transform: rotate(360deg); }
 }
 
+@import 'buttons-alternate';
 @import 'buttons-dropdown';

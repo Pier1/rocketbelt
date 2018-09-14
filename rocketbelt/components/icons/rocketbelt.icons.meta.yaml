@@ -296,6 +296,10 @@ twitter:
   title: Twitter
   description: Twitter logo
 
+upload:
+  title: Upload
+  description: An arrow pointing up to a cloud
+
 warning:
   title: Warning
   description: An exclamation mark inside a triangle

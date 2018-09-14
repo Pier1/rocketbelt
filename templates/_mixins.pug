@@ -31,7 +31,7 @@ mixin wrapInExpander(collapsedLabel, expandedLabel, expanded, id)
 mixin exampleWithCode(labelText, expanded, inverted)
   - labelText = labelText || 'html';
   - inverted = inverted || false;
-  - if (labelText === 'js') labelText = 'javascript';
+  - if (labelText === 'js') labelText = 'JavaScript';
   - var seed = escape(block);
   - var id   = 'rb-' + shorthash.unique(seed);
 
@@ -55,7 +55,7 @@ mixin exampleWithCode(labelText, expanded, inverted)
 mixin exampleCodeOnly(labelText, expanded, inverted)
   - labelText = labelText || 'html';
   - inverted = inverted || false;
-  - if (labelText === 'js') labelText = 'javascript';
+  - if (labelText === 'js') labelText = 'JavaScript';
   - var seed = escape(block);
   - var id   = 'rb-' + shorthash.unique(seed);
 
@@ -75,7 +75,7 @@ mixin exampleCodeOnly(labelText, expanded, inverted)
 mixin dynamicExampleCode(labelText, expanded)
   - labelText = labelText || 'html';
   - inverted = inverted || false;
-  - if (labelText === 'js') labelText = 'javascript';
+  - if (labelText === 'js') labelText = 'JavaScript';
   - var seed = escape(block);
   - var id   = 'example' + ( Math.random() * 10000|0 );
   - var expanderAppend = labelText === ('html' || 'js') ? labelText.toUpperCase() : labelText
