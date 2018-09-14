@@ -15,7 +15,7 @@
     <meta name="theme-color" content="#ffffff">
   </head>
   <body>
-    <title>Expanders | Rocketbelt</title>
+    <title>Uploaders | Rocketbelt</title>
     <link rel="stylesheet" href="../../css/rocketbelt.creative.min.css">
     <link rel="stylesheet" href="../../css/rocketbelt.min.css">
     <link rel="stylesheet" href="../../css/site.css">
@@ -130,44 +130,67 @@
             <div class="col xs">
               <div class="grid">
                 <article>
-                  <h1 id="expanders" class="heading-with-link"><span class="heading_text">Expanders</span><button data-clipboard-text="#expanders" class="heading-copy-button heading_link">
+                  <h1 id="file-upload" class="heading-with-link"><span class="heading_text">File Upload</span><button data-clipboard-text="#file-upload" class="heading-copy-button heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </button></h1>
+                  <p></p>Include <code>rocketbelt.uploaders.js</code> and call <code>rb.uploaders.addUploader({ selector: &apos;.unique-selector&apos; })</code> to initialize.
+                  As files are added via the UI, they&apos;re also added to the 
+                  <rb class="uploaders files"></rb> array as base64-encoded strings along with the file
+                  size and an auto-generated ID.
+                  <p></p>The uploader emits <code>rb.uploaders.fileAdded</code> and <code>rb.uploaders.fileRemoved</code> events as files are added and removed.
                   <div class="exampleWithCode">
                     <div class="example">
-                      <div class="expander">
-                        <input class="expander_checkbox" type="checkbox" id="expander_example">
-                        <label class="expander_label" for="expander_example" data-collapsed-label="Show Contents" data-expanded-label="Hide Contents"><span class="expander_icon"></span></label>
-                        <div class="expander_content">
-                          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                          enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                          ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                          reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                          pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                          culpa qui officia deserunt mollit anim id est laborum
+                      <div class="uploader"><span class="uploader_cta text-with-icon">Add a Photo
+                          <svg class="icon icon-left" aria-hidden="true">
+                            <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-upload"/>
+                          </svg></span>
+                        <form class="uploader_form">
+                          <p class="uploader_text">
+                            Drag &amp; drop images into this area
+                            or 
+                            <label class="uploader_file-label button-lg button-link" for="uploader_file-input" aria-role="button" tabindex="0">browse your computer</label> for them.
+                          </p>
+                          <input id="uploader_file-input" type="file" multiple accept="*">
+                        </form>
+                        <progress max="100" value="0"></progress>
+                        <div class="uploader_thumbs_wrapper">
+                          <div class="uploader_thumbs"></div>
+                          <label class="uploader_file-label button-lg button-alternate" for="uploader_file-input" aria-role="button" tabindex="0"><span class="text-with-icon">Add another photo
+                              <svg class="icon" aria-hidden="true">
+                                <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-upload"/>
+                              </svg></span></label>
                         </div>
                       </div>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-2cztGf">
-                      <label class="expander_label" for="rb-2cztGf" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-2b0EJV">
+                      <label class="expander_label" for="rb-2b0EJV" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="copy-code" data-clipboard-target="#rb-1LD5KM">Copy</button>
-                          <pre><code class="language-html" id="rb-1LD5KM">
-                              &lt;div class=&quot;expander&quot;&gt;
-                                &lt;input class=&quot;expander_checkbox&quot; type=&quot;checkbox&quot; id=&quot;expander_example&quot;&gt;
-                                &lt;label class=&quot;expander_label&quot; for=&quot;expander_example&quot; data-collapsed-label=&quot;Show Contents&quot; data-expanded-label=&quot;Hide Contents&quot;&gt;&lt;span class=&quot;expander_icon&quot;&gt;&lt;/span&gt;&lt;/label&gt;
-                                &lt;div class=&quot;expander_content&quot;&gt;
-                                  Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                                  enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi
-                                  ut aliquip ex ea commodo consequat. Duis aute irure dolor in
-                                  reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla
-                                  pariatur. Excepteur sint occaecat cupidatat non proident, sunt in
-                                  culpa qui officia deserunt mollit anim id est laborum
+                          <button class="copy-code" data-clipboard-target="#rb-14PpuD">Copy</button>
+                          <pre><code class="language-html" id="rb-14PpuD">
+                              &lt;div class=&quot;uploader&quot;&gt;&lt;span class=&quot;uploader_cta text-with-icon&quot;&gt;Add a Photo
+                                  &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
+                                    &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-upload&quot;&gt;&lt;/use&gt;
+                                  &lt;/svg&gt;&lt;/span&gt;
+                                &lt;form class=&quot;uploader_form&quot;&gt;
+                                  &lt;p class=&quot;uploader_text&quot;&gt;
+                                    Drag &amp;amp; drop images into this area
+                                    or 
+                                    &lt;label class=&quot;uploader_file-label button-lg button-link&quot; for=&quot;uploader_file-input&quot; aria-role=&quot;button&quot; tabindex=&quot;0&quot;&gt;browse your computer&lt;/label&gt; for them.
+                                  &lt;/p&gt;
+                                  &lt;input id=&quot;uploader_file-input&quot; type=&quot;file&quot; multiple=&quot;&quot; accept=&quot;*&quot;&gt;
+                                &lt;/form&gt;
+                                &lt;progress max=&quot;100&quot; value=&quot;0&quot;&gt;&lt;/progress&gt;
+                                &lt;div class=&quot;uploader_thumbs_wrapper&quot;&gt;
+                                  &lt;div class=&quot;uploader_thumbs&quot;&gt;&lt;/div&gt;
+                                  &lt;label class=&quot;uploader_file-label button-lg button-alternate&quot; for=&quot;uploader_file-input&quot; aria-role=&quot;button&quot; tabindex=&quot;0&quot;&gt;&lt;span class=&quot;text-with-icon&quot;&gt;Add another photo
+                                      &lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;
+                                        &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-upload&quot;&gt;&lt;/use&gt;
+                                      &lt;/svg&gt;&lt;/span&gt;&lt;/label&gt;
                                 &lt;/div&gt;
                               &lt;/div&gt;</code></pre>
                         </div>
@@ -175,6 +198,7 @@
                     </div>
                   </div>
                 </article>
+                <script src="./rocketbelt.uploaders.js"></script>
               </div>
             </div>
           </div>

@@ -1,5 +1,5 @@
 /*!
- * modernizr v3.5.0
+ * modernizr v3.6.0
  * Build https://modernizr.com/download?-contains-csstransforms3d-flexbox-history-sizes-srcset-target-texttrackapi_track-time-touchevents-setclasses-dontmin
  *
  * Copyright (c)
@@ -36,7 +36,7 @@
 
   var ModernizrProto = {
     // The current version, dummy
-    _version: '3.5.0',
+    _version: '3.6.0',
 
     // Any settings that don't work as separate modules
     // can go in here as configuration.
@@ -1084,36 +1084,7 @@ Detects support for the ':target' CSS pseudo-class.
 !*/
 
   Modernizr.addTest('csstransforms3d', function() {
-    var ret = !!testAllProps('perspective', '1px', true);
-    var usePrefix = Modernizr._config.usePrefixes;
-
-    // Webkit's 3D transforms are passed off to the browser's own graphics renderer.
-    //   It works fine in Safari on Leopard and Snow Leopard, but not in Chrome in
-    //   some conditions. As a result, Webkit typically recognizes the syntax but
-    //   will sometimes throw a false positive, thus we must do a more thorough check:
-    if (ret && (!usePrefix || 'webkitPerspective' in docElement.style)) {
-      var mq;
-      var defaultStyle = '#modernizr{width:0;height:0}';
-      // Use CSS Conditional Rules if available
-      if (Modernizr.supports) {
-        mq = '@supports (perspective: 1px)';
-      } else {
-        // Otherwise, Webkit allows this media query to succeed only if the feature is enabled.
-        // `@media (transform-3d),(-webkit-transform-3d){ ... }`
-        mq = '@media (transform-3d)';
-        if (usePrefix) {
-          mq += ',(-webkit-transform-3d)';
-        }
-      }
-
-      mq += '{#modernizr{width:7px;height:18px;margin:0;padding:0;border:0}}';
-
-      testStyles(defaultStyle + mq, function(elem) {
-        ret = elem.offsetWidth === 7 && elem.offsetHeight === 18;
-      });
-    }
-
-    return ret;
+    return !!testAllProps('perspective', '1px', true);
   });
 
 /*!
