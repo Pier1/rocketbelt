@@ -18,6 +18,11 @@
   clip-path: inset(50%);
 }
 
+%hidden-from-everything {
+  display: none;
+  visibility: hidden;
+}
+
 // Genius idea from H5BP. See https://github.com/h5bp/html5-boilerplate/blob/024b8a05ee9acf99393469c0622e55a694542493/src/css/main.css#L147
 %focusable {
   &:active,

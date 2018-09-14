@@ -30,6 +30,7 @@ $border: $width-border solid $color-border;
       padding: ms(-14) ms(-2);
       min-height: 44px;
       border: $border;
+      background-color: color(white);
       color: color(contrast);
       line-height: normal;
       transition: background 100ms ease,
