@@ -19,29 +19,37 @@
       if (!uploader.classList.contains('uploader-expanded')) {
         uploader.setAttribute(rb.aria.role, 'button');
         uploader.setAttribute('tabindex', 0);
+      }
 
-        uploader.addEventListener('click', () => {
-          uploader.classList.add('uploader-expanded');
-          uploader.removeAttribute(rb.aria.role);
-          uploader.removeAttribute('tabindex');
+      if (!uploader.classList.contains('uploader-mobile')) {
+        uploader.addEventListener('click', expandClickHandler);
+
+        ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
+          uploader.addEventListener(eventName, preventDefaults);
         });
+
+        ['dragenter', 'dragover'].forEach(eventName => {
+          uploader.addEventListener(eventName, draggedOn);
+        });
+
+        ['dragleave', 'drop'].forEach(eventName => {
+          uploader.addEventListener(eventName, draggedOff);
+        });
+
+        uploader.addEventListener('drop', handleDrop);
+
+        // Add scrim elements
+        const scrim = document.createElement('div');
+        scrim.classList.add('scrim');
+        uploader.insertAdjacentElement('afterbegin', scrim);
+
+        // Register drag-related listeners
+        const scrimIcon = document.createElement('div');
+        scrimIcon.classList.add('scrim_icon');
+        scrim.insertAdjacentElement('afterend', scrimIcon);
       }
 
       rb.uploaders.config = uploaderConfig;
-
-      ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
-        uploader.addEventListener(eventName, preventDefaults);
-      });
-
-      ['dragenter', 'dragover'].forEach(eventName => {
-        uploader.addEventListener(eventName, draggedOn);
-      });
-
-      ['dragleave', 'drop'].forEach(eventName => {
-        uploader.addEventListener(eventName, draggedOff);
-      });
-
-      uploader.addEventListener('drop', handleDrop);
 
       // Register listener for keyboard input
       $(uploader).find('.uploader_file-label').keydown((e) => {
@@ -54,18 +62,22 @@
       });
 
       $(uploader).find('input[type="file"]').change(fileInputOnchange);
-
-      // Add scrim elements
-      const scrim = document.createElement('div');
-      scrim.classList.add('scrim');
-      uploader.insertAdjacentElement('afterbegin', scrim);
-
-      // Register drag-related listeners
-      const scrimIcon = document.createElement('div');
-      scrimIcon.classList.add('scrim_icon');
-      scrim.insertAdjacentElement('afterend', scrimIcon);
     }
   };
+
+  function expandClickHandler(e) {
+    const actualUploader =
+      e.target.classList.contains('uploader') ? e.target : e.target.closest('.uploader');
+    expandUploader(actualUploader);
+  }
+
+  function expandUploader(uploader) {
+    uploader.classList.add('uploader-expanded');
+    uploader.removeAttribute(rb.aria.role);
+    uploader.removeAttribute('tabindex');
+
+    uploader.removeEventListener('click', expandClickHandler);
+  }
 
   function fileInputOnchange(e) {
     rb.uploaders.handleFiles(this.files, rb.uploaders.config);
@@ -137,13 +149,19 @@
     rb.uploaders.files = rb.uploaders.files || [];
 
     const reader = new FileReader();
+    reader.size = file.size;
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       const img = document.createElement('img');
       img.src = reader.result;
       img.id = `rb_${rb.getShortId()}`;
       img.classList.add('uploader_thumb');
-      rb.uploaders.files.push({ id: img.id, file: reader.result });
+
+      const f = { id: img.id, file: reader.result, size: reader.size };
+      rb.uploaders.files.push(f);
+
+      document.getElementById(rb.uploaders.config.id)
+        .dispatchEvent(new CustomEvent('rb.uploaders.fileAdded', { detail: f }));
 
       const button = document.createElement('button');
       button.dataset.targetId = img.id;
@@ -166,6 +184,10 @@
         rb.uploaders.files = rb.uploaders.files.filter((el) => {
           return el.id !== id;
         });
+
+        const i = { removedId: id };
+        document.getElementById(rb.uploaders.config.id)
+          .dispatchEvent(new CustomEvent('rb.uploaders.fileRemoved', { detail: i }));
       });
 
       document.querySelector('.uploader_thumbs').appendChild(img);
