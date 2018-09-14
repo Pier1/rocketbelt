@@ -1,3 +1,25 @@
+<a name="1.16.7"></a>
+## [1.16.7](https://github.com/Pier1/rocketbelt/compare/1.16.6...v1.16.7) (2018-09-14)
+
+
+### Bug Fixes
+
+* **Tabcordions:** Declare explicit background color for Safari & PC. ([dfffc3e](https://github.com/Pier1/rocketbelt/commit/dfffc3e))
+
+
+### Features
+
+* **Buttons:** Add placeholder selectors for sized buttons to enable style reuse. ([bfd04ce](https://github.com/Pier1/rocketbelt/commit/bfd04ce))
+* **Buttons:** Share button-alternate styles via placeholder selector. ([729f087](https://github.com/Pier1/rocketbelt/commit/729f087))
+* **Global:** Add "hidden-from-everything" placeholder. ([0d3d17f](https://github.com/Pier1/rocketbelt/commit/0d3d17f))
+* **Icons:** Add upload icon. ([000fa0b](https://github.com/Pier1/rocketbelt/commit/000fa0b))
+* **Uploaders:** Add button element to support removing items. ([6bc1c2f](https://github.com/Pier1/rocketbelt/commit/6bc1c2f))
+* **Uploaders:** Add initial uploader implementation. ([f08bda6](https://github.com/Pier1/rocketbelt/commit/f08bda6))
+* **Uploaders:** Add support for removing pending images. ([a651d65](https://github.com/Pier1/rocketbelt/commit/a651d65))
+* **Uploaders:** Wrap up (nearly) desktop uploader. ([f56e87c](https://github.com/Pier1/rocketbelt/commit/f56e87c))
+
+
+
 <a name="1.16.6"></a>
 ## [1.16.6](https://github.com/Pier1/rocketbelt/compare/1.16.5...v1.16.6) (2018-09-10)
 
