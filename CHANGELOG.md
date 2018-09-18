@@ -1,3 +1,13 @@
+<a name="1.16.8"></a>
+## [1.16.8](https://github.com/Pier1/rocketbelt/compare/1.16.7...v1.16.8) (2018-09-18)
+
+
+### Features
+
+* **Uploaders:** Add maxFiles config option & related UX. ([5067326](https://github.com/Pier1/rocketbelt/commit/5067326))
+
+
+
 <a name="1.16.7"></a>
 ## [1.16.7](https://github.com/Pier1/rocketbelt/compare/1.16.6...v1.16.7) (2018-09-14)
 
