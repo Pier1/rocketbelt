@@ -1,6 +1,7 @@
 'use strict';
 ((rb, document, $) => {
   const activeClass = 'uploader-dragged-on';
+  const maxFilesClass = 'uploader-max-files';
 
   // Prevent default drag behaviors
   ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -89,30 +90,39 @@
   }
 
   function draggedOn(e) {
-    const dropArea =
-      $(e.target).hasClass(activeClass) ? e.target : $(e.target).closest('.uploader');
+    const $dropArea =
+      $(e.target).hasClass(activeClass) ? $(e.target) : $(e.target).closest('.uploader');
 
-    if (!$(dropArea).hasClass(activeClass)) {
-      $(dropArea).find('.scrim, .scrim_icon').css('z-index', '1');
-      $(dropArea).addClass(activeClass);
+    if (!$dropArea.hasClass(activeClass)) {
+      $dropArea.find('.scrim, .scrim_icon').css('z-index', '1');
+      $dropArea.addClass(activeClass);
     }
   }
 
   function draggedOff(e) {
-    const dropArea =
-      $(e.target).hasClass(activeClass) ? e.target : $(e.target).closest('.uploader');
+    const $dropArea =
+      $(e.target).hasClass(activeClass) ? $(e.target) : $(e.target).closest('.uploader');
 
-    if ($(dropArea).hasClass(activeClass)) {
-      $(dropArea).removeClass(activeClass);
-      $(dropArea).find('.scrim, .scrim_icon').css('z-index', '-1');
+    if ($dropArea.hasClass(activeClass)) {
+      $dropArea.removeClass(activeClass);
+      $dropArea.find('.scrim, .scrim_icon').css('z-index', '-1');
     }
   }
 
-  function handleDrop(e) {
-    const dt = e.dataTransfer;
-    const files = dt.files;
+  rb.uploaders.numCanAdd = () => {
+    const numFiles = rb.uploaders.files ? rb.uploaders.files.length : 0;
+    const maxFiles = rb.uploaders.config.maxFiles || Number.POSITIVE_INFINITY;
 
-    rb.uploaders.handleFiles(files, rb.uploaders.config);
+    return maxFiles - numFiles;
+  };
+
+  function handleDrop(e) {
+    if (rb.uploaders.numCanAdd() > 0) {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+
+      rb.uploaders.handleFiles(files, rb.uploaders.config);
+    }
   }
 
   let uploadProgress = [];
@@ -135,14 +145,17 @@
   }
 
   rb.uploaders.handleFiles = function handleFiles(files) {
-    files = [...files];
-    initializeProgress(files.length);
+    const numCanAdd = rb.uploaders.numCanAdd();
+
+    const filesToAdd = [...files].slice(0, numCanAdd);
+
+    initializeProgress(filesToAdd.length);
 
     if (rb.uploaders.config.autoUpload) {
-      files.forEach(uploadFile);
+      filesToAdd.forEach(uploadFile);
     }
 
-    files.forEach(previewFile);
+    filesToAdd.forEach(previewFile);
   };
 
   function previewFile(file) {
@@ -150,6 +163,10 @@
 
     const reader = new FileReader();
     reader.size = file.size;
+
+    document.getElementById(rb.uploaders.config.id)
+      .dispatchEvent(new CustomEvent('rb.uploaders.addingFile'));
+
     reader.readAsDataURL(file);
     reader.onloadend = () => {
       const img = document.createElement('img');
@@ -185,6 +202,15 @@
           return el.id !== id;
         });
 
+        if (rb.uploaders.numCanAdd() > 0) {
+          const $dropArea = $(`#${rb.uploaders.config.id}`);
+
+          $('.uploader #uploader_file-input, .uploader .uploader_file-label')
+            .removeAttr('disabled');
+
+          $dropArea.removeClass(maxFilesClass);
+        }
+
         const i = { removedId: id };
         document.getElementById(rb.uploaders.config.id)
           .dispatchEvent(new CustomEvent('rb.uploaders.fileRemoved', { detail: i }));
@@ -194,6 +220,14 @@
       document.querySelector(`#${img.id}`).insertAdjacentElement('afterend', button);
 
       document.querySelector(`#${rb.uploaders.config.id}`).classList.add('uploader-has-thumbs');
+
+      if (!rb.uploaders.numCanAdd()) {
+        const $dropArea = $(`#${rb.uploaders.config.id}`);
+
+        $('.uploader #uploader_file-input, .uploader .uploader_file-label').attr('disabled', '');
+
+        $dropArea.addClass(maxFilesClass);
+      }
     };
   }
 

@@ -3770,6 +3770,9 @@ button {
   text-align: center;
   transition: max-height 600ms cubic-bezier(0.455, 0.03, 0.515, 0.955), max-width 400ms cubic-bezier(0.455, 0.03, 0.515, 0.955); }
 
+.uploader .uploader-expanded .required-suppressed::after {
+  content: ''; }
+
 .uploader-expanded .uploader_thumbs img {
   margin-right: 1rem;
   margin-bottom: 1rem;
@@ -3791,6 +3794,15 @@ button {
 
 .uploader .uploader_thumbs {
   height: 120px; }
+
+.uploader .uploader_file-label[disabled] {
+  box-shadow: none;
+  cursor: default;
+  pointer-events: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none; }
 
 .uploader .uploader_file-label:not(.button-link) {
   display: -ms-flexbox;
@@ -3922,6 +3934,8 @@ button {
       content: '';
       opacity: 1;
       transition: opacity 300ms linear; }
+  .uploader.uploader-expanded.uploader-max-files .scrim_icon {
+    background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg aria-labelledby='atrb-icon-circle-slash-desc atrb-icon-circle-slash-title' xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256' fill='%234dbaa8'%3E%3Cpath d='M128 16c61.852 0 112 50.148 112 112s-50.148 112-112 112S16 189.852 16 128 66.148 16 128 16zM44 128c0 18.107 5.824 34.86 15.605 48.599L176.6 59.605C162.86 49.824 146.107 44 128 44c-46.312 0-84 37.688-84 84zm168 0c0-18.107-5.824-34.86-15.605-48.599L79.41 196.385C93.14 206.176 109.893 212 128 212c46.312 0 84-37.688 84-84z'/%3E%3C/svg%3E"); }
   .uploader.uploader-expanded input[type='file'] {
     display: none; }
 
