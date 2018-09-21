@@ -17,12 +17,23 @@
       uploader.id = uploader.id || `rb_${rb.getShortId()}`;
       uploaderConfig.id = uploader.id;
 
+      uploaderConfig.isMobile =
+        uploaderConfig.isMobile ||
+        uploader.classList.contains('uploader-mobile') ||
+        document.querySelectorAll('.mobile .uploader, .tablet .uploader').length > 0;
+
+      if (uploaderConfig.isMobile) {
+        rb.once(uploader, 'click', () => {
+          $(`#${rb.uploaders.config.id} input[type="file"]`).click();
+        });
+      }
+
       if (!uploader.classList.contains('uploader-expanded')) {
         uploader.setAttribute(rb.aria.role, 'button');
         uploader.setAttribute('tabindex', 0);
       }
 
-      if (!uploader.classList.contains('uploader-mobile')) {
+      if (!uploaderConfig.isMobile) {
         uploader.addEventListener('click', expandClickHandler);
 
         ['dragenter', 'dragover', 'dragleave', 'drop'].forEach(eventName => {
@@ -81,6 +92,10 @@
   }
 
   function fileInputOnchange(e) {
+    if (rb.uploaders.config.isMobile) {
+      expandClickHandler(e);
+    }
+
     rb.uploaders.handleFiles(this.files, rb.uploaders.config);
   }
 
