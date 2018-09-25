@@ -41,15 +41,11 @@
     img {
       margin-right: 1rem;
       margin-bottom: 0.5rem;
-      height: 72px;
+      height: 120px;
       vertical-align: top;
       pointer-events: none;
       user-select: none;
       object-fit: contain;
-
-      @include media('>=sm') {
-        height: 120px;
-      }
     }
   }
 
