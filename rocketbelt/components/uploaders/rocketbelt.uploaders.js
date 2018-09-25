@@ -23,6 +23,8 @@
         document.querySelectorAll('.mobile .uploader, .tablet .uploader').length > 0;
 
       if (uploaderConfig.isMobile) {
+        uploader.classList.add('uploader-mobile');
+
         rb.once(uploader, 'click', () => {
           $(`#${rb.uploaders.config.id} input[type="file"]`).click();
         });
