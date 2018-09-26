@@ -1,3 +1,19 @@
+<a name="1.17.0"></a>
+# [1.17.0](https://github.com/Pier1/rocketbelt/compare/1.16.8...v1.17.0) (2018-09-26)
+
+### Features
+
+* **Uploaders:** Additional mobile styling. ([4acf91f](https://github.com/Pier1/rocketbelt/commit/4acf91f))
+* **Uploaders:** Allow native interactions on mobile/tablet. ([b7ec3f6](https://github.com/Pier1/rocketbelt/commit/b7ec3f6))
+
+### Bug Fixes
+
+* **Uploaders:** Remove unnecessary media query. ([0df1df2](https://github.com/Pier1/rocketbelt/commit/0df1df2))
+
+
+
+
+
 <a name="1.16.8"></a>
 ## [1.16.8](https://github.com/Pier1/rocketbelt/compare/1.16.7...v1.16.8) (2018-09-18)
 
