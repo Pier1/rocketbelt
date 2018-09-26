@@ -1,0 +1,722 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/base/typography/rocketbelt.typography.font-loader.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAapeRjXG7">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAapeRjXG7">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAapeRjXG7" color="#5b14d9">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAapeRjXG7">
+    <meta name="msapplication-TileColor" content="#5b14d9">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml?v=gAapeRjXG7">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <title>Buttons | Rocketbelt</title>
+    <link rel="stylesheet" href="../../css/rocketbelt.creative.min.css">
+    <link rel="stylesheet" href="../../css/rocketbelt.min.css">
+    <link rel="stylesheet" href="../../css/site.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/base/rocketbelt.js"></script>
+  </body>
+  <body class="grid-fluid">
+    <ul class="skip list-reset">
+      <li><a class="button-sm button-secondary" href="#content">Skip to Main Content</a></li>
+      <li><a class="button-sm button-secondary" href="#footer">Skip to Footer</a></li>
+    </ul>
+    <div class="docs-wrapper row">
+      <header class="site-header">
+        <div class="site-nav nav-shadowed">
+          <div class="nav_on-site"><a class="rb-header" href="/"><span class="visually-hidden">Return to rocketbelt.io</span>
+              <picture><img srcset="/assets/rocketbelt.svg" alt=""></picture><span class="rb-title">Rocketbelt</span></a>
+            <nav id="main-nav">
+              <ul class="nav-menu">
+                <li class="nav-item nav_level-1" ref="base">
+                  <button class="category-label">Base</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/a11y">Accessibility</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/animation">Animation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/color">Color</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/feature-detection">Feature Detection</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/grid">Grid</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/layout">Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/slipsum">Slipsum</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/typography">Typography</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/vendor">Vendor</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="components">
+                  <button class="category-label">Components</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/uploaders">Uploaders</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="creative">
+                  <button class="category-label">Creative</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/playground">Playground</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/product-tag">Product Tag</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/sale-sticker">Sale Sticker</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/seo-banner">Seo Banner</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="exposition">
+                  <button class="category-label">Exposition</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/homepage-components">Homepage Components</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/links-and-buttons">Links And Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/logo-usage">Logo Usage</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/page-layout">Page Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/site-content">Site Content</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/web-typography">Web Typography</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="nav_off-site links">
+            <div class="link link-npm"></div><a class="link link-github" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          </div>
+        </div>
+        <script src="../../components/navigation/rocketbelt.navigation-xl.js"></script>
+        <script>
+          $(document).ready(function () {
+            $('#main-nav').accessibleMegaMenu({
+              uuidPrefix: 'rb-navigation',
+              menuClass: 'nav-menu',
+              topNavItemClass: 'nav-item',
+              panelClass: 'sub-nav',
+              panelGroupClass: 'sub-nav-group',
+              hoverClass: 'hover',
+              focusClass: 'focus',
+              openClass: 'open'
+            })
+          });
+          
+        </script>
+      </header>
+      <div class="pad-5 col xs docs-wrapper_main">
+        <main class="site-main grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <div class="grid">
+                <article>
+                  <h1 id="buttons" class="heading-with-link"><span class="heading_text">Buttons</span><button data-clipboard-text="#buttons" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h1>
+                  <h2 id="primary" class="heading-with-link"><span class="heading_text">Primary</span><button data-clipboard-text="#primary" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <button class="button-lg button-primary">Primary</button>
+                            <button class="button-lg button-primary" disabled>Disabled</button>
+                            <button class="button button-primary">Medium</button>
+                            <button class="button-sm button-primary">Small</button>
+                            <button class="button-mini button-primary">Mini</button>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-2d8AMb">
+                            <label class="expander_label" for="rb-2d8AMb" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-25OQjf">Copy</button>
+                                <pre><code class="language-html" id="rb-25OQjf">
+                                    &lt;button class=&quot;button-lg button-primary&quot;&gt;Primary&lt;/button&gt;
+                                    &lt;button class=&quot;button-lg button-primary&quot; disabled&gt;Disabled&lt;/button&gt;
+                                    &lt;button class=&quot;button button-primary&quot;&gt;Medium&lt;/button&gt;
+                                    &lt;button class=&quot;button-sm button-primary&quot;&gt;Small&lt;/button&gt;
+                                    &lt;button class=&quot;button-mini button-primary&quot;&gt;Mini&lt;/button&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="secondary" class="heading-with-link"><span class="heading_text">Secondary</span><button data-clipboard-text="#secondary" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row exampleWithoutCode">
+                      <div class="col xs">
+                        <div>
+                          <button class="button-lg button-secondary">Secondary</button>
+                          <button class="button-lg button-secondary" disabled>Disabled</button>
+                          <button class="button button-secondary">Medium</button>
+                          <button class="button-sm button-secondary">Small</button>
+                          <button class="button-mini button-secondary">Mini</button>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="exampleWithCode">
+                          <div class="example"></div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1gMHtC">
+                            <label class="expander_label" for="rb-Z1gMHtC" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-Z1fMCLE">Copy</button>
+                                <pre><code class="language-html" id="rb-Z1fMCLE">
+                                    &lt;button class=&quot;button-lg button-secondary&quot;&gt;Secondary&lt;/button&gt;
+                                    &lt;button class=&quot;button-lg button-secondary&quot; disabled&gt;Disabled&lt;/button&gt;
+                                    &lt;button class=&quot;button button-secondary&quot;&gt;Medium&lt;/button&gt;
+                                    &lt;button class=&quot;button-sm button-secondary&quot;&gt;Small&lt;/button&gt;
+                                    &lt;button class=&quot;button-mini button-secondary&quot;&gt;Mini&lt;/button&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="alternate-actions" class="heading-with-link"><span class="heading_text">Alternate Actions</span><button data-clipboard-text="#alternate-actions" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <button class="button-lg button-alternate">Alternate</button>
+                            <button class="button-lg button-alternate" disabled>Disabled</button>
+                            <button class="button-md button-alternate">Medium</button>
+                            <button class="button-sm button-alternate">Small</button>
+                            <button class="button-mini button-alternate">Mini</button>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1u6cL4">
+                            <label class="expander_label" for="rb-Z1u6cL4" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-ZGf462">Copy</button>
+                                <pre><code class="language-html" id="rb-ZGf462">
+                                    &lt;button class=&quot;button-lg button-alternate&quot;&gt;Alternate&lt;/button&gt;
+                                    &lt;button class=&quot;button-lg button-alternate&quot; disabled&gt;Disabled&lt;/button&gt;
+                                    &lt;button class=&quot;button-md button-alternate&quot;&gt;Medium&lt;/button&gt;
+                                    &lt;button class=&quot;button-sm button-alternate&quot;&gt;Small&lt;/button&gt;
+                                    &lt;button class=&quot;button-mini button-alternate&quot;&gt;Mini&lt;/button&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="text" class="heading-with-link"><span class="heading_text">Text</span><button data-clipboard-text="#text" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <button class="button-lg button-text">Text Button</button>
+                            <button class="button-lg button-text" disabled>Disabled</button>
+                            <button class="button-md button-text">Medium Text</button>
+                            <button class="button-sm button-text">Small Text</button>
+                            <button class="button-mini button-text">Mini Text</button>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1tJdFB">
+                            <label class="expander_label" for="rb-Z1tJdFB" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-ZLqbJp">Copy</button>
+                                <pre><code class="language-html" id="rb-ZLqbJp">
+                                    &lt;button class=&quot;button-lg button-text&quot;&gt;Text Button&lt;/button&gt;
+                                    &lt;button class=&quot;button-lg button-text&quot; disabled&gt;Disabled&lt;/button&gt;
+                                    &lt;button class=&quot;button-md button-text&quot;&gt;Medium Text&lt;/button&gt;
+                                    &lt;button class=&quot;button-sm button-text&quot;&gt;Small Text&lt;/button&gt;
+                                    &lt;button class=&quot;button-mini button-text&quot;&gt;Mini Text&lt;/button&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="dropdown" class="heading-with-link"><span class="heading_text">Dropdown</span><button data-clipboard-text="#dropdown" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <div class="button-dropdown button">
+                              <button class="button">Primary</button>
+                              <input class="button-dropdown_trigger visually-hidden" type="checkbox">
+                              <label class="button-dropdown_icon">
+                                <svg class="icon">
+                                  <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-chevron-down"/>
+                                </svg>
+                              </label>
+                              <div class="button-dropdown_content">
+                                <ul class="list-reset">
+                                  <li>Foo</li>
+                                  <li>Bar</li>
+                                  <li>Baz</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="button-dropdown button button-secondary">
+                              <button class="button button-secondary">Secondary</button>
+                              <input class="button-dropdown_trigger visually-hidden" type="checkbox">
+                              <label class="button-dropdown_icon">
+                                <svg class="icon">
+                                  <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-chevron-down"/>
+                                </svg>
+                              </label>
+                              <div class="button-dropdown_content">
+                                <ul class="list-reset">
+                                  <li>Foo</li>
+                                  <li>Bar</li>
+                                  <li>Baz</li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="button-dropdown button button-text">
+                              <button class="button button-text">Text</button>
+                              <input class="button-dropdown_trigger visually-hidden" type="checkbox">
+                              <label class="button-dropdown_icon">
+                                <svg class="icon">
+                                  <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-chevron-down"/>
+                                </svg>
+                              </label>
+                              <div class="button-dropdown_content">
+                                <ul class="list-reset">
+                                  <li>Foo</li>
+                                  <li>Bar</li>
+                                  <li>Baz</li>
+                                </ul>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-ZTFYql">
+                            <label class="expander_label" for="rb-ZTFYql" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-1PFSr">Copy</button>
+                                <pre><code class="language-html" id="rb-1PFSr">
+                                    &lt;div class=&quot;button-dropdown button&quot;&gt;
+                                      &lt;button class=&quot;button&quot;&gt;Primary&lt;/button&gt;
+                                      &lt;input class=&quot;button-dropdown_trigger visually-hidden&quot; type=&quot;checkbox&quot;&gt;
+                                      &lt;label class=&quot;button-dropdown_icon&quot;&gt;
+                                        &lt;svg class=&quot;icon&quot;&gt;
+                                          &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-chevron-down&quot;&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                      &lt;/label&gt;
+                                      &lt;div class=&quot;button-dropdown_content&quot;&gt;
+                                        &lt;ul class=&quot;list-reset&quot;&gt;
+                                          &lt;li&gt;Foo&lt;/li&gt;
+                                          &lt;li&gt;Bar&lt;/li&gt;
+                                          &lt;li&gt;Baz&lt;/li&gt;
+                                        &lt;/ul&gt;
+                                      &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;button-dropdown button button-secondary&quot;&gt;
+                                      &lt;button class=&quot;button button-secondary&quot;&gt;Secondary&lt;/button&gt;
+                                      &lt;input class=&quot;button-dropdown_trigger visually-hidden&quot; type=&quot;checkbox&quot;&gt;
+                                      &lt;label class=&quot;button-dropdown_icon&quot;&gt;
+                                        &lt;svg class=&quot;icon&quot;&gt;
+                                          &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-chevron-down&quot;&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                      &lt;/label&gt;
+                                      &lt;div class=&quot;button-dropdown_content&quot;&gt;
+                                        &lt;ul class=&quot;list-reset&quot;&gt;
+                                          &lt;li&gt;Foo&lt;/li&gt;
+                                          &lt;li&gt;Bar&lt;/li&gt;
+                                          &lt;li&gt;Baz&lt;/li&gt;
+                                        &lt;/ul&gt;
+                                      &lt;/div&gt;
+                                    &lt;/div&gt;
+                                    &lt;div class=&quot;button-dropdown button button-text&quot;&gt;
+                                      &lt;button class=&quot;button button-text&quot;&gt;Text&lt;/button&gt;
+                                      &lt;input class=&quot;button-dropdown_trigger visually-hidden&quot; type=&quot;checkbox&quot;&gt;
+                                      &lt;label class=&quot;button-dropdown_icon&quot;&gt;
+                                        &lt;svg class=&quot;icon&quot;&gt;
+                                          &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-chevron-down&quot;&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;
+                                      &lt;/label&gt;
+                                      &lt;div class=&quot;button-dropdown_content&quot;&gt;
+                                        &lt;ul class=&quot;list-reset&quot;&gt;
+                                          &lt;li&gt;Foo&lt;/li&gt;
+                                          &lt;li&gt;Bar&lt;/li&gt;
+                                          &lt;li&gt;Baz&lt;/li&gt;
+                                        &lt;/ul&gt;
+                                      &lt;/div&gt;
+                                    &lt;/div&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="javascript-include" class="heading-with-link"><span class="heading_text">Javascript Include</span><button data-clipboard-text="#javascript-include" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <script src="./rocketbelt.buttons-dropdown.min.js"></script>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2cultK" checked="checked">
+                      <label class="expander_label" for="rb-2cultK" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-1Ixp4W">Copy</button>
+                          <pre><code class="language-js include" id="rb-1Ixp4W">
+                              &lt;script src=&quot;./rocketbelt.buttons-dropdown.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="link" class="heading-with-link"><span class="heading_text">Link</span><button data-clipboard-text="#link" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <button class="button-lg button-link">Link Button</button>
+                            <button class="button-lg button-link" disabled>Disabled</button>
+                            <button class="button-md button-link">Medium Link</button>
+                            <button class="button-sm button-link">Small Link</button>
+                            <button class="button-mini button-link">Mini Link</button>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-2cWDvW">
+                            <label class="expander_label" for="rb-2cWDvW" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-21xByW">Copy</button>
+                                <pre><code class="language-html" id="rb-21xByW">
+                                    &lt;button class=&quot;button-lg button-link&quot;&gt;Link Button&lt;/button&gt;
+                                    &lt;button class=&quot;button-lg button-link&quot; disabled&gt;Disabled&lt;/button&gt;
+                                    &lt;button class=&quot;button-md button-link&quot;&gt;Medium Link&lt;/button&gt;
+                                    &lt;button class=&quot;button-sm button-link&quot;&gt;Small Link&lt;/button&gt;
+                                    &lt;button class=&quot;button-mini button-link&quot;&gt;Mini Link&lt;/button&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="anchor" class="heading-with-link"><span class="heading_text">Anchor</span><button data-clipboard-text="#anchor" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="exampleWithCode">
+                          <div class="example"><a class="button button-lg button-primary" href="#" role="button">Anchor Button</a><a class="button button-lg button-primary" disabled href="#" role="button">Disabled</a><a class="button" href="#" role="button">Medium Anchor</a><a class="button button-sm button-primary" href="#" role="button">Small Anchor</a><a class="button button-mini button-primary" href="#" role="button">Mini Anchor</a>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-2aNAa1">
+                            <label class="expander_label" for="rb-2aNAa1" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-123RT7">Copy</button>
+                                <pre><code class="language-html" id="rb-123RT7">&lt;a class=&quot;button button-lg button-primary&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Anchor Button&lt;/a&gt;&lt;a class=&quot;button button-lg button-primary&quot; disabled href=&quot;#&quot; role=&quot;button&quot;&gt;Disabled&lt;/a&gt;&lt;a class=&quot;button&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Medium Anchor&lt;/a&gt;&lt;a class=&quot;button button-sm button-primary&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Small Anchor&lt;/a&gt;&lt;a class=&quot;button button-mini button-primary&quot; href=&quot;#&quot; role=&quot;button&quot;&gt;Mini Anchor&lt;/a&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="block" class="heading-with-link"><span class="heading_text">Block</span><button data-clipboard-text="#block" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="grid-fluid">
+                        <div class="row">
+                          <div class="col xs-12 md-6">
+                            <button class="button-lg button-secondary button-block">Block</button>
+                          </div>
+                          <div class="col xs-12 md-6">
+                            <button class="button-lg button-primary button-block">Block</button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col xs-12 md-6">
+                            <button class="button-md button-secondary button-block">Block</button>
+                          </div>
+                          <div class="col xs-12 md-6">
+                            <button class="button-md button-primary button-block">Block</button>
+                          </div>
+                        </div>
+                        <div class="row">
+                          <div class="col xs-12 md-6">
+                            <button class="button-sm button-secondary button-block">Block</button>
+                          </div>
+                          <div class="col xs-12 md-6">
+                            <button class="button-sm button-primary button-block">Block</button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZTcIVn">
+                      <label class="expander_label" for="rb-ZTcIVn" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-96bFc">Copy</button>
+                          <pre><code class="language-html" id="rb-96bFc">
+                              &lt;div class=&quot;grid-fluid&quot;&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-12 md-6&quot;&gt;
+                                    &lt;button class=&quot;button-lg button-secondary button-block&quot;&gt;Block&lt;/button&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class=&quot;col xs-12 md-6&quot;&gt;
+                                    &lt;button class=&quot;button-lg button-primary button-block&quot;&gt;Block&lt;/button&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-12 md-6&quot;&gt;
+                                    &lt;button class=&quot;button-md button-secondary button-block&quot;&gt;Block&lt;/button&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class=&quot;col xs-12 md-6&quot;&gt;
+                                    &lt;button class=&quot;button-md button-primary button-block&quot;&gt;Block&lt;/button&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                                &lt;div class=&quot;row&quot;&gt;
+                                  &lt;div class=&quot;col xs-12 md-6&quot;&gt;
+                                    &lt;button class=&quot;button-sm button-secondary button-block&quot;&gt;Block&lt;/button&gt;
+                                  &lt;/div&gt;
+                                  &lt;div class=&quot;col xs-12 md-6&quot;&gt;
+                                    &lt;button class=&quot;button-sm button-primary button-block&quot;&gt;Block&lt;/button&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="dynamic" class="heading-with-link"><span class="heading_text">Dynamic</span><button data-clipboard-text="#dynamic" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h3 id="busy" class="heading-with-link"><span class="heading_text">Busy</span><button data-clipboard-text="#busy" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <button class="button-lg button-primary button-dynamic" data-busy-text="Adding to Basket">Add to Basket</button>
+                      <button class="button button-primary button-dynamic">Medium</button>
+                      <button class="button-sm button-primary button-dynamic">Small</button>
+                      <button class="button-mini button-primary button-dynamic">Mini</button>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1hVSfJ">
+                      <label class="expander_label" for="rb-Z1hVSfJ" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z1TdLeL">Copy</button>
+                          <pre><code class="language-html" id="rb-Z1TdLeL">
+                              &lt;button class=&quot;button-lg button-primary button-dynamic&quot; data-busy-text=&quot;Adding to Basket&quot;&gt;Add to Basket&lt;/button&gt;
+                              &lt;button class=&quot;button button-primary button-dynamic&quot;&gt;Medium&lt;/button&gt;
+                              &lt;button class=&quot;button-sm button-primary button-dynamic&quot;&gt;Small&lt;/button&gt;
+                              &lt;button class=&quot;button-mini button-primary button-dynamic&quot;&gt;Mini&lt;/button&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="success" class="heading-with-link"><span class="heading_text">Success</span><button data-clipboard-text="#success" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <button class="button-lg button-primary button-dynamic" data-busy-text="Adding to Basket" data-success-text="Added">Add to Basket</button>
+                      <button class="button button-primary button-dynamic">Medium</button>
+                      <button class="button-sm button-primary button-dynamic">Small</button>
+                      <button class="button-mini button-primary button-dynamic">Mini</button>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZS9lSi">
+                      <label class="expander_label" for="rb-ZS9lSi" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-GoRWz">Copy</button>
+                          <pre><code class="language-html" id="rb-GoRWz">
+                              &lt;button class=&quot;button-lg button-primary button-dynamic&quot; data-busy-text=&quot;Adding to Basket&quot; data-success-text=&quot;Added&quot;&gt;Add to Basket&lt;/button&gt;
+                              &lt;button class=&quot;button button-primary button-dynamic&quot;&gt;Medium&lt;/button&gt;
+                              &lt;button class=&quot;button-sm button-primary button-dynamic&quot;&gt;Small&lt;/button&gt;
+                              &lt;button class=&quot;button-mini button-primary button-dynamic&quot;&gt;Mini&lt;/button&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="script-include" class="heading-with-link"><span class="heading_text">Script Include</span><button data-clipboard-text="#script-include" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <script src="./rocketbelt.dynamic-button.min.js"></script>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1t51J7" checked="checked">
+                      <label class="expander_label" for="rb-Z1t51J7" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-ZVnKHv">Copy</button>
+                          <pre><code class="language-html" id="rb-ZVnKHv">
+                              &lt;script src=&quot;./rocketbelt.dynamic-button.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="site-footer">
+        <div class="grid-fluid footer_wrapper">
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="links_off-site"><a class="link" href="https://www.pier1.com">
+                  <svg class="icon p1-logo">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-p1logo-alt-1"/>
+                  </svg></a><a class="link" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div>
+            </div>
+          </div>
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="copyright">&#xA9; 2018 Pier 1 Imports. Rocketbelt is distributed under an <a href="https://github.com/Pier1/rocketbelt/blob/develop/LICENSE">MIT license</a>.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <article class="dialog" tabindex="0" aria-hidden="true">
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+        <header class="dialog_header">
+          <h2 class="dialog_title" id="dialog_title"></h2>
+          <div class="dialog_close_container">
+            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+              <svg class="icon">
+                <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="dialog_body"></div>
+      </section>
+    </article>
+    <script src="../../js/playground.jquery.js"></script>
+    <script src="../../js/site.js"></script>
+    <script src="/base/feature-detection/rocketbelt.feature-detection.min.js" async></script>
+    <script src="/components/icons/rocketbelt.icons.svgxuse.min.js" defer></script>
+    <script src="../../js/preCode.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard('.heading-copy-button', {
+          text: function(trigger) {
+              return window.location.href.split(/[?#]/)[0] + trigger.getAttribute('data-clipboard-text');
+          }
+      });
+      
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+    <script>
+      $('button.button-dynamic').dynamicButton();
+      $(window).on('dynamicButton.busy',function(e) {
+        var msg = $(e.el).closest('.exampleWithCode').prev('h3').attr('id');
+        setTimeout(function() {
+          $(e.el).trigger('buttonActionComplete', [msg, 2500])
+        }, 3000);
+      })
+    </script>
+  </body>
+</html>

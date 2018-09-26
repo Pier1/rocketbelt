@@ -1,0 +1,23 @@
+/// Return an approved font style
+///
+/// @group Typography
+/// @author Kendrick Arnett
+///
+/// @param $style - The style to return
+///
+/// @example scss - font-style function
+///   font-style();
+///   // normal
+///   font-style(italic);
+///   // italic
+@function font-style($style: normal) {
+  $style: to_lower_case($style);
+  $styles: (
+    italic: italic,
+    normal: normal
+  );
+
+  @return if(map-has-key($styles, $style),
+            map-get($styles, $style),
+            map-get($styles, normal));
+}

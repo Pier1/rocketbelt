@@ -1,0 +1,89 @@
+$in-out-quad: cubic-bezier(0.455,  0.030, 0.515, 0.955);
+
+$ease: (
+  default:      $in-out-quad,
+
+  in-quad:      cubic-bezier(0.550,  0.085, 0.680, 0.530),
+  in-cubic:     cubic-bezier(0.550,  0.055, 0.675, 0.190),
+  in-quart:     cubic-bezier(0.895,  0.030, 0.685, 0.220),
+  in-quint:     cubic-bezier(0.755,  0.050, 0.855, 0.060),
+  in-sine:      cubic-bezier(0.470,  0.000, 0.745, 0.715),
+  in-expo:      cubic-bezier(0.950,  0.050, 0.795, 0.035),
+  in-circ:      cubic-bezier(0.600,  0.040, 0.980, 0.335),
+  in-back:      cubic-bezier(0.600, -0.280, 0.735, 0.045),
+  out-quad:     cubic-bezier(0.250,  0.460, 0.450, 0.940),
+  out-cubic:    cubic-bezier(0.215,  0.610, 0.355, 1.000),
+  out-quart:    cubic-bezier(0.165,  0.840, 0.440, 1.000),
+  out-quint:    cubic-bezier(0.230,  1.000, 0.320, 1.000),
+  out-sine:     cubic-bezier(0.390,  0.575, 0.565, 1.000),
+  out-expo:     cubic-bezier(0.190,  1.000, 0.220, 1.000),
+  out-circ:     cubic-bezier(0.075,  0.820, 0.165, 1.000),
+  out-back:     cubic-bezier(0.175,  0.885, 0.320, 1.275),
+  in-out-quad:  $in-out-quad,
+  in-out-cubic: cubic-bezier(0.645,  0.045, 0.355, 1.000),
+  in-out-quart: cubic-bezier(0.770,  0.000, 0.175, 1.000),
+  in-out-quint: cubic-bezier(0.860,  0.000, 0.070, 1.000),
+  in-out-sine:  cubic-bezier(0.445,  0.050, 0.550, 0.950),
+  in-out-expo:  cubic-bezier(1.000,  0.000, 0.000, 1.000),
+  in-out-circ:  cubic-bezier(0.785,  0.135, 0.150, 0.860),
+  in-out-back:  cubic-bezier(0.680, -0.550, 0.265, 1.550)
+);
+
+/// Get a cubic bezier easing curve or the Y value of that curve, if $x is supplied.
+///
+/// @author Kendrick Arnett
+///
+/// @link http://easings.net/ See examples at easings.net.
+///
+/// @param $key [default] - The easing to return.
+/// @param $x [null] - The x value to find the curve's corresponding y value. Must be between 0–1.
+///
+/// @example scss - ease function
+///   ease(in-out-quad);
+///   // cubic-bezier(0.455,  0.030, 0.515, 0.955);
+///   ease(in-out-quad, 0.25);
+///   // 0.125
+@function ease($key: default, $x: null) {
+  @if map-has-key($ease, $key) {
+    @if $x == null {
+        @return map-get($ease, $key);
+    }
+    @else {
+      @if $key == default {
+        $key: 'in-out-quad';
+      }
+
+      @if $key == linear { @return $x; }
+      @else if $key == in-quad  { @return $x * $x; }
+      @else if $key == in-cubic { @return $x * $x * $x; }
+      @else if $key == in-quart { @return $x * $x * $x * $x; }
+      @else if $key == in-quint { @return $x * $x * $x * $x * $x; }
+      @else if $key == in-sine  { @return 1 - cos($x * $PI / 2); }
+      // @else if $key == in-expo  { }
+      // @else if $key == in-circ  { }
+      // @else if $key == in-back  { }
+      @else if $key == out-quad  { @return $x * (2 - $x); }
+      @else if $key == out-cubic { @return (-1 * $x) * $x * $x + 1; }
+      @else if $key == out-quart { @return 1 - (-1 * $x) * $x * $x * $x; }
+      @else if $key == out-quint { @return 1 + (-1 * $x) * $x * $x * $x * $x; }
+      @else if $key == out-sine  { @return sin($x * $PI / 2); }
+      // @else if $key == out-expo  { }
+      // @else if $key == out-circ  { }
+      // @else if $key == out-back  { }
+      @else if $key == in-out-quad  { @return if($x < 0.5, 2*$x*$x,   -1+(4-2*$x)*$x); }
+      @else if $key == in-out-cubic { @return if($x < 0.5, 4*$x*$x*$x, ($x-1)*(2*$x-2)*(2*$x-2)+1); }
+      @else if $key == in-out-quart { @return if($x < 0.5, 8*$x*$x*$x*$x, 1-8*(-1*$x)*$x*$x*$x); }
+      @else if $key == in-out-quint { @return if($x < 0.5, 16*$x*$x*$x*$x*$x, 1+16*(-1*$x)*$x*$x*$x*$x); }
+      @else if $key == in-out-sine  { @return 0.5 * (1 - cos($PI * $x)); }
+      // @else if $key == in-out-expo  { }
+      // @else if $key == in-out-circ  { }
+      // @else if $key == in-out-back  { }
+
+      @error '#{$key} easing equation not implemented.';
+      @return null;
+    }
+  }
+
+  @error 'Unkown '#{$key}' in $ease.';
+  @return null;
+}
