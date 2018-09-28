@@ -24,10 +24,7 @@
 
       if (uploaderConfig.isMobile) {
         uploader.classList.add('uploader-mobile');
-
-        rb.once(uploader, 'click', () => {
-          $(`#${rb.uploaders.config.id} input[type="file"]`).click();
-        });
+        uploader.addEventListener('click', mobileOpenPhotos);
       }
 
       if (!uploader.classList.contains('uploader-expanded')) {
@@ -79,6 +76,10 @@
     }
   };
 
+  function mobileOpenPhotos() {
+    $(`#${rb.uploaders.config.id} input[type="file"]`).click();
+  }
+
   function expandClickHandler(e) {
     const actualUploader =
       e.target.classList.contains('uploader') ? e.target : e.target.closest('.uploader');
@@ -90,6 +91,7 @@
     uploader.removeAttribute(rb.aria.role);
     uploader.removeAttribute('tabindex');
 
+    uploader.removeEventListener('click', mobileOpenPhotos);
     uploader.removeEventListener('click', expandClickHandler);
   }
 
