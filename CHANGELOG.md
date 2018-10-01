@@ -1,3 +1,8 @@
+<a name="1.17.1"></a>
+## [1.17.1](https://github.com/Pier1/rocketbelt/compare/1.17.0...v1.17.1) (2018-10-01)
+
+* **Uploaders:** Fix unremoved event handler. ([5b84d34](https://github.com/Pier1/rocketbelt/commit/5b84d34))
+
 <a name="1.17.0"></a>
 # [1.17.0](https://github.com/Pier1/rocketbelt/compare/1.16.8...v1.17.0) (2018-09-26)
 
