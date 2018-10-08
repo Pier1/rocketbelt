@@ -1,3 +1,8 @@
+<a name="1.17.2"></a>
+## [1.17.2](https://github.com/Pier1/rocketbelt/compare/1.17.1...v1.17.2) (2018-10-08)
+
+* **Grid:** Update grid support condition. ([7bc4ece](https://github.com/Pier1/rocketbelt/commit/7bc4ece))
+
 <a name="1.17.1"></a>
 ## [1.17.1](https://github.com/Pier1/rocketbelt/compare/1.17.0...v1.17.1) (2018-10-01)
 
