@@ -1,5 +1,5 @@
 .card-grid {
-  @supports (display: grid) {
+  @supports (grid-auto-rows: 0.5rem) {
     #{--grid-column-width}: 250px;
 
     display: grid;
