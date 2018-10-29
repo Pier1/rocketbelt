@@ -171,38 +171,18 @@
 
   // Polyfill vendor-prefixed Element.matches and Element.closest in IE.
   // See https://github.com/jonathantneal/closest.
-  ((ElementProto) => {
-    if (typeof ElementProto.matches !== 'function') {
-      ElementProto.matches =
-        ElementProto.msMatchesSelector ||
-        function matches(selector) {
-          const element = this;
-          const elements = (element.document || element.ownerDocument).querySelectorAll(selector);
-          let index = 0;
-
-          while (elements[index] && elements[index] !== element) {
-            ++index;
-          }
-
-          return Boolean(elements[index]);
-        }
-      ;
+  if (!!/\b(MSIE |Trident.*?rv:|Edge\/)(\d+)/.exec(navigator.userAgent)) {
+    if (!Element.prototype.matches) {
+      Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
     }
-
-    if (typeof ElementProto.closest !== 'function') {
-      ElementProto.closest = (selector) => {
-        let element = this;
-
-        while (element && element.nodeType === 1) {
-          if (element.matches(selector)) {
-            return element;
-          }
-
-          element = element.parentNode;
-        }
-
-        return null;
-      };
-    }
-  })(window.Element.prototype);
+    Element.prototype.closest = function (s) {
+      let el = this;
+      if (!document.documentElement.contains(el)) return null;
+      do {
+        if (el.matches(s)) return el;
+        el = el.parentElement || el.parentNode;
+      } while (el !== null && el.nodeType === 1);
+      return null;
+    };
+  }
 })(window, document);
