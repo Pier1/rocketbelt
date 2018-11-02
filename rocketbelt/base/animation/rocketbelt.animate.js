@@ -107,10 +107,12 @@
       }
     }
 
-    el.classList.add(...classesToRemove);
+    if (el && el.classList) {
+      el.classList.add(...classesToRemove);
+    }
 
     const cb = () => {
-      if (resetAfterAnimating) {
+      if (resetAfterAnimating && el && el.classList) {
         el.classList.remove(...classesToRemove);
       }
 

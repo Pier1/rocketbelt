@@ -15,7 +15,7 @@
       let describedByIds = [];
       let i = -1;
 
-      if (mutation.oldValue !== 'invalid' && mutation.target.classList.contains('invalid')) {
+      if (mutation.oldValue !== 'invalid' && mutation.target && mutation.target.classList.contains('invalid')) {
         // If "invalid" was added, do the decoratin'
         el.setAttribute(aria.invalid, 'true');
         describedByErrorId = el.getAttribute(DESCRIBED_BY_ERROR_ID_ATTR);
@@ -33,7 +33,7 @@
             el.setAttribute(aria.describedby, describedByIds.join(' '));
           }
         }
-      } else if (mutation.oldValue === 'invalid' && !el.classList.contains('invalid')) {
+      } else if (mutation.oldValue === 'invalid' && el && !el.classList.contains('invalid')) {
         // If "invalid" was removed
         el.setAttribute(aria.invalid, 'false');
         describedByErrorId = el.getAttribute(DESCRIBED_BY_ERROR_ID_ATTR);
@@ -69,7 +69,9 @@
       // created by this function.
       // https://daverupert.com/2017/11/happier-html5-forms/
       el.addEventListener('invalid', () => {
-        el.classList.add('invalid');
+        if (el && el.classList) {
+          el.classList.add('invalid');
+        }
       }, false);
 
       // Set an observer to listen for .invalid.

@@ -19,17 +19,19 @@
 
       uploaderConfig.isMobile =
         uploaderConfig.isMobile ||
-        uploader.classList.contains('uploader-mobile') ||
+        (uploader && uploader.classList && uploader.classList.contains('uploader-mobile')) ||
         document.querySelectorAll('.mobile .uploader, .tablet .uploader').length > 0;
 
-      if (uploaderConfig.isMobile) {
-        uploader.classList.add('uploader-mobile');
-        uploader.addEventListener('click', mobileOpenPhotos);
-      }
+      if (uploader && uploader.classList) {
+        if (uploaderConfig.isMobile) {
+          uploader.classList.add('uploader-mobile');
+          uploader.addEventListener('click', mobileOpenPhotos);
+        }
 
-      if (!uploader.classList.contains('uploader-expanded')) {
-        uploader.setAttribute(rb.aria.role, 'button');
-        uploader.setAttribute('tabindex', 0);
+        if (!uploader.classList.contains('uploader-expanded')) {
+          uploader.setAttribute(rb.aria.role, 'button');
+          uploader.setAttribute('tabindex', 0);
+        }
       }
 
       if (!uploaderConfig.isMobile) {
@@ -81,18 +83,28 @@
   }
 
   function expandClickHandler(e) {
-    const actualUploader =
-      e.target.classList.contains('uploader') ? e.target : e.target.closest('.uploader');
+    let actualUploader;
+
+    if (e.target.classList) {
+      actualUploader =
+        e.target.classList.contains('uploader') ? e.target : e.target.closest('.uploader');
+    }
+
     expandUploader(actualUploader);
   }
 
   function expandUploader(uploader) {
-    uploader.classList.add('uploader-expanded');
-    uploader.removeAttribute(rb.aria.role);
-    uploader.removeAttribute('tabindex');
+    if (uploader && uploader.classList) {
+      if (uploader.classList) {
+        uploader.classList.add('uploader-expanded');
+      }
 
-    uploader.removeEventListener('click', mobileOpenPhotos);
-    uploader.removeEventListener('click', expandClickHandler);
+      uploader.removeAttribute(rb.aria.role);
+      uploader.removeAttribute('tabindex');
+
+      uploader.removeEventListener('click', mobileOpenPhotos);
+      uploader.removeEventListener('click', expandClickHandler);
+    }
   }
 
   function fileInputOnchange(e) {
@@ -213,7 +225,7 @@
         imgToRemove.parentNode.removeChild(imgToRemove);
         e.target.parentNode.removeChild(e.target);
 
-        if (container.querySelectorAll('.uploader_thumb').length === 0) {
+        if (container && container.querySelectorAll('.uploader_thumb').length === 0) {
           container.classList.remove('uploader-has-thumbs');
         }
 
@@ -238,7 +250,11 @@
       document.querySelector('.uploader_thumbs').appendChild(img);
       document.querySelector(`#${img.id}`).insertAdjacentElement('afterend', button);
 
-      document.querySelector(`#${rb.uploaders.config.id}`).classList.add('uploader-has-thumbs');
+      const u = document.querySelector(`#${rb.uploaders.config.id}`);
+
+      if (u.length > 0) {
+        u.classList.add('uploader-has-thumbs');
+      }
 
       if (!rb.uploaders.numCanAdd()) {
         const $dropArea = $(`#${rb.uploaders.config.id}`);
