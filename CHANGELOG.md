@@ -1,3 +1,18 @@
+<a name="1.17.4"></a>
+## [1.17.4](https://github.com/Pier1/rocketbelt/compare/1.17.1...v1.17.4) (2018-12-03)
+
+
+### Bug Fixes
+
+* **Javascript:** Add classList safety checks. ([036afaf](https://github.com/Pier1/rocketbelt/commit/036afaf))
+
+
+### Features
+
+* **Typography:** Add click behavior for disabled anchor tags. ([1d7971a](https://github.com/Pier1/rocketbelt/commit/1d7971a))
+
+
+
 <a name="1.17.3"></a>
 ## [1.17.3](https://github.com/Pier1/rocketbelt/compare/1.17.2...v1.17.3) (2018-10-29)
 
