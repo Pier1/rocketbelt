@@ -14,6 +14,7 @@
 
   function setIndicators(el, oldValue) {
     if ((!oldValue || !oldValue.match(/\bis-busy\b/)) &&
+        el &&
         el.classList &&
         el.classList.contains('is-busy')) {
       // If "is-busy" was added, do the decoratin'
@@ -73,7 +74,7 @@
       // If "is-busy" was removed
       const overlay = el.querySelectorAll('.is-busy_overlay')[0];
 
-      if (overlay && !overlay.parentNode.classList.contains('is-busy')) {
+      if (overlay && overlay.parentNode && !overlay.parentNode.classList.contains('is-busy')) {
         overlay.parentNode.removeChild(overlay);
       }
     }
