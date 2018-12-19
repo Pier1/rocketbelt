@@ -1,3 +1,20 @@
+<a name="1.17.5"></a>
+## [1.17.5](https://github.com/Pier1/rocketbelt/compare/1.17.4...v1.17.5) (2018-12-19)
+
+
+### Features
+
+* **Icons:** Update CTA arrow icon. ([bcd3e84](https://github.com/Pier1/rocketbelt/commit/bcd3e84))
+* **Radio Buttons:** Add segmented radio button pattern. ([8c12972](https://github.com/Pier1/rocketbelt/commit/8c12972))
+
+
+### Bug Fixes
+
+* **Radio Buttons:** Correct default margin for segmented radio buttons. ([db8a70f](https://github.com/Pier1/rocketbelt/commit/db8a70f))
+* **Typography:** Update CTA underline thickness. ([be192ac](https://github.com/Pier1/rocketbelt/commit/be192ac))
+* **Uploaders:** Fix length check. ([6d194fd](https://github.com/Pier1/rocketbelt/commit/6d194fd))
+
+
 <a name="1.17.4"></a>
 ## [1.17.4](https://github.com/Pier1/rocketbelt/compare/1.17.1...v1.17.4) (2018-12-03)
 

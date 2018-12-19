@@ -252,7 +252,7 @@
 
       const u = document.querySelector(`#${rb.uploaders.config.id}`);
 
-      if (u.length > 0) {
+      if (u) {
         u.classList.add('uploader-has-thumbs');
       }
 
