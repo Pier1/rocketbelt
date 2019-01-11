@@ -1,3 +1,50 @@
+<a name="1.17.5"></a>
+## [1.17.5](https://github.com/Pier1/rocketbelt/compare/1.17.4...v1.17.5) (2018-12-19)
+
+
+### Features
+
+* **Icons:** Update CTA arrow icon. ([bcd3e84](https://github.com/Pier1/rocketbelt/commit/bcd3e84))
+* **Radio Buttons:** Add segmented radio button pattern. ([8c12972](https://github.com/Pier1/rocketbelt/commit/8c12972))
+
+
+### Bug Fixes
+
+* **Radio Buttons:** Correct default margin for segmented radio buttons. ([db8a70f](https://github.com/Pier1/rocketbelt/commit/db8a70f))
+* **Typography:** Update CTA underline thickness. ([be192ac](https://github.com/Pier1/rocketbelt/commit/be192ac))
+* **Uploaders:** Fix length check. ([6d194fd](https://github.com/Pier1/rocketbelt/commit/6d194fd))
+
+
+<a name="1.17.4"></a>
+## [1.17.4](https://github.com/Pier1/rocketbelt/compare/1.17.1...v1.17.4) (2018-12-03)
+
+
+### Bug Fixes
+
+* **Javascript:** Add classList safety checks. ([036afaf](https://github.com/Pier1/rocketbelt/commit/036afaf))
+
+
+### Features
+
+* **Typography:** Add click behavior for disabled anchor tags. ([1d7971a](https://github.com/Pier1/rocketbelt/commit/1d7971a))
+
+
+
+<a name="1.17.3"></a>
+## [1.17.3](https://github.com/Pier1/rocketbelt/compare/1.17.2...v1.17.3) (2018-10-29)
+
+* **Polyfill:** Feature/add photo ie edge fix. ([0ee6248](https://github.com/Pier1/rocketbelt/commit/0ee6248))
+
+<a name="1.17.2"></a>
+## [1.17.2](https://github.com/Pier1/rocketbelt/compare/1.17.1...v1.17.2) (2018-10-08)
+
+* **Grid:** Update grid support condition. ([7bc4ece](https://github.com/Pier1/rocketbelt/commit/7bc4ece))
+
+<a name="1.17.1"></a>
+## [1.17.1](https://github.com/Pier1/rocketbelt/compare/1.17.0...v1.17.1) (2018-10-01)
+
+* **Uploaders:** Fix unremoved event handler. ([5b84d34](https://github.com/Pier1/rocketbelt/commit/5b84d34))
+
 <a name="1.17.0"></a>
 # [1.17.0](https://github.com/Pier1/rocketbelt/compare/1.16.8...v1.17.0) (2018-09-26)
 

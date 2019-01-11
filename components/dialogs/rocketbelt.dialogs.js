@@ -206,7 +206,9 @@ $(function () {
     document.body.addEventListener('focus', maintainFocus, true);
     $(document).keydown(bindKeypress);
 
-    if ($cache.rbDialog[0].classList.contains('dialog_headerless')) {
+    if ($cache.rbDialog[0] &&
+        $cache.rbDialog[0].classList &&
+        $cache.rbDialog[0].classList.contains('dialog_headerless')) {
       var $closeContainer = $('.dialog_headerless .dialog_close_container').detach();
       var $headerlessDialog = $('.dialog_headerless .dialog_content');
 

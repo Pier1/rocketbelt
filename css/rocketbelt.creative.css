@@ -1932,6 +1932,8 @@ a {
   a:visited {
     color: #155695;
     transition: color 100ms linear; }
+  a[disabled] {
+    pointer-events: none; }
 
 blockquote {
   margin: 0.75rem 0;
@@ -2025,13 +2027,13 @@ ul.horizontal li {
   line-height: initial;
   cursor: pointer; }
   .cta:hover .cta_text {
-    box-shadow: inset 0 -3px 0 currentColor;
+    box-shadow: inset 0 -2px 0 currentColor;
     transition: box-shadow 100ms; }
   .cta:hover .icon {
     -webkit-animation: cta-hover 1s infinite;
             animation: cta-hover 1s infinite; }
   .cta_text {
-    box-shadow: inset 0 -2px 0 currentColor;
+    box-shadow: inset 0 -1px 0 currentColor;
     transition: box-shadow 100ms; }
   .cta .icon {
     width: 0.75em;

@@ -258,6 +258,10 @@ a {
     color: scale-color($base-link-color, $lightness: -15%);
     transition: color 100ms linear;
   }
+
+  &[disabled] {
+    pointer-events: none;
+  }
 }
 
 blockquote {
