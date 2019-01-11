@@ -1,3 +1,13 @@
+<a name="1.17.6"></a>
+## [1.17.6](https://github.com/Pier1/rocketbelt/compare/1.17.5...v1.17.6) (2019-01-11)
+
+
+### Features
+
+* **Icons:** Add solid pin icon. ([e7576f1](https://github.com/Pier1/rocketbelt/commit/e7576f1))
+
+
+
 <a name="1.17.5"></a>
 ## [1.17.5](https://github.com/Pier1/rocketbelt/compare/1.17.4...v1.17.5) (2018-12-19)
 
