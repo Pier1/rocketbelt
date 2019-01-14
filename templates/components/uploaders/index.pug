@@ -15,19 +15,19 @@ block content
     | The uploader emits #[code rb.uploaders.fileAdded] and #[code rb.uploaders.fileRemoved] events as files are added and removed.
 
     +exampleWithCode
-      .uploader
+      .uploader#uploader1
         span.uploader_cta.text-with-icon Add a Photo
           svg.icon.icon-left(aria-hidden='true')
             use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-upload')
         form.uploader_form
           p.uploader_text
             | Drag &amp; drop images into this area
-            | or #[label.uploader_file-label.button-lg.button-link(for='uploader_file-input', aria-role='button', tabindex=0) browse your computer] for them.
-          input#uploader_file-input(type='file', multiple='', accept='*')
+            | or #[label.uploader_file-label.button-lg.button-link browse your computer] for them.
+          input.uploader_file-input(type='file', multiple='', accept='*')
         progress(max='100', value='0')
         .uploader_thumbs_wrapper
           .uploader_thumbs
-            label.uploader_file-label.button-lg.button-alternate(for='uploader_file-input', aria-role='button', tabindex=0)
+            label.uploader_file-label.button-lg.button-alternate
               span.text-with-icon Add another photo
                 svg.icon(aria-hidden='true')
                   use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-upload')
