@@ -121,8 +121,10 @@
   }
 
   function draggedOn(e) {
+    const $target = $(e.target);
+    
     const $dropArea =
-      $(e.target).hasClass(activeClass) ? $(e.target) : $(e.target).closest('.uploader');
+      $target.hasClass(activeClass) ? $target : $target.closest('.uploader');
 
     if (!$dropArea.hasClass(activeClass)) {
       $dropArea.find('.scrim, .scrim_icon').css('z-index', '1');
@@ -131,8 +133,10 @@
   }
 
   function draggedOff(e) {
+    const $target = $(e.target);
+
     const $dropArea =
-      $(e.target).hasClass(activeClass) ? $(e.target) : $(e.target).closest('.uploader');
+      $target.hasClass(activeClass) ? $target : $target.closest('.uploader');
 
     if ($dropArea.hasClass(activeClass)) {
       $dropArea.removeClass(activeClass);
