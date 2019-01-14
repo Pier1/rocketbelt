@@ -76,22 +76,30 @@
 
       $(uploader).find('input[type="file"]').change(fileInputOnchange);
     }
+
+    return uploader.id;
   };
 
-  function mobileOpenPhotos() {
-    $(`#${rb.uploaders.config.id} input[type="file"]`).click();
+  function mobileOpenPhotos(e) {
+    $(`#${getClosestUploader(e.target).id} input[type="file"]`).click();
+  }
+
+  function getClosestUploader(el) {
+    let actualUploader;
+
+    if (el.classList) {
+      actualUploader =
+      el.classList.contains('uploader') ? el : el.closest('.uploader');
+    }
+
+    return actualUploader;
   }
 
   function expandClickHandler(e) {
-    let actualUploader;
-
-    if (e.target.classList) {
-      actualUploader =
-        e.target.classList.contains('uploader') ? e.target : e.target.closest('.uploader');
-    }
-
-    expandUploader(actualUploader);
+    expandUploader(getClosestUploader(e.target));
   }
+
+
 
   function expandUploader(uploader) {
     if (uploader && uploader.classList) {
