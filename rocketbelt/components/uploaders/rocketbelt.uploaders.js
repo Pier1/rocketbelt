@@ -156,35 +156,10 @@
     }
   }
 
-  let uploadProgress = [];
-  const progressBar = document.querySelector('.uploader progress');
-
-  function initializeProgress(numFiles) {
-    progressBar.value = 0;
-    uploadProgress = [];
-
-    for (let i = numFiles; i > 0; i--) {
-      uploadProgress.push(0);
-    }
-  }
-
-  function updateProgress(fileNumber, percent) {
-    uploadProgress[fileNumber] = percent;
-    const total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length;
-
-    progressBar.value = total;
-  }
-
   rb.uploaders.handleFiles = function handleFiles(files) {
     const numCanAdd = rb.uploaders.numCanAdd();
 
     const filesToAdd = [...files].slice(0, numCanAdd);
-
-    initializeProgress(filesToAdd.length);
-
-    if (rb.uploaders.config.autoUpload) {
-      filesToAdd.forEach(uploadFile);
-    }
 
     filesToAdd.forEach(previewFile);
   };
@@ -264,35 +239,6 @@
         $dropArea.addClass(maxFilesClass);
       }
     };
-  }
-
-  function uploadFile(file, i) {
-    let formData = new FormData();
-    let xhr = new XMLHttpRequest();
-
-    formData = rb.uploaders.config.prepFormData(formData);
-
-    if (rb.uploaders.config.prepXhr) {
-      xhr = rb.uploaders.config.prepXhr(xhr);
-    }
-
-    xhr.open('POST', rb.uploaders.config.postUri, true);
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-
-    xhr.upload.addEventListener('progress', (e) => {
-      updateProgress(i, (e.loaded * 100.0 / e.total) || 100);
-    });
-
-    xhr.addEventListener('readystatechange', (e) => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        updateProgress(i, 100);
-        // rb.uploaders.onSuccess();
-      } else if (xhr.readyState === 4 && xhr.status !== 200) {
-        // rb.uploaders.onError(e);
-      }
-    });
-
-    xhr.send(formData);
   }
 })(window.rb, document, jQuery);
 
