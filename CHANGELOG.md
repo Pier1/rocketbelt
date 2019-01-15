@@ -1,3 +1,16 @@
+<a name="1.18.0"></a>
+# [1.18.0](https://github.com/Pier1/rocketbelt/compare/1.17.6...v1.18.0) (2019-01-15)
+
+
+### Features
+
+* **Uploaders:** Allow files to be added as blobs in addition to base64. ([53a86fc](https://github.com/Pier1/rocketbelt/commit/53a86fc))
+* **Uploaders:** Cache e.target lookup. ([1f0547c](https://github.com/Pier1/rocketbelt/commit/1f0547c))
+* **Uploaders:** Remove auto-upload code. ([547b42f](https://github.com/Pier1/rocketbelt/commit/547b42f))
+* **Uploaders:** Support multiple uploaders on the same page! ([703f43b](https://github.com/Pier1/rocketbelt/commit/703f43b))
+
+
+
 <a name="1.17.6"></a>
 ## [1.17.6](https://github.com/Pier1/rocketbelt/compare/1.17.5...v1.17.6) (2019-01-11)
 
