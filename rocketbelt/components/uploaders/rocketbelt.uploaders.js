@@ -134,6 +134,8 @@
     })[0];
   }
 
+  rb.uploaders.getInstanceForId = getInstanceForId;
+
   function fileInputOnchange(e) {
     const id = getClosestUploader(e.target).id;
     const instance = getInstanceForId(id);
@@ -211,13 +213,20 @@
       .dispatchEvent(new CustomEvent('rb.uploaders.addingFile'));
 
     reader.readAsDataURL(file);
+
     reader.onloadend = () => {
+      const fileContents =
+        instance.config.filesAsBinary ?
+          rb.dataURItoBlob(reader.result) :
+          reader.result
+      ;
+
       const img = document.createElement('img');
       img.src = reader.result;
       img.id = `rb_${rb.getShortId()}`;
       img.classList.add('uploader_thumb');
 
-      const f = { id: img.id, file: reader.result, size: reader.size };
+      const f = { id: img.id, file: fileContents, size: reader.size };
       instance.files.push(f);
 
       instanceEl
