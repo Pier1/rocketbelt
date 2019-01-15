@@ -11,9 +11,11 @@
   rb.uploaders = rb.uploaders || {};
 
   rb.uploaders.addUploader = (uploaderConfig) => {
+    let uploader;
+
     if (uploaderConfig &&
         uploaderConfig.selector) {
-      const uploader = document.querySelector(uploaderConfig.selector);
+      uploader = document.querySelector(uploaderConfig.selector);
       uploader.id = uploader.id || `rb_${rb.getShortId()}`;
       uploaderConfig.id = uploader.id;
 
@@ -62,7 +64,11 @@
         scrim.insertAdjacentElement('afterend', scrimIcon);
       }
 
-      rb.uploaders.config = uploaderConfig;
+      rb.uploaders.instances = rb.uploaders.instances || [];
+      rb.uploaders.instances.push({
+        config: uploaderConfig,
+        files: []
+      });
 
       // Register listener for keyboard input
       $(uploader).find('.uploader_file-label').keydown((e) => {
@@ -74,23 +80,38 @@
         }
       });
 
-      $(uploader).find('input[type="file"]').change(fileInputOnchange);
+      const $input = $(uploader).find('input[type="file"]');
+      const inputId = $input[0].id || `rb_${rb.getShortId()}`;
+
+      $input.attr('id', inputId);
+      $(uploader).find('.uploader_file-label')
+        .attr('for', inputId)
+        .attr('aria-role', 'button')
+        .attr('tabindex', 0);
+
+      $input.change(fileInputOnchange);
     }
+
+    return uploader.id;
   };
 
-  function mobileOpenPhotos() {
-    $(`#${rb.uploaders.config.id} input[type="file"]`).click();
+  function getClosestUploader(el) {
+    let actualUploader;
+
+    if (el.classList) {
+      actualUploader =
+      el.classList.contains('uploader') ? el : el.closest('.uploader');
+    }
+
+    return actualUploader;
+  }
+
+  function mobileOpenPhotos(e) {
+    $(`#${getClosestUploader(e.target).id} input[type="file"]`).click();
   }
 
   function expandClickHandler(e) {
-    let actualUploader;
-
-    if (e.target.classList) {
-      actualUploader =
-        e.target.classList.contains('uploader') ? e.target : e.target.closest('.uploader');
-    }
-
-    expandUploader(actualUploader);
+    expandUploader(getClosestUploader(e.target));
   }
 
   function expandUploader(uploader) {
@@ -107,12 +128,24 @@
     }
   }
 
+  function getInstanceForId(id) {
+    return rb.uploaders.instances.filter((i) => {
+      return i.config.id === id;
+    })[0];
+  }
+
+  rb.uploaders.getInstanceForId = getInstanceForId;
+
   function fileInputOnchange(e) {
-    if (rb.uploaders.config.isMobile) {
+    const id = getClosestUploader(e.target).id;
+    const instance = getInstanceForId(id);
+    const config = instance.config;
+
+    if (config.isMobile) {
       expandClickHandler(e);
     }
 
-    rb.uploaders.handleFiles(this.files, rb.uploaders.config);
+    rb.uploaders.handleFiles(this.files, config.id);
   }
 
   function preventDefaults(e) {
@@ -121,8 +154,10 @@
   }
 
   function draggedOn(e) {
+    const $target = $(e.target);
+
     const $dropArea =
-      $(e.target).hasClass(activeClass) ? $(e.target) : $(e.target).closest('.uploader');
+      $target.hasClass(activeClass) ? $target : $target.closest('.uploader');
 
     if (!$dropArea.hasClass(activeClass)) {
       $dropArea.find('.scrim, .scrim_icon').css('z-index', '1');
@@ -131,8 +166,10 @@
   }
 
   function draggedOff(e) {
+    const $target = $(e.target);
+
     const $dropArea =
-      $(e.target).hasClass(activeClass) ? $(e.target) : $(e.target).closest('.uploader');
+      $target.hasClass(activeClass) ? $target : $target.closest('.uploader');
 
     if ($dropArea.hasClass(activeClass)) {
       $dropArea.removeClass(activeClass);
@@ -140,75 +177,59 @@
     }
   }
 
-  rb.uploaders.numCanAdd = () => {
-    const numFiles = rb.uploaders.files ? rb.uploaders.files.length : 0;
-    const maxFiles = rb.uploaders.config.maxFiles || Number.POSITIVE_INFINITY;
+  rb.uploaders.numCanAdd = (id) => {
+    const uploaderInstance = getInstanceForId(id);
+    const numFiles = uploaderInstance.files ? uploaderInstance.files.length : 0;
+    const maxFiles = uploaderInstance.config.maxFiles || Number.POSITIVE_INFINITY;
 
     return maxFiles - numFiles;
   };
 
   function handleDrop(e) {
-    if (rb.uploaders.numCanAdd() > 0) {
+    const uploader = getClosestUploader(e.target);
+
+    if (rb.uploaders.numCanAdd(uploader.id) > 0) {
       const dt = e.dataTransfer;
       const files = dt.files;
 
-      rb.uploaders.handleFiles(files, rb.uploaders.config);
+      rb.uploaders.handleFiles(files, uploader.id);
     }
   }
 
-  let uploadProgress = [];
-  const progressBar = document.querySelector('.uploader progress');
-
-  function initializeProgress(numFiles) {
-    progressBar.value = 0;
-    uploadProgress = [];
-
-    for (let i = numFiles; i > 0; i--) {
-      uploadProgress.push(0);
-    }
-  }
-
-  function updateProgress(fileNumber, percent) {
-    uploadProgress[fileNumber] = percent;
-    const total = uploadProgress.reduce((tot, curr) => tot + curr, 0) / uploadProgress.length;
-
-    progressBar.value = total;
-  }
-
-  rb.uploaders.handleFiles = function handleFiles(files) {
-    const numCanAdd = rb.uploaders.numCanAdd();
+  rb.uploaders.handleFiles = function handleFiles(files, uploaderId) {
+    const numCanAdd = rb.uploaders.numCanAdd(uploaderId);
 
     const filesToAdd = [...files].slice(0, numCanAdd);
-
-    initializeProgress(filesToAdd.length);
-
-    if (rb.uploaders.config.autoUpload) {
-      filesToAdd.forEach(uploadFile);
-    }
-
-    filesToAdd.forEach(previewFile);
+    filesToAdd.forEach(file => { previewFile(file, uploaderId); });
   };
 
-  function previewFile(file) {
-    rb.uploaders.files = rb.uploaders.files || [];
-
+  function previewFile(file, uploaderId) {
+    const instance = getInstanceForId(uploaderId);
+    const instanceEl = document.getElementById(uploaderId);
     const reader = new FileReader();
     reader.size = file.size;
 
-    document.getElementById(rb.uploaders.config.id)
+    instanceEl
       .dispatchEvent(new CustomEvent('rb.uploaders.addingFile'));
 
     reader.readAsDataURL(file);
+
     reader.onloadend = () => {
+      const fileContents =
+        instance.config.filesAsBinary ?
+          rb.dataURItoBlob(reader.result) :
+          reader.result
+      ;
+
       const img = document.createElement('img');
       img.src = reader.result;
       img.id = `rb_${rb.getShortId()}`;
       img.classList.add('uploader_thumb');
 
-      const f = { id: img.id, file: reader.result, size: reader.size };
-      rb.uploaders.files.push(f);
+      const f = { id: img.id, file: fileContents, size: reader.size };
+      instance.files.push(f);
 
-      document.getElementById(rb.uploaders.config.id)
+      instanceEl
         .dispatchEvent(new CustomEvent('rb.uploaders.fileAdded', { detail: f }));
 
       const button = document.createElement('button');
@@ -229,70 +250,43 @@
           container.classList.remove('uploader-has-thumbs');
         }
 
-        rb.uploaders.files = rb.uploaders.files.filter((el) => {
+        instance.files = instance.files.filter((el) => {
           return el.id !== id;
         });
 
-        if (rb.uploaders.numCanAdd() > 0) {
-          const $dropArea = $(`#${rb.uploaders.config.id}`);
+        if (rb.uploaders.numCanAdd(instanceEl.id) > 0) {
+          const $dropArea = $(`#${instanceEl.id}`);
 
-          $('.uploader #uploader_file-input, .uploader .uploader_file-label')
+          $(`#${instanceEl.id} .uploader_file-input, #${instanceEl.id} .uploader_file-label`)
             .removeAttr('disabled');
 
           $dropArea.removeClass(maxFilesClass);
         }
 
         const i = { removedId: id };
-        document.getElementById(rb.uploaders.config.id)
+        document.getElementById(instanceEl.id)
           .dispatchEvent(new CustomEvent('rb.uploaders.fileRemoved', { detail: i }));
       });
 
-      document.querySelector('.uploader_thumbs').appendChild(img);
+      document.querySelector(`#${instanceEl.id} .uploader_thumbs`).appendChild(img);
       document.querySelector(`#${img.id}`).insertAdjacentElement('afterend', button);
 
-      const u = document.querySelector(`#${rb.uploaders.config.id}`);
+      const u = document.querySelector(`#${instanceEl.id}`);
 
       if (u) {
         u.classList.add('uploader-has-thumbs');
       }
 
-      if (!rb.uploaders.numCanAdd()) {
-        const $dropArea = $(`#${rb.uploaders.config.id}`);
 
-        $('.uploader #uploader_file-input, .uploader .uploader_file-label').attr('disabled', '');
+      if (!rb.uploaders.numCanAdd(instanceEl.id)) {
+        const $dropArea = $(`#${instanceEl.id}`);
+
+        $(`#${instanceEl.id} .uploader_file-input, #${instanceEl.id} .uploader_file-label`)
+          .attr('disabled', '');
 
         $dropArea.addClass(maxFilesClass);
       }
     };
-  }
-
-  function uploadFile(file, i) {
-    let formData = new FormData();
-    let xhr = new XMLHttpRequest();
-
-    formData = rb.uploaders.config.prepFormData(formData);
-
-    if (rb.uploaders.config.prepXhr) {
-      xhr = rb.uploaders.config.prepXhr(xhr);
-    }
-
-    xhr.open('POST', rb.uploaders.config.postUri, true);
-    xhr.setRequestHeader('X-Requested-With', 'XMLHttpRequest');
-
-    xhr.upload.addEventListener('progress', (e) => {
-      updateProgress(i, (e.loaded * 100.0 / e.total) || 100);
-    });
-
-    xhr.addEventListener('readystatechange', (e) => {
-      if (xhr.readyState === 4 && xhr.status === 200) {
-        updateProgress(i, 100);
-        // rb.uploaders.onSuccess();
-      } else if (xhr.readyState === 4 && xhr.status !== 200) {
-        // rb.uploaders.onError(e);
-      }
-    });
-
-    xhr.send(formData);
   }
 })(window.rb, document, jQuery);
 
