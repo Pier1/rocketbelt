@@ -93,6 +93,31 @@
     });
   };
 
+  // See https://stackoverflow.com/a/5100158
+  window.rb.dataURItoBlob = (dataURI) => {
+    // convert base64 to raw binary data held in a string
+    // doesn't handle URLEncoded DataURIs - see SO answer #6850276 for code that does this
+    const byteString = atob(dataURI.split(',')[1]);
+
+    // separate out the mime component
+    const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+
+    // write the bytes of the string to an ArrayBuffer
+    const ab = new ArrayBuffer(byteString.length);
+
+    // create a view into the buffer
+    const ia = new Uint8Array(ab);
+
+    // set the bytes of the buffer to the correct values
+    for (let i = 0; i < byteString.length; i++) {
+      ia[i] = byteString.charCodeAt(i);
+    }
+
+    // write the ArrayBuffer to a blob, and you're done
+    const blob = new Blob([ab], { type: mimeString });
+    return blob;
+  };
+
   // Throttle super-chatty events with requestAnimationFrame for better performance.
   // See https://developer.mozilla.org/en-US/docs/Web/Events/resize
   (() => {
@@ -208,20 +233,20 @@
           const len = toInteger(value);
           return Math.min(Math.max(len, 0), maxSafeInteger);
         };
-  
+
         // The length property of the from method is 1.
         return function from(arrayLike/* , mapFn, thisArg */) {
           // 1. Let C be the this value.
           const C = this;
-  
+
           // 2. Let items be ToObject(arrayLike).
           const items = Object(arrayLike);
-  
+
           // 3. ReturnIfAbrupt(items).
           if (arrayLike === null) {
             throw new TypeError('Array.from requires an array-like object - not null or undefined');
           }
-  
+
           // 4. If mapfn is undefined, then let mapping be false.
           const mapFn = arguments.length > 1 ? arguments[1] : void undefined;
           let T;
@@ -231,23 +256,23 @@
             if (!isCallable(mapFn)) {
               throw new TypeError('Array.from: when provided, the second argument must be a function');
             }
-  
+
             // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
             if (arguments.length > 2) {
               T = arguments[2];
             }
           }
-  
+
           // 10. Let lenValue be Get(items, "length").
           // 11. Let len be ToLength(lenValue).
           const len = toLength(items.length);
-  
+
           // 13. If IsConstructor(C) is true, then
-          // 13. a. Let A be the result of calling the [[Construct]] internal method 
+          // 13. a. Let A be the result of calling the [[Construct]] internal method
           // of C with an argument list containing the single item len.
           // 14. a. Else, Let A be ArrayCreate(len).
           const A = isCallable(C) ? Object(new C(len)) : new Array(len);
-  
+
           // 16. Let k be 0.
           let k = 0;
           // 17. Repeat, while k < len… (also steps a - h)

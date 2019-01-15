@@ -54,8 +54,8 @@
                   <button class="category-label">Components</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
@@ -63,7 +63,7 @@
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
@@ -135,14 +135,22 @@
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </button></h1>
-                  <p></p>Include <code>rocketbelt.uploaders.js</code> and call <code>rb.uploaders.addUploader({ selector: &apos;.unique-selector&apos; })</code> to initialize.
+                  <h2 id="configuration" class="heading-with-link"><span class="heading_text">Configuration</span><button data-clipboard-text="#configuration" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <p></p>Include <code>rocketbelt.uploaders.js</code> and call <code>rb.uploaders.addUploader({ selector: &apos;#unique-selector&apos; })</code> to initialize.
                   As files are added via the UI, they&apos;re also added to the 
                   <rb class="uploaders files"></rb> array as base64-encoded strings along with the file
                   size and an auto-generated ID.
                   <p></p>The uploader emits <code>rb.uploaders.fileAdded</code> and <code>rb.uploaders.fileRemoved</code> events as files are added and removed.
+                  <p></p>By default, the uploader stores images as base64-encoded strings. It can be configured to append files as <code>Blob</code>s by adding
+                  the parameter <code>filesAsBinary: true</code> to the configuration object when the uploader is created.
+                  <p><a href="javascript:(function(){rb.uploaders.addUploader({ selector: &quot;#uploader1&quot; });})();">Add #uploader1</a></p>
                   <div class="exampleWithCode">
                     <div class="example">
-                      <div class="uploader"><span class="uploader_cta text-with-icon">Add a Photo
+                      <div class="uploader" id="uploader1"><span class="uploader_cta text-with-icon">Add a Photo
                           <svg class="icon icon-left" aria-hidden="true">
                             <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-upload"/>
                           </svg></span>
@@ -150,14 +158,14 @@
                           <p class="uploader_text">
                             Drag &amp; drop images into this area
                             or 
-                            <label class="uploader_file-label button-lg button-link" for="uploader_file-input" aria-role="button" tabindex="0">browse your computer</label> for them.
+                            <label class="uploader_file-label button-lg button-link">browse your computer</label> for them.
                           </p>
-                          <input id="uploader_file-input" type="file" multiple accept="*">
+                          <input class="uploader_file-input" type="file" multiple accept="*">
                         </form>
                         <progress max="100" value="0"></progress>
                         <div class="uploader_thumbs_wrapper">
                           <div class="uploader_thumbs">
-                            <label class="uploader_file-label button-lg button-alternate" for="uploader_file-input" aria-role="button" tabindex="0"><span class="text-with-icon">Add another photo
+                            <label class="uploader_file-label button-lg button-alternate"><span class="text-with-icon">Add another photo
                                 <svg class="icon" aria-hidden="true">
                                   <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-upload"/>
                                 </svg></span></label>
@@ -166,14 +174,14 @@
                       </div>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-Z1iHXwx">
-                      <label class="expander_label" for="rb-Z1iHXwx" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1irx62">
+                      <label class="expander_label" for="rb-Z1irx62" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="copy-code" data-clipboard-target="#rb-Z1Hprv6">Copy</button>
-                          <pre><code class="language-html" id="rb-Z1Hprv6">
-                              &lt;div class=&quot;uploader&quot;&gt;&lt;span class=&quot;uploader_cta text-with-icon&quot;&gt;Add a Photo
+                          <button class="copy-code" data-clipboard-target="#rb-Z1MRycd">Copy</button>
+                          <pre><code class="language-html" id="rb-Z1MRycd">
+                              &lt;div class=&quot;uploader&quot; id=&quot;uploader1&quot;&gt;&lt;span class=&quot;uploader_cta text-with-icon&quot;&gt;Add a Photo
                                   &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
                                     &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-upload&quot;&gt;&lt;/use&gt;
                                   &lt;/svg&gt;&lt;/span&gt;
@@ -181,14 +189,79 @@
                                   &lt;p class=&quot;uploader_text&quot;&gt;
                                     Drag &amp;amp; drop images into this area
                                     or 
-                                    &lt;label class=&quot;uploader_file-label button-lg button-link&quot; for=&quot;uploader_file-input&quot; aria-role=&quot;button&quot; tabindex=&quot;0&quot;&gt;browse your computer&lt;/label&gt; for them.
+                                    &lt;label class=&quot;uploader_file-label button-lg button-link&quot;&gt;browse your computer&lt;/label&gt; for them.
                                   &lt;/p&gt;
-                                  &lt;input id=&quot;uploader_file-input&quot; type=&quot;file&quot; multiple=&quot;&quot; accept=&quot;*&quot;&gt;
+                                  &lt;input class=&quot;uploader_file-input&quot; type=&quot;file&quot; multiple=&quot;&quot; accept=&quot;*&quot;&gt;
                                 &lt;/form&gt;
                                 &lt;progress max=&quot;100&quot; value=&quot;0&quot;&gt;&lt;/progress&gt;
                                 &lt;div class=&quot;uploader_thumbs_wrapper&quot;&gt;
                                   &lt;div class=&quot;uploader_thumbs&quot;&gt;
-                                    &lt;label class=&quot;uploader_file-label button-lg button-alternate&quot; for=&quot;uploader_file-input&quot; aria-role=&quot;button&quot; tabindex=&quot;0&quot;&gt;&lt;span class=&quot;text-with-icon&quot;&gt;Add another photo
+                                    &lt;label class=&quot;uploader_file-label button-lg button-alternate&quot;&gt;&lt;span class=&quot;text-with-icon&quot;&gt;Add another photo
+                                        &lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;
+                                          &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-upload&quot;&gt;&lt;/use&gt;
+                                        &lt;/svg&gt;&lt;/span&gt;&lt;/label&gt;
+                                  &lt;/div&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="multiple-uploaders" class="heading-with-link"><span class="heading_text">Multiple Uploaders</span><button data-clipboard-text="#multiple-uploaders" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <p><a href="javascript:(function(){rb.uploaders.addUploader({ selector: &quot;#uploader2&quot; });})();">Add #uploader2</a></p>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="uploader" id="uploader2"><span class="uploader_cta text-with-icon">Add a Photo
+                          <svg class="icon icon-left" aria-hidden="true">
+                            <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-upload"/>
+                          </svg></span>
+                        <form class="uploader_form">
+                          <p class="uploader_text">
+                            Drag &amp; drop images into this area
+                            or 
+                            <label class="uploader_file-label button-lg button-link">browse your computer</label> for them.
+                          </p>
+                          <input class="uploader_file-input" type="file" multiple accept="*">
+                        </form>
+                        <progress max="100" value="0"></progress>
+                        <div class="uploader_thumbs_wrapper">
+                          <div class="uploader_thumbs">
+                            <label class="uploader_file-label button-lg button-alternate"><span class="text-with-icon">Add another photo
+                                <svg class="icon" aria-hidden="true">
+                                  <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-upload"/>
+                                </svg></span></label>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2d5x1q">
+                      <label class="expander_label" for="rb-2d5x1q" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-1SVgFf">Copy</button>
+                          <pre><code class="language-html" id="rb-1SVgFf">
+                              &lt;div class=&quot;uploader&quot; id=&quot;uploader2&quot;&gt;&lt;span class=&quot;uploader_cta text-with-icon&quot;&gt;Add a Photo
+                                  &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
+                                    &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-upload&quot;&gt;&lt;/use&gt;
+                                  &lt;/svg&gt;&lt;/span&gt;
+                                &lt;form class=&quot;uploader_form&quot;&gt;
+                                  &lt;p class=&quot;uploader_text&quot;&gt;
+                                    Drag &amp;amp; drop images into this area
+                                    or 
+                                    &lt;label class=&quot;uploader_file-label button-lg button-link&quot;&gt;browse your computer&lt;/label&gt; for them.
+                                  &lt;/p&gt;
+                                  &lt;input class=&quot;uploader_file-input&quot; type=&quot;file&quot; multiple=&quot;&quot; accept=&quot;*&quot;&gt;
+                                &lt;/form&gt;
+                                &lt;progress max=&quot;100&quot; value=&quot;0&quot;&gt;&lt;/progress&gt;
+                                &lt;div class=&quot;uploader_thumbs_wrapper&quot;&gt;
+                                  &lt;div class=&quot;uploader_thumbs&quot;&gt;
+                                    &lt;label class=&quot;uploader_file-label button-lg button-alternate&quot;&gt;&lt;span class=&quot;text-with-icon&quot;&gt;Add another photo
                                         &lt;svg class=&quot;icon&quot; aria-hidden=&quot;true&quot;&gt;
                                           &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-upload&quot;&gt;&lt;/use&gt;
                                         &lt;/svg&gt;&lt;/span&gt;&lt;/label&gt;

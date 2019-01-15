@@ -6,28 +6,53 @@ block vars
 block content
   article
     h1 File Upload
-
+    h2 Configuration
     p
-    | Include #[code rocketbelt.uploaders.js] and call #[code rb.uploaders.addUploader({ selector: '.unique-selector' })] to initialize.
+    | Include #[code rocketbelt.uploaders.js] and call #[code rb.uploaders.addUploader({ selector: '#unique-selector' })] to initialize.
     | As files are added via the UI, they're also added to the #[rb.uploaders.files] array as base64-encoded strings along with the file
     | size and an auto-generated ID.
     p
     | The uploader emits #[code rb.uploaders.fileAdded] and #[code rb.uploaders.fileRemoved] events as files are added and removed.
+    p
+    | By default, the uploader stores images as base64-encoded strings. It can be configured to append files as #[code Blob]s by adding
+    | the parameter #[code filesAsBinary: true] to the configuration object when the uploader is created.
 
+    p
+      a(href='javascript:(function(){rb.uploaders.addUploader({ selector: "#uploader1" });})();') Add #uploader1
     +exampleWithCode
-      .uploader
+      .uploader#uploader1
         span.uploader_cta.text-with-icon Add a Photo
           svg.icon.icon-left(aria-hidden='true')
             use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-upload')
         form.uploader_form
           p.uploader_text
             | Drag &amp; drop images into this area
-            | or #[label.uploader_file-label.button-lg.button-link(for='uploader_file-input', aria-role='button', tabindex=0) browse your computer] for them.
-          input#uploader_file-input(type='file', multiple='', accept='*')
+            | or #[label.uploader_file-label.button-lg.button-link browse your computer] for them.
+          input.uploader_file-input(type='file', multiple='', accept='*')
         progress(max='100', value='0')
         .uploader_thumbs_wrapper
           .uploader_thumbs
-            label.uploader_file-label.button-lg.button-alternate(for='uploader_file-input', aria-role='button', tabindex=0)
+            label.uploader_file-label.button-lg.button-alternate
+              span.text-with-icon Add another photo
+                svg.icon(aria-hidden='true')
+                  use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-upload')
+    h2 Multiple Uploaders
+    p
+      a(href='javascript:(function(){rb.uploaders.addUploader({ selector: "#uploader2" });})();') Add #uploader2
+    +exampleWithCode
+      .uploader#uploader2
+        span.uploader_cta.text-with-icon Add a Photo
+          svg.icon.icon-left(aria-hidden='true')
+            use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-upload')
+        form.uploader_form
+          p.uploader_text
+            | Drag &amp; drop images into this area
+            | or #[label.uploader_file-label.button-lg.button-link browse your computer] for them.
+          input.uploader_file-input(type='file', multiple='', accept='*')
+        progress(max='100', value='0')
+        .uploader_thumbs_wrapper
+          .uploader_thumbs
+            label.uploader_file-label.button-lg.button-alternate
               span.text-with-icon Add another photo
                 svg.icon(aria-hidden='true')
                   use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-upload')
