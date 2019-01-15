@@ -1,0 +1,45 @@
+/// Return a bulletproof font-weight. Give it a string (or your best guess) and
+/// it returns the correct weight value.
+///
+/// @group Typography
+/// @author Kendrick Arnett
+///
+/// @param $style - The weight to return
+///
+/// @example scss - font-weight function
+///   font-weight(thin);
+///   // 100;
+///   font-weight(semibold);
+///   // 600;
+///   font-weight(semi-bold);
+///   // 600;
+@function font-weight($style: normal) {
+  $style: to_lower_case($style);
+  $weights: (
+    thin: 100,
+    ultralight: 100,
+    ultra-light: 100,
+    extralight: 200,
+    extra-light: 200,
+    light: 300,
+    normal: 400,
+    book: 400,
+    medium: 500,
+    demi: 600,
+    demibold: 600,
+    demi-bold: 600,
+    semibold: 600,
+    semi-bold: 600,
+    bold: 700,
+    extrabold: 800,
+    extra-bold: 800,
+    black: 900,
+    heavy: 900,
+    ultrabold: 900,
+    ultra-bold: 900
+  );
+
+  @return if(map-has-key($weights, $style),
+            map-get($weights, $style),
+            map-get($weights, normal));
+}
