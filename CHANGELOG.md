@@ -1,3 +1,13 @@
+<a name="1.18.1"></a>
+## [1.18.1](https://github.com/Pier1/rocketbelt/compare/1.18.0...v1.18.1) (2019-01-31)
+
+
+### Bug Fixes
+
+* **Radio Buttons:** Add better support for text wrapping within segmented radio buttons. ([ffac90f](https://github.com/Pier1/rocketbelt/commit/ffac90f))
+
+
+
 <a name="1.18.0"></a>
 # [1.18.0](https://github.com/Pier1/rocketbelt/compare/1.17.6...v1.18.0) (2019-01-15)
 
