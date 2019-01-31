@@ -6,13 +6,13 @@
   li {
     display: inline-flex;
     flex: 1;
-    
+
     &:first-of-type label {
       border-top-left-radius: 6px;
       border-bottom-left-radius: 6px;
       border-left-width: 2px;
     }
-    
+
     &:last-of-type label {
       border-top-right-radius: 6px;
       border-bottom-right-radius: 6px;
@@ -29,8 +29,11 @@
 
     & + label {
       padding-left: 0;
+      text-align: center;
+      line-height: 1.33;
+      align-self: stretch;
     }
-    
+
 
     &:not(:checked) + label {
       &:hover {
