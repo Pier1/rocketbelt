@@ -244,15 +244,17 @@
         const id = e.target.dataset.targetId;
         const imgToRemove = document.querySelector(`#${id}`);
         const container = e.target.closest('.uploader');
+        const uploader = document.querySelector(instance.config.selector);
 
         imgToRemove.parentNode.removeChild(imgToRemove);
         e.target.parentNode.removeChild(e.target);
+        $(uploader).find('input[type="file"]').val('');
 
         if (container && container.querySelectorAll('.uploader_thumb').length === 0) {
           container.classList.remove('uploader-has-thumbs');
+
           if (instance.config.isMobile) {
             container.classList.remove('uploader-expanded');
-            const uploader = document.querySelector(instance.config.selector);
             uploader.addEventListener('click', mobileOpenPhotos);
           }
         }
