@@ -28,6 +28,9 @@
         if (uploaderConfig.isMobile) {
           uploader.classList.add('uploader-mobile');
           uploader.addEventListener('click', mobileOpenPhotos);
+          $(uploader).find('.uploader_file-label').on('click', (e) => {
+            e.stopPropagation();
+          })
         }
 
         if (!uploader.classList.contains('uploader-expanded')) {
