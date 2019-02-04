@@ -28,9 +28,6 @@
         if (uploaderConfig.isMobile) {
           uploader.classList.add('uploader-mobile');
           uploader.addEventListener('click', mobileOpenPhotos);
-          $(uploader).find('.uploader_file-label').on('click', (e) => {
-            e.stopPropagation();
-          })
         }
 
         if (!uploader.classList.contains('uploader-expanded')) {
@@ -110,7 +107,9 @@
   }
 
   function mobileOpenPhotos(e) {
-    $(`#${getClosestUploader(e.target).id} input[type="file"]`).click();
+    if(getClosestUploader(e.target)) {
+      $(`#${getClosestUploader(e.target).id} input[type="file"]`).click();
+    }
   }
 
   function expandClickHandler(e) {
@@ -251,6 +250,11 @@
 
         if (container && container.querySelectorAll('.uploader_thumb').length === 0) {
           container.classList.remove('uploader-has-thumbs');
+          if (instance.config.isMobile) {
+            container.classList.remove('uploader-expanded');
+            const uploader = document.querySelector(instance.config.selector);
+            uploader.addEventListener('click', mobileOpenPhotos);
+          }
         }
 
         instance.files = instance.files.filter((el) => {
