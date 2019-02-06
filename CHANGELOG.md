@@ -1,3 +1,7 @@
+## [1.18.2](https://github.com/Pier1/rocketbelt/compare/1.18.1...1.18.2) (2019-02-06)
+
+
+
 <a name="1.18.1"></a>
 ## [1.18.1](https://github.com/Pier1/rocketbelt/compare/1.18.0...v1.18.1) (2019-01-31)
 
