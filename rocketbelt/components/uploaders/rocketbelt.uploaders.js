@@ -247,37 +247,46 @@
         // exif.getData(this, function () {
         //   srcOrientation = exif.getTag(this, 'Orientation');
         // });
-        const newDimensions = getNewDimensions({'width': image.width, 'height': image.height});
-        const newWidth = newDimensions.width;
-        const newHeight = newDimensions.height;
+        jQuery.ajax({
+          url: 'https://cdn.jsdelivr.net/npm/exif-js',
+          dataType: 'script',
+          cache: true
+        }).done(function () {
+          EXIF.getData(image, function () {
+            srcOrientation = EXIF.getTag(this, 'Orientation');
+            const newDimensions = getNewDimensions({ 'width': image.width, 'height': image.height });
+            const newWidth = newDimensions.width;
+            const newHeight = newDimensions.height;
 
-        // Create a temporary canvas to draw the downscaled image on.
-        let canvas = document.createElement('canvas');
-        if (srcOrientation > 4 && srcOrientation < 9) {
-          canvas.width = newHeight;
-          canvas.height = newWidth;
-        } else {
-          canvas.width = newWidth;
-          canvas.height = newHeight;
-        }
+            // Create a temporary canvas to draw the downscaled image on.
+            let canvas = document.createElement('canvas');
+            if (srcOrientation > 4 && srcOrientation < 9) {
+              canvas.width = newHeight;
+              canvas.height = newWidth;
+            } else {
+              canvas.width = newWidth;
+              canvas.height = newHeight;
+            }
 
-        // Draw the downscaled image on the canvas and return the new data URL.
-        // Have to use 'let' instead of 'const' so it can be mutable
-        let ctx = canvas.getContext('2d');
-        switch (srcOrientation) {
-        case 2: ctx.transform(-1, 0, 0, 1, newWidth, 0); break;
-        case 3: ctx.transform(-1, 0, 0, -1, newWidth, newHeight); break;
-        case 4: ctx.transform(1, 0, 0, -1, 0, newHeight); break;
-        case 5: ctx.transform(0, 1, 1, 0, 0, 0); break;
-        case 6: ctx.transform(0, 1, -1, 0, newHeight, 0); break;
-        case 7: ctx.transform(0, -1, -1, 0, newHeight, newWidth); break;
-        case 8: ctx.transform(0, -1, 1, 0, 0, newWidth); break;
-        default: break;
-        }
-        ctx.drawImage(image, 0, 0, newWidth, newHeight);
-        const newDataUrl = canvas.toDataURL(imageType, encoderOptions);
-        const newFileSize = Math.ceil(newDataUrl.split(',')[1].length * 0.75);
-        resolve({ 'file': newDataUrl, 'size': newFileSize });
+            // Draw the downscaled image on the canvas and return the new data URL.
+            // Have to use 'let' instead of 'const' so it can be mutable
+            let ctx = canvas.getContext('2d');
+            switch (srcOrientation) {
+            case 2: ctx.transform(-1, 0, 0, 1, newWidth, 0); break;
+            case 3: ctx.transform(-1, 0, 0, -1, newWidth, newHeight); break;
+            case 4: ctx.transform(1, 0, 0, -1, 0, newHeight); break;
+            case 5: ctx.transform(0, 1, 1, 0, 0, 0); break;
+            case 6: ctx.transform(0, 1, -1, 0, newHeight, 0); break;
+            case 7: ctx.transform(0, -1, -1, 0, newHeight, newWidth); break;
+            case 8: ctx.transform(0, -1, 1, 0, 0, newWidth); break;
+            default: break;
+            }
+            ctx.drawImage(image, 0, 0, newWidth, newHeight);
+            const newDataUrl = canvas.toDataURL(imageType, encoderOptions);
+            const newFileSize = Math.ceil(newDataUrl.split(',')[1].length * 0.75);
+            resolve({ 'file': newDataUrl, 'size': newFileSize });
+          });
+        });
       };
       image.onerror = reject;
     });
