@@ -294,7 +294,7 @@
 
   function createPreview(filesAsBinary, instance, instanceEl, reader, scaledImageObj) {
     const img = document.createElement('img');
-    img.src = reader.result;
+    img.src = filesAsBinary ? reader.result : scaledImageObj.file;
     img.id = `rb_${rb.getShortId()}`;
     img.classList.add('uploader_thumb');
 
