@@ -208,22 +208,24 @@
   function getNewDimensions(oldDimensions) {
     const width = oldDimensions.width;
     const height = oldDimensions.height;
+    const maxWidth = 1500;
+    const maxHeight = 1500;
     let newWidth;
     let newHeight;
-    if (width <= 1500 && height <= 1500) {
+    if (width <= maxWidth && height <= maxHeight) {
       return { 'width': width, 'height': height };
     }
 
     if (height > width) {
-      if (height > 1500) {
-        newHeight = 1500;
+      if (height > maxHeight) {
+        newHeight = maxHeight;
         newWidth = Math.floor((width / height) * newHeight);
       } else {
         return { 'width': width, 'height': height };
       }
     } else {
-      if (width > 1500) {
-        newWidth = 1500;
+      if (width > maxWidth) {
+        newWidth = maxWidth;
         newHeight = Math.floor((height / width) * newWidth);
       } else {
         return { 'width': width, 'height': height };
@@ -244,9 +246,6 @@
       image.src = data;
       image.onload = () => {
         let srcOrientation = 1;
-        // exif.getData(this, function () {
-        //   srcOrientation = exif.getTag(this, 'Orientation');
-        // });
         jQuery.ajax({
           url: 'https://cdn.jsdelivr.net/npm/exif-js',
           dataType: 'script',
