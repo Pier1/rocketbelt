@@ -1,3 +1,7 @@
+# [1.19.0](https://github.com/Pier1/rocketbelt/compare/1.18.2...1.19.0) (2019-02-18)
+
+* **Uploader:** Add better support for image resizing & rotation via canvas and exif-js. ([7353690](https://github.com/Pier1/rocketbelt/commit/7353690))
+
 ## [1.18.2](https://github.com/Pier1/rocketbelt/compare/1.18.1...1.18.2) (2019-02-06)
 
 
