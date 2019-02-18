@@ -202,10 +202,174 @@
     const numCanAdd = rb.uploaders.numCanAdd(uploaderId);
 
     const filesToAdd = [...files].slice(0, numCanAdd);
-    filesToAdd.forEach(file => { previewFile(file, uploaderId); });
+    filesToAdd.forEach(file => { processFile(file, uploaderId); });
   };
 
-  function previewFile(file, uploaderId) {
+  function getNewDimensions(oldDimensions) {
+    const width = oldDimensions.width;
+    const height = oldDimensions.height;
+    const maxWidth = 1500;
+    const maxHeight = 1500;
+    let newWidth;
+    let newHeight;
+    if (width <= maxWidth && height <= maxHeight) {
+      return { 'width': width, 'height': height };
+    }
+
+    if (height > width) {
+      if (height > maxHeight) {
+        newHeight = maxHeight;
+        newWidth = Math.floor((width / height) * newHeight);
+      } else {
+        return { 'width': width, 'height': height };
+      }
+    } else {
+      if (width > maxWidth) {
+        newWidth = maxWidth;
+        newHeight = Math.floor((height / width) * newWidth);
+      } else {
+        return { 'width': width, 'height': height };
+      }
+    }
+
+    return { 'width': newWidth, 'height': newHeight };
+  }
+
+  function downscaleImage(data) {
+    return new Promise((resolve, reject) => {
+      // Provide default values
+      const imageType = 'image/png';
+      const encoderOptions = 0.9;
+
+      // Create a temporary image so that we can compute the height of the downscaled image.
+      let image = new Image();
+      image.src = data;
+      image.onload = () => {
+        let srcOrientation = 1;
+        jQuery.ajax({
+          url: 'https://cdn.jsdelivr.net/npm/exif-js',
+          dataType: 'script',
+          cache: true
+        }).done(function () {
+          EXIF.getData(image, function () {
+            srcOrientation = EXIF.getTag(this, 'Orientation');
+            const newDimensions = getNewDimensions({ 'width': image.width, 'height': image.height });
+            const newWidth = newDimensions.width;
+            const newHeight = newDimensions.height;
+
+            // Create a temporary canvas to draw the downscaled image on.
+            let canvas = document.createElement('canvas');
+            if (srcOrientation > 4 && srcOrientation < 9) {
+              canvas.width = newHeight;
+              canvas.height = newWidth;
+            } else {
+              canvas.width = newWidth;
+              canvas.height = newHeight;
+            }
+
+            // Draw the downscaled image on the canvas and return the new data URL.
+            // Have to use 'let' instead of 'const' so it can be mutable
+            let ctx = canvas.getContext('2d');
+            switch (srcOrientation) {
+            case 2: ctx.transform(-1, 0, 0, 1, newWidth, 0); break;
+            case 3: ctx.transform(-1, 0, 0, -1, newWidth, newHeight); break;
+            case 4: ctx.transform(1, 0, 0, -1, 0, newHeight); break;
+            case 5: ctx.transform(0, 1, 1, 0, 0, 0); break;
+            case 6: ctx.transform(0, 1, -1, 0, newHeight, 0); break;
+            case 7: ctx.transform(0, -1, -1, 0, newHeight, newWidth); break;
+            case 8: ctx.transform(0, -1, 1, 0, 0, newWidth); break;
+            default: break;
+            }
+            ctx.drawImage(image, 0, 0, newWidth, newHeight);
+            const newDataUrl = canvas.toDataURL(imageType, encoderOptions);
+            const newFileSize = Math.ceil(newDataUrl.split(',')[1].length * 0.75);
+            resolve({ 'file': newDataUrl, 'size': newFileSize });
+          });
+        });
+      };
+      image.onerror = reject;
+    });
+  }
+
+  function createPreview(filesAsBinary, instance, instanceEl, reader, scaledImageObj) {
+    const img = document.createElement('img');
+    img.src = filesAsBinary ? reader.result : scaledImageObj.file;
+    img.id = `rb_${rb.getShortId()}`;
+    img.classList.add('uploader_thumb');
+
+    const f = {
+      id: img.id,
+      file: filesAsBinary ? rb.dataURItoBlob(reader.result) : scaledImageObj.file,
+      size: filesAsBinary ? reader.size : scaledImageObj.size
+    };
+    instance.files.push(f);
+
+    instanceEl
+      .dispatchEvent(new CustomEvent('rb.uploaders.fileAdded', { detail: f }));
+
+    const button = document.createElement('button');
+    button.dataset.targetId = img.id;
+    button.classList.add('uploader_thumbs_remove-button');
+    button.innerHTML = '&times;';
+    button.setAttribute(rb.aria.label, 'Remove this image');
+
+    rb.once(button, 'click', (e) => {
+      const id = e.target.dataset.targetId;
+      const imgToRemove = document.querySelector(`#${id}`);
+      const container = e.target.closest('.uploader');
+      const uploader = document.querySelector(instance.config.selector);
+
+      imgToRemove.parentNode.removeChild(imgToRemove);
+      e.target.parentNode.removeChild(e.target);
+      $(uploader).find('input[type="file"]').val('');
+
+      if (container && container.querySelectorAll('.uploader_thumb').length === 0) {
+        container.classList.remove('uploader-has-thumbs');
+
+        if (instance.config.isMobile) {
+          container.classList.remove('uploader-expanded');
+          uploader.addEventListener('click', mobileOpenPhotos);
+        }
+      }
+
+      instance.files = instance.files.filter((el) => {
+        return el.id !== id;
+      });
+
+      if (rb.uploaders.numCanAdd(instanceEl.id) > 0) {
+        const $dropArea = $(`#${instanceEl.id}`);
+
+        $(`#${instanceEl.id} .uploader_file-input, #${instanceEl.id} .uploader_file-label`)
+          .removeAttr('disabled');
+
+        $dropArea.removeClass(maxFilesClass);
+      }
+
+      const i = { removedId: id };
+      document.getElementById(instanceEl.id)
+        .dispatchEvent(new CustomEvent('rb.uploaders.fileRemoved', { detail: i }));
+    });
+
+    document.querySelector(`#${instanceEl.id} .uploader_thumbs`).appendChild(img);
+    document.querySelector(`#${img.id}`).insertAdjacentElement('afterend', button);
+
+    const u = document.querySelector(`#${instanceEl.id}`);
+
+    if (u) {
+      u.classList.add('uploader-has-thumbs');
+    }
+
+    if (!rb.uploaders.numCanAdd(instanceEl.id)) {
+      const $dropArea = $(`#${instanceEl.id}`);
+
+      $(`#${instanceEl.id} .uploader_file-input, #${instanceEl.id} .uploader_file-label`)
+        .attr('disabled', '');
+
+      $dropArea.addClass(maxFilesClass);
+    }
+  }
+
+  function processFile(file, uploaderId) {
     const instance = getInstanceForId(uploaderId);
     const instanceEl = document.getElementById(uploaderId);
     const reader = new FileReader();
@@ -223,77 +387,12 @@
           reader.result
       ;
 
-      const img = document.createElement('img');
-      img.src = reader.result;
-      img.id = `rb_${rb.getShortId()}`;
-      img.classList.add('uploader_thumb');
-
-      const f = { id: img.id, file: fileContents, size: reader.size };
-      instance.files.push(f);
-
-      instanceEl
-        .dispatchEvent(new CustomEvent('rb.uploaders.fileAdded', { detail: f }));
-
-      const button = document.createElement('button');
-      button.dataset.targetId = img.id;
-      button.classList.add('uploader_thumbs_remove-button');
-      button.innerHTML = '&times;';
-      button.setAttribute(rb.aria.label, 'Remove this image');
-
-      rb.once(button, 'click', (e) => {
-        const id = e.target.dataset.targetId;
-        const imgToRemove = document.querySelector(`#${id}`);
-        const container = e.target.closest('.uploader');
-        const uploader = document.querySelector(instance.config.selector);
-
-        imgToRemove.parentNode.removeChild(imgToRemove);
-        e.target.parentNode.removeChild(e.target);
-        $(uploader).find('input[type="file"]').val('');
-
-        if (container && container.querySelectorAll('.uploader_thumb').length === 0) {
-          container.classList.remove('uploader-has-thumbs');
-
-          if (instance.config.isMobile) {
-            container.classList.remove('uploader-expanded');
-            uploader.addEventListener('click', mobileOpenPhotos);
-          }
-        }
-
-        instance.files = instance.files.filter((el) => {
-          return el.id !== id;
+      if (instance.config.filesAsBinary) {
+        createPreview(true, instance, instanceEl, reader);
+      } else {
+        downscaleImage(fileContents).then(scaledImageObj => {
+          createPreview(false, instance, instanceEl, reader, scaledImageObj);
         });
-
-        if (rb.uploaders.numCanAdd(instanceEl.id) > 0) {
-          const $dropArea = $(`#${instanceEl.id}`);
-
-          $(`#${instanceEl.id} .uploader_file-input, #${instanceEl.id} .uploader_file-label`)
-            .removeAttr('disabled');
-
-          $dropArea.removeClass(maxFilesClass);
-        }
-
-        const i = { removedId: id };
-        document.getElementById(instanceEl.id)
-          .dispatchEvent(new CustomEvent('rb.uploaders.fileRemoved', { detail: i }));
-      });
-
-      document.querySelector(`#${instanceEl.id} .uploader_thumbs`).appendChild(img);
-      document.querySelector(`#${img.id}`).insertAdjacentElement('afterend', button);
-
-      const u = document.querySelector(`#${instanceEl.id}`);
-
-      if (u) {
-        u.classList.add('uploader-has-thumbs');
-      }
-
-
-      if (!rb.uploaders.numCanAdd(instanceEl.id)) {
-        const $dropArea = $(`#${instanceEl.id}`);
-
-        $(`#${instanceEl.id} .uploader_file-input, #${instanceEl.id} .uploader_file-label`)
-          .attr('disabled', '');
-
-        $dropArea.addClass(maxFilesClass);
       }
     };
   }
