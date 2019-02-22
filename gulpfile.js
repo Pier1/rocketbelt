@@ -27,7 +27,6 @@ function getTask(task, taskParams) {
 
 gulp.task('default', getTask('default'));
 
-gulp.task('a11y', getTask('a11y'));
 gulp.task('build', getTask('build'));
 gulp.task('clean-links', getTask('clean-links'));
 gulp.task('clean', ['clean-links'], getTask('clean'));
@@ -35,7 +34,6 @@ gulp.task('copy-js', getTask('copy-js'));
 gulp.task('copy-resources', getTask('copy-resources'));
 gulp.task('copy-tools', getTask('copy-tools'));
 gulp.task('css-sort', getTask('css-sort'));
-gulp.task('feature-detection', getTask('feature-detection'));
 gulp.task('icons-enterprise', getTask('icons', { enterprise: true }));
 gulp.task('icons-ecom', getTask('icons'));
 gulp.task('icons', ['icons-ecom', 'icons-enterprise']);
@@ -45,7 +43,6 @@ gulp.task('link-js', getTask('link-js'));
 gulp.task('link', ['link-templates', 'link-js', 'link-svg']);
 gulp.task('lint-sass', ['css-sort'], getTask('lint-sass'));
 gulp.task('server', getTask('server'));
-gulp.task('sitemap', getTask('sitemap'));
 gulp.task('styles', getTask('styles'));
 gulp.task('uglify', getTask('uglify'));
 gulp.task('views', ['copy-js', 'copy-resources'], getTask('views'));

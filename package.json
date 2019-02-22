@@ -61,7 +61,6 @@
     "mutationobserver-shim": "^0.3.2",
     "phantomjs-prebuilt": "^2.1.16",
     "postcss-svg": "^2.4.0",
-    "ra11y": "^1.0.0",
     "recursive-readdir": "^2.2.2",
     "run-sequence": "^1.2.2",
     "shorthash": "0.0.2",
