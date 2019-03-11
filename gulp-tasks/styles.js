@@ -2,6 +2,7 @@
 (() => {
   module.exports = (gulp, plugins, config) => {
     return () => {
+
       const supported =
         ['Chrome >= 49',
          'Firefox >= 48',
@@ -10,6 +11,10 @@
          'Edge >= 14',
          'iOS >= 9',
          'Android >= 4.4'];
+
+      if (!process.env.WEBFONT_SERIF_URI) {
+        throw new Error('Please set the WEBFONT_SERIF_URI environment variable so that @font-face rules can be generated.');
+      }
 
       const source =
         gulp.src([
