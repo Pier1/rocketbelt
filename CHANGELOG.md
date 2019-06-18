@@ -1,3 +1,15 @@
+# [1.20.0](https://github.com/Pier1/rocketbelt/compare/1.19.0...1.20.0) (2019-06-18)
+
+
+### Features
+
+* **Build:** Slim down build tasks. ([d6ccfe8](https://github.com/Pier1/rocketbelt/commit/d6ccfe8))
+* **Typography:** Add check for missing environment variable to support [@font-face](https://github.com/font-face) gen. ([73e1243](https://github.com/Pier1/rocketbelt/commit/73e1243))
+* **Typography:** Update fonts for brand alignment. ([175b597](https://github.com/Pier1/rocketbelt/commit/175b597))
+* **Variables:** Add breakpoints to JSON variable export. ([52621ac](https://github.com/Pier1/rocketbelt/commit/52621ac))
+
+
+
 # [1.19.0](https://github.com/Pier1/rocketbelt/compare/1.18.2...1.19.0) (2019-02-18)
 
 * **Uploader:** Add better support for image resizing & rotation via canvas and exif-js. ([7353690](https://github.com/Pier1/rocketbelt/commit/7353690))
