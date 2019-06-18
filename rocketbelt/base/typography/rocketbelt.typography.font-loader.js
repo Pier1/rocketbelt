@@ -31,18 +31,16 @@
   Promise.all([brandSansRegular.load(null, 10000)]).then(() => {
     document.documentElement.classList.add(fontsLoadedSubsetClass);
 
-    const brandSansLight = new FontFaceObserver('Brand Sans', { weight: 300 });
-    const brandSansMedium = new FontFaceObserver('Brand Sans', { weight: 500 });
     const brandSansRegularItalic = new FontFaceObserver('Brand Sans', {
       weight: 400,
       style: 'italic'
     });
+    const brandSansBold = new FontFaceObserver('Brand Sans', { weight: 700 });
 
     Promise
       .all([
-        brandSansLight.load(null, 10000),
         brandSansRegularItalic.load(null, 10000),
-        brandSansMedium.load(null, 10000)
+        brandSansBold.load(null, 10000)
       ])
       .then(() => {
         // All fonts loaded

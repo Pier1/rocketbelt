@@ -1,0 +1,71 @@
+.rb-notification {
+  position: fixed;
+  z-index: 1000;
+  // padding: 1rem;
+  min-width: 250px;
+  border-radius: 12px;
+  background-color: rgba(color(gray, minus2), 0.9);
+  color: white;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &.top-right {
+    top: 1rem;
+    right: 2rem;
+  }
+
+  &.top-left {
+    top: 1rem;
+    left: 2rem;
+  }
+
+  &.bottom-left {
+    bottom: 1rem;
+    left: 2rem;
+  }
+
+  &.bottom-right {
+    right: 2rem;
+    bottom: 1rem;
+  }
+
+  .rb-notification-wrap {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .rb-notification-icon {
+    padding: .5rem;
+
+    svg {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  .rb-notification-text {
+    margin-right: 1rem;
+    padding: .5rem 0;
+    max-width: 300px;
+    font-size: font-size(0);
+    align-self: center;
+
+    .description {
+      font-weight: 500;
+    }
+
+    .action {
+      color: color(gray, plus4);
+      text-transform: uppercase;
+    }
+  }
+
+  .rb-notification-close {
+    position: absolute;
+    top: 4px;
+    right: 4px;
+  }
+}
