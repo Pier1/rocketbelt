@@ -1,19 +1,26 @@
-@if ($serif-uri != '') {
-  @font-face {
-    font-weight: 300;
-    font-style: normal;
-    font-family: 'Brand Serif';
-    font-display: swap;
-    src: url('#{$serif-uri}/BrandSerifSubset-Light.woff2') format('woff2'),
-         url('#{$serif-uri}/BrandSerifSubset-Light.woff')  format('woff');
-  }
+@font-face {
+  font-family: 'Brand Serif';
+  font-style: italic;
+  font-weight: font-weight(normal);
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGWmQSNjdsmc35JDF1K5GRweDs1ZyHKpWg.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGWmQSNjdsmc35JDF1K5GRweDs1YQ.woff) format('woff');
+}
 
-  @font-face {
-    font-weight: 300;
-    font-style: italic;
-    font-family: 'Brand Serif';
-    font-display: swap;
-    src: url('#{$serif-uri}/BrandSerifSubset-LightItalic.woff2') format('woff2'),
-         url('#{$serif-uri}/BrandSerifSubset-LightItalic.woff')  format('woff');
-  }
+@font-face {
+  font-family: 'Brand Serif';
+  font-style: normal;
+  font-weight: font-weight(normal);
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGUmQSNjdsmc35JDF1K5GR1SDk_YAPI.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGUmQSNjdsmc35JDF1K5GR1SD8.woff) format('woff');
+}
+
+@font-face {
+  font-family: 'Brand Serif';
+  font-style: normal;
+  font-weight: font-weight(bold);
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGJmQSNjdsmc35JDF1K5GzObSwSQg7ir2C-.woff2) format('woff2'),
+       url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGJmQSNjdsmc35JDF1K5GzObSwSQgg.woff) format('woff');
 }
