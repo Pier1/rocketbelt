@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>menu</title>
+    <title>Icon/menu</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="menu" fill="#000000" fill-rule="nonzero">
-            <path d="M240,42 L16,42 L16,77.3398058 L240,77.3398058 L240,42 Z M240,109.961165 L16,109.961165 L16,145.300971 L240,145.300971 L240,109.961165 Z M240,177.92233 L16,177.92233 L16,213.262136 L240,213.262136 L240,177.92233 Z"></path>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/menu" fill="#00205B">
+            <path d="M13.6603774,11.36 L2.33962264,11.36 C2.15188679,11.36 2,11.199 2,11 C2,10.801 2.15188679,10.64 2.33962264,10.64 L13.6603774,10.64 C13.8481132,10.64 14,10.801 14,11 C14,11.199 13.8481132,11.36 13.6603774,11.36 Z M13.6603774,8.36 L2.33962264,8.36 C2.15188679,8.36 2,8.199 2,8 C2,7.801 2.15188679,7.64 2.33962264,7.64 L13.6603774,7.64 C13.8481132,7.64 14,7.801 14,8 C14,8.199 13.8481132,8.36 13.6603774,8.36 Z M13.6603774,5.36 L2.33962264,5.36 C2.15188679,5.36 2,5.199 2,5 C2,4.801 2.15188679,4.64 2.33962264,4.64 L13.6603774,4.64 C13.8481132,4.64 14,4.801 14,5 C14,5.199 13.8481132,5.36 13.6603774,5.36 Z" id="Icon-Color"></path>
         </g>
     </g>
 </svg>

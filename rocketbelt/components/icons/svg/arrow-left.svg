@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>arrow-left</title>
+    <title>Icon/arrow-left</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="arrow-left" fill="#000000" fill-rule="nonzero">
-            <polygon transform="translate(128.000000, 127.584071) rotate(180.000000) translate(-128.000000, -127.584071) " points="137.566667 25 110.994667 51.373432 168.637333 108.969725 16 108.969725 16 146.198417 168.637333 146.198417 110.994667 203.79471 137.566667 230.168142 240 127.584071"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/arrow-left" fill="#00205B">
+            <path d="M14.2479388,7.49985118 L2.84993883,7.49985118 L6.77593883,2.86085118 C6.95393883,2.64985118 6.92893883,2.33485118 6.71793883,2.15585118 C6.50793883,1.97885118 6.19093883,2.00385118 6.01293883,2.21485118 L1.36993883,7.69885118 C1.21193883,7.88585118 1.21293883,8.16085118 1.37193883,8.34685118 L6.01493883,13.7868512 C6.11293883,13.9028512 6.25393883,13.9618512 6.39393883,13.9618512 C6.50993883,13.9618512 6.62493883,13.9228512 6.71893883,13.8428512 C6.92893883,13.6638512 6.95393883,13.3478512 6.77393883,13.1378512 L2.81693883,8.49985118 L14.2479388,8.49985118 C14.5239388,8.49985118 14.7479388,8.27585118 14.7479388,7.99985118 C14.7479388,7.72385118 14.5239388,7.49985118 14.2479388,7.49985118" id="Icon-Color"></path>
         </g>
     </g>
 </svg>

@@ -1,5 +1,9 @@
 # =-=-=-=-=-=-=-=- Annotations for rocketbelt.icons.svg -=-=-=-=-=-=-=-= #
 # =-=-=-=-=-=-=-=- See below for enterprise annotations -=-=-=-=-=-=-=-= #
+account:
+  title: Account
+  description: Silhouette representing a person
+
 arrow-down:
   title: Down Arrow
   description: A downward arrow
@@ -31,6 +35,10 @@ bookmark:
 calendar-add:
   title: Add to Calendar
   description: A calendar with a plus sign
+
+carrier:
+  title: Carrier
+  description: A stack of shipping boxes
 
 cart:
   title: Shopping Cart
@@ -84,9 +92,9 @@ close:
   title: Close
   description: An "x" character representing a close action
 
-copy:
-  title: Copy
-  description: An object with an arrow pointing to a copy of itself
+coupon:
+  title: Coupon
+  description: Scissors cutting out a coupon
 
 credit-card:
   title: Credit Card
@@ -99,6 +107,10 @@ cta-arrow:
 delete:
   title: Delete
   description: A trash can
+
+delivered:
+  title: Delivered
+  description: A package in front of a door
 
 edit:
   title: Edit
@@ -120,17 +132,29 @@ facebook:
   title: Facebook
   description: Facebook logo
 
+ffwd: 
+  title: Fast Forward
+  description: Double arrows pointing forward
+
 filter:
   title: Filter
-  description: A funnel
+  description: A list of fewer items
 
 flask:
   title: Flask
   description: A bubbling flask
 
+gift-card: 
+  title: Gift Card
+  description: A card with a ribbon tied around it
+
+gift:
+  title: Gift
+  description: A package tied with a ribbon
+
 grid:
   title: Grid
-  description: A grid of 9 squares
+  description: A grid of 4 squares
 
 heart:
   title: Heart
@@ -139,6 +163,14 @@ heart:
 heart-o:
   title: Open Heart
   description: The outline of a heart
+
+help: 
+  title: Help
+  description: A smiling face wearing a headset
+
+hide:
+  title: Hide
+  description: A closed eye
 
 history:
   title: History
@@ -156,13 +188,17 @@ info-circle:
   title: Info
   description: A circle with an "i" inside
 
+instagram:
+  title: Instagram
+  description: The Instagram logo
+
 javascript:
   title: Javascript
   description: The Javascript logo—a square with the letters "JS" inside
 
 lines:
   title: Lines
-  description: Four lines stacked on top of each other
+  description: Lines stacked on top of each other
 
 link:
   title: Link
@@ -176,6 +212,18 @@ lock-check:
   title: Lock With Check
   description: A lock with a checkmark
 
+lock: 
+  title: Lock
+  description: A locked lock
+
+loyalty:
+  title: Loyalty
+  description: A trophy
+
+loyalty2:
+  title: Loyalty
+  description: A trophy with a star on it
+
 menu:
   title: Menu
   description: Three parallel horizontal lines
@@ -184,9 +232,29 @@ minus:
   title: Minus
   description: A minus sign
 
+more-horz-o:
+  title: Open Horizontal Dots
+  description: 3 unfilled horizontal dots 
+
+more-horz:
+  title: Horizontal Dots
+  description: 3 horizontal dots
+
+more-vert-o:
+  title: Open Vertical Dots
+  description: 3 unfilled vertical dots 
+
+more-vert:
+  title: Vertical Dots
+  description: 3 vertical dots 
+
 p1apron:
   title: Pier 1 Apron
   description: An apron with "P1" on the front
+
+p1exclusive:
+  title: Pier 1 Exclusive
+  description: The Pier 1 logo flanked by laurels
 
 p1logo:
   title: Pier 1 Logo
@@ -196,6 +264,30 @@ p1logo-alt-1:
   title: Pier 1 Logo
   description: Pier 1 Imports logo
 
+p1rcc:
+  title: Pier 1 Rewards Credit Card
+  description: A credit card
+
+p1rcc2:
+  title: Pier 1 Rewards Credit Card
+  description: A credit card with a star on it
+
+package-delay:
+  title: Shipment Delay
+  description: A package with an hourglass
+
+package-error:
+  title: Shipment Error
+  description: A package with a warning triangle
+
+package-processing:
+  title: Shipment Processing
+  description: A package with a clock
+
+package-search:
+  title: Shipment Search
+  description: A package with a magnifying glass
+
 pause:
   title: Pause
   description: A pause symbol
@@ -203,6 +295,18 @@ pause:
 pause-circle:
   title: Pause
   description: A pause symbol in a circle
+
+phone:
+  title: Phone
+  description: A mobile phone
+
+pickup-complete:
+  title: Pickup Complete
+  description: A truck with a check mark
+
+pickup-ready:
+  title: Pickup Ready
+  description: A truck with a package
 
 pin:
   title: Pin
@@ -244,37 +348,61 @@ refresh:
   title: Refresh
   description: Two arrows making a circle
 
-ribbon-check:
-  title: Ribbon With Check Mark
-  description: A ribbon with a check mark on the front
+reward-cert:
+  title: Reward Certificate
+  description: A piece of paper with a ribbon
+
+ribbon:
+  title: Ribbon
+  description: A ribbon
 
 rotate:
   title: Rotate
   description: Two arrows spinning in a circle
 
+rrwd:
+  title: Rewind
+  description: Double arrows pointing backward
+
+scheduling:
+  title: Scheduling
+  description: A calendar with a clock
+
 search:
   title: Search
   description: A magnifying glass
+
+ship-delay:
+  title: Shipment Delay
+  description: A truck with an hourglass
 
 shipment:
   title: Shipment
   description: A box with motion lines behind it
 
+shipped:
+  title: Shipped
+  description: A truck in motion
+
+show:
+  title: Show
+  description: An open eye
+
 sms:
   title: SMS
   description: A speech bubble with lines of text inside
 
-sort-both:
-  title: Sort Both
-  description: An upward-pointing triangle above a downward-pointing triangle
+sort:
+  title: Sort
+  description: A sorted list
 
 sort-down:
   title: Sort Down
-  description: A downward-pointing triangle
+  description: A sorted list with downward-pointing arrow
 
 sort-up:
   title: Sort Up
-  description: An upward-pointing triangle
+  description: A sorted list with upward-pointing arrow
 
 specs:
   title: Specs
@@ -296,9 +424,25 @@ star-o:
   title: Open Star
   description: The outline of a star
 
+stop:
+  title: Stop
+  description: A square
+
+store: 
+  title: Store
+  description: A storefront
+
 twitter:
   title: Twitter
   description: Twitter logo
+
+unlink:
+  title: Unlink
+  description: Two chain links with a line through them
+
+unlock:
+  title: Unlock
+  description: An open lock
 
 upload:
   title: Upload
@@ -307,6 +451,10 @@ upload:
 warning:
   title: Warning
   description: An exclamation mark inside a triangle
+
+youtube:
+  title: Youtube
+  description: The Youtube logo
 
 zoom-in:
   title: Zoom In

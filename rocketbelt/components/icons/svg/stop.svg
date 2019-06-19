@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Icon/stop</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/stop" fill="#00205B">
+            <path d="M1.437,14.6395 L14.564,14.6395 L14.564,1.3605 L1.437,1.3605 L1.437,14.6395 Z M14.924,15.3605 L1.076,15.3605 C0.877,15.3605 0.716,15.1995 0.716,15.0005 L0.716,1.0005 C0.716,0.8005 0.877,0.6395 1.076,0.6395 L14.924,0.6395 C15.123,0.6395 15.284,0.8005 15.284,1.0005 L15.284,15.0005 C15.284,15.1995 15.123,15.3605 14.924,15.3605 L14.924,15.3605 Z" id="Icon-Color"></path>
+        </g>
+    </g>
+</svg>

@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>star-half</title>
+    <title>Icon/star-half</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="star-half" fill="#000000" fill-rule="nonzero">
-            <polygon id="Shape" points="88.8746667 86.9866667 0 99.264 64.6826667 161.429333 48.896 249.738667 128 207.424 128 6.26133333"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/star-half" fill="#00205B">
+            <path d="M8.31745508,0.9435 L8.31445508,0.9375 C8.25345508,0.8155 8.12945508,0.7385 7.99245508,0.7385 L7.99145508,0.7385 C7.85445508,0.7395 7.72945508,0.8175 7.66945508,0.9395 L5.51445508,5.3135 L0.68845508,6.0175 C0.55245508,6.0375 0.44045508,6.1325 0.39745508,6.2625 C0.35545508,6.3925 0.39045508,6.5355 0.48945508,6.6315 L3.98345508,10.0335 L3.16145508,14.8415 C3.13745508,14.9765 3.19345508,15.1125 3.30345508,15.1935 C3.36745508,15.2385 3.44145508,15.2615 3.51545508,15.2615 C3.57345508,15.2615 3.63045508,15.2485 3.68345508,15.2205 L8.16345508,12.8605 C8.28145508,12.7985 8.35545508,12.6765 8.35545508,12.5425 L8.35545508,1.1045 C8.35545508,1.0485 8.34145508,0.9935 8.31745508,0.9435" id="Icon-Color"></path>
         </g>
     </g>
 </svg>
