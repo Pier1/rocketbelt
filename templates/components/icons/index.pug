@@ -31,7 +31,8 @@ block content
       +exampleWithCode
         include _icon-link-with-indicator.pug
 
-    h2 Javascript (Javascript? #[em Yes, Javascript.])
+    h2 Javascript Include
+    p The #[span.code svgxuse] polyfill is needed to support Pier 1's SVG sprite sheet pattern in IE 11.
     +exampleCodeOnly('JS Include')
       script(src='./rocketbelt.icons.svgxuse.min.js', defer)
 

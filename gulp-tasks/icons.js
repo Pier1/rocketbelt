@@ -70,7 +70,7 @@
           .pipe(gulp.dest(iconsPath));
 
         const iconsForSprite = `${iconsPath}/*.svg`;
-        console.log(iconsPath);
+
         return gulp.src(iconsForSprite)
           .pipe(plugins.svgSprite(options))
           .pipe(plugins.cheerio({
@@ -87,6 +87,17 @@
                 $symbol.attr('viewBox', $symbol.attr('viewbox'));
                 $symbol.removeAttr('viewbox');
               });
+
+              // $('symbol#rb-icon-star path:first-of-type').css({fill: 'var(--icon-bg, transparent)'});
+              // $('symbol#rb-icon-star path:last-of-type').css({fill: 'var(--icon-fg, inherit)', clipPath: 'inset(0 var(--star-width, 0) 0 0)'});
+
+              $('symbol#rb-icon-star-half path:first-of-type').css({fill: 'var(--icon-bg, transparent)'});
+              $('symbol#rb-icon-star-half path:last-of-type').css({fill: 'var(--icon-fg, inherit)'});
+
+              $('symbol#rb-icon-p1logo').css({fill: '#0033A0'});
+
+              $('symbol#rb-icon-p1logo-alt-1 path:first-of-type').css({fill: '#0033A0'});
+              $('symbol#rb-icon-p1logo-alt-1 path:last-of-type').css({fill: '#fff'});
             }
           }))
           .pipe(plugins.htmltidy(
