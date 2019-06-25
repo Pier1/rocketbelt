@@ -43,6 +43,37 @@
       max-height: 100%;
       transform: none;
 
+      .dialog_back {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-evenly;
+        color: color(white);
+
+        svg {
+          width: 2rem;
+          height: 2rem;
+        }
+
+        .dialog_back-text {
+          padding: .5rem 1rem;
+          text-align: left;
+        }
+
+        img {
+          width: 50px;
+        }
+      }
+
+      .dialog_back_float {
+        position: fixed;
+        top: 5%;
+        left: 11%;
+        width: 275px;
+        background-color: color(gray, plus4);
+        color: color(black);
+      }
+
       @include media('>=md') {
         right: 10%;
         left: 10%;

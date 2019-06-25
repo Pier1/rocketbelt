@@ -120,8 +120,7 @@
 
   // Throttle super-chatty events with requestAnimationFrame for better performance.
   // See https://developer.mozilla.org/en-US/docs/Web/Events/resize
-  (() => {
-    const throttle = (type, name, obj) => {
+  window.rb.throttle = (type, name, obj) => {
       obj = obj || window;
       let running = false;
       const func = () => {
@@ -135,10 +134,11 @@
       };
       obj.addEventListener(type, func);
     };
-
-    // Any event can be rAF'ed, not just resize.
-    throttle('resize', 'rb.optimizedResize');
   })();
+
+  // Any event can be rAF'ed, not just resize.
+  window.rb.throttle('resize', 'rb.optimizedResize');
+  window.rb.throttle('scroll', 'rb.optimizedScroll');
 
   // Polyfill String.prototype.repeat for IE11. This block can be deleted when
   // IE11 support is no longer needed in the future.

@@ -30,7 +30,11 @@ $(function () {
       close: null,
       open: null,
       required: false,
-      headerless: false
+      headerless: false,
+      previousPage: {
+        text: 'Back to Previous Page',
+        imageURL: false
+      }
     };
   }
 
@@ -41,6 +45,8 @@ $(function () {
    * @description Pops a Rocketbelt modal
    */
   $.fn.rbDialog = function (params) {
+    console.log('rbDialogg');
+    console.log(params);
     if (typeof params !== 'string') init.call(this, params);
     if (params === 'close') close();
     else if (params === 'destroy') destroy();
@@ -50,7 +56,7 @@ $(function () {
     return null;
   };
 
-  function init(params) {
+  function init(params) { 
     if ($cache.appendTo.hasClass('is-dialog-open')) return;
     if (this.hasOwnProperty('defaultElement')) {
       element = $(this.defaultElement);
@@ -73,6 +79,7 @@ $(function () {
     if (options.title) $cache.rbDialogTitle.html(options.title);
     if (options.classes) addDialogClasses();
     if (options.buttons.length !== 0) addDialogButtons();
+    if (options.classes.rbDialog.indexOf('dialog-max') > -1 && !$('.dialog_back').length) addDialogBackButton();
 
     $cache.rbDialog.data('options', options);
 
@@ -85,6 +92,60 @@ $(function () {
       $cache.rbDialogBody.append(element);
     }
     element.show();
+  }
+
+  function removeModalOpenHash() {
+    if (location.hash.includes('modalOpen')) {
+      
+    }
+  }
+
+  function addDialogBackButton() {
+    var backButton;
+    if (options.previousPage.imageURL) {
+      backButton = $('<button class="button-lg button-text dialog_back z-depth-1"><svg class="icon" role="img"><use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-arrow-left"></use></svg><span>' + options.previousPage.text + '</span><img src="' + options.previousPage.imageURL + '"/></button>');
+    } else {
+      backButton = $('<button class="button-lg button-text dialog_back z-depth-1"><svg class="icon" role="img"><use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-arrow-left"></use></svg><span>' + options.previousPage.text + '</span></button>');
+    }
+
+    $cache.rbDialog.find('.dialog_header').prepend(backButton);
+
+    // push state to history and add hash of dialogOpen or something
+    history.pushState({model: 'open'}, 'modalOpen', location.hash ? location.hash + '&modalOpen' : '#modalOpen')
+    // listen for window.onhashchange and check if the dialog open is in there;
+    $(window).on('hashchange', function (event) {
+      close();
+    });
+
+    backButton.click(close);
+    (function() {
+      var scrollThrottle = function(type, name, obj_) {
+        var obj = obj_ || window;
+        var running = false;
+        var func = function() {
+          if (running) {
+            return;
+          }
+          running = true;
+          requestAnimationFrame(function() {
+            obj.trigger(name);
+            running = false;
+          });
+        };
+        obj.on(type, func);
+      };
+      scrollThrottle("scroll", "optimizedScroll", $cache.rbDialogBody);
+    })();
+
+    // handle scrollThrottle
+    $cache.rbDialogBody.on("optimizedScroll", function() {
+      if ($('#max-dialog').offset().top < -200) {
+        backButton.addClass('dialog_back_float');
+      } else {
+        // remove fixed class
+        backButton.removeClass('dialog_back_float');
+      }
+    })
   }
 
   function addDialogClasses() {
