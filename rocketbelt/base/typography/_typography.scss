@@ -239,7 +239,7 @@ h4 {
 }
 
 a {
-  $base-link-color: color(contrast, base);
+  $base-link-color: color(brand, logoBlue);
 
   color: $base-link-color;
   transition: color 100ms linear;
@@ -280,28 +280,6 @@ blockquote {
 
     &::before {
       content: unicode('horizontal-bar') + unicode(nbsp);
-    }
-  }
-
-  &.pull {
-    padding: 0;
-    width: 40%;
-    border: none;
-    background: transparent;
-
-    &:not(.font-serif) {
-      font-weight: font-weight(light);
-    }
-
-    & .quote {
-      display: inline;
-      background: rgba(color(secondary, lighter), 0.1);
-      box-shadow: 0 -0.25rem 0 rgba(color(secondary), 0.3);
-      line-height: 1.75;
-    }
-
-    & .source {
-      text-align: right;
     }
   }
 }
