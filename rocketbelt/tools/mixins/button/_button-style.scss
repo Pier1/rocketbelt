@@ -7,16 +7,15 @@
 @mixin button-style($style: primary) {
   $contrast-primary: color(contrast, base);
 
-  $button-base: scale-color($contrast-primary, $lightness: 0%);
-  $button-hover: scale-color($contrast-primary, $lightness: 5%);
-  $button-active: scale-color($contrast-primary, $lightness: -5%);
+  $button-base: color(primary);
+  $button-hover: scale-color($button-base, $lightness: 12.5%);
+  $button-active: $button-hover;
 
-  $button-base-secondary: $contrast-primary;
-  $button-hover-secondary: color(primary);
-  $button-active-secondary: color(primary, darkest);
+  $button-base-secondary: color(primary);
+  $button-hover-secondary: scale-color($button-base, $lightness: 12.5%);
+  $button-active-secondary: color(primary);
 
   @if $style == primary {
-    min-width: 8rem;
     background: $button-base;
 
     $color: mix(color(white), $button-base, 95%);
@@ -46,37 +45,39 @@
     }
   }
   @else if $style == secondary {
-    min-width: 8rem;
-    background: color(white);
+    background: transparent;
     background-image: none;
 
     color: $button-base-secondary;
     fill: $button-base-secondary;
+    border: 1px solid $button-base-secondary;
 
-    &:hover {
-      background: color(white);
+    &:hover,
+    &:active {
+      background: transparentize($color: scale-color($button-base, $lightness: 85%), $amount: 0.85);
+      border-color: $button-hover-secondary;
       color: $button-hover-secondary;
       fill: $button-hover-secondary;
     }
+
+    &:active {
+      background: transparentize($color: scale-color($button-base, $lightness: 97.5%), $amount: 0.85);
+    }
+
     &:visited {
       color: $button-base-secondary;
     }
 
-    &:active {
-      border: 1px solid desaturate(color(primary, lightest), 50%);
-      background: color(white);
-      color: $button-active-secondary;
-      fill: $button-active-secondary;
-    }
-
     &[disabled] {
-      border: 1px solid desaturate(color(primary, lightest), 50%);
-      color: rgba($button-base-secondary, 0.9);
-      fill: rgba($button-base-secondary, 0.9);
+      $disabled-color: rgba($button-base-secondary, 0.9);
+      background: desaturate(scale-color($button-base, $lightness: 97.5%), 65%);
+      border: 1px solid $disabled-color;
+      color: $disabled-color;
+      fill: $disabled-color;
 
       &:hover {
-      color: rgba($button-base-secondary, 0.9);
-      fill: rgba($button-base-secondary, 0.9);
+      color: $disabled-color;
+      fill: $disabled-color;
       }
     }
   }
