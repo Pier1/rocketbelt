@@ -3,7 +3,7 @@
 // line-height + margin-top + margin-bottom must be a multiple of 1.5rem to maintain vertical rhythm.
 $base-line-height: 1.5;
 $ms-base: 1rem;
-$ms-ratio: 1.125;
+$ms-ratio: 1.25;
 
 .fonts-loaded-subset,
 .fonts-loaded {
@@ -28,6 +28,10 @@ $ms-ratio: 1.125;
   h6 {
     font-weight: font-weight(medium);
   }
+}
+
+:root {
+  font-size: 15px;
 }
 
 body {

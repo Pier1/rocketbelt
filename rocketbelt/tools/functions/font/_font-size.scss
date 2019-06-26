@@ -13,5 +13,5 @@
 ///   font-family(-1);
 ///   // 1 step down the scale
 @function font-size($scale) {
-  @return ms($scale);
+  @return decimal-round(ms($scale));
 }
