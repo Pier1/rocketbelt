@@ -13,6 +13,7 @@
     }
 
     .icon-id {
+      font-size: font-size(0);
       margin: 0.5rem;
       color: color(black);
       text-align: left;
@@ -22,7 +23,7 @@
   }
 
   .copy-button {
-    @include z-depth(0);
+    @include z-depth(1);
 
     padding: 0;
     height: 100%;
@@ -46,21 +47,21 @@
   .icon-meaningful,
   .icon-link-no-text {
     .icon {
-      width: font-size(5);
-      height: font-size(5);
+      width: font-size(2);
+      height: font-size(2);
     }
   }
 
   .icon-with-text {
-    font-size: font-size(0);
+    font-size: font-size(1);
   }
 
   .icon-link-no-text {
-    font-size: font-size(5);
+    font-size: font-size(1);
   }
 
   .icon-link-with-indicator {
-    font-size: font-size(10);
+    font-size: font-size(1);
 
     .text-with-icon {
       position: relative;
@@ -72,13 +73,13 @@
         right: 0;
         z-index: 1;
         display: inline-flex;
-        width: font-size(3);
-        height: font-size(3);
+        width: font-size(0);
+        height: font-size(0);
         border-radius: 50%;
         background: color(sale);
         color: color(white);
         text-decoration: none;
-        font-size: font-size(0);
+        font-size: font-size(-1);
         justify-content: center;
         align-content: center;
       }
