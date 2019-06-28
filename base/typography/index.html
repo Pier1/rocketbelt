@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/base/typography/rocketbelt.typography.font-loader.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAapeRjXG7">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAapeRjXG7">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAapeRjXG7" color="#5b14d9">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAapeRjXG7">
+    <meta name="msapplication-TileColor" content="#5b14d9">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml?v=gAapeRjXG7">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <title>Typography | Rocketbelt</title>
+    <link rel="stylesheet" href="../../css/rocketbelt.creative.min.css">
+    <link rel="stylesheet" href="../../css/rocketbelt.min.css">
+    <link rel="stylesheet" href="../../css/site.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/base/rocketbelt.js"></script>
+  </body>
+  <body class="grid-fluid">
+    <ul class="skip list-reset">
+      <li><a class="button-sm button-secondary" href="#content">Skip to Main Content</a></li>
+      <li><a class="button-sm button-secondary" href="#footer">Skip to Footer</a></li>
+    </ul>
+    <div class="docs-wrapper row">
+      <header class="site-header">
+        <div class="site-nav nav-shadowed">
+          <div class="nav_on-site"><a class="rb-header" href="/"><span class="visually-hidden">Return to rocketbelt.io</span>
+              <picture><img srcset="/assets/rocketbelt.svg" alt=""></picture><span class="rb-title">Rocketbelt</span></a>
+            <nav id="main-nav">
+              <ul class="nav-menu">
+                <li class="nav-item nav_level-1" ref="base">
+                  <button class="category-label">Base</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/a11y">Accessibility</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/animation">Animation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/color">Color</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/feature-detection">Feature Detection</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/grid">Grid</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/layout">Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/slipsum">Slipsum</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/typography">Typography</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/vendor">Vendor</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="components">
+                  <button class="category-label">Components</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/uploaders">Uploaders</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="creative">
+                  <button class="category-label">Creative</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/playground">Playground</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/product-tag">Product Tag</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/sale-sticker">Sale Sticker</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/seo-banner">Seo Banner</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="exposition">
+                  <button class="category-label">Exposition</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/homepage-components">Homepage Components</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/links-and-buttons">Links And Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/logo-usage">Logo Usage</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/page-layout">Page Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/site-content">Site Content</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/web-typography">Web Typography</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="nav_off-site links">
+            <div class="link link-npm"></div><a class="link link-github" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          </div>
+        </div>
+        <script src="../../components/navigation/rocketbelt.navigation-xl.js"></script>
+        <script>
+          $(document).ready(function () {
+            $('#main-nav').accessibleMegaMenu({
+              uuidPrefix: 'rb-navigation',
+              menuClass: 'nav-menu',
+              topNavItemClass: 'nav-item',
+              panelClass: 'sub-nav',
+              panelGroupClass: 'sub-nav-group',
+              hoverClass: 'hover',
+              focusClass: 'focus',
+              openClass: 'open'
+            })
+          });
+          
+        </script>
+      </header>
+      <div class="pad-5 col xs docs-wrapper_main">
+        <main class="site-main grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <div class="grid">
+                <article>
+                  <h1 id="typography" class="heading-with-link"><span class="heading_text">Typography</span><button data-clipboard-text="#typography" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h1>
+                  <p>Rocketbelt&apos;s typography is built on a modular scale. The scale makes it easy to use type to visually reinforce the hierarchy of content. Rocketbelt also includes plenty of helper classes to support icons, call-to-action links, lists, and pull quotes.</p>
+                  <h2 id="headings" class="heading-with-link"><span class="heading_text">Headings</span><button data-clipboard-text="#headings" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <p>Headings are responsive and use a modular scale&#x2014;this means that a giant heading on desktop isn&apos;t quite so dominant on a smaller viewport. See <em><a href="https://typecast.com/blog/a-more-modern-scale-for-web-typography">A More Modern Scale for Web Typography</a></em> for background information on this design decision.</p>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <h1>h1. Pier 1 Imports</h1>
+                      <h2>h2. Pier 1 Imports</h2>
+                      <h3>h3. Pier 1 Imports</h3>
+                      <h4>h4. Pier 1 Imports</h4>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1rNgDk">
+                      <label class="expander_label" for="rb-Z1rNgDk" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Zk3Y4D">Copy</button>
+                          <pre><code class="language-html" id="rb-Zk3Y4D">
+                              &lt;h1&gt;h1. Pier 1 Imports&lt;/h1&gt;
+                              &lt;h2&gt;h2. Pier 1 Imports&lt;/h2&gt;
+                              &lt;h3&gt;h3. Pier 1 Imports&lt;/h3&gt;
+                              &lt;h4&gt;h4. Pier 1 Imports&lt;/h4&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="headings-with-secondary-text-consideration-semantics-this-is-a-headline-subheadline-consideration-seo-preheadline-headline" class="heading-with-link"><span class="heading_text">Headings With Secondary Text
+                    <h3>Consideration: Semantics</h3>
+                    <div class="bg_secondary-lighter" style="padding: 40px; width: 250px;">
+                      <header class="heading-group display"><span class="preheading">This is a</span>
+                        <h1 class="heading">Headline</h1>
+                        <h2 class="subheading">Subheadline</h2>
+                      </header>
+                    </div>
+                    <h3>Consideration: SEO</h3>
+                    <h1 class="heading-group"><span class="preheading">Preheadline <span class="heading">Headline</span></span></h1>
+                  </span><button data-clipboard-text="#headings-with-secondary-text-consideration-semantics-this-is-a-headline-subheadline-consideration-seo-preheadline-headline" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h2 id="font-specimens" class="heading-with-link"><span class="heading_text">Font Specimens</span><button data-clipboard-text="#font-specimens" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col sm-12 md">
+                        <h3 class="docs-header heading-with-link" id="sans-serif"><span class="heading_text">Sans Serif</span><button data-clipboard-text="#sans-serif" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <div class="font-sans">
+                              <h4>Rubik</h4>
+                              <p>
+                                Let it a sleek, hand-painted in a little sunshine and proud
+                                heritage dating back and hang. We&#x2019;d say white stoneware mug with
+                                bold and a beaded number. You&#x2019;ll love a nostalgic, weathered
+                                sign is either way, our elegant simplicity. Collect a
+                                windowsill, but this unit in and it&apos;s a naked niche? Nothing
+                                spices up the deer pillar of warm colors and plum&#x2014;all in our
+                                classic lines with flashy fringe. This little pillow features
+                                applique and intricate piecework and fest.
+                                
+                              </p>
+                            </div>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-ZRT8Ch">
+                            <label class="expander_label" for="rb-ZRT8Ch" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-LI2AJ">Copy</button>
+                                <pre><code class="language-html" id="rb-LI2AJ">
+                                    &lt;div class=&quot;font-sans&quot;&gt;
+                                      &lt;h4&gt;Rubik&lt;/h4&gt;
+                                      &lt;p&gt;
+                                        Let it a sleek, hand-painted in a little sunshine and proud
+                                        heritage dating back and hang. We&#x2019;d say white stoneware mug with
+                                        bold and a beaded number. You&#x2019;ll love a nostalgic, weathered
+                                        sign is either way, our elegant simplicity. Collect a
+                                        windowsill, but this unit in and it&apos;s a naked niche? Nothing
+                                        spices up the deer pillar of warm colors and plum&#x2014;all in our
+                                        classic lines with flashy fringe. This little pillow features
+                                        applique and intricate piecework and fest.
+                                        
+                                      &lt;/p&gt;
+                                    &lt;/div&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="text-sizes" class="heading-with-link"><span class="heading_text">Text Sizes</span><button data-clipboard-text="#text-sizes" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <p>Always use the <code>font-size</code> helper function (found in the <code>tools</code> Sass partial) or a corresponding helper class to render different text sizes. <em>Never</em> use pixels to size text.</p>
+                  <div class="grid margin-0">
+                    <div class="row">
+                      <div class="col xs ellipsis">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <div class="font-minus-2"><code class="font-minus-1">font-size(-2):</code> We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-minus-1"><code class="font-minus-1">font-size(-1):</code> We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div><code class="font-minus-1">font-size(0):</code> We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-plus-1"><code class="font-minus-1">font-size(1):</code> We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-plus-2"><code class="font-minus-1">font-size(2):</code> We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-plus-3"><code class="font-minus-1">font-size(3):</code> We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.</div>
+                            <div class="font-plus-4"><code class="font-minus-1">font-size(4):</code> We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.</div>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-2bYDqT">
+                            <label class="expander_label" for="rb-2bYDqT" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-1CIRF7">Copy</button>
+                                <pre><code class="language-html" id="rb-1CIRF7">
+                                    &lt;div class=&quot;font-minus-2&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(-2):&lt;/code&gt; We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-minus-1&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(-1):&lt;/code&gt; We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(0):&lt;/code&gt; We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-plus-1&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(1):&lt;/code&gt; We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-plus-2&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(2):&lt;/code&gt; We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-plus-3&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(3):&lt;/code&gt; We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;
+                                    &lt;div class=&quot;font-plus-4&quot;&gt;&lt;code class=&quot;font-minus-1&quot;&gt;font-size(4):&lt;/code&gt; We concur with zesty orange, vanilla musk&#x2014;all in shades of life, but plays well with perfectly suited for you.&lt;/div&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="ellipsis" class="heading-with-link"><span class="heading_text">Ellipsis</span><button data-clipboard-text="#ellipsis" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h3 id="standard" class="heading-with-link"><span class="heading_text">Standard</span><button data-clipboard-text="#standard" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <p>Narrow &amp; widen your viewport to see the effect.</p>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs-6">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <div class="ellipsis">The fabric that&#x2019;s as it were salvaged from polyester fabric, our framed piece enhances the hidden zipper.</div>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-ZRKzLE">
+                            <label class="expander_label" for="rb-ZRKzLE" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-NJtrV">Copy</button>
+                                <pre><code class="language-html" id="rb-NJtrV">
+                                    &lt;div class=&quot;ellipsis&quot;&gt;The fabric that&#x2019;s as it were salvaged from polyester fabric, our framed piece enhances the hidden zipper.&lt;/div&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="multiline-line-clamping" class="heading-with-link"><span class="heading_text">Multiline Line Clamping</span><button data-clipboard-text="#multiline-line-clamping" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs">
+                        <div class="card"><span class="clampable">The scent reminiscent of styles&#x2014;including yours&#x2014;whether hanging from rich light, giving thanks. Here&#x2019;s what we sense of vitamin ahhh. This lustrous amber hint of patio seating with your appreciation for a concealed zipper and is that special pieces juxtapose hand-shaped and musk&#x2014;all in a generous offering an eye-catching sculpture adds luxury upholstery and comforting color?</span></div>
+                      </div>
+                      <div class="col xs">
+                        <div class="card"><span class="clampable">The scent reminiscent of styles&#x2014;including yours&#x2014;whether hanging from rich light, giving thanks. Here&#x2019;s what we sense of vitamin ahhh. This lustrous amber hint of patio seating with your appreciation for a concealed zipper and is that special pieces juxtapose hand-shaped and musk&#x2014;all in a generous offering an eye-catching sculpture adds luxury upholstery and comforting color?</span></div>
+                      </div>
+                      <div class="col xs">
+                        <div class="card"><span class="clampable">The scent reminiscent of styles&#x2014;including yours&#x2014;whether hanging from rich light, giving thanks. Here&#x2019;s what we sense of vitamin ahhh. This lustrous amber hint of patio seating with your appreciation for a concealed zipper and is that special pieces juxtapose hand-shaped and musk&#x2014;all in a generous offering an eye-catching sculpture adds luxury upholstery and comforting color?</span></div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exampleWithCode">
+                    <div class="example"></div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2f948d" checked="checked">
+                      <label class="expander_label" for="rb-2f948d" data-collapsed-label="Show Javascript" data-expanded-label="Hide Javascript"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-1s2t4R">Copy</button>
+                          <pre><code class="language-javascript" id="rb-1s2t4R">rb.typography.clamp(&apos;.clampable&apos;, 2, { clampedMarkup: &apos;&#x2026; &lt;button&gt;Read More&lt;/button&gt;&apos; })</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <script src="./rocketbelt.typography.js"></script>
+                  <h3 id="custom-ellipsis" class="heading-with-link"><span class="heading_text">Custom Ellipsis</span><button data-clipboard-text="#custom-ellipsis" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="ellipsis-mid" data-rb-ellipsis-start="this_is_a_really_long_email_address" data-rb-ellipsis-end="@pier1.com" title="this_is_a_really_long_email_address@pier1.com"></div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2hpEcg">
+                      <label class="expander_label" for="rb-2hpEcg" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-2tsQxg">Copy</button>
+                          <pre><code class="language-html" id="rb-2tsQxg">
+                              &lt;div class=&quot;ellipsis-mid&quot; data-rb-ellipsis-start=&quot;this_is_a_really_long_email_address&quot; data-rb-ellipsis-end=&quot;@pier1.com&quot; title=&quot;this_is_a_really_long_email_address@pier1.com&quot;&gt;&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="rb-note">
+                    <div class="tag tag-primary rb-badge rb-badge-a11y"><span class="text-with-icon">Be an &#xA0;<code>a11y</code></span></div>
+                    <div class="rb-note-text">Never use the Custom Ellipsis pattern without a <code>title</code> attribute that combines the two <code>data-rb-ellipsis-</code> attributes.</div>
+                  </div>
+                  <h2 id="text-with-icon" class="heading-with-link"><span class="heading_text">Text with Icon</span><button data-clipboard-text="#text-with-icon" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <p>This pattern automatically renders an icon that is the same height as the accompanying text. Add an <code>icon-left</code> or <code>icon-right</code> class to indicate where the icon should be placed.</p>
+                  <div class="exampleWithCode">
+                    <div class="example"><span class="text-with-icon">Store Locator
+                        <svg class="icon icon-left" aria-hidden="true">
+                          <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-pin"/>
+                        </svg></span><br><a class="text-with-icon" href="#">Chat Now
+                        <svg class="icon icon-right" aria-hidden="true">
+                          <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-chat-single"/>
+                        </svg></a><br><span class="text-with-icon font-plus-4">Email Us
+                        <svg class="icon icon-left" aria-hidden="true">
+                          <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-envelope"/>
+                        </svg></span>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1hAB9o">
+                      <label class="expander_label" for="rb-Z1hAB9o" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z1YjomW">Copy</button>
+                          <pre><code class="language-html" id="rb-Z1YjomW">&lt;span class=&quot;text-with-icon&quot;&gt;Store Locator
+                                &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
+                                  &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-pin&quot;&gt;&lt;/use&gt;
+                                &lt;/svg&gt;&lt;/span&gt;&lt;br&gt;&lt;a class=&quot;text-with-icon&quot; href=&quot;#&quot;&gt;Chat Now
+                                &lt;svg class=&quot;icon icon-right&quot; aria-hidden=&quot;true&quot;&gt;
+                                  &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-chat-single&quot;&gt;&lt;/use&gt;
+                                &lt;/svg&gt;&lt;/a&gt;&lt;br&gt;&lt;span class=&quot;text-with-icon font-plus-4&quot;&gt;Email Us
+                                &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
+                                  &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-envelope&quot;&gt;&lt;/use&gt;
+                                &lt;/svg&gt;&lt;/span&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="cta" class="heading-with-link"><span class="heading_text">CTA</span><button data-clipboard-text="#cta" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="exampleWithCode">
+                    <div class="example"><a class="cta text-with-icon" href="#"><span class="cta_text">Shop Now</span>
+                        <svg class="icon icon-right" aria-hidden="true">
+                          <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow"/>
+                        </svg></a>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1fBf3M">
+                      <label class="expander_label" for="rb-Z1fBf3M" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z1wfGHq">Copy</button>
+                          <pre><code class="language-html" id="rb-Z1wfGHq">&lt;a class=&quot;cta text-with-icon&quot; href=&quot;#&quot;&gt;&lt;span class=&quot;cta_text&quot;&gt;Shop Now&lt;/span&gt;
+                                &lt;svg class=&quot;icon icon-right&quot; aria-hidden=&quot;true&quot;&gt;
+                                  &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow&quot;&gt;&lt;/use&gt;
+                                &lt;/svg&gt;&lt;/a&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="text-with-rule" class="heading-with-link"><span class="heading_text">Text with Rule</span><button data-clipboard-text="#text-with-rule" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <div class="text-with-rule">text with rule</div>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2aTQEE">
+                      <label class="expander_label" for="rb-2aTQEE" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-13Cisi">Copy</button>
+                          <pre><code class="language-html" id="rb-13Cisi">
+                              &lt;div class=&quot;text-with-rule&quot;&gt;text with rule&lt;/div&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="lists" class="heading-with-link"><span class="heading_text">Lists</span><button data-clipboard-text="#lists" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h3 id="reset" class="heading-with-link"><span class="heading_text">Reset</span><button data-clipboard-text="#reset" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <ul class="list-reset">
+                        <li>One</li>
+                        <li>Two
+                          <ul>
+                            <li>A</li>
+                            <li>B</li>
+                          </ul>
+                        </li>
+                        <li>Three</li>
+                      </ul>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1ewRDA">
+                      <label class="expander_label" for="rb-Z1ewRDA" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-Z2iIHQw">Copy</button>
+                          <pre><code class="language-html" id="rb-Z2iIHQw">
+                              &lt;ul class=&quot;list-reset&quot;&gt;
+                                &lt;li&gt;One&lt;/li&gt;
+                                &lt;li&gt;Two
+                                  &lt;ul&gt;
+                                    &lt;li&gt;A&lt;/li&gt;
+                                    &lt;li&gt;B&lt;/li&gt;
+                                  &lt;/ul&gt;
+                                &lt;/li&gt;
+                                &lt;li&gt;Three&lt;/li&gt;
+                              &lt;/ul&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="horizontal-reset" class="heading-with-link"><span class="heading_text">Horizontal Reset</span><button data-clipboard-text="#horizontal-reset" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <ul class="list-inline">
+                        <li>One</li>
+                        <li>Two</li>
+                        <li>Three</li>
+                      </ul>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2bdSGH">
+                      <label class="expander_label" for="rb-2bdSGH" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-189kEx">Copy</button>
+                          <pre><code class="language-html" id="rb-189kEx">
+                              &lt;ul class=&quot;list-inline&quot;&gt;
+                                &lt;li&gt;One&lt;/li&gt;
+                                &lt;li&gt;Two&lt;/li&gt;
+                                &lt;li&gt;Three&lt;/li&gt;
+                              &lt;/ul&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <!-- Does title need modifier, or use first-of-type/first-child?-->
+                  <h2 id="link-lists" class="heading-with-link"><span class="heading_text">Link Lists</span><button data-clipboard-text="#link-lists" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <h3 id="with-without-title" class="heading-with-link"><span class="heading_text">With + Without Title</span><button data-clipboard-text="#with-without-title" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <ul class="link-list">
+                        <li class="title">Customer Relations</li>
+                        <li><a href="#">FAQ</a></li>
+                        <li><a href="#">Assembly Instructions</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Returns &amp; Exchanges</a></li>
+                        <li><a href="#">Pier 1 for Business</a></li>
+                      </ul>
+                      <ul class="link-list">
+                        <li>Quick Links</li>
+                        <li><a class="text-with-icon" href="#">Store Locator
+                            <svg class="icon icon-left" aria-hidden="true">
+                              <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-pin"/>
+                            </svg></a></li>
+                        <li><a href="#">Check Order Status</a></li>
+                        <li><a href="#">Gift Cards</a></li>
+                        <li><a href="#">Gift Card Balance</a></li>
+                        <li><a href="#">Wishlist</a></li>
+                        <li><a href="#">Designer Perks</a></li>
+                      </ul>
+                      <ul class="link-list">
+                        <li><a href="#">Contact Us</a></li>
+                        <li><a href="#">Send a Note</a></li>
+                        <li><a class="text-with-icon" href="#">Email Us
+                            <svg class="icon icon-left" aria-hidden="true">
+                              <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-envelope"/>
+                            </svg></a></li>
+                        <li><a class="text-with-icon" href="#">(817) 252-6300
+                            <svg class="icon icon-left" aria-hidden="true">
+                              <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-phone"/>
+                            </svg></a></li>
+                      </ul>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZRNuiy">
+                      <label class="expander_label" for="rb-ZRNuiy" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-N4off">Copy</button>
+                          <pre><code class="language-html" id="rb-N4off">
+                              &lt;ul class=&quot;link-list&quot;&gt;
+                                &lt;li class=&quot;title&quot;&gt;Customer Relations&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;FAQ&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Assembly Instructions&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Shipping Info&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Returns &amp; Exchanges&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Pier 1 for Business&lt;/a&gt;&lt;/li&gt;
+                              &lt;/ul&gt;
+                              &lt;ul class=&quot;link-list&quot;&gt;
+                                &lt;li&gt;Quick Links&lt;/li&gt;
+                                &lt;li&gt;&lt;a class=&quot;text-with-icon&quot; href=&quot;#&quot;&gt;Store Locator
+                                    &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
+                                      &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-pin&quot;&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Check Order Status&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Gift Cards&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Gift Card Balance&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Wishlist&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Designer Perks&lt;/a&gt;&lt;/li&gt;
+                              &lt;/ul&gt;
+                              &lt;ul class=&quot;link-list&quot;&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact Us&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Send a Note&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a class=&quot;text-with-icon&quot; href=&quot;#&quot;&gt;Email Us
+                                    &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
+                                      &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-envelope&quot;&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+                                &lt;li&gt;&lt;a class=&quot;text-with-icon&quot; href=&quot;#&quot;&gt;(817) 252-6300
+                                    &lt;svg class=&quot;icon icon-left&quot; aria-hidden=&quot;true&quot;&gt;
+                                      &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-phone&quot;&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;&lt;/a&gt;&lt;/li&gt;
+                              &lt;/ul&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="title-link" class="heading-with-link"><span class="heading_text">Title + Link</span><button data-clipboard-text="#title-link" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <ul class="link-list">
+                        <li class="title"><a class="cta text-with-icon" href="#">Living Room
+                            <svg class="icon icon-right" aria-hidden="true">
+                              <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow"/>
+                            </svg></a>
+                          </li><li><a href="#">Chairs</a></li>
+                          <li><a href="#">Ottomans</a></li>
+                          <li><a href="#">Sectionals</a></li>
+                          <li><a href="#">Sofas &amp; Loveseats</a></li>
+                          <li><a href="#">Accent &amp; Coffee Tables</a></li>
+                          <li><a href="#">TV &amp; Media Stands</a></li>
+                          <li><a href="#">Cabinets</a></li>
+                          <li><a href="#">Shelves and Bookcases</a></li>
+                          <li><a href="#">Living Room Collections</a></li>
+                        
+                      </ul>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1rFcr4">
+                      <label class="expander_label" for="rb-Z1rFcr4" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-ZkpgMD">Copy</button>
+                          <pre><code class="language-html" id="rb-ZkpgMD">
+                              &lt;ul class=&quot;link-list&quot;&gt;
+                                &lt;li class=&quot;title&quot;&gt;&lt;a class=&quot;cta text-with-icon&quot; href=&quot;#&quot;&gt;Living Room
+                                    &lt;svg class=&quot;icon icon-right&quot; aria-hidden=&quot;true&quot;&gt;
+                                      &lt;use xlink:href=&quot;/components/icons/rocketbelt.icons.svg#rb-icon-cta-arrow&quot;&gt;&lt;/use&gt;
+                                    &lt;/svg&gt;&lt;/a&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Chairs&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Ottomans&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sectionals&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Sofas &amp;amp; Loveseats&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Accent &amp;amp; Coffee Tables&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;TV &amp;amp; Media Stands&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Cabinets&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Shelves and Bookcases&lt;/a&gt;&lt;/li&gt;
+                                  &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Living Room Collections&lt;/a&gt;&lt;/li&gt;
+                                &lt;/li&gt;
+                              &lt;/ul&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="font-weights" class="heading-with-link"><span class="heading_text">Font Weights</span><button data-clipboard-text="#font-weights" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="font-plus-3">
+                    <div class="exampleWithCode">
+                      <div class="example">
+                        <div class="font-weight-light">For a stunning mosaic design will add a carefree pattern really impressive.</div>
+                        <div>For a stunning mosaic design will add a carefree pattern really impressive.</div>
+                        <div class="font-weight-semibold">For a stunning mosaic design will add a carefree pattern really impressive.</div>
+                      </div>
+                      <div class="expander">
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1gO5PQ">
+                        <label class="expander_label" for="rb-Z1gO5PQ" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <div class="expander_content">
+                          <div class="example-code">
+                            <div class="dots"></div>
+                            <button class="copy-code" data-clipboard-target="#rb-Z1fBR7V">Copy</button>
+                            <pre><code class="language-html" id="rb-Z1fBR7V">
+                                &lt;div class=&quot;font-weight-light&quot;&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;
+                                &lt;div&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;
+                                &lt;div class=&quot;font-weight-semibold&quot;&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="font-plus-3">
+                    <div class="exampleWithCode">
+                      <div class="example">
+                        <div class="font-style-italic">
+                          <div>For a stunning mosaic design will add a carefree pattern really impressive.</div>
+                        </div>
+                      </div>
+                      <div class="expander">
+                        <input class="expander_checkbox" type="checkbox" id="rb-Z1e6nC0">
+                        <label class="expander_label" for="rb-Z1e6nC0" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                        <div class="expander_content">
+                          <div class="example-code">
+                            <div class="dots"></div>
+                            <button class="copy-code" data-clipboard-target="#rb-Z2oXazA">Copy</button>
+                            <pre><code class="language-html" id="rb-Z2oXazA">
+                                &lt;div class=&quot;font-style-italic&quot;&gt;
+                                  &lt;div&gt;For a stunning mosaic design will add a carefree pattern really impressive.&lt;/div&gt;
+                                &lt;/div&gt;</code></pre>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="block-quotes" class="heading-with-link"><span class="heading_text">Block Quotes</span><button data-clipboard-text="#block-quotes" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs-12 md-6">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <div class="group">
+                              <blockquote class="pull float-right">
+                                <p class="quote">
+                                  Simply because we were licked a hundred years before westarted is no reason for us not to try to win.
+                                  <div class="source">Harper Lee, <span class="font-style-italic">To Kill A Mockingbird</span></div>
+                                </p>
+                              </blockquote>
+                            </div>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1fvJ2z">
+                            <label class="expander_label" for="rb-Z1fvJ2z" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-Z1z2dix">Copy</button>
+                                <pre><code class="language-html" id="rb-Z1z2dix">
+                                    &lt;div class=&quot;group&quot;&gt;
+                                      &lt;blockquote class=&quot;pull float-right&quot;&gt;
+                                        &lt;p class=&quot;quote&quot;&gt;
+                                          Simply because we were licked a hundred years before westarted is no reason for us not to try to win.
+                                          &lt;div class=&quot;source&quot;&gt;Harper Lee, &lt;span class=&quot;font-style-italic&quot;&gt;To Kill A Mockingbird&lt;/span&gt;&lt;/div&gt;
+                                        &lt;/p&gt;
+                                      &lt;/blockquote&gt;
+                                    &lt;/div&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h3 id="lead-copy" class="heading-with-link"><span class="heading_text">Lead Copy</span><button data-clipboard-text="#lead-copy" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                  <div class="grid-fluid">
+                    <div class="row xs-center">
+                      <div class="col md-6 xs-12">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <div class="lead-first-line">
+                              Gerbera daisies bloom at a skilled artisan, with Mother Nature&apos;s
+                              showing off at home which features a luxe in so good. Our ornate
+                              Chinese theme, use as the timeless frame. Crafted of texture and
+                              plush texture. Plus, it&#x2019;s stood the sun, too. Weave them to line
+                              brought that touch of these two taper candle for you. Maybe using
+                              never-forgetting elephant and &#x201C;home&#x201D; sculpture.
+                            </div>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1ihbUw">
+                            <label class="expander_label" for="rb-Z1ihbUw" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-Z20e7BF">Copy</button>
+                                <pre><code class="language-html" id="rb-Z20e7BF">
+                                    &lt;div class=&quot;lead-first-line&quot;&gt;
+                                      Gerbera daisies bloom at a skilled artisan, with Mother Nature&apos;s
+                                      showing off at home which features a luxe in so good. Our ornate
+                                      Chinese theme, use as the timeless frame. Crafted of texture and
+                                      plush texture. Plus, it&#x2019;s stood the sun, too. Weave them to line
+                                      brought that touch of these two taper candle for you. Maybe using
+                                      never-forgetting elephant and &#x201C;home&#x201D; sculpture.
+                                    &lt;/div&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col md-6 xs-12">
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <div class="lead-copy">Traditional yet graceful cast iron and his lumpy complexion or entryway table</div>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1dAtoD">
+                            <label class="expander_label" for="rb-Z1dAtoD" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="copy-code" data-clipboard-target="#rb-Z2wLQlc">Copy</button>
+                                <pre><code class="language-html" id="rb-Z2wLQlc">
+                                    &lt;div class=&quot;lead-copy&quot;&gt;Traditional yet graceful cast iron and his lumpy complexion or entryway table&lt;/div&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="site-footer">
+        <div class="grid-fluid footer_wrapper">
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="links_off-site"><a class="link" href="https://www.pier1.com">
+                  <svg class="icon p1-logo">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-p1logo-alt-1"/>
+                  </svg></a><a class="link" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div>
+            </div>
+          </div>
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="copyright">&#xA9; 2019 Pier 1 Imports. Rocketbelt is distributed under an <a href="https://github.com/Pier1/rocketbelt/blob/develop/LICENSE">MIT license</a>.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <article class="dialog" tabindex="0" aria-hidden="true">
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+        <header class="dialog_header">
+          <h2 class="dialog_title" id="dialog_title"></h2>
+          <div class="dialog_close_container">
+            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+              <svg class="icon">
+                <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="dialog_body"></div>
+      </section>
+    </article>
+    <script src="../../js/playground.jquery.js"></script>
+    <script src="../../js/site.js"></script>
+    <script src="/components/icons/rocketbelt.icons.svgxuse.min.js" defer></script>
+    <script src="../../js/preCode.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard('.heading-copy-button', {
+          text: function(trigger) {
+              return window.location.href.split(/[?#]/)[0] + trigger.getAttribute('data-clipboard-text');
+          }
+      });
+      
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>

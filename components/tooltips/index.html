@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="/base/typography/rocketbelt.typography.font-loader.min.js"></script>
+    <link rel="apple-touch-icon" sizes="180x180" href="/assets/favicons/apple-touch-icon.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="32x32" href="/assets/favicons/favicon-32x32.png?v=gAapeRjXG7">
+    <link rel="icon" type="image/png" sizes="16x16" href="/assets/favicons/favicon-16x16.png?v=gAapeRjXG7">
+    <link rel="manifest" href="/assets/favicons/site.webmanifest?v=gAapeRjXG7">
+    <link rel="mask-icon" href="/assets/favicons/safari-pinned-tab.svg?v=gAapeRjXG7" color="#5b14d9">
+    <link rel="shortcut icon" href="/assets/favicons/favicon.ico?v=gAapeRjXG7">
+    <meta name="msapplication-TileColor" content="#5b14d9">
+    <meta name="msapplication-config" content="/assets/favicons/browserconfig.xml?v=gAapeRjXG7">
+    <meta name="theme-color" content="#ffffff">
+  </head>
+  <body>
+    <title>Tooltips | Rocketbelt</title>
+    <link rel="stylesheet" href="../../css/rocketbelt.creative.min.css">
+    <link rel="stylesheet" href="../../css/rocketbelt.min.css">
+    <link rel="stylesheet" href="../../css/site.css">
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"></script>
+    <script src="/base/rocketbelt.js"></script>
+  </body>
+  <body class="grid-fluid">
+    <ul class="skip list-reset">
+      <li><a class="button-sm button-secondary" href="#content">Skip to Main Content</a></li>
+      <li><a class="button-sm button-secondary" href="#footer">Skip to Footer</a></li>
+    </ul>
+    <div class="docs-wrapper row">
+      <header class="site-header">
+        <div class="site-nav nav-shadowed">
+          <div class="nav_on-site"><a class="rb-header" href="/"><span class="visually-hidden">Return to rocketbelt.io</span>
+              <picture><img srcset="/assets/rocketbelt.svg" alt=""></picture><span class="rb-title">Rocketbelt</span></a>
+            <nav id="main-nav">
+              <ul class="nav-menu">
+                <li class="nav-item nav_level-1" ref="base">
+                  <button class="category-label">Base</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/a11y">Accessibility</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/animation">Animation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/color">Color</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/feature-detection">Feature Detection</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/grid">Grid</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/layout">Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/slipsum">Slipsum</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/typography">Typography</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/base/vendor">Vendor</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="components">
+                  <button class="category-label">Components</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/uploaders">Uploaders</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="creative">
+                  <button class="category-label">Creative</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/playground">Playground</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/product-tag">Product Tag</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/sale-sticker">Sale Sticker</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/seo-banner">Seo Banner</a></li>
+                    </ul>
+                  </div>
+                </li>
+                <li class="nav-item nav_level-1" ref="exposition">
+                  <button class="category-label">Exposition</button>
+                  <div class="sub-nav">
+                    <ul class="sub-nav-group">
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/homepage-components">Homepage Components</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/links-and-buttons">Links And Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/logo-usage">Logo Usage</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/page-layout">Page Layout</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/site-content">Site Content</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/web-typography">Web Typography</a></li>
+                    </ul>
+                  </div>
+                </li>
+              </ul>
+            </nav>
+          </div>
+          <div class="nav_off-site links">
+            <div class="link link-npm"></div><a class="link link-github" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a>
+          </div>
+        </div>
+        <script src="../../components/navigation/rocketbelt.navigation-xl.js"></script>
+        <script>
+          $(document).ready(function () {
+            $('#main-nav').accessibleMegaMenu({
+              uuidPrefix: 'rb-navigation',
+              menuClass: 'nav-menu',
+              topNavItemClass: 'nav-item',
+              panelClass: 'sub-nav',
+              panelGroupClass: 'sub-nav-group',
+              hoverClass: 'hover',
+              focusClass: 'focus',
+              openClass: 'open'
+            })
+          });
+          
+        </script>
+      </header>
+      <div class="pad-5 col xs docs-wrapper_main">
+        <main class="site-main grid-fluid no-margin">
+          <div class="row">
+            <div class="col xs">
+              <div class="grid">
+                <article>
+                  <h1 id="tooltips" class="heading-with-link"><span class="heading_text">Tooltips</span><button data-clipboard-text="#tooltips" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h1>
+                  <h2 id="accessibility" class="heading-with-link"><span class="heading_text">Accessibility</span><button data-clipboard-text="#accessibility" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <script src="./rocketbelt.tooltips.min.js"></script>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1tN5wg">
+                      <label class="expander_label" for="rb-Z1tN5wg" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-ZLU4dJ">Copy</button>
+                          <pre><code class="language-js include" id="rb-ZLU4dJ">
+                              &lt;script src=&quot;./rocketbelt.tooltips.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="variations" class="heading-with-link"><span class="heading_text">Variations</span><button data-clipboard-text="#variations" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="row">
+                    <div class="col xs-12 md-6">
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <form>
+                            <div class="form-group tooltip tooltip-focus-only tooltip-inverted">
+                              <input class="tooltip_trigger">
+                              <label for="input-with-tooltip">Input with Tooltip</label>
+                              <div class="tooltip-content">You&apos;d be the help of open-air luxury.</div>
+                            </div>
+                          </form>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-2gKCsl">
+                          <label class="expander_label" for="rb-2gKCsl" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-2jxSMD">Copy</button>
+                              <pre><code class="language-html" id="rb-2jxSMD">
+                                  &lt;form&gt;
+                                    &lt;div class=&quot;form-group tooltip tooltip-focus-only tooltip-inverted&quot;&gt;
+                                      &lt;input class=&quot;tooltip_trigger&quot;&gt;
+                                      &lt;label for=&quot;input-with-tooltip&quot;&gt;Input with Tooltip&lt;/label&gt;
+                                      &lt;div class=&quot;tooltip-content&quot;&gt;You&apos;d be the help of open-air luxury.&lt;/div&gt;
+                                    &lt;/div&gt;
+                                  &lt;/form&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col xs-12 md-6">
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Default</h3>
+                            <div class="tooltip-content">You&apos;d be the help of open-air luxury.</div></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1gd3PP">
+                          <label class="expander_label" for="rb-Z1gd3PP" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-Z1oF7Qr">Copy</button>
+                              <pre><code class="language-html" id="rb-Z1oF7Qr">&lt;span class=&quot;tooltip&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Default&lt;/h3&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;You&apos;d be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col xs-12 md-6">
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip tooltip-inverted" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Inverted</h3>
+                            <div class="tooltip-content">You&apos;d be the help of open-air luxury.</div></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1sodM6">
+                          <label class="expander_label" for="rb-Z1sodM6" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-ZaVz7c">Copy</button>
+                              <pre><code class="language-html" id="rb-ZaVz7c">&lt;span class=&quot;tooltip tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Inverted&lt;/h3&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;You&apos;d be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="directional" class="heading-with-link"><span class="heading_text">Directional</span><button data-clipboard-text="#directional" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="row">
+                    <div class="col xs-12 md-6">
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip tooltip-left" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Left</h3>
+                            <div class="tooltip-content">Weave a sofa or outdoor seat on display.</div></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1hLNxk">
+                          <label class="expander_label" for="rb-Z1hLNxk" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-Z1X4dk4">Copy</button>
+                              <pre><code class="language-html" id="rb-Z1X4dk4">&lt;span class=&quot;tooltip tooltip-left&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Left&lt;/h3&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;Weave a sofa or outdoor seat on display.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip tooltip-right" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Right</h3>
+                            <div class="tooltip-content">Case in covered with nailhead trim is even more of flowers?</div></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1eeGE3">
+                          <label class="expander_label" for="rb-Z1eeGE3" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-Z2lw9ST">Copy</button>
+                              <pre><code class="language-html" id="rb-Z2lw9ST">&lt;span class=&quot;tooltip tooltip-right&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Right&lt;/h3&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;Case in covered with nailhead trim is even more of flowers?&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip tooltip-bottom" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Bottom</h3>
+                            <div class="tooltip-content">Decorated with an almost weightless, firefly-like effect.</div></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-2d3Y1d">
+                          <label class="expander_label" for="rb-2d3Y1d" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-24JjjW">Copy</button>
+                              <pre><code class="language-html" id="rb-24JjjW">&lt;span class=&quot;tooltip tooltip-bottom&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Bottom&lt;/h3&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;Decorated with an almost weightless, firefly-like effect.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col xs-12 md-6">
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip tooltip-left tooltip-inverted" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Inverted Left</h3>
+                            <div class="tooltip-content">Weave a sofa or outdoor seat on display.</div></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1sp3c2">
+                          <label class="expander_label" for="rb-Z1sp3c2" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-Zb2PpN">Copy</button>
+                              <pre><code class="language-html" id="rb-Zb2PpN">&lt;span class=&quot;tooltip tooltip-left tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Inverted Left&lt;/h3&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;Weave a sofa or outdoor seat on display.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip tooltip-right tooltip-inverted" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Inverted Right</h3>
+                            <div class="tooltip-content">Case in covered with nailhead trim is even more of flowers?</div></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-Z1rKpkD">
+                          <label class="expander_label" for="rb-Z1rKpkD" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-ZkIPp1">Copy</button>
+                              <pre><code class="language-html" id="rb-ZkIPp1">&lt;span class=&quot;tooltip tooltip-right tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Inverted Right&lt;/h3&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;Case in covered with nailhead trim is even more of flowers?&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip tooltip-bottom tooltip-inverted" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Inverted Bottom</h3>
+                            <div class="tooltip-content">Decorated with an almost weightless, firefly-like effect.</div></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-2dW2Qv">
+                          <label class="expander_label" for="rb-2dW2Qv" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-1a5HsA">Copy</button>
+                              <pre><code class="language-html" id="rb-1a5HsA">&lt;span class=&quot;tooltip tooltip-bottom tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Inverted Bottom&lt;/h3&gt;
+                                    &lt;div class=&quot;tooltip-content&quot;&gt;Decorated with an almost weightless, firefly-like effect.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="sizes" class="heading-with-link"><span class="heading_text">Sizes</span><button data-clipboard-text="#sizes" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="exampleWithCode">
+                    <div class="example"><span class="tooltip" tabindex="0">
+                        <h3 class="tooltip_trigger docs-header">Small (Default)</h3>
+                        <div class="tooltip-content">You&apos;d be the help of open-air luxury.</div></span>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2h3Wah">
+                      <label class="expander_label" for="rb-2h3Wah" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-2pIecs">Copy</button>
+                          <pre><code class="language-html" id="rb-2pIecs">&lt;span class=&quot;tooltip&quot; tabindex=&quot;0&quot;&gt;
+                                &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Small (Default)&lt;/h3&gt;
+                                &lt;div class=&quot;tooltip-content&quot;&gt;You&apos;d be the help of open-air luxury.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exampleWithCode">
+                    <div class="example"><span class="tooltip tooltip-md tooltip-right" tabindex="0">
+                        <h3 class="tooltip_trigger docs-header">Medium</h3>
+                        <div class="tooltip-content">Especially when you&#x2019;re snuggled up your family and beyond. Did you with a cabinet or to kick back.</div></span>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2g30ke">
+                      <label class="expander_label" for="rb-2g30ke" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-2aBfNi">Copy</button>
+                          <pre><code class="language-html" id="rb-2aBfNi">&lt;span class=&quot;tooltip tooltip-md tooltip-right&quot; tabindex=&quot;0&quot;&gt;
+                                &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Medium&lt;/h3&gt;
+                                &lt;div class=&quot;tooltip-content&quot;&gt;Especially when you&#x2019;re snuggled up your family and beyond. Did you with a cabinet or to kick back.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="exampleWithCode">
+                    <div class="example"><span class="tooltip tooltip-lg tooltip-right" tabindex="0">
+                        <h3 class="tooltip_trigger docs-header">Large</h3>
+                        <div class="tooltip-content">Our 10-foot battery-powered Pearl Strand Glimmer Strings&#xAE; use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.</div></span>
+                    </div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-2bSljv">
+                      <label class="expander_label" for="rb-2bSljv" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="copy-code" data-clipboard-target="#rb-1B8RYw">Copy</button>
+                          <pre><code class="language-html" id="rb-1B8RYw">&lt;span class=&quot;tooltip tooltip-lg tooltip-right&quot; tabindex=&quot;0&quot;&gt;
+                                &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Large&lt;/h3&gt;
+                                &lt;div class=&quot;tooltip-content&quot;&gt;Our 10-foot battery-powered Pearl Strand Glimmer Strings&#xAE; use your decor that nostalgic feeling of sweet orange. Refill your indoor/outdoor settee cushion.&lt;/div&gt;&lt;/span&gt;</code></pre>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="features" class="heading-with-link"><span class="heading_text">Features</span><button data-clipboard-text="#features" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="row">
+                    <div class="col xs-8 md-6 lg-4">
+                      <div class="exampleWithCode">
+                        <div class="example"><span class="tooltip tooltip-right tooltip-md tooltip-inverted" tabindex="0">
+                            <h3 class="tooltip_trigger docs-header">Rich Content</h3><span class="tooltip-content"><img src="/exposition/logo-usage/img/normal_logo.png" style="width:85%;display:block">
+                              <p>Let it a sleek, hand-painted in a little sunshine and proud heritage dating back and hang. We&#x2019;d say white stoneware mug with bold and a beaded number. You&#x2019;ll love a nostalgic, weathered sign is either way, our elegant simplicity. Collect a windowsill, but this unit in and it&apos;s a naked niche? Nothing spices up the deer pillar of warm colors and plum&#x2014;all in our classic lines with flashy fringe. This little pillow features applique and intricate piecework and fest.</p></span></span>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-2dhfrM">
+                          <label class="expander_label" for="rb-2dhfrM" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-26qo1D">Copy</button>
+                              <pre><code class="language-html" id="rb-26qo1D">&lt;span class=&quot;tooltip tooltip-right tooltip-md tooltip-inverted&quot; tabindex=&quot;0&quot;&gt;
+                                    &lt;h3 class=&quot;tooltip_trigger docs-header&quot;&gt;Rich Content&lt;/h3&gt;&lt;span class=&quot;tooltip-content&quot;&gt;&lt;img src=&quot;/exposition/logo-usage/img/normal_logo.png&quot; style=&quot;width:85%;display:block&quot;&gt;
+                                      &lt;p&gt;Let it a sleek, hand-painted in a little sunshine and proud heritage dating back and hang. We&#x2019;d say white stoneware mug with bold and a beaded number. You&#x2019;ll love a nostalgic, weathered sign is either way, our elegant simplicity. Collect a windowsill, but this unit in and it&apos;s a naked niche? Nothing spices up the deer pillar of warm colors and plum&#x2014;all in our classic lines with flashy fringe. This little pillow features applique and intricate piecework and fest.&lt;/p&gt;&lt;/span&gt;&lt;/span&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <h3 class="docs-header heading-with-link" id="accessibility"><span class="heading_text">Accessibility</span><button data-clipboard-text="#accessibility" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h3>
+                      <div class="exampleWithCode">
+                        <div class="example">
+                          <div class="form-group">
+                            <label for="fname">Email Address</label>
+                            <input id="fname" type="text" aria-describedby="input-tooltip"><span class="tooltip" id="input-tooltip" tabindex="0" role="tooltip">
+                              <svg class="icon">
+                                <use xlink:href="../icons/rocketbelt.icons.svg#rb-icon-question"/>
+                              </svg>
+                              <div class="tooltip-content">Please enter a valid email address. We will never release this information without explicit consent.</div></span>
+                          </div>
+                        </div>
+                        <div class="expander">
+                          <input class="expander_checkbox" type="checkbox" id="rb-ZRR1z5">
+                          <label class="expander_label" for="rb-ZRR1z5" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                          <div class="expander_content">
+                            <div class="example-code">
+                              <div class="dots"></div>
+                              <button class="copy-code" data-clipboard-target="#rb-LXTUw">Copy</button>
+                              <pre><code class="language-html" id="rb-LXTUw">
+                                  &lt;div class=&quot;form-group&quot;&gt;
+                                    &lt;label for=&quot;fname&quot;&gt;Email Address&lt;/label&gt;
+                                    &lt;input id=&quot;fname&quot; type=&quot;text&quot; aria-describedby=&quot;input-tooltip&quot;&gt;&lt;span class=&quot;tooltip&quot; id=&quot;input-tooltip&quot; tabindex=&quot;0&quot; role=&quot;tooltip&quot;&gt;
+                                      &lt;svg class=&quot;icon&quot;&gt;
+                                        &lt;use xlink:href=&quot;../icons/rocketbelt.icons.svg#rb-icon-question&quot;&gt;&lt;/use&gt;
+                                      &lt;/svg&gt;
+                                      &lt;div class=&quot;tooltip-content&quot;&gt;Please enter a valid email address. We will never release this information without explicit consent.&lt;/div&gt;&lt;/span&gt;
+                                  &lt;/div&gt;</code></pre>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </article>
+                <style type="text/css">
+                  .tooltip {
+                    display: inline-block;
+                    margin: 2rem 0 .5rem;
+                  }
+                  .tooltip h3.docs-header {
+                    margin:0
+                  }
+                  .form-group {
+                    flex-direction: row;
+                    flex-wrap: wrap;
+                    position: relative;
+                  }
+                  #input-tooltip {
+                    margin: 0;
+                    line-height: 1;
+                    position: absolute;
+                    right: -1.5rem;
+                    top: 55%;
+                  }
+                  svg.icon {
+                    width: 15px;
+                    height: 15px;
+                  }
+                </style>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+      <footer class="site-footer">
+        <div class="grid-fluid footer_wrapper">
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="links_off-site"><a class="link" href="https://www.pier1.com">
+                  <svg class="icon p1-logo">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-p1logo-alt-1"/>
+                  </svg></a><a class="link" href="https://github.com/pier1/rocketbelt"><span class="visually-hidden">Rocketbelt on GitHub</span><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewbox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.033-1.416-4.033-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z"/></svg></a></div>
+            </div>
+          </div>
+          <div class="row xs-center xs-middle footer_row">
+            <div class="col xs-12 footer_content">
+              <div class="copyright">&#xA9; 2019 Pier 1 Imports. Rocketbelt is distributed under an <a href="https://github.com/Pier1/rocketbelt/blob/develop/LICENSE">MIT license</a>.</div>
+            </div>
+          </div>
+        </div>
+      </footer>
+    </div>
+    <article class="dialog" tabindex="0" aria-hidden="true">
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+        <header class="dialog_header">
+          <h2 class="dialog_title" id="dialog_title"></h2>
+          <div class="dialog_close_container">
+            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+              <svg class="icon">
+                <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"/>
+              </svg>
+            </button>
+          </div>
+        </header>
+        <div class="dialog_body"></div>
+      </section>
+    </article>
+    <script src="../../js/playground.jquery.js"></script>
+    <script src="../../js/site.js"></script>
+    <script src="/components/icons/rocketbelt.icons.svgxuse.min.js" defer></script>
+    <script src="../../js/preCode.js"></script>
+    <script src="../../js/prism.js"></script>
+    <script src="../../js/clipboard.min.js"></script>
+    <script>
+      var clipboard = new Clipboard('.heading-copy-button', {
+          text: function(trigger) {
+              return window.location.href.split(/[?#]/)[0] + trigger.getAttribute('data-clipboard-text');
+          }
+      });
+      
+    </script>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+      
+      ga('create', 'UA-1740251-3', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
