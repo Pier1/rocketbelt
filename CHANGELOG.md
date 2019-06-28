@@ -1,3 +1,48 @@
+# [1.21.0](https://github.com/Pier1/rocketbelt/compare/1.20.0...1.21.0) (2019-06-28)
+
+
+### Bug Fixes
+
+* **Global:** Remove extra brace. ([28f46ba](https://github.com/Pier1/rocketbelt/commit/28f46ba))
+
+
+### Features
+
+* **Icons:** Update iconography & icon build task. ([d996fe6](https://github.com/Pier1/rocketbelt/commit/d996fe6))
+* **Icons:** Update iconography for brand refresh. ([b2582d8](https://github.com/Pier1/rocketbelt/commit/b2582d8))
+
+
+
+# [1.20.0](https://github.com/Pier1/rocketbelt/compare/1.19.0...1.20.0) (2019-06-18)
+
+
+### Features
+
+* **Build:** Slim down build tasks. ([d6ccfe8](https://github.com/Pier1/rocketbelt/commit/d6ccfe8))
+* **Typography:** Add check for missing environment variable to support [@font-face](https://github.com/font-face) gen. ([73e1243](https://github.com/Pier1/rocketbelt/commit/73e1243))
+* **Typography:** Update fonts for brand alignment. ([175b597](https://github.com/Pier1/rocketbelt/commit/175b597))
+* **Variables:** Add breakpoints to JSON variable export. ([52621ac](https://github.com/Pier1/rocketbelt/commit/52621ac))
+
+
+
+# [1.19.0](https://github.com/Pier1/rocketbelt/compare/1.18.2...1.19.0) (2019-02-18)
+
+* **Uploader:** Add better support for image resizing & rotation via canvas and exif-js. ([7353690](https://github.com/Pier1/rocketbelt/commit/7353690))
+
+## [1.18.2](https://github.com/Pier1/rocketbelt/compare/1.18.1...1.18.2) (2019-02-06)
+
+
+
+<a name="1.18.1"></a>
+## [1.18.1](https://github.com/Pier1/rocketbelt/compare/1.18.0...v1.18.1) (2019-01-31)
+
+
+### Bug Fixes
+
+* **Radio Buttons:** Add better support for text wrapping within segmented radio buttons. ([ffac90f](https://github.com/Pier1/rocketbelt/commit/ffac90f))
+
+
+
 <a name="1.18.0"></a>
 # [1.18.0](https://github.com/Pier1/rocketbelt/compare/1.17.6...v1.18.0) (2019-01-15)
 

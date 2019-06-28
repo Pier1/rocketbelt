@@ -54,17 +54,18 @@
                   <button class="category-label">Components</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
@@ -252,21 +253,22 @@
                       </div>
                     </div>
                   </div>
-                  <h2 id="javascript-javascript-yes-javascript" class="heading-with-link"><span class="heading_text">Javascript (Javascript? <em>Yes, Javascript.</em>)</span><button data-clipboard-text="#javascript-javascript-yes-javascript" class="heading-copy-button heading_link">
+                  <h2 id="javascript-include" class="heading-with-link"><span class="heading_text">Javascript Include</span><button data-clipboard-text="#javascript-include" class="heading-copy-button heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </button></h2>
+                  <p>The <span class="code">svgxuse</span> polyfill is needed to support Pier 1&apos;s SVG sprite sheet pattern in IE 11.</p>
                   <div class="exampleWithCode">
                     <div class="example"></div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-2db4Ef">
-                      <label class="expander_label" for="rb-2db4Ef" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1tmiK4">
+                      <label class="expander_label" for="rb-Z1tmiK4" data-collapsed-label="Show JS Include" data-expanded-label="Hide JS Include"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="copy-code" data-clipboard-target="#rb-25akon">Copy</button>
-                          <pre><code class="language-js include" id="rb-25akon">
+                          <button class="copy-code" data-clipboard-target="#rb-ZSH7Cz">Copy</button>
+                          <pre><code class="language-js include" id="rb-ZSH7Cz">
                               &lt;script src=&quot;./rocketbelt.icons.svgxuse.min.js&quot; defer&gt;&lt;/script&gt;</code></pre>
                         </div>
                       </div>
@@ -279,6 +281,14 @@
                 </button></h2>
                   <div class="grid-fluid">
                     <div class="row">
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-account">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-account"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-account</div>
+                        </button>
+                      </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-arrow-down">
                           <svg class="icon">
@@ -341,6 +351,14 @@
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-calendar-add"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-calendar-add</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-carrier">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-carrier"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-carrier</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -448,6 +466,14 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-coupon">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-coupon"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-coupon</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-credit-card">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-credit-card"/>
@@ -469,6 +495,14 @@
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-delete"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-delete</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-delivered">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-delivered"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-delivered</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -512,11 +546,35 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-ffwd">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-ffwd"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-ffwd</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-filter">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-filter"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-filter</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-gift-card">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-gift-card"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-gift-card</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-gift">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-gift"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-gift</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -541,6 +599,22 @@
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-heart"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-heart</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-help">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-help"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-help</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-hide">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-hide"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-hide</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -576,6 +650,14 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-instagram">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-instagram"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-instagram</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-lines">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-lines"/>
@@ -608,6 +690,30 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-lock">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-lock"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-lock</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-loyalty">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-loyalty"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-loyalty</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-loyalty2">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-loyalty2"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-loyalty2</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-menu">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-menu"/>
@@ -624,11 +730,51 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-more-horz-o">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-more-horz-o"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-more-horz-o</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-more-horz">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-more-horz"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-more-horz</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-more-vert-o">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-more-vert-o"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-more-vert-o</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-more-vert">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-more-vert"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-more-vert</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-p1apron">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-p1apron"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-p1apron</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-p1exclusive">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-p1exclusive"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-p1exclusive</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -645,6 +791,54 @@
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-p1logo"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-p1logo</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-p1rcc">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-p1rcc"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-p1rcc</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-p1rcc2">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-p1rcc2"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-p1rcc2</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-package-delay">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-package-delay"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-package-delay</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-package-error">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-package-error"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-package-error</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-package-processing">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-package-processing"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-package-processing</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-package-search">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-package-search"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-package-search</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -669,6 +863,22 @@
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-phone"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-phone</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-pickup-complete">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-pickup-complete"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-pickup-complete</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-pickup-ready">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-pickup-ready"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-pickup-ready</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -736,11 +946,19 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-ribbon-check">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-reward-cert">
                           <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-ribbon-check"/>
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-reward-cert"/>
                           </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-ribbon-check</div>
+                          <div class="icon-id font-minus-2">#rb-icon-reward-cert</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-ribbon">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-ribbon"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-ribbon</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -752,11 +970,35 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-rrwd">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-rrwd"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-rrwd</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-scheduling">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-scheduling"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-scheduling</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-search">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-search"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-search</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-ship-delay">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-ship-delay"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-ship-delay</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -768,19 +1010,27 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-shipped">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-shipped"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-shipped</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-show">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-show"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-show</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-sms">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-sms"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-sms</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-sort-both">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-sort-both"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-sort-both</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -797,6 +1047,14 @@
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-sort-up"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-sort-up</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-sort">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-sort"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-sort</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -848,11 +1106,43 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-stop">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-stop"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-stop</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-store">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-store"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-store</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-twitter">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-twitter"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-twitter</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-unlink">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-unlink"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-unlink</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-unlock">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-unlock"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-unlock</div>
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
@@ -872,6 +1162,14 @@
                         </button>
                       </div>
                       <div class="col xs-2 sm-1 icon-container examples-icons">
+                        <button class="copy-button" data-clipboard-text="#rb-icon-youtube">
+                          <svg class="icon">
+                            <use xlink:href="./rocketbelt.icons.svg#rb-icon-youtube"/>
+                          </svg>
+                          <div class="icon-id font-minus-2">#rb-icon-youtube</div>
+                        </button>
+                      </div>
+                      <div class="col xs-2 sm-1 icon-container examples-icons">
                         <button class="copy-button" data-clipboard-text="#rb-icon-zoom-in">
                           <svg class="icon">
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-zoom-in"/>
@@ -885,111 +1183,6 @@
                             <use xlink:href="./rocketbelt.icons.svg#rb-icon-zoom-out"/>
                           </svg>
                           <div class="icon-id font-minus-2">#rb-icon-zoom-out</div>
-                        </button>
-                      </div>
-                    </div>
-                  </div>
-                  <h2 id="enterprise-icons" class="heading-with-link"><span class="heading_text">Enterprise Icons</span><button data-clipboard-text="#enterprise-icons" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h2>
-                  <div class="grid-fluid">
-                    <div class="row">
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-a11y">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-a11y"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-a11y</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-book">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-book"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-book</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-copy">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-copy"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-copy</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-dots-circle-o">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-dots-circle-o"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-dots-circle-o</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-flask">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-flask"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-flask</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-graph-line">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-graph-line"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-graph-line</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-horizon">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-horizon"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-horizon</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-javascript">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-javascript"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-javascript</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-puzzle">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-puzzle"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-puzzle</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-refresh">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-refresh"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-refresh</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-uxd">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-uxd"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-uxd</div>
-                        </button>
-                      </div>
-                      <div class="col xs-2 sm-1 icon-container examples-icons">
-                        <button class="copy-button" data-clipboard-text="#rb-icon-wrench">
-                          <svg class="icon">
-                            <use xlink:href="./rocketbelt.icons.enterprise.svg#rb-icon-wrench"/>
-                          </svg>
-                          <div class="icon-id font-minus-2">#rb-icon-wrench</div>
                         </button>
                       </div>
                     </div>
@@ -1050,7 +1243,6 @@
     </article>
     <script src="../../js/playground.jquery.js"></script>
     <script src="../../js/site.js"></script>
-    <script src="/base/feature-detection/rocketbelt.feature-detection.min.js" async></script>
     <script src="/components/icons/rocketbelt.icons.svgxuse.min.js" defer></script>
     <script src="../../js/preCode.js"></script>
     <script src="../../js/prism.js"></script>

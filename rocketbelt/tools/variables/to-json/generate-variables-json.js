@@ -17,6 +17,7 @@ sassExtract.render(
   // instead of this function, but it's unclearly documented.
   // https://github.com/jgranstrom/sass-extract#filter
   const sassVarsToEmit = [
+    '$breakpoints',
     '$color-families',
     '$columns',
     '$gutter-width',

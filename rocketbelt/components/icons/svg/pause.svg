@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>pause</title>
+    <title>Icon/pause</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="pause" fill="#000000">
-            <path d="M50,40 L110,40 L110,216 L50,216 L50,40 Z M147,40 L207,40 L207,216 L147,216 L147,40 Z"></path>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/pause" fill="#00205B">
+            <path d="M9.3985,14.6395 L13.6395,14.6395 L13.6395,1.3605 L9.3985,1.3605 L9.3985,14.6395 Z M13.9995,15.3605 L9.0375,15.3605 C8.8385,15.3605 8.6775,15.1995 8.6775,15.0005 L8.6775,1.0005 C8.6775,0.8005 8.8385,0.6395 9.0375,0.6395 L13.9995,0.6395 C14.1995,0.6395 14.3605,0.8005 14.3605,1.0005 L14.3605,15.0005 C14.3605,15.1995 14.1995,15.3605 13.9995,15.3605 Z M2.3605,14.6395 L6.6395,14.6395 L6.6395,1.3605 L2.3605,1.3605 L2.3605,14.6395 Z M6.9995,15.3605 L1.9995,15.3605 C1.8005,15.3605 1.6395,15.1995 1.6395,15.0005 L1.6395,1.0005 C1.6395,0.8005 1.8005,0.6395 1.9995,0.6395 L6.9995,0.6395 C7.1995,0.6395 7.3605,0.8005 7.3605,1.0005 L7.3605,15.0005 C7.3605,15.1995 7.1995,15.3605 6.9995,15.3605 Z" id="Icon-Color"></path>
         </g>
     </g>
 </svg>

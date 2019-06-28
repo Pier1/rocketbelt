@@ -1687,42 +1687,46 @@
   width: 8rem; }
 
 @font-face {
-  font-weight: 300;
-  font-style: normal;
   font-family: 'Brand Sans';
-  src: url("https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Fqj2md8WD07oB-.woff2") format("woff2"), url("https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Fqj2md8WY.woff") format("woff"); }
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-family: 'Brand Sans';
-  src: url("https://fonts.gstatic.com/s/rubik/v7/iJWKBXyIfDnIV7nBrXyw023e.woff2") format("woff2"), url("https://fonts.gstatic.com/s/rubik/v7/iJWKBXyIfDnIV7nBrXo.woff") format("woff"); }
-
-@font-face {
-  font-weight: 400;
   font-style: italic;
-  font-family: 'Brand Sans';
-  src: url("https://fonts.gstatic.com/s/rubik/v7/iJWEBXyIfDnIV7nEnX661E_c5Ig.woff2") format("woff2"), url("https://fonts.gstatic.com/s/rubik/v7/iJWEBXyIfDnIV7nEnX660g.woff") format("woff"); }
-
-@font-face {
-  font-weight: 500;
-  font-style: normal;
-  font-family: 'Brand Sans';
-  src: url("https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Eyjmmd8WD07oB-.woff2") format("woff2"), url("https://fonts.gstatic.com/s/rubik/v7/iJWHBXyIfDnIV7Eyjmmd8WY.woff") format("woff"); }
-
-@font-face {
-  font-weight: 300;
-  font-style: normal;
-  font-family: 'Brand Serif';
+  font-weight: 400;
   font-display: swap;
-  src: url("https://www.pier1.com/static/on/demandware.static/-/Library-Sites-pier1_shared/default/fonts/BrandSerifSubset-Light.woff2") format("woff2"), url("https://www.pier1.com/static/on/demandware.static/-/Library-Sites-pier1_shared/default/fonts/BrandSerifSubset-Light.woff") format("woff"); }
+  src: url(https://fonts.gstatic.com/s/nunitosans/v4/pe0oMImSLYBIv1o4X1M8cce4E9lKdn4qX5E.woff2) format("woff2"), url(https://fonts.gstatic.com/s/nunitosans/v4/pe0oMImSLYBIv1o4X1M8cce4E9lKcA.woff) format("woff"); }
 
 @font-face {
-  font-weight: 300;
+  font-family: 'Brand Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v4/pe0qMImSLYBIv1o4X1M8cce9I9tAcVwo.woff2) format("woff2"), url(https://fonts.gstatic.com/s/nunitosans/v4/pe0qMImSLYBIv1o4X1M8cce9I90.woff) format("woff"); }
+
+@font-face {
+  font-family: 'Brand Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/nunitosans/v4/pe03MImSLYBIv1o4X1M8cc8GBs5tU1ECVZl_.woff2) format("woff2"), url(https://fonts.gstatic.com/s/nunitosans/v4/pe03MImSLYBIv1o4X1M8cc8GBs5tU1c.woff) format("woff"); }
+
+@font-face {
+  font-family: 'Brand Serif';
   font-style: italic;
-  font-family: 'Brand Serif';
+  font-weight: 400;
   font-display: swap;
-  src: url("https://www.pier1.com/static/on/demandware.static/-/Library-Sites-pier1_shared/default/fonts/BrandSerifSubset-LightItalic.woff2") format("woff2"), url("https://www.pier1.com/static/on/demandware.static/-/Library-Sites-pier1_shared/default/fonts/BrandSerifSubset-LightItalic.woff") format("woff"); }
+  src: url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGWmQSNjdsmc35JDF1K5GRweDs1ZyHKpWg.woff2) format("woff2"), url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGWmQSNjdsmc35JDF1K5GRweDs1YQ.woff) format("woff"); }
+
+@font-face {
+  font-family: 'Brand Serif';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGUmQSNjdsmc35JDF1K5GR1SDk_YAPI.woff2) format("woff2"), url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGUmQSNjdsmc35JDF1K5GR1SD8.woff) format("woff"); }
+
+@font-face {
+  font-family: 'Brand Serif';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGJmQSNjdsmc35JDF1K5GzObSwSQg7ir2C-.woff2) format("woff2"), url(https://fonts.gstatic.com/s/ebgaramond/v10/SlGJmQSNjdsmc35JDF1K5GzObSwSQgg.woff) format("woff"); }
 
 .fonts-loaded-subset body,
 .fonts-loaded body {

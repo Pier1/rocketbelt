@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>arrow-right</title>
+    <title>Icon/arrow-right</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="arrow-right" fill="#000000" fill-rule="nonzero">
-            <polygon points="137.566667 25 110.994667 51.373432 168.637333 108.969725 16 108.969725 16 146.198417 168.637333 146.198417 110.994667 203.79471 137.566667 230.168142 240 127.584071"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/arrow-right" fill="#00205B">
+            <path d="M14.6300612,7.69885118 L9.98706117,2.21485118 C9.81006117,2.00385118 9.49306117,1.97885118 9.28206117,2.15585118 C9.07106117,2.33485118 9.04606117,2.64985118 9.22406117,2.86085118 L13.1510612,7.49985118 L1.75206117,7.49985118 C1.47606117,7.49985118 1.25206117,7.72285118 1.25206117,7.99985118 C1.25206117,8.27585118 1.47606117,8.49985118 1.75206117,8.49985118 L13.1830612,8.49985118 L9.22606117,13.1368512 C9.04606117,13.3468512 9.07106117,13.6628512 9.28106117,13.8428512 C9.37506117,13.9228512 9.49006117,13.9618512 9.60606117,13.9618512 C9.74606117,13.9618512 9.88706117,13.9028512 9.98506117,13.7868512 L14.6280612,8.34685118 C14.7870612,8.15985118 14.7880612,7.88585118 14.6300612,7.69885118" id="Icon-Color"></path>
         </g>
     </g>
 </svg>
