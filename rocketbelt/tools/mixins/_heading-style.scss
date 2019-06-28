@@ -1,0 +1,45 @@
+// whisper murmur intimate mumble sigh utterance mention blurt shout
+
+@mixin heading-style($options: ()) {
+  $valid-styles: (
+    'whisper',
+    'blurt',
+    'shout'
+  );
+
+  $default-style: 'whisper';
+  $default-font-size: font-size(2);
+  $default-letter-spacing: letter-spacing(1);
+  $default-font-weight: inherit;
+
+  $options: map-merge(
+    (
+      'style': $default-style,
+      'font-size': $default-font-size
+    ),
+    $options
+  );
+
+  $style: map-get($options, 'style');
+  $font-size: map-get($options, 'font-size');
+  $letter-spacing: 0;
+
+  @if ($font-size >= font-size(3)) {
+    $letter-spacing: letter-spacing(2);
+  } else {
+    $letter-spacing: letter-spacing(1);
+  }
+
+  letter-spacing: $letter-spacing;
+  font-size: $font-size;
+
+  @if ($style == 'whisper') {
+    text-transform: capitalize;
+  } @else if ($style == 'blurt') {
+    text-transform: uppercase;
+  } @else if ($style == 'shout') {
+    text-transform: uppercase;
+    font-weight: font-weight(bold);
+  }
+}
+
