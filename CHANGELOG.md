@@ -1,3 +1,18 @@
+# [1.21.0](https://github.com/Pier1/rocketbelt/compare/1.20.0...1.21.0) (2019-06-28)
+
+
+### Bug Fixes
+
+* **Global:** Remove extra brace. ([28f46ba](https://github.com/Pier1/rocketbelt/commit/28f46ba))
+
+
+### Features
+
+* **Icons:** Update iconography & icon build task. ([d996fe6](https://github.com/Pier1/rocketbelt/commit/d996fe6))
+* **Icons:** Update iconography for brand refresh. ([b2582d8](https://github.com/Pier1/rocketbelt/commit/b2582d8))
+
+
+
 # [1.20.0](https://github.com/Pier1/rocketbelt/compare/1.19.0...1.20.0) (2019-06-18)
 
 
