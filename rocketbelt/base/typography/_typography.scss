@@ -6,7 +6,7 @@ $base-line-height: 1.5;
 // The following base gives us 2 fixed points on the scale at
 // 15px and ~13px, expressed in rems because I am a pedant.
 $ms-base: (13 / 15) * 1rem 1rem;
-$ms-ratio: $augmented-fourth;
+$ms-ratio: $fourth;
 
 .fonts-loaded-subset,
 .fonts-loaded {
