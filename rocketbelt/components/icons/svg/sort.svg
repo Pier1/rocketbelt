@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Icon/sort</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/sort" fill="#00205B">
+            <path d="M6,11.36 L2,11.36 C1.801,11.36 1.64,11.199 1.64,11 C1.64,10.801 1.801,10.64 2,10.64 L6,10.64 C6.199,10.64 6.36,10.801 6.36,11 C6.36,11.199 6.199,11.36 6,11.36 Z M10.5,8.36 L2,8.36 C1.801,8.36 1.64,8.199 1.64,8 C1.64,7.801 1.801,7.64 2,7.64 L10.5,7.64 C10.699,7.64 10.86,7.801 10.86,8 C10.86,8.199 10.699,8.36 10.5,8.36 Z M14,5.36 L2,5.36 C1.801,5.36 1.64,5.199 1.64,5 C1.64,4.801 1.801,4.64 2,4.64 L14,4.64 C14.199,4.64 14.36,4.801 14.36,5 C14.36,5.199 14.199,5.36 14,5.36 Z" id="Icon-Color"></path>
+        </g>
+    </g>
+</svg>

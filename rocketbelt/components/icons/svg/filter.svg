@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>filter</title>
+    <title>Icon/filter</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="filter" fill="#000000" fill-rule="nonzero">
-            <polygon points="26 16 230.427184 16 147.242718 156.815534 147.242718 240 108.640777 211.728155 108.640777 156.815534"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/filter" fill="#00205B">
+            <path d="M10,11.36 L6,11.36 C5.801,11.36 5.64,11.199 5.64,11 C5.64,10.801 5.801,10.64 6,10.64 L10,10.64 C10.199,10.64 10.36,10.801 10.36,11 C10.36,11.199 10.199,11.36 10,11.36 Z M12.25,8.36 L3.75,8.36 C3.551,8.36 3.39,8.199 3.39,8 C3.39,7.801 3.551,7.64 3.75,7.64 L12.25,7.64 C12.449,7.64 12.61,7.801 12.61,8 C12.61,8.199 12.449,8.36 12.25,8.36 Z M14,5.36 L2,5.36 C1.801,5.36 1.64,5.199 1.64,5 C1.64,4.801 1.801,4.64 2,4.64 L14,4.64 C14.199,4.64 14.36,4.801 14.36,5 C14.36,5.199 14.199,5.36 14,5.36 Z" id="Icon-Color"></path>
         </g>
     </g>
 </svg>

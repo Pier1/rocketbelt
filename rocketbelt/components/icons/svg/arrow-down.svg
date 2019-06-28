@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>arrow-down</title>
+    <title>Icon/arrow-down</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="arrow-down" fill="#000000" fill-rule="nonzero">
-            <polygon transform="translate(128.000000, 127.584071) rotate(90.000000) translate(-128.000000, -127.584071) " points="137.566667 25 110.994667 51.373432 168.637333 108.969725 16 108.969725 16 146.198417 168.637333 146.198417 110.994667 203.79471 137.566667 230.168142 240 127.584071"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/arrow-down" fill="#00205B">
+            <path d="M13.8419196,9.281 C13.6629196,9.071 13.3469196,9.048 13.1379196,9.225 L8.4999196,13.184 L8.4999196,1.752 C8.4999196,1.475 8.2769196,1.252 7.9999196,1.252 C7.7239196,1.252 7.4999196,1.475 7.4999196,1.752 L7.4999196,13.151 L2.8619196,9.224 C2.6529196,9.047 2.3349196,9.073 2.1559196,9.282 C1.9789196,9.493 2.0039196,9.809 2.2149196,9.988 L7.6989196,14.63 C7.7929196,14.709 7.9069196,14.748 8.0229196,14.748 C8.1379196,14.748 8.2539196,14.708 8.3469196,14.629 L13.7859196,9.986 C13.9959196,9.807 14.0219196,9.491 13.8419196,9.281" id="Icon-Color"></path>
         </g>
     </g>
 </svg>

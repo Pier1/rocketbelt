@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>play</title>
+    <title>Icon/play</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="play" fill="#000000" fill-rule="nonzero">
-            <polygon points="42 224 42 32 214.8 128"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/play" fill="#00205B">
+            <path d="M1.913,0.882201615 L1.913,15.1182016 L14.086,8.00120162 L1.913,0.882201615 Z M1.914,15.8402016 C1.787,15.8402016 1.662,15.8062016 1.553,15.7412016 C1.333,15.6162016 1.192,15.3772016 1.192,15.1192016 L1.192,0.882201615 C1.192,0.625201615 1.332,0.386201615 1.557,0.257201615 C1.779,0.125201615 2.059,0.127201615 2.281,0.264201615 L14.449,7.38020162 C14.67,7.50920162 14.808,7.74720162 14.808,8.00120162 C14.808,8.25520162 14.67,8.49320162 14.449,8.62220162 L2.276,15.7392016 C2.175,15.8032016 2.047,15.8402016 1.914,15.8402016 L1.914,15.8402016 Z" id="Icon-Color"></path>
         </g>
     </g>
 </svg>

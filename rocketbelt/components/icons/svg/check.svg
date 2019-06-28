@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>check</title>
+    <title>Icon/check</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="check" fill="#000000" fill-rule="nonzero">
-            <polygon points="100 212.653333 16 132.032 42.0493333 105.245333 99.5053333 160.069333 213.465333 44 240 70.292"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/check" fill="#00205B">
+            <path d="M5.41677226,13 C5.30167732,13 5.18658237,12.9547946 5.09995177,12.8656395 L1.12855735,8.78208582 C0.956533716,8.60503137 0.956533716,8.31747485 1.13227009,8.14293181 C1.30800645,7.96838877 1.58893713,7.96838877 1.76219834,8.14669892 L5.42172258,11.9100478 L14.2431933,3.13015615 C14.4176921,2.9531017 14.6998603,2.95812452 14.8731215,3.13643468 C15.0451452,3.31348913 15.0414324,3.59978995 14.8669336,3.77433299 L5.72864244,12.8706624 C5.64201184,12.957306 5.52939205,13 5.41677226,13" id="Icon-Color"></path>
         </g>
     </g>
 </svg>

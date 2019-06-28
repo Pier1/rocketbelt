@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>minus</title>
+    <title>Icon/minus</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="minus" fill="#000000" fill-rule="nonzero">
-            <polygon points="16 109 240 109 240 146.333333 16 146.333333"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/minus" fill="#00205B">
+            <path d="M15.6086957,8.36 L0.391304348,8.36 C0.175,8.36 0,8.199 0,8 C0,7.801 0.175,7.64 0.391304348,7.64 L15.6086957,7.64 C15.825,7.64 16,7.801 16,8 C16,8.199 15.825,8.36 15.6086957,8.36" id="minus"></path>
         </g>
     </g>
 </svg>

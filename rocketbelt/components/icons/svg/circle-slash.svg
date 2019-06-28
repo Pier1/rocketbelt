@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>circle-slash</title>
+    <title>Icon/circle-slash</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="circle-slash" fill="#000000" fill-rule="nonzero">
-            <path d="M128,16 C66.148,16 16,66.148 16,128 C16,189.852 66.148,240 128,240 C189.852,240 240,189.852 240,128 C240,66.148 189.852,16 128,16 Z M212,128 C212,146.106667 206.176,162.86 196.394667,176.598667 L79.4013333,59.6053333 C93.14,49.824 109.893333,44 128,44 C174.312,44 212,81.688 212,128 Z M44,128 C44,109.893333 49.824,93.14 59.6053333,79.4013333 L176.589333,196.385333 C162.86,206.176 146.106667,212 128,212 C81.688,212 44,174.312 44,128 Z" id="Shape" transform="translate(128.000000, 128.000000) scale(-1, 1) translate(-128.000000, -128.000000) "></path>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/circle-slash" fill="#00205B">
+            <path d="M7.9995,14.868 C6.2645,14.868 4.6835,14.217 3.4735,13.151 L13.0465,3.357 C14.1725,4.581 14.8675,6.209 14.8675,8 C14.8675,11.787 11.7865,14.868 7.9995,14.868 M1.1325,8 C1.1325,4.213 4.2125,1.132 7.9995,1.132 C9.7365,1.132 11.3205,1.785 12.5315,2.852 L2.9575,12.647 C1.8285,11.423 1.1325,9.793 1.1325,8 M7.9995,0.411 C3.8155,0.411 0.4115,3.815 0.4115,8 C0.4115,12.184 3.8155,15.589 7.9995,15.589 C12.1845,15.589 15.5885,12.184 15.5885,8 C15.5885,3.815 12.1845,0.411 7.9995,0.411" id="Icon-Color"></path>
         </g>
     </g>
 </svg>

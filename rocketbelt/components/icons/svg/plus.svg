@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg width="256px" height="256px" viewBox="0 0 256 256" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
     
-    <title>plus</title>
+    <title>Icon/plus</title>
     <desc>Created with sketchtool.</desc>
-    <defs></defs>
-    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-        <g id="plus" fill="#000000" fill-rule="nonzero">
-            <polygon points="240 109.333333 146.666667 109.333333 146.666667 16 109.333333 16 109.333333 109.333333 16 109.333333 16 146.666667 109.333333 146.666667 109.333333 240 146.666667 240 146.666667 146.666667 240 146.666667"></polygon>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/plus" fill="#00205B">
+            <path d="M15.6086957,7.60853565 L8.39130435,7.60853565 L8.39130435,0.391144348 C8.39130435,0.17484 8.21630435,-0.00016 8,-0.00016 C7.78369565,-0.00016 7.60869565,0.17484 7.60869565,0.391144348 L7.60869565,7.60853565 L0.391304348,7.60853565 C0.175,7.60853565 0,7.78353565 0,7.99984 C0,8.21614435 0.175,8.39114435 0.391304348,8.39114435 L7.60869565,8.39114435 L7.60869565,15.6085357 C7.60869565,15.82484 7.78369565,15.99984 8,15.99984 C8.21630435,15.99984 8.39130435,15.82484 8.39130435,15.6085357 L8.39130435,8.39114435 L15.6086957,8.39114435 C15.825,8.39114435 16,8.21614435 16,7.99984 C16,7.78353565 15.825,7.60853565 15.6086957,7.60853565" id="Icon-Color"></path>
         </g>
     </g>
 </svg>
