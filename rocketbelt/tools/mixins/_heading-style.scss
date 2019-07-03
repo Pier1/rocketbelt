@@ -21,6 +21,11 @@
   );
 
   $style: map-get($options, 'style');
+
+  @if (index($valid-styles, $style) == null) {
+    @error '`#{$style}` is not a valid heading style. Valid styles are `whisper`, `blurt`, and `shout`.';
+  }
+
   $font-size: map-get($options, 'font-size');
   $letter-spacing: 0;
 
@@ -30,8 +35,8 @@
     $letter-spacing: letter-spacing(1);
   }
 
-  letter-spacing: $letter-spacing;
   font-size: $font-size;
+  letter-spacing: $letter-spacing;
 
   @if ($style == 'whisper') {
     text-transform: capitalize;
