@@ -1,1 +1,8 @@
 @include color-families();
+
+$color-families: map-merge($color-families, (
+  'ui': (
+    'footer': color(brand, columbiaBlue),
+    'footerAlt': color(brand, catskillBlue)
+  )
+));

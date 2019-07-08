@@ -9,6 +9,14 @@ $brand-palette: (
   columbiaBlue: #ced9e5,
   catskillBlue: #e8edf3,
   alabaster: #f0ece2,
+
+  deepBlue:  #2e2b70,
+  warmRed:   #f04e37,
+  sand:      #fed4a0,
+  deepBrown: #431e1b,
+  sunYellow: #fdb913,
+  paleRed:   #e58d83,
+  mint:      #7cccbf
 );
 
 $base-families: (
@@ -21,8 +29,8 @@ $base-families: (
   warning-b: #d5a021,
   error: #c1292e,
   info: #ced9e5,
-  black: scale-color(#000, $lightness: 10%),
-  white: scale-color(#fff, $lightness: 0%)
+  black: #000,
+  white: #fff
 );
 
 $base-variants: (
@@ -66,6 +74,11 @@ $black-white-variants: (base: 0);
 
     $families: map-merge($families, (#{$family}: $variants));
   }
+
+  // $families: map-merge($families, (
+  //   'ui': (
+  //   )
+  // ));
 
   @return $families;
 }
