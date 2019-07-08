@@ -21,7 +21,7 @@
 
   input[type='radio'] {
     &:checked + label {
-      background: color(brand, deepBlue);
+      background: color(primary);
       color: color(white);
       font-weight: 500;
       transition: background 100ms linear;
@@ -47,10 +47,10 @@
     display: flex;
     flex: 1;
     min-height: 44px;
-    border: 2px solid color(brand, deepBlue);
+    border: 2px solid color(primary);
     border-left-width: 0;
     background: white;
-    color: color(brand, deepBlue);
+    color: color(primary);
     transition: background 100ms linear;
     align-items: center;
     justify-content: center;

@@ -32,36 +32,36 @@
 
   &.tag-success {
     background: color(success);
-    color: contrast(success);
+    color: color(success);
   }
 
   &.tag-sale {
     background: color(sale);
-    color: contrast(sale);
+    color: color(sale);
   }
 
   &.tag-error {
     background: color(error);
-    color: contrast(error);
+    color: color(error);
   }
 
   &.tag-warning {
     background: color(warning);
-    color: contrast(warning);
+    color: color(warning);
   }
 
   &.tag-primary {
     background: color(primary);
-    color: contrast(primary);
+    color: color(white);
   }
 
   &.tag-secondary {
-    background: color(secondary);
+    background: color(brand, catskillBlue);
   }
 
   &.tag-accent {
     background: color(accent);
-    color: contrast(accent);
+    color: color(accent);
   }
 
   &.message-dismissable {

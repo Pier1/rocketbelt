@@ -2,8 +2,11 @@
 
 // line-height + margin-top + margin-bottom must be a multiple of 1.5rem to maintain vertical rhythm.
 $base-line-height: 1.5;
-$ms-base: 1rem;
-$ms-ratio: 1.125;
+
+// The following base gives us 2 fixed points on the scale at
+// 15px and ~13px, expressed in rems because I am a pedant.
+$ms-base: (13 / 15) * 1rem 1rem;
+$ms-ratio: $fourth;
 
 .fonts-loaded-subset,
 .fonts-loaded {
@@ -28,6 +31,10 @@ $ms-ratio: 1.125;
   h6 {
     font-weight: font-weight(medium);
   }
+}
+
+:root {
+  font-size: 15px;
 }
 
 body {
@@ -185,27 +192,27 @@ h4 {
 }
 
 .font-minus-2 {
-  font-size: font-size(-3);
-}
-
-.font-minus-1 {
   font-size: font-size(-2);
 }
 
+.font-minus-1 {
+  font-size: font-size(-1);
+}
+
 .font-plus-1 {
-  font-size: font-size(2);
+  font-size: font-size(1);
 }
 
 .font-plus-2 {
-  font-size: font-size(4);
+  font-size: font-size(2);
 }
 
 .font-plus-3 {
-  font-size: font-size(6);
+  font-size: font-size(3);
 }
 
 .font-plus-4 {
-  font-size: font-size(8);
+  font-size: font-size(4);
 }
 
 .font-style-italic {
@@ -238,19 +245,53 @@ h4 {
   @include list-reset($horizontal: true);
 }
 
-a {
-  $base-link-color: color(contrast, base);
+.no-anchor-underlines {
+  a {
+    position: static;
+    text-decoration: none;
 
+    &::before {
+      display: none;
+      box-shadow: none;
+    }
+  }
+}
+
+a {
+  $base-link-color: color(ui, link);
+
+  position: relative;
   color: $base-link-color;
+  text-decoration: none;
   transition: color 100ms linear;
 
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 3px;
+    box-shadow: inset 0 2px 0 color(brand, logoBlue);
+    content: '';
+    transition: transform 250ms ease(out-sine),
+                color     250ms linear;
+    transform: scaleX(0);
+  }
+
   &:hover {
-    color: scale-color($base-link-color, $lightness: 15%);
-    transition: color 100ms linear;
+    $hover-color: scale-color($base-link-color, $lightness: 25%);
+    color: $hover-color;
+    transition: color 250ms linear;
+
+    &::before {
+      box-shadow: inset 0 2px 0 $hover-color;
+      transform: scaleX(1);
+    }
   }
 
   &:active {
-    color: scale-color($base-link-color, $lightness: -15%);
+    color: $base-link-color;
     transition: color 100ms linear;
   }
 
@@ -280,28 +321,6 @@ blockquote {
 
     &::before {
       content: unicode('horizontal-bar') + unicode(nbsp);
-    }
-  }
-
-  &.pull {
-    padding: 0;
-    width: 40%;
-    border: none;
-    background: transparent;
-
-    &:not(.font-serif) {
-      font-weight: font-weight(light);
-    }
-
-    & .quote {
-      display: inline;
-      background: rgba(color(secondary, lighter), 0.1);
-      box-shadow: 0 -0.25rem 0 rgba(color(secondary), 0.3);
-      line-height: 1.75;
-    }
-
-    & .source {
-      text-align: right;
     }
   }
 }

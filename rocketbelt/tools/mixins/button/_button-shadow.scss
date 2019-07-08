@@ -3,13 +3,13 @@
 /// @group Buttons
 /// @author Kendrick Arnett
 @mixin button-shadow {
-  @include z-depth(1);
+  @include z-depth(0);
 
   &:hover {
     @include z-depth(2);
   }
 
   &:active {
-    @include z-depth(1);
+    @include z-depth(0);
   }
 }
