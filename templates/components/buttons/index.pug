@@ -36,8 +36,10 @@ block content
           +exampleWithCode
             include _buttons-text.pug
 
-    h2 Dropdown
-    .grid-fluid
+    h2.text-with-icon Dropdown
+      svg.icon.icon-left(aria-hidden=true)
+        use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-warning')
+    .grid-fluid(style="opacity:0.4;")
       .row
         .col.xs
           +exampleWithCode
