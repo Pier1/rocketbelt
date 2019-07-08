@@ -1,3 +1,27 @@
+# [2.0.0-beta](https://github.com/Pier1/rocketbelt/compare/1.21.0...2.0.0-beta) (2019-07-08)
+
+
+### Features
+
+* **Buttons:** Add updated brand styles to buttons. ([890824d](https://github.com/Pier1/rocketbelt/commit/890824d))
+* **Buttons:** Update brand-aligned buttons. ([bd72153](https://github.com/Pier1/rocketbelt/commit/bd72153))
+* **Color:** Add to UI color map. ([41e7808](https://github.com/Pier1/rocketbelt/commit/41e7808))
+* **Color:** Implement new brand palette and port old styles. ([6d9f2d3](https://github.com/Pier1/rocketbelt/commit/6d9f2d3))
+* **Color:** Update brand colors. ([0a7438d](https://github.com/Pier1/rocketbelt/commit/0a7438d))
+* **Global:** Add `v` function to reference CSS custom properties. ([4b87550](https://github.com/Pier1/rocketbelt/commit/4b87550))
+* **Typography:** Add heading-style mixin. ([577b998](https://github.com/Pier1/rocketbelt/commit/577b998))
+* **Typography:** Add letter-spacing helper function. ([b9ffc4b](https://github.com/Pier1/rocketbelt/commit/b9ffc4b))
+* **Typography:** Adjust modular scale base & ratio. ([3a50711](https://github.com/Pier1/rocketbelt/commit/3a50711))
+* **Typography:** Adjust typographic styles for branding. ([c984584](https://github.com/Pier1/rocketbelt/commit/c984584))
+* **Typography:** Base typography changes for updated branding. ([9a992c9](https://github.com/Pier1/rocketbelt/commit/9a992c9))
+* **Typography:** Tweak basic typographic styles. ([0fea6c3](https://github.com/Pier1/rocketbelt/commit/0fea6c3))
+* **Typography:** Update anchor styles. ([25854a6](https://github.com/Pier1/rocketbelt/commit/25854a6))
+* **Typography:** Update heading-style error handling. ([a442e5e](https://github.com/Pier1/rocketbelt/commit/a442e5e))
+* **Typography:** Update modular scale ratio. ([d76ffa1](https://github.com/Pier1/rocketbelt/commit/d76ffa1))
+* **Z-Depth:** Minimize shadow values. ([39669e2](https://github.com/Pier1/rocketbelt/commit/39669e2))
+
+
+
 # [1.21.0](https://github.com/Pier1/rocketbelt/compare/1.20.0...1.21.0) (2019-06-28)
 
 
