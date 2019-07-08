@@ -68,8 +68,8 @@
 
     &[disabled] {
       $disabled-color: rgba($button-base-secondary, 0.9);
-      background: desaturate(scale-color($button-base, $lightness: 97.5%), 65%);
       border: 1px solid $disabled-color;
+      background: desaturate(scale-color($button-base, $lightness: 97.5%), 65%);
       color: $disabled-color;
       fill: $disabled-color;
 
@@ -80,9 +80,13 @@
     }
   }
   @else if $style == text {
+    padding: 0;
     background: transparent;
     color: $button-base-secondary;
+    text-transform: uppercase;
+    letter-spacing: 0.6px;
     fill: $button-base-secondary;
+
     &:visited {
       color: $button-base-secondary;
     }

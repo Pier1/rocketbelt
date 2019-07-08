@@ -9,6 +9,11 @@ a[class *= 'button'] + a[class *= 'button'] {
 a[class *= 'button'] {
   display: inline-block;
   text-align: center;
+
+  &::before {
+    display: none;
+    box-shadow: none;
+  }
 }
 
 .button,
