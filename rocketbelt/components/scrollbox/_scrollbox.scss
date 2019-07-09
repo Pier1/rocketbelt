@@ -1,0 +1,57 @@
+.scrollbox {
+  @include vset(--rbScrollbox-gradient-base-color, unquote('255, 255, 255'));
+  @include vset(--indicate-left-opacity, 1);
+  @include vset(--indicate-right-opacity, 1);
+  @include vset(--indicator-width, 96px);
+
+  @include native-scrolling();
+
+  position: relative;
+  display: flex;
+  overflow-x: auto;
+  box-sizing: content-box;
+  width: 66%;
+  flex-wrap: nowrap;
+
+  &::before,
+  &::after {
+    position: fixed;
+    z-index: 1;
+    width: calc(var(--indicator-width));
+    height: inherit;
+    background-image:
+      linear-gradient(270deg,
+        rgba(vget(--rbScrollbox-gradient-base-color), 1) 0%,
+        rgba(vget(--rbScrollbox-gradient-base-color), 0.76) 16%,
+        rgba(vget(--rbScrollbox-gradient-base-color), 0.55) 29%,
+        rgba(vget(--rbScrollbox-gradient-base-color), 0.37) 42%,
+        rgba(vget(--rbScrollbox-gradient-base-color), 0.22) 55%,
+        rgba(vget(--rbScrollbox-gradient-base-color), 0.10) 68%,
+        rgba(vget(--rbScrollbox-gradient-base-color), 0.02) 83%,
+        rgba(vget(--rbScrollbox-gradient-base-color), 0.00) 100%
+      );
+    content: '';
+    transition: opacity 100ms ease-in;
+  }
+
+  &:not(.indicate-left)::before,
+  &:not(.indicate-right)::after {
+    opacity: 0;
+  }
+
+  &.indicate-left::before {
+    opacity: vget(--indicate-left-opacity);
+  }
+
+  &.indicate-right::after {
+    opacity: vget(--indicate-right-opacity);
+  }
+
+  &::before {
+    transform: scaleX(-1);
+  }
+
+  &::after {
+    left: calc(var(--indicate-right-left-prop) - var(--indicator-width));
+  }
+}
