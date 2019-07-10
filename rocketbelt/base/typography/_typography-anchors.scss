@@ -1,0 +1,83 @@
+@mixin no-anchor-underline() {
+  position: static;
+  text-decoration: none;
+
+  &::before {
+    display: none;
+    box-shadow: none;
+  }
+}
+
+a {
+  @at-root .no-anchor-underline &,
+  &.no-anchor-underline,
+  &.anchor-minimal,
+  &.text-with-icon {
+    @include no-anchor-underline();
+  }
+
+  $base-link-color: color(ui, link);
+
+  position: relative;
+  color: $base-link-color;
+  text-decoration: none;
+  transition: color 100ms linear;
+
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 3px;
+    box-shadow: inset 0 2px 0 currentColor;
+    content: '';
+    transition: transform 250ms ease(out-sine),
+                color     250ms linear;
+    transition-delay: 100ms;
+    transform: scaleX(0);
+  }
+
+  &:hover {
+    $hover-color: scale-color($base-link-color, $lightness: 25%);
+    color: $hover-color;
+    transition: color 250ms linear;
+
+    &::before {
+      box-shadow: inset 0 2px 0 currentColor;
+      transform: scaleX(1);
+    }
+  }
+
+  &:active {
+    color: $base-link-color;
+    transition: color 100ms linear;
+  }
+
+  &:visited {
+    color: scale-color($base-link-color, $lightness: -15%);
+    transition: color 100ms linear;
+  }
+
+  &.disabled,
+  &[disabled] {
+    opacity: 0.6;
+    filter: grayscale(0.6);
+    pointer-events: none;
+  }
+
+  &.anchor-subtle {
+    $color: color(gray, minus2);
+    color: $color;
+
+    &:hover {
+      $hover-color: scale-color($color, $lightness: 25%);
+      color: $hover-color;
+    }
+  }
+
+  &.anchor-button-subtle {
+    text-transform: uppercase;
+    letter-spacing: letter-spacing(plus1);
+  }
+}

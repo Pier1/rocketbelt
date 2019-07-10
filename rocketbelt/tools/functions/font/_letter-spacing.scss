@@ -13,8 +13,9 @@
 @function letter-spacing($spacing: 0) {
   $spacings: (
     0: 0,
-    1: 1.2,
-    2: 2.4
+    plus1: 0.6px,
+    plus2: 1.2px,
+    plus3: 2.4px
   );
 
   $value: if(map-has-key($spacings, $spacing),
