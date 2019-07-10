@@ -1,47 +1,22 @@
 .cta {
   text-decoration: none;
   text-transform: uppercase;
-  font-weight: font-weight(medium);
+  letter-spacing: letter-spacing(plus3);
+  font-weight: font-weight(bold);
   line-height: initial;
   cursor: pointer;
 
-  &:hover {
-    .cta_text {
-      box-shadow: inset 0 -2px 0 currentColor;
-      transition: box-shadow 100ms;
-    }
-
-    .icon {
-      animation: cta-hover 1s infinite;
-    }
-  }
-
   &_text {
-    box-shadow: inset 0 -1px 0 currentColor;
-    transition: box-shadow 100ms;
+    box-shadow: 0 4px 0 currentColor;
   }
 
   .icon {
-    width: 0.75em;
-    height: 0.75em;
+    width: 1em;
+    height: 1em;
     font-size: 1em;
 
     &.icon-right {
-      margin-left: 0.1em;
+      margin-left: 0.05em;
     }
-  }
-}
-
-@keyframes cta-hover {
-  0% {
-    transform: translateX(-1px);
-  }
-
-  50% {
-    transform: translateX(0);
-  }
-
-  100% {
-    transform: translateX(-1px);
   }
 }

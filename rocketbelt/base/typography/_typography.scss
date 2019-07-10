@@ -245,66 +245,6 @@ h4 {
   @include list-reset($horizontal: true);
 }
 
-.no-anchor-underlines {
-  a {
-    position: static;
-    text-decoration: none;
-
-    &::before {
-      display: none;
-      box-shadow: none;
-    }
-  }
-}
-
-a {
-  $base-link-color: color(ui, link);
-
-  position: relative;
-  color: $base-link-color;
-  text-decoration: none;
-  transition: color 100ms linear;
-
-  &::before {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 3px;
-    box-shadow: inset 0 2px 0 color(brand, logoBlue);
-    content: '';
-    transition: transform 250ms ease(out-sine),
-                color     250ms linear;
-    transform: scaleX(0);
-  }
-
-  &:hover {
-    $hover-color: scale-color($base-link-color, $lightness: 25%);
-    color: $hover-color;
-    transition: color 250ms linear;
-
-    &::before {
-      box-shadow: inset 0 2px 0 $hover-color;
-      transform: scaleX(1);
-    }
-  }
-
-  &:active {
-    color: $base-link-color;
-    transition: color 100ms linear;
-  }
-
-  &:visited {
-    color: scale-color($base-link-color, $lightness: -15%);
-    transition: color 100ms linear;
-  }
-
-  &[disabled] {
-    pointer-events: none;
-  }
-}
-
 blockquote {
   margin: 0.75rem 0;
   padding: 0.375rem 0.75rem;
@@ -372,6 +312,7 @@ ul {
   }
 }
 
+@import 'typography-anchors';
 @import 'typography-text-with-icon';
 @import 'typography-cta';
 @import 'typography-link-lists';
