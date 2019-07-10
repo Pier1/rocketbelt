@@ -5,6 +5,10 @@
   window.rb.keys = {
     ALT: 18,
     ARROWS: [37, 38, 39, 40],
+    LEFT: 37,
+    UP: 38,
+    RIGHT: 39,
+    DOWN: 40,
     ARROW_LEFT: 37,
     ARROW_UP: 38,
     ARROW_RIGHT: 39,
@@ -19,6 +23,7 @@
     HOME: 36,
     PAGE_DOWN: 34,
     PAGE_UP: 33,
+    RETURN: 13,
     SHIFT: 16,
     SPACE: 32,
     TAB: 9
