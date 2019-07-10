@@ -17,3 +17,17 @@
     }
   }
 }
+
+body {
+  &[class*='show-focus'] {
+    :focus {
+      outline: 2px dotted rgba(color(ui, focus), .8) !important; // sass-lint:disable-line no-important
+      outline-offset: 1px;
+    }
+
+  }
+
+  :focus {
+    outline: none;
+  }
+}
