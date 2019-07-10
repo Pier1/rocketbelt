@@ -1,0 +1,15 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Listbox'
+
+block content
+  article
+    h1 Listbox
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _listbox.pug
+  script(src='./rocketbelt.listbox.js')

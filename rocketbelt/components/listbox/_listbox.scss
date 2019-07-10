@@ -1,0 +1,45 @@
+.listbox_items {
+  &[role='listbox'] {
+    @include z-depth(1);
+
+    position: absolute;
+    z-index: 1;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    max-height: 18em;
+    border: 1px solid color(gray, plus3);
+    border-top: 0;
+    background: white;
+
+    // Match listbox width to button width via JS…
+  }
+}
+
+[role='option'] {
+  position: relative;
+  display: block;
+  padding: 0.8em;
+
+  &.focused {
+    background: color(ui, selected);
+  }
+}
+
+.listbox_button {
+  width: 150px;
+  // Match listbox width to button width via JS…
+  position: relative;
+}
+
+.listbox_button::after {
+  // Closed arrow style
+}
+
+.listbox_button[aria-expanded="true"]::after {
+  // Open arrow style
+}
+
+.hidden {
+  display: none;
+}
