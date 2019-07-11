@@ -8,6 +8,33 @@
   }
 }
 
+@mixin anchor-underline($underline-color: color(ui, link), $hover-color: currentColor) {
+  &::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    z-index: -1;
+    width: 100%;
+    height: 3px;
+    box-shadow: inset 0 2px 0 currentColor;
+    content: '';
+    transition: transform 250ms ease(out-sine),
+                color     250ms linear;
+    transition-delay: 100ms;
+    transform: scaleX(0);
+  }
+
+  &:hover {
+    color: $hover-color;
+    transition: color 250ms linear;
+
+    &::before {
+      box-shadow: inset 0 2px 0 currentColor;
+      transform: scaleX(1);
+    }
+  }
+}
+
 a {
   @at-root .no-anchor-underline &,
   &.no-anchor-underline,
@@ -27,31 +54,7 @@ a {
   text-decoration: none;
   transition: color 100ms linear;
 
-  &::before {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    z-index: -1;
-    width: 100%;
-    height: 3px;
-    box-shadow: inset 0 2px 0 currentColor;
-    content: '';
-    transition: transform 250ms ease(out-sine),
-                color     250ms linear;
-    transition-delay: 100ms;
-    transform: scaleX(0);
-  }
-
-  &:hover {
-    $hover-color: scale-color($base-link-color, $lightness: 25%);
-    color: $hover-color;
-    transition: color 250ms linear;
-
-    &::before {
-      box-shadow: inset 0 2px 0 currentColor;
-      transform: scaleX(1);
-    }
-  }
+  @include anchor-underline($hover-color: scale-color($base-link-color, $lightness: 25%));
 
   &:active {
     color: $base-link-color;
