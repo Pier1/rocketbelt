@@ -1,5 +1,5 @@
 'use strict';
-((window, document) => {
+(function (window, document) {
   window.rb = window.rb || {};
 
   window.rb.keys = {
