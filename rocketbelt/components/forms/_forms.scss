@@ -4,12 +4,12 @@ fieldset {
   flex-direction: column;
 
   &:not(:last-child) {
-    margin-bottom: ms(-10);
+    margin-bottom: margin(2);
   }
 
   label,
   legend {
-    font-size: ms(-1);
+    font-size: font-size(0);
     align-self: flex-start;
 
     &::after {
@@ -26,12 +26,69 @@ fieldset {
 }
 
 .form-group {
+  @include vset(--required-text, ' (required)');
+  @include vset(--optional-text, ' (optional)');
+
+  label::after {
+    font-size: font-size(-1);
+  }
+
+  [required] {
+    & + label::after {
+      content: vget(--required-text);
+    }
+  }
+
+  :not([required]) {
+    & + label::after {
+      content: vget(--required-text);
+    }
+  }
+
+  .read-only {
+    &[disabled] {
+      & ~ label::after {
+        content: none;
+      }
+    }
+  }
+
+  .required-suppressed {
+    &[required] {
+      & + label::after {
+        content: '';
+      }
+    }
+
+    &:not([required]) {
+      & + label::after {
+        content: '';
+      }
+    }
+  }
+
+  .helper-text {
+    color: color(gray);
+  }
+
+  .validation-message {
+    color: color(error);
+  }
+
+  .helper-text,
+  .validation-message {
+    font-size: font-size(-1);
+  }
+
   &.inline {
+    @include vset(--required-text, '(required)');
+    @include vset(--optional-text, '(optional)');
+
     flex-direction: row;
     align-items: center;
 
     &:first-child {
-      margin-top: ms(-10);
+      margin-top: margin(2);
     }
 
     .helper-text,
@@ -67,52 +124,29 @@ fieldset {
       }
     }
 
-    input,
-    select,
-    textarea {
-      &:focused {
-        overflow: auto;
-      }
-
-      &[required] {
-        & + label::after {
-          content: '(required)';
-        }
-      }
-
-      &:not([required]) {
-        & + label::after {
-          content: '(optional)';
-        }
-      }
+    :focused {
+      overflow: auto;
     }
   }
 
   &.inline-with-button {
-    font-size: 0;
+    font-size: font-size(0);
 
     input {
       height: 2rem;
       outline: 0;
       border: 1px solid color(gray, plus1);
       border-right: 0;
-      border-top-left-radius: 2px;
-      border-top-right-radius: 0;
-      border-bottom-right-radius: 0;
-      border-bottom-left-radius: 2px;
 
       &:focus {
         outline: 0;
         border: 2px solid color(primary);
         border-right: 0;
-        border-radius: 0;
 
-        & ~ button,
         & ~ .button {
           outline: 0;
           border: 2px solid color(primary);
           border-left: 0;
-          border-radius: 0;
           transition: none;
         }
       }
@@ -122,7 +156,6 @@ fieldset {
         border: 2px solid color(error);
         border-right: 0;
 
-        & ~ button,
         & ~ .button {
           border: 2px solid color(error);
           border-left: 0;
@@ -130,18 +163,11 @@ fieldset {
       }
     }
 
-    button,
     .button {
-      @include button-style(secondary);
-
       min-width: auto;
       height: 2rem;
       border: 1px solid color(gray, plus1);
       border-left: 0;
-      border-top-left-radius: 0;
-      border-top-right-radius: 2px;
-      border-bottom-right-radius: 2px;
-      border-bottom-left-radius: 0;
       background: transparent;
       box-shadow: none;
       line-height: 1;
@@ -209,6 +235,13 @@ input {
       }
     }
   }
+
+  &.rb-checkbox[type='checkbox'],
+  &[type='radio'] {
+    &[disabled] + label {
+      color: color(gray, plus2);
+    }
+  }
 }
 
 input:not([type='radio']),
@@ -219,8 +252,7 @@ textarea {
   padding: ms(-12) ms(-10);
   width: 100%;
   border: 1px solid color(gray, plus1);
-  border-radius: 2px;
-  font-size: ms(-1);
+  font-size: font-size(0);
 
   & + label {
     order: -1;
@@ -301,19 +333,11 @@ textarea {
   transition: opacity 500ms ease;
 }
 
-input {
-  &.rb-checkbox[type='checkbox'],
-  &[type='radio'] {
-    &[disabled] + label {
-      color: color(gray, plus2);
-    }
-  }
-}
-
 select {
   $fill: color(black);
 
   padding-right: 25px;
+  border-radius: 0;
   background-color: color(white);
   background-image: icon-as-data-uri(chevron-down, $fill);
   background-position: right 0.5rem center;
@@ -336,59 +360,6 @@ textarea {
   }
 }
 
-.form-group {
-  label::after {
-    font-size: font-size(-2);
-  }
-
-  [required] {
-    & + label::after {
-      content: unicode(nbsp) + '(required)';
-    }
-  }
-
-  :not([required]) {
-    & + label::after {
-      content: unicode(nbsp) + '(optional)';
-    }
-  }
-
-  .read-only {
-    &[disabled] {
-      & ~ label::after {
-        content: none;
-      }
-    }
-  }
-
-  .required-suppressed {
-    &[required] {
-      & + label::after {
-        content: '';
-      }
-    }
-
-    &:not([required]) {
-      & + label::after {
-        content: '';
-      }
-    }
-  }
-
-  .helper-text {
-    color: color(gray);
-  }
-
-  .validation-message {
-    color: color(error);
-  }
-
-  .helper-text,
-  .validation-message {
-    font-size: font-size(-2);
-  }
-}
-
 fieldset {
   margin: 0;
   padding: 0;
@@ -396,13 +367,13 @@ fieldset {
 
   &[required] {
     legend::after {
-      content: unicode(nbsp) + '(required)';
+      content: ' (required)';
     }
   }
 
   &:not([required]) {
     legend::after {
-      content: unicode(nbsp) + '(optional)';
+      content: ' (optional)';
     }
   }
 }
