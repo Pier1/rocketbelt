@@ -1,3 +1,5 @@
+$input-height: 36px;
+
 .form-group,
 fieldset {
   display: flex;
@@ -133,7 +135,7 @@ fieldset {
     font-size: font-size(0);
 
     input {
-      height: 2rem;
+      height: $input-height;
       outline: 0;
       border: 1px solid color(gray, plus1);
       border-right: 0;
@@ -165,7 +167,7 @@ fieldset {
 
     .button {
       min-width: auto;
-      height: 2rem;
+      height: 36px;
       border: 1px solid color(gray, plus1);
       border-left: 0;
       background: transparent;
@@ -223,7 +225,7 @@ html {
 
 input:not([type='checkbox']),
 select {
-  min-height: 2rem;
+  min-height: $input-height;
 }
 
 input {
@@ -249,7 +251,7 @@ input:not([type='checkbox']),
 select,
 textarea {
   display: block;
-  padding: ms(-12) ms(-10);
+  padding: 0.2rem 0.4rem;
   width: 100%;
   border: 1px solid color(gray, plus1);
   font-size: font-size(0);
