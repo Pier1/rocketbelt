@@ -16,6 +16,10 @@ a {
     @include no-anchor-underline();
   }
 
+  @at-root .link-list & {
+    @include no-anchor-underline();
+  }
+
   $base-link-color: color(ui, link);
 
   position: relative;
