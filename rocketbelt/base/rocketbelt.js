@@ -85,6 +85,9 @@
     }
   };
 
+  // focus-within polyfill.
+  function focusWithin(e,t){var n=Object(t).className,r=Object(t).attr||"focus-within",a=Object(t).force,c=[];try{if(e.querySelector(":focus-within"),!a)return i}catch(e){}function s(){for(var t;t=c.pop();)r&&t.removeAttribute(r),n&&t.classList.remove(n);var a=e.activeElement;if(!/^(#document|HTML|BODY)$/.test(Object(a).nodeName))for(;a&&1===a.nodeType;)r&&a.setAttribute(r,""),n&&a.classList.add(n),c.push(a),a=a.parentNode}function i(){e.addEventListener("focus",s,!0),e.addEventListener("blur",s,!0)}return function t(){/m/.test(e.readyState)?(e.removeEventListener("readystatechange",t),i()):e.addEventListener("readystatechange",t)}(),i}
+
   // Polyfill for "more correct" CustomEvent support to IE >= 9
   // See https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
   (() => {
@@ -155,6 +158,8 @@
 
   window.rb.throttle('resize', 'rb.optimizedResize');
   window.rb.throttle('scroll', 'rb.optimizedScroll');
+
+  // https://polyfill.io/v3/polyfill.min.js?features=String.prototype.repeat%2CNodeList.prototype.forEach%2CElement.prototype.matches%2CElement.prototype.closest%2CElement.prototype.classList%2CArray.from%2CIntersectionObserver
 
   // Polyfill String.prototype.repeat for IE11. This block can be deleted when
   // IE11 support is no longer needed in the future.
