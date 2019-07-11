@@ -1,73 +1,124 @@
-.button + .button,
-button + button,
-.button + button,
-button + .button,
-a[class *= 'button'] + a[class *= 'button'] {
-  margin-left: $gutter-width / 2;
-}
+$button-color-base-fg: color(ui, button-base-fg);
+$button-color-base-bg: transparent;
+$button-color-border: color(ui, button-base-fg);
+$button-box-shadow: z-depth(0);
 
-a[class *= 'button'] {
-  display: inline-block;
-  text-align: center;
+.button {
+  @include vset(--button-color-fg, $button-color-base-fg);
+  @include vset(--button-color-bg, $button-color-base-bg);
+  @include vset(--button-color-border, $button-color-border);
+  @include vset(--button-box-shadow, $button-box-shadow);
 
-  &::before {
-    display: none;
-    box-shadow: none;
-  }
-}
-
-.button,
-button {
-  border-radius: 0;
-  background: inherit;
+  height: 2.9rem;
+  border: 1px solid vget(--button-color-border, $button-color-border);
+  color: vget(--button-color-fg, $button-color-base-fg);
+  background: vget(--button-color-bg, $button-color-base-bg);
+  fill: vget(--button-color-fg, $button-color-base-fg);
   cursor: pointer;
+  padding: 0 2em;
+  box-shadow: vget(--button-box-shadow, $button-box-shadow);
 
-  &[disabled] {
-    box-shadow: none;
-    cursor: default;
-
-    &:active,
-    &:hover {
-      box-shadow: none;
-    }
+  &:not(:last-of-type) {
+    margin-right: 0.5em;
   }
-}
 
-.button-primary {
-  outline-color: color(primary, darkest);
-}
+  &:hover {
+    @include vset(--button-color-fg, scale-color($button-color-base-fg, $lightness: 12.5%));
+    @include vset(--button-color-bg, transparentize($color: scale-color($button-color-base-fg, $lightness: 85%), $amount: 0.85));
+    @include vset(--button-box-shadow, z-depth(2));
+  }
 
-.button,
-.button-primary {
-  @include button-size(md);
-  @include button-style(primary);
-  line-height: normal;
-}
-
-.button-secondary {
-  @include button-style(secondary);
-}
-
-.button-text,
-%button-text {
-  @include button-style(text);
-
-  &,
-  &:hover,
   &:active {
-    background: transparent;
-    box-shadow: none;
+    @include vset(--button-color-fg, $button-color-base-fg);
+    @include vset(--button-color-bg, $button-color-base-bg);
+    @include vset(--button-box-shadow, z-depth(1));
   }
 
   &[disabled] {
+    @include vset(--button-color-fg, rgba($button-color-base-fg, 0.9));
+    @include vset(--button-color-bg, desaturate(scale-color($button-color-base-fg, $lightness: 97.5%), 65%));
+    @include vset(--button-box-shadow, 0);
+
     cursor: default;
   }
 }
 
-.button-link {
-  @extend %button-text;
+a[role='button'] {
+  display: inline-flex;
+  align-items: center;
+}
 
-  font-weight: font-weight(normal);
+a[role='button'],
+.button-primary {
+  $button-primary-color-fg: color(white);
+  $button-primary-color-bg: color(primary);
+  $button-primary-color-border: color(primary);
+
+  color: $button-primary-color-fg;
+
+  @include vset(--button-color-fg, $button-primary-color-fg);
+  @include vset(--button-color-bg, $button-primary-color-bg);
+  @include vset(--button-color-border, $button-color-border);
+
+  &:hover,
+  &:active,
+  &[disabled] {
+    @include vset(--button-color-fg, $button-primary-color-fg);
+  }
+
+  &:hover {
+    @include vset(--button-color-bg, scale-color($button-primary-color-bg, $lightness: 10%));
+  }
+
+  &:active {
+    @include vset(--button-color-bg, scale-color($button-primary-color-bg, $lightness: -12.5%));
+  }
+
+  &[disabled] {
+    @include vset(--button-color-bg, desaturate($button-primary-color-bg, 65%));
+  }
+}
+
+.button-text {
+  $button-text-color-fg: color(ui, link);
+  $button-text-color-bg: transparent;
+
+  color: $button-text-color-fg;
+  display: inline-block;
+  border: 0;
+  padding: 0;
+  box-shadow: none;
+  height: auto;
+
+  &:active {
+    background: $button-text-color-bg;
+    color: $button-text-color-fg;
+    box-shadow: none;
+  }
+
+  &:hover {
+    $hover-color: scale-color($button-text-color-fg, $lightness: 25%);
+    color: $hover-color;
+    background: $button-text-color-bg;
+  }
+
+  &[disabled] {
+    background: $button-text-color-bg;
+    opacity: 0.6;
+    filter: grayscale(0.6);
+    pointer-events: none;
+  }
+}
+
+.button-sm,
+.button-small {
+  height: 2.4rem;
+  font-size: font-size(-1);
+}
+
+.button-mini {
+  height: 2rem;
+  font-size: font-size(-1);
 }
 
 .button-dynamic {
@@ -82,66 +133,8 @@ button {
   @include button-style(success);
 }
 
-%button-link-props {
-  padding: 0;
-  min-width: 0;
-  text-decoration: underline;
-  text-transform: none;
-}
-
-.button-mini {
-  @include button-size(mini);
-  min-width: 44px;
-  &.button-link {
-    @extend %button-link-props;
-  }
-}
-
-%button-sm,
-.button-sm {
-  @include button-size(sm);
-
-  &.button-link {
-    @extend %button-link-props;
-  }
-}
-
-%button-md,
-.button-md {
-  @include button-size(md);
-
-  &.button-link {
-    @extend %button-link-props;
-  }
-}
-
-%button-lg,
-.button-lg {
-  @include button-size(lg);
-
-  &.button-link {
-    @extend %button-link-props;
-  }
-}
-
-.button-block {
-  display: block;
-  width: 100%;
-
-  &.button-secondary:active {
-    background: rgba(color(gray, plus4), 0.6);
-    transition: background 100ms ease();
-  }
-
-  &,
-  &:active,
-  &:hover {
-    box-shadow: none;
-  }
-}
-
 .touchevents {
-  /* Enlarges the click area without enlarging the UI element */
+  // Enlarges the click area without enlarging the UI element
   .button-sm,
   .button-mini {
     position: relative;
@@ -161,6 +154,3 @@ button {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-@import 'buttons-alternate';
-@import 'buttons-dropdown';
