@@ -11,12 +11,12 @@
 @mixin anchor-underline($underline-color: color(ui, link), $hover-color: currentColor) {
   &::before {
     position: absolute;
-    bottom: 0;
+    bottom: 1px;
     left: 0;
     z-index: -1;
     width: 100%;
     height: 3px;
-    box-shadow: inset 0 2px 0 currentColor;
+    box-shadow: 0 2px 0 currentColor;
     content: '';
     transition: transform 250ms ease(out-sine),
                 color     250ms linear;
@@ -29,7 +29,7 @@
     transition: color 250ms linear;
 
     &::before {
-      box-shadow: inset 0 2px 0 currentColor;
+      box-shadow: 0 2px 0 currentColor;
       transform: scaleX(1);
     }
   }
@@ -50,6 +50,7 @@ a {
   $base-link-color: color(ui, link);
 
   position: relative;
+  display: inline-block;
   color: $base-link-color;
   text-decoration: none;
   transition: color 100ms linear;
