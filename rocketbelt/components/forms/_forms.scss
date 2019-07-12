@@ -2,8 +2,40 @@ $input-height: 36px;
 
 .form-group,
 fieldset {
+  position: relative;
   display: flex;
   flex-direction: column;
+
+  .affixment {
+    position: absolute;
+    right: 0;
+    height: 36px;
+    opacity: 0;
+    transition: opacity 1000ms linear;
+
+    &.affixed {
+      opacity: 1;
+    }
+
+    &::before {
+      position: relative;
+      top: 2px;
+      left: -36px;
+      display: block;
+      width: 36px;
+      height: calc(100% - 4px);
+      background-image:
+        linear-gradient(270deg,
+        #fff, rgba(#fff, 0.89) 23%,
+          rgba(#fff, 0.65) 41%,
+          rgba(#fff, 0.36) 57%,
+          rgba(#fff, 0.12) 76%,
+          rgba(#fff, 0)
+        )
+      ;
+      content: '';
+    }
+  }
 
   &:not(:last-child) {
     margin-bottom: margin(2);
@@ -131,56 +163,44 @@ fieldset {
     }
   }
 
-  &.inline-with-button {
-    font-size: font-size(0);
-
+  &.inline-with-icon {
     input {
-      height: $input-height;
-      outline: 0;
-      border: 1px solid color(gray, plus1);
-      border-right: 0;
+      outline: none;
+      border: none;
 
-      &:focus {
-        outline: 0;
-        border: 2px solid color(primary);
-        border-right: 0;
-
-        & ~ .button {
-          outline: 0;
-          border: 2px solid color(primary);
-          border-left: 0;
-          transition: none;
-        }
+      & ~ * {
+        max-height: $input-height;
+        border: none;
       }
 
-      &[invalid] {
-        outline: 0;
-        border: 2px solid color(error);
-        border-right: 0;
-
-        & ~ .button {
-          border: 2px solid color(error);
-          border-left: 0;
+      & ~ .button {
+        &:hover {
+          background: transparent;
+          box-shadow: none;
         }
       }
     }
 
-    .button {
-      min-width: auto;
-      height: 36px;
+    .inline-wrapper {
+      display: flex;
+      flex: 1;
       border: 1px solid color(gray, plus1);
-      border-left: 0;
-      background: transparent;
-      box-shadow: none;
-      line-height: 1;
+    }
 
-      &:hover,
-      &:active {
-        box-shadow: none;
+    .inline-wrapper:focus-within {
+      outline: 2px solid color(primary);
+      border-color: transparent;
+
+      &.invalid {
+        outline-color: color(error);
+      }
+
+      input {
+        outline: none;
       }
     }
 
-    &.inline-with-button-stacked {
+    &.inline-with-icon-stacked {
       flex-wrap: wrap;
 
       input {
@@ -201,7 +221,6 @@ fieldset {
         }
       }
 
-      button,
       .button {
         flex: 0 1 auto;
       }
@@ -253,6 +272,7 @@ textarea {
   display: block;
   padding: 0.2rem 0.4rem;
   width: 100%;
+  height: $input-height;
   border: 1px solid color(gray, plus1);
   font-size: font-size(0);
 
