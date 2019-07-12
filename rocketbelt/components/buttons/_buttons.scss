@@ -30,11 +30,11 @@ $button-box-shadow: z-depth(0);
   }
 
   &[disabled] {
-    background: desaturate(scale-color($button-color-base-fg, $lightness: 97.5%), 65%);
-    box-shadow: 0;
-    color: rgba($button-color-base-fg, 0.9);
-
+    box-shadow: none;
+    opacity: 0.6;
+    filter: grayscale(0.6);
     cursor: default;
+    pointer-events: none;
   }
 }
 
@@ -46,14 +46,14 @@ a[role='button'] {
 a[role='button'],
 .button-primary {
   $button-primary-color-fg: color(white);
+  $button-primary-color-bg: color(primary);
 
-  border-color: color(primary);
-  background: color(primary);
+  border-color: $button-primary-color-bg;
+  background: $button-primary-color-bg;
   color: $button-primary-color-fg;
 
   &:hover,
-  &:active,
-  &[disabled] {
+  &:active {
     color: $button-primary-color-fg;
   }
 
@@ -63,10 +63,6 @@ a[role='button'],
 
   &:active {
     background: scale-color($button-primary-color-bg, $lightness: -12.5%);
-  }
-
-  &[disabled] {
-    background: desaturate($button-primary-color-bg, 65%);
   }
 }
 
@@ -81,23 +77,19 @@ a[role='button'],
   box-shadow: none;
   color: $button-text-color-fg;
 
-  &:active {
+  &:active,
+  &:hover {
     background: $button-text-color-bg;
     box-shadow: none;
+  }
+
+  &:active {
     color: $button-text-color-fg;
   }
 
   &:hover {
     $hover-color: scale-color($button-text-color-fg, $lightness: 25%);
-    background: $button-text-color-bg;
     color: $hover-color;
-  }
-
-  &[disabled] {
-    background: $button-text-color-bg;
-    opacity: 0.6;
-    filter: grayscale(0.6);
-    pointer-events: none;
   }
 }
 
