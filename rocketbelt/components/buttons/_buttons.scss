@@ -4,40 +4,35 @@ $button-color-border: color(ui, button-base-fg);
 $button-box-shadow: z-depth(0);
 
 .button {
-  @include vset(--button-color-fg, $button-color-base-fg);
-  @include vset(--button-color-bg, $button-color-base-bg);
-  @include vset(--button-color-border, $button-color-border);
-  @include vset(--button-box-shadow, $button-box-shadow);
-
-  height: 2.9rem;
-  border: 1px solid vget(--button-color-border, $button-color-border);
-  color: vget(--button-color-fg, $button-color-base-fg);
-  background: vget(--button-color-bg, $button-color-base-bg);
-  fill: vget(--button-color-fg, $button-color-base-fg);
-  cursor: pointer;
   padding: 0 2em;
-  box-shadow: vget(--button-box-shadow, $button-box-shadow);
+  height: 2.9rem;
+  border: 1px solid $button-color-border;
+  background: $button-color-base-bg;
+  box-shadow: $button-box-shadow;
+  color: $button-color-base-fg;
+  cursor: pointer;
+  fill: $button-color-base-fg;
 
   &:not(:last-of-type) {
     margin-right: 0.5em;
   }
 
   &:hover {
-    @include vset(--button-color-fg, scale-color($button-color-base-fg, $lightness: 12.5%));
-    @include vset(--button-color-bg, transparentize($color: scale-color($button-color-base-fg, $lightness: 85%), $amount: 0.85));
-    @include vset(--button-box-shadow, z-depth(2));
+    background: transparentize($color: scale-color($button-color-base-fg, $lightness: 85%), $amount: 0.85);
+    box-shadow: z-depth(2);
+    color: scale-color($button-color-base-fg, $lightness: 12.5%);
   }
 
   &:active {
-    @include vset(--button-color-fg, $button-color-base-fg);
-    @include vset(--button-color-bg, $button-color-base-bg);
-    @include vset(--button-box-shadow, z-depth(1));
+    background: $button-color-base-bg;
+    box-shadow: z-depth(1);
+    color: $button-color-base-fg;
   }
 
   &[disabled] {
-    @include vset(--button-color-fg, rgba($button-color-base-fg, 0.9));
-    @include vset(--button-color-bg, desaturate(scale-color($button-color-base-fg, $lightness: 97.5%), 65%));
-    @include vset(--button-box-shadow, 0);
+    background: desaturate(scale-color($button-color-base-fg, $lightness: 97.5%), 65%);
+    box-shadow: 0;
+    color: rgba($button-color-base-fg, 0.9);
 
     cursor: default;
   }
@@ -51,31 +46,27 @@ a[role='button'] {
 a[role='button'],
 .button-primary {
   $button-primary-color-fg: color(white);
-  $button-primary-color-bg: color(primary);
-  $button-primary-color-border: color(primary);
 
+  border-color: color(primary);
+  background: color(primary);
   color: $button-primary-color-fg;
-
-  @include vset(--button-color-fg, $button-primary-color-fg);
-  @include vset(--button-color-bg, $button-primary-color-bg);
-  @include vset(--button-color-border, $button-color-border);
 
   &:hover,
   &:active,
   &[disabled] {
-    @include vset(--button-color-fg, $button-primary-color-fg);
+    color: $button-primary-color-fg;
   }
 
   &:hover {
-    @include vset(--button-color-bg, scale-color($button-primary-color-bg, $lightness: 10%));
+    background: scale-color($button-primary-color-bg, $lightness: 10%);
   }
 
   &:active {
-    @include vset(--button-color-bg, scale-color($button-primary-color-bg, $lightness: -12.5%));
+    background: scale-color($button-primary-color-bg, $lightness: -12.5%);
   }
 
   &[disabled] {
-    @include vset(--button-color-bg, desaturate($button-primary-color-bg, 65%));
+    background: desaturate($button-primary-color-bg, 65%);
   }
 }
 
@@ -83,23 +74,23 @@ a[role='button'],
   $button-text-color-fg: color(ui, link);
   $button-text-color-bg: transparent;
 
-  color: $button-text-color-fg;
   display: inline-block;
-  border: 0;
   padding: 0;
-  box-shadow: none;
   height: auto;
+  border: 0;
+  box-shadow: none;
+  color: $button-text-color-fg;
 
   &:active {
     background: $button-text-color-bg;
-    color: $button-text-color-fg;
     box-shadow: none;
+    color: $button-text-color-fg;
   }
 
   &:hover {
     $hover-color: scale-color($button-text-color-fg, $lightness: 25%);
-    color: $hover-color;
     background: $button-text-color-bg;
+    color: $hover-color;
   }
 
   &[disabled] {
