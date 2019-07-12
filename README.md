@@ -2,7 +2,7 @@
 
 Rocketbelt is a UX-focused, responsive, and mobile-first pattern library collaboratively assembled at Pier 1 Imports.
 
-[![npm](https://img.shields.io/npm/v/rocketbelt.svg?style=flat-square)](https://www.npmjs.com/package/rocketbelt) [![Travis](https://img.shields.io/travis/Pier1/rocketbelt.svg?style=flat-square)](https://travis-ci.org/Pier1/rocketbelt)
+[![npm](https://img.shields.io/npm/v/rocketbelt.svg?style=flat-square)](https://www.npmjs.com/package/rocketbelt)
 
 [rocketbelt.io](http://rocketbelt.io) | [Rocketbelt on GitHub](https://github.com/pier1/rocketbelt)
 

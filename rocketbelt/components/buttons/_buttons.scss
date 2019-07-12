@@ -1,73 +1,107 @@
-.button + .button,
-button + button,
-.button + button,
-button + .button,
-a[class *= 'button'] + a[class *= 'button'] {
-  margin-left: $gutter-width / 2;
-}
+$button-color-base-fg: color(ui, button-base-fg);
+$button-color-base-bg: transparent;
+$button-color-border: color(ui, button-base-fg);
+$button-box-shadow: z-depth(0);
 
-a[class *= 'button'] {
-  display: inline-block;
-  text-align: center;
-
-  &::before {
-    display: none;
-    box-shadow: none;
-  }
-}
-
-.button,
-button {
-  border-radius: 0;
-  background: inherit;
+.button {
+  padding: 0 2em;
+  height: 2.9rem;
+  border: 1px solid $button-color-border;
+  background: $button-color-base-bg;
+  box-shadow: $button-box-shadow;
+  color: $button-color-base-fg;
   cursor: pointer;
+  fill: $button-color-base-fg;
+
+  &:not(:last-of-type) {
+    margin-right: 0.5em;
+  }
+
+  &:hover {
+    background: transparentize($color: scale-color($button-color-base-fg, $lightness: 85%), $amount: 0.85);
+    box-shadow: z-depth(2);
+    color: scale-color($button-color-base-fg, $lightness: 12.5%);
+  }
+
+  &:active {
+    background: $button-color-base-bg;
+    box-shadow: z-depth(1);
+    color: $button-color-base-fg;
+  }
 
   &[disabled] {
     box-shadow: none;
+    opacity: 0.6;
+    filter: grayscale(0.6);
     cursor: default;
-
-    &:active,
-    &:hover {
-      box-shadow: none;
-    }
+    pointer-events: none;
   }
 }
 
+a[role='button'] {
+  display: inline-flex;
+  align-items: center;
+}
+
+a[role='button'],
 .button-primary {
-  outline-color: color(primary, darkest);
-}
+  $button-primary-color-fg: color(white);
+  $button-primary-color-bg: color(primary);
 
-.button,
-.button-primary {
-  @include button-size(md);
-  @include button-style(primary);
-  line-height: normal;
-}
+  border-color: $button-primary-color-bg;
+  background: $button-primary-color-bg;
+  color: $button-primary-color-fg;
 
-.button-secondary {
-  @include button-style(secondary);
-}
-
-.button-text,
-%button-text {
-  @include button-style(text);
-
-  &,
   &:hover,
   &:active {
-    background: transparent;
-    box-shadow: none;
+    color: $button-primary-color-fg;
   }
 
-  &[disabled] {
-    cursor: default;
+  &:hover {
+    background: scale-color($button-primary-color-bg, $lightness: 10%);
+  }
+
+  &:active {
+    background: scale-color($button-primary-color-bg, $lightness: -12.5%);
   }
 }
 
-.button-link {
-  @extend %button-text;
+.button-text {
+  $button-text-color-fg: color(ui, link);
+  $button-text-color-bg: transparent;
 
-  font-weight: font-weight(normal);
+  display: inline-block;
+  padding: 0;
+  height: auto;
+  border: 0;
+  box-shadow: none;
+  color: $button-text-color-fg;
+
+  &:active,
+  &:hover {
+    background: $button-text-color-bg;
+    box-shadow: none;
+  }
+
+  &:active {
+    color: $button-text-color-fg;
+  }
+
+  &:hover {
+    $hover-color: scale-color($button-text-color-fg, $lightness: 25%);
+    color: $hover-color;
+  }
+}
+
+.button-sm,
+.button-small {
+  height: 2.4rem;
+  font-size: font-size(-1);
+}
+
+.button-mini {
+  height: 2rem;
+  font-size: font-size(-1);
 }
 
 .button-dynamic {
@@ -82,66 +116,8 @@ button {
   @include button-style(success);
 }
 
-%button-link-props {
-  padding: 0;
-  min-width: 0;
-  text-decoration: underline;
-  text-transform: none;
-}
-
-.button-mini {
-  @include button-size(mini);
-  min-width: 44px;
-  &.button-link {
-    @extend %button-link-props;
-  }
-}
-
-%button-sm,
-.button-sm {
-  @include button-size(sm);
-
-  &.button-link {
-    @extend %button-link-props;
-  }
-}
-
-%button-md,
-.button-md {
-  @include button-size(md);
-
-  &.button-link {
-    @extend %button-link-props;
-  }
-}
-
-%button-lg,
-.button-lg {
-  @include button-size(lg);
-
-  &.button-link {
-    @extend %button-link-props;
-  }
-}
-
-.button-block {
-  display: block;
-  width: 100%;
-
-  &.button-secondary:active {
-    background: rgba(color(gray, plus4), 0.6);
-    transition: background 100ms ease();
-  }
-
-  &,
-  &:active,
-  &:hover {
-    box-shadow: none;
-  }
-}
-
 .touchevents {
-  /* Enlarges the click area without enlarging the UI element */
+  // Enlarges the click area without enlarging the UI element
   .button-sm,
   .button-mini {
     position: relative;
@@ -161,6 +137,3 @@ button {
   0%   { transform: rotate(0deg); }
   100% { transform: rotate(360deg); }
 }
-
-@import 'buttons-alternate';
-@import 'buttons-dropdown';

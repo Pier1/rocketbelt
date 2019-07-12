@@ -1,0 +1,15 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Scrollbox'
+
+block content
+  article
+    h1 Scrollbox
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _scrollbox.pug
+  script(src='./rocketbelt.scrollbox.js')

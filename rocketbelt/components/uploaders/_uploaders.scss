@@ -1,7 +1,4 @@
 .uploader:not(.uploader-expanded) {
-  @extend %button-alternate;
-  @include button-size(lg);
-
   display: inline-block;
   min-width: 8rem;
   max-width: 12rem;

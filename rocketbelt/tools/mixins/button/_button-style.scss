@@ -13,105 +13,7 @@
   $button-hover-secondary: scale-color($button-base, $lightness: 12.5%);
   $button-active-secondary: color(primary);
 
-  @if $style == primary {
-    background: $button-base;
-
-    $color: mix(color(white), $button-base, 95%);
-    color: $color;
-    fill: $color;
-    &:hover {
-      background-color: $button-hover;
-      color: $color;
-    }
-
-    &:active {
-      background-color: $button-active;
-      color: $color;
-    }
-
-    &:visited {
-      color: $color;
-    }
-
-    &[disabled] {
-      color: rgba($color, 0.9);
-      fill: rgba($color, 0.9);
-
-      &:hover {
-        background-color: $button-base;
-      }
-    }
-  }
-  @else if $style == secondary {
-    background: transparent;
-    background-image: none;
-
-    color: $button-base-secondary;
-    fill: $button-base-secondary;
-    border: 1px solid $button-base-secondary;
-
-    &:hover,
-    &:active {
-      background: transparentize($color: scale-color($button-base, $lightness: 85%), $amount: 0.85);
-      border-color: $button-hover-secondary;
-      color: $button-hover-secondary;
-      fill: $button-hover-secondary;
-    }
-
-    &:active {
-      background: transparentize($color: scale-color($button-base, $lightness: 97.5%), $amount: 0.85);
-    }
-
-    &:visited {
-      color: $button-base-secondary;
-    }
-
-    &[disabled] {
-      $disabled-color: rgba($button-base-secondary, 0.9);
-      border: 1px solid $disabled-color;
-      background: desaturate(scale-color($button-base, $lightness: 97.5%), 65%);
-      color: $disabled-color;
-      fill: $disabled-color;
-
-      &:hover {
-      color: $disabled-color;
-      fill: $disabled-color;
-      }
-    }
-  }
-  @else if $style == text {
-    padding: 0;
-    background: transparent;
-    color: $button-base-secondary;
-    text-transform: uppercase;
-    letter-spacing: 0.6px;
-    fill: $button-base-secondary;
-
-    &:visited {
-      color: $button-base-secondary;
-    }
-
-    &:hover {
-      color: $button-hover-secondary;
-      fill: $button-hover-secondary;
-    }
-
-    &:active {
-      color: $button-active-secondary;
-      fill: $button-active-secondary;
-    }
-
-    &[disabled] {
-      color: rgba($button-base-secondary, 0.9);
-      fill: rgba($button-base-secondary, 0.9);
-
-      &:hover {
-      color: rgba($button-base-secondary, 0.9);
-      fill: rgba($button-base-secondary, 0.9);
-      }
-    }
-  }
-  @else if $style == dynamic {
+  @if $style == dynamic {
     position: relative;
     filter: none;
     transition: background 150ms linear, background-image 150ms linear;
@@ -162,6 +64,7 @@
   }
   @else if $style == success {
     background: color(success);
+    border-color: color(success);
     background-image: none;
     transition: background 150ms linear, background-image 150ms linear;
 

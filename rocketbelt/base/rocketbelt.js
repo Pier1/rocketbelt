@@ -1,5 +1,5 @@
 'use strict';
-((window, document) => {
+(function (window, document) {
   window.rb = window.rb || {};
 
   window.rb.keys = {
@@ -23,6 +23,24 @@
     SPACE: 32,
     TAB: 9
   };
+
+  window.rb.handleFirstTab = (e) => {
+    if (e.keyCode === 9) {
+      document.body.classList.add('show-focus');
+
+      window.removeEventListener('keydown', window.rb.handleFirstTab);
+      window.addEventListener('mousedown', window.rb.handleMouseDownOnce);
+    }
+  }
+
+  window.rb.handleMouseDownOnce = () => {
+    document.body.classList.remove('show-focus');
+
+    window.removeEventListener('mousedown', window.rb.handleMouseDownOnce);
+    window.addEventListener('keydown', window.rb.handleFirstTab);
+  }
+
+  window.addEventListener('keydown', window.rb.handleFirstTab);
 
   window.rb.focusables =
    'a[href], area[href], input:not([disabled]), select:not([disabled]),' +

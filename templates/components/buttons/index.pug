@@ -23,7 +23,7 @@ block content
         .col.xs
           +exampleCodeOnly
             include _buttons-secondary.pug
-    h2 Alternate Actions
+    h2 ⚠️ Alternate Actions ️️️⚠️
     .grid-fluid
       .row
         .col.xs
@@ -35,26 +35,6 @@ block content
         .col.xs
           +exampleWithCode
             include _buttons-text.pug
-
-    h2.text-with-icon Dropdown
-      svg.icon.icon-left(aria-hidden=true)
-        use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-warning')
-    .grid-fluid(style="opacity:0.4;")
-      .row
-        .col.xs
-          +exampleWithCode
-            include _buttons-dropdown.pug
-
-    h3 Javascript Include
-    +exampleWithCode('JS Include', true)
-      script(src='./rocketbelt.buttons-dropdown.min.js')
-
-    h2 Link
-    .grid-fluid
-      .row
-        .col.xs
-          +exampleWithCode
-            include _buttons-link.pug
 
     h2 Anchor
     .grid-fluid

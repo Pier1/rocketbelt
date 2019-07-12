@@ -3,6 +3,7 @@
 @mixin heading-style($options: ()) {
   $valid-styles: (
     'whisper',
+    'mention',
     'blurt',
     'shout'
   );
@@ -23,22 +24,21 @@
   $style: map-get($options, 'style');
 
   @if (index($valid-styles, $style) == null) {
-    @error '`#{$style}` is not a valid heading style. Valid styles are `whisper`, `blurt`, and `shout`.';
+    @error '`#{$style}` is not a valid heading style. Valid styles are `whisper`, `mention`, `blurt`, and `shout`.';
   }
 
   $font-size: map-get($options, 'font-size');
-  $letter-spacing: 0;
-
-  @if ($font-size >= font-size(3)) {
-    $letter-spacing: letter-spacing(2);
-  } else {
-    $letter-spacing: letter-spacing(1);
-  }
-
   font-size: $font-size;
-  letter-spacing: $letter-spacing;
 
   @if ($style == 'whisper') {
+    letter-spacing: 0;
+  } @else if ($font-size >= font-size(3)) {
+    letter-spacing: letter-spacing(plus3);
+  } @else {
+    letter-spacing: letter-spacing(plus2);
+  }
+
+  @if ($style == 'whisper' or $style == 'mention') {
     text-transform: capitalize;
   } @else if ($style == 'blurt') {
     text-transform: uppercase;

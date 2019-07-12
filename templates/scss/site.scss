@@ -1,5 +1,8 @@
 $system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important;
 
+$ms-base: (13 / 15) * 1rem 1rem;
+$ms-ratio: 1.333333333;
+
 @import 'vendor/vendor',
         '../../rocketbelt/tools/tools',
         'a11y',
@@ -11,6 +14,7 @@ $system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxyge
         'icons',
         'images',
         'layout',
+        'scrollbox',
         'tabcordions',
         'typography',
         'creative',
@@ -104,10 +108,6 @@ code,
   }
 
   .copy-code {
-    @include button-size(sm);
-    @include button-style(secondary);
-    @include button-shadow();
-
     position: absolute;
     top: 1em;
     right: 0.5em;
