@@ -1,42 +1,27 @@
-.busy {
-  position: absolute;
-  top: calc(50% - 2.5em);
-  left: calc(50% - 2.5em);
-  clip: rect(0, 5em, 5em, 2.5em);
-  width: 5em;
-  height: 5em;
-  font-size: 0.25rem;
-  animation: animate 1.5s linear infinite;
+.is-busy_overlay {
+  .spin {
+    display: inline-block;
+    font-size: 1em;
+    animation: rbAnim_spin 3s linear infinite;
 
-  &::after {
-    position: absolute;
-    clip: rect(0, 5em, 5em, 2.5em);
-    width: 5em;
-    height: 5em;
-    border-radius: 50%;
-    box-shadow: 0 0 0 0.5em color(primary) inset;
-    content: '';
-    animation: animate2 1.5s cubic-bezier(0.645, 0.045, 0.355, 1) infinite;
-  }
-}
+    &::after {
+      display: block;
+      width: 1em;
+      height: 1em;
+      border-width: 0.1em;
+      border-style: solid;
+      border-color: rgba(color(gray, plus1), 0.5);
+      border-top-color: color(primary);
+      border-radius: 50%;
+      content: '';
+      animation: rbAnim_spin 2s cubic-bezier(0.455, 0.03, 0.515, 0.955) infinite;
+      pointer-events: none;
+    }
 
-
-@keyframes animate {
-  0% {
-    transform: rotate(0deg);
-  }
-
-  100% {
-    transform: rotate(190deg);
-  }
-}
-
-@keyframes animate2 {
-  0% {
-    transform: rotate(-170deg);
-  }
-
-  100% {
-    transform: rotate(170deg);
+    @keyframes rbAnim_spin {
+      100% {
+          transform: rotate(720deg);
+      }
+    }
   }
 }
