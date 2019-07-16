@@ -1,11 +1,20 @@
 @include color-families();
 
 $color-families: map-merge($color-families, (
-  'ui': (
+  'ui': ( // DON'T USE THIS PATTERN ANYMORE…
+          // USE ui[AreaName]
     'footer': color(brand, columbiaBlue),
     'footerAlt': color(brand, catskillBlue),
     'link': color(brand, logoBlue),
     'focus': color(brand, prussianBlue),
     'button-base-fg': color(brand, prussianBlue)
+  ),
+  'uiFooter': (
+    'fg': color(black),
+    'bg': color(brand, columbiaBlue),
+    'bg2': color(brand, catskillBlue)
+  ),
+  'uiLink': (
+    'fgBase': color(brand, logoBlue)
   )
 ));
