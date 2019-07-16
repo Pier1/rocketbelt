@@ -1,0 +1,51 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Sliders'
+
+block content
+  article
+    h1 Sliders
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _slider.pug
+  +exampleWithCode('JS', true, true)
+    script(src='./rocketbelt.siema.js')
+    script.
+      // See https://pawelgrzybek.github.io/siema/ for configuration & API…
+
+      function onInitCallback() {
+        // Not required, but suggested as a first draft of keeping
+        // track of the current slide within the DOM.
+        $('.rbSlider > div').children().addClass('slide');
+        $('.rbSlider > div').children().first().addClass('current');
+      };
+
+      function onChangeCallback() {
+        // Not required, but suggested as a first draft of keeping
+        // track of the current slide within the DOM.
+        const $slides = $('.rbSlider .slide');
+        const $currentSlide = $($slides[this.currentSlide]);
+        $slides.removeClass('current');
+        $currentSlide.addClass('current');
+      }
+
+      // Modify the callbacks however is needed, but please ensure
+      // the `selector`, `duration` and `easing` options are the same
+      // as below
+      const rbSlider = new Siema({
+        selector: '.rbSlider',
+        duration: 400,
+        easing: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
+        onInit: onInitCallback,
+        onChange: onChangeCallback,
+      });
+
+      const prev = document.querySelector('.prev');
+      const next = document.querySelector('.next');
+
+      prev.addEventListener('click', () => rbSlider.prev());
+      next.addEventListener('click', () => rbSlider.next());

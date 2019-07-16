@@ -71,7 +71,8 @@
     "vinyl-fs": "^2.4.4"
   },
   "dependencies": {
-    "clipboard": "^1.5.15"
+    "clipboard": "^1.5.15",
+    "siema": "^1.5.1"
   },
   "config": {
     "commitizen": {
