@@ -1,3 +1,19 @@
+## [2.0.4-beta](https://github.com/Pier1/rocketbelt/compare/2.0.3-beta...2.0.4-beta) (2019-07-16)
+
+
+### Features
+
+* **Dialogs:** Add footer support to dialogs. Add max+headerless pattern. ([c46872e](https://github.com/Pier1/rocketbelt/commit/c46872e))
+* **Sliders:** Add Siema dependency for low-impact sliders. ([639cb69](https://github.com/Pier1/rocketbelt/commit/639cb69))
+* **Sliders:** Implement basic slider via Siema dependency. ([a491eaf](https://github.com/Pier1/rocketbelt/commit/a491eaf))
+
+
+### Reverts
+
+* **Buttons:** Temporarily readd dropdown button styles. ([03eb9e8](https://github.com/Pier1/rocketbelt/commit/03eb9e8))
+
+
+
 ## [2.0.3-beta](https://github.com/Pier1/rocketbelt/compare/2.0.2-beta...2.0.3-beta) (2019-07-16)
 
 
