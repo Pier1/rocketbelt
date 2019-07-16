@@ -13,7 +13,7 @@
   }
 
   function setIndicators(el, oldValue) {
-    if ((!oldValue || !oldValue.match(/\bis-busy\b/)) &&
+    if ((!oldValue || !oldValue.match(/[\s\b]is-busy[\s\b]/)) &&
         el &&
         el.classList &&
         el.classList.contains('is-busy')) {
@@ -49,8 +49,10 @@
               }
             }, delay * 1000);
           }
+        } else if (el.classList.contains('is-busy-spinner')) {
+          markup = '<div class="spin" aria-hidden="true"></div>';
         } else {
-          markup = '<div class="dot" aria-hidden="true"></div>'.repeat(5);
+          markup = '<div class="dot" aria-hidden="true"></div>'.repeat(3);
         }
 
         const a11yAttrs =

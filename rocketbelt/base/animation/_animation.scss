@@ -5,52 +5,73 @@
 @import 'properties',
         './~legacy/legacy';
 
-.animatable {
-  $duration: animation-duration(md);
+@mixin animation-duration($duration, $nesting: 0) {
+  $duration: animation-duration($duration);
   transition-duration: $duration;
-  // transition-property: transform;
   animation-duration: $duration;
+
+  @if ($nesting > 0) {
+    & [class*='rbAnim'] {
+      transition-delay: $duration;
+      transition-duration: $duration;
+      animation-duration: $duration;
+      animation-delay: $duration;
+    }
+  }
+}
+
+.rbAnim_animatable,
+.animatable {
+  @include animation-duration(md);
   animation-fill-mode: both;
 
-  &.animatable-infinite {
-    animation-iteration-count: infinite;
+  & [class*='rbAnim'] {
+    animation-fill-mode: both;
   }
 
-  &.animatable-reset {
-    animation-fill-mode: backwards;
+  &.rbAnim_slide-and-fade {
+    display: block;
+    visibility: visible;
+    opacity: 1;
+
+    animation: rbAnim_slide-down 800ms cubic-bezier(0.39, 0.575, 0.565, 1);
+
+    .rbAnim_fadable {
+      opacity: 0;
+      animation: rbAnim_fade-in 250ms linear;
+      animation-delay: 200ms;
+      animation-fill-mode: both;
+    }
+  }
+}
+
+@keyframes rbAnim_slide-down {
+  0% {
+    display: none;
+    visibility: hidden;
   }
 
-  &.animating {
-    animation-play-state: running;
+  1% {
+    display: block;
+    visibility: visible;
+    max-height: 0;
   }
 
-  &.animation_duration_xs {
-    $duration: animation-duration(xs);
-    transition-duration: $duration;
-    animation-duration: $duration;
+  100% {
+    max-height: 500px;
+  }
+}
+
+@keyframes rbAnim_fade-in {
+  from {
+    display: none;
+    visibility: hidden;
+    opacity: 0;
   }
 
-  &.animation_duration_sm {
-    $duration: animation-duration(sm);
-    transition-duration: $duration;
-    animation-duration: $duration;
-  }
-
-  &.animation_duration_lg {
-    $duration: animation-duration(lg);
-    transition-duration: $duration;
-    animation-duration: $duration;
-  }
-
-  &.animation_duration_xl {
-    $duration: animation-duration(xl);
-    transition-duration: $duration;
-    animation-duration: $duration;
-  }
-
-  &.animation_easing_motion {
-    $easing: ease(in-out-quad);
-    transition-timing-function: $easing;
-    animation-timing-function: $easing;
+  to {
+    display: block;
+    visibility: visible;
+    opacity: 1;
   }
 }
