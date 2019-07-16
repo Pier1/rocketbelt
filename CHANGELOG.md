@@ -1,3 +1,20 @@
+## [2.0.3-beta](https://github.com/Pier1/rocketbelt/compare/2.0.2-beta...2.0.3-beta) (2019-07-16)
+
+
+### Bug Fixes
+
+* **Typography:** Temporarily undo letter-spacing and text-transform properties for headings. ([ac64891](https://github.com/Pier1/rocketbelt/commit/ac64891))
+
+
+### Features
+
+* **Animation:** Add slide-and-fade animation. ([4cbd48c](https://github.com/Pier1/rocketbelt/commit/4cbd48c))
+* **Busy Indicators:** Build new busy indicator for brand refresh. ([c84f627](https://github.com/Pier1/rocketbelt/commit/c84f627))
+* **Forms:** Add `input-affixed` pattern. REMOVE `INLINE-WITH-BUTTON` PATTERN. ([3448552](https://github.com/Pier1/rocketbelt/commit/3448552))
+* **Global:** Add cross-browser :focus-within support. ([a0aafe5](https://github.com/Pier1/rocketbelt/commit/a0aafe5))
+
+
+
 ## [2.0.2-beta](https://github.com/Pier1/rocketbelt/compare/1.21.0...2.0.2-beta) (2019-07-12)
 
 ### Features
