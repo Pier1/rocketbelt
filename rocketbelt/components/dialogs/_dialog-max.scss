@@ -26,10 +26,21 @@
       background-color: color(black);
       .dialog_title {
         padding-left: ms(-5);
-        color: color(white); 
+        color: color(white);
       }
       .dialog_close {
         color: color(white);
+      }
+    }
+
+    &.dialog_headerless {
+      .dialog_footer {
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        min-height: 40px;
+        background: color(gray, plus4);
       }
     }
 

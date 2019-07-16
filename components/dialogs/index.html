@@ -54,27 +54,29 @@
                   <button class="category-label">Components</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/scrollbox">Scrollbox</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/sliders">Sliders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/scrollbox">Scrollbox</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/uploaders">Uploaders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/vendor">Vendor</a></li>
                     </ul>
                   </div>
                 </li>
@@ -567,7 +569,10 @@
                     <div class="row">
                       <div class="col xs-8">
                         <div>
-                          <button class="button button-secondary button-md" onclick="$(&apos;#max-dialog&apos;).rbDialog({title: &apos;Max Dialog&apos;, classes: { &apos;rbDialog&apos;: &apos;dialog-max&apos; }, buttons: [{text: &apos;Close&apos;, click: function (e) { $(this).rbDialog(&apos;close&apos;); }}]})">Trigger Dialog</button>
+                          <button class="button button-secondary button-md" onclick="$(&apos;#max-dialog&apos;).rbDialog({title: &apos;Max Dialog&apos;, classes: { &apos;rbDialog&apos;: &apos;dialog-max&apos; }, buttons: [{text: &apos;Close&apos;, click: function (e) { $(this).rbDialog(&apos;close&apos;); }}]})">Max Dialog</button>
+                        </div>
+                        <div>
+                          <button class="button button-secondary button-md" onclick="$(&apos;#max-dialog&apos;).rbDialog({title: &apos;Max Dialog&apos;, headerless: true, classes: { &apos;rbDialog&apos;: &apos;dialog-max&apos; }, buttons: [{text: &apos;Close&apos;, click: function (e) { $(this).rbDialog(&apos;close&apos;); }}]})">Max + Headerless</button>
                         </div><small class="fg_error">
                           <br>
                           <strong>Max dialogs don&apos;t support buttons.</strong>
@@ -702,13 +707,13 @@
                       <script src="./rocketbelt.dialogs.min.js"></script>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-Z1vh0hr" checked="checked">
-                      <label class="expander_label" for="rb-Z1vh0hr" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1k297i" checked="checked">
+                      <label class="expander_label" for="rb-Z1k297i" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="button copy-code" data-clipboard-target="#rb-Z71pd2">Copy</button>
-                          <pre><code class="language-html" id="rb-Z71pd2">
+                          <button class="button copy-code" data-clipboard-target="#rb-Z14ywiR">Copy</button>
+                          <pre><code class="language-html" id="rb-Z14ywiR">
                               &lt;script src=&quot;./rocketbelt.dialogs.min.js&quot;&gt;&lt;/script&gt;</code></pre>
                         </div>
                       </div>

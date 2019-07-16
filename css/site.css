@@ -1694,6 +1694,27 @@ article h4 {
     box-shadow: 0 1px 16px rgba(0, 0, 0, 0.08);
 }
 
+.rbSlider {
+    max-width: 10vw;
+    margin: 1rem 0;
+}
+
+.rbSlider > div > div {
+    height: 10vw;
+    max-width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.rbSlider > div > div:nth-child(even) {
+    background: #F2F3F3;
+}
+
+.rbSlider > div > div:nth-child(odd) {
+    background: #CED9E6;
+}
+
 .tabcordion_panel {
     padding: 1rem;
     padding-top: 0.5rem;
