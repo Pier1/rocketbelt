@@ -206,6 +206,16 @@ $(function () {
     document.body.addEventListener('focus', maintainFocus, true);
     $(document).keydown(bindKeypress);
 
+    var $dialog = $($cache.rbDialog[0]);
+    var $footer = $dialog.find('.dialog_footer');
+
+    if ($footer.length > 0) {
+      $footer.detach();
+
+      const $body = $dialog.find('.dialog_body');
+      $footer.insertAfter($body);
+    }
+
     if ($cache.rbDialog[0] &&
         $cache.rbDialog[0].classList &&
         $cache.rbDialog[0].classList.contains('dialog_headerless')) {

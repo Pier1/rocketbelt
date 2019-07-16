@@ -101,7 +101,9 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(onclick="$('#max-dialog').rbDialog({title: 'Max Dialog', classes: { 'rbDialog': 'dialog-max' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#max-dialog').rbDialog({title: 'Max Dialog', classes: { 'rbDialog': 'dialog-max' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Max Dialog
+          div
+            button.button.button-secondary.button-md(onclick="$('#max-dialog').rbDialog({title: 'Max Dialog', headerless: true, classes: { 'rbDialog': 'dialog-max' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Max + Headerless
           small.fg_error
             | <br/>
             | <strong>Max dialogs don't support buttons.</strong>
