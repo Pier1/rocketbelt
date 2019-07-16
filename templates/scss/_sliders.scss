@@ -1,0 +1,21 @@
+.rbSlider {
+  max-width: 10vw;
+
+  & > div > div {
+    height: 10vw;
+    max-width: 10vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &:nth-child(even) {
+      background: #F2F3F3;
+    }
+
+    &:nth-child(odd) {
+      background: #CED9E6;
+    }
+  }
+
+  margin: 1rem 0;
+}
