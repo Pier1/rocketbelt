@@ -32,7 +32,8 @@
                 cleanupAttrs: true
               }]
             }
-          })
+          }),
+          plugins.postcssFocusWithin({ replaceWith: '.focus-within' })
         ]))
         .pipe(plugins.autoprefixer({
           browsers: supported

@@ -34,6 +34,16 @@ $heading-style-params-h4-h6: ('style': 'blurt', 'font-size': font-size(0));
   h2 {
     @include heading-style($heading-style-params-h2);
   }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    text-transform: none;
+    letter-spacing: 0;
+  }
 }
 
 :root {
@@ -96,6 +106,16 @@ h6 {
 
   margin: 0;
   font-weight: font-weight(bold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .heading-group {

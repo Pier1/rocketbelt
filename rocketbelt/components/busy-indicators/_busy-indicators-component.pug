@@ -6,22 +6,30 @@ style.
 .grid-fluid
   .row.exampleWithoutCode
     .col.xs
-      button.button.button-secondary.is-busyable.is-busy_trigger
-        span Click to Trigger Busy
+      button.button.is-busyable.is-busy-spinner.is-busy.is-busy-opaque
+        span Trigger Busy
+
+    .col.xs
+      button.button.is-busyable.is-busy_trigger
+        span Trigger Busy
 
     .col.xs
       button.button.button-primary.is-busyable.is-busy_trigger.is-busy-inverted
-        span Click to Trigger Busy
+        span Trigger Busy
 
   .row
     .col.xs
       +exampleCodeOnly
         button.button.button-primary.is-busy.is-busy-inverted
-          span Click to Trigger Busy
+          span Trigger Busy
 
   .row.exampleWithoutCode
     .col.xs
       .form-group.is-busyable.is-busy
+        textarea#busy-textarea.is-busy_trigger(placeholder='Blur the textarea to trigger a busy state.')
+        label(for='busy-textarea') Message
+
+      .form-group.is-busyable.is-busy-spinner.is-busy
         textarea#busy-textarea.is-busy_trigger(placeholder='Blur the textarea to trigger a busy state.')
         label(for='busy-textarea') Message
 
@@ -93,5 +101,5 @@ script.
     $this.addClass('is-busy');
     setTimeout(function () {
       $this.removeClass('is-busy');
-    }, 3000)
+    }, 8000)
   });
