@@ -274,6 +274,7 @@ textarea {
   width: 100%;
   height: $input-height;
   border: 1px solid color(gray, plus1);
+  border-radius: 0;
   font-size: font-size(0);
 
   & + label {
@@ -359,7 +360,6 @@ select {
   $fill: color(black);
 
   padding-right: 25px;
-  border-radius: 0;
   background-color: color(white);
   background-image: icon-as-data-uri(chevron-down, $fill);
   background-position: right 0.5rem center;
