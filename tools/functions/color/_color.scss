@@ -1,0 +1,34 @@
+@import 'contrast',
+        'contrast-ratio';
+
+/// Return a color from the Rocketbelt palette.
+///
+/// @group Color
+/// @author Kendrick Arnett
+///
+/// @param $family [primary] - The color family to select from
+/// @param $variant [base] - The variant to return from the family
+///
+/// @example scss - color function
+///   color(primary)
+///   color(primary, lightest)
+///   color(gray, minus2)
+@function color($family: primary, $variant: base) {
+  $family: quote($family);
+  $variant: quote($variant);
+
+  $has-key-family:  map-has-key($color-families, $family);
+  $has-key-variant: ($has-key-family and map-has-key(map-get($color-families, $family), $variant));
+
+  @if ($has-key-variant) {
+    @return map-get(map-get($color-families, $family), $variant);
+  }
+  @else {
+    @if (not $has-key-family) {
+      @error 'Color family `#{$family}` does not exist.';
+    }
+    @else {
+      @error 'Color variant `#{$variant}` does not exist in family `#{$family}`.';
+    }
+  }
+}

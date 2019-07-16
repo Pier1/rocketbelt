@@ -1,0 +1,50 @@
+// whisper murmur intimate mumble sigh utterance mention blurt shout
+
+@mixin heading-style($options: ()) {
+  $valid-styles: (
+    'whisper',
+    'mention',
+    'blurt',
+    'shout'
+  );
+
+  $default-style: 'whisper';
+  $default-font-size: font-size(2);
+  $default-letter-spacing: letter-spacing(1);
+  $default-font-weight: inherit;
+
+  $options: map-merge(
+    (
+      'style': $default-style,
+      'font-size': $default-font-size
+    ),
+    $options
+  );
+
+  $style: map-get($options, 'style');
+
+  @if (index($valid-styles, $style) == null) {
+    @error '`#{$style}` is not a valid heading style. Valid styles are `whisper`, `mention`, `blurt`, and `shout`.';
+  }
+
+  $font-size: map-get($options, 'font-size');
+  font-size: $font-size;
+
+  @if ($style == 'whisper') {
+    letter-spacing: 0;
+  } @else if ($font-size >= font-size(3)) {
+    letter-spacing: letter-spacing(plus3);
+  } @else {
+    letter-spacing: letter-spacing(plus2);
+  }
+
+  @if ($style == 'whisper' or $style == 'mention') {
+    text-transform: capitalize;
+  } @else if ($style == 'blurt') {
+    text-transform: uppercase;
+  } @else if ($style == 'shout') {
+    text-transform: uppercase;
+    font-weight: font-weight(bold);
+  }
+}
+

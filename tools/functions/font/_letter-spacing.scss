@@ -1,0 +1,26 @@
+/// Return an approved letter spacing for headings
+///
+/// @group Typography
+/// @author Kendrick Arnett
+///
+/// @param $spacing - The style to return
+///
+/// @example scss - letter-spacing function
+///   font-style();
+///   // normal
+///   font-style(italic);
+///   // italic
+@function letter-spacing($spacing: 0) {
+  $spacings: (
+    0: 0,
+    plus1: 0.6px,
+    plus2: 1.2px,
+    plus3: 2.4px
+  );
+
+  $value: if(map-has-key($spacings, $spacing),
+    map-get($spacings, $spacing),
+    map-get($spacings, 0));
+
+  @return $value;
+}

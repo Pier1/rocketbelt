@@ -1,0 +1,40 @@
+/// Hides an element from the screen but not from screen readers. Consider using `visually-hidden` before using `display: none`.
+///
+/// @group Layout
+/// @author Kendrick Arnett
+///
+/// @see http://a11yproject.com/posts/how-to-hide-content/
+%visually-hidden,
+%visuallyhidden {
+  position: absolute;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  border: 0;
+  white-space: nowrap;
+  clip-path: inset(50%);
+}
+
+%hidden-from-everything {
+  display: none;
+  visibility: hidden;
+}
+
+// Genius idea from H5BP. See https://github.com/h5bp/html5-boilerplate/blob/024b8a05ee9acf99393469c0622e55a694542493/src/css/main.css#L147
+%focusable {
+  &:active,
+  &:focus {
+    position: static;
+    overflow: visible;
+    clip: auto;
+    margin: 0;
+    width: auto;
+    height: auto;
+    white-space: inherit;
+    clip-path: none;
+  }
+
+}
