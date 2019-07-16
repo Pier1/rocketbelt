@@ -55,6 +55,20 @@
     }
   }
 
+  function affixInputs() {
+    const $affixedInputs = $('input.affixed');
+
+    $affixedInputs.each(function () {
+      const $input = $(this);
+      const $affixment = $input.siblings('.affixment');
+
+      const top = $input.position().top;
+
+      $affixment.css('top', top);
+      $affixment.addClass('affixed');
+    });
+  }
+
   function decorateInputs() {
     const formEls = document.querySelectorAll(
       '.form-group input, .form-group select, .form-group textarea, .form-group fieldset'
@@ -124,6 +138,8 @@
   }
 
   rb.onDocumentReady(decorateInputs);
+  rb.onDocumentReady(affixInputs);
   rb.forms = rb.forms || {};
   rb.forms.decorateInputs = decorateInputs;
+  rb.forms.affixInputs = affixInputs;
 })(window.rb, document);

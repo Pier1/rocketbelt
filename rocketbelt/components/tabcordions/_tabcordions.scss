@@ -31,7 +31,7 @@ $border: $width-border solid $color-border;
       min-height: 44px;
       border: $border;
       background-color: color(white);
-      color: color(contrast);
+      color: color(primary);
       line-height: normal;
       transition: background 100ms ease,
                   color 100ms ease;
@@ -126,7 +126,7 @@ $border: $width-border solid $color-border;
         right: 18px;
         width: 3px;
         height: 15px;
-        background: color(contrast);
+        background: color(primary);
         content: '';
         transition: transform 200ms;
         transform: translateY(-50%);
@@ -138,7 +138,7 @@ $border: $width-border solid $color-border;
         right: 12px;
         width: 15px;
         height: 3px;
-        background: color(contrast);
+        background: color(primary);
         content: '';
         transform: translateY(-50%);
       }

@@ -32,36 +32,27 @@
 
   &.tag-success {
     background: color(success);
-    color: contrast(success);
+    color: color(white);
   }
 
   &.tag-sale {
     background: color(sale);
-    color: contrast(sale);
+    color: color(white);
   }
 
   &.tag-error {
     background: color(error);
-    color: contrast(error);
+    color: color(white);
   }
 
   &.tag-warning {
     background: color(warning);
-    color: contrast(warning);
+    color: color(black);
   }
 
   &.tag-primary {
     background: color(primary);
-    color: contrast(primary);
-  }
-
-  &.tag-secondary {
-    background: color(secondary);
-  }
-
-  &.tag-accent {
-    background: color(accent);
-    color: contrast(accent);
+    color: color(white);
   }
 
   &.message-dismissable {

@@ -2,9 +2,22 @@
 
 // line-height + margin-top + margin-bottom must be a multiple of 1.5rem to maintain vertical rhythm.
 $base-line-height: 1.5;
-$ms-base: 1rem;
-$ms-ratio: 1.125;
 
+// The following base gives us 2 fixed points on the scale at
+// 15px and ~13px, expressed in rems because I am a pedant.
+$ms-base: (13 / 15) * 1rem 1rem;
+$ms-ratio: $fourth;
+
+$heading-style-params-h1:    ('style': 'shout', 'font-size': font-size(4));
+$heading-style-params-h2:    ('style': 'blurt', 'font-size': font-size(3));
+$heading-style-params-h3:    ('style': 'blurt', 'font-size': font-size(2));
+$heading-style-params-h4-h6: ('style': 'blurt', 'font-size': font-size(0));
+
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
+// We load fonts with a 2-stage strategy to eliminate flash of invisible text (FOIT) and
+// minimize flash of unstyled text (FOUT). See https://www.zachleat.com/web/comprehensive-webfonts/
+// and see https://codepen.io/kendrick/pen/QxZoyK for a testing Pen.
+// =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 .fonts-loaded-subset,
 .fonts-loaded {
   body {
@@ -14,34 +27,44 @@ $ms-ratio: 1.125;
     font-family: font-family(default);
   }
 
-  h1,
-  h2 {
-    letter-spacing: initial;
+  h1 {
+    @include heading-style($heading-style-params-h1);
   }
 
-  strong,
+  h2 {
+    @include heading-style($heading-style-params-h2);
+  }
+
   h1,
   h2,
   h3,
   h4,
   h5,
   h6 {
-    font-weight: font-weight(medium);
+    text-transform: none;
+    letter-spacing: 0;
   }
 }
 
+:root {
+  font-size: 15px;
+}
+
 body {
+  $sans-base-letter-spacing: -0.15px;
+  $sans-base-word-spacing: 1.0px;
+
   margin: 0;
   color: color(black);
 
-  word-spacing: 0.025em;
-  letter-spacing: 0.0125em;
+  word-spacing: $sans-base-word-spacing;
+  letter-spacing: $sans-base-letter-spacing;
   font-size: font-size(0);
   font-family: font-family(loading);
   line-height: 1.5;
 
   -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
-  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale;  // sass-lint:disable-line no-vendor-prefixes
 }
 
 p {
@@ -49,32 +72,50 @@ p {
 }
 
 h1 {
+  $sans-h1-word-spacing: 0.05em;
+  $sans-h1-letter-spacing: 0.045em;
+
+  @include heading-style($heading-style-params-h1);
+
   margin: 0;
-  letter-spacing: -0.02em;
-  font-size: font-size(3);
+  word-spacing: $sans-h1-word-spacing;
+  letter-spacing: $sans-h1-letter-spacing; // Need to override what comes back from `heading-style` to minimize FOUT jank.
 }
 
 h2 {
+  $sans-h2-word-spacing: 0.0125em;
+  $sans-h2-letter-spacing: 0.025e;
+
+  @include heading-style($heading-style-params-h2);
+
   margin: 0;
-  letter-spacing: -0.008em;
-  font-size: font-size(2);
+  word-spacing: $sans-h2-word-spacing;
+  letter-spacing: $sans-h2-letter-spacing; // Need to override what comes back from `heading-style` to minimize FOUT jank.
 }
 
 h3 {
-  margin: 0;
-  font-size: font-size(1);
-}
+  @include heading-style($heading-style-params-h3);
 
-h4 {
-  text-transform: uppercase;
-  font-weight: font-weight(normal);
+  margin: 0;
 }
 
 h4,
 h5,
 h6 {
+  @include heading-style($heading-style-params-h4-h6);
+
   margin: 0;
-  font-size: font-size(0);
+  font-weight: font-weight(bold);
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 .heading-group {
@@ -103,130 +144,87 @@ h6 {
   }
 }
 
-@include media('>=md') {
-  h1 {
-    font-size: font-size(4);
-  }
+// @include media('>=md') {
+//   h1 {
+//     font-size: font-size(4);
+//   }
 
-  h2 {
-    font-size: font-size(3);
-  }
+//   h2 {
+//     font-size: font-size(3);
+//   }
 
-  h3 {
-    font-size: font-size(2);
-  }
+//   h3 {
+//     font-size: font-size(2);
+//   }
 
-  h4 {
-    font-size: font-size(1);
-  }
+//   h4 {
+//     font-size: font-size(1);
+//   }
 
-  h5,
-  h6 {
-    font-size: font-size(0);
-  }
-}
+//   h5,
+//   h6 {
+//     font-size: font-size(0);
+//   }
+// }
 
-@include media('>=lg') {
-  h1 {
-    font-size: font-size(5);
-  }
+// @include media('>=lg') {
+//   h1 {
+//     font-size: font-size(5);
+//   }
 
-  h2 {
-    font-size: font-size(4);
-  }
+//   h2 {
+//     font-size: font-size(4);
+//   }
 
-  h3 {
-    font-size: font-size(3);
-  }
+//   h3 {
+//     font-size: font-size(3);
+//   }
 
-  h4 {
-    font-size: font-size(2);
-  }
-}
+//   h4 {
+//     font-size: font-size(2);
+//   }
+// }
 
-@include media('>=xl') {
-  h1 {
-    font-size: font-size(6);
-  }
+// @include media('>=xl') {
+//   h1 {
+//     font-size: font-size(6);
+//   }
 
-  h2 {
-    font-size: font-size(5);
-  }
+//   h2 {
+//     font-size: font-size(5);
+//   }
 
-  h3 {
-    font-size: font-size(4);
-  }
+//   h3 {
+//     font-size: font-size(4);
+//   }
 
-  h4 {
-    font-size: font-size(3);
-  }
-}
-
-.font-sans {
-  font-family: font-family(sans);
-}
-
-.font-serif {
-  font-family: font-family(serif);
-}
-
-h1,
-h2,
-h3,
-h4 {
-  small {
-    color: color(gray, plus1);
-    font-weight: font-weight(light);
-
-    &::before {
-      content: unicode(nbsp) + unicode(nbsp);
-    }
-  }
-}
+//   h4 {
+//     font-size: font-size(3);
+//   }
+// }
 
 .font-minus-2 {
-  font-size: font-size(-3);
-}
-
-.font-minus-1 {
   font-size: font-size(-2);
 }
 
+.font-minus-1 {
+  font-size: font-size(-1);
+}
+
 .font-plus-1 {
-  font-size: font-size(2);
+  font-size: font-size(1);
 }
 
 .font-plus-2 {
-  font-size: font-size(4);
+  font-size: font-size(2);
 }
 
 .font-plus-3 {
-  font-size: font-size(6);
+  font-size: font-size(3);
 }
 
 .font-plus-4 {
-  font-size: font-size(8);
-}
-
-.font-style-italic {
-  font-style: font-style('italic');
-}
-
-.font-weight-light {
-  font-weight: font-weight(light);
-}
-
-.font-weight-normal {
-  font-weight: font-weight(normal);
-}
-
-.font-weight-medium,
-.font-weight-semibold {
-  font-weight: font-weight(medium);
-}
-
-.kern-minus-1 {
-  letter-spacing: -.08em;
+  font-size: font-size(4);
 }
 
 .list-reset {
@@ -236,79 +234,6 @@ h4 {
 .list-inline,
 .list-reset-horizontal {
   @include list-reset($horizontal: true);
-}
-
-a {
-  $base-link-color: color(contrast, base);
-
-  color: $base-link-color;
-  transition: color 100ms linear;
-
-  &:hover {
-    color: scale-color($base-link-color, $lightness: 15%);
-    transition: color 100ms linear;
-  }
-
-  &:active {
-    color: scale-color($base-link-color, $lightness: -15%);
-    transition: color 100ms linear;
-  }
-
-  &:visited {
-    color: scale-color($base-link-color, $lightness: -15%);
-    transition: color 100ms linear;
-  }
-
-  &[disabled] {
-    pointer-events: none;
-  }
-}
-
-blockquote {
-  margin: 0.75rem 0;
-  padding: 0.375rem 0.75rem;
-  border-left: 0.75rem solid color(gray, plus2);
-  border-radius: 2px;
-  background: color(gray, plus4);
-  text-align: left;
-  font-size: font-size(4);
-
-  .source {
-    display: block;
-    color: color(gray, plus2);
-    font-size: font-size(2);
-
-    &::before {
-      content: unicode('horizontal-bar') + unicode(nbsp);
-    }
-  }
-
-  &.pull {
-    padding: 0;
-    width: 40%;
-    border: none;
-    background: transparent;
-
-    &:not(.font-serif) {
-      font-weight: font-weight(light);
-    }
-
-    & .quote {
-      display: inline;
-      background: rgba(color(secondary, lighter), 0.1);
-      box-shadow: 0 -0.25rem 0 rgba(color(secondary), 0.3);
-      line-height: 1.75;
-    }
-
-    & .source {
-      text-align: right;
-    }
-  }
-}
-
-.lead-copy,
-.lead-first-line::first-line {
-  font-size: font-size(4);
 }
 
 pre,
@@ -353,6 +278,7 @@ ul {
   }
 }
 
+@import 'typography-anchors';
 @import 'typography-text-with-icon';
 @import 'typography-cta';
 @import 'typography-link-lists';

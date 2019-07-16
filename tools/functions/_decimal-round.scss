@@ -6,10 +6,10 @@
 /// @param $digits [0] - The number of digits to round to.
 /// @param $mode [round] - "round", "ceil", or "floor".
 ///
-/// @example scss - decimal-round function
-///   decimal-round(3.14159265359, 4)
+/// @example scss - round function
+///   round(3.14159265359, 4)
 ///   // 3.1416
-@function decimal-round ($number, $digits: 0, $mode: round) {
+@function decimal-round ($number, $digits: 1, $mode: round) {
   $n: 1;
   // $number must be a number
   @if type-of($number) != number {

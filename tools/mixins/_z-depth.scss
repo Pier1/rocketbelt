@@ -5,26 +5,42 @@
 /// @see {mixin} button-shadow
 ///
 /// @param $depth [0] - The depth of shadow to render.
-@mixin z-depth($depth: 0) {
-  $box-shadow: 0 1px 2px rgba(0, 0, 0, 0.15), 0 0 2px rgba(0, 0, 0, 0.09), -2px -2px 2px rgba(0, 0, 0, 0.04);
+@function z-depth($depth: 0) {
+  $box-shadow: none;
+
+  $close: 0.14 * 0.75;
+  $far: 0.12 * 0.75;
+  $farthest: 0.20 * 0.75;
+
+  @if ($depth == 1) {
+    $box-shadow: 0 0 2px 0 rgba(0, 0, 0, $close), 0 2px 1px -1px rgba(0, 0, 0, $far), 0 1px 3px 0 rgba(0, 0, 0, $farthest);
+  }
+  @else if ($depth == 2) {
+    $box-shadow: 0 2px 3px 0 rgba(0, 0, 0, $close), 0 3px 2px -2px rgba(0, 0, 0, $far), 0 1px 6px 0 rgba(0, 0, 0, $farthest);
+  }
+  @else if ($depth == 3) {
+    $box-shadow: 0 3px 5px 0 rgba(0, 0, 0, $close), 0 3px 4px -2px rgba(0, 0, 0, $far), 0 1px 8px 0 rgba(0, 0, 0, $farthest);
+  }
+  @else if ($depth == 4) {
+    $box-shadow: 0 4px 5px 0 rgba(0, 0, 0, $close), 0 1px 10px 0 rgba(0, 0, 0, $far), 0 2px 4px -1px rgba(0, 0, 0, $farthest);
+  }
+
+  @return $box-shadow;
+}
+
+@mixin z-depth($depth: 0, $transition: false) {
+  $box-shadow: none;
   @if ($depth == off) {
     $box-shadow: none;
     $z-index: 0;
   } @else {
     $z-index: $depth;
-    @if ($depth == 1) {
-      $box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24), -2px -2px 2px rgba(0, 0, 0, 0.04);
-    }
-    @else if ($depth == 2) {
-      $box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15), 0 2px 6px rgba(0, 0, 0, 0.23), -2px -2px 2px rgba(0, 0, 0, 0.04);
-    }
-    @else if ($depth == 3) {
-      $box-shadow: 0 4px 8px rgba(0, 0, 0, 0.17), 0 3px 10px rgba(0, 0, 0, 0.15), -2px -2px 2px rgba(0, 0, 0, 0.04);
-    }
-    @else if ($depth == 4) {
-      $box-shadow: 0 8px 14px rgba(0, 0, 0, 0.19), 0 5px 12px rgba(0, 0, 0, 0.1), -2px -2px 2px rgba(0, 0, 0, 0.04);
-    }
+    $box-shadow: z-depth($depth);
   }
+
   box-shadow: $box-shadow;
-  transition: box-shadow 150ms ease-out;
+
+  @if ($transition == true) {
+    transition: box-shadow 150ms ease-out;
+  }
 }

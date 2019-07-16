@@ -3,11 +3,18 @@
   pointer-events: none;
   user-select: none;
 
+  &.is-busy-opaque {
+    .is-busy_overlay-opaque {
+      background-color: color(white);
+    }
+  }
+
   .is-busy_overlay { // rb-emit-class-as-json
     position: absolute;
     top: 0;
     left: 0;
     z-index: 1;
+    display: flex;
     width: 100%;
     height: 100%;
     background-color: rgba(color(white), 0.7);
@@ -15,6 +22,8 @@
     font-size: 1rem;
     opacity: 0;
     transition: opacity 200ms linear;
+    align-items: center;
+    justify-content: center;
 
     &.is-busy_overlay-opaque {
       opacity: 1;
@@ -23,28 +32,26 @@
 
     .dot {
       $colors: (
-        1: color(brand),
-        2: color(brand, sunYellow),
-        3: color(brand, warmRed),
-        4: color(brand, paleRed),
-        5: color(brand, mint)
+        1: color(primary),
+        2: color(primary),
+        3: color(primary)
       );
 
       position: absolute;
       top: 50%;
-      width: 0.5em;
-      height: 0.5em;
+      width: 0.4em;
+      height: 0.4em;
       border-radius: 50%;
       transform: translate(-50%, -50%);
       animation: dotBounce 1.4s ease(out-quad) infinite;
 
-      $num-dots: 5;
+      $num-dots: 3;
       $midpoint: ($num-dots + 1) / 2;
       @for $i from 1 through $num-dots {
         $distance-from-mid: $i - $midpoint;
 
         &:nth-of-type(#{$i}) {
-          $left-val: if($i == $midpoint, 50%, calc(50% + (#{$distance-from-mid} * 0.75em)));
+          $left-val: if($i == $midpoint, 50%, calc(50% + (#{$distance-from-mid} * 0.9em)));
 
           left: $left-val;
           background-color: map-get($colors, $i);
@@ -56,19 +63,11 @@
 
   &.is-busy-inverted {
     .is-busy_overlay {
-      background-color: transparent;
+      background-color: color(primary);
 
       .dot {
-        $c: rgba(color(white), 0.9);
-        background-color: $c;
+        background-color: color(white);
       }
-    }
-  }
-
-  &button,
-  &.button {
-    .is-busy_overlay {
-      background: inherit;
     }
   }
 }

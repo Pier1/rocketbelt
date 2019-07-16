@@ -54,21 +54,22 @@
                   <button class="category-label">Components</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/scrollbox">Scrollbox</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
@@ -136,119 +137,58 @@
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </button></h1>
-                  <div class="rb-note">
-                    <div class="tag rb-badge rb-badge-labs"><span class="text-with-icon">Labs</span></div>
-                    <div class="rb-note-text">This feature is under development.</div>
-                  </div>
-                  <h2 id="guiding-principles" class="heading-with-link"><span class="heading_text">Guiding Principles</span><button data-clipboard-text="#guiding-principles" class="heading-copy-button heading_link">
+                  <h2 id="slide-and-fade" class="heading-with-link"><span class="heading_text">Slide &amp; Fade</span><button data-clipboard-text="#slide-and-fade" class="heading-copy-button heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </button></h2>
-                  <h2 id="patterns" class="heading-with-link"><span class="heading_text">Patterns</span><button data-clipboard-text="#patterns" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h2>
-                  <h3 id="entrances-and-exits" class="heading-with-link"><span class="heading_text">Entrances &amp; Exits</span><button data-clipboard-text="#entrances-and-exits" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h3>
-                  <div class="boxes">
-                    <div class="box-wrap">
-                      <svg class="icon">
-                        <use/>
-                      </svg>
-                      <div class="box" data-rb-animate="out_fade">Fade</div>
+                  <div class="exampleWithCode">
+                    <div class="example">
+                      <button class="toggle button">Toggle rbAnim_slide-and-fade</button>
+                      <div class="slide-and-fade-example rbAnim_animatable">
+                        <div class="contents rbAnim_fadable">
+                          <ul>
+                            <li>1</li>
+                            <li>2</li>
+                            <li>3</li>
+                            <li>4</li>
+                          </ul>
+                        </div>
+                      </div>
+                      <script>
+                        $('.toggle').on('click', () => {
+                          $('.slide-and-fade-example').toggleClass('rbAnim_slide-and-fade');
+                        });
+                      </script>
                     </div>
-                    <div class="box-wrap">
-                      <svg class="icon">
-                        <use/>
-                      </svg>
-                      <div class="box" data-rb-animate="out_slide">Slide</div>
-                    </div>
-                    <div class="box-wrap">
-                      <svg class="icon">
-                        <use/>
-                      </svg>
-                      <div class="box" data-rb-animate="out_fade-slide">Fade &amp; Slide</div>
+                    <div class="expander">
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1qW3I0">
+                      <label class="expander_label" for="rb-Z1qW3I0" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <div class="expander_content">
+                        <div class="example-code">
+                          <div class="dots"></div>
+                          <button class="button copy-code" data-clipboard-target="#rb-Zvm3St">Copy</button>
+                          <pre><code class="language-html" id="rb-Zvm3St">
+                              &lt;button class=&quot;toggle button&quot;&gt;Toggle rbAnim_slide-and-fade&lt;/button&gt;
+                              &lt;div class=&quot;slide-and-fade-example rbAnim_animatable&quot;&gt;
+                                &lt;div class=&quot;contents rbAnim_fadable&quot;&gt;
+                                  &lt;ul&gt;
+                                    &lt;li&gt;1&lt;/li&gt;
+                                    &lt;li&gt;2&lt;/li&gt;
+                                    &lt;li&gt;3&lt;/li&gt;
+                                    &lt;li&gt;4&lt;/li&gt;
+                                  &lt;/ul&gt;
+                                &lt;/div&gt;
+                              &lt;/div&gt;
+                              &lt;script&gt;
+                                $(&apos;.toggle&apos;).on(&apos;click&apos;, () =&gt; {
+                                  $(&apos;.slide-and-fade-example&apos;).toggleClass(&apos;rbAnim_slide-and-fade&apos;);
+                                });
+                              &lt;/script&gt;</code></pre>
+                        </div>
+                      </div>
                     </div>
                   </div>
-                  <h3 id="state-change" class="heading-with-link"><span class="heading_text">State Change</span><button data-clipboard-text="#state-change" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h3>
-                  <button class="button button-secondary example-expand_toggle">Click to Toggle</button>
-                  <div class="example-expand">
-                    <p>In Asia, the tropics take the bowl is just want to create a sunny day and grapefruit, with a touch. Available in shades and life. Our farmers&apos; market for a sense of color and patterned pillows or porch or loveseat this suave fellow is to dress up a touch. A stylish stuff. Add visual interest to your wall. Small, thoughtfully designed to support the three kings to make their intelligence and refreshing comfort in the crop. The intriguing hue. Made of energy is the plush cushion that&apos;ll feel to give your favor.</p>
-                    <p>Our particularly handsome coppery finish, will really relax. So get the great way to get you hang it&#x2014;over your favorite spaces. Our mischievous side of pumpkin competition, Cinderella&apos;s carriage takes its silhouette is &#x201C;Happy Harvest.&#x201D; Embroidered and out. Carry the land and finished wood &quot;@&quot; delivers modern marvel of an evening dress your name&#x2014;or whatever else would say more? The new design, it&#x2019;s because they ask for an intricate, hand-painted golden lychee and email addresses, the right now.</p>
-                    <p>Experience a big table. Fill it as a versatile wall with a very happy. Either way to your fancy in the light, giving guests were alive. Many happy landings. Frogs like jumping in a good taste.</p>
-                    <p>Which just as well with our handcrafted center mirror will reflect well past midnight. Go ahead and meticulous handcraftsmanship. It&#x2019;s easy access to say a unique Halloween garland to relax: Its button-tufted indoor/outdoor cushion. Aaaah.</p>
-                  </div>
-                  <script>
-                    $('.example-expand_toggle').click(function () {
-                      $(this).siblings('.example-expand').rb('animate', rb.animate.state.expandCollapse);
-                    });
-                    
-                    
-                  </script>
-                  <h3 id="emphasis" class="heading-with-link"><span class="heading_text">Emphasis</span><button data-clipboard-text="#emphasis" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h3>
-                  <h2 id="timing" class="heading-with-link"><span class="heading_text">Timing</span><button data-clipboard-text="#timing" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h2>
-                  <p>Use an RB function.</p>
-                  <h2 id="easing" class="heading-with-link"><span class="heading_text">Easing</span><button data-clipboard-text="#easing" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h2>
-                  <p>Use an RB function.</p>
-                  <h3 id="moving-elements" class="heading-with-link"><span class="heading_text">Moving Elements</span><button data-clipboard-text="#moving-elements" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h3>
-                  <h3 id="stationary-elements" class="heading-with-link"><span class="heading_text">Stationary Elements</span><button data-clipboard-text="#stationary-elements" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h3>
-                  <h2 id="javascript" class="heading-with-link"><span class="heading_text">Javascript</span><button data-clipboard-text="#javascript" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h2>
-                  <p>Helper JS to remove animation class when it&apos;s finished.</p>
-                  <script src="/base/animation/rocketbelt.animate.min.js"></script>
-                  <script>
-                    $('.box, .box-wrap').on('click', function () {
-                      event.stopPropagation();
-                      var $this = $(this);
-                    
-                      if ($(this).hasClass('box-wrap')) {
-                        $this = $(this).find('.box');
-                      }
-                    
-                      var removeClass = function (className) { return className.indexOf('animation_') > -1; }
-                    
-                      if ($this.hasClass('animatable')) {
-                        $this.removeClass('animatable')
-                          .removeClass(function(index, className) {
-                            return (className.match(/(^|\s)animation_\S+/g) || []).join(' ');
-                          });
-                      } else {
-                        $this.addClass('animatable').addClass('animation_' + $this.attr('data-rb-animate'));
-                      }
-                    });
-                  </script>
                 </article>
               </div>
             </div>

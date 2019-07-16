@@ -7,14 +7,10 @@
         ['Chrome >= 49',
          'Firefox >= 48',
          'Safari >= 9',
-         'ie >= 9',
+         'ie >= 11',
          'Edge >= 14',
          'iOS >= 9',
-         'Android >= 4.4'];
-
-      if (!process.env.WEBFONT_SERIF_URI) {
-        throw new Error('Please set the WEBFONT_SERIF_URI environment variable so that @font-face rules can be generated.');
-      }
+         'Android >= 5.1.1'];
 
       const source =
         gulp.src([
@@ -36,11 +32,13 @@
                 cleanupAttrs: true
               }]
             }
-          })
+          }),
+          plugins.postcssFocusWithin({ replaceWith: '.focus-within' })
         ]))
         .pipe(plugins.autoprefixer({
           browsers: supported
         }))
+        .pipe(plugins.cssbeautify())
       ;
 
       const max = source.pipe(plugins.clone())

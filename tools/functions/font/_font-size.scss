@@ -8,10 +8,12 @@
 /// @example scss - font-size function
 ///   font-size(0);
 ///   // 1 rem
-///   font-family(2);
+///   font-size(2);
 ///   // 2 steps up the scale
-///   font-family(-1);
+///   font-size(-1);
 ///   // 1 step down the scale
 @function font-size($scale) {
-  @return ms($scale);
+  // Add 1 to the result so that our base font size (font-size(0)) remains 1rem.
+  // Without this font-size(0) will return 1 step down the scale.
+  @return decimal-round(ms($scale + 1), 2);
 }

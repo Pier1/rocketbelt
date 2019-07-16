@@ -54,18 +54,19 @@
                   <button class="category-label">Components</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/scrollbox">Scrollbox</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
@@ -161,7 +162,7 @@
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="copy-code" data-clipboard-target="#rb-gk7bV">Copy</button>
+                          <button class="button copy-code" data-clipboard-target="#rb-gk7bV">Copy</button>
                           <pre><code class="language-css" id="rb-gk7bV">
                               #component-wrapper .is-busy_overlay {
                                 font-size: font-size(3);
@@ -177,19 +178,19 @@
                 </button></h3>
                   <div class="exampleWithCode">
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-Z1ryu9x" checked="checked">
-                      <label class="expander_label" for="rb-Z1ryu9x" data-collapsed-label="Show JS" data-expanded-label="Hide JS"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1k7Wnd" checked="checked">
+                      <label class="expander_label" for="rb-Z1k7Wnd" data-collapsed-label="Show JS" data-expanded-label="Hide JS"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="copy-code" data-clipboard-target="#rb-ZnGKdY">Copy</button>
-                          <pre><code class="language-js" id="rb-ZnGKdY">
-                              &lt;script src=&quot;./rocketbelt.progress-indicators.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+                          <button class="button copy-code" data-clipboard-target="#rb-Z13n2Ry">Copy</button>
+                          <pre><code class="language-js" id="rb-Z13n2Ry">
+                              &lt;script src=&quot;./rocketbelt.progress-indicators.js&quot;&gt;&lt;/script&gt;</code></pre>
                         </div>
                       </div>
                     </div>
                     <div class="example">
-                      <script src="./rocketbelt.progress-indicators.min.js"></script>
+                      <script src="./rocketbelt.progress-indicators.js"></script>
                     </div>
                   </div>
                   <h3 id="examples" class="heading-with-link"><span class="heading_text">Examples</span><button data-clipboard-text="#examples" class="heading-copy-button heading_link">
@@ -206,10 +207,13 @@
                   <div class="grid-fluid">
                     <div class="row exampleWithoutCode">
                       <div class="col xs">
-                        <button class="button button-secondary is-busyable is-busy_trigger"><span>Click to Trigger Busy</span></button>
+                        <button class="button is-busyable is-busy-spinner is-busy is-busy-opaque"><span>Trigger Busy</span></button>
                       </div>
                       <div class="col xs">
-                        <button class="button button-primary is-busyable is-busy_trigger is-busy-inverted"><span>Click to Trigger Busy</span></button>
+                        <button class="button is-busyable is-busy_trigger"><span>Trigger Busy</span></button>
+                      </div>
+                      <div class="col xs">
+                        <button class="button button-primary is-busyable is-busy_trigger is-busy-inverted"><span>Trigger Busy</span></button>
                       </div>
                     </div>
                     <div class="row">
@@ -217,14 +221,14 @@
                         <div class="exampleWithCode">
                           <div class="example"></div>
                           <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-2cdyIN">
-                            <label class="expander_label" for="rb-2cdyIN" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1s6ADC">
+                            <label class="expander_label" for="rb-Z1s6ADC" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
                                 <div class="dots"></div>
-                                <button class="copy-code" data-clipboard-target="#rb-1G6sTJ">Copy</button>
-                                <pre><code class="language-html" id="rb-1G6sTJ">
-                                    &lt;button class=&quot;button button-primary is-busy is-busy-inverted&quot;&gt;&lt;span&gt;Click to Trigger Busy&lt;/span&gt;&lt;/button&gt;</code></pre>
+                                <button class="button copy-code" data-clipboard-target="#rb-ZebE6O">Copy</button>
+                                <pre><code class="language-html" id="rb-ZebE6O">
+                                    &lt;button class=&quot;button button-primary is-busy is-busy-inverted&quot;&gt;&lt;span&gt;Trigger Busy&lt;/span&gt;&lt;/button&gt;</code></pre>
                               </div>
                             </div>
                           </div>
@@ -234,6 +238,10 @@
                     <div class="row exampleWithoutCode">
                       <div class="col xs">
                         <div class="form-group is-busyable is-busy">
+                          <textarea class="is-busy_trigger" id="busy-textarea" placeholder="Blur the textarea to trigger a busy state."></textarea>
+                          <label for="busy-textarea">Message</label>
+                        </div>
+                        <div class="form-group is-busyable is-busy-spinner is-busy">
                           <textarea class="is-busy_trigger" id="busy-textarea" placeholder="Blur the textarea to trigger a busy state."></textarea>
                           <label for="busy-textarea">Message</label>
                         </div>
@@ -259,13 +267,13 @@
                         <div class="exampleWithCode">
                           <div class="example"></div>
                           <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-Z1qOf5j">
-                            <label class="expander_label" for="rb-Z1qOf5j" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <input class="expander_checkbox" type="checkbox" id="rb-2cAFLw">
+                            <label class="expander_label" for="rb-2cAFLw" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
                                 <div class="dots"></div>
-                                <button class="copy-code" data-clipboard-target="#rb-ZxjDFE">Copy</button>
-                                <pre><code class="language-html" id="rb-ZxjDFE">
+                                <button class="button copy-code" data-clipboard-target="#rb-1LKwJd">Copy</button>
+                                <pre><code class="language-html" id="rb-1LKwJd">
                                     &lt;div class=&quot;form-group is-busyable&quot;&gt;
                                       &lt;textarea id=&quot;busy-textarea&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot;&gt;&lt;/textarea&gt;
                                       &lt;label for=&quot;busy-textarea&quot;&gt;Message&lt;/label&gt;
@@ -328,7 +336,7 @@
                       $this.addClass('is-busy');
                       setTimeout(function () {
                         $this.removeClass('is-busy');
-                      }, 3000)
+                      }, 8000)
                     });
                   </script>
                   <h2 id="page-level" class="heading-with-link"><span class="heading_text">Page-Level</span><button data-clipboard-text="#page-level" class="heading-copy-button heading_link">
@@ -350,7 +358,7 @@
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="copy-code" data-clipboard-target="#rb-yx8go">Copy</button>
+                          <button class="button copy-code" data-clipboard-target="#rb-yx8go">Copy</button>
                           <pre><code class="language-html" id="rb-yx8go">
                               &lt;div class=&quot;form-group is-busyable is-busyable-page&quot; style=&quot;width: 100%;&quot; data-rb-is-busy-message=&quot;This is taking longer than we expected!&quot; data-rb-is-busy-message-after-seconds=&quot;3&quot;&gt;
                                 &lt;textarea class=&quot;is-busy_trigger&quot; id=&quot;busy-large&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot; style=&quot;height: 50rem;&quot;&gt;&lt;/textarea&gt;

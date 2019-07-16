@@ -2,11 +2,11 @@
   &.is-busy {
     .flip-loader {
       $colors: (
-        1: color(brand),
-        2: color(brand, sunYellow),
-        3: color(brand, warmRed),
-        4: color(brand, paleRed),
-        5: color(brand, mint)
+        1: color(primary),
+        2: rgba(color(primary), 0.8),
+        3: rgba(color(primary), 0.6),
+        4: rgba(color(primary), 0.4),
+        5: rgba(color(primary), 0.2),
       );
 
       position: absolute;

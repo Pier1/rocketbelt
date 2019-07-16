@@ -1,5 +1,5 @@
 .button-alternate {
-  $button-color: color(brand, deepBlue);
+  $button-color: color(primary);
   $button-color-light: scale-color($button-color, $lightness: 25%);
 
   border: 2px solid $button-color;

@@ -5,7 +5,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  font-size: font-size(-2);
+  font-size: font-size(0);
 
   & a {
     color: color(gray, minus1);
@@ -25,16 +25,23 @@
 }
 
 // Top-level nav item
-.nav-item {
-  display: inline-block;
+.nav-trigger {
+  position: relative;
+  display: inline-flex;
   margin: 0;
-  padding: 0;
-
+  padding: 0 10px;
+  min-width: 44px;
+  height: 72px;
   list-style: none;
+  cursor: pointer;
+  justify-content: center;
+  align-items: center;
+
+  @include anchor-underline($underline-color: color(brand, prussianBlue));
 }
 
 // Descendant link within a top-level nav item
-.nav-item > a {
+.nav-trigger > a {
   position: relative;
   display: inline-block;
   margin: 0 0 -1px 0;

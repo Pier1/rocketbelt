@@ -1,0 +1,13 @@
+@function vget($var, $fallback: null) {
+  @if ($fallback) {
+    @return var(#{$var}, #{$fallback});
+  } @else {
+    @return var(#{$var});
+  }
+}
+
+@mixin vset($prop: null, $value: null) {
+  @if ($prop and $value) {
+		#{$prop}: $value;
+	}
+}
