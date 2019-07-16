@@ -1,0 +1,47 @@
+/// Round a decimal to the desired number of digits.
+///
+/// @author Kendrick Arnett
+///
+/// @param $number - The number to be rounded.
+/// @param $digits [0] - The number of digits to round to.
+/// @param $mode [round] - "round", "ceil", or "floor".
+///
+/// @example scss - round function
+///   round(3.14159265359, 4)
+///   // 3.1416
+@function decimal-round ($number, $digits: 1, $mode: round) {
+  $n: 1;
+  // $number must be a number
+  @if type-of($number) != number {
+    @error '#{ $number } is not a number.';
+    @return $number;
+  }
+
+  // $digits must be a unitless number
+  @if type-of($digits) != number {
+    @error '#{ $digits } is not a number.';
+    @return $number;
+  }
+  @else if not unitless($digits) {
+    @error '#{ $digits } has a unit.';
+    @return $number;
+  }
+
+  @for $i from 1 through $digits {
+    $n: $n * 10;
+  }
+
+  @if $mode == round {
+    @return round($number * $n) / $n;
+  }
+  @else if $mode == ceil {
+    @return ceil($number * $n) / $n;
+  }
+  @else if $mode == floor {
+    @return floor($number * $n) / $n;
+  }
+  @else {
+    @error '#{ $mode } is undefined keyword.';
+    @return $number;
+  }
+}

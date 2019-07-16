@@ -1,0 +1,6 @@
+/// Restores native scrolling for nested overflows in iOS.
+///
+/// @author Kendrick Arnett
+@mixin native-scrolling {
+  -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
+}
