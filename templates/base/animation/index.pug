@@ -6,91 +6,16 @@ block vars
 block content
   article.grid-article
     h1 Animation
-    .rb-note
-      include /partials/labs.pug
-      .rb-note-text This feature is under development.
-    h2 Guiding Principles
 
-    h2 Patterns
-    h3 Entrances &amp; Exits
-    //- - const refreshIcon = '/components/icons/rocketbelt.icons.enterprise.svg#rb-icon-refresh'
-
-    .boxes
-      .box-wrap
-        svg.icon
-          use(xlink:href=refreshIcon)
-        .box(data-rb-animate='out_fade') Fade
-      .box-wrap
-        svg.icon
-          use(xlink:href=refreshIcon)
-        .box(data-rb-animate='out_slide') Slide
-      .box-wrap
-        svg.icon
-          use(xlink:href=refreshIcon)
-        .box(data-rb-animate='out_fade-slide') Fade &amp; Slide
-
-    h3 State Change
-    button.button.button-secondary.example-expand_toggle Click to Toggle
-    .example-expand
-      p In Asia, the tropics take the bowl is just want to create a sunny day and grapefruit, with a touch. Available in shades and life. Our farmers' market for a sense of color and patterned pillows or porch or loveseat this suave fellow is to dress up a touch. A stylish stuff. Add visual interest to your wall. Small, thoughtfully designed to support the three kings to make their intelligence and refreshing comfort in the crop. The intriguing hue. Made of energy is the plush cushion that'll feel to give your favor.
-
-      p Our particularly handsome coppery finish, will really relax. So get the great way to get you hang it—over your favorite spaces. Our mischievous side of pumpkin competition, Cinderella's carriage takes its silhouette is “Happy Harvest.” Embroidered and out. Carry the land and finished wood "@" delivers modern marvel of an evening dress your name—or whatever else would say more? The new design, it’s because they ask for an intricate, hand-painted golden lychee and email addresses, the right now.
-
-      p Experience a big table. Fill it as a versatile wall with a very happy. Either way to your fancy in the light, giving guests were alive. Many happy landings. Frogs like jumping in a good taste.
-
-      p Which just as well with our handcrafted center mirror will reflect well past midnight. Go ahead and meticulous handcraftsmanship. It’s easy access to say a unique Halloween garland to relax: Its button-tufted indoor/outdoor cushion. Aaaah.
-
-    script.
-      $('.example-expand_toggle').click(function () {
-        $(this).siblings('.example-expand').rb('animate', rb.animate.state.expandCollapse);
-      });
-
-
-    //- h3 State Change
-    //- .boxes
-    //-   .box-wrap
-    //-     svg.icon
-    //-       use(xlink:href=refreshIcon)
-    //-     .box.animatable Opacity
-    //-   .box-wrap
-    //-     svg.icon
-    //-       use(xlink:href=refreshIcon)
-    //-     .box.animatable Color
-    //-   .box-wrap
-    //-     svg.icon
-    //-       use(xlink:href=refreshIcon)
-    //-     .box.animatable Size
-
-    h3 Emphasis
-
-    h2 Timing
-    p Use an RB function.
-    h2 Easing
-    p Use an RB function.
-    h3 Moving Elements
-    h3 Stationary Elements
-
-    h2 Javascript
-    p Helper JS to remove animation class when it's finished.
-
-    script(src='/base/animation/rocketbelt.animate.min.js')
-    script.
-      $('.box, .box-wrap').on('click', function () {
-        event.stopPropagation();
-        var $this = $(this);
-
-        if ($(this).hasClass('box-wrap')) {
-          $this = $(this).find('.box');
-        }
-
-        var removeClass = function (className) { return className.indexOf('animation_') > -1; }
-
-        if ($this.hasClass('animatable')) {
-          $this.removeClass('animatable')
-            .removeClass(function(index, className) {
-              return (className.match(/(^|\s)animation_\S+/g) || []).join(' ');
-            });
-        } else {
-          $this.addClass('animatable').addClass('animation_' + $this.attr('data-rb-animate'));
-        }
-      });
+    h2 Slide & Fade
+    +exampleWithCode
+      button.toggle.button Toggle rbAnim_slide-and-fade
+      .slide-and-fade-example.rbAnim_animatable
+        .contents.rbAnim_fadable
+          ul
+            each i in [1, 2, 3, 4]
+              li= `${i}`
+      script.
+        $('.toggle').on('click', () => {
+          $('.slide-and-fade-example').toggleClass('rbAnim_slide-and-fade');
+        });
