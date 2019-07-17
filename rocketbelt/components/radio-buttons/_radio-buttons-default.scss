@@ -48,7 +48,7 @@ input {
 
     &:checked + label {
       &::before {
-        border: 6px solid color(primary);
+        border: 6px solid color(black);
         background: color(white);
         transition: border 200ms ease-in, background 200ms ease-in;
       }
@@ -71,7 +71,7 @@ input {
 
   &.rb-checkbox[type='checkbox'] {
     $color-white: color(white);
-    $color-selected: color(primary);
+    $color-selected: color(black);
     $color-unselected: color(gray, plus3);
 
     & + label {
