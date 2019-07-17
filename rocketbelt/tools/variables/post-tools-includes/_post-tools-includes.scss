@@ -1,0 +1,17 @@
+$color-families: map-merge($color-families, (
+  'ui': (
+    'footer': color(brand, columbiaBlue),
+    'footerAlt': color(brand, catskillBlue),
+    'link': color(brand, logoBlue),
+    'focus': color(brand, prussianBlue),
+    'button-base-fg': color(brand, prussianBlue)
+  ),
+  'uiFooter': (
+    'fg': color(black),
+    'bg': color(brand, columbiaBlue),
+    'bg2': color(brand, catskillBlue)
+  ),
+  'uiLink': (
+    'fgBase': color(brand, logoBlue)
+  )
+));
