@@ -1,3 +1,11 @@
+## [2.0.5-beta](https://github.com/Pier1/rocketbelt/compare/2.0.4-beta...2.0.5-beta) (2019-07-17)
+
+
+### Bug Fixes
+
+* **Forms:** Make `border-radius` declaration more general. ([5c0fb43](https://github.com/Pier1/rocketbelt/commit/5c0fb43))
+
+
 ## [2.0.4-beta](https://github.com/Pier1/rocketbelt/compare/2.0.3-beta...2.0.4-beta) (2019-07-16)
 
 
