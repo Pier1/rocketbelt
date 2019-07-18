@@ -2,7 +2,11 @@
 (() => {
   module.exports = (gulp, plugins, config) => {
     return () => {
-      return gulp.src([`${config.patternsPath}/**/*.js`, `!${config.patternsPath}/**/*.min.js`])
+      return gulp.src([
+        `${config.patternsPath}/**/*.js`,
+        `!${config.patternsPath}/**/*.min.js`,
+        `!${config.patternsPath}/base/slipsum/**/*`
+        ])
         .pipe(plugins.changed(config.buildPath))
         .pipe(plugins.plumber({
           errorHandler: plugins.notify.onError('Error: <%= error.message %>')
@@ -16,8 +20,7 @@
           ignore: [
             // Keep these files from breaking until they're refactored to ES6 code.
             `${config.patternsPath}/components/dialogs/**/*.js`,
-            `${config.patternsPath}/components/buttons/rocketbelt.dynamic-button.js`,
-            `${config.patternsPath}/base/slipsum/**/*.js(on)?`
+            `${config.patternsPath}/components/buttons/rocketbelt.dynamic-button.js`
           ]
         }))
         .pipe(plugins.uglify())
