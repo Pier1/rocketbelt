@@ -1,3 +1,12 @@
+## [2.0.7-beta](https://github.com/Pier1/rocketbelt/compare/2.0.6-beta...2.0.7-beta) (2019-07-18)
+
+
+### Bug Fixes
+
+* **Buttons:** Correct overzealous button selector. ([bc7280a](https://github.com/Pier1/rocketbelt/commit/bc7280a))
+
+
+
 ## [2.0.6-beta](https://github.com/Pier1/rocketbelt/compare/2.0.5-beta...2.0.6-beta) (2019-07-18)
 
 
