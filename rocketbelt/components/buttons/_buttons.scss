@@ -41,6 +41,7 @@ $button-box-shadow: z-depth(0);
 a[role='button'] {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 
 a[role='button'],
