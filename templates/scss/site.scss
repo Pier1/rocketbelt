@@ -1,8 +1,3 @@
-$system-font-stack: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif !important;
-
-$ms-base: (13 / 15) * 1rem 1rem;
-$ms-ratio: 1.333333333;
-
 @import 'vendor/vendor',
         '../../rocketbelt/tools/tools',
         'a11y',
@@ -122,4 +117,8 @@ code,
     flex: 1;
     margin: 0;
   }
+}
+
+h1 {
+  font-size: font-size(3) !important;
 }

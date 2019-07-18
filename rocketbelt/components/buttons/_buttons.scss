@@ -3,6 +3,8 @@ $button-color-base-bg: transparent;
 $button-color-border: color(ui, button-base-fg);
 $button-box-shadow: z-depth(0);
 
+button:not(.button),
+a[role='button']:not(.button),
 .button {
   padding: 0 2em;
   height: 2.9rem;
@@ -41,6 +43,7 @@ $button-box-shadow: z-depth(0);
 a[role='button'] {
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 
 a[role='button'],
