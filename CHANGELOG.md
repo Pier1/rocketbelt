@@ -1,3 +1,20 @@
+## [2.0.6-beta](https://github.com/Pier1/rocketbelt/compare/2.0.5-beta...2.0.6-beta) (2019-07-18)
+
+
+### Bug Fixes
+
+* **Buttons:** Center text for anchor buttons (role='button'). ([4f6f276](https://github.com/Pier1/rocketbelt/commit/4f6f276))
+* **Buttons:** Provide fallback styles & broader support for existing buttons. ([ff5bcf9](https://github.com/Pier1/rocketbelt/commit/ff5bcf9))
+* **forms:** Updated checkbox and radio button color ([13dff0b](https://github.com/Pier1/rocketbelt/commit/13dff0b))
+* **Typography:** Declare typographic variables in broader scope for use outside of RB. ([44d3e06](https://github.com/Pier1/rocketbelt/commit/44d3e06))
+
+
+### Features
+
+* **Global:** Better variable management. ([ec7de0b](https://github.com/Pier1/rocketbelt/commit/ec7de0b))
+
+
+
 ## [2.0.5-beta](https://github.com/Pier1/rocketbelt/compare/2.0.4-beta...2.0.5-beta) (2019-07-17)
 
 
