@@ -41,12 +41,14 @@ a[role='button']:not(.button):not(.button-text),
 }
 
 a[role='button'] {
+  @include no-anchor-underline();
+
   display: inline-flex;
   align-items: center;
   justify-content: center;
 }
 
-a[role='button'],
+[role='button'].button-primary,
 .button-primary {
   $button-primary-color-fg: color(white);
   $button-primary-color-bg: color(primary);
@@ -69,6 +71,7 @@ a[role='button'],
   }
 }
 
+.button-minimal,
 .button-text {
   $button-text-color-fg: color(ui, link);
   $button-text-color-bg: transparent;
@@ -93,6 +96,13 @@ a[role='button'],
   &:hover {
     $hover-color: scale-color($button-text-color-fg, $lightness: 25%);
     color: $hover-color;
+  }
+}
+
+.button-minimal {
+  &:active,
+  &:hover {
+    background: inherit;
   }
 }
 
