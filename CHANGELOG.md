@@ -1,3 +1,12 @@
+## [2.0.8-beta](https://github.com/Pier1/rocketbelt/compare/2.0.7-beta...2.0.8-beta) (2019-07-19)
+
+
+### Features
+
+* **Buttons:** Add `button-minimal` helper class. ([181a6d5](https://github.com/Pier1/rocketbelt/commit/181a6d5))
+
+
+
 ## [2.0.7-beta](https://github.com/Pier1/rocketbelt/compare/2.0.6-beta...2.0.7-beta) (2019-07-18)
 
 
