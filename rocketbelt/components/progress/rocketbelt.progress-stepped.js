@@ -12,10 +12,16 @@
       const hasAriaCurrent = attributes.getNamedItem(aria.current) ? true : false;
       // If target's attributes include aria-current
       if (hasAriaCurrent) {
+        const oldDescriptors = document.querySelectorAll('[aria-current] .progress-stepped_descriptor');
+        oldDescriptors.forEach(element => {
+          mutation.target.removeChild(element);
+        });
+
         // Add visually-hidden descriptor
         const span = document.createElement('span');
         span.textContent = 'Current Step: ';
         span.setAttribute('class', 'visually-hidden');
+        span.classList.add('progress-stepped_descriptor')
         mutation.target.insertBefore(span, mutation.target.querySelector('a'));
 
         // Decorate current & subsequent links with aria-disabled
