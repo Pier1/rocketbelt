@@ -7,12 +7,14 @@ fieldset {
   flex-direction: column;
 
   .affixment {
+    $border-max-width: 2px;
     position: absolute;
-    right: 0;
+    right: $border-max-width;
     z-index: 1;
-    height: 36px;
+    height: 36px - (2 * $border-max-width);
     opacity: 0;
     transition: opacity 200ms linear;
+    transform: translateY($border-max-width);
 
     &.affixed {
       opacity: 1;
