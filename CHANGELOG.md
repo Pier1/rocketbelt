@@ -1,3 +1,24 @@
+## [2.0.9-beta](https://github.com/Pier1/rocketbelt/compare/2.0.8-beta...2.0.9-beta) (2019-07-25)
+
+
+### Bug Fixes
+
+* **Progress Indicators:** Brand-align stepped progress styles. ([551d607](https://github.com/Pier1/rocketbelt/commit/551d607))
+* **Progress Indicators:** Improve descriptor decoration. ([cde6844](https://github.com/Pier1/rocketbelt/commit/cde6844))
+
+
+### Features
+
+* **Color:** Tweak `color(gray)`. ([32e08ac](https://github.com/Pier1/rocketbelt/commit/32e08ac))
+* **Icons:** Updated iconography (social icons & check-heavy). ([cbd9c42](https://github.com/Pier1/rocketbelt/commit/cbd9c42))
+
+
+### Reverts
+
+* **Forms:** Temporarily remove eased gradient from affixed input. ([a3e37f6](https://github.com/Pier1/rocketbelt/commit/a3e37f6))
+
+
+
 ## [2.0.8-beta](https://github.com/Pier1/rocketbelt/compare/2.0.7-beta...2.0.8-beta) (2019-07-19)
 
 

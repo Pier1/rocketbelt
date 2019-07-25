@@ -18,26 +18,35 @@
       }
     }
 
+    a {
+      // @include no-anchor-underline();
+
+      position: static;
+    }
+
     a::before,
     a::after {
       position: absolute;
       background-color: color(primary);
+      box-shadow: none;
       content: '';
       transition: background-color 300ms linear;
     }
 
-    $indicator-radius: 1rem;
-    $indicator-connector-height: 0.33rem;
+    $indicator-radius: 16px;
+    $indicator-connector-height: 4px;
     a::before {
-      top: ($indicator-radius - $indicator-connector-height) * 0.5;
+      top: -2px;
       right: 50%;
       z-index: -1;
       width: 100%;
       height: $indicator-connector-height;
+      content: '';
+      transform: translateX(-50%);
     }
 
     a::after {
-      top: 0;
+      top: -8px;
       left: 50%;
       width: $indicator-radius;
       height: $indicator-radius;

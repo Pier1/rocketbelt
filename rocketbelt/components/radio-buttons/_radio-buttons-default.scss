@@ -93,7 +93,7 @@ input {
         $color-fill: $color-white;
         border-color: transparent;
         background-color: $color-unselected;
-        background-image: icon-as-data-uri(check, $color-fill);
+        background-image: icon-as-data-uri(check-heavy, $color-fill);
         background-position: center center;
         background-repeat: no-repeat;
         transition: background-color 100ms ease-in, border-color 100ms ease-in;
@@ -105,7 +105,7 @@ input {
         $color-fill: $color-white;
         border-color: transparent;
         background-color: $color-selected;
-        background-image: icon-as-data-uri(check, $color-fill);
+        background-image: icon-as-data-uri(check-heavy, $color-fill);
         background-position: center center;
         background-repeat: no-repeat;
         transition: background-color 100ms ease-in, border-color 100ms ease-in;
@@ -127,7 +127,7 @@ input {
         &::before {
           $color-fill: color(gray, plus2);
           background-color: color(gray, plus4);
-          background-image: icon-as-data-uri(check, $color-fill);
+          background-image: icon-as-data-uri(check-heavy, $color-fill);
           background-position: center center;
           background-repeat: no-repeat;
         }

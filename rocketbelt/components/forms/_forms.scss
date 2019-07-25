@@ -9,32 +9,34 @@ fieldset {
   .affixment {
     position: absolute;
     right: 0;
+    z-index: 1;
     height: 36px;
     opacity: 0;
-    transition: opacity 1000ms linear;
+    transition: opacity 200ms linear;
 
     &.affixed {
       opacity: 1;
     }
 
-    &::before {
-      position: relative;
-      top: 2px;
-      left: -36px;
-      display: block;
-      width: 36px;
-      height: calc(100% - 4px);
-      background-image:
-        linear-gradient(270deg,
-        #fff, rgba(#fff, 0.89) 23%,
-          rgba(#fff, 0.65) 41%,
-          rgba(#fff, 0.36) 57%,
-          rgba(#fff, 0.12) 76%,
-          rgba(#fff, 0)
-        )
-      ;
-      content: '';
-    }
+    // Reverting for now—this needs to be finessed a bit.
+    // &::before {
+    //   position: relative;
+    //   top: 2px;
+    //   left: -36px;
+    //   display: block;
+    //   width: 36px;
+    //   height: calc(100% - 4px);
+    //   background-image:
+    //     linear-gradient(270deg,
+    //     #fff, rgba(#fff, 0.89) 23%,
+    //       rgba(#fff, 0.65) 41%,
+    //       rgba(#fff, 0.36) 57%,
+    //       rgba(#fff, 0.12) 76%,
+    //       rgba(#fff, 0)
+    //     )
+    //   ;
+    //   content: '';
+    // }
   }
 
   &:not(:last-child) {
