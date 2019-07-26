@@ -79,7 +79,7 @@ fieldset {
 
   :not([required]) {
     & + label::after {
-      content: vget(--required-text);
+      content: vget(--optional-text);
     }
   }
 
@@ -91,6 +91,7 @@ fieldset {
     }
   }
 
+  .optional-suppressed,
   .required-suppressed {
     &[required] {
       & + label::after {
