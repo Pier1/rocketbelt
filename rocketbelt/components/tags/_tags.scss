@@ -1,6 +1,9 @@
 .tag {
-  display: inline-block;
-  padding: ms(-16) ms(-8);
+  $v-pad: padding(0.25);
+
+  display: inline-flex;
+  padding: $v-pad padding(0.75);
+  height: calc(1.5em + 2 * #{$v-pad});
   background: color(gray, plus3);
   color: color(black);
   text-transform: uppercase;
@@ -8,6 +11,7 @@
   font-size: font-size(-2);
   font-family: font-family(sans);
   cursor: default;
+  align-items: center;
 
   &.tag-stretch {
     display: block;
