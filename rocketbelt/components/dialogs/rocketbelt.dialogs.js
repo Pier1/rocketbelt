@@ -75,8 +75,12 @@ $(function () {
     if (options.buttons.length !== 0) addDialogButtons();
 
     $cache.rbDialog.data('options', options);
-
+console.dir(closers);
     $.each(closers, function (index, el) {
+      if ($(el).is('.dialog_close')) {
+        $(el).addClass('button button-minimal');
+      }
+
       if ( options.required && $(el).is('.dialog_overlay, .dialog_close') ) return;
 
       el.addEventListener('click', close);
@@ -110,6 +114,7 @@ $(function () {
     $cache.rbDialogButtons = $('.dialog_buttons');
 
     $.each(buttons, function (name, props) {
+
       var click;
       var buttonOptions;
       props = $.isFunction(props) ? { click: props, text: name } : props;
@@ -117,6 +122,11 @@ $(function () {
       // Default to a non-submitting button
       props = $.extend({ type: 'button' }, props);
 
+      if (buttons.length === 1 || (props.classes && props.classes.length > 0 && !props.classes.contains('button-primary'))) {
+        // Button is implicitly primary if there's only one button.
+        props.classes = props.classes + ' button-primary';
+      }
+console.dir(props);
       // Change the context for the click callback to be the main element
       click = props.click;
       buttonOptions = {
@@ -194,6 +204,9 @@ $(function () {
   function open() {
     if ($cache.appendTo.hasClass('is-dialog-open')) return;
 
+    const $d = $($cache.rbDialog[0]).find('.dialog_content');
+    $d.removeAttr('style');
+
     // Preserve scroll position
     scrollBeforeDialog = $(window).scrollTop();
     $cache.appendTo.css('top', '-' + scrollBeforeDialog + 'px');
@@ -227,12 +240,64 @@ $(function () {
       }
     }
 
+    if (window.devicePixelRatio < 2) {
+      rb.onAnimationEnd(
+        $cache.rbDialog[0],
+        (e) => recenterDialog(e.target),
+        true
+      );
+
+      window.addEventListener('rb.optimizedResize', recenterDialog);
+    }
+
     $cache.rbDialog.trigger('rbDialog:open');
     _trigger('open');
   }
 
+  const recenterDialog = (el) => {
+    const $dialog = $($cache.rbDialog[0]).find('.dialog_content');
+
+    const position = $dialog.position();
+    const width = $dialog.width();
+
+    const $window = $(window);
+
+    const win = {
+      height: $window.height(),
+      width: $window.width()
+    };
+
+    const dialog = {
+      height: $dialog.height(),
+      width: $dialog.width()
+    }
+
+    const top = (win.height - dialog.height) / 2
+    const left = (win.width - dialog.width) / 2
+
+    $dialog.css({
+      'transform': 'none',
+      'position': 'fixed',
+      'top': Math.round(top),
+      'left': Math.round(left),
+      'width': width
+    });
+  };
+
   function close() {
     _trigger('beforeClose');
+
+    if (window.devicePixelRatio < 2) {
+      window.removeEventListener('rb.optimizedResize', recenterDialog);
+
+      const $dialog = $($cache.rbDialog[0]).find('.dialog_content');
+
+      $dialog.css({
+        'transform': 'translate(-50%, -50%)',
+        'top': '50%',
+        'left': '50%'
+      });
+    }
 
     if ($cache.rbDialog[0].hasAttribute('aria-hidden')) return;
 

@@ -8,18 +8,37 @@
   font-size: font-size(0);
 
   & a {
-    color: color(gray, minus1);
+    color: color(black);
     text-decoration: none;
 
-    &:visited {
-      color: color(gray, minus1);
-    }
     &:hover {
-      color: color(gray, plus1);
+      text-decoration: underline;
     }
+  }
 
-    &:active {
-      color: color(gray, minus1);
+  .nav-link-wrapper {
+    a {
+      @include anchor-underline($underline-color: color(uiLink, fgBase));
+    }
+  }
+
+ .nav_level-2 {
+    &.sub-heading {
+      a {
+        @include heading-style(
+          (
+            'style': 'blurt',
+            'font-size': font-size(-1)
+          )
+        );
+
+        font-weight: font-weight(bold);
+      }
+    }
+    &:not(.sub-heading) {
+      a {
+        color: color(gray, minus2);
+      }
     }
   }
 }

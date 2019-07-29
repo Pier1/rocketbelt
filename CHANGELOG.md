@@ -1,3 +1,21 @@
+## [2.0.10-beta](https://github.com/Pier1/rocketbelt/compare/2.0.9-beta...2.0.10-beta) (2019-07-29)
+
+
+### Bug Fixes
+
+* **Dialogs:** Use alternate positioning for dialogs on low-DPI screens to avoid blurriness. ([649ba61](https://github.com/Pier1/rocketbelt/commit/649ba61))
+* **Forms:** Adjust input affixment positioning. ([276a809](https://github.com/Pier1/rocketbelt/commit/276a809))
+* **Forms:** Correctly label optional form fields. ([e500594](https://github.com/Pier1/rocketbelt/commit/e500594))
+
+
+### Features
+
+* **Dialogs:** Add smarter button defaults. ([8d1c380](https://github.com/Pier1/rocketbelt/commit/8d1c380))
+* **Tags:** Smarter tag defaults. ([30373af](https://github.com/Pier1/rocketbelt/commit/30373af))
+* **Typography & Navigation:** Slim down usage of animated underline. ([9b4d587](https://github.com/Pier1/rocketbelt/commit/9b4d587))
+
+
+
 ## [2.0.9-beta](https://github.com/Pier1/rocketbelt/compare/2.0.8-beta...2.0.9-beta) (2019-07-25)
 
 
