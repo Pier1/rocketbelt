@@ -47,7 +47,7 @@ a {
     @include no-anchor-underline();
   }
 
-  @at-root .anchor-underline,
+  @at-root .anchor-underline &,
   &.anchor-underline {
     @include anchor-underline($hover-color: scale-color(color(uiLink, fgBase), $lightness: 25%));
   }
