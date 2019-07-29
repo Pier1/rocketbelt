@@ -1,3 +1,12 @@
+## [2.0.11-beta](https://github.com/Pier1/rocketbelt/compare/2.0.10-beta...2.0.11-beta) (2019-07-29)
+
+
+### Bug Fixes
+
+* **Typography:** Add element specificity to `.anchor-underline` helper class. ([f460f47](https://github.com/Pier1/rocketbelt/commit/f460f47))
+
+
+
 ## [2.0.10-beta](https://github.com/Pier1/rocketbelt/compare/2.0.9-beta...2.0.10-beta) (2019-07-29)
 
 
