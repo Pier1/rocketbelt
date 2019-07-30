@@ -5,7 +5,6 @@ $message-families: (success, error, warning, info);
   margin: 0.5rem 0;
   padding: 0.5rem;
   border: 1px solid;
-  border-radius: 2px;
   align-items: center;
 }
 
@@ -16,7 +15,6 @@ $message-families: (success, error, warning, info);
   margin: 0.5rem 0;
   padding: 0.5rem;
   border: 1px solid;
-  border-radius: 2px;
 }
 
 
@@ -25,7 +23,6 @@ $message-families: (success, error, warning, info);
 
   margin: 0;
   border: none;
-  border-radius: 0;
 }
 
 .message-banner {
@@ -76,7 +73,7 @@ $message-families: (success, error, warning, info);
 .message-dismissable {
 
   justify-content: space-between;
-  
+
   .message-dismissable_close {
     display: flex;
     margin: -0.375rem;
