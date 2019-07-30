@@ -16,7 +16,7 @@ input {
 
     &[disabled] + label {
       &::before {
-        border: 2px solid color(gray, plus4);
+        border: 1px solid color(gray, plus4);
         background: color(gray, plus4);
       }
     }
@@ -32,7 +32,7 @@ input {
         left: 0;
         width: 1rem;
         height: 1rem;
-        border: 2px solid color(gray, plus2);
+        border: 1px solid color(gray, plus2);
         border-radius: 100%;
         background: color(white);
         content: '';
@@ -81,7 +81,7 @@ input {
         left: 0;
         width: 1rem;
         height: 1rem;
-        border: 2px solid color(gray, plus2);
+        border: 1px solid color(gray, plus2);
         background: color(white);
         background-position: center center;
         content: '';
