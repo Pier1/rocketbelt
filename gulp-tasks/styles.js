@@ -1,6 +1,7 @@
 'use strict';
 (() => {
   module.exports = (gulp, plugins, config) => {
+    const packageJson = require('../package.json');
     return () => {
 
       const supported =
@@ -21,6 +22,9 @@
           errorHandler: plugins.notify.onError('Error: <%= error.message %>')
         }))
         .pipe(plugins.sourcemaps.init())
+        .pipe(plugins.sassVariables({
+          '$rb-version': packageJson.version
+        }))
         .pipe(plugins.sass())
         .pipe(plugins.postcss([
           require('postcss-svg')({

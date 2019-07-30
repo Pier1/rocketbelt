@@ -11,6 +11,20 @@ $color-families: map-merge($color-families, (
     'bg': color(brand, columbiaBlue),
     'bg2': color(brand, catskillBlue)
   ),
+  'uiHeader': (
+    'topFg': color(black),
+    'topBg': color(brand, columbiaBlue),
+    'navDropdownBg': color(gray, plus2)
+  ),
+  'uiMinibasket': (
+    'minibasketBg': color(gray, plus2),
+    'minibasketSeparator': color(gray, plus1),
+    'minibasketItemBg': color(white),
+    'minibasketItemHighlight': color(brand, prussianBlue),
+    'minibasketPromoBg': color(brand, columbiaBlue),
+    'minibasketPromoFg': color(black),
+    'minibasketGeneralFg': color(gray, minus1)
+  ),
   'uiLink': (
     'fgBase': color(brand, logoBlue)
   )

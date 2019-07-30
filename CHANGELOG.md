@@ -1,3 +1,20 @@
+## [2.0.12-beta](https://github.com/Pier1/rocketbelt/compare/2.0.11-beta...2.0.12-beta) (2019-07-30)
+
+
+### Bug Fixes
+
+* **Progress:** Remove errant positioning property. ([d38b366](https://github.com/Pier1/rocketbelt/commit/d38b366))
+
+
+### Features
+
+* **Build:** Add custom property with version number for better debugging. ([89cc04a](https://github.com/Pier1/rocketbelt/commit/89cc04a))
+* **Color:** Add functional color maps for `uiHeader` and `uiMinibasket`. ([1a395b2](https://github.com/Pier1/rocketbelt/commit/1a395b2))
+* **Forms:** Update `border-width` of checkboxes/radio buttons. ([b3afb7a](https://github.com/Pier1/rocketbelt/commit/b3afb7a))
+* **Global:** Remove old `border-radius` styles. ([688f547](https://github.com/Pier1/rocketbelt/commit/688f547))
+
+
+
 ## [2.0.11-beta](https://github.com/Pier1/rocketbelt/compare/2.0.10-beta...2.0.11-beta) (2019-07-29)
 
 
