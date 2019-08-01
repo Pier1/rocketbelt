@@ -1,3 +1,12 @@
+## [2.0.14-beta](https://github.com/Pier1/rocketbelt/compare/2.0.12-beta...2.0.14-beta) (2019-08-01)
+
+
+### Bug Fixes
+
+* **Dialogs:** Handle implicit button styles in a way that doesn't break. ([1d2772d](https://github.com/Pier1/rocketbelt/commit/1d2772d))
+
+
+
 ## [2.0.12-beta](https://github.com/Pier1/rocketbelt/compare/2.0.11-beta...2.0.12-beta) (2019-07-30)
 
 

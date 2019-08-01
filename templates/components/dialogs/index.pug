@@ -52,7 +52,7 @@ block content
       .row
         .col.xs-8
           div
-            button.button.button-secondary.button-md(onclick="$('#standard-dialog').rbDialog({title: 'Base Dialog', buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
+            button.button.button-secondary.button-md(onclick="$('#standard-dialog').rbDialog({title: 'Base Dialog', buttons: [{text: 'Cancel', click: function (e) { $(this).rbDialog('close'); }}, {text: 'Ok', classes: 'button-primary', click: function (e) { $(this).rbDialog('close'); }}]})") Trigger Dialog
       .row
         .col.xs
           +exampleWithCode

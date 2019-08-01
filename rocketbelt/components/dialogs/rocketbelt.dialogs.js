@@ -75,7 +75,6 @@ $(function () {
     if (options.buttons.length !== 0) addDialogButtons();
 
     $cache.rbDialog.data('options', options);
-console.dir(closers);
     $.each(closers, function (index, el) {
       if ($(el).is('.dialog_close')) {
         $(el).addClass('button button-minimal');
@@ -122,11 +121,12 @@ console.dir(closers);
       // Default to a non-submitting button
       props = $.extend({ type: 'button' }, props);
 
-      if (buttons.length === 1 || (props.classes && props.classes.length > 0 && !props.classes.contains('button-primary'))) {
+      if (buttons.length === 1) {
         // Button is implicitly primary if there's only one button.
-        props.classes = props.classes + ' button-primary';
+        if (!props.classes || (props.classes && props.classes.length > 0 && !props.classes.indexOf('button-primary') > -1)) {
+          props.classes = props.classes + ' button-primary';
+        }
       }
-console.dir(props);
       // Change the context for the click callback to be the main element
       click = props.click;
       buttonOptions = {
