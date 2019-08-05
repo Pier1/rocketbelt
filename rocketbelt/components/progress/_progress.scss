@@ -1,3 +1,6 @@
+$indicator-diameter: 12px;
+$indicator-connector-height: 2px;
+
 .progress-stepped {
   .progress_steps {
     display: flex;
@@ -11,65 +14,80 @@
     min-height: 2.5rem;
     justify-content: center;
     align-items: flex-end;
+    
+    a {
+      text-transform: uppercase;
+      letter-spacing: 1.2px;
+      color: color(primary);
+      text-decoration: none;
+      font-size: font-size(-1);
+      transition: font-size 300ms linear;
+      &::before, &::after {
+        content: '';
+        position: absolute;
+        box-shadow: none;
+        transition: background-color 300ms linear;
+      }
 
+      // Connector
+      &::before {
+        top: $indicator-connector-height / -2;
+        right: 50%;
+        z-index: -1;
+        width: 100%;
+        border-bottom: $indicator-connector-height solid color(primary);
+      }
+
+      // Circle
+      &::after {
+        top: $indicator-diameter / -2;
+        left: 50%;
+        background-color: color(primary);
+        width: $indicator-diameter;
+        height: $indicator-diameter;
+        border-radius: 50%;
+        content: '';
+        transform: translateX(-50%);
+      }
+    }
     &:first-of-type {
       a::before {
         display: none;
       }
     }
-
-    a::before,
-    a::after {
-      position: absolute;
-      background-color: color(primary);
-      box-shadow: none;
-      content: '';
-      transition: background-color 300ms linear;
-    }
-
-    $indicator-radius: 16px;
-    $indicator-connector-height: 4px;
-    a::before {
-      top: -2px;
-      right: 50%;
-      z-index: -1;
-      width: 100%;
-      height: $indicator-connector-height;
-      content: '';
-      // transform: translateX(-50%);
-    }
-
-    a::after {
-      top: -8px;
-      left: 50%;
-      width: $indicator-radius;
-      height: $indicator-radius;
-      border-radius: 50%;
-      content: '';
-      transform: translateX(-50%);
-    }
   }
 
+  // Current Step
   [aria-current='page'] {
+    font-weight: font-weight(bold);
+    cursor: default;
+    pointer-events: none;
+
     a {
-      color: color(black);
-      text-decoration: none;
-      font-weight: font-weight(medium);
-      cursor: default;
-      pointer-events: none;
+      font-size: font-size(0);
+      &::after {
+        background-color: color(primary);
+        width: $indicator-diameter * 2;
+        height: $indicator-diameter * 2;
+        top: ($indicator-diameter * 2) / -2;
+      }
     }
 
+    // Upcoming Steps
     & ~ li {
       a {
-        color: color(gray);
         text-decoration: none;
         cursor: default;
         pointer-events: none;
-      }
 
-      a::before,
-      a::after {
-        background-color: color(gray, plus3);
+        &::before {
+          border-bottom-style: dotted;
+        }
+
+        &::after {
+          background-color: color(white);
+          border: 2px solid color(primary);;
+        }
       }
     }
   }
