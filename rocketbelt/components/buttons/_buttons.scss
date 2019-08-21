@@ -20,7 +20,10 @@ a[role='button']:not(.button):not(.button-text),
   }
 
   &:hover {
-    background: transparentize($color: scale-color($button-color-base-fg, $lightness: 85%), $amount: 0.85);
+    background: transparentize(
+      $color: scale-color($button-color-base-fg, $lightness: 85%),
+      $amount: 0.85
+    );
     box-shadow: z-depth(2);
     color: scale-color($button-color-base-fg, $lightness: 12.5%);
   }
@@ -57,11 +60,6 @@ a[role='button'] {
   background: $button-primary-color-bg;
   color: $button-primary-color-fg;
 
-  &:hover,
-  &:active {
-    color: $button-primary-color-fg;
-  }
-
   &:hover {
     background: scale-color($button-primary-color-bg, $lightness: 10%);
   }
@@ -89,13 +87,12 @@ a[role='button'] {
     box-shadow: none;
   }
 
-  &:active {
-    color: $button-text-color-fg;
+  &:hover {
+    color: scale-color($color: $button-text-color-fg, $lightness: 25%);
   }
 
-  &:hover {
-    $hover-color: scale-color($button-text-color-fg, $lightness: 25%);
-    color: $hover-color;
+  &:active {
+    color: $button-text-color-fg;
   }
 }
 
@@ -147,8 +144,12 @@ a[role='button'] {
 }
 
 @keyframes spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .button-dropdown {
