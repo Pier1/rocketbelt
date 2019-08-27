@@ -3,22 +3,21 @@ const gulp = require('gulp');
 
 const plugins = require('gulp-load-plugins')({ DEBUG: false, pattern: '*' });
 
-const buildPath = './dist';
+const buildPath = './public';
 const buildCssPath = `${buildPath}/css`;
-const patternsPath = './rocketbelt';
-const templatesPath = './templates';
+const patternsPath = './src/rocketbelt';
+const templatesPath = './src/templates';
 const tasksPath = './gulp-tasks';
 
 const config = {
   buildPath: buildPath,
   buildCssPath: buildCssPath,
-  colorFamilies: require(`${templatesPath}/base/color/_color-families.json`),
   patternsPath: patternsPath,
   templatesPath: templatesPath,
   sizeOptions: {
     showFiles: true,
-    gzip: true
-  }
+    gzip: true,
+  },
 };
 
 function getTask(task, taskParams) {
@@ -34,9 +33,6 @@ gulp.task('copy-js', getTask('copy-js'));
 gulp.task('copy-resources', getTask('copy-resources'));
 gulp.task('copy-tools', getTask('copy-tools'));
 gulp.task('css-sort', getTask('css-sort'));
-// gulp.task('icons-enterprise', getTask('icons', { enterprise: true }));
-gulp.task('icons-ecom', getTask('icons'));
-// gulp.task('icons', ['icons-ecom', 'icons-enterprise']);
 gulp.task('icons', getTask('icons'));
 gulp.task('link-svg', getTask('link-svg'));
 gulp.task('link-templates', getTask('link-templates'));
