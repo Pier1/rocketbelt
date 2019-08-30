@@ -1,3 +1,17 @@
+## [2.0.15](https://github.com/Pier1/rocketbelt/compare/2.0.14-beta...2.0.15) (2019-08-30)
+
+
+### Bug Fixes
+
+* **Typography:** Normalize button/link hover & active styles. ([8d4b067](https://github.com/Pier1/rocketbelt/commit/8d4b067))
+
+
+### Features
+
+* **Icons:** Update logo to indicate registered trademark. ([5643c4c](https://github.com/Pier1/rocketbelt/commit/5643c4c))
+
+
+
 ## [2.0.14-beta](https://github.com/Pier1/rocketbelt/compare/2.0.12-beta...2.0.14-beta) (2019-08-01)
 
 
