@@ -1,3 +1,12 @@
+## [2.0.17](https://github.com/Pier1/rocketbelt/compare/2.0.16...2.0.17) (2019-09-04)
+
+
+### Bug Fixes
+
+* **Buttons:** Recall that pseudoclasses count toward specificity. 😑 ([b92e055](https://github.com/Pier1/rocketbelt/commit/b92e055))
+
+
+
 ## [2.0.16](https://github.com/Pier1/rocketbelt/compare/2.0.15...2.0.16) (2019-09-03)
 
 
