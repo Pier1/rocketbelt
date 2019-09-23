@@ -35,6 +35,10 @@ $color-families: map-merge(
       'salePriceBase': color(sale),
       'regPriceBase': color(gray, minus1),
       'reviewSummaryBase': color(brand),
+      'tagNewFg': color(success),
+      'tagSaleFg': color(sale),
+      'tagClearanceFg': color(sale),
+      'tagPromoBg': color(brand, catskillBlue),
     ),
   )
 );
