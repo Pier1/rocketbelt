@@ -1,0 +1,14 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Navigation'
+
+block content
+  article
+    h1 Notices
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _notice.pug

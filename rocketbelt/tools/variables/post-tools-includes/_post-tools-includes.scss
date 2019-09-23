@@ -1,31 +1,40 @@
-$color-families: map-merge($color-families, (
-  'ui': (
-    'footer': color(brand, columbiaBlue),
-    'footerAlt': color(brand, catskillBlue),
-    'link': color(brand, logoBlue),
-    'focus': color(brand, prussianBlue),
-    'button-base-fg': color(brand, prussianBlue)
-  ),
-  'uiFooter': (
-    'fg': color(black),
-    'bg': color(brand, columbiaBlue),
-    'bg2': color(brand, catskillBlue)
-  ),
-  'uiHeader': (
-    'topFg': color(black),
-    'topBg': color(brand, columbiaBlue),
-    'navDropdownBg': color(gray, plus2)
-  ),
-  'uiMinibasket': (
-    'minibasketBg': color(gray, plus2),
-    'minibasketSeparator': color(gray, plus1),
-    'minibasketItemBg': color(white),
-    'minibasketItemHighlight': color(brand, prussianBlue),
-    'minibasketPromoBg': color(brand, columbiaBlue),
-    'minibasketPromoFg': color(black),
-    'minibasketGeneralFg': color(gray, minus1)
-  ),
-  'uiLink': (
-    'fgBase': color(brand, logoBlue)
+$color-families: map-merge(
+  $color-families,
+  (
+    'ui': (
+      'footer': color(brand, columbiaBlue),
+      'footerAlt': color(brand, catskillBlue),
+      'link': color(brand, logoBlue),
+      'focus': color(brand, prussianBlue),
+      'button-base-fg': color(brand, prussianBlue),
+    ),
+    'uiFooter': (
+      'fg': color(black),
+      'bg': color(brand, columbiaBlue),
+      'bg2': color(brand, catskillBlue),
+    ),
+    'uiHeader': (
+      'topFg': color(black),
+      'topBg': color(brand, columbiaBlue),
+      'navDropdownBg': color(gray, plus2),
+    ),
+    'uiMinibasket': (
+      'minibasketBg': color(gray, plus2),
+      'minibasketSeparator': color(gray, plus1),
+      'minibasketItemBg': color(white),
+      'minibasketItemHighlight': color(brand, prussianBlue),
+      'minibasketPromoBg': color(brand, columbiaBlue),
+      'minibasketPromoFg': color(black),
+      'minibasketGeneralFg': color(gray, minus1),
+    ),
+    'uiLink': (
+      'fgBase': color(brand, logoBlue),
+    ),
+    'uiGrid': (
+      'swatchSummaryBase': color(brand),
+      'salePriceBase': color(sale),
+      'regPriceBase': color(gray, minus1),
+      'reviewSummaryBase': color(brand),
+    ),
   )
-));
+);
