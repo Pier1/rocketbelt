@@ -1,47 +1,30 @@
 .tag {
-  $v-pad: padding(0.25);
-
   display: inline-flex;
-  padding: $v-pad padding(0.75);
-  height: calc(1.5em + 2 * #{$v-pad});
-  background: color(gray, plus3);
+  padding: 3px 6px;
+  background: rgba(color(white), 0.8);
   color: color(black);
-  text-transform: uppercase;
-  font-weight: font-weight(medium);
+  letter-spacing: letter-spacing(plus3);
+  font-weight: font-weight(bold);
   font-size: font-size(-2);
-  font-family: font-family(sans);
   cursor: default;
   align-items: center;
+  justify-content: center;
 
-  &.tag-stretch {
-    display: block;
-    text-align: center;
+  &.tag-promo {
+    display: flex;
+    background: color(uiGrid, tagPromoBg);
   }
 
-  &.tag-plus-2 {
-    padding: ms(-6);
-    font-weight: 600;
-    font-size: font-size(4);
+  &.tag-sale-clearance {
+    background: color(gray, plus5);
+    color: color(sale);
+    text-transform: uppercase;
   }
 
-  &.tag-plus-1 {
-    padding: ms(-14) ms(-8);
-    font-size: font-size(1);
-  }
-
-  &.tag-subtle {
-    border: 1px solid color(gray, plus3);
-    background: color(white);
-  }
-
-  &.tag-success {
-    background: color(success);
-    color: color(white);
-  }
-
-  &.tag-sale {
-    background: color(sale);
-    color: color(white);
+  &.tag-new {
+    background: color(gray, plus5);
+    color: color(uiGrid, tagNewFg);
+    text-transform: uppercase;
   }
 
   &.tag-error {
@@ -49,17 +32,10 @@
     color: color(white);
   }
 
-  &.tag-warning {
-    background: color(warning);
-    color: color(black);
-  }
-
-  &.tag-primary {
-    background: color(primary);
-    color: color(white);
-  }
-
   &.message-dismissable {
+    border: 1px solid color(gray, plus3);
+    letter-spacing: 0;
+
     .message-dismissable_close {
       margin: 0;
       padding: 0;
