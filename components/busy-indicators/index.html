@@ -31,11 +31,11 @@
       <header class="site-header">
         <div class="site-nav nav-shadowed">
           <div class="nav_on-site"><a class="rb-header" href="/"><span class="visually-hidden">Return to rocketbelt.io</span>
-              <picture><img srcset="/assets/rocketbelt.svg" alt=""></picture><span class="rb-title">Rocketbelt</span></a>
+              <picture><img srcset="/assets/rocketbelt.svg" alt></picture><span class="rb-title">Rocketbelt</span></a>
             <nav id="main-nav">
               <ul class="nav-menu">
                 <li class="nav-item nav_level-1" ref="base">
-                  <button class="category-label">Base</button>
+                  <button class="button category-label">Base</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/base/a11y">Accessibility</a></li>
@@ -51,27 +51,28 @@
                   </div>
                 </li>
                 <li class="nav-item nav_level-1" ref="components">
-                  <button class="category-label">Components</button>
+                  <button class="button category-label">Components</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notices">Notices</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/sliders">Sliders</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/scrollbox">Scrollbox</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/scrollbox">Scrollbox</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/sliders">Sliders</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
@@ -81,7 +82,7 @@
                   </div>
                 </li>
                 <li class="nav-item nav_level-1" ref="creative">
-                  <button class="category-label">Creative</button>
+                  <button class="button category-label">Creative</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/playground">Playground</a></li>
@@ -92,7 +93,7 @@
                   </div>
                 </li>
                 <li class="nav-item nav_level-1" ref="exposition">
-                  <button class="category-label">Exposition</button>
+                  <button class="button category-label">Exposition</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/homepage-components">Homepage Components</a></li>
@@ -159,13 +160,13 @@
                   <p>For example:</p>
                   <div class="exampleWithCode">
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-ZQ1MF8" checked="checked">
-                      <label class="expander_label" for="rb-ZQ1MF8" data-collapsed-label="Show CSS" data-expanded-label="Hide CSS"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-Z1gY54S" checked="checked">
+                      <label class="expander_label" for="rb-Z1gY54S" data-collapsed-label="Show CSS" data-expanded-label="Hide CSS"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="button copy-code" data-clipboard-target="#rb-gk7bV">Copy</button>
-                          <pre><code class="language-css" id="rb-gk7bV">
+                          <button class="button copy-code" data-clipboard-target="#rb-Z1cSMwN">Copy</button>
+                          <pre><code class="language-css" id="rb-Z1cSMwN">
                               #component-wrapper .is-busy_overlay {
                                 font-size: font-size(3);
                               }</code></pre>
@@ -180,13 +181,13 @@
                 </button></h3>
                   <div class="exampleWithCode">
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-Z1k7Wnd" checked="checked">
-                      <label class="expander_label" for="rb-Z1k7Wnd" data-collapsed-label="Show JS" data-expanded-label="Hide JS"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-ZSuItE" checked="checked">
+                      <label class="expander_label" for="rb-ZSuItE" data-collapsed-label="Show JS" data-expanded-label="Hide JS"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="button copy-code" data-clipboard-target="#rb-Z13n2Ry">Copy</button>
-                          <pre><code class="language-js" id="rb-Z13n2Ry">
+                          <button class="button copy-code" data-clipboard-target="#rb-BgXGh">Copy</button>
+                          <pre><code class="language-js" id="rb-BgXGh">
                               &lt;script src=&quot;./rocketbelt.progress-indicators.js&quot;&gt;&lt;/script&gt;</code></pre>
                         </div>
                       </div>
@@ -223,13 +224,13 @@
                         <div class="exampleWithCode">
                           <div class="example"></div>
                           <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-Z1s6ADC">
-                            <label class="expander_label" for="rb-Z1s6ADC" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <input class="expander_checkbox" type="checkbox" id="rb-2f9Uk6">
+                            <label class="expander_label" for="rb-2f9Uk6" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
                                 <div class="dots"></div>
-                                <button class="button copy-code" data-clipboard-target="#rb-ZebE6O">Copy</button>
-                                <pre><code class="language-html" id="rb-ZebE6O">
+                                <button class="button copy-code" data-clipboard-target="#rb-1rYDuT">Copy</button>
+                                <pre><code class="language-html" id="rb-1rYDuT">
                                     &lt;button class=&quot;button button-primary is-busy is-busy-inverted&quot;&gt;&lt;span&gt;Trigger Busy&lt;/span&gt;&lt;/button&gt;</code></pre>
                               </div>
                             </div>
@@ -259,7 +260,7 @@
                         </ul>
                         <div class="form-group is-busyable">
                           <select id="busy-select">
-                            <option value="" disabled selected hidden>Change selection to trigger busy</option>
+                            <option value disabled selected hidden>Change selection to trigger busy</option>
                             <option class="is-busy_trigger">Biblioteca</option>
                             <option class="is-busy_trigger">Marcel</option>
                             <option class="is-busy_trigger">Pierce</option>
@@ -269,13 +270,13 @@
                         <div class="exampleWithCode">
                           <div class="example"></div>
                           <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-2cAFLw">
-                            <label class="expander_label" for="rb-2cAFLw" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <input class="expander_checkbox" type="checkbox" id="rb-2gdGQr">
+                            <label class="expander_label" for="rb-2gdGQr" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
                                 <div class="dots"></div>
-                                <button class="button copy-code" data-clipboard-target="#rb-1LKwJd">Copy</button>
-                                <pre><code class="language-html" id="rb-1LKwJd">
+                                <button class="button copy-code" data-clipboard-target="#rb-2cVVb8">Copy</button>
+                                <pre><code class="language-html" id="rb-2cVVb8">
                                     &lt;div class=&quot;form-group is-busyable&quot;&gt;
                                       &lt;textarea id=&quot;busy-textarea&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot;&gt;&lt;/textarea&gt;
                                       &lt;label for=&quot;busy-textarea&quot;&gt;Message&lt;/label&gt;
@@ -355,13 +356,13 @@
                       </div>
                     </div>
                     <div class="expander">
-                      <input class="expander_checkbox" type="checkbox" id="rb-ZOMPP8">
-                      <label class="expander_label" for="rb-ZOMPP8" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                      <input class="expander_checkbox" type="checkbox" id="rb-2dlogk">
+                      <label class="expander_label" for="rb-2dlogk" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                       <div class="expander_content">
                         <div class="example-code">
                           <div class="dots"></div>
-                          <button class="button copy-code" data-clipboard-target="#rb-yx8go">Copy</button>
-                          <pre><code class="language-html" id="rb-yx8go">
+                          <button class="button copy-code" data-clipboard-target="#rb-1VsBKv">Copy</button>
+                          <pre><code class="language-html" id="rb-1VsBKv">
                               &lt;div class=&quot;form-group is-busyable is-busyable-page&quot; style=&quot;width: 100%;&quot; data-rb-is-busy-message=&quot;This is taking longer than we expected!&quot; data-rb-is-busy-message-after-seconds=&quot;3&quot;&gt;
                                 &lt;textarea class=&quot;is-busy_trigger&quot; id=&quot;busy-large&quot; placeholder=&quot;Blur the textarea to trigger a busy state.&quot; style=&quot;height: 50rem;&quot;&gt;&lt;/textarea&gt;
                                 &lt;label for=&quot;busy-large&quot;&gt;Message&lt;/label&gt;
@@ -395,12 +396,12 @@
       </footer>
     </div>
     <article class="dialog" tabindex="0" aria-hidden="true">
-      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide></div>
       <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
         <header class="dialog_header">
           <h2 class="dialog_title" id="dialog_title"></h2>
           <div class="dialog_close_container">
-            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+            <button class="dialog_close" data-rb-dialog-hide aria-label="Close dialog">
               <svg class="icon">
                 <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"/>
               </svg>

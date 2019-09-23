@@ -8,7 +8,14 @@
   }
 }
 
-@mixin anchor-underline($underline-color: color(ui, link), $hover-color: currentColor) {
+@mixin anchor-underline(
+  $underline-color: color(ui, link),
+  $hover-color: currentColor
+) {
+  position: relative;
+  display: inline-block;
+  text-decoration: none;
+
   &::before {
     position: absolute;
     bottom: 1px;
@@ -18,8 +25,7 @@
     height: 3px;
     box-shadow: 0 2px 0 currentColor;
     content: '';
-    transition: transform 250ms ease(out-sine),
-                color     250ms linear;
+    transition: transform 250ms ease(out-sine), color 250ms linear;
     transition-delay: 100ms;
     transform: scaleX(0);
   }
@@ -37,34 +43,39 @@
 
 a {
   @at-root .no-anchor-underline &,
-  &.no-anchor-underline,
-  &.anchor-minimal,
-  &.text-with-icon {
+    &.no-anchor-underline,
+    &.anchor-minimal,
+    &.text-with-icon {
     @include no-anchor-underline();
+  }
+
+  @at-root .anchor-underline &,
+    &.anchor-underline {
+    @include anchor-underline(
+      $hover-color: scale-color(color(uiLink, fgBase), $lightness: 25%)
+    );
   }
 
   @at-root .link-list & {
     @include no-anchor-underline();
   }
 
-  $base-link-color: color(ui, link);
+  $base-link-color: color(uiLink, fgBase);
 
-  position: relative;
-  display: inline-block;
   color: $base-link-color;
   text-decoration: none;
   transition: color 100ms linear;
 
-  @include anchor-underline($hover-color: scale-color($base-link-color, $lightness: 25%));
+  &:visited {
+    color: $base-link-color;
+  }
+
+  &:hover {
+    color: scale-color($color: $base-link-color, $lightness: 25%);
+  }
 
   &:active {
     color: $base-link-color;
-    transition: color 100ms linear;
-  }
-
-  &:visited {
-    color: scale-color($base-link-color, $lightness: -15%);
-    transition: color 100ms linear;
   }
 
   &.disabled,

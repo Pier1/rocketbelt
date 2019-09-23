@@ -3,6 +3,8 @@ $button-color-base-bg: transparent;
 $button-color-border: color(ui, button-base-fg);
 $button-box-shadow: z-depth(0);
 
+button:not(.button):not(.button-text),
+a[role='button']:not(.button):not(.button-text),
 .button {
   padding: 0 2em;
   height: 2.9rem;
@@ -18,7 +20,10 @@ $button-box-shadow: z-depth(0);
   }
 
   &:hover {
-    background: transparentize($color: scale-color($button-color-base-fg, $lightness: 85%), $amount: 0.85);
+    background: transparentize(
+      $color: scale-color($button-color-base-fg, $lightness: 85%),
+      $amount: 0.85
+    );
     box-shadow: z-depth(2);
     color: scale-color($button-color-base-fg, $lightness: 12.5%);
   }
@@ -39,11 +44,14 @@ $button-box-shadow: z-depth(0);
 }
 
 a[role='button'] {
+  @include no-anchor-underline();
+
   display: inline-flex;
   align-items: center;
+  justify-content: center;
 }
 
-a[role='button'],
+[role='button'].button-primary,
 .button-primary {
   $button-primary-color-fg: color(white);
   $button-primary-color-bg: color(primary);
@@ -52,20 +60,18 @@ a[role='button'],
   background: $button-primary-color-bg;
   color: $button-primary-color-fg;
 
-  &:hover,
-  &:active {
-    color: $button-primary-color-fg;
-  }
-
   &:hover {
     background: scale-color($button-primary-color-bg, $lightness: 10%);
+    color: $button-primary-color-fg;
   }
 
   &:active {
     background: scale-color($button-primary-color-bg, $lightness: -12.5%);
+    color: $button-primary-color-fg;
   }
 }
 
+.button-minimal,
 .button-text {
   $button-text-color-fg: color(ui, link);
   $button-text-color-bg: transparent;
@@ -83,13 +89,19 @@ a[role='button'],
     box-shadow: none;
   }
 
+  &:hover {
+    color: scale-color($color: $button-text-color-fg, $lightness: 25%);
+  }
+
   &:active {
     color: $button-text-color-fg;
   }
+}
 
+.button-minimal {
+  &:active,
   &:hover {
-    $hover-color: scale-color($button-text-color-fg, $lightness: 25%);
-    color: $hover-color;
+    background: inherit;
   }
 }
 
@@ -134,8 +146,12 @@ a[role='button'],
 }
 
 @keyframes spin {
-  0%   { transform: rotate(0deg); }
-  100% { transform: rotate(360deg); }
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
 
 .button-dropdown {
@@ -165,7 +181,6 @@ a[role='button'],
     color: inherit;
 
     & ~ .button-dropdown_icon {
-      border-radius: 2px;
       color: inherit;
     }
   }

@@ -31,11 +31,11 @@
       <header class="site-header">
         <div class="site-nav nav-shadowed">
           <div class="nav_on-site"><a class="rb-header" href="/"><span class="visually-hidden">Return to rocketbelt.io</span>
-              <picture><img srcset="/assets/rocketbelt.svg" alt=""></picture><span class="rb-title">Rocketbelt</span></a>
+              <picture><img srcset="/assets/rocketbelt.svg" alt></picture><span class="rb-title">Rocketbelt</span></a>
             <nav id="main-nav">
               <ul class="nav-menu">
                 <li class="nav-item nav_level-1" ref="base">
-                  <button class="category-label">Base</button>
+                  <button class="button category-label">Base</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/base/a11y">Accessibility</a></li>
@@ -51,27 +51,28 @@
                   </div>
                 </li>
                 <li class="nav-item nav_level-1" ref="components">
-                  <button class="category-label">Components</button>
+                  <button class="button category-label">Components</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/images">Images</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/navigation">Navigation</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/alerts">Alerts</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/busy-indicators">Busy Indicators</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/expanders">Expanders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/card-grids">Card Grids</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/buttons">Buttons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/cards">Cards</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/dialogs">Dialogs</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/forms">Forms</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/icons">Icons</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notices">Notices</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/scrollbox">Scrollbox</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/radio-buttons">Radio Buttons</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/progress">Progress</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/panels">Panels</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/notifications">Notifications</a></li>
-                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/scrollbox">Scrollbox</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/sliders">Sliders</a></li>
+                      <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tabcordions">Tabcordions</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tables">Tables</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tags">Tags</a></li>
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/components/tooltips">Tooltips</a></li>
@@ -81,7 +82,7 @@
                   </div>
                 </li>
                 <li class="nav-item nav_level-1" ref="creative">
-                  <button class="category-label">Creative</button>
+                  <button class="button category-label">Creative</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/creative/playground">Playground</a></li>
@@ -92,7 +93,7 @@
                   </div>
                 </li>
                 <li class="nav-item nav_level-1" ref="exposition">
-                  <button class="category-label">Exposition</button>
+                  <button class="button category-label">Exposition</button>
                   <div class="sub-nav">
                     <ul class="sub-nav-group">
                       <li class="sub-nav-item"><a class="sub-nav-link" href="/exposition/homepage-components">Homepage Components</a></li>
@@ -139,7 +140,7 @@
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
                 </button></h1>
-                  <h2 id="variations" class="heading-with-link"><span class="heading_text">Variations</span><button data-clipboard-text="#variations" class="heading-copy-button heading_link">
+                  <h2 id="basic-variations" class="heading-with-link"><span class="heading_text">Basic Variations</span><button data-clipboard-text="#basic-variations" class="heading-copy-button heading_link">
                   <svg class="icon" aria-label="Link to this section" role="img">
                     <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
                   </svg>
@@ -149,65 +150,25 @@
                       <div class="col xs">
                         <div class="exampleWithCode">
                           <div class="example">
-                            <div class="tag">default</div>
-                            <div class="tag tag-subtle">subtle</div>
-                            <div class="tag tag-success">success</div>
-                            <div class="tag tag-warning">warning</div>
-                            <div class="tag tag-error">error</div>
-                            <div class="tag tag-sale">sale</div>
-                            <div class="tag tag-primary">primary</div>
-                            <div class="tag tag-secondary">secondary</div>
-                            <div class="tag tag-accent">accent</div>
+                            <div class="tag">Indoor/Outdoor</div>
+                            <div class="tag">Online Only</div>
+                            <div class="tag tag-sale-clearance">Sale</div>
+                            <div class="tag tag-sale-clearance">Clearance</div>
+                            <div class="tag tag-new">New</div>
                           </div>
                           <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-17ovGK">
-                            <label class="expander_label" for="rb-17ovGK" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1vtItf">
+                            <label class="expander_label" for="rb-Z1vtItf" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
                                 <div class="dots"></div>
-                                <button class="button copy-code" data-clipboard-target="#rb-y9lR">Copy</button>
-                                <pre><code class="language-html" id="rb-y9lR">
-                                    &lt;div class=&quot;tag&quot;&gt;default&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-subtle&quot;&gt;subtle&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-success&quot;&gt;success&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-warning&quot;&gt;warning&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-error&quot;&gt;error&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-sale&quot;&gt;sale&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-primary&quot;&gt;primary&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-secondary&quot;&gt;secondary&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-accent&quot;&gt;accent&lt;/div&gt;</code></pre>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h2 id="sizes" class="heading-with-link"><span class="heading_text">Sizes</span><button data-clipboard-text="#sizes" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h2>
-                  <div class="grid-fluid">
-                    <div class="row">
-                      <div class="col xs">
-                        <div class="exampleWithCode">
-                          <div class="example">
-                            <div class="tag tag-plus-2 tag-success">success</div>
-                            <div class="tag tag-plus-1 tag-success">success</div>
-                            <div class="tag tag-success">success</div>
-                          </div>
-                          <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-Z1hXkK9">
-                            <label class="expander_label" for="rb-Z1hXkK9" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
-                            <div class="expander_content">
-                              <div class="example-code">
-                                <div class="dots"></div>
-                                <button class="button copy-code" data-clipboard-target="#rb-Z1SxL1V">Copy</button>
-                                <pre><code class="language-html" id="rb-Z1SxL1V">
-                                    &lt;div class=&quot;tag tag-plus-2 tag-success&quot;&gt;success&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-plus-1 tag-success&quot;&gt;success&lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-success&quot;&gt;success&lt;/div&gt;</code></pre>
+                                <button class="button copy-code" data-clipboard-target="#rb-Z2m3th">Copy</button>
+                                <pre><code class="language-html" id="rb-Z2m3th">
+                                    &lt;div class=&quot;tag&quot;&gt;Indoor/Outdoor&lt;/div&gt;
+                                    &lt;div class=&quot;tag&quot;&gt;Online Only&lt;/div&gt;
+                                    &lt;div class=&quot;tag tag-sale-clearance&quot;&gt;Sale&lt;/div&gt;
+                                    &lt;div class=&quot;tag tag-sale-clearance&quot;&gt;Clearance&lt;/div&gt;
+                                    &lt;div class=&quot;tag tag-new&quot;&gt;New&lt;/div&gt;</code></pre>
                               </div>
                             </div>
                           </div>
@@ -225,134 +186,20 @@
                       <div class="col xs">
                         <div class="exampleWithCode">
                           <div class="example">
-                            <div class="tag tag-plus-2 message-dismissable">
-                              <div class="message-dismissable_close">default</div>
-                            </div>
-                            <div class="tag tag-plus-1 message-dismissable">
-                              <div class="message-dismissable_close">default</div>
-                            </div>
                             <div class="tag message-dismissable">
-                              <div class="message-dismissable_close">default</div>
+                              <div class="message-dismissable_close">Click Me to Dismiss</div>
                             </div>
                           </div>
                           <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-Z1ifBpO">
-                            <label class="expander_label" for="rb-Z1ifBpO" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1tBxKM">
+                            <label class="expander_label" for="rb-Z1tBxKM" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
                                 <div class="dots"></div>
-                                <button class="button copy-code" data-clipboard-target="#rb-Z2237uV">Copy</button>
-                                <pre><code class="language-html" id="rb-Z2237uV">
-                                    &lt;div class=&quot;tag tag-plus-2 message-dismissable&quot;&gt;
-                                      &lt;div class=&quot;message-dismissable_close&quot;&gt;default&lt;/div&gt;
-                                    &lt;/div&gt;
-                                    &lt;div class=&quot;tag tag-plus-1 message-dismissable&quot;&gt;
-                                      &lt;div class=&quot;message-dismissable_close&quot;&gt;default&lt;/div&gt;
-                                    &lt;/div&gt;
+                                <button class="button copy-code" data-clipboard-target="#rb-ZONobm">Copy</button>
+                                <pre><code class="language-html" id="rb-ZONobm">
                                     &lt;div class=&quot;tag message-dismissable&quot;&gt;
-                                      &lt;div class=&quot;message-dismissable_close&quot;&gt;default&lt;/div&gt;
-                                    &lt;/div&gt;</code></pre>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <h2 id="stretch" class="heading-with-link"><span class="heading_text">Stretch</span><button data-clipboard-text="#stretch" class="heading-copy-button heading_link">
-                  <svg class="icon" aria-label="Link to this section" role="img">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
-                  </svg>
-                </button></h2>
-                  <div class="grid-fluid">
-                    <div class="row">
-                      <div class="col xs">
-                        <div class="exampleWithCode">
-                          <div class="example">
-                            <div class="row">
-                              <div class="col xs">
-                                <div class="tag tag-plus-2 tag-stretch tag-success">success</div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col xs">
-                                <div class="tag tag-stretch tag-plus-2">default</div>
-                              </div>
-                              <div class="col xs">
-                                <div class="tag tag-plus-2 tag-stretch tag-success">success</div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col xs">
-                                <div class="tag tag-stretch tag-plus-1">default</div>
-                              </div>
-                              <div class="col xs">
-                                <div class="tag tag-plus-1 tag-stretch tag-success">success</div>
-                              </div>
-                              <div class="col xs">
-                                <div class="tag tag-stretch tag-plus-1">default</div>
-                              </div>
-                            </div>
-                            <div class="row">
-                              <div class="col xs">
-                                <div class="tag tag tag-stretch">default</div>
-                              </div>
-                              <div class="col xs">
-                                <div class="tag tag tag-stretch tag-success">success</div>
-                              </div>
-                              <div class="col xs">
-                                <div class="tag tag tag-stretch">default</div>
-                              </div>
-                              <div class="col xs">
-                                <div class="tag tag tag-stretch tag-success">success</div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-Z1dQFOn">
-                            <label class="expander_label" for="rb-Z1dQFOn" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
-                            <div class="expander_content">
-                              <div class="example-code">
-                                <div class="dots"></div>
-                                <button class="button copy-code" data-clipboard-target="#rb-Z2rkcGr">Copy</button>
-                                <pre><code class="language-html" id="rb-Z2rkcGr">
-                                    &lt;div class=&quot;row&quot;&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag-plus-2 tag-stretch tag-success&quot;&gt;success&lt;/div&gt;
-                                      &lt;/div&gt;
-                                    &lt;/div&gt;
-                                    &lt;div class=&quot;row&quot;&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag-stretch tag-plus-2&quot;&gt;default&lt;/div&gt;
-                                      &lt;/div&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag-plus-2 tag-stretch tag-success&quot;&gt;success&lt;/div&gt;
-                                      &lt;/div&gt;
-                                    &lt;/div&gt;
-                                    &lt;div class=&quot;row&quot;&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag-stretch tag-plus-1&quot;&gt;default&lt;/div&gt;
-                                      &lt;/div&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag-plus-1 tag-stretch tag-success&quot;&gt;success&lt;/div&gt;
-                                      &lt;/div&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag-stretch tag-plus-1&quot;&gt;default&lt;/div&gt;
-                                      &lt;/div&gt;
-                                    &lt;/div&gt;
-                                    &lt;div class=&quot;row&quot;&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag tag-stretch&quot;&gt;default&lt;/div&gt;
-                                      &lt;/div&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag tag-stretch tag-success&quot;&gt;success&lt;/div&gt;
-                                      &lt;/div&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag tag-stretch&quot;&gt;default&lt;/div&gt;
-                                      &lt;/div&gt;
-                                      &lt;div class=&quot;col xs&quot;&gt;
-                                        &lt;div class=&quot;tag tag tag-stretch tag-success&quot;&gt;success&lt;/div&gt;
-                                      &lt;/div&gt;
+                                      &lt;div class=&quot;message-dismissable_close&quot;&gt;Click Me to Dismiss&lt;/div&gt;
                                     &lt;/div&gt;</code></pre>
                               </div>
                             </div>
@@ -363,14 +210,43 @@
                             <script src="../alerts/rocketbelt.alerts-dismissable.js"></script>
                           </div>
                           <div class="expander">
-                            <input class="expander_checkbox" type="checkbox" id="rb-Z1jaUV8">
-                            <label class="expander_label" for="rb-Z1jaUV8" data-collapsed-label="Show JavaScript" data-expanded-label="Hide JavaScript"><span class="expander_icon"></span></label>
+                            <input class="expander_checkbox" type="checkbox" id="rb-Z1gzepk">
+                            <label class="expander_label" for="rb-Z1gzepk" data-collapsed-label="Show JavaScript" data-expanded-label="Hide JavaScript"><span class="expander_icon"></span></label>
                             <div class="expander_content">
                               <div class="example-code">
                                 <div class="dots"></div>
-                                <button class="button copy-code" data-clipboard-target="#rb-Z1AtsKh">Copy</button>
-                                <pre><code class="language-javascript" id="rb-Z1AtsKh">
+                                <button class="button copy-code" data-clipboard-target="#rb-Z1iUvmD">Copy</button>
+                                <pre><code class="language-javascript" id="rb-Z1iUvmD">
                                     &lt;script src=&quot;../alerts/rocketbelt.alerts-dismissable.js&quot;&gt;&lt;/script&gt;</code></pre>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <h2 id="promo-tags" class="heading-with-link"><span class="heading_text">Promo Tags</span><button data-clipboard-text="#promo-tags" class="heading-copy-button heading_link">
+                  <svg class="icon" aria-label="Link to this section" role="img">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-bookmark"/>
+                  </svg>
+                </button></h2>
+                  <div class="grid-fluid">
+                    <div class="row">
+                      <div class="col xs">
+                        <p>Promo Tags stretch to fill the width of their container.</p>
+                        <div class="exampleWithCode">
+                          <div class="example">
+                            <div class="tag tag-promo">Pier 1 Picks: 25% Off</div>
+                          </div>
+                          <div class="expander">
+                            <input class="expander_checkbox" type="checkbox" id="rb-ZPOJMp">
+                            <label class="expander_label" for="rb-ZPOJMp" data-collapsed-label="Show HTML" data-expanded-label="Hide HTML"><span class="expander_icon"></span></label>
+                            <div class="expander_content">
+                              <div class="example-code">
+                                <div class="dots"></div>
+                                <button class="button copy-code" data-clipboard-target="#rb-jiQ2b">Copy</button>
+                                <pre><code class="language-html" id="rb-jiQ2b">
+                                    &lt;div class=&quot;tag tag-promo&quot;&gt;Pier 1 Picks: 25% Off&lt;/div&gt;</code></pre>
                               </div>
                             </div>
                           </div>
@@ -403,12 +279,12 @@
       </footer>
     </div>
     <article class="dialog" tabindex="0" aria-hidden="true">
-      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+      <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide></div>
       <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
         <header class="dialog_header">
           <h2 class="dialog_title" id="dialog_title"></h2>
           <div class="dialog_close_container">
-            <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+            <button class="dialog_close" data-rb-dialog-hide aria-label="Close dialog">
               <svg class="icon">
                 <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"/>
               </svg>

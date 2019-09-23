@@ -1,3 +1,165 @@
+## [2.0.19](https://github.com/Pier1/rocketbelt/compare/2.0.18...2.0.19) (2019-09-23)
+
+
+### Features
+
+* **Tags:** Update tag pattern. ([452a93d](https://github.com/Pier1/rocketbelt/commit/452a93d))
+
+
+
+## [2.0.18](https://github.com/Pier1/rocketbelt/compare/2.0.17...2.0.18) (2019-09-23)
+
+
+### Features
+
+* **Notices:** Add notice pattern. ([53675a8](https://github.com/Pier1/rocketbelt/commit/53675a8))
+
+
+
+## [2.0.17](https://github.com/Pier1/rocketbelt/compare/2.0.16...2.0.17) (2019-09-04)
+
+
+### Bug Fixes
+
+* **Buttons:** Recall that pseudoclasses count toward specificity. 😑 ([b92e055](https://github.com/Pier1/rocketbelt/commit/b92e055))
+
+
+
+## [2.0.16](https://github.com/Pier1/rocketbelt/compare/2.0.15...2.0.16) (2019-09-03)
+
+
+
+## [2.0.15](https://github.com/Pier1/rocketbelt/compare/2.0.14-beta...2.0.15) (2019-08-30)
+
+
+### Bug Fixes
+
+* **Typography:** Normalize button/link hover & active styles. ([8d4b067](https://github.com/Pier1/rocketbelt/commit/8d4b067))
+
+
+### Features
+
+* **Icons:** Update logo to indicate registered trademark. ([5643c4c](https://github.com/Pier1/rocketbelt/commit/5643c4c))
+
+
+
+## [2.0.14-beta](https://github.com/Pier1/rocketbelt/compare/2.0.12-beta...2.0.14-beta) (2019-08-01)
+
+
+### Bug Fixes
+
+* **Dialogs:** Handle implicit button styles in a way that doesn't break. ([1d2772d](https://github.com/Pier1/rocketbelt/commit/1d2772d))
+
+
+
+## [2.0.12-beta](https://github.com/Pier1/rocketbelt/compare/2.0.11-beta...2.0.12-beta) (2019-07-30)
+
+
+### Bug Fixes
+
+* **Progress:** Remove errant positioning property. ([d38b366](https://github.com/Pier1/rocketbelt/commit/d38b366))
+
+
+### Features
+
+* **Build:** Add custom property with version number for better debugging. ([89cc04a](https://github.com/Pier1/rocketbelt/commit/89cc04a))
+* **Color:** Add functional color maps for `uiHeader` and `uiMinibasket`. ([1a395b2](https://github.com/Pier1/rocketbelt/commit/1a395b2))
+* **Forms:** Update `border-width` of checkboxes/radio buttons. ([b3afb7a](https://github.com/Pier1/rocketbelt/commit/b3afb7a))
+* **Global:** Remove old `border-radius` styles. ([688f547](https://github.com/Pier1/rocketbelt/commit/688f547))
+
+
+
+## [2.0.11-beta](https://github.com/Pier1/rocketbelt/compare/2.0.10-beta...2.0.11-beta) (2019-07-29)
+
+
+### Bug Fixes
+
+* **Typography:** Add element specificity to `.anchor-underline` helper class. ([f460f47](https://github.com/Pier1/rocketbelt/commit/f460f47))
+
+
+
+## [2.0.10-beta](https://github.com/Pier1/rocketbelt/compare/2.0.9-beta...2.0.10-beta) (2019-07-29)
+
+
+### Bug Fixes
+
+* **Dialogs:** Use alternate positioning for dialogs on low-DPI screens to avoid blurriness. ([649ba61](https://github.com/Pier1/rocketbelt/commit/649ba61))
+* **Forms:** Adjust input affixment positioning. ([276a809](https://github.com/Pier1/rocketbelt/commit/276a809))
+* **Forms:** Correctly label optional form fields. ([e500594](https://github.com/Pier1/rocketbelt/commit/e500594))
+
+
+### Features
+
+* **Dialogs:** Add smarter button defaults. ([8d1c380](https://github.com/Pier1/rocketbelt/commit/8d1c380))
+* **Tags:** Smarter tag defaults. ([30373af](https://github.com/Pier1/rocketbelt/commit/30373af))
+* **Typography & Navigation:** Slim down usage of animated underline. ([9b4d587](https://github.com/Pier1/rocketbelt/commit/9b4d587))
+
+
+
+## [2.0.9-beta](https://github.com/Pier1/rocketbelt/compare/2.0.8-beta...2.0.9-beta) (2019-07-25)
+
+
+### Bug Fixes
+
+* **Progress Indicators:** Brand-align stepped progress styles. ([551d607](https://github.com/Pier1/rocketbelt/commit/551d607))
+* **Progress Indicators:** Improve descriptor decoration. ([cde6844](https://github.com/Pier1/rocketbelt/commit/cde6844))
+
+
+### Features
+
+* **Color:** Tweak `color(gray)`. ([32e08ac](https://github.com/Pier1/rocketbelt/commit/32e08ac))
+* **Icons:** Updated iconography (social icons & check-heavy). ([cbd9c42](https://github.com/Pier1/rocketbelt/commit/cbd9c42))
+
+
+### Reverts
+
+* **Forms:** Temporarily remove eased gradient from affixed input. ([a3e37f6](https://github.com/Pier1/rocketbelt/commit/a3e37f6))
+
+
+
+## [2.0.8-beta](https://github.com/Pier1/rocketbelt/compare/2.0.7-beta...2.0.8-beta) (2019-07-19)
+
+
+### Features
+
+* **Buttons:** Add `button-minimal` helper class. ([181a6d5](https://github.com/Pier1/rocketbelt/commit/181a6d5))
+
+
+
+## [2.0.7-beta](https://github.com/Pier1/rocketbelt/compare/2.0.6-beta...2.0.7-beta) (2019-07-18)
+
+
+### Bug Fixes
+
+* **Buttons:** Correct overzealous button selector. ([bc7280a](https://github.com/Pier1/rocketbelt/commit/bc7280a))
+
+
+
+## [2.0.6-beta](https://github.com/Pier1/rocketbelt/compare/2.0.5-beta...2.0.6-beta) (2019-07-18)
+
+
+### Bug Fixes
+
+* **Buttons:** Center text for anchor buttons (role='button'). ([4f6f276](https://github.com/Pier1/rocketbelt/commit/4f6f276))
+* **Buttons:** Provide fallback styles & broader support for existing buttons. ([ff5bcf9](https://github.com/Pier1/rocketbelt/commit/ff5bcf9))
+* **forms:** Updated checkbox and radio button color ([13dff0b](https://github.com/Pier1/rocketbelt/commit/13dff0b))
+* **Typography:** Declare typographic variables in broader scope for use outside of RB. ([44d3e06](https://github.com/Pier1/rocketbelt/commit/44d3e06))
+
+
+### Features
+
+* **Global:** Better variable management. ([ec7de0b](https://github.com/Pier1/rocketbelt/commit/ec7de0b))
+
+
+
+## [2.0.5-beta](https://github.com/Pier1/rocketbelt/compare/2.0.4-beta...2.0.5-beta) (2019-07-17)
+
+
+### Bug Fixes
+
+* **Forms:** Make `border-radius` declaration more general. ([5c0fb43](https://github.com/Pier1/rocketbelt/commit/5c0fb43))
+
+
 ## [2.0.4-beta](https://github.com/Pier1/rocketbelt/compare/2.0.3-beta...2.0.4-beta) (2019-07-16)
 
 

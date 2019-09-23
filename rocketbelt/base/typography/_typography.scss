@@ -61,7 +61,7 @@ body {
   letter-spacing: $sans-base-letter-spacing;
   font-size: font-size(0);
   font-family: font-family(loading);
-  line-height: 1.5;
+  line-height: $base-line-height;
 
   -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
   -moz-osx-font-smoothing: grayscale;  // sass-lint:disable-line no-vendor-prefixes

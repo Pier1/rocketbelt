@@ -7,34 +7,38 @@ fieldset {
   flex-direction: column;
 
   .affixment {
+    $border-max-width: 2px;
     position: absolute;
-    right: 0;
-    height: 36px;
+    right: $border-max-width;
+    z-index: 1;
+    height: 36px - (2 * $border-max-width);
     opacity: 0;
-    transition: opacity 1000ms linear;
+    transition: opacity 200ms linear;
+    transform: translateY($border-max-width);
 
     &.affixed {
       opacity: 1;
     }
 
-    &::before {
-      position: relative;
-      top: 2px;
-      left: -36px;
-      display: block;
-      width: 36px;
-      height: calc(100% - 4px);
-      background-image:
-        linear-gradient(270deg,
-        #fff, rgba(#fff, 0.89) 23%,
-          rgba(#fff, 0.65) 41%,
-          rgba(#fff, 0.36) 57%,
-          rgba(#fff, 0.12) 76%,
-          rgba(#fff, 0)
-        )
-      ;
-      content: '';
-    }
+    // Reverting for now—this needs to be finessed a bit.
+    // &::before {
+    //   position: relative;
+    //   top: 2px;
+    //   left: -36px;
+    //   display: block;
+    //   width: 36px;
+    //   height: calc(100% - 4px);
+    //   background-image:
+    //     linear-gradient(270deg,
+    //     #fff, rgba(#fff, 0.89) 23%,
+    //       rgba(#fff, 0.65) 41%,
+    //       rgba(#fff, 0.36) 57%,
+    //       rgba(#fff, 0.12) 76%,
+    //       rgba(#fff, 0)
+    //     )
+    //   ;
+    //   content: '';
+    // }
   }
 
   &:not(:last-child) {
@@ -75,7 +79,7 @@ fieldset {
 
   :not([required]) {
     & + label::after {
-      content: vget(--required-text);
+      content: vget(--optional-text);
     }
   }
 
@@ -87,6 +91,7 @@ fieldset {
     }
   }
 
+  .optional-suppressed,
   .required-suppressed {
     &[required] {
       & + label::after {
@@ -274,6 +279,7 @@ textarea {
   width: 100%;
   height: $input-height;
   border: 1px solid color(gray, plus1);
+  border-radius: 0;
   font-size: font-size(0);
 
   & + label {
@@ -359,7 +365,6 @@ select {
   $fill: color(black);
 
   padding-right: 25px;
-  border-radius: 0;
   background-color: color(white);
   background-image: icon-as-data-uri(chevron-down, $fill);
   background-position: right 0.5rem center;

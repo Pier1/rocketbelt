@@ -6,21 +6,13 @@ block vars
 block content
   article
     h1 Tags
-    h2 Variations
+    h2 Basic Variations
 
     .grid-fluid
       .row
         .col.xs
           +exampleWithCode
             include _tags-variations.pug
-
-    h2 Sizes
-
-    .grid-fluid
-      .row
-        .col.xs
-          +exampleWithCode
-            include _tags-sizes.pug
 
     h2 Dismissable
 
@@ -29,14 +21,14 @@ block content
         .col.xs
           +exampleWithCode
             include _tags-dismissable.pug
+          +exampleWithCode('js')
+            script(src='../alerts/rocketbelt.alerts-dismissable.js')
 
-    h2 Stretch
+    h2 Promo Tags
 
     .grid-fluid
       .row
         .col.xs
+          p Promo Tags stretch to fill the width of their container.
           +exampleWithCode
-            include _tags-stretch.pug
-
-          +exampleWithCode('js')
-            script(src='../alerts/rocketbelt.alerts-dismissable.js')
+            include _tags-promo.pug

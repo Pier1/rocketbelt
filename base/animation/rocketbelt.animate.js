@@ -50,34 +50,6 @@
     xl: `${durationPrefix}xl`
   };
 
-  rb.animate.onAnimationEnd = (el, callback, once = false) => {
-    el.addEventListener('animationend', function animationHandler(e) {
-      if (once) {
-        e.target.removeEventListener(e.type, animationHandler);
-      }
-
-      if (callback) {
-        return callback(e);
-      }
-
-      return el;
-    });
-  };
-
-  rb.animate.onTransitionEnd = (el, callback, once = false) => {
-    el.addEventListener('transitionend', function transitionHandler(e) {
-      if (once) {
-        e.target.removeEventListener(e.type, transitionHandler);
-      }
-
-      if (callback) {
-        return callback(e);
-      }
-
-      return el;
-    });
-  };
-
   rb.animate.animate = (el, animationName, configOrCallback) => {
     const classesToRemove = ['animatable', animationName];
     let callback = null;

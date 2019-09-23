@@ -1,5 +1,9 @@
-@import 'variables/variables';
+@import 'variables/pre-tools-includes/pre-tools-includes';
+
 @import 'functions/functions';
 @import 'mixins/mixins';
 @import 'placeholders/placeholders';
 @import 'vendor/vendor';
+
+// These vars depend on an above include (probably a mixin or function)
+@import 'variables/post-tools-includes/post-tools-includes';

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="16px" height="16px" viewBox="0 0 16 16" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    
+    <title>Icon/check-heavy</title>
+    <desc>Created with sketchtool.</desc>
+    <g id="Icons" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Icon/check-heavy" fill="#00205B">
+            <path d="M1,9.18476868 C0.580810547,8.84317017 0.472686768,8.26473999 0.874557495,7.87571716 C1.27642822,7.48669434 1.79655457,7.59352112 2.14373779,8 L5.42240906,11.3754425 L13.8410797,3 C14.3548737,2.42767334 14.841507,2.59780884 15.1298981,2.86274719 C15.4182892,3.12768555 15.5299377,3.73953247 15,4.17094421 L6.13314819,13 C5.9122111,13.2511495 5.67529806,13.3767242 5.42240906,13.3767242 C5.16952006,13.3767242 4.93073018,13.2511495 4.70603943,13 L1,9.18476868 Z" id="Path"></path>
+        </g>
+    </g>
+</svg>

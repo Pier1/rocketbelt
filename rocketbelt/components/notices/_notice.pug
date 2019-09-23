@@ -1,0 +1,19 @@
+figure.notice
+  .notice_text.text-with-icon The promotion wasnt recognized.
+    svg.icon.icon-left(aria-hidden=true)
+      use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-error')
+  button.button.button-minimal.notice_close
+    svg.icon(role=img)
+      use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-close')
+
+figure.notice.notice-attached
+  .notice_text.text-with-icon You must use a specific payment method to qualify for this promotion.
+    svg.icon.icon-left(aria-hidden=true)
+      use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-warning')
+  button.button.button-minimal.notice_close
+    svg.icon(role=img)
+      use(xlink:href='/components/icons/rocketbelt.icons.svg#rb-icon-close')
+
+figure.notice.notice-applied
+  .notice_text.text-with-icon The promotion was removed.
+  button.button.button-text.notice_undo Undo
