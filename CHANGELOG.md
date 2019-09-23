@@ -1,3 +1,12 @@
+## [2.0.18](https://github.com/Pier1/rocketbelt/compare/2.0.17...2.0.18) (2019-09-23)
+
+
+### Features
+
+* **Notices:** Add notice pattern. ([53675a8](https://github.com/Pier1/rocketbelt/commit/53675a8))
+
+
+
 ## [2.0.17](https://github.com/Pier1/rocketbelt/compare/2.0.16...2.0.17) (2019-09-04)
 
 
