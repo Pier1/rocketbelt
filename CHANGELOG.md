@@ -1,3 +1,12 @@
+## [2.0.19](https://github.com/Pier1/rocketbelt/compare/2.0.18...2.0.19) (2019-09-23)
+
+
+### Features
+
+* **Tags:** Update tag pattern. ([452a93d](https://github.com/Pier1/rocketbelt/commit/452a93d))
+
+
+
 ## [2.0.18](https://github.com/Pier1/rocketbelt/compare/2.0.17...2.0.18) (2019-09-23)
 
 
