@@ -18,7 +18,6 @@
     "babel-core": "^6.26.3",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
-    "casperjs": "^1.1.3",
     "cssnano": "^4.1.10",
     "cz-conventional-changelog": "^1.2.0",
     "del": "^2.2.2",
@@ -61,7 +60,6 @@
     "merge-stream": "^1.0.0",
     "moment-timezone": "^0.5.21",
     "mutationobserver-shim": "^0.3.2",
-    "phantomjs-prebuilt": "^2.1.16",
     "postcss-focus-within": "^3.0.0",
     "postcss-svg": "^2.4.0",
     "recursive-readdir": "^2.2.2",
@@ -71,8 +69,7 @@
     "vinyl-fs": "^2.4.4"
   },
   "dependencies": {
-    "clipboard": "^1.5.15",
-    "siema": "^1.5.1"
+    "clipboard": "^1.5.15"
   },
   "config": {
     "commitizen": {
