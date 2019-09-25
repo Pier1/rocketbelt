@@ -1,3 +1,12 @@
+## [2.0.20](https://github.com/Pier1/rocketbelt/compare/2.0.19...2.0.20) (2019-09-25)
+
+
+### Bug Fixes
+
+* **Dependencies:** Remove old dependencies. ([7d04cff](https://github.com/Pier1/rocketbelt/commit/7d04cff))
+
+
+
 ## [2.0.19](https://github.com/Pier1/rocketbelt/compare/2.0.18...2.0.19) (2019-09-23)
 
 
