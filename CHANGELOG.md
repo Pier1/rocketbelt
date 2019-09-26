@@ -1,3 +1,12 @@
+## [2.0.21](https://github.com/Pier1/rocketbelt/compare/2.0.20...2.0.21) (2019-09-26)
+
+
+### Bug Fixes
+
+* **Icons:** Correctly insert icons as background images. ([a685d62](https://github.com/Pier1/rocketbelt/commit/a685d62))
+
+
+
 ## [2.0.20](https://github.com/Pier1/rocketbelt/compare/2.0.19...2.0.20) (2019-09-25)
 
 
