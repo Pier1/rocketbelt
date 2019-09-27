@@ -34,17 +34,16 @@
           plugins.postcss([
             require('postcss-svg')({
               dirs: `${config.patternsPath}/components/icons`,
-              // svgo: {
-              //   plugins: [
-              //     {
-              //       removeDesc: true,
-              //       removeTitle: true,
-              //       cleanupAttrs: true,
-              //     },
-              //   ],
-              // },
+              svgo: {
+                plugins: [
+                  {
+                    removeDesc: true,
+                    removeTitle: true,
+                    cleanupAttrs: true,
+                  },
+                ],
+              },
             }),
-            plugins.postcssFocusWithin({ replaceWith: '.focus-within' }),
           ])
         )
         .pipe(
@@ -64,18 +63,10 @@
         .pipe(
           plugins.postcss([
             plugins.cssnano({
+              svgo: false,
               autoprefixer: { browsers: supported },
               normalizeUrl: {
                 stripWWW: false,
-              },
-              svgo: {
-                plugins: [
-                  {
-                    removeDesc: true,
-                    removeTitle: true,
-                    cleanupAttrs: true,
-                  },
-                ],
               },
             }),
           ])
