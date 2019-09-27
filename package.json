@@ -1,6 +1,6 @@
 {
   "name": "rocketbelt",
-  "version": "2.0.22-beta.2",
+  "version": "2.0.22-beta.3",
   "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively assembled at Pier 1 Imports.",
   "homepage": "http://rocketbelt.io",
   "bugs": "https://github.com/pier1/rocketbelt/issues",
@@ -60,7 +60,6 @@
     "merge-stream": "^1.0.0",
     "moment-timezone": "^0.5.21",
     "mutationobserver-shim": "^0.3.2",
-    "postcss-svg": "^2.4.0",
     "recursive-readdir": "^2.2.2",
     "run-sequence": "^1.2.2",
     "shorthash": "0.0.2",

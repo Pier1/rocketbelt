@@ -1,3 +1,12 @@
+## [2.0.22-beta.3](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.2...2.0.22-beta.3) (2019-09-27)
+
+
+### Bug Fixes
+
+* **Icons:** Remove broken postcss-svg package. ([3e1c2b0](https://github.com/Pier1/rocketbelt/commit/3e1c2b0))
+
+
+
 ## [2.0.22-beta.2](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.1...2.0.22-beta.2) (2019-09-27)
 
 

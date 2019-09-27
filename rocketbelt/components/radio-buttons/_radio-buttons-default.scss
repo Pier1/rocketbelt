@@ -28,7 +28,7 @@ input {
 
       &::before {
         position: absolute;
-        top: 0.10rem;
+        top: 0.1rem;
         left: 0;
         width: 1rem;
         height: 1rem;
@@ -92,7 +92,7 @@ input {
         $color-fill: $color-white;
         border-color: transparent;
         background-color: $color-unselected;
-        background-image: icon-as-data-uri(check-heavy, $color-fill);
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' style='fill: white%3B' viewBox='0 0 16 16'%3E%3Cpath d='M1 9.185c-.42-.342-.527-.92-.125-1.31.401-.388.922-.281 1.269.125l3.278 3.375L13.842 3c.513-.572 1-.402 1.288-.137.288.265.4.877-.13 1.308L6.133 13c-.22.251-.458.377-.71.377-.253 0-.492-.126-.717-.377L1 9.185z' fill-rule='evenodd'/%3E%3C/svg%3E");
         background-position: center center;
         background-repeat: no-repeat;
         transition: background-color 100ms ease-in, border-color 100ms ease-in;
@@ -104,7 +104,7 @@ input {
         $color-fill: $color-white;
         border-color: transparent;
         background-color: $color-selected;
-        background-image: icon-as-data-uri(check-heavy, $color-fill);
+        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' style='fill: white%3B' viewBox='0 0 16 16'%3E%3Cpath d='M1 9.185c-.42-.342-.527-.92-.125-1.31.401-.388.922-.281 1.269.125l3.278 3.375L13.842 3c.513-.572 1-.402 1.288-.137.288.265.4.877-.13 1.308L6.133 13c-.22.251-.458.377-.71.377-.253 0-.492-.126-.717-.377L1 9.185z' fill-rule='evenodd'/%3E%3C/svg%3E");
         background-position: center center;
         background-repeat: no-repeat;
         transition: background-color 100ms ease-in, border-color 100ms ease-in;
@@ -126,7 +126,7 @@ input {
         &::before {
           $color-fill: color(gray, plus2);
           background-color: color(gray, plus4);
-          background-image: icon-as-data-uri(check-heavy, $color-fill);
+          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' style='fill: %23abadb1%3B' viewBox='0 0 16 16'%3E%3Cpath d='M1 9.185c-.42-.342-.527-.92-.125-1.31.401-.388.922-.281 1.269.125l3.278 3.375L13.842 3c.513-.572 1-.402 1.288-.137.288.265.4.877-.13 1.308L6.133 13c-.22.251-.458.377-.71.377-.253 0-.492-.126-.717-.377L1 9.185z' fill-rule='evenodd'/%3E%3C/svg%3E");
           background-position: center center;
           background-repeat: no-repeat;
         }
