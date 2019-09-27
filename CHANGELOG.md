@@ -1,3 +1,7 @@
+## [2.0.22](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.3...2.0.22) (2019-09-27)
+
+
+
 ## [2.0.22-beta.3](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.2...2.0.22-beta.3) (2019-09-27)
 
 
