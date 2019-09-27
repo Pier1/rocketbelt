@@ -1,3 +1,12 @@
+## [2.0.22-beta.1](https://github.com/Pier1/rocketbelt/compare/2.0.21...2.0.22-beta.1) (2019-09-27)
+
+
+### Bug Fixes
+
+* **Build:** Align dependencies to avoid build errors by consuming apps. ([890a826](https://github.com/Pier1/rocketbelt/commit/890a826))
+
+
+
 ## [2.0.21](https://github.com/Pier1/rocketbelt/compare/2.0.20...2.0.21) (2019-09-26)
 
 
