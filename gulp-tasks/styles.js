@@ -34,15 +34,6 @@
           plugins.postcss([
             require('postcss-svg')({
               dirs: `${config.patternsPath}/components/icons`,
-              svgo: {
-                plugins: [
-                  {
-                    removeDesc: true,
-                    removeTitle: true,
-                    cleanupAttrs: true,
-                  },
-                ],
-              },
             }),
           ])
         )
