@@ -30,13 +30,13 @@
           })
         )
         .pipe(plugins.sass())
-        .pipe(
-          plugins.postcss([
-            require('postcss-svg')({
-              dirs: `${config.patternsPath}/components/icons`,
-            }),
-          ])
-        )
+        // .pipe(
+        //   // plugins.postcss([
+        //   //   require('postcss-svg')({
+        //   //     dirs: `${config.patternsPath}/components/icons`,
+        //   //   }),
+        //   // ])
+        // )
         .pipe(
           plugins.autoprefixer({
             browsers: supported,

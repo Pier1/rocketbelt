@@ -366,7 +366,7 @@ select {
 
   padding-right: 25px;
   background-color: color(white);
-  background-image: icon-as-data-uri(chevron-down, $fill);
+  background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg aria-labelledby='asrb-icon-chevron-down-desc asrb-icon-chevron-down-title' xmlns='http://www.w3.org/2000/svg' style='fill: black%3B' viewBox='0 0 16 16'%3E%3Ctitle id='asrb-icon-chevron-down-title'%3EDown Chevron%3C/title%3E%3Cdesc id='asrb-icon-chevron-down-desc'%3EA downward chevron%3C/desc%3E%3Cpath d='M8.023 10.681a.356.356 0 01-.232-.085L2.305 5.953a.36.36 0 01.465-.549l5.252 4.444 5.207-4.443a.36.36 0 01.467.547l-5.44 4.643a.36.36 0 01-.233.086' fill-rule='evenodd'/%3E%3C/svg%3E");
   background-position: right 0.5rem center;
   background-size: 1rem;
   background-repeat: no-repeat;
