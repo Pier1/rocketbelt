@@ -1,3 +1,12 @@
+## [2.0.22-beta.2](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.1...2.0.22-beta.2) (2019-09-27)
+
+
+### Bug Fixes
+
+* **Forms:** Fix missing icons-as-background-images. ([b97d4a2](https://github.com/Pier1/rocketbelt/commit/b97d4a2))
+
+
+
 ## [2.0.22-beta.1](https://github.com/Pier1/rocketbelt/compare/2.0.21...2.0.22-beta.1) (2019-09-27)
 
 
