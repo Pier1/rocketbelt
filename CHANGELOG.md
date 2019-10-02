@@ -1,3 +1,97 @@
+## [2.0.22](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.3...2.0.22) (2019-09-27)
+
+
+
+## [2.0.22-beta.3](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.2...2.0.22-beta.3) (2019-09-27)
+
+
+### Bug Fixes
+
+* **Icons:** Remove broken postcss-svg package. ([3e1c2b0](https://github.com/Pier1/rocketbelt/commit/3e1c2b0))
+
+
+
+## [2.0.22-beta.2](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.1...2.0.22-beta.2) (2019-09-27)
+
+
+### Bug Fixes
+
+* **Forms:** Fix missing icons-as-background-images. ([b97d4a2](https://github.com/Pier1/rocketbelt/commit/b97d4a2))
+
+
+
+## [2.0.22-beta.1](https://github.com/Pier1/rocketbelt/compare/2.0.21...2.0.22-beta.1) (2019-09-27)
+
+
+### Bug Fixes
+
+* **Build:** Align dependencies to avoid build errors by consuming apps. ([890a826](https://github.com/Pier1/rocketbelt/commit/890a826))
+
+
+
+## [2.0.21](https://github.com/Pier1/rocketbelt/compare/2.0.20...2.0.21) (2019-09-26)
+
+
+### Bug Fixes
+
+* **Icons:** Correctly insert icons as background images. ([a685d62](https://github.com/Pier1/rocketbelt/commit/a685d62))
+
+
+
+## [2.0.20](https://github.com/Pier1/rocketbelt/compare/2.0.19...2.0.20) (2019-09-25)
+
+
+### Bug Fixes
+
+* **Dependencies:** Remove old dependencies. ([7d04cff](https://github.com/Pier1/rocketbelt/commit/7d04cff))
+
+
+
+## [2.0.19](https://github.com/Pier1/rocketbelt/compare/2.0.18...2.0.19) (2019-09-23)
+
+
+### Features
+
+* **Tags:** Update tag pattern. ([452a93d](https://github.com/Pier1/rocketbelt/commit/452a93d))
+
+
+
+## [2.0.18](https://github.com/Pier1/rocketbelt/compare/2.0.17...2.0.18) (2019-09-23)
+
+
+### Features
+
+* **Notices:** Add notice pattern. ([53675a8](https://github.com/Pier1/rocketbelt/commit/53675a8))
+
+
+
+## [2.0.17](https://github.com/Pier1/rocketbelt/compare/2.0.16...2.0.17) (2019-09-04)
+
+
+### Bug Fixes
+
+* **Buttons:** Recall that pseudoclasses count toward specificity. 😑 ([b92e055](https://github.com/Pier1/rocketbelt/commit/b92e055))
+
+
+
+## [2.0.16](https://github.com/Pier1/rocketbelt/compare/2.0.15...2.0.16) (2019-09-03)
+
+
+
+## [2.0.15](https://github.com/Pier1/rocketbelt/compare/2.0.14-beta...2.0.15) (2019-08-30)
+
+
+### Bug Fixes
+
+* **Typography:** Normalize button/link hover & active styles. ([8d4b067](https://github.com/Pier1/rocketbelt/commit/8d4b067))
+
+
+### Features
+
+* **Icons:** Update logo to indicate registered trademark. ([5643c4c](https://github.com/Pier1/rocketbelt/commit/5643c4c))
+
+
+
 ## [2.0.14-beta](https://github.com/Pier1/rocketbelt/compare/2.0.12-beta...2.0.14-beta) (2019-08-01)
 
 

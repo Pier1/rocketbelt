@@ -2,21 +2,19 @@ $primary: #00205b;
 
 $brand-palette: (
   base: $primary,
-
   prussianBlue: $primary,
   brandBlue: #0033a0,
   logoBlue: #0033a0,
   columbiaBlue: #ced9e5,
   catskillBlue: #e8edf3,
   alabaster: #f0ece2,
-
-  deepBlue:  #2e2b70,
-  warmRed:   #f04e37,
-  sand:      #fed4a0,
+  deepBlue: #2e2b70,
+  warmRed: #f04e37,
+  sand: #fed4a0,
   deepBrown: #431e1b,
   sunYellow: #fdb913,
-  paleRed:   #e58d83,
-  mint:      #7cccbf
+  paleRed: #e58d83,
+  mint: #7cccbf,
 );
 
 $base-families: (
@@ -24,13 +22,13 @@ $base-families: (
   primary: $primary,
   accent: adjust-hue($primary, 60),
   gray: #73777c,
-  success: #72b269,
+  success: #3d7733,
   warning: #edd18d,
   warning-b: #d5a021,
   error: #c1292e,
   info: #ced9e5,
   black: #000,
-  white: #fff
+  white: #fff,
 );
 
 $base-variants: (
@@ -38,7 +36,7 @@ $base-variants: (
   lighter: 0.4,
   lightest: 0.8,
   darker: -0.2,
-  darkest: -0.5
+  darkest: -0.5,
 );
 
 $gray-variants: (
@@ -52,33 +50,37 @@ $gray-variants: (
   minus2: -0.4,
 );
 
-$black-white-variants: (base: 0);
+$black-white-variants: (
+  base: 0,
+);
 
 @function build-families() {
   $families: (
     brand: $brand-palette,
-    // contrast: $contrast-palette
   );
 
   @each $family, $color in $base-families {
     $variants: ();
 
-    $v: if($family == gray, $gray-variants,
-          if($family == black or $family == white, $black-white-variants,
-          $base-variants)
-        );
+    $v: if(
+      $family == gray,
+      $gray-variants,
+      if(
+        $family == black or $family == white,
+        $black-white-variants,
+        $base-variants
+      )
+    );
 
     @each $variant, $percentage in $v {
-      $variants: map-merge($variants, (#{$variant}: scale-color($color, $lightness: percentage($percentage))));
+      $variants: map-merge(
+        $variants,
+        (#{$variant}: scale-color($color, $lightness: percentage($percentage)))
+      );
     }
 
     $families: map-merge($families, (#{$family}: $variants));
   }
-
-  // $families: map-merge($families, (
-  //   'ui': (
-  //   )
-  // ));
 
   @return $families;
 }

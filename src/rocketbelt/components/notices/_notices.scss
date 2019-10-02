@@ -1,0 +1,55 @@
+.notice {
+  @include z-depth(1);
+
+  display: inline-flex;
+  margin: 0;
+  margin-bottom: 0.5rem;
+  padding: 0.75rem;
+  background: color(gray, plus5);
+  line-height: 1.33;
+  align-items: center;
+
+  .notice_text {
+    flex: 1;
+    font-size: font-size(-1);
+
+    .icon {
+      margin-right: 0.75rem;
+      font-size: font-size(0);
+      flex-shrink: 0;
+    }
+  }
+
+  .notice_close {
+    display: flex;
+    padding: 0;
+    height: auto;
+    border: none;
+    color: color(black);
+
+    .icon {
+      width: 1rem;
+      height: 1rem;
+      font-size: inherit;
+      flex-shrink: 0;
+    }
+  }
+
+  .notice_undo {
+    text-decoration: underline;
+    font-size: font-size(-1);
+  }
+
+  .notice_close,
+  .notice_undo {
+    margin-left: 0.75rem;
+  }
+
+  &.notice-attached {
+    background: color(brand, alabaster);
+  }
+
+  &.notice-applied {
+    background: color(brand, catskillBlue);
+  }
+}

@@ -43,7 +43,7 @@
 
         &:hover::before {
           $color-fill: $color-unselected;
-          background-image: icon-as-data-uri(check, $color-fill);
+          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg aria-labelledby='aprb-icon-check-desc aprb-icon-check-title' xmlns='http://www.w3.org/2000/svg' style='fill: %23c7c9cb%3B' viewBox='0 0 16 16'%3E%3Ctitle id='aprb-icon-check-title'%3ECheck%3C/title%3E%3Cdesc id='aprb-icon-check-desc'%3EA check mark%3C/desc%3E%3Cpath d='M5.417 13a.44.44 0 01-.317-.134L1.129 8.782a.457.457 0 01.003-.64.441.441 0 01.63.005l3.66 3.763 8.821-8.78a.439.439 0 01.63.006.456.456 0 01-.006.638l-9.138 9.097a.439.439 0 01-.312.129' fill-rule='evenodd'/%3E%3C/svg%3E");
           background-position: center center;
           background-size: 24px;
           background-repeat: no-repeat;
@@ -60,7 +60,7 @@
           $color-fill: color(white);
           border-color: transparent;
           background-color: $color-selected;
-          background-image: icon-as-data-uri(check, $color-fill);
+          background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg aria-labelledby='aprb-icon-check-desc aprb-icon-check-title' xmlns='http://www.w3.org/2000/svg' style='fill: white%3B' viewBox='0 0 16 16'%3E%3Ctitle id='aprb-icon-check-title'%3ECheck%3C/title%3E%3Cdesc id='aprb-icon-check-desc'%3EA check mark%3C/desc%3E%3Cpath d='M5.417 13a.44.44 0 01-.317-.134L1.129 8.782a.457.457 0 01.003-.64.441.441 0 01.63.005l3.66 3.763 8.821-8.78a.439.439 0 01.63.006.456.456 0 01-.006.638l-9.138 9.097a.439.439 0 01-.312.129' fill-rule='evenodd'/%3E%3C/svg%3E");
           background-position: center center;
           background-size: 24px;
           background-repeat: no-repeat;

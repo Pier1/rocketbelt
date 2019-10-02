@@ -1,6 +1,6 @@
 {
   "name": "rocketbelt",
-  "version": "2.0.14-beta",
+  "version": "2.0.22",
   "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively assembled at Pier 1 Imports.",
   "homepage": "http://rocketbelt.io",
   "bugs": "https://github.com/pier1/rocketbelt/issues",
@@ -28,8 +28,7 @@
     "babel-eslint": "^10.0.2",
     "babel-preset-env": "^1.7.0",
     "browser-sync": "^2.24.6",
-    "css-loader": "^3.2.0",
-    "cssnano": "^4.1.10",
+    "cssnano": "^3.10.0",
     "cz-conventional-changelog": "^1.2.0",
     "del": "^2.2.2",
     "eslint": "^6.2.1",
@@ -59,7 +58,7 @@
     "gulp-modernizr": "^1.0.0",
     "gulp-notify": "^3.2.0",
     "gulp-plumber": "^1.2.0",
-    "gulp-postcss": "^8.0.0",
+    "gulp-postcss": "6.4.0",
     "gulp-pug": "^3.1.0",
     "gulp-remove-html-comments": "^1.0.1",
     "gulp-rename": "^1.4.0",
@@ -82,12 +81,6 @@
     "mini-css-extract-plugin": "^0.8.0",
     "moment-timezone": "^0.5.21",
     "mutationobserver-shim": "^0.3.2",
-    "perfectionist": "^2.4.0",
-    "postcss-focus-within": "^3.0.0",
-    "postcss-import": "^12.0.1",
-    "postcss-loader": "^3.0.0",
-    "postcss-svg": "^3.0.0",
-    "prettier": "^1.18.2",
     "recursive-readdir": "^2.2.2",
     "run-sequence": "^1.2.2",
     "sass-loader": "^7.3.1",
@@ -117,8 +110,7 @@
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
-    "react-live": "^2.2.0",
-    "siema": "^1.5.1"
+    "react-live": "^2.2.0"
   },
   "config": {
     "commitizen": {

@@ -12,9 +12,9 @@
         .pipe(plugins.rename('rocketbelt.mutationobserver.js'))
         .pipe(plugins.vinylFs.dest(`${config.patternsPath}/base/vendor/`));
 
-      plugins.vinylFs.src(['node_modules/siema/dist/siema.min.js'])
-        .pipe(plugins.rename('rocketbelt.siema.min.js'))
-        .pipe(plugins.vinylFs.dest(`${config.patternsPath}/components/vendor/`));
+      // plugins.vinylFs.src(['node_modules/siema/dist/siema.min.js'])
+      //   .pipe(plugins.rename('rocketbelt.siema.min.js'))
+      //   .pipe(plugins.vinylFs.dest(`${config.patternsPath}/components/vendor/`));
 
       return plugins.vinylFs.src([`${config.templatesPath}/**/*.js`])
         .pipe(plugins.changed(config.buildPath))
