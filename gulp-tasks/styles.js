@@ -14,10 +14,7 @@
       ];
 
       const source = gulp
-        .src([
-          `${config.patternsPath}/**/*.scss`,
-          `${config.templatesPath}/scss/**/*.scss`,
-        ])
+        .src([`${config.patternsPath}/**/*.scss`, `${config.templatesPath}/scss/**/*.scss`])
         .pipe(
           plugins.plumber({
             errorHandler: plugins.notify.onError('Error: <%= error.message %>'),
@@ -55,6 +52,7 @@
           plugins.postcss([
             plugins.cssnano({
               svgo: false,
+              reduceIdents: false,
               autoprefixer: { browsers: supported },
               normalizeUrl: {
                 stripWWW: false,
