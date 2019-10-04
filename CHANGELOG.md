@@ -1,3 +1,13 @@
+## [2.0.23](https://github.com/Pier1/rocketbelt/compare/2.0.22...2.0.23) (2019-10-04)
+
+
+### Bug Fixes
+
+* **Animation:** Stop minifying keyframe names. ([7e3e0d3](https://github.com/Pier1/rocketbelt/commit/7e3e0d3))
+* **Buttons:** Fix button-success checkmark icon. ([75802c1](https://github.com/Pier1/rocketbelt/commit/75802c1))
+
+
+
 ## [2.0.22](https://github.com/Pier1/rocketbelt/compare/2.0.22-beta.3...2.0.22) (2019-09-27)
 
 
