@@ -13,45 +13,45 @@ $subsection-title-color: color(gray) !default;
   &.allpad {
     padding: 1rem;
   }
+
+  section, 
+  .section {
+    margin: 0 auto 1rem auto;
+    background-color: $section-background;
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+    
+    .section-title {
+      padding: 1rem 2rem 1rem 2rem;
+      @include heading-style(( 'style': 'shout' )); 
+    }
+
+    .section-content {
+      padding: 0rem 2rem 1rem 2rem;
+    }
+  }
+
+  .section.subsection,
+  section.subsection {
+    position: relative;
+    background-color: $section-background;
+    border-top: 3px solid $section-container-background;
+    
+    .subsection-title {
+      padding: 1rem 2rem 0rem 2rem; 
+      font-size: font-size(0);
+      color: color(gray);
+      letter-spacing: 1.6px;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+    }
+
+    .subsection-content {
+      padding: 0rem 2rem 1rem 2rem;
+    }
+  }
 }
-
-section {
-  margin: 0 auto 1rem auto;
-  background-color: $section-background;
-  &:last-of-type {
-    margin-bottom: 0;
-  }
-  
-  .section-title {
-    padding: 1rem 2rem 1rem 2rem;
-    @include heading-style(( 'style': 'shout' )); 
-  }
-
-  .section-content {
-    padding: 0rem 2rem 1rem 2rem;
-  }
-}
-
-section.subsection {
-  position: relative;
-  background-color: $section-background;
-  border-top: 3px solid $section-container-background;
-  
-  .subsection-title {
-    padding: 1rem 2rem 0rem 2rem; 
-    font-size: font-size(0);
-    color: color(gray);
-    letter-spacing: 1.6px;
-    margin-bottom: 1rem;
-    text-transform: uppercase;
-  }
-
-  .subsection-content {
-    padding: 0rem 2rem 1rem 2rem;
-  }
-}
-
-
 
 
 
