@@ -84,20 +84,22 @@ const Navigation = () => {
               {l1.l2s.length > 0 &&
                 l1.l2s.map((l2) => {
                   return (
-                    <ul className="rbio-nav_level2">
+                    <ul key={`${l2.slug}_list`} className="rbio-nav_level2">
                       <li key={l2.slug} className="rbio-nav_item">
                         <Link to={l2.slug}>{l2.name}</Link>
                         {l2.l3s.length > 0 &&
                           l2.l3s.map((l3) => {
                             return (
-                              <ul className="rbio-nav_level3">
+                              <ul
+                                key={`${l3.slug}_list`}
+                                className="rbio-nav_level3"
+                              >
                                 <li key={l3.slug} className="rbio-nav_item">
                                   <Link to={l3.slug}>{l3.name}</Link>
                                 </li>
                               </ul>
                             );
-                          });
-                        }
+                          })}
                       </li>
                     </ul>
                   );
