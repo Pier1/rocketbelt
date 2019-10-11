@@ -59,12 +59,24 @@ body,
       )
     );
   }
+}
 
-  .component-example {
-    margin-bottom: 2rem;
+.rbio-nav_level1 {
+  display: flex;
 
-    .component-example_code {
-      margin-top: 2rem;
+  @include list-reset($horizontal: true);
+
+  & > .rbio-nav_item {
+    &:not(:last-of-type) {
+      margin-right: 4rem;
     }
+  }
+}
+
+.component-example {
+  margin-bottom: 2rem;
+
+  .component-example_code {
+    margin-top: 2rem;
   }
 }
