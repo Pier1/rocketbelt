@@ -9,7 +9,10 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
+import 'normalize.css';
 import '../rocketbelt/rocketbelt.scss';
+import '../styles/site.scss';
+
 import Header from './header';
 
 const Layout = ({ children }) => {
@@ -24,13 +27,11 @@ const Layout = ({ children }) => {
   `);
 
   return (
-    <>
+    <div className="rbio-content-wrap">
       <Header siteTitle={data.site.siteMetadata.title} />
-      <div>
-        <main>{children}</main>
-        <footer>© {new Date().getFullYear()} Pier 1 Imports.</footer>
-      </div>
-    </>
+      <main className="rbio-content">{children}</main>
+      <footer>© {new Date().getFullYear()} Pier 1 Imports.</footer>
+    </div>
   );
 };
 

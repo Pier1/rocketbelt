@@ -1,4 +1,106 @@
 # Forms
 
-1. Forms
-2. Radio Buttons
+```html language=html
+<form>
+  <div class="form-group">
+    <input id="basic-fname" type="text" />
+    <label for="basic-fname">First Name</label>
+  </div>
+  <div class="form-group">
+    <input id="basic-email" type="email" />
+    <label for="basic-email">Email Address</label>
+  </div>
+  <div class="form-group">
+    <input id="basic-tel" type="tel" />
+    <label for="basic-tel">Phone Number</label>
+  </div>
+  <div class="form-group">
+    <input id="basic-password" type="password" />
+    <label for="basic-password">Password</label>
+  </div>
+  <div class="form-group">
+    <textarea id="basic-message"></textarea>
+    <label for="basic-message">Message</label>
+  </div>
+  <div class="form-group">
+    <select id="basic-select">
+      <option value="" disabled selected hidden>
+        Select a collection
+      </option>
+      <option>Biblioteca</option>
+      <option>Marcel</option>
+      <option>Pierce</option>
+    </select>
+    <label for="basic-select">Collection</label>
+  </div>
+  <fieldset>
+    <legend>Collection</legend>
+    <ul class="radio-group">
+      <li>
+        <input
+          id="basic-radio-1"
+          type="radio"
+          checked
+          value="biblioteca"
+          name="basic-radio-group"
+        />
+        <label for="basic-radio-1">Biblioteca</label>
+      </li>
+      <li>
+        <input
+          id="basic-radio-2"
+          type="radio"
+          value="marcel"
+          name="basic-radio-group"
+        />
+        <label for="basic-radio-2">Marcel</label>
+      </li>
+      <li>
+        <input
+          id="basic-radio-3"
+          type="radio"
+          value="pierce"
+          name="basic-radio-group"
+        />
+        <label for="basic-radio-3">Pierce</label>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Collection</legend>
+    <ul class="checkbox-group">
+      <li>
+        <input
+          class="rb-checkbox"
+          id="basic-check-1"
+          type="checkbox"
+          checked
+          value="biblioteca"
+          name="basic-check-group"
+        />
+        <label for="basic-check-1">Biblioteca</label>
+      </li>
+      <li>
+        <input
+          class="rb-checkbox"
+          id="basic-check-2"
+          type="checkbox"
+          value="marcel"
+          name="basic-check-group"
+        />
+        <label for="basic-check-2">Marcel</label>
+      </li>
+      <li>
+        <input
+          class="rb-checkbox"
+          id="basic-check-3"
+          type="checkbox"
+          value="pierce"
+          name="basic-check-group"
+        />
+        <label for="basic-check-3">Pierce</label>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+```

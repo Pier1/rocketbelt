@@ -1,0 +1,70 @@
+@import '../rocketbelt/tools/tools';
+
+html,
+body,
+#___gatsby,
+#___gatsby > [role='group'],
+.rbio-content-wrap {
+  height: 100%;
+}
+
+.rbio-content-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.rbio-content {
+  flex: 1;
+  padding: 2rem;
+}
+
+.linked-heading {
+  display: table;
+  color: unset;
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    display: inline;
+    color: unset;
+    font-weight: normal;
+  }
+
+  h1 {
+    @include heading-style(
+      (
+        'style': 'shout',
+        'font-size': font-size(5),
+      )
+    );
+  }
+
+  h2 {
+    @include heading-style(
+      (
+        'style': 'blurt',
+        'font-size': font-size(3),
+      )
+    );
+  }
+
+  h3,
+  h4 {
+    @include heading-style(
+      (
+        'style': 'mention',
+        'font-size': font-size(2),
+      )
+    );
+  }
+
+  .component-example {
+    margin-bottom: 2rem;
+
+    .component-example_code {
+      margin-top: 2rem;
+    }
+  }
+}

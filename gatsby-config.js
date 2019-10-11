@@ -8,8 +8,22 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
+        name: 'rocketbelt',
+        path: `${__dirname}/src/rocketbelt`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
         name: 'images',
         path: `${__dirname}/src/images`,
+      },
+    },
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'pages',
+        path: `${__dirname}/src/pages`,
       },
     },
     {
@@ -20,9 +34,19 @@ module.exports = {
         },
       },
     },
-    'gatsby-plugin-react-helmet',
-    'gatsby-transformer-sharp',
-    'gatsby-plugin-sharp',
+    {
+      resolve: 'gatsby-plugin-react-helmet',
+    },
+    {
+      resolve: 'gatsby-transformer-sharp',
+    },
+    {
+      resolve: 'gatsby-plugin-sharp',
+    },
+    {
+      resolve: 'gatsby-plugin-offline',
+    },
+
     // {
     //   resolve: `gatsby-plugin-manifest`,
     //   options: {
@@ -33,6 +57,5 @@ module.exports = {
     //     icon: `site/images/icon.png`, // This path is relative to the root of the site.
     //   },
     // },
-    'gatsby-plugin-offline',
   ],
 };
