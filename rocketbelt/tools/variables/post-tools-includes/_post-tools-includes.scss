@@ -8,6 +8,10 @@ $color-families: map-merge(
       'focus': color(brand, prussianBlue),
       'button-base-fg': color(brand, prussianBlue),
     ),
+    'uiDropdown': (
+      'bgSelected': color(brand, catskillBlue),
+      'bgHover': rgba(color(brand, catskillBlue), 0.7),
+    ),
     'uiFooter': (
       'fg': color(black),
       'bg': color(brand, columbiaBlue),
