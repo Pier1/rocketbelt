@@ -1,48 +1,9 @@
 import React from 'react';
 import { MDXProvider } from '@mdx-js/react';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import Helmet from 'react-helmet';
 
-import { theme } from './src/components/theme';
 import H from './src/components/htag';
-
-const LiveCode = (props) => {
-  const className = props.children.props.className || '';
-  const matches = className.match(/language-(?<lang>.+)/);
-  const language =
-    matches && matches.groups && matches.groups.lang ? matches.groups.lang : '';
-
-  return (
-    <LiveProvider
-      language={language}
-      disabled={true}
-      code={`${props.children.props.children.trim()}`}
-      transformCode={(code) => `<>${code}</>`}
-      theme={theme}
-    >
-      <section className="component-example">
-        {props.children.props['code-only'] ? (
-          <LiveEditor />
-        ) : props.children.props['render-only'] ? (
-          <LivePreview />
-        ) : (
-          <>
-            <div
-              className="component-example_preview"
-              dangerouslySetInnerHTML={{
-                __html: props.children.props.children.trim(),
-              }}
-            ></div>
-            <div className="component-example_code">
-              <LiveEditor />
-            </div>
-          </>
-        )}
-        <LiveError />
-      </section>
-    </LiveProvider>
-  );
-};
+import LiveCode from './src/components/live-code.js';
 
 const components = {
   h1: (props) => <H level={1} {...props} />,
