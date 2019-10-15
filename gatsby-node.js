@@ -13,6 +13,20 @@ const getSlugParents = (slug) => {
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions;
 
+  if (
+    node.internal.type === 'SitePage' &&
+    node.context &&
+    node.context.frontmatter &&
+    node.context.frontmatter.scriptTags
+  ) {
+    createNodeField({
+      name: 'scriptTags',
+      value: node.context.frontmatter.scriptTags,
+      node,
+    });
+    console.dir(node);
+  }
+
   if (node.internal.type === 'SitePage' && node.context && node.context.id) {
     createNodeField({
       name: 'Mdx___NODE',
@@ -88,6 +102,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 //       path: node.fields.slug,
 //       component: defaultLayout,
 //       context: { id: node.id },
+//       context: { mdxId: node.id },
 //     });
 //   });
 // };
