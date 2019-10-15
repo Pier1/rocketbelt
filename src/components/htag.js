@@ -15,7 +15,7 @@ const H = (props) => {
       className="linked-heading"
       to={`${window.location.pathname}#${slugify(props.children)}`}
     >
-      <Htag className="rocketbeltio" id={slugify(props.children)} {...props} />
+      <Htag className="rbio" id={slugify(props.children)} {...props} />
     </Link>
   );
 };

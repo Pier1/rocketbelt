@@ -27,12 +27,15 @@ body,
   h3,
   h4,
   h5 {
-    display: inline;
-    color: unset;
-    font-weight: normal;
+    &.rbio {
+      display: inline;
+      color: unset;
+      font-weight: normal;
+    }
   }
 
-  h1 {
+  // sass-lint:disable no-qualifying-elements force-element-nesting
+  h1.rbio {
     @include heading-style(
       (
         'style': 'shout',
@@ -41,7 +44,7 @@ body,
     );
   }
 
-  h2 {
+  h2.rbio {
     @include heading-style(
       (
         'style': 'blurt',
@@ -50,8 +53,8 @@ body,
     );
   }
 
-  h3,
-  h4 {
+  h3.rbio,
+  h4.rbio {
     @include heading-style(
       (
         'style': 'mention',
@@ -59,12 +62,28 @@ body,
       )
     );
   }
+  // sass-lint:enable no-qualifying-elements force-element-nesting
+}
 
-  .component-example {
-    margin-bottom: 2rem;
+.rbio-nav_level1 {
+  display: flex;
 
-    .component-example_code {
-      margin-top: 2rem;
+  @include list-reset($horizontal: true);
+
+  & > .rbio-nav_item {
+    &:not(:last-of-type) {
+      margin-right: 4rem;
     }
+  }
+}
+
+.component-example {
+  margin-bottom: 2rem;
+
+  .component-example_code {
+    margin-top: 2rem;
+  }
+
+  .component-example_toggle {
   }
 }
