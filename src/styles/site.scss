@@ -159,3 +159,12 @@ body {
     }
   }
 }
+
+.rbio-footer {
+  display: flex;
+  padding: 1rem;
+  background: color(brand, catskillBlue);
+  color: color(gray, minus2);
+  justify-content: center;
+  align-items: center;
+}

@@ -10,6 +10,7 @@ import '../styles/site.scss';
 
 import SEO from './seo';
 import Header from './header';
+import Footer from './footer';
 
 const Layout = ({ children, pageContext }) => {
   const data = useStaticQuery(graphql`
@@ -36,7 +37,7 @@ const Layout = ({ children, pageContext }) => {
       <div className="rbio-content-wrap">
         <Header siteTitle={data.site.siteMetadata.title} />
         <main className="rbio-content">{children}</main>
-        <footer>© {new Date().getFullYear()} Pier 1 Imports.</footer>
+        <Footer />
       </div>
 
       {hasScripts &&
