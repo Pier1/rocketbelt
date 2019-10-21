@@ -11,12 +11,19 @@ const H = (props) => {
   }
 
   return (
-    <Link
-      className="linked-heading"
-      to={`${window.location.pathname}#${slugify(props.children)}`}
-    >
-      <Htag className="rbio" id={slugify(props.children)} {...props} />
-    </Link>
+    <span className="linked-heading">
+      <Htag
+        className="rbio linked-heading_heading"
+        id={slugify(props.children)}
+        {...props}
+      />
+      <Link
+        className="linked-heading_anchor"
+        to={`${window.location.pathname}#${slugify(props.children)}`}
+      >
+        #
+      </Link>
+    </span>
   );
 };
 
