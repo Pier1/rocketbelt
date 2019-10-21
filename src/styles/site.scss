@@ -8,6 +8,12 @@ body,
   height: 100%;
 }
 
+body {
+  :focus {
+    outline: 1px dotted color(brand, logoBlue);
+  }
+}
+
 .rbio-content-wrap {
   display: flex;
   flex-direction: column;
@@ -27,40 +33,69 @@ body,
   h3,
   h4,
   h5 {
-    &.rbio {
-      display: inline;
-      color: unset;
-      font-weight: normal;
-    }
+    display: inline;
+    color: unset;
+    font-weight: normal;
   }
 
   // sass-lint:disable no-qualifying-elements force-element-nesting
-  h1.rbio {
-    @include heading-style(
-      (
-        'style': 'shout',
-        'font-size': font-size(5),
-      )
-    );
+  h1 {
+    &,
+    & + .linked-heading_anchor {
+      @include heading-style(
+        (
+          'style': 'shout',
+          'font-size': font-size(5),
+        )
+      );
+    }
   }
 
-  h2.rbio {
-    @include heading-style(
-      (
-        'style': 'blurt',
-        'font-size': font-size(3),
-      )
-    );
+  h2 {
+    &,
+    & + .linked-heading_anchor {
+      @include heading-style(
+        (
+          'style': 'blurt',
+          'font-size': font-size(3),
+        )
+      );
+    }
   }
 
-  h3.rbio,
-  h4.rbio {
-    @include heading-style(
-      (
-        'style': 'mention',
-        'font-size': font-size(2),
-      )
-    );
+  h3,
+  h4 {
+    &,
+    + .linked-heading_anchor {
+      @include heading-style(
+        (
+          'style': 'mention',
+          'font-size': font-size(2),
+        )
+      );
+    }
+  }
+
+  &:hover {
+    .linked-heading_anchor {
+      opacity: 1;
+    }
+  }
+
+  .linked-heading_anchor {
+    margin-left: 0.2em;
+    color: color(gray, plus1);
+    font-style: italic;
+    opacity: 0;
+    transition: opacity 100ms linear;
+
+    &:focus {
+      opacity: 1;
+    }
+
+    &:hover {
+      color: hotpink;
+    }
   }
   // sass-lint:enable no-qualifying-elements force-element-nesting
 }
@@ -78,12 +113,49 @@ body,
 }
 
 .component-example {
+  $base-link-color: color(uiLink, fgBase);
   margin-bottom: 2rem;
 
-  .component-example_code {
-    margin-top: 2rem;
-  }
-
   .component-example_toggle {
+    display: inline-flex;
+    min-height: 3rem;
+    color: $base-link-color;
+    align-items: center;
+    cursor: pointer;
+
+    &:hover {
+      color: scale-color(color(uiLink, fgBase), $lightness: 25%);
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: $base-link-color;
+    }
+  }
+}
+
+.component-example_code {
+  position: relative;
+
+  > .button-copy {
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+    z-index: 1;
+    padding-right: 1rem;
+    color: color(white);
+    text-align: right;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &,
+    &:hover,
+    &:active {
+      border: none;
+      background: transparent;
+      box-shadow: none;
+    }
   }
 }
