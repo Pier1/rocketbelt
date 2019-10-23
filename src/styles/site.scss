@@ -19,11 +19,6 @@ body {
   flex-direction: column;
 }
 
-.rbio-content {
-  flex: 1;
-  padding: 2rem;
-}
-
 .linked-heading {
   display: table;
   color: unset;
@@ -120,8 +115,8 @@ body {
     display: inline-flex;
     min-height: 3rem;
     color: $base-link-color;
-    align-items: center;
     cursor: pointer;
+    align-items: center;
 
     &:hover {
       color: scale-color(color(uiLink, fgBase), $lightness: 25%);
@@ -175,41 +170,46 @@ code {
   font-size: font-size(-1);
 }
 
-.button-toggle-class {
-  margin: 1rem auto;
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
 .button-toggle-class_class-name {
   font-weight: font-weight(bold);
   font-size: font-size(-1);
   font-family: font-family(monospace);
 }
 
-.rbio-content.progress-and-busy-indicators {
-  .component-example_preview {
-    section {
-      position: relative;
-      display: flex;
-      height: 300px;
-      border-radius: 3px;
-      background: color(brand, catskillBlue);
+.rbio-content {
+  flex: 1;
+  padding: 2rem;
 
-      &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
+  > .button-minimal {
+    margin: 1rem auto;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+
+  &.busy-indicators {
+    .component-example_preview {
+      section {
+        position: relative;
         display: flex;
-        color: color(gray, minus1);
-        content: 'Toggle busy state above…';
-        font-style: font-style(italic);
-        justify-content: center;
-        align-items: center;
+        height: 50vh;
+        border-radius: 3px;
+        background: color(brand, catskillBlue);
+
+        &::after {
+          position: absolute;
+          top: 0;
+          right: 0;
+          bottom: 0;
+          left: 0;
+          display: flex;
+          color: color(gray, minus1);
+          content: 'Toggle busy state above…';
+          font-style: font-style(italic);
+          justify-content: center;
+          align-items: center;
+        }
       }
     }
   }

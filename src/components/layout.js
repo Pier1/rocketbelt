@@ -47,7 +47,7 @@ const Layout = ({ children, pageContext }) => {
     pageContext.frontmatter.scriptTags &&
     pageContext.frontmatter.scriptTags.length > 0;
 
-  const pageClass = window.location.href.split('/').slice(-1)[0];
+  const pageClass = window.location.pathname.split('/').slice(-1)[0];
 
   return (
     <>

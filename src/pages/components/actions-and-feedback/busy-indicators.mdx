@@ -1,11 +1,12 @@
 ---
 scriptTags:
   - 'rocketbelt.progress-indicators.js'
+  - 'rocketbelt.progress-stepped.js'
 ---
 
 import ToggleClassButton from '../../../components/toggle-class-button';
 
-# Progress & Busy Indicators
+# Busy Indicators
 
 ## Busy Indicators
 Show a busy indicator any time an action takes longer than is reasonable.
@@ -23,8 +24,9 @@ antipattern and will negatively impact performance).
 <ToggleClassButton selector={`.button:not(.button-copy)`} classToToggle={`is-busy`} />
 
 ```html
-<button class="button button-primary is-busy is-busy-inverted">Trigger Busy</button>
-<button class="button is-busy">Trigger Busy</button>
+<button class="button is-busyable is-busy is-busy-spinner is-busy-opaque">Trigger Busy</button>
+<button class="button is-busyable is-busy">Trigger Busy</button>
+<button class="button button-primary is-busyable is-busy is-busy-inverted">Trigger Busy</button>
 ```
 
 ### Page-Level
@@ -44,5 +46,3 @@ if this attribute isn't specified.)
   data-rb-is-busy-message-after-seconds="3"
 ></section>
 ```
-
-## Progress Indicators

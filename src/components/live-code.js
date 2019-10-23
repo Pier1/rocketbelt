@@ -51,7 +51,9 @@ const LiveCode = (props) => {
       language={language}
       disabled={true}
       code={`${props.children.props.children.trim()}`}
-      transformCode={(code) => `<>${code}</>`}
+      transformCode={(code) => {
+        return language === 'html' ? `<>${code}</>` : code;
+      }}
       theme={theme}
     >
       <section className="component-example">
