@@ -56,7 +56,12 @@ const LiveCode = (props) => {
     >
       <section className="component-example">
         {props.children.props['code-only'] ? (
-          <LiveEditor />
+          <div className="component-example_code">
+            <button onClick={copyToClipboard} className="button button-copy">
+              {copyText}
+            </button>
+            <LiveEditor />
+          </div>
         ) : props.children.props['render-only'] ? (
           <div
             className="component-example_preview"

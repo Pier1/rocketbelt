@@ -1,3 +1,7 @@
+# The scripts directory isn't a source of truth as it's
+# generated via build tasks
+src/rocketbelt/scripts/**
+
 # ====================================================
 # Ignore component symlinks (but not site-specific JS)
 # ====================================================

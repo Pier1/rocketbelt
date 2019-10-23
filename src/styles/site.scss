@@ -168,3 +168,23 @@ body {
   justify-content: center;
   align-items: center;
 }
+
+code {
+  border: 1px solid color(gray, plus4);
+  background: color(gray, plus5);
+  font-size: font-size(-1);
+}
+
+.button-toggle-class {
+  margin: 1rem auto;
+
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.button-toggle-class_class-name {
+  font-weight: font-weight(bold);
+  font-size: font-size(-1);
+  font-family: font-family(monospace);
+}

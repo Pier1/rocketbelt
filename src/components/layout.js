@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const { addScript } = require('../utils/addScript.js');
+import 'jquery';
+import '../rocketbelt/scripts/rocketbelt';
 
 import 'normalize.css';
 import '../rocketbelt/rocketbelt.scss';
@@ -13,6 +15,22 @@ import Header from './header';
 import Footer from './footer';
 
 const Layout = ({ children, pageContext }) => {
+  useEffect(() => {
+    children.length > 0 &&
+      children.forEach((child) => {
+        if (
+          child.props &&
+          child.props.children &&
+          child.props.children.props &&
+          child.props.children.props.className &&
+          child.props.children.props.className.indexOf('language-js') > -1 &&
+          child.props.children.props['run-on-load']
+        ) {
+          eval(child.props.children.props.children);
+        }
+      });
+  });
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -42,7 +60,7 @@ const Layout = ({ children, pageContext }) => {
 
       {hasScripts &&
         pageContext.frontmatter.scriptTags.forEach((script) => {
-          addScript(script);
+          addScript(`/scripts/${script}`);
         })}
     </>
   );
