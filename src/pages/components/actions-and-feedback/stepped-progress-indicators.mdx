@@ -16,7 +16,8 @@ series of related tasks.
   onClick={advanceIndicator}>Advance the Indicator</button>
 
 ```html
-<nav class="progress-stepped" aria-label="Add a description appropriate to your context!">
+<nav class="progress-stepped"
+     aria-label="How should this component be briefly described to users of assistive technology?">
   <ol class="progress_steps list-reset">
     <li aria-current="page"><a href="#">Basket</a></li>
     <li><a href="#">Shipping</a></li>
@@ -27,11 +28,12 @@ series of related tasks.
 ```
 The state of the Stepped Progress Indicator is controlled by moving the
 `aria-current=page` attribute from element to element. *Note that this
-manipulation is currently left up to the consuming app.* The function that
-controls the example above is:
+manipulation is currently left up to the consuming app.* As an example, the
+function that controls the component above is:
 
 ```js code-only
 (e) => {
+  // e.target.nextElementSibling targets the wrapper of the <nav> element.
   const current = e.target.nextElementSibling.querySelector(
     '.progress-stepped li[aria-current]'
   );
