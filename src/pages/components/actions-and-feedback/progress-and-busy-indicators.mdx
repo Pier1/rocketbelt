@@ -38,7 +38,11 @@ if this attribute isn't specified.)
 <ToggleClassButton selector={`section`} classToToggle={`is-busy`} />
 
 ```html
-<section class="is-busyable is-busyable-page"></section>
+<section
+  class="is-busyable is-busyable-page"
+  data-rb-is-busy-message="This is taking longer than expected…"
+  data-rb-is-busy-message-after-seconds="3"
+></section>
 ```
 
 ## Progress Indicators
