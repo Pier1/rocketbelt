@@ -1,26 +1,16 @@
+import DeprecationNotice from '../../../components/deprecation-notice';
+
 # Messages, Notices & Alerts
 
-## Alerts
-
-```html
-<div class="message-flash message-success">
-  Congratulations! This is a success message.
-</div>
-<div class="message-flash message-warning">
-  Caution! This is a warning message.
-</div>
-<div class="message-flash message-error">
-  Look out! This is an error message.
-</div>
-<div class="message-flash message-info">Just FYI. This is an info message.</div>
-```
+## Messages
+Under construction.
 
 ## Notices
 
 ```html
 <figure class="notice">
   <div class="notice_text text-with-icon">
-    The promotion wasnt recognized.
+    The promotion wasn't recognized.
     <svg class="icon icon-left" aria-hidden>
       <use
         xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-error"
@@ -56,4 +46,23 @@
   <div class="notice_text text-with-icon">The promotion was removed.</div>
   <button class="button button-text notice_undo">Undo</button>
 </figure>
+```
+
+## Alerts
+
+<DeprecationNotice alternativeComponents={[
+  { name: 'Message', uri: '/components/actions-and-feedback/messages-notices-and-alerts#message' },
+  { name: 'Notice', uri: '/components/actions-and-feedback/messages-notices-and-alerts#notices' }]}/>
+
+```html
+<div class="message-flash message-success">
+  Congratulations! This is a success message.
+</div>
+<div class="message-flash message-warning">
+  Caution! This is a warning message.
+</div>
+<div class="message-flash message-error">
+  Look out! This is an error message.
+</div>
+<div class="message-flash message-info">Just FYI. This is an info message.</div>
 ```

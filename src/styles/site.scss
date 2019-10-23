@@ -188,3 +188,29 @@ code {
   font-size: font-size(-1);
   font-family: font-family(monospace);
 }
+
+.rbio-content.progress-and-busy-indicators {
+  .component-example_preview {
+    section {
+      position: relative;
+      display: flex;
+      height: 300px;
+      border-radius: 3px;
+      background: color(brand, catskillBlue);
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        color: color(gray, minus1);
+        content: 'Toggle busy state above…';
+        font-style: font-style(italic);
+        justify-content: center;
+        align-items: center;
+      }
+    }
+  }
+}

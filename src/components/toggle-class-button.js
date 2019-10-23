@@ -2,32 +2,52 @@ import { Link } from 'gatsby';
 import PropTypes from 'prop-types';
 import React from 'react';
 
-const toggleClass = function(e, scopedSelector, classToToggle) {
-  const button = e.target.closest('button');
-  button.nextElementSibling.querySelectorAll(scopedSelector).forEach((el) => {
+const toggleClass = function(e, selector, selectorIsGlobal, classToToggle) {
+  const scopedElement = selectorIsGlobal
+    ? document.body
+    : e.target.closest('button').nextElementSibling;
+  scopedElement.querySelectorAll(selector).forEach((el) => {
     el.classList && el.classList.toggle(classToToggle);
   });
 };
 
-const ToggleClassButton = ({ scopedSelector, classToToggle }) => {
+const ToggleClassButton = ({
+  children,
+  selector,
+  selectorIsGlobal,
+  classToToggle,
+}) => {
   return (
     <>
       <button
         className="button button-minimal button-toggle-class"
         onClick={(e) => {
-          toggleClass(e, scopedSelector, classToToggle);
+          toggleClass(e, selector, selectorIsGlobal, classToToggle);
         }}
       >
-        Toggle{' '}
-        <span className="button-toggle-class_class-name">{classToToggle}</span>
+        {children ? (
+          <>{children}</>
+        ) : (
+          <>
+            <span>Toggle </span>
+            <span className="button-toggle-class_class-name">
+              {classToToggle}
+            </span>
+          </>
+        )}
       </button>
     </>
   );
 };
 
 ToggleClassButton.propTypes = {
-  scopedSelector: PropTypes.string.isRequired,
+  selector: PropTypes.string.isRequired,
+  selectorIsGlobal: PropTypes.bool,
   classToToggle: PropTypes.string.isRequired,
+};
+
+ToggleClassButton.defaultProps = {
+  selectorIsGlobal: false,
 };
 
 export default ToggleClassButton;

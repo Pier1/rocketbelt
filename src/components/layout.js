@@ -47,6 +47,8 @@ const Layout = ({ children, pageContext }) => {
     pageContext.frontmatter.scriptTags &&
     pageContext.frontmatter.scriptTags.length > 0;
 
+  const pageClass = window.location.href.split('/').slice(-1)[0];
+
   return (
     <>
       {/* Pass in title, description, OG data, etc. */}
@@ -54,7 +56,7 @@ const Layout = ({ children, pageContext }) => {
 
       <div className="rbio-content-wrap">
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main className="rbio-content">{children}</main>
+        <main className={`rbio-content ${pageClass}`}>{children}</main>
         <Footer />
       </div>
 
