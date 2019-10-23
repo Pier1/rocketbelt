@@ -1,0 +1,42 @@
+# Links
+
+*Links go places, buttons do things.*
+* Link text should be short, clear, and action-focused
+* `href="#"`, `href="javascript:void(0);"` and click listeners attached to links are antipatterns
+
+## Standard Links
+```html
+<a href="pier1.com">Find a Pier 1</a> near you.
+```
+
+## Links with Icons
+```html
+<a class="text-with-icon" href="#">Chat Now
+  <svg class="icon icon-right" aria-hidden="true">
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-chat-single"></use>
+  </svg>
+</a>
+```
+
+
+## CTAs
+* Calls to Action (CTAs) should be visually distinct from the content adjacent to them
+* CTA copy should be compelling-but-concise and a natural conclusion of the content that leads to the CTA
+
+```html
+<a class="cta text-with-icon" href="#">
+  <span class="cta_text">Shop Dining & Entertaining</span>
+</a>
+```
+
+## Link Lists
+Use the Link List component to visually group links that are related, such as navigational elements in a header or footer.
+```html
+<ul class="link-list">
+  <li class="title"><a class="cta" target="_blank" href="https://www.pier1.com/pillows">Pillows</a></li>
+  <li><a target="_blank" href="https://www.pier1.com/embroidered_pillows">Textured & Embellished Pillows</a></li>
+  <li><a target="_blank" href="https://www.pier1.com/solid_pillows">Solid Pillows</a></li>
+  <li><a target="_blank" href="https://www.pier1.com/pattern_pillows">Patterned Pillows</a></li>
+  <li><a target="_blank" href="https://www.pier1.com/outdoor_pillows">Outdoor Pillows</a></li>
+</ul>
+```

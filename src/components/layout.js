@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const { addScript } = require('../utils/addScript.js');
+import 'jquery';
+import '../rocketbelt/base/rocketbelt';
 
 import 'normalize.css';
 import '../rocketbelt/rocketbelt.scss';
@@ -10,8 +12,25 @@ import '../styles/site.scss';
 
 import SEO from './seo';
 import Header from './header';
+import Footer from './footer';
 
 const Layout = ({ children, pageContext }) => {
+  useEffect(() => {
+    children.length > 0 &&
+      children.forEach((child) => {
+        if (
+          child.props &&
+          child.props.children &&
+          child.props.children.props &&
+          child.props.children.props.className &&
+          child.props.children.props.className.indexOf('language-js') > -1 &&
+          child.props.children.props['run-on-load']
+        ) {
+          eval(child.props.children.props.children);
+        }
+      });
+  });
+
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
       site {
@@ -28,6 +47,8 @@ const Layout = ({ children, pageContext }) => {
     pageContext.frontmatter.scriptTags &&
     pageContext.frontmatter.scriptTags.length > 0;
 
+  const pageClass = window.location.pathname.split('/').slice(-1)[0];
+
   return (
     <>
       {/* Pass in title, description, OG data, etc. */}
@@ -35,13 +56,13 @@ const Layout = ({ children, pageContext }) => {
 
       <div className="rbio-content-wrap">
         <Header siteTitle={data.site.siteMetadata.title} />
-        <main className="rbio-content">{children}</main>
-        <footer>© {new Date().getFullYear()} Pier 1 Imports.</footer>
+        <main className={`rbio-content ${pageClass}`}>{children}</main>
+        <Footer />
       </div>
 
       {hasScripts &&
         pageContext.frontmatter.scriptTags.forEach((script) => {
-          addScript(script);
+          addScript(`/scripts/${script}`);
         })}
     </>
   );

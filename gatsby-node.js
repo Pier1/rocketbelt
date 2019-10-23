@@ -24,7 +24,6 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       value: node.context.frontmatter.scriptTags,
       node,
     });
-    console.dir(node);
   }
 
   if (node.internal.type === 'SitePage' && node.context && node.context.id) {

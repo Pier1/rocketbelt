@@ -1,11 +1,25 @@
 ---
 title: 'Bar'
-scriptTags: ['rocketbelt.dynamic-button.js']
+scriptTags:
+  - 'rocketbelt.dynamic-button.js'
 ---
 
 # Buttons & Links
 
+## Default/Secondary Buttons
+Anchors go places, buttons do things
+
+```html
+<button class="button">Secondary</button>
+<button class="button" disabled>Disabled</button>
+<button class="button button-sm">Small</button>
+<button class="button button-mini">Mini</button>
+```
+
 ## Primary Buttons
+* Convey or a "Desired" action
+* One per page/major page component
+* When Primary & Secondary buttons are grouped together, always place the Primary button on the right
 
 ```html
 <button class="button button-primary">Primary</button>
@@ -14,15 +28,9 @@ scriptTags: ['rocketbelt.dynamic-button.js']
 <button class="button button-mini button-primary">Mini</button>
 ```
 
-## Secondary Buttons
-```html
-<button class="button">Secondary</button>
-<button class="button" disabled>Disabled</button>
-<button class="button button-sm">Small</button>
-<button class="button button-mini">Mini</button>
-```
-
 ## Text/Minimal Buttons
+* Can represent a primary action if placed by itself in a visually small component
+* If grouped with another button, always represents a secondary action
 
 ```html
 <button class="button button-lg button-text">Text Button</button>
@@ -33,6 +41,9 @@ scriptTags: ['rocketbelt.dynamic-button.js']
 ```
 
 ## Anchor Buttons
+* Why `role=button` is important
+* Use these sparingly
+* Anchors go places, buttons do things
 
 ```html
 <a class="button button-lg button-primary" href="#" role="button">
@@ -53,6 +64,8 @@ scriptTags: ['rocketbelt.dynamic-button.js']
 ```
 
 ## Block Buttons
+* Mobile usage
+* Use the grid to auto-size them and allow them to wrap
 
 ```html
 <div class="grid-fluid">
@@ -66,3 +79,8 @@ scriptTags: ['rocketbelt.dynamic-button.js']
   </div>
 </div>
 ```
+<!--
+### Script Test
+```js run-on-load code-only
+console.log('Hello from runOnLoad');
+``` -->

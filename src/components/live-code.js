@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { theme } from './theme';
 
@@ -13,6 +13,8 @@ const LiveCode = (props) => {
   const hideText = `Hide ${language.toUpperCase()}`;
   const [labelText, setLabelText] = useState(showText);
   const [codeHidden, setCodeHidden] = useState(true);
+  const [copyText, setCopyText] = useState('Copy');
+  const editorRef = useRef(null);
 
   const handleChange = function(event) {
     if (event.target.checked) {
@@ -24,17 +26,47 @@ const LiveCode = (props) => {
     }
   };
 
+  const copyToClipboard = function(e) {
+    const textArea = e.target.nextElementSibling.firstElementChild;
+
+    const input = document.createElement('textarea');
+    input.classList.add('visually-hidden');
+
+    document.body.appendChild(input);
+    input.value = textArea.defaultValue;
+    input.focus();
+    input.select();
+
+    document.execCommand('copy');
+    document.body.removeChild(input);
+
+    setCopyText('Copied');
+    setTimeout(function() {
+      setCopyText('Copy');
+    }, 2000);
+  };
+
   return (
     <LiveProvider
       language={language}
       disabled={true}
       code={`${props.children.props.children.trim()}`}
-      transformCode={(code) => `<>${code}</>`}
+      transformCode={(code) => {
+        return language === 'html' ? `<>${code}</>` : code;
+      }}
       theme={theme}
     >
       <section className="component-example">
         {props.children.props['code-only'] ? (
-          <LiveEditor />
+          <div
+            className="component-example_code"
+            data-rb-example-lang={language.toUpperCase()}
+          >
+            <button onClick={copyToClipboard} className="button button-copy">
+              {copyText}
+            </button>
+            <LiveEditor />
+          </div>
         ) : props.children.props['render-only'] ? (
           <div
             className="component-example_preview"
@@ -62,7 +94,11 @@ const LiveCode = (props) => {
               className={`component-example_code ${
                 codeHidden ? 'visually-hidden' : ''
               }`}
+              data-rb-example-lang={language.toUpperCase()}
             >
+              <button onClick={copyToClipboard} className="button button-copy">
+                {copyText}
+              </button>
               <LiveEditor />
             </div>
           </>

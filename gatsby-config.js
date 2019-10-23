@@ -8,13 +8,6 @@ module.exports = {
     {
       resolve: 'gatsby-source-filesystem',
       options: {
-        name: 'rocketbelt',
-        path: `${__dirname}/src/rocketbelt`,
-      },
-    },
-    {
-      resolve: 'gatsby-source-filesystem',
-      options: {
         name: 'images',
         path: `${__dirname}/src/images`,
       },
@@ -27,11 +20,36 @@ module.exports = {
       },
     },
     {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'rocketbelt',
+        path: `${__dirname}/src/rocketbelt`,
+      },
+    },
+    {
       resolve: 'gatsby-plugin-mdx',
       options: {
         defaultLayouts: {
           default: require.resolve('./src/components/layout.js'),
         },
+        gatsbyRemarkPlugins: [
+          'gatsby-remark-bracketed-spans',
+          'gatsby-remark-smartypants',
+        ],
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/src/rocketbelt/~tmp/scripts`,
+        destination: '/scripts',
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-copy-files',
+      options: {
+        source: `${__dirname}/src/rocketbelt/~tmp/icons`,
+        destination: '/icons',
       },
     },
     {

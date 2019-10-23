@@ -1,0 +1,48 @@
+---
+scriptTags:
+  - 'rocketbelt.progress-stepped.js'
+---
+
+# Stepped Progress Indicators
+
+import { advanceIndicator } from '../../../utils/page-helpers/stepped-progress-indicators.js';
+
+Use a Stepped Progress Indicator to illustrate a user's advancement through a
+series of related tasks.
+
+<button
+  className="button button-minimal"
+  onClick={advanceIndicator}>Advance the Indicator</button>
+
+```html
+<nav class="progress-stepped"
+     aria-label="How should this component be briefly described to users of assistive technology?">
+  <ol class="progress_steps list-reset">
+    <li aria-current="page"><a href="#">Basket</a></li>
+    <li><a href="#">Shipping</a></li>
+    <li><a href="#">Payment</a></li>
+    <li><a href="#">Review</a></li>
+  </ol>
+</nav>
+```
+The state of the Stepped Progress Indicator is controlled by moving the
+`aria-current=page` attribute from element to element. *Note that this
+manipulation is currently left up to the consuming app.* As an example, the
+function that controls the component above is:
+
+```js code-only
+(e) => {
+  // e.target.nextElementSibling targets the wrapper of the <nav> element.
+  const current = e.target.nextElementSibling.querySelector(
+    '.progress-stepped li[aria-current]'
+  );
+  const next =
+    current.nextElementSibling !== null
+      ? current.nextElementSibling
+      : e.target.nextElementSibling.querySelector(
+          '.progress-stepped li:first-of-type'
+        );
+  current.removeAttribute('aria-current');
+  next.setAttribute('aria-current', 'page');
+};
+```
