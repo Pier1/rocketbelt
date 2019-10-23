@@ -58,7 +58,10 @@ const LiveCode = (props) => {
     >
       <section className="component-example">
         {props.children.props['code-only'] ? (
-          <div className="component-example_code">
+          <div
+            className="component-example_code"
+            data-rb-example-lang={language.toUpperCase()}
+          >
             <button onClick={copyToClipboard} className="button button-copy">
               {copyText}
             </button>
@@ -91,6 +94,7 @@ const LiveCode = (props) => {
               className={`component-example_code ${
                 codeHidden ? 'visually-hidden' : ''
               }`}
+              data-rb-example-lang={language.toUpperCase()}
             >
               <button onClick={copyToClipboard} className="button button-copy">
                 {copyText}

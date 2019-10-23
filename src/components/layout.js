@@ -4,7 +4,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 const { addScript } = require('../utils/addScript.js');
 import 'jquery';
-import '../rocketbelt/scripts/rocketbelt';
+import '../rocketbelt/base/rocketbelt';
 
 import 'normalize.css';
 import '../rocketbelt/rocketbelt.scss';

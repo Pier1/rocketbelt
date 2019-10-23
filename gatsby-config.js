@@ -41,17 +41,15 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-copy-files',
       options: {
-        source: `${__dirname}/src/rocketbelt/scripts`,
+        source: `${__dirname}/src/rocketbelt/~tmp/scripts`,
         destination: '/scripts',
       },
     },
     {
-      resolve: 'gatsby-plugin-exclude',
+      resolve: 'gatsby-plugin-copy-files',
       options: {
-        paths: [
-          '${__dirname}/src/rocketbelt/**',
-          '${__dirname}/**/rocketbelt*.js',
-        ],
+        source: `${__dirname}/src/rocketbelt/~tmp/icons`,
+        destination: '/icons',
       },
     },
     {

@@ -71,6 +71,14 @@ body {
     }
   }
 
+  h2,
+  h3,
+  h4 {
+    + .linked-heading_anchor {
+      font-weight: font-weight(bold);
+    }
+  }
+
   &:hover {
     .linked-heading_anchor {
       opacity: 1;
@@ -131,6 +139,40 @@ body {
 
 .component-example_code {
   position: relative;
+
+  &::after {
+    position: absolute;
+    top: 0;
+    left: 1.5rem;
+    padding: 0.25rem 1rem;
+    border-radius: 0 0 4px 4px;
+    content: attr(data-rb-example-lang);
+    text-transform: uppercase;
+    font-weight: font-weight(bold);
+    font-size: font-size(-1);
+  }
+
+  &[data-rb-example-lang='HTML']::after {
+    background: #d23c1e;
+    color: color(white);
+  }
+
+  &[data-rb-example-lang='JS']::after {
+    background: #efda5b;
+  }
+
+  &[data-rb-example-lang='SCSS'],
+  &[data-rb-example-lang='SASS'] {
+    &::after {
+      background: #cb689a;
+      color: color(black);
+    }
+  }
+
+  pre {
+    padding: 1.5rem !important;
+    padding-top: 2.5rem !important;
+  }
 
   > .button-copy {
     position: absolute;

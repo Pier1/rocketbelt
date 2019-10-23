@@ -1,6 +1,6 @@
-# The scripts directory isn't a source of truth as it's
-# generated via build tasks
-src/rocketbelt/scripts/**
+# These directories aren't sources of truth
+# as they're generated via build tasks
+src/rocketbelt/~tmp/**
 
 # ====================================================
 # Ignore component symlinks (but not site-specific JS)

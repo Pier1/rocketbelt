@@ -45,7 +45,6 @@
     "file-loader": "^4.2.0",
     "fontfaceobserver": "^2.1.0",
     "gatsby-plugin-copy-files": "^1.0.3",
-    "gatsby-plugin-exclude": "^1.0.2",
     "gatsby-remark-bracketed-spans": "^2.0.3",
     "gatsby-remark-smartypants": "^2.1.14",
     "gulp": "^3.9.1",
