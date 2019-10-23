@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 const { addScript } = require('../utils/addScript.js');
-import 'jquery';
+import jQuery from 'jquery';
 import '../rocketbelt/base/rocketbelt';
 
 import 'normalize.css';
@@ -13,6 +13,8 @@ import '../styles/site.scss';
 import SEO from './seo';
 import Header from './header';
 import Footer from './footer';
+
+window.$ = window.jQuery = jQuery;
 
 const Layout = ({ children, pageContext }) => {
   useEffect(() => {
@@ -62,7 +64,9 @@ const Layout = ({ children, pageContext }) => {
 
       {hasScripts &&
         pageContext.frontmatter.scriptTags.forEach((script) => {
-          addScript(`/scripts/${script}`);
+          setTimeout(() => {
+            addScript(`/scripts/${script}`);
+          }, 1000);
         })}
     </>
   );
