@@ -1,0 +1,59 @@
+# Icons
+
+- `svgxuse`
+
+## Make Iconography Accessible
+### Meaningful Icon
+- Note `role` attribute
+- Icon description is linked via `aria-describedby` in the sprite sheet
+
+```html
+<svg class="icon" role="img">
+  <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-chat-single"></use>
+</svg>
+```
+
+### Icon with Text
+- Note use of `aria-hidden`; the text should convey all necessary information,
+  making the icon purely decorative
+
+```html
+<span class="text-with-icon">Store Locator
+  <svg class="icon icon-left" aria-hidden="true">
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-pin"></use>
+  </svg>
+</span>
+```
+
+### Linked Icon
+- The icon has an implicit action that isn't conveyed by it's `aria-describedby`
+  attribute, which is a literal description of the icon (similar to `alt` text).
+  An `aria-label` is necessary to help describe the intent (not content) of the
+  icon
+
+```html
+<a href="/">
+<svg class="icon" aria-label="Go to the home page" role="img">
+  <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-home"></use>
+</svg></a>
+```
+
+### Icon with Overlay
+
+```html
+<a class="text-with-icon" href="#"><span class="indicator">3</span><span class="visually-hidden">items in your cart</span>
+<svg class="icon" aria-hidden="true">
+  <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-cart"></use>
+</svg></a>
+```
+
+
+## Standard Icons
+
+- An icon's `fill` property is inherited from `color`
+- Always use the default color for logo icons
+
+import rbIcons from '../../../rocketbelt/~tmp/icons/rocketbelt.icons.svg';
+import IconPresenter from '../../../components/icon-presenter';
+
+<IconPresenter svgSprite={rbIcons} />

@@ -20,7 +20,10 @@ greatly narrows the scope of DOM elements that will be watched by a
 antipattern and will negatively impact performance).
 
 ### Component-Level
-<ToggleClassButton selector={`.button:not(.button-copy)`} classToToggle={`is-busy`} />
+<ToggleClassButton
+  selector={`.button:not(.button-copy)`}
+  classToToggle={`is-busy`}
+/>
 
 ```html
 <button class="button is-busyable is-busy is-busy-spinner is-busy-opaque">Trigger Busy</button>

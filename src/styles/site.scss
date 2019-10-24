@@ -255,4 +255,44 @@ code {
       }
     }
   }
+
+  &.icons {
+    .icons-standard {
+      background: color(brand, catskillBlue);
+      padding: 1rem;
+      display: grid;
+      grid-gap: 2.5rem 1rem;
+      grid-template-columns: repeat(auto-fill, 120px);
+      justify-content: space-between;
+
+      .icon {
+        width: 36px;
+        height: 36px;
+        margin-bottom: 0.5rem;
+      }
+    }
+
+    .icon-wrapper {
+      background: color(white);
+      box-shadow: 0 1px 8px rgba(color(brand, columbiaBlue), 0.6);
+      padding: 1rem;
+      display: inline-flex;
+      flex-direction: column;
+      color: color(gray, minus2);
+      font-size: font-size(-1);
+      font-family: font-family(monospace);
+      align-items: center;
+      transition: color 100ms linear, box-shadow 100ms linear;
+
+      &:hover {
+        box-shadow: 0 4px 12px rgba(color(brand, columbiaBlue), 1);
+        color: color(gray, minus1);
+      }
+
+      &:active {
+        box-shadow: 0 1px 8px rgba(color(brand, columbiaBlue), 0.6);
+        color: color(gray, minus2);
+      }
+    }
+  }
 }

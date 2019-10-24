@@ -1,1 +1,38 @@
+---
+scriptTags:
+  - rocketbelt.uploaders.js
+---
 # Uploaders
+Include `rocketbelt.uploaders.js` and call
+`rb.uploaders.addUploader({ selector: '#unique-selector' })` to initialize. As
+files are added via the UI, they're also added to the array as base64-encoded
+strings along with the file size and an auto-generated ID. The uploader emits
+`rb.uploaders.fileAdded` and `rb.uploaders.fileRemoved` events as files are
+added and removed. By default, the uploader stores images as base64-encoded
+strings. It can be configured to append files as `Blob`s by adding the parameter
+`filesAsBinary: true` to the configuration object when the uploader is created.
+
+```html
+<div class="uploader" id="uploader1"><span class="uploader_cta text-with-icon">Add a Photo
+    <svg class="icon icon-left" aria-hidden="true">
+      <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-upload"></use>
+    </svg></span>
+  <form class="uploader_form">
+    <p class="uploader_text">
+      Drag &amp; drop images into this area
+      or
+      <label class="uploader_file-label button-lg button-link">browse your computer</label> for them.
+    </p>
+    <input class="uploader_file-input" type="file" multiple="" accept="*" />
+  </form>
+  <progress max="100" value="0"></progress>
+  <div class="uploader_thumbs_wrapper">
+    <div class="uploader_thumbs">
+      <label class="uploader_file-label button-lg button-alternate"><span class="text-with-icon">Add another photo
+          <svg class="icon" aria-hidden="true">
+            <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-upload"></use>
+          </svg></span></label>
+    </div>
+  </div>
+</div>
+```
