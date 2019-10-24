@@ -64,9 +64,7 @@ const Layout = ({ children, pageContext }) => {
 
       {hasScripts &&
         pageContext.frontmatter.scriptTags.forEach((script) => {
-          setTimeout(() => {
-            addScript(`/scripts/${script}`);
-          }, 1000);
+          addScript(`/scripts/${script}`);
         })}
     </>
   );
