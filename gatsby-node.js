@@ -71,7 +71,9 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
       node,
       name: 'lastCommitTime',
       value: require('child_process')
-        .execSync(`git log --pretty=format:%aI -- ${node.fileAbsolutePath}`)
+        .execSync(
+          `git log --pretty=format:%aI -- ${node.fileAbsolutePath} | head -1 | tr -d '\n'`
+        )
         .toString(),
     });
   }
