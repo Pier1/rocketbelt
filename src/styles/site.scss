@@ -140,58 +140,95 @@ body {
 .component-example_code {
   position: relative;
 
-  &::after {
+  > .button-copy {
     position: absolute;
     top: 0;
     left: 1.5rem;
-    padding: 0.25rem 1rem;
+    z-index: 1;
+    padding: 0.5rem 1rem;
+    height: auto;
     border-radius: 0 0 4px 4px;
     content: attr(data-rb-example-lang);
-    text-transform: uppercase;
-    font-weight: font-weight(bold);
     font-size: font-size(-1);
+    transition: max-width 100ms linear;
+
+    .button-copy_language {
+      text-transform: uppercase;
+      font-weight: font-weight(bold);
+    }
+
+    .button-copy_text {
+      display: none;
+      visibility: hidden;
+      margin-left: 0.5rem;
+      opacity: 1;
+    }
+
+    &:hover {
+      .button-copy_text {
+        text-decoration: underline;
+      }
+    }
   }
 
-  &[data-rb-example-lang='HTML']::after {
-    background: #d23c1e;
-    color: color(white);
+  &[data-rb-example-lang='HTML'] {
+    > .button-copy {
+      max-width: 66px;
+      background: #d23c1e;
+      color: color(white);
+    }
   }
 
-  &[data-rb-example-lang='JS']::after {
-    background: #efda5b;
+  &[data-rb-example-lang='JS'] {
+    > .button-copy {
+      max-width: 43px;
+      background: #efda5b;
+    }
   }
 
   &[data-rb-example-lang='SCSS'],
   &[data-rb-example-lang='SASS'] {
-    &::after {
+    > .button-copy {
+      max-width: 64px;
       background: #cb689a;
       color: color(black);
     }
   }
 
+  &:hover {
+    > .button-copy {
+      max-width: 120px;
+
+      .button-copy_text {
+        display: inline;
+        visibility: visible;
+        opacity: 1;
+        transition: opacity 200ms linear;
+        transition-delay: 500ms;
+      }
+    }
+  }
+
   pre {
-    padding: 1.5rem !important;
-    padding-top: 2.5rem !important;
+    // Have to !important these to override
+    // inline styles from prism-react-renderer…
+    padding: 1.5rem !important; // sass-lint:disable-line no-important
+    padding-top: 2.5rem !important; // sass-lint:disable-line no-important
   }
 
   > .button-copy {
-    position: absolute;
-    top: 0.5rem;
-    right: 0.5rem;
-    z-index: 1;
-    padding-right: 1rem;
-    color: color(white);
-    text-align: right;
-
-    &:hover {
-      text-decoration: underline;
-    }
+    // position: absolute;
+    // right: 0.5rem;
+    // z-index: 1;
+    // border-radius: 0 0 4px 4px;
+    // background: color(white);
+    // color: color(gray, minus2);
+    // text-align: right;
 
     &,
     &:hover,
     &:active {
       border: none;
-      background: transparent;
       box-shadow: none;
     }
   }
@@ -258,31 +295,31 @@ code {
 
   &.icons {
     .icons-standard {
-      background: color(brand, catskillBlue);
-      padding: 1rem;
       display: grid;
+      padding: 1rem;
+      background: color(brand, catskillBlue);
       grid-gap: 2.5rem 1rem;
       grid-template-columns: repeat(auto-fill, 120px);
       justify-content: space-between;
 
       .icon {
+        margin-bottom: 0.5rem;
         width: 36px;
         height: 36px;
-        margin-bottom: 0.5rem;
       }
     }
 
     .icon-wrapper {
-      background: color(white);
-      box-shadow: 0 1px 8px rgba(color(brand, columbiaBlue), 0.6);
-      padding: 1rem;
       display: inline-flex;
       flex-direction: column;
+      padding: 1rem;
+      background: color(white);
+      box-shadow: 0 1px 8px rgba(color(brand, columbiaBlue), 0.6);
       color: color(gray, minus2);
       font-size: font-size(-1);
       font-family: font-family(monospace);
-      align-items: center;
       transition: color 100ms linear, box-shadow 100ms linear;
+      align-items: center;
 
       &:hover {
         box-shadow: 0 4px 12px rgba(color(brand, columbiaBlue), 1);

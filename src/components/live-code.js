@@ -1,5 +1,5 @@
 import PropTypes from 'prop-types';
-import React, { useState, useRef } from 'react';
+import React, { useState } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { theme } from './theme';
 
@@ -14,7 +14,6 @@ const LiveCode = (props) => {
   const [labelText, setLabelText] = useState(showText);
   const [codeHidden, setCodeHidden] = useState(true);
   const [copyText, setCopyText] = useState('Copy');
-  const editorRef = useRef(null);
 
   const handleChange = function(event) {
     if (event.target.checked) {
@@ -27,14 +26,14 @@ const LiveCode = (props) => {
   };
 
   const copyToClipboard = function(e) {
-    const textArea = e.target.nextElementSibling.firstElementChild;
+    const textArea = e.target.closest('.button-copy').nextElementSibling
+      .firstElementChild;
 
     const input = document.createElement('textarea');
     input.classList.add('visually-hidden');
 
     document.body.appendChild(input);
     input.value = textArea.defaultValue;
-    input.focus();
     input.select();
 
     document.execCommand('copy');
@@ -63,7 +62,10 @@ const LiveCode = (props) => {
             data-rb-example-lang={language.toUpperCase()}
           >
             <button onClick={copyToClipboard} className="button button-copy">
-              {copyText}
+              <span className="button-copy_language">
+                {language.toUpperCase()}
+              </span>
+              <span className="button-copy_text">{copyText}</span>
             </button>
             <LiveEditor />
           </div>
@@ -97,7 +99,10 @@ const LiveCode = (props) => {
               data-rb-example-lang={language.toUpperCase()}
             >
               <button onClick={copyToClipboard} className="button button-copy">
-                {copyText}
+                <span className="button-copy_language">
+                  {language.toUpperCase()}
+                </span>
+                <span className="button-copy_text">{copyText}</span>
               </button>
               <LiveEditor />
             </div>
