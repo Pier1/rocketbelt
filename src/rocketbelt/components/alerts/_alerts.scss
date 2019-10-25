@@ -1,17 +1,30 @@
 .message {
   &[class*='message-'] {
+    $border-width: 1px;
     display: inline-flex;
     padding: 1.25rem;
-    border: 1px solid color(gray, plus4);
-    border-left-width: 8px;
+    border: $border-width solid rgba(color(gray, plus4), 0.7);
+    border-left-width: 0;
     background: color(white);
     color: color(black);
     justify-content: center;
     align-items: center;
+    position: relative;
+
+    &::before {
+      position: absolute;
+      top: -1 * $border-width;
+      bottom: -1 * $border-width;
+      left: 0;
+      content: '';
+      width: 8px;
+      background: gray;
+    }
   }
 
   .message_icon {
     margin-right: 1.25rem;
+    margin-left: 8px;
     width: 20px;
     height: 20px;
     flex-shrink: 0;
@@ -27,28 +40,40 @@
   }
 
   &.message-warning {
-    border-left-color: color(ui, warning);
+    &::before {
+      background: color(ui, warning);
+    }
+
     .message_icon {
       color: color(ui, warning);
     }
   }
 
   &.message-info {
-    border-left-color: color(ui, info);
+    &::before {
+      background: color(ui, info);
+    }
+
     .message_icon {
       color: color(ui, info);
     }
   }
 
   &.message-error {
-    border-left-color: color(ui, error);
+    &::before {
+      background: color(ui, error);
+    }
+
     .message_icon {
       color: color(ui, error);
     }
   }
 
   &.message-success {
-    border-left-color: color(ui, success);
+    &::before {
+      background: color(ui, success);
+    }
+
     .message_icon {
       color: color(ui, success);
     }

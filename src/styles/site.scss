@@ -1,35 +1,35 @@
 @import '../rocketbelt/tools/tools';
 
 @font-face {
+  font-weight: 300;
+  font-style: normal;
   font-family: 'RB Monospace';
   src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Light.woff')
     format('woff');
-  font-weight: 300;
-  font-style: normal;
 }
 
 @font-face {
+  font-weight: 400;
+  font-style: normal;
   font-family: 'RB Monospace';
   src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Regular.woff')
     format('woff');
-  font-weight: 400;
-  font-style: normal;
 }
 
 @font-face {
+  font-weight: 500;
+  font-style: normal;
   font-family: 'RB Monospace';
   src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Medium.woff')
     format('woff');
-  font-weight: 500;
-  font-style: normal;
 }
 
 @font-face {
+  font-weight: 700;
+  font-style: normal;
   font-family: 'RB Monospace';
   src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Bold.woff')
     format('woff');
-  font-weight: 700;
-  font-style: normal;
 }
 
 html,
@@ -254,7 +254,7 @@ body {
 }
 
 .deprecation-notice {
-  max-width: 32rem;
+  max-width: 33rem;
 }
 
 .rbio-footer {
@@ -317,9 +317,23 @@ code {
   }
 
   &.icons {
+    .icons-descriptor {
+      position: absolute;
+      top: 0;
+      left: 1.5rem;
+      padding: 0.5rem 1rem;
+      border-radius: 0 0 4px 4px;
+      background: color(brand, alabaster);
+      box-shadow: 0 2px 8px
+        rgba(scale-color(color(brand, alabaster), $lightness: -75%), 0.1);
+      font-size: font-size(-1);
+    }
+
     .icons-standard {
+      position: relative;
       display: grid;
-      padding: 1rem;
+      padding: 1.5rem;
+      padding-top: 3rem;
       background: color(brand, catskillBlue);
       grid-gap: 2.5rem 1rem;
       grid-template-columns: repeat(auto-fill, 120px);
@@ -335,6 +349,7 @@ code {
     .icon-wrapper {
       display: inline-flex;
       flex-direction: column;
+      margin: 0;
       padding: 1rem;
       background: color(white);
       box-shadow: 0 1px 8px rgba(color(brand, columbiaBlue), 0.6);
@@ -352,6 +367,24 @@ code {
       &:active {
         box-shadow: 0 1px 8px rgba(color(brand, columbiaBlue), 0.6);
         color: color(gray, minus2);
+      }
+    }
+
+    .icon-wrapper-copied {
+      position: relative;
+
+      &::after {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        display: flex;
+        background: color(brand, alabaster);
+        content: 'Copied';
+        font-family: font-family(sans);
+        justify-content: center;
+        align-items: center;
       }
     }
   }
