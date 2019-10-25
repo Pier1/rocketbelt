@@ -47,6 +47,7 @@ const IconPresenter = ({ svgSprite }) => {
       {iconNames.map((iconName) => {
         return (
           <button
+            key={`${idPrefix}${iconName}`}
             className="button button-minimal icon-wrapper"
             onClick={() => {
               copyToClipboard(`${idPrefix}${iconName}`);

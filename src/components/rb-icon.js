@@ -4,7 +4,7 @@ import React from 'react';
 const RbIcon = ({ icon, className }) => {
   return (
     <svg
-      class={`icon ${className}`}
+      className={`icon ${className}`}
       dangerouslySetInnerHTML={{
         __html: `<use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-${icon}"></use>`,
       }}

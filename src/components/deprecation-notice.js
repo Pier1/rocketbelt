@@ -40,7 +40,7 @@ const DeprecationNotice = ({ deprecatedComponent, alternativeComponents }) => {
                       ? ' or '
                       : ', ';
                   return component.uri ? (
-                    <>
+                    <span key={component.name}>
                       {separator}
                       <Link
                         className="deprecated-component-alternative"
@@ -48,14 +48,14 @@ const DeprecationNotice = ({ deprecatedComponent, alternativeComponents }) => {
                       >
                         {component.name}
                       </Link>
-                    </>
+                    </span>
                   ) : (
-                    <>
+                    <span key={component.name}>
                       {separator}
                       <span className="deprecated-component-alternative">
                         {component.name}
                       </span>
-                    </>
+                    </span>
                   );
                 })}
                 {asAnAlternativeText}.
