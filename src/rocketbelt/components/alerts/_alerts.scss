@@ -1,3 +1,63 @@
+.message {
+  &[class*='message-'] {
+    display: inline-flex;
+    padding: 1.5rem 1rem;
+    border: 1px solid color(gray, plus4);
+    border-left-width: 8px;
+    background: color(white);
+    color: color(black);
+    justify-content: center;
+    align-items: center;
+  }
+
+  .message_icon {
+    margin-right: 1rem;
+    width: 20px;
+    height: 20px;
+    flex-shrink: 0;
+  }
+
+  .message_body {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .message_title {
+    font-weight: font-weight(bold);
+  }
+
+  &.message-warning {
+    border-left-color: color(ui, warning);
+    .message_icon {
+      color: color(ui, warning);
+    }
+  }
+
+  &.message-info {
+    border-left-color: color(ui, info);
+    .message_icon {
+      color: color(ui, info);
+    }
+  }
+
+  &.message-error {
+    border-left-color: color(ui, error);
+    .message_icon {
+      color: color(ui, error);
+    }
+  }
+
+  &.message-success {
+    border-left-color: color(ui, success);
+    .message_icon {
+      color: color(ui, success);
+    }
+  }
+}
+
+// Trying to deprecate the pattern below in favor of the new "message"
+// pattern above…
+
 $message-families: (success, error, warning, info);
 
 %message-static-props {
@@ -8,7 +68,6 @@ $message-families: (success, error, warning, info);
   align-items: center;
 }
 
-
 %message-flash-static-props {
   @extend %message-static-props;
 
@@ -16,7 +75,6 @@ $message-families: (success, error, warning, info);
   padding: 0.5rem;
   border: 1px solid;
 }
-
 
 %message-banner-static-props {
   @extend %message-static-props;
@@ -35,7 +93,6 @@ $message-families: (success, error, warning, info);
   width: 100%;
 }
 
-
 .message-flash {
   @extend %message-flash-static-props;
 }
@@ -45,7 +102,6 @@ $message-families: (success, error, warning, info);
   background: color($family, lightest);
   color: color($family, darkest);
 }
-
 
 @each $family in $message-families {
   .message-#{$family} {
@@ -71,7 +127,6 @@ $message-families: (success, error, warning, info);
 }
 
 .message-dismissable {
-
   justify-content: space-between;
 
   .message-dismissable_close {
@@ -94,7 +149,6 @@ $message-families: (success, error, warning, info);
     }
   }
 }
-
 
 .slideOutUp {
   @include fadeOutUp();

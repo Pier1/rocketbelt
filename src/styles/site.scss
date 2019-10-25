@@ -1,5 +1,37 @@
 @import '../rocketbelt/tools/tools';
 
+@font-face {
+  font-family: 'RB Monospace';
+  src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Light.woff')
+    format('woff');
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RB Monospace';
+  src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Regular.woff')
+    format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RB Monospace';
+  src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Medium.woff')
+    format('woff');
+  font-weight: 500;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'RB Monospace';
+  src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Bold.woff')
+    format('woff');
+  font-weight: 700;
+  font-style: normal;
+}
+
 html,
 body,
 #___gatsby,
@@ -147,6 +179,7 @@ body {
     z-index: 1;
     padding: 0.5rem 1rem;
     height: auto;
+    border: none;
     border-radius: 0 0 4px 4px;
     content: attr(data-rb-example-lang);
     font-size: font-size(-1);
@@ -214,24 +247,14 @@ body {
     // inline styles from prism-react-renderer…
     padding: 1.5rem !important; // sass-lint:disable-line no-important
     padding-top: 2.5rem !important; // sass-lint:disable-line no-important
+    font-family: font-family(
+      monospace
+    ) !important; // sass-lint:disable-line no-important
   }
+}
 
-  > .button-copy {
-    // position: absolute;
-    // right: 0.5rem;
-    // z-index: 1;
-    // border-radius: 0 0 4px 4px;
-    // background: color(white);
-    // color: color(gray, minus2);
-    // text-align: right;
-
-    &,
-    &:hover,
-    &:active {
-      border: none;
-      box-shadow: none;
-    }
-  }
+.deprecation-notice {
+  max-width: 32rem;
 }
 
 .rbio-footer {

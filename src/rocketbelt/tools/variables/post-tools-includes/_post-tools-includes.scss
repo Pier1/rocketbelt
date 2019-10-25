@@ -7,6 +7,10 @@ $color-families: map-merge(
       'link': color(brand, logoBlue),
       'focus': color(brand, prussianBlue),
       'button-base-fg': color(brand, prussianBlue),
+      'info': color(brand, prussianBlue),
+      'warning': color(warning-b),
+      'error': color(error),
+      'success': color(success),
     ),
     'uiFooter': (
       'fg': color(black),
