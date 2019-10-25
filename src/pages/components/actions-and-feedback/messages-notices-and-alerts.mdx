@@ -3,7 +3,21 @@ import DeprecationNotice from '../../../components/deprecation-notice';
 # Messages, Notices & Alerts
 
 ## Messages
-Under construction.
+```html
+<aside class="message message-info">
+  <svg class="message_icon icon" role="img">
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-info"></use>
+  </svg>
+  <section class="message_body">
+    <span class="message_title">
+      This is the message title.
+    </span>
+    <span class="message_text">
+      This is the message text.
+    </span>
+  </section>
+</aside>
+```
 
 ## Notices
 ```html
@@ -48,7 +62,7 @@ Under construction.
 ```
 
 ## Alerts
-<DeprecationNotice alternativeComponents={[
+<DeprecationNotice deprecatedComponent="Alerts" alternativeComponents={[
   { name: 'Message', uri: '/components/actions-and-feedback/messages-notices-and-alerts#message' },
   { name: 'Notice', uri: '/components/actions-and-feedback/messages-notices-and-alerts#notices' }]}/>
 

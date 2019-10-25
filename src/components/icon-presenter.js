@@ -30,7 +30,7 @@ const IconPresenter = ({ svgSprite }) => {
 
   const idPrefix = '#rb-icon-';
 
-  const copyToClipboard = (text) => {
+  const copyToClipboard = (e, text) => {
     const input = document.createElement('textarea');
     input.classList.add('visually-hidden');
 
@@ -40,16 +40,25 @@ const IconPresenter = ({ svgSprite }) => {
 
     document.execCommand('copy');
     document.body.removeChild(input);
+
+    const button = e.target.closest('button');
+    button.classList.add('icon-wrapper-copied');
+
+    setTimeout(() => {
+      button.classList.remove('icon-wrapper-copied');
+    }, 1500);
   };
 
   return (
     <section className="icons-standard">
+      <span className="icons-descriptor">Click an icon to copy its ID.</span>
       {iconNames.map((iconName) => {
         return (
           <button
+            key={`${idPrefix}${iconName}`}
             className="button button-minimal icon-wrapper"
-            onClick={() => {
-              copyToClipboard(`${idPrefix}${iconName}`);
+            onClick={(e) => {
+              copyToClipboard(e, `${idPrefix}${iconName}`);
             }}
           >
             <svg className="icon">
