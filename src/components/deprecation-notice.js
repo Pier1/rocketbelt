@@ -4,7 +4,7 @@ import React from 'react';
 
 import RbIcon from './rb-icon';
 
-const DeprecationNotice = ({ alternativeComponents }) => {
+const DeprecationNotice = ({ deprecatedComponent, alternativeComponents }) => {
   let hasAlternatives = false;
   let asAnAlternativeText = '';
   if (alternativeComponents && alternativeComponents.length > 0) {
@@ -15,6 +15,10 @@ const DeprecationNotice = ({ alternativeComponents }) => {
         : ' component as an alternative';
   }
 
+  const componentName = !!deprecatedComponent
+    ? deprecatedComponent.charAt(0).toUpperCase() + deprecatedComponent.slice(1)
+    : 'It';
+
   return (
     <>
       <aside className="message message-warning deprecation-notice">
@@ -24,7 +28,7 @@ const DeprecationNotice = ({ alternativeComponents }) => {
             This component has been deprecated.
           </span>
           <span className="message_text">
-            It may be removed in a future version of Rocketbelt.
+            {componentName} may be removed in a future version of Rocketbelt.
             {hasAlternatives && (
               <>
                 {` `}Consider the

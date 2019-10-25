@@ -1,7 +1,7 @@
 .message {
   &[class*='message-'] {
     display: inline-flex;
-    padding: 1.5rem 1rem;
+    padding: 1.25rem;
     border: 1px solid color(gray, plus4);
     border-left-width: 8px;
     background: color(white);
@@ -11,7 +11,7 @@
   }
 
   .message_icon {
-    margin-right: 1rem;
+    margin-right: 1.25rem;
     width: 20px;
     height: 20px;
     flex-shrink: 0;

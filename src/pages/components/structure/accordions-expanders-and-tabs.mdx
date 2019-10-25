@@ -1,1 +1,48 @@
-# Tabs & Accordions
+import DeprecationNotice from '../../../components/deprecation-notice';
+
+# Accordions, Expanders and Tabs
+
+- Difference in nomenclature
+
+## Expanders
+
+- Can be adjacent, logically unrelated
+
+## Accordions
+
+- Should be logically related
+
+```html
+<main>
+  <h2>
+    <button aria-expanded="false">
+      Section 1
+    </button>
+  </h2>
+  <div hidden>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo
+      purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget
+      aliquet scelerisque. Pellentesque sodales turpis vitae venenatis vehicula.
+      Ut id porta velit. Ut eu dignissim dui, quis gravida est. Cras quis
+      venenatis mauris, a bibendum enim. Sed at augue libero. Nullam tortor
+      metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum
+      risus facilisis imperdiet quis sed eros.
+    </p>
+  </div>
+  <h2>
+    <button aria-expanded="false">
+      Section 2
+    </button>
+  </h2>
+  <div hidden>
+    <p>Nullam tortor metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum risus facilisis imperdiet quis sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget aliquet scelerisque. Pellentesque sodales turpis vitae venenatis vehicula. Ut id porta velit. Ut eu dignissim dui, quis gravida est. Cras quis venenatis mauris, a bibendum enim. Sed at augue libero.</p>
+  </div>
+</main>
+```
+
+## Tabs
+
+## Tabcordions
+
+<DeprecationNotice deprecatedComponent="tabcordions"/>
