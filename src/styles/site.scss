@@ -32,6 +32,8 @@
     format('woff');
 }
 
+// sass-lint:disable no-qualifying-elements force-element-nesting nesting-depth
+
 html,
 body,
 #___gatsby,
@@ -65,7 +67,6 @@ body {
     font-weight: normal;
   }
 
-  // sass-lint:disable no-qualifying-elements force-element-nesting
   h1 {
     &,
     & + .linked-heading_anchor {
@@ -132,7 +133,6 @@ body {
       color: hotpink;
     }
   }
-  // sass-lint:enable no-qualifying-elements force-element-nesting
 }
 
 .rbio-nav_level1 {
@@ -440,3 +440,5 @@ code {
     }
   }
 }
+
+// sass-lint:enable no-qualifying-elements force-element-nesting nesting-depth

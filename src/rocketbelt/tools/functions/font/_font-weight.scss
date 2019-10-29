@@ -14,7 +14,7 @@
 ///   font-weight(semi-bold);
 ///   // 600;
 @function font-weight($style: normal) {
-  $style: to_lower_case($style);
+  $style: to-lower-case($style);
   $weights: (
     thin: 100,
     ultralight: 100,
@@ -36,10 +36,12 @@
     black: 900,
     heavy: 900,
     ultrabold: 900,
-    ultra-bold: 900
+    ultra-bold: 900,
   );
 
-  @return if(map-has-key($weights, $style),
-            map-get($weights, $style),
-            map-get($weights, normal));
+  @return if(
+    map-has-key($weights, $style),
+    map-get($weights, $style),
+    map-get($weights, normal)
+  );
 }

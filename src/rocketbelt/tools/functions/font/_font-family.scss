@@ -17,37 +17,36 @@
   $serif: 'Brand Serif', 'Times New Roman', serif;
   $monospace: 'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace;
 
-  $family: to_lower_case($family);
+  $family: to-lower-case($family);
   $families: (
     loading: $sans-loading,
-
     // Sans Serif synonyms
-    default:      $sans,
-    sans:         $sans,
-    sans-serif:   $sans,
+      default: $sans,
+    sans: $sans,
+    sans-serif: $sans,
     'sans serif': $sans,
-    brandsans:    $sans,
-    brand-sans:   $sans,
+    brandsans: $sans,
+    brand-sans: $sans,
     'brand sans': $sans,
-
     // Serif synonyms
-    serif:         $serif,
-    brandserif:    $serif,
-    brand-serif:   $serif,
+      serif: $serif,
+    brandserif: $serif,
+    brand-serif: $serif,
     'brand serif': $serif,
-
     // Monospace synonyms
-    mono:              $monospace,
-    brandmono:         $monospace,
-    brand-mono:        $monospace,
-    'brand mono':      $monospace,
-    monospace:         $monospace,
-    brandmonospace:    $monospace,
-    brand-monospace:   $monospace,
-    'brand monospace': $monospace
+      mono: $monospace,
+    brandmono: $monospace,
+    brand-mono: $monospace,
+    'brand mono': $monospace,
+    monospace: $monospace,
+    brandmonospace: $monospace,
+    brand-monospace: $monospace,
+    'brand monospace': $monospace,
   );
 
-  @return if(map-has-key($families, $family),
-                 map-get($families, $family),
-                 map-get($families, sans));
+  @return if(
+    map-has-key($families, $family),
+    map-get($families, $family),
+    map-get($families, sans)
+  );
 }
