@@ -1,1 +1,107 @@
+---
+scriptTags:
+  - rocketbelt.dialogs.js
+---
+
 # Dialogs
+
+## Initializing a Dialog
+```js code-only
+// Defaults:
+$('selector').rbDialog({
+  appendTo: 'body', // Wrapper for .is-dialog-open
+  blurElement: 'body>div:first', // Wrapper to blur content '.dialog_blur'
+  autoOpen: true,
+  buttons: [],
+  classes: { // Classes get merged into each other
+    'rbDialog': 'dialog', // Pass in variations like 'dialog-sheet', 'dialog-max', etc.
+    'rbDialogTitle': 'dialog_title',
+    'rbDialogBody': 'dialog_body'
+  },
+  title: null,
+  beforeClose: null,
+  close: null,
+  open: null,
+  required: false
+});
+```
+
+```js code-only
+// You can configure the buttons that display at the bottom of the modal:
+$('selector').rbDialog({
+ buttons: [
+  {
+    text: 'Close',
+    classes: 'button-secondary',
+    click: function () {
+      $(this).rbDialog('close');
+    }
+  }
+]
+});
+```
+
+## Standard Dialog
+```html code-only
+<div id="standard-dialog" style="display:none" aria-hidden="true">
+  <p id="dialog_description">
+    Such a pedestal. Literally, in a plush, polyester finish. Who’s happy to come far inland
+    with amber and lean, our "&amp;" delivers modern miracles—also known as divine destiny.
+  </p>
+  <p>
+    It makes a lustrous stamped coasters are nocturnal. You'll find the best wing of wooden
+    tray can fill and add a pretty diffuser with a few more charming—and more of 100% cotton
+    blend of these pearl-look beads and out. Our sculpture is all day, letting guests to pair
+    perfectly crafted, this rustic wooden planks of collectibles, especially
+    black-and-whites. It makes it a living room, bedroom decor. It’s ready to your family
+    room. In any empty wall mirror. Plus, a light is plumped with fragrance.
+  </p>
+  <p>
+    Looks and innocence. Standing 12 ornaments alongside light of green, its cool and
+    comfortable poly insert inside for a unique statement on this wrought iron replica made
+    of open-air luxury.
+  </p>
+</div>
+```
+
+## Dialog Template
+Include this template below the element that will receive the `is-dialog-open`
+class:
+```html code-only
+<article class="dialog" tabindex="0" aria-hidden="true">
+  <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+  <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+    <header class="dialog_header">
+      <h2 class="dialog_title" id="dialog_title"></h2>
+      <div class="dialog_close_container">
+        <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+          <svg class="icon">
+            <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div class="dialog_body"></div>
+  </section>
+</article>
+```
+
+<div dangerouslySetInnerHTML={{
+  __html: `
+<article class="dialog" tabindex="0" aria-hidden="true">
+  <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+  <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+    <header class="dialog_header">
+      <h2 class="dialog_title" id="dialog_title"></h2>
+      <div class="dialog_close_container">
+        <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+          <svg class="icon">
+            <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"></use>
+          </svg>
+        </button>
+      </div>
+    </header>
+    <div class="dialog_body">Hello World!!</div>
+  </section>
+</article>
+`}}/>

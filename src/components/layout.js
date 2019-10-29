@@ -14,7 +14,11 @@ import SEO from './seo';
 import Header from './header';
 import Footer from './footer';
 
-window.$ = window.jQuery = jQuery;
+let pageClass = '';
+
+if (typeof window !== `undefined`) {
+  window.$ = window.jQuery = jQuery;
+}
 
 const Layout = ({ children, pageContext }) => {
   useEffect(() => {
@@ -49,7 +53,12 @@ const Layout = ({ children, pageContext }) => {
     pageContext.frontmatter.scriptTags &&
     pageContext.frontmatter.scriptTags.length > 0;
 
-  const pageClass = window.location.pathname.split('/').slice(-1)[0];
+  if (typeof window !== `undefined`) {
+    pageClass = window.location.pathname
+      .replace(/\/$/, '')
+      .split('/')
+      .slice(-1)[0];
+  }
 
   return (
     <>

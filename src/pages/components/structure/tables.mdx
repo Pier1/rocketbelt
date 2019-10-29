@@ -1,1 +1,322 @@
 # Tables
+* Always use a `<caption>` or an `aria-describedby` attribute to make the table's purpose clear.
+* Always identify column & row headers with the `<th scope="…">` element.
+* Don't use absolute (pixel) sizing for table content.
+
+## Standard Tables
+```html
+<table>
+  <caption>Abbreviated List of NASA Missions</caption>
+  <thead>
+    <tr>
+      <th scope="col">Program</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col"># Missions</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mercury</td>
+      <td>1959</td>
+      <td>1963</td>
+      <td>6</td>
+      <td>First U.S. crewed program</td>
+    </tr>
+    <tr>
+      <td>Gemini</td>
+      <td>1963</td>
+      <td>1966</td>
+      <td>10</td>
+      <td>Program used to practice space rendezvous and EVAs</td>
+    </tr>
+    <tr>
+      <td>Apollo</td>
+      <td>1961</td>
+      <td>1972</td>
+      <td>11</td>
+      <td>Brought first human to the Moon</td>
+    </tr>
+    <tr>
+      <td>Space Shuttle</td>
+      <td>1981</td>
+      <td>2011</td>
+      <td>135</td>
+      <td>First missions in which a spacecraft was reused</td>
+    </tr>
+    <tr>
+      <td>International Space Station</td>
+      <td>1998</td>
+      <td>Ongoing</td>
+      <td>44</td>
+      <td>Joint with Russia, Canada, ESA, and JAXA along with co-operators ASI and AEB</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Striped Tables
+```html
+<table class="table-striped">
+  <caption>Abbreviated List of NASA Missions</caption>
+  <thead>
+    <tr>
+      <th scope="col">Program</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col"># Missions</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mercury</td>
+      <td>1959</td>
+      <td>1963</td>
+      <td>6</td>
+      <td>First U.S. crewed program</td>
+    </tr>
+    <tr>
+      <td>Gemini</td>
+      <td>1963</td>
+      <td>1966</td>
+      <td>10</td>
+      <td>Program used to practice space rendezvous and EVAs</td>
+    </tr>
+    <tr>
+      <td>Apollo</td>
+      <td>1961</td>
+      <td>1972</td>
+      <td>11</td>
+      <td>Brought first human to the Moon</td>
+    </tr>
+    <tr>
+      <td>Space Shuttle</td>
+      <td>1981</td>
+      <td>2011</td>
+      <td>135</td>
+      <td>First missions in which a spacecraft was reused</td>
+    </tr>
+    <tr>
+      <td>International Space Station</td>
+      <td>1998</td>
+      <td>Ongoing</td>
+      <td>44</td>
+      <td>Joint with Russia, Canada, ESA, and JAXA along with co-operators ASI and AEB</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Hoverable Tables
+```html
+<table class="table-hoverable">
+  <caption>Abbreviated List of NASA Missions</caption>
+  <thead>
+    <tr>
+      <th scope="col">Program</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col"># Missions</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mercury</td>
+      <td>1959</td>
+      <td>1963</td>
+      <td>6</td>
+      <td>First U.S. crewed program</td>
+    </tr>
+    <tr>
+      <td>Gemini</td>
+      <td>1963</td>
+      <td>1966</td>
+      <td>10</td>
+      <td>Program used to practice space rendezvous and EVAs</td>
+    </tr>
+    <tr>
+      <td>Apollo</td>
+      <td>1961</td>
+      <td>1972</td>
+      <td>11</td>
+      <td>Brought first human to the Moon</td>
+    </tr>
+    <tr>
+      <td>Space Shuttle</td>
+      <td>1981</td>
+      <td>2011</td>
+      <td>135</td>
+      <td>First missions in which a spacecraft was reused</td>
+    </tr>
+    <tr>
+      <td>International Space Station</td>
+      <td>1998</td>
+      <td>Ongoing</td>
+      <td>44</td>
+      <td>Joint with Russia, Canada, ESA, and JAXA along with co-operators ASI and AEB</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Bordered Tables
+```html
+<table class="table-bordered">
+  <caption>Abbreviated List of NASA Missions</caption>
+  <thead>
+    <tr>
+      <th scope="col">Program</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col"># Missions</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mercury</td>
+      <td>1959</td>
+      <td>1963</td>
+      <td>6</td>
+      <td>First U.S. crewed program</td>
+    </tr>
+    <tr>
+      <td>Gemini</td>
+      <td>1963</td>
+      <td>1966</td>
+      <td>10</td>
+      <td>Program used to practice space rendezvous and EVAs</td>
+    </tr>
+    <tr>
+      <td>Apollo</td>
+      <td>1961</td>
+      <td>1972</td>
+      <td>11</td>
+      <td>Brought first human to the Moon</td>
+    </tr>
+    <tr>
+      <td>Space Shuttle</td>
+      <td>1981</td>
+      <td>2011</td>
+      <td>135</td>
+      <td>First missions in which a spacecraft was reused</td>
+    </tr>
+    <tr>
+      <td>International Space Station</td>
+      <td>1998</td>
+      <td>Ongoing</td>
+      <td>44</td>
+      <td>Joint with Russia, Canada, ESA, and JAXA along with co-operators ASI and AEB</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Contrasting Header
+```html
+<table class="table_header-contrasting">
+  <caption>Abbreviated List of NASA Missions</caption>
+  <thead>
+    <tr>
+      <th scope="col">Program</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col"># Missions</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mercury</td>
+      <td>1959</td>
+      <td>1963</td>
+      <td>6</td>
+      <td>First U.S. crewed program</td>
+    </tr>
+    <tr>
+      <td>Gemini</td>
+      <td>1963</td>
+      <td>1966</td>
+      <td>10</td>
+      <td>Program used to practice space rendezvous and EVAs</td>
+    </tr>
+    <tr>
+      <td>Apollo</td>
+      <td>1961</td>
+      <td>1972</td>
+      <td>11</td>
+      <td>Brought first human to the Moon</td>
+    </tr>
+    <tr>
+      <td>Space Shuttle</td>
+      <td>1981</td>
+      <td>2011</td>
+      <td>135</td>
+      <td>First missions in which a spacecraft was reused</td>
+    </tr>
+    <tr>
+      <td>International Space Station</td>
+      <td>1998</td>
+      <td>Ongoing</td>
+      <td>44</td>
+      <td>Joint with Russia, Canada, ESA, and JAXA along with co-operators ASI and AEB</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+## Condensed Tables
+```html
+<table class="table-condensed">
+  <caption>Abbreviated List of NASA Missions</caption>
+  <thead>
+    <tr>
+      <th scope="col">Program</th>
+      <th scope="col">Start Date</th>
+      <th scope="col">End Date</th>
+      <th scope="col"># Missions</th>
+      <th scope="col">Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>Mercury</td>
+      <td>1959</td>
+      <td>1963</td>
+      <td>6</td>
+      <td>First U.S. crewed program</td>
+    </tr>
+    <tr>
+      <td>Gemini</td>
+      <td>1963</td>
+      <td>1966</td>
+      <td>10</td>
+      <td>Program used to practice space rendezvous and EVAs</td>
+    </tr>
+    <tr>
+      <td>Apollo</td>
+      <td>1961</td>
+      <td>1972</td>
+      <td>11</td>
+      <td>Brought first human to the Moon</td>
+    </tr>
+    <tr>
+      <td>Space Shuttle</td>
+      <td>1981</td>
+      <td>2011</td>
+      <td>135</td>
+      <td>First missions in which a spacecraft was reused</td>
+    </tr>
+    <tr>
+      <td>International Space Station</td>
+      <td>1998</td>
+      <td>Ongoing</td>
+      <td>44</td>
+      <td>Joint with Russia, Canada, ESA, and JAXA along with co-operators ASI and AEB</td>
+    </tr>
+  </tbody>
+</table>
+```

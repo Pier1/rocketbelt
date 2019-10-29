@@ -115,6 +115,19 @@ exports.onCreateWebpackConfig = ({
   plugins,
   actions,
 }) => {
+  if (stage === 'build-html') {
+    actions.setWebpackConfig({
+      module: {
+        rules: [
+          {
+            test: /rocketbelt*.js/,
+            use: loaders.null(),
+          },
+        ],
+      },
+    });
+  }
+
   actions.setWebpackConfig({
     module: {
       rules: [

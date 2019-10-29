@@ -1,0 +1,76 @@
+.expander {
+  > .button {
+    display: flex;
+    width: 100%;
+    height: 44px;
+    color: color(black);
+    justify-content: space-between;
+
+    &:hover,
+    &:active {
+      color: color(black);
+    }
+
+    &::after {
+      width: 1rem;
+      height: 1rem;
+      background-image: url("data:image/svg+xml,%3Csvg width='12' height='6' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M6.023 5.681a.356.356 0 0 1-.232-.085L.305.953A.36.36 0 0 1 .77.404l5.252 4.444L11.229.405a.36.36 0 0 1 .467.547l-5.44 4.643a.36.36 0 0 1-.233.086' fill='%23000' fill-rule='evenodd'/%3E %3C/svg%3E"); // sass-lint:disable-line quotes
+      background-position: center;
+      background-size: 1rem;
+      background-repeat: no-repeat;
+      content: '';
+      transition: transform 150ms linear;
+      transform: none;
+      align-self: center;
+    }
+
+    &[aria-expanded='true'] {
+      &::after {
+        transform: rotate(180deg);
+      }
+    }
+  }
+}
+
+.accordion {
+  .expander {
+    > .button {
+      padding-right: 2rem;
+      padding-left: 2rem;
+      border-bottom: 2px solid color(gray, plus4);
+      color: color(gray, minus1);
+
+      @include heading-style(
+        (
+          style: 'blurt',
+          font-size: font-size(1),
+        )
+      );
+
+      // sass-lint:disable nesting-depth
+      &::after {
+        background-image: url("data:image/svg+xml,%3Csvg width='15' height='15' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M15.609 7.609H8.39V.39a.391.391 0 1 0-.782 0V7.61H.39a.391.391 0 1 0 0 .782H7.61v7.218a.391.391 0 1 0 .782 0V8.39h7.218a.391.391 0 1 0 0-.782' fill='%2353565A' fill-rule='evenodd'/%3E %3C/svg%3E"); // sass-lint:disable-line quotes
+      }
+
+      &[aria-expanded='true'] {
+        &::after {
+          background-image: url("data:image/svg+xml,%3Csvg width='15' height='2' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M15.609 1.36H.39C.175 1.36 0 1.199 0 1 0 .801.175.64.391.64H15.61c.216 0 .391.161.391.36 0 .199-.175.36-.391.36' fill='%23000' fill-rule='evenodd'/%3E %3C/svg%3E"); // sass-lint:disable-line quotes
+          color: color(black);
+        }
+      }
+      // sass-lint:enable nesting-depth
+    }
+  }
+}
+
+.tabs {
+  [role='tablist'] {
+    margin: 0;
+    padding: 0;
+
+    li,
+    .tabs_tab {
+      display: inline-block;
+    }
+  }
+}

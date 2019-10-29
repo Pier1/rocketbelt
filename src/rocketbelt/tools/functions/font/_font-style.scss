@@ -11,13 +11,15 @@
 ///   font-style(italic);
 ///   // italic
 @function font-style($style: normal) {
-  $style: to_lower_case($style);
+  $style: to-lower-case($style);
   $styles: (
     italic: italic,
-    normal: normal
+    normal: normal,
   );
 
-  @return if(map-has-key($styles, $style),
-            map-get($styles, $style),
-            map-get($styles, normal));
+  @return if(
+    map-has-key($styles, $style),
+    map-get($styles, $style),
+    map-get($styles, normal)
+  );
 }
