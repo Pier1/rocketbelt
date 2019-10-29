@@ -412,6 +412,14 @@ code {
     }
   }
 
+  &.card-grids {
+    .card-grid_item {
+      p {
+        margin: 0;
+      }
+    }
+  }
+
   &.scrollboxes {
     .scrollbox > div {
       display: flex;
