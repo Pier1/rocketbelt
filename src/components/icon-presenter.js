@@ -74,12 +74,9 @@ const IconPresenter = ({ svgSprite }) => {
 
 IconPresenter.propTypes = {
   svgSprite: PropTypes.string.isRequired,
-  // selectorIsGlobal: PropTypes.bool,
-  // classToToggle: PropTypes.string.isRequired,
 };
 
 IconPresenter.defaultProps = {
-  // selectorIsGlobal: false,
 };
 
 export default IconPresenter;

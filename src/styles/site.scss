@@ -388,4 +388,27 @@ code {
       }
     }
   }
+
+  &.accordions-expanders-and-tabs {
+    .component-example_preview {
+      max-width: 480px;
+    }
+  }
+
+  &.flexible-grid {
+    .col {
+      &::before {
+        min-height: 2rem;
+        background: color(gray, plus4);
+        content: '';
+        transition: background-color 100ms linear;
+      }
+
+      &:hover {
+        &::before {
+          background: color(brand, logoBlue);
+        }
+      }
+    }
+  }
 }

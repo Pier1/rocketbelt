@@ -1,25 +1,24 @@
+---
+scriptTags:
+  - rocketbelt.accordions.js
+  - rocketbelt.tabs.js
+---
+
 import DeprecationNotice from '../../../components/deprecation-notice';
 
-# Accordions, Expanders and Tabs
+# Accordions, Expanders & Tabs
 
 - Difference in nomenclature
 
 ## Expanders
 
 - Can be adjacent, logically unrelated
-
-## Accordions
-
-- Should be logically related
-
 ```html
-<main>
-  <h2>
-    <button aria-expanded="false">
-      Section 1
-    </button>
-  </h2>
-  <div hidden>
+<aside class="expandable">
+  <span class="expander">
+    Section 1
+  </span>
+  <section>
     <p>
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo
       purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget
@@ -29,19 +28,82 @@ import DeprecationNotice from '../../../components/deprecation-notice';
       metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum
       risus facilisis imperdiet quis sed eros.
     </p>
-  </div>
-  <h2>
-    <button aria-expanded="false">
-      Section 2
-    </button>
-  </h2>
-  <div hidden>
-    <p>Nullam tortor metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum risus facilisis imperdiet quis sed eros. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget aliquet scelerisque. Pellentesque sodales turpis vitae venenatis vehicula. Ut id porta velit. Ut eu dignissim dui, quis gravida est. Cras quis venenatis mauris, a bibendum enim. Sed at augue libero.</p>
-  </div>
-</main>
+  </section>
+</aside>
+```
+
+## Accordions
+
+- Should be logically related
+
+```html
+<aside class="accordion">
+  <span class="expander">
+    Section 1
+  </span>
+  <section>
+    <p>
+      Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque commodo
+      purus quis mi cursus hendrerit eu eu metus. Aliquam aliquam arcu eget
+      aliquet scelerisque. Pellentesque sodales turpis vitae venenatis vehicula.
+      Ut id porta velit. Ut eu dignissim dui, quis gravida est. Cras quis
+      venenatis mauris, a bibendum enim. Sed at augue libero. Nullam tortor
+      metus, tincidunt ut urna id, posuere placerat orci. Ut quis risus dictum
+      risus facilisis imperdiet quis sed eros.
+    </p>
+  </section>
+  <span class="expander">
+    Section 2
+  </span>
+  <section>
+    <p>
+      Nullam tortor metus, tincidunt ut urna id, posuere placerat orci. Ut quis
+      risus dictum risus facilisis imperdiet quis sed eros. Lorem ipsum dolor
+      sit amet, consectetur adipiscing elit. Quisque commodo purus quis mi
+      cursus hendrerit eu eu metus. Aliquam aliquam arcu eget aliquet
+      scelerisque. Pellentesque sodales turpis vitae venenatis vehicula. Ut id
+      porta velit. Ut eu dignissim dui, quis gravida est. Cras quis venenatis
+      mauris, a bibendum enim. Sed at augue libero.
+    </p>
+  </section>
+</aside>
 ```
 
 ## Tabs
+```html
+<aside class="tabs">
+  <ul class="tabs_tab-list">
+    <li>
+      <button class="tabs_tab button button-minimal">Section 1</button>
+    </li>
+    <li>
+      <button class="tabs_tab button button-minimal">Section 2</button>
+    </li>
+    <li>
+      <button class="tabs_tab button button-minimal">Section 3</button>
+    </li>
+     <li>
+      <button class="tabs_tab button button-minimal">Section 4</button>
+    </li>
+  </ul>
+  <section class="tabs_tab-panel">
+    <h2>Section 1</h2>
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. <a href="#">Nam luctus</a>, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan.</p>
+  </section>
+  <section class="tabs_tab-panel">
+    <h2>Section 2</h2>
+    <p>Nullam at diam nec arcu suscipit auctor non a erat. Sed et magna semper, eleifend magna non, facilisis nisl. Proin et est et lorem dictum finibus ut nec turpis. Aenean nisi tortor, euismod a mauris a, mattis scelerisque tortor. Sed dolor risus, varius a nibh id, condimentum lacinia est. In lacinia cursus odio a aliquam. Curabitur tortor magna, laoreet ut rhoncus at, sodales consequat tellus.</p>
+  </section>
+  <section class="tabs_tab-panel">
+    <h2>Section 3</h2>
+    <p>Phasellus ac tristique orci. Nulla maximus <a href="">justo nec dignissim consequat</a>. Sed vehicula diam sit amet mi efficitur vehicula in in nisl. Aliquam erat volutpat. Suspendisse lorem turpis, accumsan consequat consectetur gravida, <a href="#">pellentesque ac ante</a>. Aliquam in commodo ligula, sit amet mollis neque. Vestibulum at facilisis massa.</p>
+  </section>
+  <section class="tabs_tab-panel">
+    <h2>Section 4</h2>
+    <p>Nam luctus, enim in interdum condimentum, nisl diam iaculis lorem, vel volutpat mi leo sit amet lectus. Praesent non odio bibendum magna bibendum accumsan. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam euismod, tortor nec pharetra ultricies, ante erat imperdiet velit, nec laoreet enim lacus a velit. </p>
+  </section>
+</aside>
+```
 
 ## Tabcordions
 

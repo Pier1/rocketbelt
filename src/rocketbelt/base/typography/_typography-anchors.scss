@@ -58,6 +58,10 @@ a {
 
   @at-root .link-list & {
     @include no-anchor-underline();
+
+    &:not(.cta):hover {
+      text-decoration: underline;
+    }
   }
 
   $base-link-color: color(uiLink, fgBase);
