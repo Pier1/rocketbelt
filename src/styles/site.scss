@@ -420,10 +420,12 @@ code {
       padding: 0.33rem;
       width: 4rem;
       height: 4rem;
-      background: color(gray);
-      color: color(gray, plus5);
-      font-weight: 300;
+      background: color(brand, alabaster);
+      color: color(gray);
+      font-weight: font-weight(normal);
+      font-style: font-style(italic);
       font-size: 3rem;
+      font-family: font-family(serif);
       user-select: none;
       align-items: center;
       justify-content: center;
