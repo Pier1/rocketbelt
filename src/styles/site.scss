@@ -411,4 +411,22 @@ code {
       }
     }
   }
+
+  &.scrollboxes {
+    .scrollbox > div {
+      display: flex;
+      flex: 0 0 auto;
+      margin: 1rem;
+      padding: 0.33rem;
+      width: 4rem;
+      height: 4rem;
+      background: color(gray);
+      color: color(gray, plus5);
+      font-weight: 300;
+      font-size: 3rem;
+      user-select: none;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
