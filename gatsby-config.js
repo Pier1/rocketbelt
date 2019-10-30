@@ -39,20 +39,6 @@ module.exports = {
       },
     },
     {
-      resolve: 'gatsby-plugin-copy-files',
-      options: {
-        source: `${__dirname}/src/rocketbelt/~tmp/scripts`,
-        destination: '/scripts',
-      },
-    },
-    {
-      resolve: 'gatsby-plugin-copy-files',
-      options: {
-        source: `${__dirname}/src/rocketbelt/~tmp/icons`,
-        destination: '/icons',
-      },
-    },
-    {
       resolve: 'gatsby-plugin-react-helmet',
     },
     {

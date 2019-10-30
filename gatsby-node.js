@@ -1,4 +1,5 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const CopyPlugin = require('copy-webpack-plugin');
 const isDevMode = process.env.NODE_ENV !== 'production';
 
 const path = require('path');
@@ -127,6 +128,23 @@ exports.onCreateWebpackConfig = ({
       },
     });
   }
+
+  actions.setWebpackConfig({
+    plugins: [
+      new CopyPlugin([
+        {
+          from: `${__dirname}/src/rocketbelt/**/rocketbelt*.js`,
+          to: `${__dirname}/public/scripts/`,
+          flatten: true,
+        },
+        {
+          from: `${__dirname}/src/rocketbelt/**/rocketbelt.icons.svg`,
+          to: `${__dirname}/public/icons/`,
+          flatten: true,
+        },
+      ]),
+    ],
+  });
 
   actions.setWebpackConfig({
     module: {
