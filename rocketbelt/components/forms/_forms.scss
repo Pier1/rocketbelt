@@ -298,6 +298,7 @@ textarea {
   &[disabled] {
     border-color: transparent;
     background-color: color(gray, plus3);
+    cursor: not-allowed;
   }
 
   &.invalid {

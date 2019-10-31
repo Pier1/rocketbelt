@@ -12,6 +12,7 @@ input {
       position: relative;
       padding-left: 1.25rem;
       font-weight: font-weight(normal);
+      cursor: pointer;
     }
 
     &[disabled] + label {
@@ -23,6 +24,8 @@ input {
   }
 
   &[type='radio'] {
+    $color-unselected: color(gray, plus3);
+
     & + label {
       align-self: flex-start;
 
@@ -40,8 +43,8 @@ input {
       }
 
       &:hover::before {
-        border: 6px solid rgba(color(gray), 0.2);
-        background: color(white);
+        //border: 6px solid rgba(color(gray), 0.2);
+        background: $color-unselected;
         transition: color 200ms ease-in, background 200ms ease-in;
       }
     }
@@ -55,9 +58,12 @@ input {
     }
 
     &[disabled] {
-      & + label:hover::before {
-        border: none;
-        background: color(gray, plus4);
+      & + label:hover {
+        cursor: not-allowed;
+        &::before {
+          border: none;
+          background: color(gray, plus4);
+        }
       }
 
       &[checked] + label {
@@ -92,7 +98,7 @@ input {
         $color-fill: $color-white;
         border-color: transparent;
         background-color: $color-unselected;
-        background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' style='fill: white%3B' viewBox='0 0 16 16'%3E%3Cpath d='M1 9.185c-.42-.342-.527-.92-.125-1.31.401-.388.922-.281 1.269.125l3.278 3.375L13.842 3c.513-.572 1-.402 1.288-.137.288.265.4.877-.13 1.308L6.133 13c-.22.251-.458.377-.71.377-.253 0-.492-.126-.717-.377L1 9.185z' fill-rule='evenodd'/%3E%3C/svg%3E");
+        // background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' style='fill: white%3B' viewBox='0 0 16 16'%3E%3Cpath d='M1 9.185c-.42-.342-.527-.92-.125-1.31.401-.388.922-.281 1.269.125l3.278 3.375L13.842 3c.513-.572 1-.402 1.288-.137.288.265.4.877-.13 1.308L6.133 13c-.22.251-.458.377-.71.377-.253 0-.492-.126-.717-.377L1 9.185z' fill-rule='evenodd'/%3E%3C/svg%3E");
         background-position: center center;
         background-repeat: no-repeat;
         transition: background-color 100ms ease-in, border-color 100ms ease-in;
@@ -122,6 +128,9 @@ input {
     }
 
     &[disabled] {
+      & + label {
+        cursor: not-allowed;
+      }
       &[checked] + label {
         &::before {
           $color-fill: color(gray, plus2);
