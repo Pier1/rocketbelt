@@ -1,0 +1,16 @@
+extends /_layout.pug
+
+block vars
+  - var title = 'Sections'
+
+block content
+  article
+    h1 Sections
+
+    p Sections are used to visually differentiate a section of content from the rest of the page.
+
+    .grid-fluid
+      .row
+        .col.xs
+          +exampleWithCode
+            include _sections_semantic.pug
