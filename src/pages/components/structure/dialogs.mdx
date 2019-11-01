@@ -68,7 +68,7 @@ $('selector').rbDialog({
 Include this template below the element that will receive the `is-dialog-open`
 class:
 ```html code-only
-<article class="dialog" tabindex="0" aria-hidden="true">
+<article class="dialog" tabindex="0" aria-hidden>
   <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
   <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
     <header class="dialog_header">
@@ -88,7 +88,7 @@ class:
 
 <div dangerouslySetInnerHTML={{
   __html: `
-<article class="dialog" tabindex="0" aria-hidden="true">
+<article class="dialog" tabindex="0" aria-hidden>
   <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
   <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
     <header class="dialog_header">

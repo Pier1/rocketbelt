@@ -1,36 +1,5 @@
 @import '../rocketbelt/tools/tools';
-
-@font-face {
-  font-weight: 300;
-  font-style: normal;
-  font-family: 'RB Monospace';
-  src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Light.woff')
-    format('woff');
-}
-
-@font-face {
-  font-weight: 400;
-  font-style: normal;
-  font-family: 'RB Monospace';
-  src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Regular.woff')
-    format('woff');
-}
-
-@font-face {
-  font-weight: 500;
-  font-style: normal;
-  font-family: 'RB Monospace';
-  src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Medium.woff')
-    format('woff');
-}
-
-@font-face {
-  font-weight: 700;
-  font-style: normal;
-  font-family: 'RB Monospace';
-  src: url('https://cdn.jsdelivr.net/gh/tonsky/FiraCode@2/distr/woff/FiraCode-Bold.woff')
-    format('woff');
-}
+@import 'font-face-monospace';
 
 // sass-lint:disable no-qualifying-elements force-element-nesting nesting-depth
 
@@ -130,19 +99,8 @@ body {
     }
 
     &:hover {
-      color: hotpink;
-    }
-  }
-}
-
-.rbio-nav_level1 {
-  display: flex;
-
-  @include list-reset($horizontal: true);
-
-  & > .rbio-nav_item {
-    &:not(:last-of-type) {
-      margin-right: 4rem;
+      color: color(brand, logoBlue);
+      text-align: center;
     }
   }
 }
@@ -245,16 +203,30 @@ body {
   pre {
     // Have to !important these to override
     // inline styles from prism-react-renderer…
-    padding: 1.5rem !important; // sass-lint:disable-line no-important
-    padding-top: 2.5rem !important; // sass-lint:disable-line no-important
-    font-family: font-family(
-      monospace
-    ) !important; // sass-lint:disable-line no-important
+    // sass-lint:disable no-important
+    padding: 1.5rem !important;
+    padding-top: 2.5rem !important;
+    font-family: font-family(monospace) !important;
+    // sass-lint:enable no-important
   }
 }
 
 .deprecation-notice {
   max-width: 33rem;
+
+  & + .component-example {
+    opacity: 0.5;
+    filter: grayscale(1);
+    transition: opacity 1s linear, filter 1s linear;
+    transition-delay: 2s;
+
+    &:hover {
+      opacity: 1;
+      filter: none;
+      transition: opacity 200ms linear, filter 200ms linear;
+      transition-delay: 200ms;
+    }
+  }
 }
 
 .rbio-footer {
@@ -267,6 +239,8 @@ body {
 }
 
 code {
+  padding-right: 0.25rem;
+  padding-left: 0.25rem;
   border: 1px solid color(gray, plus4);
   background: color(gray, plus5);
   font-size: font-size(-1);
@@ -276,6 +250,14 @@ code {
   font-weight: font-weight(bold);
   font-size: font-size(-1);
   font-family: font-family(monospace);
+}
+
+.rbio-header {
+  @import 'rbio-header';
+}
+
+.rbio-nav {
+  @import 'rbio-nav';
 }
 
 .rbio-content {
@@ -290,103 +272,16 @@ code {
     }
   }
 
-  &.busy-indicators {
-    .component-example_preview {
-      section {
-        position: relative;
-        display: flex;
-        height: 50vh;
-        border-radius: 3px;
-        background: color(brand, catskillBlue);
+  &.typography {
+    @import 'typography';
+  }
 
-        &::after {
-          position: absolute;
-          top: 0;
-          right: 0;
-          bottom: 0;
-          left: 0;
-          display: flex;
-          color: color(gray, minus1);
-          content: 'Toggle busy state above…';
-          font-style: font-style(italic);
-          justify-content: center;
-          align-items: center;
-        }
-      }
-    }
+  &.busy-indicators {
+    @import 'busy-indicators';
   }
 
   &.icons {
-    .icons-descriptor {
-      position: absolute;
-      top: 0;
-      left: 1.5rem;
-      padding: 0.5rem 1rem;
-      border-radius: 0 0 4px 4px;
-      background: color(brand, alabaster);
-      box-shadow: 0 2px 8px
-        rgba(scale-color(color(brand, alabaster), $lightness: -75%), 0.1);
-      font-size: font-size(-1);
-    }
-
-    .icons-standard {
-      position: relative;
-      display: grid;
-      padding: 1.5rem;
-      padding-top: 3rem;
-      background: color(brand, catskillBlue);
-      grid-gap: 2.5rem 1rem;
-      grid-template-columns: repeat(auto-fill, 120px);
-      justify-content: space-between;
-
-      .icon {
-        margin-bottom: 0.5rem;
-        width: 36px;
-        height: 36px;
-      }
-    }
-
-    .icon-wrapper {
-      display: inline-flex;
-      flex-direction: column;
-      margin: 0;
-      padding: 1rem;
-      background: color(white);
-      box-shadow: 0 1px 8px rgba(color(brand, columbiaBlue), 0.6);
-      color: color(gray, minus2);
-      font-size: font-size(-1);
-      font-family: font-family(monospace);
-      transition: color 100ms linear, box-shadow 100ms linear;
-      align-items: center;
-
-      &:hover {
-        box-shadow: 0 4px 12px rgba(color(brand, columbiaBlue), 1);
-        color: color(gray, minus1);
-      }
-
-      &:active {
-        box-shadow: 0 1px 8px rgba(color(brand, columbiaBlue), 0.6);
-        color: color(gray, minus2);
-      }
-    }
-
-    .icon-wrapper-copied {
-      position: relative;
-
-      &::after {
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        display: flex;
-        background: color(brand, alabaster);
-        content: 'Copied';
-        font-family: font-family(sans);
-        justify-content: center;
-        align-items: center;
-      }
-    }
+    @import 'icons';
   }
 
   &.accordions-expanders-and-tabs {
@@ -396,20 +291,11 @@ code {
   }
 
   &.flexible-grid {
-    .col {
-      &::before {
-        min-height: 2rem;
-        background: color(gray, plus4);
-        content: '';
-        transition: background-color 100ms linear;
-      }
+    @import 'flexible-grid';
+  }
 
-      &:hover {
-        &::before {
-          background: color(brand, logoBlue);
-        }
-      }
-    }
+  &.color {
+    @import 'color';
   }
 
   &.card-grids {
@@ -440,5 +326,4 @@ code {
     }
   }
 }
-
 // sass-lint:enable no-qualifying-elements force-element-nesting nesting-depth

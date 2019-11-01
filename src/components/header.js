@@ -3,11 +3,14 @@ import PropTypes from 'prop-types';
 import React from 'react';
 import Navigation from './navigation';
 
+import logo from '../images/rocketbelt.svg';
+
 const Header = ({ siteTitle }) => (
-  <header>
-    <h1>
-      <Link to="/">{siteTitle}</Link>
-    </h1>
+  <header className="rbio-header">
+    <Link className="rbio-link" to="/">
+    <img src={logo} className="rbio-logo" />
+      <span className="rbio-title">Rocketbelt</span>
+    </Link>
     <Navigation />
   </header>
 );

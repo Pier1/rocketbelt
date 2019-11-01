@@ -1,0 +1,57 @@
+$header-height: 64px;
+
+& {
+  display: grid;
+  height: $header-height;
+  background: color(brand);
+  grid-auto-flow: column;
+  align-items: center;
+  grid-gap: 1rem;
+  grid-template-columns: repeat(auto-fill, 1fr);
+  justify-content: start;
+}
+
+.rbio-logo {
+  width: $header-height * 2/3;
+  height: $header-height * 2/3;
+}
+
+.rbio-link {
+  display: grid;
+  grid-auto-flow: column;
+  align-items: center;
+  grid-gap: 1rem;
+}
+
+.rbio-title {
+  display: none;
+  visibility: hidden;
+  color: color(white);
+
+  @include heading-style(
+    (
+      'style': 'blurt',
+      'font-size': font-size(3),
+    )
+  );
+
+  @include media('>=sm') {
+    display: inline-block;
+    visibility: visible;
+  }
+}
+
+.rbio-nav_level2,
+.rbio-nav_level3 {
+  display: none;
+}
+
+.rbio-nav_item {
+  > a {
+    color: color(white);
+
+    &:hover {
+      text-shadow: 0 0 4px rgba(white, 0.8);
+    }
+  }
+}

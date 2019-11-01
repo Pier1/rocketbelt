@@ -1,0 +1,56 @@
+.col {
+  &::before {
+    display: flex;
+    min-height: 2rem;
+    background: color(gray, plus4);
+    color: color(gray, minus2);
+    content: 'xs';
+    text-transform: uppercase;
+    font-size: font-size(-1);
+    transition: background-color 100ms linear;
+    align-items: center;
+    justify-content: center;
+  }
+
+  $sm: map-get($breakpoints, 'sm');
+  @include media(#{'>='}#{$sm}) {
+    &::before {
+      content: 'sm';
+    }
+  }
+
+  $md: map-get($breakpoints, 'md');
+  @include media(#{'>='}#{$md}) {
+    &::before {
+      content: 'md';
+    }
+  }
+
+  $lg: map-get($breakpoints, 'lg');
+  @include media(#{'>='}#{$lg}) {
+    &::before {
+      content: 'lg';
+    }
+  }
+
+  $xl: map-get($breakpoints, 'xl');
+  @include media(#{'>='}#{$xl}) {
+    &::before {
+      content: 'xl';
+    }
+  }
+
+  $xxl: map-get($breakpoints, 'xxl');
+  @include media(#{'>='}#{$xxl}) {
+    &::before {
+      content: 'xxl';
+    }
+  }
+
+  &:hover {
+    &::before {
+      background: color(brand, logoBlue);
+      color: color(white);
+    }
+  }
+}

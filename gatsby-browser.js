@@ -15,6 +15,23 @@ const components = {
   Helmet: Helmet,
 };
 
+// export const onClientEntry = function() {
+//   window.onload = () => {
+//     if (window.location.hash !== '') {
+//       console.dir(document.querySelector(`${window.location.hash}`));
+//       // document.querySelector(`${window.location.hash}`).scrollIntoView();
+//     }
+//   };
+// };
+
+// export const onRouteUpdate = (location) => {
+//   if (location.hash) {
+//     setTimeout(() => {
+//       document.querySelector(`${location.hash}`).scrollIntoView();
+//     }, 0);
+//   }
+// };
+
 export const onInitialClientRender = () => {
   addScript(
     'https://cdn.jsdelivr.net/npm/rocketbelt/dist/base/typography/rocketbelt.typography.font-loader.js'

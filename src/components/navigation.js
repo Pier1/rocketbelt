@@ -76,34 +76,53 @@ const Navigation = () => {
 
   return (
     <nav className="rbio-nav">
-      <ul className="rbio-nav_level1">
+      <ul className="rbio-nav_list">
         {navData.l1s.map((l1) => {
           return (
-            <li key={l1.slug} className="rbio-nav_item">
-              <Link to={l1.slug}>{l1.name}</Link>
-              {l1.l2s.length > 0 &&
-                l1.l2s.map((l2) => {
-                  return (
-                    <ul key={`${l2.slug}_list`} className="rbio-nav_level2">
-                      <li key={l2.slug} className="rbio-nav_item">
-                        <Link to={l2.slug}>{l2.name}</Link>
-                        {l2.l3s.length > 0 &&
-                          l2.l3s.map((l3) => {
-                            return (
-                              <ul
-                                key={`${l3.slug}_list`}
-                                className="rbio-nav_level3"
-                              >
-                                <li key={l3.slug} className="rbio-nav_item">
-                                  <Link to={l3.slug}>{l3.name}</Link>
-                                </li>
+            <li key={l1.slug} className="rbio-nav_level1 rbio-nav_level">
+              <ul
+                key={`${l1.slug}_list`}
+                className="rbio-nav_level1_items rbio-nav_items"
+              >
+                <li className="rbio-nav_level1_item rbio-nav_item">
+                  <Link to={l1.slug}>{l1.name}</Link>
+                </li>
+                {l1.l2s.length > 0 &&
+                  l1.l2s.map((l2) => {
+                    return (
+                      <li
+                        key={`${l2.slug}_list`}
+                        className="rbio-nav_level2 rbio-nav_level"
+                      >
+                        <ul
+                          key={l2.slug}
+                          className="rbio-nav_level2_items rbio-nav_items"
+                        >
+                          <li className="rbio-nav_level2_item rbio-nav_item">
+                            <Link to={l2.slug}>{l2.name}</Link>
+                          </li>
+
+                          {l2.l3s.length > 0 && (
+                            <li className="rbio-nav_level3_items rbio-nav_items">
+                              <ul>
+                                {l2.l3s.map((l3) => {
+                                  return (
+                                    <li
+                                      key={`${l3.slug}_list`}
+                                      className="rbio-nav_level3_item rbio-nav_item"
+                                    >
+                                      <Link to={l3.slug}>{l3.name}</Link>
+                                    </li>
+                                  );
+                                })}
                               </ul>
-                            );
-                          })}
+                            </li>
+                          )}
+                        </ul>
                       </li>
-                    </ul>
-                  );
-                })}
+                    );
+                  })}
+              </ul>
             </li>
           );
         })}

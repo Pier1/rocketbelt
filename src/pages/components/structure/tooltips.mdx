@@ -1,1 +1,34 @@
+---
+scriptTags:
+  - rocketbelt.tooltips.js
+---
+
 # Tooltips
+* Accessibility helper in JS
+* Forthcoming: Tooltip repositioning if element would be off-screen
+
+```html
+<form>
+  <div class="form-group tooltip tooltip-focus-only tooltip-inverted">
+    <input class="tooltip_trigger" />
+    <label for="input-with-tooltip">Input with Tooltip</label>
+    <aside class="tooltip-content">You'd be the help of open-air luxury.</aside>
+  </div>
+</form>
+```
+
+```html
+<span class="tooltip" tabindex="0">
+  <span class="tooltip_trigger docs-header">Default</span>
+  <aside class="tooltip-content">You'd be the help of open-air luxury.</aside>
+</span>
+```
+
+```html
+<span class="tooltip tooltip-right" tabindex="0">
+  <span class="tooltip_trigger docs-header">Right</span>
+  <aside class="tooltip-content">
+    Case in covered with nailhead trim is even more of flowers?
+  </aside>
+</span>
+```

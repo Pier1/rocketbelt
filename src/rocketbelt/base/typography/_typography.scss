@@ -8,10 +8,22 @@ $base-line-height: 1.5;
 $ms-base: (13 / 15) * 1rem 1rem;
 $ms-ratio: $fourth;
 
-$heading-style-params-h1:    ('style': 'shout', 'font-size': font-size(4));
-$heading-style-params-h2:    ('style': 'blurt', 'font-size': font-size(3));
-$heading-style-params-h3:    ('style': 'blurt', 'font-size': font-size(2));
-$heading-style-params-h4-h6: ('style': 'blurt', 'font-size': font-size(0));
+$heading-style-params-h1: (
+  'style': 'shout',
+  'font-size': font-size(4),
+);
+$heading-style-params-h2: (
+  'style': 'blurt',
+  'font-size': font-size(3),
+);
+$heading-style-params-h3: (
+  'style': 'blurt',
+  'font-size': font-size(2),
+);
+$heading-style-params-h4-h6: (
+  'style': 'blurt',
+  'font-size': font-size(0),
+);
 
 // =-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=-=
 // We load fonts with a 2-stage strategy to eliminate flash of invisible text (FOIT) and
@@ -52,7 +64,7 @@ $heading-style-params-h4-h6: ('style': 'blurt', 'font-size': font-size(0));
 
 body {
   $sans-base-letter-spacing: -0.15px;
-  $sans-base-word-spacing: 1.0px;
+  $sans-base-word-spacing: 1px;
 
   margin: 0;
   color: color(black);
@@ -64,7 +76,7 @@ body {
   line-height: $base-line-height;
 
   -webkit-font-smoothing: antialiased; // sass-lint:disable-line no-vendor-prefixes
-  -moz-osx-font-smoothing: grayscale;  // sass-lint:disable-line no-vendor-prefixes
+  -moz-osx-font-smoothing: grayscale; // sass-lint:disable-line no-vendor-prefixes
 }
 
 p {
@@ -139,8 +151,12 @@ h6 {
 
   &.display {
     text-align: center;
-    .preheading { font-style: italic; }
-    .subheading { text-transform: uppercase; }
+    .preheading {
+      font-style: italic;
+    }
+    .subheading {
+      text-transform: uppercase;
+    }
   }
 }
 
@@ -252,6 +268,29 @@ ul {
   }
 }
 
+.ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.ellipsis-multiline {
+  // Must disable no-vendor-prefixes because line clamping only works via
+  // -webkit prefix.
+  // sass-lint:disable no-vendor-prefixes
+  display: -webkit-box;
+  display: -moz-box;
+  display: box;
+  /* autoprefixer: off */
+  -webkit-box-orient: vertical;
+  /* autoprefixer: on */
+  -moz-box-orient: vertical;
+  box-orient: vertical;
+  overflow: hidden;
+  -webkit-line-clamp: 3;
+  // sass-lint:enable no-vendor-prefixes
+}
+
 .text-with-rule {
   display: flex;
   margin: auto;
@@ -275,6 +314,26 @@ ul {
 
   &::after {
     margin-right: 0;
+  }
+
+  &.text-with-rule-vertical {
+    &::before,
+    &::after {
+      display: inline-block;
+      flex: 1;
+      margin: auto 0.6rem;
+      border-top: 1px solid color(gray, plus2);
+      content: '';
+      vertical-align: middle;
+    }
+
+    &::before {
+      margin-left: 0;
+    }
+
+    &::after {
+      margin-right: 0;
+    }
   }
 }
 

@@ -1,5 +1,168 @@
+import FontWeightSpecimens from '../../components/font-weight-specimens';
+
 # Typography
 
 ## Tips
 
-- Avoid breaking rank just for font sizing. The next heading after an h1 should be an h2 even if that h2 is much smaller. Use HTML for meaning and CSS for styling. You can make that h2 whatever size you need.
+- Avoid breaking rank just for font sizing. The next heading after an h1 should
+  be an h2 even if that h2 is much smaller. Use HTML for meaning and CSS for
+  styling. You can make that h2 whatever size you need.
+
+## Typefaces
+### Sans Serif
+[Nunito Sans]{.sans .font-bold} is Rocketbelt's sans serif typeface.
+
+```scss code-only
+font-family: font-family(sans);
+```
+
+### Serif
+[EB Garamond]{.serif .font-bold .font-plus1} is Rocketbelt's serif typeface.
+
+```scss code-only
+font-family: font-family(serif);
+```
+
+## Font Sizes
+
+[font-size(-2)]{.subhead-unlinked} [On a mote of dust suspended in a sunbeam.
+]{.font-minus2}
+
+[font-size(-1)]{.subhead-unlinked} [On a mote of dust suspended in a
+sunbeam.]{.font-minus1}
+
+[font-size(0)]{.subhead-unlinked} On a mote of dust suspended in a sunbeam.
+
+[font-size(1)]{.subhead-unlinked} [On a mote of dust suspended in a
+sunbeam.]{.font-plus1}
+
+[font-size(2)]{.subhead-unlinked} [On a mote of dust suspended in a
+sunbeam.]{.font-plus2}
+
+[font-size(3)]{.subhead-unlinked} [On a mote of dust suspended in a
+sunbeam.]{.font-plus3}
+
+## Font Weights
+<FontWeightSpecimens typeface="sans" />
+<FontWeightSpecimens typeface="serif" />
+
+## Headings
+
+```scss code-only
+@include heading-style(
+  (
+    // Match one of the style names below…
+    style: 'blurt',
+    // Always use the `font-size` function!
+    font-size: font-size(2),
+  )
+);
+```
+
+[font-size(0)]{.subhead-unlinked}
+[Whisper]{.heading-styles .whisper}
+[Mention]{.heading-styles .mention}
+[Blurt]{.heading-styles .blurt}
+[Shout]{.heading-styles .shout}
+
+[font-size(2)]{.subhead-unlinked}
+[Whisper]{.heading-styles .whisper .plus2}
+[Mention]{.heading-styles .mention .plus2}
+[Blurt]{.heading-styles .blurt .plus2}
+[Shout]{.heading-styles .shout .plus2}
+
+[font-size(6)]{.subhead-unlinked}
+[Whisper]{.heading-styles .whisper .plus6}
+[Mention]{.heading-styles .mention .plus6}
+[Blurt]{.heading-styles .blurt .plus6}
+[Shout]{.heading-styles .shout .plus6}
+
+## Lists
+[List Reset]{.subhead-unlinked}
+```html
+<ul class="list-reset">
+  <li>One</li>
+  <li>Two
+    <ul>
+      <li>A</li>
+      <li>B</li>
+    </ul>
+  </li>
+  <li>Three</li>
+</ul>
+```
+
+[Horizontal List Reset]{.subhead-unlinked}
+```html
+<ul class="list-inline">
+  <li>One</li>
+  <li>Two</li>
+  <li>Three</li>
+</ul>
+```
+
+[Link Lists]{.subhead-unlinked}
+```html
+<ul class="link-list">
+  <li class="title"><a class="cta" target="_blank" href="https://www.pier1.com/pillows">Pillows</a></li>
+  <li><a target="_blank" href="https://www.pier1.com/embroidered_pillows">Textured & Embellished Pillows</a></li>
+  <li><a target="_blank" href="https://www.pier1.com/solid_pillows">Solid Pillows</a></li>
+  <li><a target="_blank" href="https://www.pier1.com/pattern_pillows">Patterned Pillows</a></li>
+  <li><a target="_blank" href="https://www.pier1.com/outdoor_pillows">Outdoor Pillows</a></li>
+</ul>
+```
+
+## Modifiers
+### Ellipses
+
+[Single Line]{.subhead-unlinked}
+```html
+<div class="ellipsis">
+  The fabric that’s as it were salvaged from polyester fabric, our framed piece
+  enhances the hidden zipper.
+</div>
+```
+
+[Multiline]{.subhead-unlinked}
+* Manipulate the `-webkit-line-clamp` property to change the number of visible
+  lines.
+```html
+<div class="ellipsis-multiline">
+  Look again at that dot. That’s here. That's home. That’s us. On it everyone
+  you love, everyone you know, everyone you ever heard of, every human being who
+  ever was, lived out their lives. The aggregate of our joy and suffering,
+  thousands of confident religions, ideologies, and economic doctrines, every
+  hunter and forager, every hero and coward, every creator and destroyer of
+  civilization, every king and peasant, every young couple in love, every mother
+  and father, hopeful child, inventor and explorer, every teacher of morals,
+  every corrupt politician, every “superstar,” every “supreme leader,” every
+  saint and sinner in the history of our species lived there—on a mote of dust
+  suspended in a sunbeam.
+</div>
+```
+
+### Text with Icon
+Note the use of the `aria-hidden` attribute on the `svg` element. As long as the
+text is descriptive—and the icon itself is decorative—`aria-hidden` should be
+present.
+
+Use the `icon-left` and `icon-right` classes to indicate icon placement.
+```html
+<span class="text-with-icon">Store Locator
+  <svg class="icon icon-left" aria-hidden>
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-pin"></use>
+  </svg>
+</span>
+<br />
+<a class="text-with-icon" href="#">Chat Now
+  <svg class="icon icon-right" aria-hidden>
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-chat-single"></use>
+  </svg>
+</a>
+```
+
+### Text with Rule
+[Horizontal]{.subhead-unlinked}
+```html
+<div class="text-with-rule">text with rule</div>
+```

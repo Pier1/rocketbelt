@@ -22,6 +22,12 @@ if (typeof window !== `undefined`) {
 
 const Layout = ({ children, pageContext }) => {
   useEffect(() => {
+    const hash = window.location.hash;
+    const el = hash !== '' ? document.querySelector(`${hash}`) : null;
+    if (el) {
+      el.scrollIntoView();
+    }
+
     children.length > 0 &&
       children.forEach((child) => {
         if (
@@ -36,16 +42,6 @@ const Layout = ({ children, pageContext }) => {
         }
       });
   });
-
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `);
 
   const hasScripts =
     pageContext &&
@@ -66,7 +62,7 @@ const Layout = ({ children, pageContext }) => {
       <SEO pageContext={pageContext} />
 
       <div className="rbio-content-wrap">
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header siteTitle="Rocketbelt" />
         <main className={`rbio-content ${pageClass}`}>{children}</main>
         <Footer />
       </div>

@@ -1,8 +1,13 @@
+import {Link} from 'gatsby';
+
 # Links
 
 *Links go places, buttons do things.*
 * Link text should be short, clear, and action-focused
-* `href="#"`, `href="javascript:void(0);"` and click listeners attached to links are antipatterns
+* `href="#"`, `href="javascript:void(0);"` and click listeners attached to links
+  are antipatterns. Consider using <Link to="/components/actions-and-feedback/buttons">
+  buttons</Link> in these
+  cases.
 
 ## Standard Links
 ```html
@@ -10,9 +15,11 @@
 ```
 
 ## Links with Icons
+* Note `aria-hidden` attribute
+
 ```html
 <a class="text-with-icon" href="#">Chat Now
-  <svg class="icon icon-right" aria-hidden="true">
+  <svg class="icon icon-right" aria-hidden>
     <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-chat-single"></use>
   </svg>
 </a>

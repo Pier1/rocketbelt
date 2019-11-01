@@ -1,0 +1,28 @@
+.rbio-nav_list {
+  display: grid;
+  grid-auto-flow: column;
+  justify-content: space-between;
+}
+
+.rbio-nav_list,
+.rbio-nav_level,
+.rbio-nav_items,
+.rbio-nav_item {
+  list-style-type: none;
+}
+
+.rbio-nav_level1_items,
+.rbio-nav_list {
+  padding-left: 0;
+}
+
+// .rbio-nav_level1 {
+//   > .rbio-nav_item {
+//     &:hover {
+//       > a,
+//       > .rbio-nav_level2 {
+//         display: block;
+//       }
+//     }
+//   }
+// }

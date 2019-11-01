@@ -1,0 +1,124 @@
+.serif {
+  font-family: font-family(serif);
+}
+
+.subhead-unlinked {
+  display: block;
+  color: color(brand);
+  font-weight: font-weight(bold);
+}
+
+.font-bold {
+  font-weight: font-weight(bold);
+}
+
+.font-italic {
+  font-style: font-style(italic);
+}
+
+.font-extraBold {
+  font-weight: font-weight(extrabold);
+}
+
+.font-minus2 {
+  font-size: font-size(-2);
+}
+
+.font-minus1 {
+  font-size: font-size(-1);
+}
+
+.font-plus1 {
+  font-size: font-size(1);
+}
+
+.font-plus2 {
+  font-size: font-size(2);
+}
+
+.font-plus3 {
+  font-size: font-size(3);
+}
+
+.font-weight-specimens {
+  display: inline-flex;
+  margin-bottom: 2rem;
+  background: color(brand, catskillBlue);
+}
+
+.font-weight-specimen {
+  $margin: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  margin: $margin;
+  margin-right: 0;
+  padding: 1rem;
+  width: 10rem;
+  height: 10rem;
+  background: color(white);
+  justify-content: center;
+  align-items: center;
+
+  &:last-of-type {
+    margin-right: $margin;
+  }
+
+  .token {
+    font-size: font-size(10);
+
+    &.bold {
+      font-weight: font-weight(bold);
+    }
+
+    &.italic {
+      font-style: font-style(italic);
+    }
+
+    &.extra-bold {
+      font-weight: font-weight(extrabold);
+    }
+  }
+
+  .font {
+    text-transform: capitalize;
+    font-family: font-family(sans);
+  }
+}
+
+.heading-styles {
+  display: inline-block;
+  margin: 1rem 1rem 1rem 0;
+
+  $styles: ('WHISPER', 'mention', 'blurt', 'shout');
+
+  @each $style in $styles {
+    $style: to_lower_case($style);
+
+    &.#{$style} {
+      @include heading-style(
+        (
+          style: $style,
+          font-size: font-size(0),
+        )
+      );
+
+      &.plus2 {
+        @include heading-style(
+          (
+            style: $style,
+            font-size: font-size(2),
+          )
+        );
+      }
+
+      &.plus6 {
+        @include heading-style(
+          (
+            style: $style,
+            font-size: font-size(6),
+          )
+        );
+      }
+    }
+  }
+}

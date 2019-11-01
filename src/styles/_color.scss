@@ -1,0 +1,144 @@
+.swatches {
+  display: grid;
+  margin: 1rem auto 5rem auto;
+  grid-template-columns: repeat(auto-fill, 10rem);
+  grid-gap: 1rem;
+  justify-content: space-between;
+}
+
+.swatch_wrapper {
+  display: inline-flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .swatch {
+    margin-bottom: 1rem;
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    transition: box-shadow 100ms linear;
+
+    $hover-shadow-props: 0 3px 8px;
+    $active-shadow-props: 0 1px 4px;
+    $mix-percentage: 25%;
+    $hover-alpha: 0.3;
+    $active-alpha: 0.6;
+
+    $brand-colors: (
+      (
+        'colorName': 'prussian-blue',
+        'colorFnParams': 'prussianBlue',
+        'colorFamily': 'brand',
+      ),
+      (
+        'colorName': 'logo-blue',
+        'colorFnParams': 'logoBlue',
+        'colorFamily': 'brand',
+      ),
+      (
+        'colorName': 'columbia-blue',
+        'colorFnParams': 'columbiaBlue',
+        'colorFamily': 'brand',
+      ),
+      (
+        'colorName': 'catskill-blue',
+        'colorFnParams': 'catskillBlue',
+        'colorFamily': 'brand',
+      ),
+      (
+        'colorName': 'alabaster',
+        'colorFnParams': 'alabaster',
+        'colorFamily': 'brand',
+      ),
+      (
+        'colorName': 'white',
+        'colorFnParams': 'white',
+        'colorFamily': '',
+      ),
+      (
+        'colorName': 'black-haze',
+        'colorFnParams': 'plus2',
+        'colorFamily': 'gray',
+      ),
+      (
+        'colorName': 'silver-sand',
+        'colorFnParams': 'plus1',
+        'colorFamily': 'gray',
+      ),
+      (
+        'colorName': 'sonic-silver',
+        'colorFnParams': 'gray',
+        'colorFamily': '',
+      ),
+      (
+        'colorName': 'abbey',
+        'colorFnParams': 'minus1',
+        'colorFamily': 'gray',
+      ),
+      (
+        'colorName': 'jet',
+        'colorFnParams': 'minus2',
+        'colorFamily': 'gray',
+      ),
+      (
+        'colorName': 'black',
+        'colorFnParams': 'black',
+        'colorFamily': '',
+      ),
+      (
+        'colorName': 'error',
+        'colorFnParams': 'error',
+        'colorFamily': '',
+      ),
+      (
+        'colorName': 'warning',
+        'colorFnParams': 'warning',
+        'colorFamily': '',
+      ),
+      (
+        'colorName': 'warning-b',
+        'colorFnParams': 'warning-b',
+        'colorFamily': '',
+      ),
+      (
+        'colorName': 'success',
+        'colorFnParams': 'success',
+        'colorFamily': '',
+      ),
+      (
+        'colorName': 'info',
+        'colorFnParams': 'logoBlue',
+        'colorFamily': 'brand',
+      )
+    );
+
+    @each $color in $brand-colors {
+      &.#{map-get($color, 'colorName')} {
+        $family: map-get($color, 'colorFamily');
+
+        $fetched-color: '';
+
+        @if ($family == '') {
+          $fetched-color: color(map-get($color, 'colorFnParams'));
+        } @else {
+          $fetched-color: color(
+            map-get($color, 'colorFamily'),
+            map-get($color, 'colorFnParams')
+          );
+        }
+
+        &:hover {
+          box-shadow: $hover-shadow-props
+            rgba(mix(black, $fetched-color, $mix-percentage), $hover-alpha);
+        }
+
+        &,
+        &:active {
+          box-shadow: $active-shadow-props
+            rgba(mix(black, $fetched-color, $mix-percentage), 0.4);
+        }
+      }
+    }
+  }
+}
