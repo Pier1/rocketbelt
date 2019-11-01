@@ -28,105 +28,77 @@
     $brand-colors: (
       (
         'colorName': 'prussian-blue',
-        'colorFnParams': 'prussianBlue',
-        'colorFamily': 'brand',
+        'colorValue': color(brand),
       ),
       (
         'colorName': 'logo-blue',
-        'colorFnParams': 'logoBlue',
-        'colorFamily': 'brand',
+        'colorValue': color(brand, logoBlue),
       ),
       (
         'colorName': 'columbia-blue',
-        'colorFnParams': 'columbiaBlue',
-        'colorFamily': 'brand',
+        'colorValue': color(brand, columbiaBlue),
       ),
       (
         'colorName': 'catskill-blue',
-        'colorFnParams': 'catskillBlue',
-        'colorFamily': 'brand',
+        'colorValue': color(brand, catskillBlue),
       ),
       (
         'colorName': 'alabaster',
-        'colorFnParams': 'alabaster',
-        'colorFamily': 'brand',
+        'colorValue': color(brand, alabaster),
       ),
       (
         'colorName': 'white',
-        'colorFnParams': 'white',
-        'colorFamily': '',
+        'colorValue': color(white),
       ),
       (
         'colorName': 'black-haze',
-        'colorFnParams': 'plus2',
-        'colorFamily': 'gray',
+        'colorValue': color(gray, plus2),
       ),
       (
         'colorName': 'silver-sand',
-        'colorFnParams': 'plus1',
-        'colorFamily': 'gray',
+        'colorValue': color(gray, plus1),
       ),
       (
         'colorName': 'sonic-silver',
-        'colorFnParams': 'gray',
-        'colorFamily': '',
+        'colorValue': color(gray),
       ),
       (
         'colorName': 'abbey',
-        'colorFnParams': 'minus1',
-        'colorFamily': 'gray',
+        'colorValue': color(gray, minus1),
       ),
       (
         'colorName': 'jet',
-        'colorFnParams': 'minus2',
-        'colorFamily': 'gray',
+        'colorValue': color(gray, minus2),
       ),
       (
         'colorName': 'black',
-        'colorFnParams': 'black',
-        'colorFamily': '',
+        'colorValue': color(black),
       ),
       (
         'colorName': 'error',
-        'colorFnParams': 'error',
-        'colorFamily': '',
+        'colorValue': color(error),
       ),
       (
         'colorName': 'warning',
-        'colorFnParams': 'warning',
-        'colorFamily': '',
+        'colorValue': color(warning),
       ),
       (
         'colorName': 'warning-b',
-        'colorFnParams': 'warning-b',
-        'colorFamily': '',
+        'colorValue': color(warning-b),
       ),
       (
         'colorName': 'success',
-        'colorFnParams': 'success',
-        'colorFamily': '',
+        'colorValue': color(success),
       ),
       (
         'colorName': 'info',
-        'colorFnParams': 'logoBlue',
-        'colorFamily': 'brand',
+        'colorValue': color(brand, logoBlue),
       )
     );
 
     @each $color in $brand-colors {
       &.#{map-get($color, 'colorName')} {
-        $family: map-get($color, 'colorFamily');
-
-        $fetched-color: '';
-
-        @if ($family == '') {
-          $fetched-color: color(map-get($color, 'colorFnParams'));
-        } @else {
-          $fetched-color: color(
-            map-get($color, 'colorFamily'),
-            map-get($color, 'colorFnParams')
-          );
-        }
+        $fetched-color: map-get($color, 'colorValue');
 
         &:hover {
           box-shadow: $hover-shadow-props

@@ -1,14 +1,47 @@
-$header-height: 64px;
-
 & {
-  display: grid;
+  position: fixed;
+  display: inline-grid;
+  padding-right: 1rem;
   height: $header-height;
-  background: color(brand);
+
+  $brand: color(brand);
+  background: linear-gradient(135deg, transparent 0, $brand 0) top left,
+    linear-gradient(225deg, transparent 0, $brand 0) top right,
+    linear-gradient(315deg, transparent 10px, $brand 0) bottom right,
+    linear-gradient(45deg, transparent 0, $brand 0) bottom left;
+  background-size: 50% 50%;
+  background-repeat: no-repeat;
+
+  transition: transform 300ms ease();
+  transform: translateX(0);
   grid-auto-flow: column;
   align-items: center;
-  grid-gap: 1rem;
   grid-template-columns: repeat(auto-fill, 1fr);
   justify-content: start;
+
+  @include media('>=sm') {
+    grid-gap: 1rem;
+    background: color(brand);
+    padding-left: 1rem;
+  }
+
+  &.rbio-nav-open {
+    transform: translateX(100vw);
+  }
+}
+
+.rbio-nav-trigger {
+  width: 44px;
+  height: 64px;
+
+  @include media('>=sm') {
+    display: none;
+    visibility: hidden;
+  }
+}
+
+.rbio-nav-trigger_image {
+  height: 40%;
 }
 
 .rbio-logo {
@@ -41,17 +74,6 @@ $header-height: 64px;
   }
 }
 
-.rbio-nav_level2,
-.rbio-nav_level3 {
-  display: none;
-}
-
-.rbio-nav_item {
-  > a {
-    color: color(white);
-
-    &:hover {
-      text-shadow: 0 0 4px rgba(white, 0.8);
-    }
-  }
+.rbio-nav {
+  height: 100%;
 }

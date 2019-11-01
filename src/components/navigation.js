@@ -1,5 +1,6 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import React from 'react';
+import RbIcon from './rb-icon';
 
 const Navigation = () => {
   const data = useStaticQuery(graphql`
@@ -74,9 +75,22 @@ const Navigation = () => {
     }
   });
 
+  const toggleNav = () => {
+    document.querySelector('.rbio-header').classList.toggle('rbio-nav-open');
+  };
+
   return (
     <nav className="rbio-nav">
       <ul className="rbio-nav_list">
+        <li className="rbio-nav_close-button">
+          <button
+            className="button button-minimal"
+            onClick={toggleNav}
+            aria-label="Close Navigation"
+          >
+            <RbIcon icon="close" />
+          </button>
+        </li>
         {navData.l1s.map((l1) => {
           return (
             <li key={l1.slug} className="rbio-nav_level1 rbio-nav_level">

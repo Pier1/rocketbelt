@@ -252,6 +252,7 @@ code {
   font-family: font-family(monospace);
 }
 
+$header-height: 64px;
 .rbio-header {
   @import 'rbio-header';
 }
@@ -262,7 +263,8 @@ code {
 
 .rbio-content {
   flex: 1;
-  padding: 2rem;
+  margin-top: $header-height;
+  padding: 1rem 0.5rem 0.5rem 0.5rem;
 
   > .button-minimal {
     margin: 1rem auto;
@@ -270,6 +272,10 @@ code {
     &:hover {
       text-decoration: underline;
     }
+  }
+
+  @include media('>=sm') {
+    padding: 2rem;
   }
 
   &.typography {
