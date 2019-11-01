@@ -76,6 +76,8 @@
     }
 
     @include media('>=sm') {
+      padding-right: 1rem;
+      padding-left: 1rem;
       color: color(white);
     }
   }
