@@ -12,7 +12,12 @@
   justify-content: center;
   align-items: center;
 
+  .swatch_name {
+    color: color(black);
+  }
+
   .swatch {
+    display: block;
     margin-bottom: 1rem;
     width: 10rem;
     height: 10rem;

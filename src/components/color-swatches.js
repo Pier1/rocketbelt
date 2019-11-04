@@ -132,13 +132,15 @@ const ColorSwatches = ({ swatchSet }) => {
       {swatches.map((swatch) => {
         return (
           <li className="swatch_wrapper" key={`${swatch.scss}`}>
-            <button
-              className={`swatch button-minimal button ${
-                swatch.fnColor
-              } ${swatch.name.replace(' ', '-').toLowerCase()}`}
-              style={{ background: swatch.hex }}
-            ></button>
-            <span className="swatch_name">{swatch.name}</span>
+            <button className={`button-minimal button`}>
+              <span
+                className={`swatch ${swatch.fnColor} ${swatch.name
+                  .replace(' ', '-')
+                  .toLowerCase()}`}
+                style={{ background: swatch.hex }}
+              ></span>
+              <span className="swatch_name">{swatch.name}</span>
+            </button>
           </li>
         );
       })}
