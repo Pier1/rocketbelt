@@ -1,5 +1,6 @@
 & {
   position: fixed;
+  z-index: 2;
   display: inline-grid;
   padding-right: 1rem;
   height: $header-height;
