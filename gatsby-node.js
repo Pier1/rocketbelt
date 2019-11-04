@@ -70,10 +70,20 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
 
     createNodeField({
       node,
-      name: 'lastCommitTime',
+      name: 'lastAuthorTime',
       value: require('child_process')
         .execSync(
           `git log --pretty=format:%aI -- ${node.fileAbsolutePath} | head -1 | tr -d '\n'`
+        )
+        .toString(),
+    });
+
+    createNodeField({
+      node,
+      name: 'lastAuthor',
+      value: require('child_process')
+        .execSync(
+          `git log --pretty=format:%aN -- ${node.fileAbsolutePath} | head -1 | tr -d '\n'`
         )
         .toString(),
     });
