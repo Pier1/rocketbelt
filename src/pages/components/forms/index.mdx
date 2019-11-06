@@ -5,20 +5,18 @@ scriptTags:
 
 # Forms
 
-## Tips
-- Form inputs should always be paired with a label element—but the label element
-  may be `visually-hidden` if the purpose of the input is clear
-- Don't use the placeholder attribute as a substitute for a label. It's a misuse
-  of the attribute and leaves you with an inaccessible, unlabeled field.
-- Always use a label's `for` attribute to link it to its input. This guarantees
+## Form Accessibility
+- Include the Rocketbelt helper script `rocketbelt.forms.js` to expose form
+  validation messages to assistive technology via the `aria-describedby`
+  attribute. The script's `rb.forms.decorateInputs` function can be called
+  manually if additional inputs need to be registered after the page loads.
+- Never use the placeholder attribute as a substitute for a label. It's a misuse
+  of the attribute and leaves a field inaccessible and with an unclear purpose
+  when it's focused.[^1]
+- Always use a label's `for` attribute to link it to its input.[^2] This guarantees
   a more touch-friendly interface as tapping the label will bring focus to its
-  input.
-
-## Accessibility
-- a11y/JS around validation messages
-- Never use placeholder text instead of a label. Placeholders alone render an
-  input that is inaccessible and whose purpose is unclear when the input is
-  focused
+  input. A label may be visually hidden via the `visually-hidden` class if the
+  purpose of the input is clear.
 
 ## Standard Form Elements
 ```html
@@ -57,11 +55,132 @@ scriptTags:
 </form>
 ```
 
+## Required & Optional Fields
+The presence of the HTML5 `required` attribute on an input will automatically
+add a [(required)]{.required-optional} indicator after the input's label.
+Inputs without the `required` attribute will be marked with an
+[(optional)]{.required-optional} indicator.
+
+In rare cases it may be necessary to hide the
+[(required)]{.required-optional}/[(optional)]{.required-optional} indicator.
+One example is when an input is very narrow, such as a list of U.S. states. In
+such situations, omit the `required` attribute and add a `required-suppressed`
+class.
+```html
+<form>
+  <div class="form-group">
+    <input id="required-email" type="email" required value="help@pier1.com" />
+    <label for="required-email">Email Address</label>
+    <small class="helper-text">Please enter a valid email address.</small>
+  </div>
+  <div class="form-group">
+    <input id="required-mobile" value="(555) 555-1212" />
+    <label for="required-mobile">Mobile Phone</label>
+    <small class="helper-text">Please enter a valid Mobile Phone.</small>
+  </div>
+  <div class="form-group">
+    <select id="required-suppressed" class="required-suppressed">
+	    <option value="AL">AL</option>
+      <option value="WY">WY</option>
+    </select>
+    <label for="required-suppressed">State</label>
+    <small class="helper-text">Please choose a U.S. state.</small>
+  </div>
+</form>
+```
+
+## Invalid Elements
+Add an `invalid` class to an `input` or `select` element to display it as
+invalid. Provide a **validation message** as shown below to nudge the
+user toward a valid value.
+
+Additionally, be sure the `rocketbelt.forms.js` script has been included on the
+page. This script generates ID values for form elements that need them and links
+those elements to their validation messages using the `aria-describedby`
+attribute. The `rb.forms.decorateInputs()` function can be called manually if
+additional inputs need to be registered after the page loads.
+
+```html
+<div class="form-group">
+  <input class="invalid" id="invalid-phone" type="tel" value="(not) a-phone-number" />
+  <label for="invalid-phone">Phone Number</label>
+  <small class="validation-message">Please enter a valid phone number.</small>
+</div>
+<div class="form-group">
+  <select class="invalid" id="invalid-select">
+    <option value="" disabled selected hidden>Select a collection</option>
+    <option>Biblioteca</option>
+    <option>Marcel</option>
+    <option>Pierce</option>
+  </select>
+  <label for="invalid-select">Collection</label>
+  <small class="validation-message">Please select a collection.</small>
+</div>
+```
+
+## Disabled Elements
+Use the HTML5 `disabled` attribute to disable an input.
+
+```html
+<form>
+  <div class="form-group">
+    <input id="disabled-fname" type="text" disabled />
+    <label for="disabled-fname">First Name</label>
+  </div>
+  <div class="form-group">
+    <select id="disabled-select" disabled>
+      <option value="" disabled selected hidden>Select a collection</option>
+      <option>Biblioteca</option>
+      <option>Marcel</option>
+      <option>Pierce</option>
+    </select>
+    <label for="disabled-select">Collection</label>
+  </div>
+  <fieldset>
+    <legend>Collection</legend>
+    <ul class="radio-group">
+      <li>
+        <input id="disabled-radio-1" type="radio" disabled value="biblioteca" name="disabled-radio-group" />
+        <label for="disabled-radio-1">Biblioteca</label>
+      </li>
+      <li>
+        <input id="disabled-radio-2" type="radio" disabled checked value="marcel" name="disabled-radio-group" />
+        <label for="disabled-radio-2">Marcel</label>
+      </li>
+      <li>
+        <input id="disabled-radio-3" type="radio" checked value="pierce" name="disabled-radio-group" />
+        <label for="disabled-radio-3">Pierce</label>
+      </li>
+    </ul>
+  </fieldset>
+  <fieldset>
+    <legend>Collection</legend>
+    <ul class="checkbox-group">
+      <li>
+        <input class="rb-checkbox" id="disabled-check-1" type="checkbox" disabled value="biblioteca" name="disabled-check-group" />
+        <label for="disabled-check-1">Biblioteca</label>
+      </li>
+      <li>
+        <input class="rb-checkbox" id="disabled-check-2" type="checkbox" disabled checked value="marcel" name="disabled-check-group" />
+        <label for="disabled-check-2">Marcel</label>
+      </li>
+      <li>
+        <input class="rb-checkbox" id="disabled-check-3" type="checkbox" checked value="pierce" name="disabled-check-group" />
+        <label for="disabled-check-3">Pierce</label>
+      </li>
+    </ul>
+  </fieldset>
+</form>
+```
+
 ## Fieldsets
-- When to use a `fieldset` in the first place
+Use a `fieldset` to group a set of inputs or choices that are related. Ensure
+that a `legend` is present, and that its text is a call-to-action whenever
+possible. The legend is read by assistive technology before any of the choices
+are announced.
 ```html
 <fieldset>
-  <legend>Collection</legend>
+  <legend>Choose a Collection</legend>
   <ul class="radio-group">
     <li>
       <input
@@ -94,7 +213,7 @@ scriptTags:
   </ul>
 </fieldset>
 <fieldset>
-  <legend>Collection</legend>
+  <legend>Choose a Collection</legend>
   <ul class="checkbox-group">
     <li>
       <input
@@ -153,7 +272,7 @@ scriptTags:
 </ul>
 ```
 
-## Chunky™ Radio Buttons
+## Chunky Radio Buttons
 ```html
 <ul class="radio-group radio-group-chunky">
   <li>
@@ -177,99 +296,6 @@ scriptTags:
 </ul>
 ```
 
-## Invalid Elements
-```html
-<form>
-  <div class="form-group">
-    <input id="invalid-email" type="email" value="not|a=valid!email" />
-    <label for="invalid-email">Email Address</label>
-    <small class="validation-message">Please enter a valid email address.</small>
-  </div>
-  <div class="form-group">
-    <input class="invalid" id="invalid-phone" type="tel" value="(not) a-phone-number" />
-    <label for="invalid-phone">Phone Number</label>
-    <small class="validation-message">Please enter a valid phone number.</small>
-  </div>
-  <div class="form-group">
-    <input class="invalid" id="invalid-password" type="password" value="doesn't-meet-regex" />
-    <label for="invalid-password">Password</label>
-    <small class="validation-message">Please enter a valid password.</small>
-  </div>
-  <div class="form-group">
-    <input class="invalid" id="invalid-fname" type="text" />
-    <label for="invalid-fname">First Name</label>
-    <small class="validation-message">Please enter a first name.</small>
-  </div>
-  <div class="form-group">
-    <textarea class="invalid" id="invalid-message"></textarea>
-    <label for="invalid-message">Message</label>
-    <small class="validation-message">Please enter a message.</small>
-  </div>
-  <div class="form-group">
-    <select class="invalid" id="invalid-select">
-      <option value="" disabled selected hidden>Select a collection</option>
-      <option>Biblioteca</option>
-      <option>Marcel</option>
-      <option>Pierce</option>
-    </select>
-    <label for="invalid-select">Collection</label>
-    <small class="validation-message">Please select a collection.</small>
-  </div>
-</form>
-```
-
-## Disabled Elements
-```html
-<form>
-  <div class="form-group">
-    <input id="disabled-fname" type="text" disabled />
-    <label for="disabled-fname">First Name</label>
-  </div>
-  <div class="form-group">
-    <select id="disabled-select" disabled>
-      <option value="" disabled selected hidden>Select a collection</option>
-      <option>Biblioteca</option>
-      <option>Marcel</option>
-      <option>Pierce</option>
-    </select>
-    <label for="disabled-select">Collection</label>
-  </div>
-  <fieldset>
-    <legend>Collection</legend>
-    <ul class="radio-group">
-      <li>
-        <input id="disabled-radio-1" type="radio" disabled value="biblioteca" name="disabled-radio-group" />
-        <label for="disabled-radio-1">Biblioteca</label>
-      </li>
-      <li>
-        <input id="disabled-radio-2" type="radio" disabled checked value="marcel" name="disabled-radio-group" />
-        <label for="disabled-radio-2">Marcel</label>
-      </li>
-      <li>
-        <input id="disabled-radio-3" type="radio" checked value="pierce" name="disabled-radio-group" />
-        <label for="disabled-radio-3">Pierce</label>
-      </li>
-    </ul>
-  </fieldset>
-  <fieldset>
-    <legend>Collection</legend>
-    <ul class="checkbox-group">
-      <li>
-        <input class="rb-checkbox" id="disabled-check-1" type="checkbox" disabled value="biblioteca" name="disabled-check-group" />
-        <label for="disabled-check-1">Biblioteca</label>
-      </li>
-      <li>
-        <input class="rb-checkbox" id="disabled-check-2" type="checkbox" disabled checked value="marcel" name="disabled-check-group" />
-        <label for="disabled-check-2">Marcel</label>
-      </li>
-      <li>
-        <input class="rb-checkbox" id="disabled-check-3" type="checkbox" checked value="pierce" name="disabled-check-group" />
-        <label for="disabled-check-3">Pierce</label>
-      </li>
-    </ul>
-  </fieldset>
-</form>
-```
 
 ## Helper Text
 ```html
@@ -287,21 +313,10 @@ scriptTags:
 </form>
 ```
 
-## Required vs. Optional Fields
-```html
-<form>
-  <div class="form-group">
-    <input id="required-email" type="email" required value="help@pier1.com" />
-    <label for="required-email">Email Address</label><small class="helper-text">Please enter a valid email address.</small>
-  </div>
-  <div class="form-group">
-    <input id="required-mobile" value="(555) 555-1212" />
-    <label for="required-mobile">Mobile Phone</label><small class="helper-text">Please enter a valid Mobile Phone.</small>
-  </div>
-</form>
-```
-
 ## Inline Fields
+Choose an Inline Field when vertical space is at a premium, or to give a series
+of inputs a smoother vertical rhythm.
+
 ```html
 <form>
   <div class="form-group inline required-suppressed">
@@ -345,3 +360,9 @@ scriptTags:
   </button>
 </div>
 ```
+
+[^1]: Sherwin, Katie. [“Placeholders in Form Fields Are Harmful."](https://www.nngroup.com/articles/form-design-placeholders/)
+      Nielsen Norman Group, 11 May 2014.
+[^2]: WCAG Working Group, Education and Outreach Working Group.
+      [“Labeling Controls.”](https://www.w3.org/WAI/tutorials/forms/labels/) _WAI
+      Web Accessibility Tutorials_, W3C, Sept. 2014.

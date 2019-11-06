@@ -1,3 +1,21 @@
+.color-contrast-calculator {
+  .form-group {
+    input {
+      width: 16em;
+      font-family: font-family(monospace);
+    }
+  }
+
+  .swatch {
+    margin-left: 0.5rem;
+    width: 2.2em;
+    height: 2.2em;
+    border-radius: 50%;
+    background: transparent;
+    transition: background 200ms linear;
+  }
+}
+
 .swatches {
   display: grid;
   margin: 1rem auto 5rem auto;

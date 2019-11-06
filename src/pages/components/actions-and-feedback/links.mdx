@@ -1,13 +1,17 @@
 import {Link} from 'gatsby';
 
 # Links
+> A link’s primary purpose is to communicate to users what they’ll find on the
+> other side of a click.[^1]
 
-*Links go places, buttons do things.*
-* Link text should be short, clear, and action-focused
-* `href="#"`, `href="javascript:void(0);"` and click listeners attached to links
-  are antipatterns. Consider using <Link to="/components/actions-and-feedback/buttons">
-  buttons</Link> in these
-  cases.
+Anchor text should be [short]{.emphasize}, [clear]{.emphasize}, and
+[action-focused]{.emphasize}. Avoid vague link text like *"Learn More"* or
+*"Read More"* at all costs.
+
+_Anchors go places, buttons do things._ `href="#"`, `href="javascript:void(0);"`
+and click listeners attached to links are antipatterns. Consider using <Link
+to="/components/actions-and-feedback/buttons">Buttons</Link> in these
+cases.
 
 ## Standard Links
 ```html
@@ -15,7 +19,9 @@ import {Link} from 'gatsby';
 ```
 
 ## Links with Icons
-* Note `aria-hidden` attribute
+Note `aria-hidden` attribute in the example below. The icon can safely be hidden
+from assistive technology only because the icon is decorative and because the
+anchor text is clear and descriptive of the action to be taken.
 
 ```html
 <a class="text-with-icon" href="#">Chat Now
@@ -25,10 +31,10 @@ import {Link} from 'gatsby';
 </a>
 ```
 
-
 ## CTAs
-* Calls to Action (CTAs) should be visually distinct from the content adjacent to them
-* CTA copy should be compelling-but-concise and a natural conclusion of the content that leads to the CTA
+Calls to Action (CTAs) should be visually distinct from the content adjacent to
+them. CTA copy should be _compelling-but-concise_, imperative, and a natural
+conclusion of the content that leads to the CTA.
 
 ```html
 <a class="cta text-with-icon" href="#">
@@ -37,7 +43,8 @@ import {Link} from 'gatsby';
 ```
 
 ## Link Lists
-Use the Link List component to visually group links that are related, such as navigational elements in a header or footer.
+Use the Link List component to visually group links that are logically
+related, such as navigational elements in a header or footer.
 ```html
 <ul class="link-list">
   <li class="title"><a class="cta" target="_blank" href="https://www.pier1.com/pillows">Pillows</a></li>
@@ -47,3 +54,6 @@ Use the Link List component to visually group links that are related, such as na
   <li><a target="_blank" href="https://www.pier1.com/outdoor_pillows">Outdoor Pillows</a></li>
 </ul>
 ```
+
+[^1]: Moran, Kate. ["Better Link Labels: 4Ss for Encouraging Clicks."](https://www.nngroup.com/articles/better-link-labels/)
+      Nielsen Norman Group, 24 Mar. 2019.

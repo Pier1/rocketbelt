@@ -3,6 +3,8 @@ import DeprecationNotice from '../../../components/deprecation-notice';
 # Messages, Notices & Alerts
 
 ## Messages
+Messages indicate the state of the page or of a large UI component when the
+page loads.
 ```html
 <aside class="message message-info">
   <svg class="message_icon icon" role="img">
@@ -20,6 +22,17 @@ import DeprecationNotice from '../../../components/deprecation-notice';
 ```
 
 ## Notices
+Notices indicate the status of a UI component *after an action is taken* on
+the page (and without a page reload). They also indicate the results of actions
+that can be undone, tried again, or corrected.
+
+Use a Notice when form validation alone may not be the most appropriate way to
+acknowledge the UI's state after user input.
+
+Notices come in three variations:
+**Default**, **Attached**, and **Applied**.
+
+### Default
 ```html
 <figure class="notice">
   <div class="notice_text text-with-icon">
@@ -38,6 +51,11 @@ import DeprecationNotice from '../../../components/deprecation-notice';
     </svg>
   </button>
 </figure>
+```
+### Attached
+Use an Attached Notice to acknowledge that the user's action may not yet be
+valid—but that it was *understood and will be remembered.*
+```html
 <figure class="notice notice-attached">
   <div class="notice_text text-with-icon">
     You must use a specific payment method to qualify for this promotion.
@@ -55,6 +73,12 @@ import DeprecationNotice from '../../../components/deprecation-notice';
     </svg>
   </button>
 </figure>
+```
+
+### Applied
+Use an Applied Notice to indicate that one or more of the Notice's prior states
+have been resolved.
+```html
 <figure class="notice notice-applied">
   <div class="notice_text text-with-icon">The promotion was removed.</div>
   <button class="button button-text notice_undo">Undo</button>
