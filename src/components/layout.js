@@ -18,10 +18,42 @@ let pageClass = '';
 
 if (typeof window !== `undefined`) {
   window.$ = window.jQuery = jQuery;
+
+  require('smooth-scroll')('a[href*="#"', {
+    header: '.rbio-header',
+    speed: 250,
+    easing: 'easeInOutQuad',
+  });
 }
+
+const addScrollListeners = () => {
+  document.addEventListener('scrollStart', (e) => {
+    if (
+      e.detail.toggle &&
+      e.detail.toggle.classList &&
+      e.detail.toggle.classList.contains('footnote-backref')
+    ) {
+      document.querySelectorAll('.footnotes .target').forEach((target) => {
+        target.classList.remove('target');
+      });
+    }
+  });
+
+  document.addEventListener('scrollStop', (e) => {
+    if (
+      e.detail.toggle &&
+      e.detail.toggle.classList &&
+      e.detail.toggle.classList.contains('footnote-ref')
+    ) {
+      e.detail.anchor.classList.add('target');
+    }
+  });
+};
 
 const Layout = ({ children, pageContext }) => {
   useEffect(() => {
+    addScrollListeners();
+
     const hash = window.location.hash;
     const el = hash !== '' ? document.querySelector(`${hash}`) : null;
     if (el) {
