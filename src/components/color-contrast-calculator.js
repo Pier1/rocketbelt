@@ -2,68 +2,80 @@ import React, { useState } from 'react';
 import colorContrast from 'color-contrast';
 
 const ColorContrastCalculator = () => {
-  const [swatch1Bg, setSwatch1Bg] = useState({
-    background: 'red',
-  });
-  const [swatch2Bg, setSwatch2Bg] = useState({
-    background: 'red',
-  });
+  const [fg, setFg] = useState('transparent');
+  const [bg, setBg] = useState('transparent');
+  const [contrastRatio, setContrastRatio] = useState('');
 
   const calculateContrast = (e) => {
-    const isColor1 = e.target.id === 'color-1' ? true : false;
+    const isBg = e.target.id === 'contrast_bg' ? true : false;
     const targetVal = e.target.value;
 
     const validColorRe = /^(#([\da-f]{3}){1,2}|(rgb|hsl)a\((\d{1,3}%?,\s?){3}(1|0?\.\d+)\)|(rgb|hsl)\(\d{1,3}%?(,\s?\d{1,3}%?){2}\))$/i;
     const targetValmatches = targetVal.match(validColorRe);
 
-    const bg = {
-      background: e.target.value,
-    };
+    const newVal = e.target.value;
 
     if (targetValmatches) {
-      isColor1 ? setSwatch1Bg(bg) : setSwatch2Bg(bg);
+      isBg ? setBg(newVal) : setFg(newVal);
 
-      const otherInput = e.target.id === 'color-1' ? 'color-2' : 'color-1';
+      const otherInput = isBg ? 'contrast_fg' : 'contrast_bg';
       const otherVal = document.querySelector(`#${otherInput}`).value;
       const otherValMatches = otherVal.match(validColorRe);
 
       if (otherValMatches) {
-        isColor1 ? setSwatch1Bg(bg) : setSwatch2Bg(bg);
-        const contrast = colorContrast(targetVal, otherVal);
-        console.dir(contrast);
+        isBg ? setBg(newVal) : setFg(newVal);
+        setContrastRatio(colorContrast(targetVal, otherVal).toFixed(2));
       }
     }
   };
 
   return (
     <section className="color-contrast-calculator">
-      <div className="form-group inline">
-        <input
-          id="color-1"
-          className="required-suppressed"
-          type="text"
-          onChange={calculateContrast}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck="false"
-        />
-        <label htmlFor="color-1">Color 1</label>
-        <div className="swatch color-1_swatch" style={swatch1Bg} />
+      <div className="contrast_inputs">
+        <div className="form-group">
+          <input
+            id="contrast_bg"
+            className="required-suppressed"
+            type="text"
+            onChange={calculateContrast}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+          />
+          <label htmlFor="contrast_bg">Background</label>
+        </div>
+        <div className="form-group">
+          <input
+            id="contrast_fg"
+            className="required-suppressed"
+            type="text"
+            onChange={calculateContrast}
+            autoComplete="off"
+            autoCorrect="off"
+            autoCapitalize="off"
+            spellCheck="false"
+          />
+          <label htmlFor="contrast_fg">Foreground</label>
+        </div>
       </div>
-      <div className="form-group inline">
-        <input
-          id="color-2"
-          className="required-suppressed"
-          type="text"
-          onChange={calculateContrast}
-          autoComplete="off"
-          autoCorrect="off"
-          autoCapitalize="off"
-          spellCheck="false"
-        />
-        <label htmlFor="color-2">Color 2</label>
-        <div className="swatch color-2_swatch" style={swatch2Bg} />
+      <div className="contrast_example" style={{ background: bg, color: fg }}>
+        <span
+          className={`contrast_wcag-level ${
+            contrastRatio < 3 ? 'contrast_wcag-level-fail' : ''
+          }`}
+        >
+          {contrastRatio >= 7
+            ? 'AAA'
+            : contrastRatio >= 4.5
+            ? 'AA'
+            : contrastRatio >= 3
+            ? 'AA*'
+            : '😭'}
+        </span>
+        <span className="contrast_ratio">
+          {contrastRatio !== '' ? contrastRatio : ''}
+        </span>
       </div>
     </section>
   );

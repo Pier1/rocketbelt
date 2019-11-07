@@ -61,32 +61,33 @@ add a [(required)]{.required-optional} indicator after the input's label.
 Inputs without the `required` attribute will be marked with an
 [(optional)]{.required-optional} indicator.
 
+```html
+<div class="form-group">
+  <input id="required-email" type="email" required value="help@pier1.com" />
+  <label for="required-email">Email Address</label>
+  <small class="helper-text">Please enter a valid email address.</small>
+</div>
+<div class="form-group">
+  <input id="required-mobile" value="(555) 555-1212" />
+  <label for="required-mobile">Mobile Phone</label>
+  <small class="helper-text">Please enter a valid Mobile Phone.</small>
+</div>
+```
+
 In rare cases it may be necessary to hide the
 [(required)]{.required-optional}/[(optional)]{.required-optional} indicator.
 One example is when an input is very narrow, such as a list of U.S. states. In
 such situations, omit the `required` attribute and add a `required-suppressed`
 class.
 ```html
-<form>
-  <div class="form-group">
-    <input id="required-email" type="email" required value="help@pier1.com" />
-    <label for="required-email">Email Address</label>
-    <small class="helper-text">Please enter a valid email address.</small>
-  </div>
-  <div class="form-group">
-    <input id="required-mobile" value="(555) 555-1212" />
-    <label for="required-mobile">Mobile Phone</label>
-    <small class="helper-text">Please enter a valid Mobile Phone.</small>
-  </div>
-  <div class="form-group">
-    <select id="required-suppressed" class="required-suppressed">
-	    <option value="AL">AL</option>
-      <option value="WY">WY</option>
-    </select>
-    <label for="required-suppressed">State</label>
-    <small class="helper-text">Please choose a U.S. state.</small>
-  </div>
-</form>
+<div class="form-group">
+  <select id="required-suppressed" class="required-suppressed">
+    <option value="AL">AL</option>
+    <option value="WY">WY</option>
+  </select>
+  <label for="required-suppressed">State</label>
+  <small class="helper-text">Please choose a U.S. state.</small>
+</div>
 ```
 
 ## Invalid Elements

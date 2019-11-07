@@ -8,11 +8,21 @@ import ToggleClassButton from '../../../components/toggle-class-button';
 # Busy Indicators
 > Make the slow less insufferable.
 
-Showing a Busy Indicator gives the user confidence that the
-system received their request and is still working on it. Display a Busy
-Indicator any time an action takes longer than **1 second** to complete.
-(Actions that finish in 100 milliseconds or less are perceived as being
-instantaneous.[^1])
+Showing a Busy Indicator provides visibility of the status of the UI and gives
+the user confidence that the system received their request and is still working
+on it. Display a Busy Indicator any time an action takes longer than **1
+second** to complete. (Actions that finish in 100 milliseconds or less are
+perceived as being instantaneous.[^1])
+
+Busy Indicators… 
+* … assure the user that the system is working
+* … offer a reason to wait for the system to finish, simply because something
+  appears to be happening
+* … can reduce a user's perception of time
+
+Users who are presented an animated progress indicator will on average wait
+[3 times as long]{.emphasize} for an action to complete as those who don't see
+an indicator.[^2]
 
 ### "Is Busyable"
 The `is-busyable` class is fundamental to using Rocketbelt's Busy Indicators.
@@ -59,3 +69,5 @@ if this attribute isn't specified.
 
 [^1]: Nielsen, Jakob. [“Powers of 10: Time Scales in User Experience.”](https://www.nngroup.com/articles/powers-of-10-time-scales-in-ux/)
       Nielsen Norman Group, 4 Oct. 2009.
+[^2]: Sherwin, Katie. [“Progress Indicators Make a Slow System Less Insufferable.”](https://www.nngroup.com/articles/progress-indicators/)
+      Nielsen Norman Group, 26 Oct. 2014.

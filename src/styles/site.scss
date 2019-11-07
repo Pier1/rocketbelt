@@ -33,6 +33,7 @@ body {
   border-top: 1px solid color(gray, plus3);
 
   &::before {
+    display: block;
     color: color(gray, minus1);
     content: 'Notes';
     font-style: font-style(italic);
@@ -40,6 +41,7 @@ body {
     font-family: font-family(serif);
   }
 
+  .target,
   :target {
     background: rgba(color(warning), 0.6);
   }
@@ -50,7 +52,23 @@ body {
   }
 
   ol {
-    padding-left: 1rem;
+    display: inline-flex;
+    flex-direction: column;
+    margin: 0;
+    padding-left: 0;
+  }
+
+  li {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    background: transparent;
+    counter-increment: FN-ITEMS;
+    transition: background 300ms linear;
+  }
+
+  li::before {
+    padding-right: 0.25em;
+    content: counter(FN-ITEMS) '.';
   }
 
   .footnote-backref {

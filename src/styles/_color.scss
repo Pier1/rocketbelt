@@ -1,5 +1,10 @@
 .color-contrast-calculator {
+  display: inline-flex;
+  align-items: flex-start;
+
   .form-group {
+    margin-top: 0;
+
     input {
       width: 16em;
       font-family: font-family(monospace);
@@ -12,7 +17,36 @@
     height: 2.2em;
     border-radius: 50%;
     background: transparent;
-    transition: background 200ms linear;
+  }
+
+  .contrast_example {
+    display: flex;
+    flex-direction: column;
+    margin-left: 1rem;
+    padding: 0.5rem;
+    $size: 9rem;
+    min-width: $size;
+    min-height: $size;
+    transition: background 200ms linear, color 200ms linear;
+    justify-content: center;
+    align-items: center;
+
+    .contrast_wcag-level {
+      font-weight: font-weight(extrabold);
+      font-size: font-size(2);
+    }
+
+    .contrast_wcag-level-fail {
+      font-size: font-size(8);
+      line-height: 1.2;
+
+      & + .contrast_ratio {
+        line-height: 1;
+      }
+    }
+    .contrast_ratio {
+      font-size: font-size(-1);
+    }
   }
 }
 
