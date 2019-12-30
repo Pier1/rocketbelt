@@ -11,7 +11,7 @@ const H = (props) => {
   }
 
   return (
-    <span className="linked-heading">
+    <span className={`linked-heading rbio-h${props.level}`}>
       <Htag
         className="rbio linked-heading_heading"
         id={slugify(props.children)}
