@@ -13,8 +13,15 @@ import '../styles/site.scss';
 import SEO from './seo';
 import Header from './header';
 import Footer from './footer';
+import Sidebar from './sidebar';
 
 let pageClass = '';
+let taxonomy = null;
+
+if (typeof window !== `undefined`) {
+  taxonomy = window.location.pathname.toLowerCase().slice(1).replace(/\/$/, '').split('/');
+  pageClass = taxonomy[0].replace(/\/$/, '');
+}
 
 if (typeof window !== `undefined`) {
   window.$ = window.jQuery = jQuery;
@@ -24,6 +31,17 @@ if (typeof window !== `undefined`) {
     speed: 250,
     easing: 'easeInOutQuad',
   });
+}
+
+const adjustLeftNav = () => {
+  if (typeof window !== `undefined`) {
+    let taxonomy = window.location.pathname.toLowerCase().slice(1).replace(/\/$/, '').split('/');
+    let pageSlugClass = taxonomy.join('_');
+    
+    $(`.rbio-nav_item[data-page="${pageSlugClass}"]`, '.rbio-sidebar')
+      .addClass('active-item')
+      .parents('.rbio-nav_items').addClass('active-nav-level');
+  }
 }
 
 const addScrollListeners = () => {
@@ -73,6 +91,9 @@ const Layout = ({ children, pageContext }) => {
           eval(child.props.children.props.children);
         }
       });
+
+    adjustLeftNav();
+
   });
 
   const hasScripts =
@@ -81,21 +102,21 @@ const Layout = ({ children, pageContext }) => {
     pageContext.frontmatter.scriptTags &&
     pageContext.frontmatter.scriptTags.length > 0;
 
-  if (typeof window !== `undefined`) {
-    pageClass = window.location.pathname
-      .replace(/\/$/, '')
-      .split('/')
-      .slice(-1)[0];
-  }
+ 
 
   return (
     <>
       {/* Pass in title, description, OG data, etc. */}
       <SEO pageContext={pageContext} />
 
-      <div className="rbio-content-wrap">
+      <div className="rbio-wrap">
         <Header siteTitle="Rocketbelt" />
-        <main className={`rbio-content ${pageClass}`}>{children}</main>
+        <div className="rbio-main-outer"> 
+          <div className="rbio-main-inner">
+            <Sidebar />
+            <main className={`rbio-content ${pageClass}`}>{children}</main>
+          </div>
+        </div>
         <Footer />
       </div>
 
@@ -110,15 +131,5 @@ const Layout = ({ children, pageContext }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-// export const query = graphql`
-//   query ScriptTagQuery($mdxId: String) {
-//     mdx(id: {eq: $mdxId}) {
-//       frontmatter {
-//         scriptTags
-//       }
-//     }
-//   }
-// `;
 
 export default Layout;

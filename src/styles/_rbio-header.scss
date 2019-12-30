@@ -1,80 +1,85 @@
+
 & {
-  position: fixed;
-  z-index: 2;
-  display: inline-grid;
-  padding-right: 1rem;
-  height: $header-height;
+  .rbio-header-inner {
+    position: fixed;
+    z-index: 2;
+    display: inline-grid;
+    align-content: center;
+    padding-right: 1rem;
+    height: $header-height;
 
-  $brand: color(brand);
-  background: linear-gradient(135deg, transparent 0, $brand 0) top left,
-    linear-gradient(225deg, transparent 0, $brand 0) top right,
-    linear-gradient(315deg, transparent 10px, $brand 0) bottom right,
-    linear-gradient(45deg, transparent 0, $brand 0) bottom left;
-  background-size: 50% 50%;
-  background-repeat: no-repeat;
+    $brand: color(brand);
+    background: linear-gradient(135deg, transparent 0, $brand 0) top left,
+      linear-gradient(225deg, transparent 0, $brand 0) top right,
+      linear-gradient(315deg, transparent 10px, $brand 0) bottom right,
+      linear-gradient(45deg, transparent 0, $brand 0) bottom left;
+    background-size: 50% 50%;
+    background-repeat: no-repeat;
 
-  transition: transform 300ms ease();
-  transform: translateX(0);
-  grid-auto-flow: column;
-  align-items: center;
-  grid-template-columns: repeat(auto-fill, 1fr);
-  justify-content: start;
+    transition: transform 300ms ease();
+    transform: translateX(0);
+    grid-auto-flow: column;
+    align-items: center;
+    grid-template-columns: repeat(auto-fill, 1fr);
+    justify-content: start;
 
-  @include media('>=sm') {
+    @include media('>=sm') {
+      grid-gap: 1rem;
+      background: color(brand);
+      padding-left: 1rem;
+    }
+
+    &.rbio-nav-open {
+      transform: translateX(100vw);
+    }
+  }
+  
+  .rbio-nav-trigger {
+    width: 44px;
+    height: 64px;
+
+    @include media('>=sm') {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+  .rbio-nav-trigger_image {
+    height: 40%;
+  }
+
+  .rbio-logo {
+    width: $header-height * 2/3;
+    height: $header-height * 2/3;
+  }
+
+  .rbio-link {
+    display: grid;
+    grid-auto-flow: column;
+    align-items: center;
     grid-gap: 1rem;
-    background: color(brand);
-    padding-left: 1rem;
   }
 
-  &.rbio-nav-open {
-    transform: translateX(100vw);
-  }
-}
-
-.rbio-nav-trigger {
-  width: 44px;
-  height: 64px;
-
-  @include media('>=sm') {
+  .rbio-title {
     display: none;
     visibility: hidden;
+    color: color(white);
+
+    @include heading-style(
+      (
+        'style': 'blurt',
+        'font-size': font-size(3),
+      )
+    );
+
+    @include media('>=sm') {
+      display: inline-block;
+      visibility: visible;
+    }
+  }
+
+  .rbio-nav {
+    height: 100%;
   }
 }
 
-.rbio-nav-trigger_image {
-  height: 40%;
-}
-
-.rbio-logo {
-  width: $header-height * 2/3;
-  height: $header-height * 2/3;
-}
-
-.rbio-link {
-  display: grid;
-  grid-auto-flow: column;
-  align-items: center;
-  grid-gap: 1rem;
-}
-
-.rbio-title {
-  display: none;
-  visibility: hidden;
-  color: color(white);
-
-  @include heading-style(
-    (
-      'style': 'blurt',
-      'font-size': font-size(3),
-    )
-  );
-
-  @include media('>=sm') {
-    display: inline-block;
-    visibility: visible;
-  }
-}
-
-.rbio-nav {
-  height: 100%;
-}

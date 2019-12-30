@@ -1,5 +1,15 @@
 @import '../rocketbelt/tools/tools';
 @import 'font-face-monospace';
+@import 'rbio-sections';
+@import 'rbio-sidebar'; 
+
+$footer-height: 3.5rem;
+$header-height: 4.25rem;
+$sidebar-width: 17rem;
+$content-width: 51rem;
+$sidebar-min-width: 13rem;
+$content-width: 51rem;
+$outer-width: $sidebar-width + $content-width;
 
 // sass-lint:disable no-qualifying-elements force-element-nesting nesting-depth
 
@@ -7,19 +17,70 @@ html,
 body,
 #___gatsby,
 #___gatsby > [role='group'],
-.rbio-content-wrap {
-  height: 100%;
-}
-
 body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  width: 100%;
   :focus {
     outline: 1px dotted color(brand, logoBlue);
   }
 }
 
-.rbio-content-wrap {
+.rbio-wrap {
   display: flex;
+  min-height: 100vh;
   flex-direction: column;
+}
+
+.rbio-header {
+  // flex: 0 0 $header-height;
+	height: $header-height;
+  @import 'rbio-header';
+}
+
+.rbio-main-outer {
+  flex: 1;
+  width: 100%;
+  max-width: $outer-width;
+  margin: 0 auto;
+}
+
+.rbio-main-inner {
+  display: flex;
+  .rbio-content {
+		flex: 3 1 $content-width;
+	}
+  
+  .rbio-sidebar {
+    flex: 1 1 $sidebar-width;
+    min-width: $sidebar-min-width;
+    padding: 2rem 1rem 1rem;
+    order: -1;
+  }
+  
+  @media only screen and (max-width: 600px) {
+	  flex-direction: column;
+  }
+  
+	.rbio-sidebar {
+    @media only screen and (max-width: 600px) {
+      display: none;
+		}
+  }
+}
+
+.rbio-footer {
+  // flex: 0 0 auto;
+  height: $footer-height;
+  padding: 1rem;
+  background: color(brand, catskillBlue);
+  color: color(gray, minus2);
+  text-align: center;
+}
+
+.rbio-nav {
+  @import 'rbio-nav';
 }
 
 .emphasize {
@@ -290,14 +351,6 @@ body {
   }
 }
 
-.rbio-footer {
-  display: flex;
-  padding: 1rem;
-  background: color(brand, catskillBlue);
-  color: color(gray, minus2);
-  justify-content: center;
-  align-items: center;
-}
 
 code {
   padding-right: 0.25rem;
@@ -320,13 +373,10 @@ $header-height: 64px;
 
 .rbio-nav {
   @import 'rbio-nav';
+  display: flex;
 }
 
 .rbio-content {
-  flex: 1;
-  margin-top: $header-height;
-  padding: 1rem 0.5rem 0.5rem 0.5rem;
-
   > .button-minimal {
     margin: 1rem auto;
 
@@ -345,7 +395,7 @@ $header-height: 64px;
   }
 
   @include media('>=sm') {
-    padding: 2rem;
+    padding: 0rem;
   }
 
   &.typography {
@@ -406,4 +456,9 @@ $header-height: 64px;
     }
   }
 }
+
+
+
+
+
 // sass-lint:enable no-qualifying-elements force-element-nesting nesting-depth
