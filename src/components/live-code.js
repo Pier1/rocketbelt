@@ -108,7 +108,7 @@ const LiveCode = (props) => {
             </div>
           </>
         )}
-        <LiveError />
+        {!props.children.props['code-only'] && <LiveError />}
       </section>
     </LiveProvider>
   );
