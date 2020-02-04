@@ -1,15 +1,10 @@
 & {
-  position: fixed;
   z-index: 2;
   display: inline-grid;
   padding-right: 1rem;
-  height: $header-height;
 
   $brand: color(brand);
-  background: linear-gradient(135deg, transparent 0, $brand 0) top left,
-    linear-gradient(225deg, transparent 0, $brand 0) top right,
-    linear-gradient(315deg, transparent 10px, $brand 0) bottom right,
-    linear-gradient(45deg, transparent 0, $brand 0) bottom left;
+
   background-size: 50% 50%;
   background-repeat: no-repeat;
 
@@ -22,7 +17,6 @@
 
   @include media('>=sm') {
     grid-gap: 1rem;
-    background: color(brand);
     padding-left: 1rem;
   }
 

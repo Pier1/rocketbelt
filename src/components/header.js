@@ -18,10 +18,6 @@ const Header = ({ siteTitle }) => (
     >
       <img src={kebab} className="rbio-nav-trigger_image" />
     </button>
-    <Link className="rbio-link" to="/">
-      <img src={logo} className="rbio-logo" />
-      <span className="rbio-title">Rocketbelt</span>
-    </Link>
     <Navigation />
   </header>
 );
