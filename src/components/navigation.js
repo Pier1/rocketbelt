@@ -159,7 +159,7 @@ const Navigation = () => {
       padding: '0 1rem !important',
       minHeight: '36px',
       width: '100%',
-      border: '0 !important',
+      border: '1px solid #cacaca !important',
       height: 'auto !important',
     },
 
@@ -189,6 +189,14 @@ const Navigation = () => {
       padding: '0.5rem 1rem',
       whiteSpace: 'nowrap',
     },
+  };
+
+  const chevronCss = {
+    fontSize: '2rem',
+    display: 'flex',
+    alignItems: 'center',
+    paddingBottom: '0.4rem',
+    fontWeight: 300,
   };
 
   return (
@@ -231,76 +239,83 @@ const Navigation = () => {
         </ul>
       </div>
       {activeL1 && activeL1.l2s && activeL1.l2s.length > 0 && (
-        <div css={navWrapperCss} className="nav_l2">
-          <button
-            onClick={() => {
-              openNavAtLevel('l2');
-            }}
-            className="rbio-nav_button"
-          >
-            {activeL2.name}
-          </button>
-          <ul
-            className={classNames('rbio-nav_dropdown', {
-              'rbio-nav_dropdown-open': navOpen.l2,
-            })}
-          >
-            {activeL1.l2s.map((l2) => {
-              return (
-                <li
-                  key={l2.slug}
-                  className={cx('rbio-nav_level2_item', 'rbio-nav_item', {
-                    active: activeL2.slug === l2.slug,
-                  })}
-                >
-                  <Link to={l2.slug} className="rbio-nav_link">
-                    {l2.name}
-                  </Link>
-                </li>
-              );
-            })}
-          </ul>
-        </div>
-      )}
+        <>
+          <span css={chevronCss}>›</span>
 
-      {activeL2 && activeL2.l3s && activeL2.l3s.length > 0 && (
-        <div css={navWrapperCss} className="nav_l3">
-          <button
-            onClick={() => {
-              openNavAtLevel('l3');
-            }}
-            className="rbio-nav_button"
-          >
-            {activeL3.name}
-          </button>
-          <ul
-            className={classNames('rbio-nav_dropdown', {
-              'rbio-nav_dropdown-open': navOpen.l3,
-            })}
-          >
-            {activeL2 &&
-              activeL2.l3s &&
-              activeL2.l3s.length > 0 &&
-              activeL2.l3s.map((l3) => {
+          <div css={navWrapperCss} className="nav_l2">
+            <button
+              onClick={() => {
+                openNavAtLevel('l2');
+              }}
+              className="rbio-nav_button"
+            >
+              {`${activeL2.name}`}
+            </button>
+            <ul
+              className={classNames('rbio-nav_dropdown', {
+                'rbio-nav_dropdown-open': navOpen.l2,
+              })}
+            >
+              {activeL1.l2s.map((l2) => {
                 return (
                   <li
-                    key={l3.slug}
-                    className={classNames(
-                      'rbio-nav_level3_item',
-                      'rbio-nav_item',
-                      {
-                        active: activeL3.slug === l3.slug,
-                      }
-                    )}
+                    key={l2.slug}
+                    className={cx('rbio-nav_level2_item', 'rbio-nav_item', {
+                      active: activeL2.slug === l2.slug,
+                    })}
                   >
-                    <Link to={l3.slug} className="rbio-nav_link">
-                      {l3.name}
+                    <Link to={l2.slug} className="rbio-nav_link">
+                      {l2.name}
                     </Link>
                   </li>
                 );
               })}
-          </ul>
-        </div>
+            </ul>
+          </div>
+        </>
+      )}
+
+      {activeL2 && activeL2.l3s && activeL2.l3s.length > 0 && (
+        <>
+          <span css={chevronCss}>›</span>
+          <div css={navWrapperCss} className="nav_l3">
+            <button
+              onClick={() => {
+                openNavAtLevel('l3');
+              }}
+              className="rbio-nav_button"
+            >
+              {activeL3.name}
+            </button>
+            <ul
+              className={classNames('rbio-nav_dropdown', {
+                'rbio-nav_dropdown-open': navOpen.l3,
+              })}
+            >
+              {activeL2 &&
+                activeL2.l3s &&
+                activeL2.l3s.length > 0 &&
+                activeL2.l3s.map((l3) => {
+                  return (
+                    <li
+                      key={l3.slug}
+                      className={classNames(
+                        'rbio-nav_level3_item',
+                        'rbio-nav_item',
+                        {
+                          active: activeL3.slug === l3.slug,
+                        }
+                      )}
+                    >
+                      <Link to={l3.slug} className="rbio-nav_link">
+                        {l3.name}
+                      </Link>
+                    </li>
+                  );
+                })}
+            </ul>
+          </div>
+        </>
       )}
     </nav>
   );
