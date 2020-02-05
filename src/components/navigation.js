@@ -149,63 +149,96 @@ const Navigation = () => {
     document.querySelector('.rbio-header').classList.toggle('rbio-nav-open');
   };
 
-  const navWrapperCss = {
-    padding: '0.5rem',
-    position: 'relative',
+  const navWrapperCss = css`
+    position: 'relative';
 
-    '& .rbio-nav_button': {
-      display: 'flex',
-      alignItems: 'center',
-      padding: '0 1rem !important',
-      minHeight: '36px',
-      width: '100%',
-      border: '1px solid #cacaca !important',
-      height: 'auto !important',
-    },
+    & .rbio-nav_button {
+      display: flex;
+      align-items: center;
+      padding: 0 0.25rem !important;
+      min-height: 36px;
+      width: 100%;
+      border: 0 !important;
+      height: auto !important;
 
-    '& .rbio-nav_dropdown': {
-      position: 'absolute',
-      background: 'white',
-      listStyleType: 'none',
-      display: 'none',
-      visibility: 'hidden',
-      padding: 0,
+      &:hover {
+        background: transparent !important;
+        box-shadow: none !important;
+      }
+    }
 
-      '&.rbio-nav_dropdown-open': {
-        display: 'block',
-        visibility: 'visible',
-      },
+    & .rbio-nav_dropdown {
+      position: absolute;
+      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
+      background: white;
+      list-style-type: none;
+      display: none;
+      visibility: hidden;
+      padding: 0;
+      margin: 0;
 
-      '& .active': {
-        color: 'black',
-        background: '#e8edf3',
-      },
-    },
+      &.rbio-nav_dropdown-open {
+        display: block;
+        visibility: visible;
+      }
 
-    '& .rbio-nav_link': {
-      display: 'flex',
-      minHeight: '36px',
-      alignItems: 'center',
-      padding: '0.5rem 1rem',
-      whiteSpace: 'nowrap',
-    },
-  };
+      & .rbio-nav_link {
+        color: black;
+      }
 
-  const chevronCss = {
-    fontSize: '2rem',
-    display: 'flex',
-    alignItems: 'center',
-    paddingBottom: '0.4rem',
-    fontWeight: 300,
-  };
+      & .rbio-nav_link {
+        display: flex;
+        min-height: 2rem;
+        align-items: center;
+        padding: 0.5rem 1rem;
+        white-space: nowrap;
+
+        & .link_text {
+          position: relative;
+
+          &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            border-bottom: 3px solid;
+            border-color: transparent;
+            transition: border-color 100ms linear;
+          }
+        }
+
+        &:hover .link_text::after {
+          border-color: #ced9e5;
+        }
+      }
+
+      & .active {
+        .rbio-nav_link .link_text::after {
+          border-color: #00205b;
+        }
+      }
+    }
+  `;
+
+  const navIconCss = css`
+    display: flex;
+    align-items: center;
+  `;
+
+  const navCss = css`
+    display: flex;
+    align-items: center;
+
+    & .icon {
+      color: gray;
+      height: 1rem;
+      width: 1rem;
+    }
+  `;
 
   return (
-    <nav
-      className="rbio-nav"
-      css={{
-        display: 'flex',
-      }}
-    >
+    <nav className="rbio-nav" css={navCss}>
       <div css={navWrapperCss} className="nav_l1">
         <button
           onClick={() => {
@@ -231,7 +264,7 @@ const Navigation = () => {
                 })}
               >
                 <Link to={l1.slug} className="rbio-nav_link">
-                  {l1.name}
+                  <span className="link_text">{l1.name}</span>
                 </Link>
               </li>
             );
@@ -240,7 +273,9 @@ const Navigation = () => {
       </div>
       {activeL1 && activeL1.l2s && activeL1.l2s.length > 0 && (
         <>
-          <span css={chevronCss}>›</span>
+          <span css={navIconCss}>
+            <RbIcon icon="chevron-right" />
+          </span>
 
           <div css={navWrapperCss} className="nav_l2">
             <button
@@ -249,7 +284,13 @@ const Navigation = () => {
               }}
               className="rbio-nav_button"
             >
-              {`${activeL2.name}`}
+              <span css={navIconCss}>
+                {activeL2.name === '' ? (
+                  <RbIcon icon="more-horz" />
+                ) : (
+                  activeL2.name
+                )}
+              </span>
             </button>
             <ul
               className={classNames('rbio-nav_dropdown', {
@@ -265,7 +306,7 @@ const Navigation = () => {
                     })}
                   >
                     <Link to={l2.slug} className="rbio-nav_link">
-                      {l2.name}
+                      <span className="link_text">{l2.name}</span>
                     </Link>
                   </li>
                 );
@@ -277,7 +318,9 @@ const Navigation = () => {
 
       {activeL2 && activeL2.l3s && activeL2.l3s.length > 0 && (
         <>
-          <span css={chevronCss}>›</span>
+          <span css={navIconCss}>
+            <RbIcon icon="chevron-right" />
+          </span>
           <div css={navWrapperCss} className="nav_l3">
             <button
               onClick={() => {
@@ -285,7 +328,13 @@ const Navigation = () => {
               }}
               className="rbio-nav_button"
             >
-              {activeL3.name}
+              <span>
+                {activeL3.name === '' ? (
+                  <RbIcon icon="more-horz" />
+                ) : (
+                  activeL3.name
+                )}
+              </span>
             </button>
             <ul
               className={classNames('rbio-nav_dropdown', {
@@ -308,7 +357,7 @@ const Navigation = () => {
                       )}
                     >
                       <Link to={l3.slug} className="rbio-nav_link">
-                        {l3.name}
+                        <span className="link_text">{l3.name}</span>
                       </Link>
                     </li>
                   );

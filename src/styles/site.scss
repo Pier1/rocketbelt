@@ -324,7 +324,7 @@ $header-height: 64px;
 
 .rbio-content {
   flex: 1;
-  padding: 1rem 0.5rem 0.5rem 0.5rem;
+  padding: calc(44px + 1rem) 0.5rem 0.5rem 0.5rem;
 
   > .button-minimal {
     margin: 1rem auto;
@@ -344,7 +344,7 @@ $header-height: 64px;
   }
 
   @include media('>=sm') {
-    padding: 2rem;
+    padding: calc(44px + 1rem);
   }
 
   &.typography {

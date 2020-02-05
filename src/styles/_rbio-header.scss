@@ -1,7 +1,7 @@
 & {
   z-index: 2;
   display: inline-grid;
-  padding-right: 1rem;
+  padding: 0 1rem;
 
   $brand: color(brand);
 
@@ -17,7 +17,6 @@
 
   @include media('>=sm') {
     grid-gap: 1rem;
-    padding-left: 1rem;
   }
 
   &.rbio-nav-open {
