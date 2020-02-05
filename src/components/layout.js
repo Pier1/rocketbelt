@@ -2,6 +2,16 @@ import React, { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { cx } from 'emotion';
+
+const ms = require('modularscale-js');
+
+const fontSize = (step) => {
+  return `${(ms(step, { base: [15, 13], ratio: 1.333 }) / 15).toFixed(2)}rem`;
+};
+
 const { addScript } = require('../utils/addScript.js');
 import jQuery from 'jquery';
 import '../rocketbelt/base/rocketbelt';
@@ -88,12 +98,28 @@ const Layout = ({ children, pageContext }) => {
       .slice(-1)[0];
   }
 
+  const wrapCss = css`
+    /* 480, 768, 992, 1200 */
+    h1 {
+      &.linked-heading_heading {
+        font-size: ${fontSize(4)};
+        @media screen and (min-width: 480px) {
+          font-size: ${fontSize(6)};
+        }
+
+        @media screen and (min-width: 768px) {
+          font-size: ${fontSize(8)};
+        }
+      }
+    }
+  `;
+
   return (
     <>
       {/* Pass in title, description, OG data, etc. */}
       <SEO pageContext={pageContext} />
 
-      <div className="rbio-content-wrap">
+      <div className="rbio-content-wrap" css={wrapCss}>
         <Header siteTitle="Rocketbelt" />
         <main className={`rbio-content ${pageClass}`}>{children}</main>
         <Footer />

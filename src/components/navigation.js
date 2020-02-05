@@ -6,8 +6,14 @@ import { css, jsx } from '@emotion/core';
 import { cx } from 'emotion';
 
 import RbIcon from './rb-icon';
+import RbLogo from '../images/rocketbelt.svg';
 
 const classNames = require('classnames');
+const ms = require('modularscale-js');
+
+const fontSize = (step) => {
+  return (ms(step, { base: [15, 13], ratio: 1.333 }) / 15).toFixed(2);
+};
 
 const Navigation = () => {
   const [activeL1, setActiveL1] = useState({ name: '', slug: '', l2s: [] });
@@ -150,9 +156,13 @@ const Navigation = () => {
   };
 
   const navWrapperCss = css`
-    position: 'relative';
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    min-width: 44px;
 
     & .rbio-nav_button {
+      color: black !important;
       display: flex;
       align-items: center;
       padding: 0 0.25rem !important;
@@ -215,7 +225,7 @@ const Navigation = () => {
 
       & .active {
         .rbio-nav_link .link_text::after {
-          border-color: #00205b;
+          border-color: #0033a0;
         }
       }
     }
@@ -231,14 +241,30 @@ const Navigation = () => {
     align-items: center;
 
     & .icon {
-      color: gray;
+      color: black;
       height: 1rem;
       width: 1rem;
     }
   `;
 
+  const homeLinkCss = css`
+    display: inherit;
+    height: 44px;
+    width: 44px;
+    background: url(${RbLogo});
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 28px;
+  `;
+
   return (
     <nav className="rbio-nav" css={navCss}>
+      <div css="navWrapperCss">
+        <Link to="/" css={homeLinkCss}></Link>
+      </div>
+      <span css={navIconCss}>
+        <RbIcon icon="chevron-right" />
+      </span>
       <div css={navWrapperCss} className="nav_l1">
         <button
           onClick={() => {
@@ -328,7 +354,7 @@ const Navigation = () => {
               }}
               className="rbio-nav_button"
             >
-              <span>
+              <span css={navIconCss}>
                 {activeL3.name === '' ? (
                   <RbIcon icon="more-horz" />
                 ) : (

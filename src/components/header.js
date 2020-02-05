@@ -15,12 +15,19 @@ const toggleNav = () => {
 };
 
 const headerCss = css`
-  background: white;
+  background: #ced9e5;
   min-height: 44px;
   box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.08);
   position: fixed;
-  top: 1rem;
-  left: 1rem;
+  top: 0;
+  left: 0;
+  right: 0;
+
+  @media screen and (min-width: 480px) {
+    top: 1rem;
+    left: 1rem;
+    right: unset;
+  }
 `;
 
 const Header = ({ siteTitle }) => (
