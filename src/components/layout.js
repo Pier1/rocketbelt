@@ -128,6 +128,7 @@ const Layout = ({ children, pageContext }) => {
     margin: auto;
     background: white;
     padding: calc(44px + 1rem);
+    height: 100%;
   `;
 
   return (
