@@ -101,7 +101,7 @@ const Navigation = () => {
   `);
 
   let navData = {
-    l1s: [{ name: 'Home', l2s: [], slug: '/' }],
+    l1s: [],
   };
 
   data.allMdx.edges.forEach((edge) => {
@@ -274,7 +274,9 @@ const Navigation = () => {
             !!navOpen.l1 ? 'rbio-nav_dropdown-open' : ''
           }`}
         >
-          {activeL1.name}
+          <span css={navIconCss}>
+            {activeL1.name === '' ? <RbIcon icon="more-horz" /> : activeL1.name}
+          </span>
         </button>
         <ul
           className={classNames('rbio-nav_dropdown', {

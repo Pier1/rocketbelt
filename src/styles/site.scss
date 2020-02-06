@@ -336,7 +336,7 @@ $header-height: 64px;
 
   > p:first-of-type::first-letter {
     float: left;
-    padding-right: 0.5rem;
+    margin-right: 0.5rem;
     color: color(brand);
     font-size: font-size(7);
     font-family: font-family(serif);

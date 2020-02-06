@@ -1,6 +1,12 @@
 import PropTypes from 'prop-types';
 import React from 'react';
 
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+
+const classNames = require('classnames');
+const Color = require('color');
+
 const ColorSwatches = ({ swatchSet }) => {
   let swatches = [];
 
@@ -127,16 +133,69 @@ const ColorSwatches = ({ swatchSet }) => {
     ];
   }
 
+  const copyToClipboard = (e, text) => {
+    const input = document.createElement('textarea');
+    input.classList.add('visually-hidden');
+
+    document.body.appendChild(input);
+    input.value = text;
+    input.select();
+
+    document.execCommand('copy');
+    document.body.removeChild(input);
+
+    const button = e.target.closest('button');
+    button.classList.add('swatch-copied');
+
+    setTimeout(() => {
+      button.classList.remove('swatch-copied');
+    }, 1500);
+  };
+
+  const buttonCss = css`
+    &.swatch-copied {
+      & .swatch {
+        position: relative;
+      }
+      & .swatch::after {
+        content: 'Copied';
+        color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      & .swatch.swatch-dark::after {
+        color: white;
+      }
+    }
+  `;
+
   return (
     <ul className={`swatches ${swatchSet} list-reset-horizontal`}>
       {swatches.map((swatch) => {
+        const color = Color(swatch.hex);
         return (
           <li className="swatch_wrapper" key={`${swatch.scss}`}>
-            <button className={`button-minimal button`}>
+            <button
+              css={buttonCss}
+              onClick={(e) => {
+                copyToClipboard(e, `${swatch.scss}`);
+              }}
+              className={`button-minimal button`}
+            >
               <span
-                className={`swatch ${swatch.fnColor} ${swatch.name
-                  .replace(' ', '-')
-                  .toLowerCase()}`}
+                className={classNames(
+                  'swatch',
+                  swatch.fnColor,
+                  swatch.name.replace(' ', '-').toLowerCase(),
+                  color.isDark() ? 'swatch-dark' : 'swatch-light'
+                )}
                 style={{ background: swatch.hex }}
               ></span>
               <span className="swatch_name">{swatch.name}</span>

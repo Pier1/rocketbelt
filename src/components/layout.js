@@ -98,20 +98,36 @@ const Layout = ({ children, pageContext }) => {
       .slice(-1)[0];
   }
 
+  const breakpoints = [480, 768, 992, 1200];
+
+  const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+
   const wrapCss = css`
-    /* 480, 768, 992, 1200 */
     h1 {
       &.linked-heading_heading {
         font-size: ${fontSize(4)};
-        @media screen and (min-width: 480px) {
+
+        ${media[0]} {
           font-size: ${fontSize(6)};
         }
 
-        @media screen and (min-width: 768px) {
+        ${media[1]} {
           font-size: ${fontSize(8)};
         }
       }
     }
+  `;
+
+  const mainCss = css`
+    background: #efefef;
+    padding: 0 calc(44px + 1rem);
+  `;
+
+  const mainWrapCss = css`
+    max-width: 990px;
+    margin: auto;
+    background: white;
+    padding: calc(44px + 1rem);
   `;
 
   return (
@@ -121,7 +137,9 @@ const Layout = ({ children, pageContext }) => {
 
       <div className="rbio-content-wrap" css={wrapCss}>
         <Header siteTitle="Rocketbelt" />
-        <main className={`rbio-content ${pageClass}`}>{children}</main>
+        <main css={mainCss} className={`rbio-content ${pageClass}`}>
+          <div css={mainWrapCss}>{children}</div>
+        </main>
         <Footer />
       </div>
 
