@@ -6,6 +6,8 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { css, jsx } from '@emotion/core';
 import { cx } from 'emotion';
 
+import { color, media } from '../utils/rocketbelt';
+
 const ms = require('modularscale-js');
 
 const fontSize = (step) => {
@@ -62,6 +64,7 @@ const addScrollListeners = () => {
 
 const Layout = ({ children, pageContext }) => {
   useEffect(() => {
+    console.dir(color);
     addScrollListeners();
 
     const hash = window.location.hash;
@@ -98,10 +101,6 @@ const Layout = ({ children, pageContext }) => {
       .slice(-1)[0];
   }
 
-  const breakpoints = [480, 768, 992, 1200];
-
-  const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
-
   const wrapCss = css`
     h1 {
       &.linked-heading_heading {
@@ -116,26 +115,48 @@ const Layout = ({ children, pageContext }) => {
         }
       }
     }
+
+    h2 {
+      &.linked-heading_heading {
+        font-size: ${fontSize(2)};
+        line-height: 1.2;
+
+        ${media[0]} {
+          font-size: ${fontSize(3)};
+        }
+      }
+    }
+
+    h3 {
+      &.linked-heading_heading {
+        font-size: ${fontSize(2)};
+        line-height: 1.2;
+      }
+    }
   `;
 
   const mainCss = css`
     background: #efefef;
-    padding: 0 calc(44px + 1rem);
   `;
 
   const mainWrapCss = css`
     max-width: 990px;
     margin: auto;
     background: white;
-    padding: calc(44px + 1rem);
+    padding: 1rem;
     height: 100%;
+    margin-top: 2rem;
+
+    ${media[0]} {
+      margin-top: 0;
+      padding: 4rem;
+    }
   `;
 
   return (
     <>
       {/* Pass in title, description, OG data, etc. */}
       <SEO pageContext={pageContext} />
-
       <div className="rbio-content-wrap" css={wrapCss}>
         <Header siteTitle="Rocketbelt" />
         <main css={mainCss} className={`rbio-content ${pageClass}`}>
@@ -143,7 +164,6 @@ const Layout = ({ children, pageContext }) => {
         </main>
         <Footer />
       </div>
-
       {hasScripts &&
         pageContext.frontmatter.scriptTags.forEach((script) => {
           addScript(`/scripts/${script}`);

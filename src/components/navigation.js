@@ -8,6 +8,8 @@ import { cx } from 'emotion';
 import RbIcon from './rb-icon';
 import RbLogo from '../images/rocketbelt.svg';
 
+import { media } from '../utils/rocketbelt';
+
 const classNames = require('classnames');
 const ms = require('modularscale-js');
 
@@ -248,19 +250,39 @@ const Navigation = () => {
   `;
 
   const homeLinkCss = css`
-    display: inherit;
+    display: inline-flex;
     height: 44px;
-    width: 44px;
+    min-width: 44px;
     background: url(${RbLogo});
     background-position: center;
     background-repeat: no-repeat;
     background-size: 28px;
+
+    & .site-title {
+      margin-left: 44px;
+      margin-right: 0.5rem;
+      display: none;
+      visibility: hidden;
+    }
+
+    ${media[2]} {
+      background-position: left center;
+      display: flex;
+      align-items: center;
+
+      & .site-title {
+        display: inline;
+        visibility: visible;
+      }
+    }
   `;
 
   return (
     <nav className="rbio-nav" css={navCss}>
       <div css="navWrapperCss">
-        <Link to="/" css={homeLinkCss}></Link>
+        <Link to="/" css={homeLinkCss}>
+          <span className="site-title">Rocketbelt</span>
+        </Link>
       </div>
       <span css={navIconCss}>
         <RbIcon icon="chevron-right" />

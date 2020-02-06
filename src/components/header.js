@@ -7,8 +7,7 @@ import Navigation from './navigation';
 import { css, jsx } from '@emotion/core';
 import { cx } from 'emotion';
 
-import logo from '../images/rocketbelt.svg';
-import kebab from '../images/kebab.svg';
+import { media } from '../utils/rocketbelt';
 
 const toggleNav = () => {
   document.querySelector('.rbio-header').classList.toggle('rbio-nav-open');
@@ -19,14 +18,40 @@ const headerCss = css`
   min-height: 44px;
   box-shadow: 0 1px 12px 0 rgba(0, 0, 0, 0.08);
   position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
+  width: 100%;
+
+  ${media[0]} {
+    padding: 0 1rem;
+    width: calc(100% - 8rem);
+    max-width: calc(990px - 8rem);
+    margin: 2rem auto 0 auto;
+  }
 
   @media screen and (min-width: 480px) {
-    top: 1rem;
-    left: 1rem;
-    right: unset;
+    left: 0;
+    right: 0;
+
+    &::before {
+      content: '';
+      height: 2rem;
+      position: fixed;
+      left: 0;
+      top: -2rem;
+      background-image: linear-gradient(
+        180deg,
+        #ffffff 0%,
+        rgba(255, 255, 255, 0.98) 17%,
+        rgba(255, 255, 255, 0.95) 31%,
+        rgba(255, 255, 255, 0.9) 43%,
+        rgba(255, 255, 255, 0.85) 54%,
+        rgba(255, 255, 255, 0.79) 63%,
+        rgba(255, 255, 255, 0.73) 72%,
+        rgba(255, 255, 255, 0.65) 81%,
+        rgba(255, 255, 255, 0.58) 90%,
+        rgba(255, 255, 255, 0.5) 100%
+      );
+      width: 100%;
+    }
   }
 `;
 
