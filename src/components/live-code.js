@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { theme } from './theme';
 
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { cx } from 'emotion';
+
 const LiveCode = (props) => {
   const className = props.children.props.className || '';
   const matches = className.match(/language-(?<lang>.+)/);
@@ -45,6 +49,11 @@ const LiveCode = (props) => {
     }, 2000);
   };
 
+  const examplePreviewCss = css`
+    border: 1px solid #b6b9bc66;
+    padding: 1rem;
+  `;
+
   return (
     <LiveProvider
       language={language}
@@ -71,6 +80,7 @@ const LiveCode = (props) => {
           </div>
         ) : props.children.props['render-only'] ? (
           <div
+            css={examplePreviewCss}
             className="component-example_preview"
             dangerouslySetInnerHTML={{
               __html: props.children.props.children.trim(),
@@ -79,6 +89,7 @@ const LiveCode = (props) => {
         ) : (
           <>
             <div
+              css={examplePreviewCss}
               className="component-example_preview"
               dangerouslySetInnerHTML={{
                 __html: props.children.props.children.trim(),

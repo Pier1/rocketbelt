@@ -171,6 +171,7 @@ body {
   margin-bottom: 2rem;
 
   .component-example_toggle {
+    position: relative;
     display: inline-flex;
     min-height: 3rem;
     color: $base-link-color;
