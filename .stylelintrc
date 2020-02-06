@@ -1,0 +1,7 @@
+{
+  "extends": ["stylelint-prettier/recommended"],
+  "rules": {
+    "string-quotes": "single",
+    "font-family-name-quotes": "always-where-required"
+  }
+}

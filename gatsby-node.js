@@ -1,5 +1,6 @@
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const CopyPlugin = require('copy-webpack-plugin');
+const StylelintPlugin = require('stylelint-webpack-plugin');
 const isDevMode = process.env.NODE_ENV !== 'production';
 
 const path = require('path');
@@ -138,6 +139,17 @@ exports.onCreateWebpackConfig = ({
       },
     });
   }
+
+  actions.setWebpackConfig({
+    plugins: [
+      new StylelintPlugin({
+        lintDirtyModulesOnly: true,
+        failOnWarning: false,
+        failOnError: false,
+        files: ['**/*.s?(a|c)ss', '**/*.jsx?', '!**/vendor/**/*'],
+      }),
+    ],
+  });
 
   actions.setWebpackConfig({
     plugins: [
