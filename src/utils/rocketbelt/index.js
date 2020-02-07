@@ -1,7 +1,14 @@
 const ms = require('modularscale-js');
+const chroma = require('chroma-js');
 
 export const fontSize = (step) => {
   return `${(ms(step, { base: [15, 13], ratio: 1.333 }) / 15).toFixed(2)}rem`;
+};
+
+export const fontFamily = {
+  sans: "'Brand Sans', Arial, sans-serif",
+  serif: "'Brand Serif', 'Times New Roman', serif",
+  monospace: "'RB Monospace', Monaco, Consolas, 'Lucida Console', monospace",
 };
 
 export const colors = {
@@ -19,6 +26,9 @@ export const colors = {
     base: '#73777c',
     plus1: '#b6b9bc',
     plus2: '#f2f3f3',
+  },
+  chroma: (color) => {
+    return chroma(color);
   },
 };
 
