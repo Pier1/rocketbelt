@@ -6,9 +6,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { css, jsx } from '@emotion/core';
 import { cx } from 'emotion';
 
-// import { color, media } from './rocketbelt.js';
-const breakpoints = [480, 768, 992, 1200];
-const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+import { media } from '../utils/rocketbelt';
+// const breakpoints = [480, 768, 992, 1200];
+// const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
 
 const ms = require('modularscale-js');
 
@@ -145,6 +145,7 @@ const Layout = ({ children, pageContext }) => {
     margin: auto;
     background: white;
     padding: 1rem;
+    padding-top: 2rem;
     height: 100%;
     margin-top: 2rem;
 
