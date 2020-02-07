@@ -8,16 +8,9 @@ import { cx } from 'emotion';
 import RbIcon from './rb-icon';
 import RbLogo from '../images/rocketbelt.svg';
 
-// import { color, media } from './rocketbelt.js';
-const breakpoints = [480, 768, 992, 1200];
-const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+import { media, fontSize } from '../utils/rocketbelt';
 
 const classNames = require('classnames');
-const ms = require('modularscale-js');
-
-const fontSize = (step) => {
-  return (ms(step, { base: [15, 13], ratio: 1.333 }) / 15).toFixed(2);
-};
 
 const Navigation = () => {
   const [activeL1, setActiveL1] = useState({ name: '', slug: '', l2s: [] });

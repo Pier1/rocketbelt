@@ -6,15 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { css, jsx } from '@emotion/core';
 import { cx } from 'emotion';
 
-import { media } from '../utils/rocketbelt';
-// const breakpoints = [480, 768, 992, 1200];
-// const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
-
-const ms = require('modularscale-js');
-
-const fontSize = (step) => {
-  return `${(ms(step, { base: [15, 13], ratio: 1.333 }) / 15).toFixed(2)}rem`;
-};
+import { media, fontSize } from '../utils/rocketbelt';
 
 const { addScript } = require('../utils/addScript.js');
 import jQuery from 'jquery';
