@@ -342,10 +342,6 @@ $header-height: 64px;
     @import 'busy-indicators';
   }
 
-  &.icons {
-    @import 'icons';
-  }
-
   &.accordions-expanders-and-tabs {
     .component-example_preview {
       max-width: 480px;
