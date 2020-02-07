@@ -1,4 +1,4 @@
-const color = {
+const c = {
   brand: {
     base: '#00205b',
     prussianBlue: '#00205b',
@@ -17,8 +17,5 @@ const color = {
 
 const breakpoints = [480, 768, 992, 1200];
 
-const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
-
-export { color, media, breakpoints };
-
-const c = (colorName, colorFormat) => {};
+export const color = c;
+export const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);

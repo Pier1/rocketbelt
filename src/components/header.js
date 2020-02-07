@@ -7,7 +7,9 @@ import Navigation from './navigation';
 import { css, jsx } from '@emotion/core';
 import { cx } from 'emotion';
 
-import { media } from '../utils/rocketbelt';
+// import { color, media } from './rocketbelt.js';
+const breakpoints = [480, 768, 992, 1200];
+const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
 
 const toggleNav = () => {
   document.querySelector('.rbio-header').classList.toggle('rbio-nav-open');

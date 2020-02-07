@@ -6,7 +6,9 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { css, jsx } from '@emotion/core';
 import { cx } from 'emotion';
 
-import { color, media } from '../utils/rocketbelt';
+// import { color, media } from './rocketbelt.js';
+const breakpoints = [480, 768, 992, 1200];
+const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
 
 const ms = require('modularscale-js');
 
@@ -64,7 +66,6 @@ const addScrollListeners = () => {
 
 const Layout = ({ children, pageContext }) => {
   useEffect(() => {
-    console.dir(color);
     addScrollListeners();
 
     const hash = window.location.hash;
