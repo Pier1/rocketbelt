@@ -245,7 +245,7 @@ const Navigation = () => {
   `;
 
   const homeLinkCss = css`
-    display: inline-flex;
+    display: flex;
     height: 44px;
     min-width: 44px;
     background: url(${RbLogo});
@@ -268,13 +268,16 @@ const Navigation = () => {
       & .site-title {
         display: inline;
         visibility: visible;
+        color: white;
+        text-transform: uppercase;
+        letter-spacing: 1.4px;
       }
     }
   `;
 
   return (
     <nav className="rbio-nav" css={navCss}>
-      <div css="navWrapperCss">
+      <div css={navWrapperCss}>
         <Link to="/" css={homeLinkCss}>
           <span className="site-title">Rocketbelt</span>
         </Link>

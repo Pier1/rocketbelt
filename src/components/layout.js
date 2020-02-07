@@ -144,6 +144,7 @@ const Layout = ({ children, pageContext }) => {
     ${media[0]} {
       margin-top: 0;
       padding: 4rem;
+      padding-top: 6rem;
     }
   `;
 
