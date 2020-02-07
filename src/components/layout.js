@@ -141,7 +141,7 @@ const Layout = ({ children, pageContext }) => {
   `;
 
   const mainWrapCss = css`
-    max-width: 990px;
+    max-width: 1024px;
     margin: auto;
     background: white;
     padding: 1rem;

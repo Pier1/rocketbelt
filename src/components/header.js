@@ -25,7 +25,7 @@ const headerCss = css`
   ${media[0]} {
     padding: 0 1rem;
     width: calc(100% - 8rem);
-    max-width: calc(990px - 8rem);
+    max-width: calc(1024px - 8rem);
     margin: 2rem auto 0 auto;
   }
 
