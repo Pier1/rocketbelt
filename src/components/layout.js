@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
@@ -19,6 +19,8 @@ import '../styles/site.scss';
 import SEO from './seo';
 import Header from './header';
 import Footer from './footer';
+
+import InjectedScript from './injected-script';
 
 let pageClass = '';
 
@@ -57,6 +59,8 @@ const addScrollListeners = () => {
 };
 
 const Layout = ({ children, pageContext }) => {
+  const [injectedScript, setInjectedScript] = useState('');
+
   useEffect(() => {
     addScrollListeners();
 
@@ -76,12 +80,12 @@ const Layout = ({ children, pageContext }) => {
           child.props.children.props.className.indexOf('language-js') > -1 &&
           child.props.children.props['run-on-load']
         ) {
-          eval(child.props.children.props.children);
+          setInjectedScript(child.props.children.props.children);
         }
       });
   });
 
-  const hasScripts =
+  const hasScriptTags =
     pageContext &&
     pageContext.frontmatter &&
     pageContext.frontmatter.scriptTags &&
@@ -159,10 +163,11 @@ const Layout = ({ children, pageContext }) => {
         </main>
         <Footer />
       </div>
-      {hasScripts &&
+      {hasScriptTags &&
         pageContext.frontmatter.scriptTags.forEach((script) => {
           addScript(`/scripts/${script}`);
         })}
+      {injectedScript !== '' && <InjectedScript script={injectedScript} />}
     </>
   );
 };
@@ -170,15 +175,5 @@ const Layout = ({ children, pageContext }) => {
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
-
-// export const query = graphql`
-//   query ScriptTagQuery($mdxId: String) {
-//     mdx(id: {eq: $mdxId}) {
-//       frontmatter {
-//         scriptTags
-//       }
-//     }
-//   }
-// `;
 
 export default Layout;

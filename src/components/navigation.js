@@ -8,7 +8,7 @@ import { cx } from 'emotion';
 import RbIcon from './rb-icon';
 import RbLogo from '../images/rocketbelt.svg';
 
-import { media, fontSize } from '../utils/rocketbelt';
+import { media, fontSize, colors } from '../utils/rocketbelt';
 
 const classNames = require('classnames');
 
@@ -268,7 +268,8 @@ const Navigation = () => {
       & .site-title {
         display: inline;
         visibility: visible;
-        color: white;
+        font-weight: bold;
+        color: ${colors.brand.prussianBlue};
         text-transform: uppercase;
         letter-spacing: 1.4px;
       }
