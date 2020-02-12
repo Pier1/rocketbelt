@@ -51,10 +51,29 @@ attribute (which is a literal description of the icon, similar in nature to `alt
 </svg></a>
 ```
 
-
 ## Standard Icons
+### Icon Color
+An icon's `fill` property is inherited from `color`, so it can be passed in from
+a parent (recommended!) or set directly on the `<svg>` element:
 
-- An icon's `fill` property is inherited from `color`
+```html
+<span class="icon-color_example" style="color: #00205b;">
+  <svg class="icon" aria-hidden>
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-check-heavy"></use>
+  </svg>
+</span>
+<span class="icon-color_example" style="color: #ced9e5;">
+  <svg class="icon" aria-hidden>
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-check-heavy"></use>
+  </svg>
+</span>
+<span class="icon-color_example" style="color: #f0ece2;">
+  <svg class="icon" aria-hidden>
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-check-heavy"></use>
+  </svg>
+</span>
+```
+
 - Always use the default color for logo icons
 
 import rbIcons from '../../../rocketbelt/components/icons/rocketbelt.icons.svg';
