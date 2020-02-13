@@ -31,7 +31,7 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
   if (node.internal.type === 'SitePage' && node.context && node.context.id) {
     createNodeField({
       name: 'Mdx___NODE',
-      value: node.context && node.context.id ? node.context.id : null,
+      value: node.context.id,
       node,
     });
   }
