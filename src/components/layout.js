@@ -145,20 +145,35 @@ const Layout = ({ children, pageContext }) => {
 
     h2 {
       &.linked-heading_heading {
-        font-size: ${fontSize(2)};
-        line-height: 1.2;
+        font-size: ${fontSize(1)};
 
         ${media[0]} {
+          font-size: ${fontSize(2)};
+        }
+
+        ${media[1]} {
           font-size: ${fontSize(3)};
+          line-height: 1.2;
         }
       }
     }
 
     h3 {
       &.linked-heading_heading {
-        font-size: ${fontSize(2)};
-        line-height: 1.2;
+        font-size: ${fontSize(1)};
+
+        ${media[0]} {
+          font-size: ${fontSize(2)};
+        }
+
+        ${media[1]} {
+          line-height: 1.2;
+        }
       }
+    }
+
+    .linked-heading_anchor {
+      line-height: 1;
     }
   `;
 
