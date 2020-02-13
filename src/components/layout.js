@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import PropTypes from 'prop-types';
+import PropTypes, { node } from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 /** @jsx jsx */
@@ -23,6 +23,7 @@ import Footer from './footer';
 import InjectedScript from './injected-script';
 
 let pageClass = '';
+let pageMetadata = {};
 
 if (typeof window !== `undefined`) {
   window.$ = window.jQuery = jQuery;
@@ -59,6 +60,35 @@ const addScrollListeners = () => {
 };
 
 const Layout = ({ children, pageContext }) => {
+  const edges = useStaticQuery(graphql`
+    query {
+      allMdx {
+        edges {
+          node {
+            fields {
+              slug
+              navLevel1
+              navLevel2
+              navLevel3
+              lastAuthorTime
+              lastAuthor
+            }
+          }
+        }
+      }
+    }
+  `).allMdx.edges;
+
+  if (typeof window !== `undefined`) {
+    pageMetadata = edges.filter((e) => {
+      return (
+        window.location.pathname.replace(/\/$/i, '') === e.node.fields.slug
+      );
+    })[0] || { node: { fields: {} } };
+  } else {
+    pageMetadata = { node: { fields: {} } };
+  }
+
   const [injectedScript, setInjectedScript] = useState('');
 
   useEffect(() => {
@@ -155,7 +185,7 @@ const Layout = ({ children, pageContext }) => {
   return (
     <>
       {/* Pass in title, description, OG data, etc. */}
-      <SEO pageContext={pageContext} />
+      <SEO pageContext={pageContext} pageMetadata={pageMetadata.node.fields} />
       <div className="rbio-content-wrap" css={wrapCss}>
         <Header siteTitle="Rocketbelt" />
         <main css={mainCss} className={`rbio-content ${pageClass}`}>

@@ -126,6 +126,7 @@
     "gatsby-transformer-sharp": "^2.2.11",
     "jquery": "^3.4.1",
     "lodash.get": "^4.4.2",
+    "lodash.merge": "^4.6.2",
     "modularscale-js": "^3.0.1",
     "prettier": "^1.19.1",
     "prism-react-renderer": "^0.1.7",
