@@ -85,6 +85,8 @@ const Layout = ({ children, pageContext }) => {
         window.location.pathname.replace(/\/$/i, '') === e.node.fields.slug
       );
     })[0] || { node: { fields: {} } };
+  } else {
+    pageMetadata = { node: { fields: {} } };
   }
 
   const [injectedScript, setInjectedScript] = useState('');

@@ -12,7 +12,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 
 // import logo from '../images/rocketbelt-og.jpg';
 
-function SEO({ pageContext, pageMetadata, lang, meta, title }) {
+function SEO({ pageContext, pageMetadata, meta, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -58,9 +58,7 @@ function SEO({ pageContext, pageMetadata, lang, meta, title }) {
 
   return (
     <Helmet
-      htmlAttributes={{
-        lang,
-      }}
+      htmlAttributes={seo.lang}
       title={seo.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
@@ -85,7 +83,6 @@ function SEO({ pageContext, pageMetadata, lang, meta, title }) {
           property: `og:image`,
           content: `${seo.imagePath.lg}`,
         },
-        // { property: `og:image:secure_url`, content: `` },
         { property: `og:image:type`, content: 'image/png' },
         { property: `og:image:width`, content: `1200` },
         { property: `og:image:height`, content: `630` },
@@ -99,7 +96,6 @@ function SEO({ pageContext, pageMetadata, lang, meta, title }) {
         },
         { property: `og:url`, content: seo.url },
         { name: 'twitter:image', content: `${seo.imagePath.sm}` },
-        // { name: `twitter:card`, content: cardSize },
         {
           name: `twitter:card`,
           content: `summary`,
