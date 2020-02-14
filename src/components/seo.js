@@ -1,18 +1,9 @@
-/**
- * SEO component that queries for data with
- *  Gatsby's useStaticQuery React hook
- *
- * See: https://www.gatsbyjs.org/docs/use-static-query/
- */
-
 import React from 'react';
 import PropTypes from 'prop-types';
 import Helmet from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
 
-// import logo from '../images/rocketbelt-og.jpg';
-
-function SEO({ pageContext, pageMetadata, meta, title }) {
+function SEO({ pageContext, pageMetadata, title }) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -60,67 +51,36 @@ function SEO({ pageContext, pageMetadata, meta, title }) {
           name: 'viewport',
           content: 'width=device-width, initial-scale=1',
         },
-        {
-          name: `description`,
-          content: seo.description,
-        },
-        {
-          name: `author`,
-          content: seo.author,
-        },
+        { name: `description`, content: seo.description },
+        { name: `author`, content: seo.author },
         { name: `robots`, content: `index, follow` },
         {
           property: `og:title`,
           content: `${seo.title} | ${site.siteMetadata.title}`,
         },
-        {
-          property: `og:image`,
-          content: `${seo.imagePath.lg}`,
-        },
+        { property: `og:image`, content: `${seo.imagePath.lg}` },
         { property: `og:image:type`, content: 'image/png' },
         { property: `og:image:width`, content: `1200` },
         { property: `og:image:height`, content: `630` },
-        {
-          property: `og:description`,
-          content: seo.description,
-        },
-        {
-          property: `og:type`,
-          content: `website`,
-        },
+        { property: `og:description`, content: seo.description },
+        { property: `og:type`, content: `website` },
         { property: `og:url`, content: seo.url },
         { name: 'twitter:image', content: `${seo.imagePath.sm}` },
-        {
-          name: `twitter:card`,
-          content: `summary`,
-        },
-        {
-          name: `twitter:creator`,
-          content: seo.author,
-        },
+        { name: `twitter:card`, content: `summary` },
+        { name: `twitter:creator`, content: seo.author },
         {
           name: `twitter:title`,
           content: `${seo.title} | ${site.siteMetadata.title}`,
         },
-        {
-          name: `twitter:description`,
-          content: seo.description,
-        },
+        { name: `twitter:description`, content: seo.description },
       ].concat(meta)}
     ></Helmet>
   );
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-};
+SEO.defaultProps = {};
 
 SEO.propTypes = {
-  description: PropTypes.string,
-  lang: PropTypes.string,
-  meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string,
 };
 
