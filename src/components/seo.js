@@ -36,7 +36,7 @@ function SEO({ pageContext, pageMetadata, meta, title }) {
     description:
       (pageContext && pageContext.frontmatter.description) ||
       site.siteMetadata.description,
-    lang: 'en',
+    htmlAttrs: { lang: 'en' },
     title: (pageContext && pageContext.frontmatter.title) || title,
     author:
       (pageMetadata && pageMetadata.lastAuthor) || site.siteMetadata.author,
@@ -58,7 +58,7 @@ function SEO({ pageContext, pageMetadata, meta, title }) {
 
   return (
     <Helmet
-      htmlAttributes={seo.lang}
+      htmlAttributes={seo.htmlAttrs}
       title={seo.title}
       titleTemplate={`%s | ${site.siteMetadata.title}`}
       meta={[
@@ -113,11 +113,7 @@ function SEO({ pageContext, pageMetadata, meta, title }) {
           content: seo.description,
         },
       ].concat(meta)}
-    >
-      {/* <script type="application/ld+json">
-        {JSON.stringify(jsonLDMarkdownRaw)}
-      </script> */}
-    </Helmet>
+    ></Helmet>
   );
 }
 
