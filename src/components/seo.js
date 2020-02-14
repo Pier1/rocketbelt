@@ -45,14 +45,8 @@ function SEO({ pageContext, pageMetadata, meta, title }) {
         ? window.location.origin + (pageMetadata && pageMetadata.slug)
         : `https://rocketbelt.io${pageMetadata && pageMetadata.slug}`,
     imagePath: {
-      lg:
-        (typeof window !== `undefined`
-          ? window.location.origin
-          : `https://rocketbelt.io`) + `/images/${img.lg}`,
-      sm:
-        (typeof window !== `undefined`
-          ? window.location.origin
-          : `https://rocketbelt.io`) + `/images/${img.sm}`,
+      lg: `https://rocketbelt.io/images/${img.lg}`,
+      sm: `https://rocketbelt.io/images/${img.sm}`,
     },
   };
 
