@@ -354,6 +354,29 @@ $header-height: 64px;
     }
   }
 
+  &.tooltips {
+    .example-tooltips-directional,
+    .example-tooltips-touchable {
+      display: flex;
+      justify-content: space-around;
+
+      @include media('>=sm') {
+        padding: 1rem 5rem;
+      }
+    }
+
+    .example-tooltips-touchable {
+      .tooltip:nth-of-type(2) .tooltip_trigger::before {
+        background: rgba(color(brand, logoBlue), 0.1);
+      }
+
+      .icon {
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+  }
+
   &.flexible-grid {
     @import 'flexible-grid';
   }

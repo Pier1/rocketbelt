@@ -6,9 +6,99 @@ scriptTags:
 ---
 
 # Tooltips
-* Accessibility helper in JS
-* Forthcoming: Tooltip repositioning if element would be off-screen
+Use a tooltip to progressively  enhance the page and unclutter it at the same
+time. Rocketbelt provides several tooltip variations as well as some rudimentary
+repositioning of a tooltip if it would render off the screen.
 
+## Accessibility
+Rocketbelt includes the script `rocketbelt.tooltips.js` to make tooltips
+accessible to assistive technologies. When the page loads, the script will
+create an ID for the tooltip's content and link it to the trigger via the
+`aria-describedby` attribute.
+
+If a tooltip is added dynamically, call the function
+`rb.tooltips.decorateTooltipTriggers()` to make this connection manually.
+
+## Standard Tooltips
+### Default Presentation
+```html
+<span class="tooltip" tabindex="0">
+  <span class="tooltip_trigger">Default</span>
+  <aside class="tooltip-content">You'd be the help of open-air luxury.</aside>
+</span>
+```
+
+### Inverted Colors
+Use an inverted variation for tooltips with lower visual impact.
+```html
+<span class="tooltip tooltip-inverted" tabindex="0">
+  <span class="tooltip_trigger">Default</span>
+  <aside class="tooltip-content">You'd be the help of open-air luxury.</aside>
+</span>
+```
+
+### Directional Tooltips
+```html example-tooltips-directional
+<span class="tooltip tooltip-right tooltip-visible" tabindex="0">
+  <span class="tooltip_trigger">Right</span>
+  <aside class="tooltip-content">
+    Case in covered with nailhead trim is even more of flowers?
+  </aside>
+</span>
+<span class="tooltip tooltip-left tooltip-visible" tabindex="0">
+  <span class="tooltip_trigger">Left</span>
+  <aside class="tooltip-content">
+    Case in covered with nailhead trim is even more of flowers?
+  </aside>
+</span>
+<span class="tooltip tooltip-bottom tooltip-visible" tabindex="0">
+  <span class="tooltip_trigger">Bottom</span>
+  <aside class="tooltip-content">
+    Case in covered with nailhead trim is even more of flowers?
+  </aside>
+</span>
+```
+
+### Open by Default
+Add the `tooltip-open` class to have it open when the page loads or to open it
+programmatically.
+```html
+<span class="tooltip tooltip-right tooltip-open" tabindex="0">
+  <span class="tooltip_trigger">I've got <code>tooltip-open</code>.</span>
+  <aside class="tooltip-content">You'd be the help of open-air luxury.</aside>
+</span>
+```
+
+## Touch-Friendly Tooltip Triggers
+For smaller tooltip triggers, consider adding the `tooltip_trigger-touchable`
+class. This adds a 44px-square background (visualized in the second example
+below) to the trigger to ensure a touch-friendly experience.
+```html example-tooltips-touchable
+<span class="tooltip" tabindex="0">
+  <span class="tooltip_trigger tooltip_trigger-touchable">
+    <svg class="icon" role="img">
+      <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-chat-single"></use>
+    </svg>
+  </span>
+  <aside class="tooltip-content">
+    Case in covered with nailhead trim is even more of flowers?
+  </aside>
+</span>
+<span class="tooltip" tabindex="0">
+  <span class="tooltip_trigger tooltip_trigger-touchable">
+    <svg class="icon" role="img">
+      <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-chat-single"></use>
+    </svg>
+  </span>
+  <aside class="tooltip-content">
+    Case in covered with nailhead trim is even more of flowers?
+  </aside>
+</span>
+```
+
+## Tooltips With an Input
+If a tooltip is paired with an `input` element, it will remain visible while the
+input is focused.
 ```html
 <form>
   <div class="form-group tooltip tooltip-focus-only tooltip-inverted">
@@ -19,18 +109,9 @@ scriptTags:
 </form>
 ```
 
-```html
-<span class="tooltip" tabindex="0">
-  <span class="tooltip_trigger docs-header">Default</span>
-  <aside class="tooltip-content">You'd be the help of open-air luxury.</aside>
-</span>
-```
 
-```html
-<span class="tooltip tooltip-right" tabindex="0">
-  <span class="tooltip_trigger docs-header">Right</span>
-  <aside class="tooltip-content">
-    Case in covered with nailhead trim is even more of flowers?
-  </aside>
-</span>
-```
+
+
+
+
+

@@ -1,5 +1,5 @@
 'use strict';
-(function (window, document) {
+(function(window, document) {
   window.rb = window.rb || {};
 
   window.rb.keys = {
@@ -21,7 +21,7 @@
     PAGE_UP: 33,
     SHIFT: 16,
     SPACE: 32,
-    TAB: 9
+    TAB: 9,
   };
 
   window.rb.handleFirstTab = (e) => {
@@ -31,37 +31,37 @@
       window.removeEventListener('keydown', window.rb.handleFirstTab);
       window.addEventListener('mousedown', window.rb.handleMouseDownOnce);
     }
-  }
+  };
 
   window.rb.handleMouseDownOnce = () => {
     document.body.classList.remove('show-focus');
 
     window.removeEventListener('mousedown', window.rb.handleMouseDownOnce);
     window.addEventListener('keydown', window.rb.handleFirstTab);
-  }
+  };
 
   window.addEventListener('keydown', window.rb.handleFirstTab);
 
   window.rb.focusables =
-   'a[href], area[href], input:not([disabled]), select:not([disabled]),' +
-   'textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex],' +
-   '*[contenteditable]';
+    'a[href], area[href], input:not([disabled]), select:not([disabled]),' +
+    'textarea:not([disabled]), button:not([disabled]), iframe, object, embed, *[tabindex],' +
+    '*[contenteditable]';
 
   const aria = 'aria-';
   window.rb.aria = {
-    'current':     `${aria}current`,
-    'describedby': `${aria}describedby`,
-    'disabled':    `${aria}disabled`,
-    'expanded':    `${aria}expanded`,
-    'haspopup':    `${aria}haspopup`,
-    'hidden':      `${aria}hidden`,
-    'invalid':     `${aria}invalid`,
-    'label':       `${aria}label`,
-    'labelledby':  `${aria}labelledby`,
-    'live':        `${aria}live`,
-    'posinset':    `${aria}posinset`,
-    'role':        'role',
-    'setsize':     `${aria}setsize`
+    current: `${aria}current`,
+    describedby: `${aria}describedby`,
+    disabled: `${aria}disabled`,
+    expanded: `${aria}expanded`,
+    haspopup: `${aria}haspopup`,
+    hidden: `${aria}hidden`,
+    invalid: `${aria}invalid`,
+    label: `${aria}label`,
+    labelledby: `${aria}labelledby`,
+    live: `${aria}live`,
+    posinset: `${aria}posinset`,
+    role: 'role',
+    setsize: `${aria}setsize`,
   };
 
   window.rb.getShortId = function getShortId() {
@@ -69,9 +69,20 @@
     // This should be unique up to 1:2.2 bn.
     let firstPart = (Math.random() * 46656) | 0;
     let secondPart = (Math.random() * 46656) | 0;
-    firstPart = (`000${firstPart.toString(36)}`).slice(-3);
-    secondPart = (`000${secondPart.toString(36)}`).slice(-3);
+    firstPart = `000${firstPart.toString(36)}`.slice(-3);
+    secondPart = `000${secondPart.toString(36)}`.slice(-3);
     return firstPart + secondPart;
+  };
+
+  window.rb.distanceOffscreen = function distanceOffscreen(el) {
+    const rect = el.getBoundingClientRect();
+
+    return {
+      top: rect.y,
+      right: window.innerWidth - (rect.x + rect.width),
+      bottom: window.innerHeight - (rect.y + rect.height),
+      left: rect.x,
+    };
   };
 
   window.rb.onDocumentReady = function onDocumentReady(fn) {
@@ -114,7 +125,37 @@
   };
 
   // focus-within polyfill.
-  function focusWithin(e,t){var n=Object(t).className,r=Object(t).attr||"focus-within",a=Object(t).force,c=[];try{if(e.querySelector(":focus-within"),!a)return i}catch(e){}function s(){for(var t;t=c.pop();)r&&t.removeAttribute(r),n&&t.classList.remove(n);var a=e.activeElement;if(!/^(#document|HTML|BODY)$/.test(Object(a).nodeName))for(;a&&1===a.nodeType;)r&&a.setAttribute(r,""),n&&a.classList.add(n),c.push(a),a=a.parentNode}function i(){e.addEventListener("focus",s,!0),e.addEventListener("blur",s,!0)}return function t(){/m/.test(e.readyState)?(e.removeEventListener("readystatechange",t),i()):e.addEventListener("readystatechange",t)}(),i}
+  function focusWithin(e, t) {
+    var n = Object(t).className,
+      r = Object(t).attr || 'focus-within',
+      a = Object(t).force,
+      c = [];
+    try {
+      if ((e.querySelector(':focus-within'), !a)) return i;
+    } catch (e) {}
+    function s() {
+      for (var t; (t = c.pop()); )
+        r && t.removeAttribute(r), n && t.classList.remove(n);
+      var a = e.activeElement;
+      if (!/^(#document|HTML|BODY)$/.test(Object(a).nodeName))
+        for (; a && 1 === a.nodeType; )
+          r && a.setAttribute(r, ''),
+            n && a.classList.add(n),
+            c.push(a),
+            (a = a.parentNode);
+    }
+    function i() {
+      e.addEventListener('focus', s, !0), e.addEventListener('blur', s, !0);
+    }
+    return (
+      (function t() {
+        /m/.test(e.readyState)
+          ? (e.removeEventListener('readystatechange', t), i())
+          : e.addEventListener('readystatechange', t);
+      })(),
+      i
+    );
+  }
 
   // Polyfill for "more correct" CustomEvent support to IE >= 9
   // See https://developer.mozilla.org/en-US/docs/Web/API/CustomEvent/CustomEvent#Polyfill
@@ -122,7 +163,11 @@
     if (typeof window.CustomEvent === 'function') return false;
 
     function CustomEvent(event, params) {
-      const p = params || { bubbles: false, cancelable: false, detail: undefined };
+      const p = params || {
+        bubbles: false,
+        cancelable: false,
+        detail: undefined,
+      };
       const evt = document.createEvent('CustomEvent');
       evt.initCustomEvent(event, p.bubbles, p.cancelable, p.detail);
       return evt;
@@ -149,7 +194,10 @@
     const byteString = atob(dataURI.split(',')[1]);
 
     // separate out the mime component
-    const mimeString = dataURI.split(',')[0].split(':')[1].split(';')[0]
+    const mimeString = dataURI
+      .split(',')[0]
+      .split(':')[1]
+      .split(';')[0];
 
     // write the bytes of the string to an ArrayBuffer
     const ab = new ArrayBuffer(byteString.length);
@@ -173,7 +221,9 @@
     obj = obj || window;
     let running = false;
     const func = () => {
-      if (running) { return; }
+      if (running) {
+        return;
+      }
       running = true;
 
       requestAnimationFrame(() => {
@@ -197,7 +247,7 @@
       /* eslint-disable */
       String.prototype.repeat = function repeat(count) {
         if (this == null) {
-          throw new TypeError('can\'t convert ' + this + ' to object');
+          throw new TypeError("can't convert " + this + ' to object');
         }
         var str = '' + this;
         count = +count;
@@ -218,14 +268,16 @@
         // main part. But anyway, most current (August 2014) browsers can't handle
         // strings 1 << 28 chars or longer, so:
         if (str.length * count >= 1 << 28) {
-          throw new RangeError('repeat count must not overflow maximum string size');
+          throw new RangeError(
+            'repeat count must not overflow maximum string size'
+          );
         }
         var rpt = '';
         for (var i = 0; i < count; i++) {
           rpt += str;
         }
         return rpt;
-      }
+      };
     }
     /* eslint-enable */
   })();
@@ -248,9 +300,11 @@
   (() => {
     if (!Element.prototype.closest) {
       if (!Element.prototype.matches) {
-        Element.prototype.matches = Element.prototype.msMatchesSelector || Element.prototype.webkitMatchesSelector;
+        Element.prototype.matches =
+          Element.prototype.msMatchesSelector ||
+          Element.prototype.webkitMatchesSelector;
       }
-      Element.prototype.closest = function (s) {
+      Element.prototype.closest = function(s) {
         let el = this;
         if (!document.documentElement.contains(el)) return null;
         do {
@@ -266,25 +320,31 @@
   // Production steps of ECMA-262, Edition 6, 22.1.2.1
   (() => {
     if (!Array.from) {
-      Array.from = (function () {
+      Array.from = (function() {
         const toStr = Object.prototype.toString;
-        const isCallable = function (fn) {
-          return typeof fn === 'function' || toStr.call(fn) === '[object Function]';
+        const isCallable = function(fn) {
+          return (
+            typeof fn === 'function' || toStr.call(fn) === '[object Function]'
+          );
         };
-        const toInteger = function (value) {
+        const toInteger = function(value) {
           const number = Number(value);
-          if (isNaN(number)) { return 0; }
-          if (number === 0 || !isFinite(number)) { return number; }
+          if (isNaN(number)) {
+            return 0;
+          }
+          if (number === 0 || !isFinite(number)) {
+            return number;
+          }
           return (number > 0 ? 1 : -1) * Math.floor(Math.abs(number));
         };
         const maxSafeInteger = Math.pow(2, 53) - 1;
-        const toLength = function (value) {
+        const toLength = function(value) {
           const len = toInteger(value);
           return Math.min(Math.max(len, 0), maxSafeInteger);
         };
 
         // The length property of the from method is 1.
-        return function from(arrayLike/* , mapFn, thisArg */) {
+        return function from(arrayLike /* , mapFn, thisArg */) {
           // 1. Let C be the this value.
           const C = this;
 
@@ -293,7 +353,9 @@
 
           // 3. ReturnIfAbrupt(items).
           if (arrayLike === null) {
-            throw new TypeError('Array.from requires an array-like object - not null or undefined');
+            throw new TypeError(
+              'Array.from requires an array-like object - not null or undefined'
+            );
           }
 
           // 4. If mapfn is undefined, then let mapping be false.
@@ -303,7 +365,9 @@
             // 5. else
             // 5. a If IsCallable(mapfn) is false, throw a TypeError exception.
             if (!isCallable(mapFn)) {
-              throw new TypeError('Array.from: when provided, the second argument must be a function');
+              throw new TypeError(
+                'Array.from: when provided, the second argument must be a function'
+              );
             }
 
             // 5. b. If thisArg was supplied, let T be thisArg; else let T be undefined.
@@ -329,7 +393,10 @@
           while (k < len) {
             kValue = items[k];
             if (mapFn) {
-              A[k] = typeof T === 'undefined' ? mapFn(kValue, k) : mapFn.call(T, kValue, k);
+              A[k] =
+                typeof T === 'undefined'
+                  ? mapFn(kValue, k)
+                  : mapFn.call(T, kValue, k);
             } else {
               A[k] = kValue;
             }
@@ -340,7 +407,7 @@
           // 20. Return A.
           return A;
         };
-      }());
+      })();
     }
   })();
 })(window, document);
