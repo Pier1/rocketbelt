@@ -20,8 +20,6 @@ const LiveCode = (props) => {
       ? `component-example_preview ${props.children.props.metastring}`
       : `component-example_preview`;
 
-  console.dir(props.children);
-
   const showText = `Show ${language.toUpperCase()}`;
   const hideText = `Hide ${language.toUpperCase()}`;
   const [labelText, setLabelText] = useState(showText);
