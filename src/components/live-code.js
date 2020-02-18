@@ -10,8 +10,17 @@ import { cx } from 'emotion';
 const LiveCode = (props) => {
   const className = props.children.props.className || '';
   const matches = className.match(/language-(?<lang>.+)/);
-  const language =
-    matches && matches.groups && matches.groups.lang ? matches.groups.lang : '';
+  const hasLang = matches && matches.groups && matches.groups.lang;
+  const language = hasLang ? matches.groups.lang.split(' ')[0] : '';
+  const previewClasses =
+    props &&
+    props.children &&
+    props.children.props &&
+    props.children.props.metastring
+      ? `component-example_previewee ${props.children.props.metastring}`
+      : `component-example_preview`;
+
+  console.dir(props.children);
 
   const showText = `Show ${language.toUpperCase()}`;
   const hideText = `Hide ${language.toUpperCase()}`;
@@ -82,7 +91,7 @@ const LiveCode = (props) => {
           !props.children.props.className.includes('-js') ? (
           <div
             css={examplePreviewCss}
-            className="component-example_preview"
+            className={previewClasses}
             dangerouslySetInnerHTML={{
               __html: props.children.props.children.trim(),
             }}
@@ -94,7 +103,7 @@ const LiveCode = (props) => {
                 <>
                   <div
                     css={examplePreviewCss}
-                    className="component-example_preview"
+                    className={previewClasses}
                     dangerouslySetInnerHTML={{
                       __html: props.children.props.children.trim(),
                     }}
