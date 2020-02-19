@@ -26,6 +26,7 @@ module.exports = {
         path: `${__dirname}/src/rocketbelt`,
       },
     },
+    `gatsby-plugin-remove-trailing-slashes`,
     {
       resolve: 'gatsby-plugin-mdx',
       options: {
