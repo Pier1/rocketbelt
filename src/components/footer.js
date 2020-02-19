@@ -17,8 +17,9 @@ const footerCss = css`
 
 const Footer = () => (
   <footer className="rbio-footer" css={footerCss}>
-    © {new Date().getFullYear()} Pier 1 Imports. Rocketbelt is distributed under
-    an MIT license. 🚀
+    Rocketbelt was collaboratively assembled at Pier 1 Imports and is
+    distributed under an MIT license. 🚀 © {new Date().getFullYear()} Pier 1
+    Imports.
   </footer>
 );
 

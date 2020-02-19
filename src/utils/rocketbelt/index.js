@@ -27,6 +27,12 @@ export const colors = {
     plus1: '#b6b9bc',
     plus2: '#f2f3f3',
   },
+  indicating: {
+    success: '#72b269',
+    error: '#c32728',
+    warningAlt: '#d5a021',
+    warning: '#edd18d',
+  },
   chroma: (color) => {
     return chroma(color);
   },
