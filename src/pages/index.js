@@ -6,11 +6,13 @@ import { css, jsx } from '@emotion/core';
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { media, fontSize } from '../utils/rocketbelt';
+
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" />
     <h1
       className="rb-title"
+      // These have to be inline to override the RB default heading styles…
       style={{
         fontWeight: 'normal',
         textTransform: 'uppercase',
