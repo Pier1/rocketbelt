@@ -24,8 +24,8 @@ const IndexPage = () => (
     <p
       className="lede"
       css={css`
-        font-size: ${fontSize(2)};
         font-weight: normal;
+        font-size: ${fontSize(2)};
         line-height: 1.3;
 
         .emphasize {
