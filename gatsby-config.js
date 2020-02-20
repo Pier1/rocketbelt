@@ -51,6 +51,9 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-offline',
     },
+    {
+      resolve: `gatsby-plugin-netlify`,
+    },
 
     // {
     //   resolve: `gatsby-plugin-manifest`,
