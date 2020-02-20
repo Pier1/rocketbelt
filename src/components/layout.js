@@ -3,10 +3,9 @@ import PropTypes, { node } from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
-import { cx } from 'emotion';
+import { jsx } from '@emotion/core';
 
-import { media, fontSize } from '../utils/rocketbelt';
+import * as styles from './layout.styles';
 
 const { addScript } = require('../utils/addScript.js');
 import jQuery from 'jquery';
@@ -128,83 +127,14 @@ const Layout = ({ children, pageContext }) => {
       .slice(-1)[0];
   }
 
-  const wrapCss = css`
-    h1 {
-      &.linked-heading_heading {
-        font-size: ${fontSize(4)};
-
-        ${media[0]} {
-          font-size: ${fontSize(6)};
-        }
-
-        ${media[1]} {
-          font-size: ${fontSize(8)};
-        }
-      }
-    }
-
-    h2 {
-      &.linked-heading_heading {
-        font-size: ${fontSize(1)};
-
-        ${media[0]} {
-          font-size: ${fontSize(2)};
-        }
-
-        ${media[1]} {
-          font-size: ${fontSize(3)};
-          line-height: 1.2;
-        }
-      }
-    }
-
-    h3 {
-      &.linked-heading_heading {
-        font-size: ${fontSize(1)};
-
-        ${media[0]} {
-          font-size: ${fontSize(2)};
-        }
-
-        ${media[1]} {
-          line-height: 1.2;
-        }
-      }
-    }
-
-    .linked-heading_anchor {
-      line-height: 1;
-    }
-  `;
-
-  const mainCss = css`
-    background: #efefef;
-  `;
-
-  const mainWrapCss = css`
-    max-width: 1024px;
-    margin: auto;
-    background: white;
-    padding: 1rem;
-    padding-top: 2rem;
-    height: 100%;
-    margin-top: 2rem;
-
-    ${media[0]} {
-      margin-top: 0;
-      padding: 4rem;
-      padding-top: 6rem;
-    }
-  `;
-
   return (
     <>
       {/* Pass in title, description, OG data, etc. */}
       <SEO pageContext={pageContext} pageMetadata={pageMetadata.node.fields} />
-      <div className="rbio-content-wrap" css={wrapCss}>
+      <div className="rbio-content-wrap" css={styles.wrapCss}>
         <Header siteTitle="Rocketbelt" />
-        <main css={mainCss} className={`rbio-content ${pageClass}`}>
-          <div css={mainWrapCss}>{children}</div>
+        <main css={styles.mainCss} className={`rbio-content ${pageClass}`}>
+          <div css={styles.mainWrapCss}>{children}</div>
         </main>
         <Footer />
       </div>

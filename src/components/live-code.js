@@ -57,8 +57,8 @@ const LiveCode = (props) => {
   };
 
   const examplePreviewCss = css`
-    border: 1px solid #b6b9bc66;
     padding: 1rem;
+    border: 1px solid #b6b9bc66;
   `;
 
   return (

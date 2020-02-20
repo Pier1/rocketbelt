@@ -399,11 +399,7 @@
     "rule-empty-line-before": [
       "always",
       {
-        "except": [
-          "after-single-line-comment",
-          "inside-block-and-after-rule",
-          "first-nested"
-        ],
+        "except": ["after-single-line-comment"],
         "ignore": ["after-comment", "first-nested"]
       }
     ],

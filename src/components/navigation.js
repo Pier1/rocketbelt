@@ -2,15 +2,11 @@ import { Link, graphql, useStaticQuery } from 'gatsby';
 import React, { useState, useEffect } from 'react';
 
 /** @jsx jsx */
-import { css, jsx } from '@emotion/core';
-import { cx } from 'emotion';
+import { jsx } from '@emotion/core';
+const classNames = require('classnames');
 
 import RbIcon from './rb-icon';
-import RbLogo from '../images/rocketbelt.svg';
-
-import { media, fontSize, colors } from '../utils/rocketbelt';
-
-const classNames = require('classnames');
+import * as styles from './navigation.styles';
 
 const Navigation = () => {
   const [activeL1, setActiveL1] = useState({ name: '', slug: '', l2s: [] });
@@ -27,6 +23,18 @@ const Navigation = () => {
     });
 
     navOpen[navLevel] = !navOpen[navLevel];
+
+    const updatedNav = Object.assign({}, navOpen);
+    setNavOpen(updatedNav);
+  };
+
+  const closeNavAtLevel = (navLevel, e, that) => {
+    const el = e.currentTarget;
+    const sib = el.nextElementSibling;
+
+    if (!sib.classList || !sib.classList.contains('rbio-nav_dropdown-open')) {
+      navOpen[navLevel] = false;
+    }
 
     const updatedNav = Object.assign({}, navOpen);
     setNavOpen(updatedNav);
@@ -74,6 +82,19 @@ const Navigation = () => {
     } else {
       setActiveL1({ name: '', slug: '' });
     }
+
+    // const l1El = document.querySelector('.rbio-nav .nav_l1');
+    // const l2El = document.querySelector('.rbio-nav .nav_l2');
+    // const l3El = document.querySelector('.rbio-nav .nav_l3');
+    // console.dir(l1El, l2El, l3El);
+    // const offscreen = {
+    //   l2: l2El && window.rb.distanceOffscreen(l2El),
+    //   l3: l3El && window.rb.distanceOffscreen(l3El),
+    // };
+
+    // if (offscreen.l3 && offscreen.l3.right < 0) {
+    //   l1El.classList.add('nav_title_condensed');
+    // }
   }, []);
 
   const data = useStaticQuery(graphql`
@@ -148,146 +169,24 @@ const Navigation = () => {
     }
   });
 
-  const toggleNav = () => {
-    document.querySelector('.rbio-header').classList.toggle('rbio-nav-open');
-  };
-
-  const navWrapperCss = css`
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    min-width: 44px;
-
-    & .rbio-nav_button {
-      color: black !important;
-      display: flex;
-      align-items: center;
-      padding: 0 0.25rem !important;
-      min-height: 36px;
-      width: 100%;
-      border: 0 !important;
-      height: auto !important;
-
-      &:hover {
-        background: transparent !important;
-        box-shadow: none !important;
-      }
-    }
-
-    & .rbio-nav_dropdown {
-      position: absolute;
-      box-shadow: 0 1px 8px rgba(0, 0, 0, 0.1);
-      background: white;
-      list-style-type: none;
-      display: none;
-      visibility: hidden;
-      padding: 0;
-      margin: 0;
-
-      &.rbio-nav_dropdown-open {
-        display: block;
-        visibility: visible;
-      }
-
-      & .rbio-nav_link {
-        color: black;
-      }
-
-      & .rbio-nav_link {
-        display: flex;
-        min-height: 2rem;
-        align-items: center;
-        padding: 0.5rem 1rem;
-        white-space: nowrap;
-
-        & .link_text {
-          position: relative;
-
-          &::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            border-bottom: 3px solid;
-            border-color: transparent;
-            transition: border-color 100ms linear;
-          }
-        }
-
-        &:hover .link_text::after {
-          border-color: #ced9e5;
-        }
-      }
-
-      & .active {
-        .rbio-nav_link .link_text::after {
-          border-color: #0033a0;
-        }
-      }
-    }
-  `;
-
-  const navIconCss = css`
-    display: flex;
-    align-items: center;
-  `;
-
-  const navCss = css`
-    display: flex;
-    align-items: center;
-
-    & .icon {
-      color: black;
-      height: 1rem;
-      width: 1rem;
-    }
-  `;
-
-  const homeLinkCss = css`
-    display: flex;
-    height: 44px;
-    min-width: 44px;
-    background: url(${RbLogo});
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: 28px;
-
-    & .site-title {
-      margin-left: 44px;
-      margin-right: 0.5rem;
-      display: none;
-      visibility: hidden;
-    }
-
-    ${media[2]} {
-      background-position: left center;
-      display: flex;
-      align-items: center;
-
-      & .site-title {
-        display: inline;
-        visibility: visible;
-        font-weight: bold;
-        color: ${colors.brand.prussianBlue};
-        text-transform: uppercase;
-        letter-spacing: 1.4px;
-      }
-    }
-  `;
-
   return (
-    <nav className="rbio-nav" css={navCss}>
-      <div css={navWrapperCss}>
-        <Link to="/" css={homeLinkCss}>
+    <nav className="rbio-nav" css={styles.navCss}>
+      <div css={styles.navWrapperCss}>
+        <Link to="/" css={styles.homeLinkCss}>
           <span className="site-title">Rocketbelt</span>
         </Link>
       </div>
-      <span css={navIconCss}>
+      <span css={styles.navIconCss}>
         <RbIcon icon="chevron-right" />
       </span>
-      <div css={navWrapperCss} className="nav_l1">
+      <div css={styles.navWrapperCss} className="nav_l1">
         <button
+          // onMouseEnter={() => {
+          //   openNavAtLevel('l1');
+          // }}
+          // onMouseLeave={(e) => {
+          //   closeNavAtLevel('l1', e, this);
+          // }}
           onClick={() => {
             openNavAtLevel('l1');
           }}
@@ -295,8 +194,18 @@ const Navigation = () => {
             !!navOpen.l1 ? 'rbio-nav_dropdown-open' : ''
           }`}
         >
-          <span css={navIconCss}>
-            {activeL1.name === '' ? <RbIcon icon="more-horz" /> : activeL1.name}
+          <span css={styles.navIconCss}>
+            {activeL1.name === '' ? (
+              <RbIcon icon="more-horz" />
+            ) : (
+              <span
+                className="nav_title_wrapper"
+                css={styles.navTitleWrapperCss}
+              >
+                <span className="nav_title_text">{activeL1.name}</span>
+                <RbIcon className="nav_title_placeholder" icon="more-horz" />
+              </span>
+            )}
           </span>
         </button>
         <ul
@@ -322,22 +231,31 @@ const Navigation = () => {
       </div>
       {activeL1 && activeL1.l2s && activeL1.l2s.length > 0 && (
         <>
-          <span css={navIconCss}>
+          <span css={styles.navIconCss}>
             <RbIcon icon="chevron-right" />
           </span>
 
-          <div css={navWrapperCss} className="nav_l2">
+          <div css={styles.navWrapperCss} className="nav_l2">
             <button
               onClick={() => {
                 openNavAtLevel('l2');
               }}
               className="rbio-nav_button"
             >
-              <span css={navIconCss}>
+              <span css={styles.navIconCss}>
                 {activeL2.name === '' ? (
                   <RbIcon icon="more-horz" />
                 ) : (
-                  activeL2.name
+                  <span
+                    className="nav_title_wrapper"
+                    css={styles.navTitleWrapperCss}
+                  >
+                    <span className="nav_title_text">{activeL2.name}</span>
+                    <RbIcon
+                      className="nav_title_placeholder"
+                      icon="more-horz"
+                    />
+                  </span>
                 )}
               </span>
             </button>
@@ -350,9 +268,13 @@ const Navigation = () => {
                 return (
                   <li
                     key={l2.slug}
-                    className={cx('rbio-nav_level2_item', 'rbio-nav_item', {
-                      active: activeL2.slug === l2.slug,
-                    })}
+                    className={classNames(
+                      'rbio-nav_level2_item',
+                      'rbio-nav_item',
+                      {
+                        active: activeL2.slug === l2.slug,
+                      }
+                    )}
                   >
                     <Link to={l2.slug} className="rbio-nav_link">
                       <span className="link_text">{l2.name}</span>
@@ -367,17 +289,17 @@ const Navigation = () => {
 
       {activeL2 && activeL2.l3s && activeL2.l3s.length > 0 && (
         <>
-          <span css={navIconCss}>
+          <span css={styles.navIconCss}>
             <RbIcon icon="chevron-right" />
           </span>
-          <div css={navWrapperCss} className="nav_l3">
+          <div css={styles.navWrapperCss} className="nav_l3">
             <button
               onClick={() => {
                 openNavAtLevel('l3');
               }}
               className="rbio-nav_button"
             >
-              <span css={navIconCss}>
+              <span css={styles.navIconCss}>
                 {activeL3.name === '' ? (
                   <RbIcon icon="more-horz" />
                 ) : (
