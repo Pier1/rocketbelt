@@ -396,7 +396,17 @@
     "media-feature-range-operator-space-after": "always",
     "media-feature-range-operator-space-before": "always",
     "no-duplicate-selectors": true,
-    "rule-empty-line-before": "always",
+    "rule-empty-line-before": [
+      "always",
+      {
+        "except": [
+          "after-single-line-comment",
+          "inside-block-and-after-rule",
+          "first-nested"
+        ],
+        "ignore": ["after-comment", "first-nested"]
+      }
+    ],
     "selector-pseudo-element-colon-notation": "double"
   }
 }
