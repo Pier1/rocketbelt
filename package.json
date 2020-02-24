@@ -1,13 +1,13 @@
 {
   "name": "rocketbelt",
-  "version": "2.0.23",
+  "version": "2.0.24",
   "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively assembled at Pier 1 Imports.",
   "homepage": "http://rocketbelt.io",
   "bugs": "https://github.com/pier1/rocketbelt/issues",
   "license": "MIT",
   "main": "gulpfile.js",
   "scripts": {
-    "test": "gulp test"
+    "lint": "stylelint './src/**/*.js'"
   },
   "author": "",
   "repository": {
@@ -105,27 +105,41 @@
     "webpack-fix-style-only-entries": "^0.3.1"
   },
   "dependencies": {
+    "@emotion/core": "^10.0.27",
     "@mdx-js/mdx": "^1.3.1",
     "@mdx-js/react": "^1.3.1",
+    "chroma-js": "^2.1.0",
+    "classnames": "^2.2.6",
     "clipboard": "^1.5.15",
+    "color": "^3.1.2",
     "color-contrast": "^0.0.1",
+    "emotion": "^10.0.27",
     "gatsby": "^2.13.80",
     "gatsby-image": "^2.2.13",
     "gatsby-plugin-manifest": "^2.2.9",
     "gatsby-plugin-mdx": "^1.0.30",
     "gatsby-plugin-offline": "^2.2.10",
     "gatsby-plugin-react-helmet": "^3.1.5",
+    "gatsby-plugin-react-svg": "^3.0.0",
     "gatsby-plugin-sharp": "^2.2.17",
     "gatsby-source-filesystem": "^2.1.16",
     "gatsby-transformer-sharp": "^2.2.11",
     "jquery": "^3.4.1",
+    "lodash.get": "^4.4.2",
+    "modularscale-js": "^3.0.1",
+    "prettier": "^1.19.1",
     "prism-react-renderer": "^0.1.7",
     "prop-types": "^15.7.2",
     "react": "^16.9.0",
     "react-dom": "^16.9.0",
     "react-helmet": "^5.2.1",
     "react-live": "^2.2.0",
-    "smooth-scroll": "^16.1.0"
+    "rocketbelt": "file:src/utils/rocketbelt",
+    "smooth-scroll": "^16.1.0",
+    "stylelint": "^13.0.0",
+    "stylelint-config-prettier": "^8.0.1",
+    "stylelint-prettier": "^1.1.2",
+    "stylelint-webpack-plugin": "^1.2.1"
   },
   "config": {
     "commitizen": {

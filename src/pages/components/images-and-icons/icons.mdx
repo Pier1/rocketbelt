@@ -6,8 +6,11 @@
 
 ## Make Iconography Accessible
 ### Meaningful Icon
-- Note `role` attribute
-- Icon description is linked via `aria-describedby` in the sprite sheet
+Use this pattern when an icon's meaning is clear and the icon is used as an
+image (not for an action).
+- Note the `role=img` attribute
+- Icon description is available to assistive technologies via the
+`aria-describedby` attritube in the icon sprite sheet
 
 ```html
 <svg class="icon" role="img">
@@ -16,8 +19,9 @@
 ```
 
 ### Icon with Text
-- Note use of `aria-hidden`; the text should convey all necessary information,
-  making the icon purely decorative
+Use this pattern when an icon's meaning can be inferred by the text around it and
+the icon is purely decorative.
+- Note the use of the `aria-hidden` attribute—the text should convey all necessary information
 
 ```html
 <span class="text-with-icon">Store Locator
@@ -28,10 +32,8 @@
 ```
 
 ### Linked Icon
-- The icon has an implicit action that isn't conveyed by it's `aria-describedby`
-  attribute, which is a literal description of the icon (similar to `alt` text).
-  An `aria-label` is necessary to help describe the intent (not content) of the
-  icon
+Use the Linked Icon pattern when an icon has an implicit action that isn't conveyed by it's `aria-describedby`
+attribute (which is a literal description of the icon, similar in nature to `alt` text). An `aria-label` is necessary to help describe the intent (not content) of the icon
 
 ```html
 <a href="/">
@@ -49,10 +51,29 @@
 </svg></a>
 ```
 
-
 ## Standard Icons
+### Icon Color
+An icon's `fill` property is inherited from `color`, so it can be passed in from
+a parent (recommended!) or set directly on the `<svg>` element:
 
-- An icon's `fill` property is inherited from `color`
+```html
+<span class="icon-color_example" style="color: #00205b;">
+  <svg class="icon" aria-hidden>
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-check-heavy"></use>
+  </svg>
+</span>
+<span class="icon-color_example" style="color: #ced9e5;">
+  <svg class="icon" aria-hidden>
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-check-heavy"></use>
+  </svg>
+</span>
+<span class="icon-color_example" style="color: #f0ece2;">
+  <svg class="icon" aria-hidden>
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-check-heavy"></use>
+  </svg>
+</span>
+```
+
 - Always use the default color for logo icons
 
 import rbIcons from '../../../rocketbelt/components/icons/rocketbelt.icons.svg';

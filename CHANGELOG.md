@@ -1,3 +1,12 @@
+## [2.0.24](https://github.com/Pier1/rocketbelt/compare/2.0.23...2.0.24) (2019-10-15)
+
+
+### Bug Fixes
+
+* **Color:** Add `uiDropdown` functional colors. ([7326d7e](https://github.com/Pier1/rocketbelt/commit/7326d7e))
+
+
+
 ## [2.0.23](https://github.com/Pier1/rocketbelt/compare/2.0.22...2.0.23) (2019-10-04)
 
 

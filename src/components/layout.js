@@ -1,6 +1,12 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
 import PropTypes from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
+
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { cx } from 'emotion';
+
+import { media, fontSize } from '../utils/rocketbelt';
 
 const { addScript } = require('../utils/addScript.js');
 import jQuery from 'jquery';
@@ -15,11 +21,17 @@ import Header from './header';
 import Footer from './footer';
 import Sidebar from './sidebar';
 
+import InjectedScript from './injected-script';
+
 let pageClass = '';
 let taxonomy = null;
 
 if (typeof window !== `undefined`) {
-  taxonomy = window.location.pathname.toLowerCase().slice(1).replace(/\/$/, '').split('/');
+  taxonomy = window.location.pathname
+    .toLowerCase()
+    .slice(1)
+    .replace(/\/$/, '')
+    .split('/');
   pageClass = taxonomy[0].replace(/\/$/, '');
 }
 
@@ -35,14 +47,19 @@ if (typeof window !== `undefined`) {
 
 const adjustLeftNav = () => {
   if (typeof window !== `undefined`) {
-    let taxonomy = window.location.pathname.toLowerCase().slice(1).replace(/\/$/, '').split('/');
+    let taxonomy = window.location.pathname
+      .toLowerCase()
+      .slice(1)
+      .replace(/\/$/, '')
+      .split('/');
     let pageSlugClass = taxonomy.join('_');
-    
+
     $(`.rbio-nav_item[data-page="${pageSlugClass}"]`, '.rbio-sidebar')
       .addClass('active-item')
-      .parents('.rbio-nav_items').addClass('active-nav-level');
+      .parents('.rbio-nav_items')
+      .addClass('active-nav-level');
   }
-}
+};
 
 const addScrollListeners = () => {
   document.addEventListener('scrollStart', (e) => {
@@ -69,6 +86,8 @@ const addScrollListeners = () => {
 };
 
 const Layout = ({ children, pageContext }) => {
+  const [injectedScript, setInjectedScript] = useState('');
+
   useEffect(() => {
     addScrollListeners();
 
@@ -88,42 +107,95 @@ const Layout = ({ children, pageContext }) => {
           child.props.children.props.className.indexOf('language-js') > -1 &&
           child.props.children.props['run-on-load']
         ) {
-          eval(child.props.children.props.children);
+          setInjectedScript(child.props.children.props.children);
         }
       });
 
     adjustLeftNav();
-
   });
 
-  const hasScripts =
+  const hasScriptTags =
     pageContext &&
     pageContext.frontmatter &&
     pageContext.frontmatter.scriptTags &&
     pageContext.frontmatter.scriptTags.length > 0;
 
- 
+  const wrapCss = css`
+    h1 {
+      &.linked-heading_heading {
+        font-size: ${fontSize(4)};
+
+        ${media[0]} {
+          font-size: ${fontSize(6)};
+        }
+
+        ${media[1]} {
+          font-size: ${fontSize(8)};
+        }
+      }
+    }
+
+    h2 {
+      &.linked-heading_heading {
+        font-size: ${fontSize(2)};
+        line-height: 1.2;
+
+        ${media[0]} {
+          font-size: ${fontSize(3)};
+        }
+      }
+    }
+
+    h3 {
+      &.linked-heading_heading {
+        font-size: ${fontSize(2)};
+        line-height: 1.2;
+      }
+    }
+  `;
+
+  const mainCss = css`
+    background: #efefef;
+  `;
+
+  const mainWrapCss = css`
+    max-width: 1024px;
+    margin: auto;
+    background: white;
+    padding: 1rem;
+    padding-top: 2rem;
+    height: 100%;
+    margin-top: 2rem;
+
+    ${media[0]} {
+      margin-top: 0;
+      padding: 4rem;
+      padding-top: 6rem;
+    }
+  `;
 
   return (
     <>
       {/* Pass in title, description, OG data, etc. */}
       <SEO pageContext={pageContext} />
-
-      <div className="rbio-wrap">
+      <div className="rbio-content-wrap" css={wrapCss}>
         <Header siteTitle="Rocketbelt" />
-        <div className="rbio-main-outer"> 
+        <div className="rbio-main-outer">
           <div className="rbio-main-inner">
             <Sidebar />
-            <main className={`rbio-content ${pageClass}`}>{children}</main>
+            <main css={mainCss} className={`rbio-content ${pageClass}`}>
+              {' '}
+              <div css={mainWrapCss}>{children}</div>
+            </main>
           </div>
         </div>
         <Footer />
       </div>
-
-      {hasScripts &&
+      {hasScriptTags &&
         pageContext.frontmatter.scriptTags.forEach((script) => {
           addScript(`/scripts/${script}`);
         })}
+      {injectedScript !== '' && <InjectedScript script={injectedScript} />}
     </>
   );
 };

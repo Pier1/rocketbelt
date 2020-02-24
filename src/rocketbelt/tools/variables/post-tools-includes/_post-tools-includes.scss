@@ -12,6 +12,10 @@ $color-families: map-merge(
       'error': color(error),
       'success': color(success),
     ),
+    'uiDropdown': (
+      'bgSelected': color(brand, catskillBlue),
+      'bgHover': rgba(color(brand, catskillBlue), 0.7),
+    ),
     'uiFooter': (
       'fg': color(black),
       'bg': color(brand, columbiaBlue),

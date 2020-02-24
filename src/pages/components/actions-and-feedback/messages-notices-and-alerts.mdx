@@ -25,6 +25,36 @@ page loads.
 </aside>
 ```
 
+Messages may also convey warning or error states:
+```html
+<aside class="message message-warning">
+  <svg class="message_icon icon" role="img">
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-warning"></use>
+  </svg>
+  <section class="message_body">
+    <span class="message_title">
+      This is a warning message.
+    </span>
+    <span class="message_text">
+      This is the message text.
+    </span>
+  </section>
+</aside>
+<aside class="message message-error">
+  <svg class="message_icon icon" role="img">
+    <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-error"></use>
+  </svg>
+  <section class="message_body">
+    <span class="message_title">
+      This is an error message.
+    </span>
+    <span class="message_text">
+      This is the message text.
+    </span>
+  </section>
+</aside>
+```
+
 ## Notices
 Notices indicate the status of a UI component *after an action is taken* on
 the page (and without a page reload). They also indicate the results of actions

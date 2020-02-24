@@ -3,6 +3,10 @@ import React, { useState } from 'react';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
 import { theme } from './theme';
 
+/** @jsx jsx */
+import { css, jsx } from '@emotion/core';
+import { cx } from 'emotion';
+
 const LiveCode = (props) => {
   const className = props.children.props.className || '';
   const matches = className.match(/language-(?<lang>.+)/);
@@ -45,6 +49,11 @@ const LiveCode = (props) => {
     }, 2000);
   };
 
+  const examplePreviewCss = css`
+    border: 1px solid #b6b9bc66;
+    padding: 1rem;
+  `;
+
   return (
     <LiveProvider
       language={language}
@@ -69,8 +78,10 @@ const LiveCode = (props) => {
             </button>
             <LiveEditor />
           </div>
-        ) : props.children.props['render-only'] ? (
+        ) : props.children.props['render-only'] &&
+          !props.children.props.className.includes('-js') ? (
           <div
+            css={examplePreviewCss}
             className="component-example_preview"
             dangerouslySetInnerHTML={{
               __html: props.children.props.children.trim(),
@@ -78,38 +89,48 @@ const LiveCode = (props) => {
           ></div>
         ) : (
           <>
-            <div
-              className="component-example_preview"
-              dangerouslySetInnerHTML={{
-                __html: props.children.props.children.trim(),
-              }}
-            ></div>
-            <label className="component-example_toggle">
-              <input
-                onChange={handleChange}
-                type="checkbox"
-                className="visually-hidden"
-              />
-              {labelText}
-            </label>
-            <div
-              className={`component-example_code ${
-                codeHidden ? 'visually-hidden' : ''
-              }`}
-              data-rb-example-lang={language.toUpperCase()}
-            >
-              <button onClick={copyToClipboard} className="button button-copy">
-                <span className="button-copy_language">
-                  {language.toUpperCase()}
-                </span>
-                <span className="button-copy_text">{copyText}</span>
-              </button>
-              <LiveEditor />
-            </div>
+            {!props.children.props['run-on-load'] &&
+              !props.children.props.className.includes('-js') && (
+                <>
+                  <div
+                    css={examplePreviewCss}
+                    className="component-example_preview"
+                    dangerouslySetInnerHTML={{
+                      __html: props.children.props.children.trim(),
+                    }}
+                  ></div>
+                  <label className="component-example_toggle">
+                    <input
+                      onChange={handleChange}
+                      type="checkbox"
+                      className="visually-hidden"
+                    />
+                    {labelText}
+                  </label>
+                  <div
+                    className={`component-example_code ${
+                      codeHidden ? 'visually-hidden' : ''
+                    }`}
+                    data-rb-example-lang={language.toUpperCase()}
+                  >
+                    <button
+                      onClick={copyToClipboard}
+                      className="button button-copy"
+                    >
+                      <span className="button-copy_language">
+                        {language.toUpperCase()}
+                      </span>
+                      <span className="button-copy_text">{copyText}</span>
+                    </button>
+                    <LiveEditor />
+                  </div>
+                </>
+              )}
           </>
         )}
-        <LiveError />
       </section>
+      {!props.children.props['code-only'] &&
+        !props.children.props['run-on-load'] && <LiveError />}
     </LiveProvider>
   );
 };

@@ -6,7 +6,7 @@ scriptTags:
 
 # Uploaders
 Include `rocketbelt.uploaders.js` and call
-`rb.uploaders.addUploader({ selector: '#unique-selector' })` to initialize.
+`rb.uploaders.addUploader({ selector: '[#your .unique-selector]' })` to initialize.
 
 As files are added via the UI, they're also added to the array as base64-encoded
 strings along with the file size and an auto-generated ID. The uploader emits
@@ -18,7 +18,7 @@ strings. It can be configured to append files as `Blob`s by adding the parameter
 `filesAsBinary: true` to the configuration object when the uploader is created.
 
 ```html
-<div class="uploader" id="uploader1"><span class="uploader_cta text-with-icon">Add a Photo
+<div class="uploader" id="uploader-example"><span class="uploader_cta text-with-icon">Add a Photo
     <svg class="icon icon-left" aria-hidden>
       <use xlink:href="/icons/rocketbelt.icons.svg#rb-icon-upload"></use>
     </svg></span>
@@ -42,4 +42,8 @@ strings. It can be configured to append files as `Blob`s by adding the parameter
     </div>
   </div>
 </div>
+```
+
+```js run-on-load
+pollFor('window.rb.uploaders.addUploader', () => { window.rb.uploaders.addUploader({ selector: '#uploader-example' }); });
 ```
