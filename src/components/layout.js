@@ -19,10 +19,21 @@ import '../styles/site.scss';
 import SEO from './seo';
 import Header from './header';
 import Footer from './footer';
+import Sidebar from './sidebar';
 
 import InjectedScript from './injected-script';
 
 let pageClass = '';
+let taxonomy = null;
+
+if (typeof window !== `undefined`) {
+  taxonomy = window.location.pathname
+    .toLowerCase()
+    .slice(1)
+    .replace(/\/$/, '')
+    .split('/');
+  pageClass = taxonomy[0].replace(/\/$/, '');
+}
 
 if (typeof window !== `undefined`) {
   window.$ = window.jQuery = jQuery;
@@ -33,6 +44,22 @@ if (typeof window !== `undefined`) {
     easing: 'easeInOutQuad',
   });
 }
+
+const adjustLeftNav = () => {
+  if (typeof window !== `undefined`) {
+    let taxonomy = window.location.pathname
+      .toLowerCase()
+      .slice(1)
+      .replace(/\/$/, '')
+      .split('/');
+    let pageSlugClass = taxonomy.join('_');
+
+    $(`.rbio-nav_item[data-page="${pageSlugClass}"]`, '.rbio-sidebar')
+      .addClass('active-item')
+      .parents('.rbio-nav_items')
+      .addClass('active-nav-level');
+  }
+};
 
 const addScrollListeners = () => {
   document.addEventListener('scrollStart', (e) => {
@@ -83,6 +110,8 @@ const Layout = ({ children, pageContext }) => {
           setInjectedScript(child.props.children.props.children);
         }
       });
+
+    adjustLeftNav();
   });
 
   const hasScriptTags =
@@ -90,13 +119,6 @@ const Layout = ({ children, pageContext }) => {
     pageContext.frontmatter &&
     pageContext.frontmatter.scriptTags &&
     pageContext.frontmatter.scriptTags.length > 0;
-
-  if (typeof window !== `undefined`) {
-    pageClass = window.location.pathname
-      .replace(/\/$/, '')
-      .split('/')
-      .slice(-1)[0];
-  }
 
   const wrapCss = css`
     h1 {
@@ -158,9 +180,15 @@ const Layout = ({ children, pageContext }) => {
       <SEO pageContext={pageContext} />
       <div className="rbio-content-wrap" css={wrapCss}>
         <Header siteTitle="Rocketbelt" />
-        <main css={mainCss} className={`rbio-content ${pageClass}`}>
-          <div css={mainWrapCss}>{children}</div>
-        </main>
+        <div className="rbio-main-outer">
+          <div className="rbio-main-inner">
+            <Sidebar />
+            <main css={mainCss} className={`rbio-content ${pageClass}`}>
+              {' '}
+              <div css={mainWrapCss}>{children}</div>
+            </main>
+          </div>
+        </div>
         <Footer />
       </div>
       {hasScriptTags &&

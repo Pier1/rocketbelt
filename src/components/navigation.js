@@ -12,6 +12,37 @@ import { media, fontSize, colors } from '../utils/rocketbelt';
 
 const classNames = require('classnames');
 
+const createNavDataObject = (edgeNode) => {
+  let data = {
+    level: edgeNode.fields.navLevel3
+      ? 3
+      : edgeNode.fields.navLevel2
+      ? 2
+      : edgeNode.fields.navLevel1
+      ? 1
+      : null,
+    name:
+      edgeNode.fields.navLevel3 ||
+      edgeNode.fields.navLevel2 ||
+      edgeNode.fields.navLevel1,
+    slug: edgeNode.fields.slug,
+  };
+  data.parent =
+    data.level > 1 ? edgeNode.fields[`navLevel${data.level - 1}`] : null;
+  data.children = data.level < 3 ? [] : null;
+  data.slugSimple = data.slug
+    .toLowerCase()
+    .slice(1)
+    .replace(/\//gi, '_');
+  return data;
+};
+
+const sortNavPriority = (edgeA, edgeB) => {
+  let aPriority = edgeA.node.frontmatter.navPriority || 500,
+    bPriority = edgeB.node.frontmatter.navPriority || 500;
+  return aPriority === bPriority ? 0 : aPriority < bPriority ? -1 : 1;
+};
+
 const Navigation = () => {
   const [activeL1, setActiveL1] = useState({ name: '', slug: '', l2s: [] });
   const [activeL2, setActiveL2] = useState({ name: '', slug: '', l3s: [] });
@@ -91,6 +122,9 @@ const Navigation = () => {
               depth
               value
             }
+            frontmatter {
+              navPriority
+            }
           }
         }
       }
@@ -99,53 +133,19 @@ const Navigation = () => {
 
   let navData = {
     l1s: [],
+    all: [],
+    mapping: {},
   };
 
-  data.allMdx.edges.forEach((edge) => {
-    const currentL1 = edge.node.fields.navLevel1;
-    const currentL2 = edge.node.fields.navLevel2;
-    const currentL3 = edge.node.fields.navLevel3;
-    const slug = edge.node.fields.slug;
+  data.allMdx.edges.sort(sortNavPriority).forEach(function(edge) {
+    let edgeData = createNavDataObject(edge.node);
+    edgeData.level === 1 && navData.l1s.push(edgeData);
+    navData.all.push(edgeData);
+    navData.mapping[edgeData.name] = edgeData;
+  });
 
-    const currentLevel = currentL3 ? 3 : currentL2 ? 2 : currentL1 ? 1 : null;
-
-    if (navData.l1s.filter((l1) => l1.name === currentL1).length === 0) {
-      navData.l1s.push({
-        name: currentL1,
-        l2s: [],
-        slug: slug
-          .split('/')
-          .slice(0, 2)
-          .join('/'),
-      });
-    }
-
-    const l1 = navData.l1s.filter((l1) => l1.name === currentL1)[0];
-
-    if (currentLevel !== 1) {
-      if (l1.l2s.filter((l2) => l2.name === currentL2).length === 0) {
-        l1.l2s.push({
-          name: currentL2,
-          l3s: [],
-          slug: slug
-            .split('/')
-            .slice(0, 3)
-            .join('/'),
-        });
-      }
-
-      const l2 = l1.l2s.filter((l2) => l2.name === currentL2)[0];
-
-      if (currentLevel !== 2) {
-        l2.l3s.push({
-          name: currentL3,
-          slug: slug
-            .split('/')
-            .slice(0, 4)
-            .join('/'),
-        });
-      }
-    }
+  navData.all.forEach(function(datum) {
+    datum.level > 1 && navData.mapping[datum.parent].children.push(datum);
   });
 
   const toggleNav = () => {
@@ -417,6 +417,14 @@ const Navigation = () => {
       )}
     </nav>
   );
+};
+
+Navigation.propTypes = {
+  className: PropTypes.string,
+};
+
+Navigation.defaultProps = {
+  className: `rbio-nav`,
 };
 
 export default Navigation;

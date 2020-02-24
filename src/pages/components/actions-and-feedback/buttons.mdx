@@ -1,6 +1,15 @@
+---
+navPriority: 20
+---
+
+<div class="section-container">
+
 # Buttons
 _Anchors go places, buttons do things._ Use a Button to **perform an action**
 on the page.
+
+
+<section>
 
 ## Default/Secondary Buttons
 
@@ -10,6 +19,10 @@ on the page.
 <button class="button button-sm">Small</button>
 <button class="button button-mini">Mini</button>
 ```
+
+</section>
+
+<section>
 
 ## Primary Buttons
 Use a Primary Button to convey a preferred action. With very rare exception
@@ -26,11 +39,18 @@ Button on the right.
 <button class="button button-mini button-primary">Mini</button>
 ```
 
+<section class="subsection">
+
 ### Paired with a Secondary Button
 ```html
 <button class="button">Secondary Action</button>
 <button class="button button-primary">Primary Action</button>
 ```
+
+</section>
+</section>
+
+<section>
 
 ## Text/Minimal Buttons
 ### Grouped Together
@@ -44,6 +64,8 @@ together with secondary Text Buttons.
 <button class="button button-mini button-text">Mini Text</button>
 ```
 
+<section class="subsection">
+
 ### Paired with a Primary Button
 Text Buttons may be grouped with a Primary Button. If a Text Button is grouped
 with a Primary Button, always use the Text Button to represent the secondary
@@ -52,6 +74,11 @@ action.
 <button class="button button-text">Secondary Action</button>
 <button class="button button-primary">Primary Action</button>
 ```
+
+</section>
+</section>
+
+<section>
 
 ## Block Buttons
 Block Buttons may be used on mobile to give a page a more app-like feel and to
@@ -71,6 +98,9 @@ them to stack at narrower viewport widths.
   </div>
 </div>
 ```
+
+</section>
+<section>
 
 ## Anchor Buttons
 In exceedingly rare cases, an anchor tag may have existing click functionality
@@ -93,6 +123,9 @@ is properly identified by assistive technology.
 </a>
 ```
 
+</section>
+<section>
+
 ## role="button" Elsewhere
 It may seem logical to add `role="button"` to non-semantic elements that have
 attached click handlers to expose them to assistive technologies like screen
@@ -100,3 +133,6 @@ readers. Keep in mind, though, that non-semantic elements are by nature not
 reachable via keyboard. While this can be remedied via adding a `tabindex`
 attribute, it's universally a better idea to use a `<button>` element instead.
 _Anchors go places, buttons do things._
+
+</section>
+</div>

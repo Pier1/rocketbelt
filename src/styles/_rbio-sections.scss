@@ -1,0 +1,57 @@
+.section-container {
+  padding: 1rem;
+  background-color: lighten( desaturate( color(brand,alabaster), 10% ), 5%);
+  .rbio-h1 {
+    margin: 2rem auto 0;
+    font-family: font-family(sans);
+    text-align: center;
+    a {
+      line-height: 1;
+    }
+    h1 {
+      line-height: 1;
+      font-family: font-family(sans);
+      text-transform: uppercase;
+      font-weight: bold;
+      font-size: 2rem;
+      font-style: normal;
+      color: #000000;
+      letter-spacing: 3px;
+      text-align: center;
+    }
+  }
+  
+  & > p, & > blockquote {
+    max-width: 35rem;
+    margin: 1rem auto;
+  }
+  
+  section, .section {
+    position: relative;
+    padding: 1rem 2rem 1rem 2rem;
+    max-width: 100%;
+    
+    & > .rbio-h2 h2 {
+      font-size: font-size(1);
+      font-weight: bold;
+      color: #000000;
+      letter-spacing: 1.28px;
+    }
+    & > .rbio-h3 {
+      font-size: font-size(0);
+      color: color(gray);
+      letter-spacing: 1.6px;
+      text-transform: uppercase;
+    }
+  }
+  
+  section.subsection {
+    padding: 1rem 0rem 1rem 0rem;
+  }
+  .component-example {
+    margin-bottom: 0;
+    input[type="checkbox"].visually-hidden {
+      width: 10px;
+    }
+  }
+}
