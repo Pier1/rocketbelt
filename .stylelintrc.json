@@ -389,7 +389,6 @@
       ]
     ],
 
-    "color-named": "never",
     "comment-whitespace-inside": "always",
     "declaration-no-important": true,
     "font-family-name-quotes": "always-where-recommended",
