@@ -137,6 +137,7 @@ h6 {
     display: block;
     line-height: 1.1;
   }
+
   .preheading {
     font-size: font-size(0);
   }
@@ -151,9 +152,11 @@ h6 {
 
   &.display {
     text-align: center;
+
     .preheading {
       font-style: italic;
     }
+
     .subheading {
       text-transform: uppercase;
     }
@@ -283,7 +286,6 @@ ul {
   display: box;
   /* autoprefixer: off */
   -webkit-box-orient: vertical;
-  /* autoprefixer: on */
   -moz-box-orient: vertical;
   box-orient: vertical;
   overflow: hidden;
