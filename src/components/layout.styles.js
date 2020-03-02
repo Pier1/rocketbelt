@@ -1,5 +1,5 @@
 import { css } from '@emotion/core';
-import { media, fontSize } from '../utils/rocketbelt';
+import { media, fontSize, colors } from '../utils/rocketbelt';
 
 export const wrapCss = css`
   h1 {
@@ -51,17 +51,20 @@ export const wrapCss = css`
 `;
 
 export const mainCss = css`
-  background: #efefef;
+  background: ${colors
+    .chroma(colors.gray.plus2)
+    .alpha(0.5)
+    .css()};
 `;
 
 export const mainWrapCss = css`
   margin: auto;
-  margin-top: 2rem;
+  margin-top: 0;
   padding: 1rem;
   padding-top: 2rem;
   max-width: 1024px;
   height: 100%;
-  background: #fff;
+  background: transparent;
 
   ${media[0]} {
     margin-top: 0;
