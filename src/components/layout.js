@@ -3,7 +3,7 @@ import PropTypes, { node } from 'prop-types';
 import { useStaticQuery, graphql } from 'gatsby';
 
 /** @jsx jsx */
-import { jsx } from '@emotion/core';
+import { jsx, css } from '@emotion/core';
 
 import * as styles from './layout.styles';
 
@@ -134,7 +134,17 @@ const Layout = ({ children, pageContext }) => {
       <div className="rbio-content-wrap" css={styles.wrapCss}>
         <Header siteTitle="Rocketbelt" />
         <main css={styles.mainCss} className={`rbio-content ${pageClass}`}>
-          <div css={styles.mainWrapCss}>{children}</div>
+          <div
+            css={[
+              styles.mainWrapCss,
+              css`
+                /* TODO: A better way to do this… */
+                background: ${pageContext ? 'white' : 'transparent'};
+              `,
+            ]}
+          >
+            {children}
+          </div>
         </main>
         <Footer />
       </div>
