@@ -247,6 +247,7 @@ html {
   }
 }
 
+%select-min-height,
 input:not([type='checkbox']),
 select {
   min-height: $input-height;
@@ -270,6 +271,7 @@ input {
   }
 }
 
+%form-basics,
 input:not([type='radio']),
 input:not([type='checkbox']),
 select,
@@ -361,6 +363,7 @@ textarea {
   transition: opacity 500ms ease;
 }
 
+%select,
 select {
   $fill: color(black);
 

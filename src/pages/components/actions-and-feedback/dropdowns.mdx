@@ -1,0 +1,32 @@
+---
+title: Dropdowns
+description: Use a Dropdown component to display rich content.
+scriptTags:
+  - rocketbelt.dropdowns.js
+---
+
+# Dropdowns
+
+```html
+<div class="dropdown">
+  <span class="dropdown_label">Pick a value:</span>
+  <div class="dropdown_body">
+    <ul class="dropdown_list">
+      <li class="dropdown_option"><i>Option 1</i></li>
+      <li class="dropdown_option"><span style="font-weight: 600">Option 2</span></li>
+      <li class="dropdown_option">Option 3</li>
+      <li class="dropdown_option">Option 4</li>
+      <li class="dropdown_option">Option 5</li>
+    </ul>
+    <button class="dropdown_button"></button>
+  </div>
+</div>
+```
+
+To Document:
+* `decorateDropdowns`
+* `toggleDropdown`
+* `focusItem = (
+    $dropdownOption,
+    { closeAfterFocus = false, selectAfterFocus = false } = {}
+  )`,

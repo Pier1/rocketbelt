@@ -49,6 +49,7 @@
 
   const aria = 'aria-';
   window.rb.aria = {
+    activedescendant: `${aria}activedescendant`,
     current: `${aria}current`,
     describedby: `${aria}describedby`,
     disabled: `${aria}disabled`,
@@ -61,6 +62,7 @@
     live: `${aria}live`,
     posinset: `${aria}posinset`,
     role: 'role',
+    selected: `${aria}selected`,
     setsize: `${aria}setsize`,
   };
 
@@ -83,6 +85,33 @@
       bottom: window.innerHeight - (rect.y + rect.height),
       left: rect.x,
     };
+  };
+
+  // Self-removing event listener.
+  window.rb.once = (node, type, callback) => {
+    node.addEventListener(type, function handler(e) {
+      e.target.removeEventListener(e.type, handler);
+      return callback(e);
+    });
+  };
+
+  window.rb.onClickOutside = function onClickOutside(
+    el,
+    callback,
+    removeListener = false
+  ) {
+    const clickOutsideHandler = function clickOutsideHandler(e) {
+      if (!el.contains(e.target)) {
+        callback();
+        document.removeEventListener('click', clickOutsideHandler);
+      }
+    };
+
+    if (!removeListener) {
+      document.addEventListener('click', clickOutsideHandler);
+    } else {
+      document.removeEventListener('click', clickOutsideHandler);
+    }
   };
 
   window.rb.onDocumentReady = function onDocumentReady(fn) {
@@ -178,14 +207,6 @@
 
     return e;
   })();
-
-  // Self-removing event listener.
-  window.rb.once = (node, type, callback) => {
-    node.addEventListener(type, function handler(e) {
-      e.target.removeEventListener(e.type, handler);
-      return callback(e);
-    });
-  };
 
   // See https://stackoverflow.com/a/5100158
   window.rb.dataURItoBlob = (dataURI) => {
