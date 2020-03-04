@@ -31,6 +31,8 @@
         toggleDropdown($dropdown);
         break;
       case keys.ENTER:
+        // keys.ENTER gets picked up as a click by the button click handler in
+        // decorateDropdowns, so we won't close it with this focusItem call.
         focusItem($selectedOption, {
           closeAfterFocus: false,
           selectAfterFocus: true,
@@ -48,13 +50,17 @@
 
     $dropdown.removeClass('dropdown-open');
     $button.removeAttr(aria.expanded);
-    document.removeEventListener('keydown', onKeyDown);
+
+    unfocusDropdown($dropdown);
+
+    $dropdown[0].removeEventListener('keydown', onKeyDown);
 
     rb.onClickOutside(
       $dropdown[0],
       () => {
         clickOutsideHandler($dropdown);
       },
+      // TODO: Removes the handler. Maybe refactor what this call looks like?
       true
     );
   };
@@ -68,7 +74,12 @@
     } else {
       $dropdown.addClass('dropdown-open');
       $button.attr(aria.expanded, true);
-      document.addEventListener('keydown', onKeyDown);
+      $dropdown[0].addEventListener('keydown', onKeyDown);
+
+      const selectedOptionId = $button.attr('data-rb-selected-id');
+      if (selectedOptionId) {
+        focusItem($(`#${selectedOptionId}`));
+      }
 
       rb.onClickOutside($dropdown[0], () => {
         clickOutsideHandler($dropdown);
@@ -86,18 +97,27 @@
       if ($pos.top < 0) {
         scrollTop = $dropdownOption[0].offsetTop;
       } else if (
-        $pos.top + $dropdownOption[0].scrollHeight >
-        parent.offsetHeight
+        parent &&
+        $pos.top + $dropdownOption[0].scrollHeight > parent.offsetHeight
       ) {
-        const diff =
-          $pos.top + $dropdownOption[0].scrollHeight - parent.offsetHeight;
-        scrollTop = parent.scrollTop + diff;
+        const diff = parent
+          ? $pos.top + $dropdownOption[0].scrollHeight - parent.offsetHeight
+          : 0;
+        scrollTop = parent ? parent.scrollTop + diff : 0;
       }
 
       if (scrollTop !== undefined) {
         $(parent).animate({ scrollTop: scrollTop }, 100, 'linear');
       }
     }
+  };
+
+  const unfocusDropdown = ($dropdown) => {
+    const $list = $dropdown.find('.dropdown_list');
+    const $options = $dropdown.find('.dropdown_option');
+
+    $list.removeAttr(aria.activedescendant);
+    $options.removeAttr(aria.selected);
   };
 
   const focusItem = (
@@ -117,7 +137,9 @@
     scrollToItem($dropdownOption);
 
     if (selectAfterFocus) {
-      $dropdown.find('.dropdown_button').html($dropdownOption.html());
+      const $button = $dropdown.find('.dropdown_button');
+      $button.attr('data-rb-selected-id', $dropdownOption.attr('id'));
+      $button.html($dropdownOption.html());
     }
 
     if (closeAfterFocus) {
@@ -175,4 +197,5 @@
   rb.dropdowns.decorateDropdowns = decorateDropdowns;
   rb.dropdowns.toggleDropdown = toggleDropdown;
   rb.dropdowns.focusItem = focusItem;
+  rb.dropdowns.unfocusDropdown = unfocusDropdown;
 })(window.rb, document);

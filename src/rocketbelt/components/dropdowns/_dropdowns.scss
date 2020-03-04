@@ -1,4 +1,7 @@
 .dropdown {
+  // Concrete px value to match the width of the button chevron
+  $padding-right: 25px;
+
   &.dropdown-open {
     .dropdown_button:focus {
       outline: 0;
@@ -25,10 +28,22 @@
       @extend %form-basics;
       @extend %select;
       @extend %select-min-height;
+      padding-right: $padding-right;
 
       &:hover {
         @extend %select;
+
+        color: inherit;
       }
+    }
+
+    [data-rb-selected-id] {
+      padding: 1rem;
+      padding-right: $padding-right;
+      height: auto;
+      color: inherit;
+      text-align: inherit;
+      fill: inherit;
     }
   }
 
@@ -38,28 +53,20 @@
     right: 0;
     left: 0;
     z-index: 2;
+    overflow-y: auto;
     margin: 0;
     padding: 0;
     border: 1px solid color(gray, plus1);
     list-style-type: none;
 
-    &[aria-activedescendant] {
-      + .dropdown_button {
-        padding: 1rem;
-        height: auto;
-        color: inherit;
-        fill: inherit;
-        text-align: inherit;
-      }
-    }
-
     .dropdown_option {
       display: flex;
-      align-items: center;
       padding: 1rem;
+      padding-right: $padding-right;
       background: color(white);
       cursor: pointer;
       transition: background 100ms linear;
+      align-items: center;
       // &::before {
       //   display: inline-block;
       //   margin-right: 0.5rem;

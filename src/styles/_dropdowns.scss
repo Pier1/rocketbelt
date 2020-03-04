@@ -1,0 +1,47 @@
+.astronauts {
+  .dropdown {
+    width: 360px;
+  }
+}
+
+.missions-mercury,
+.missions-gemini {
+  .dropdown {
+    width: 360px;
+  }
+}
+
+.missions-gemini {
+  .dropdown_list {
+    max-height: 360px;
+  }
+}
+
+.mission {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.mission_name {
+  font-size: font-size(2);
+}
+
+.mission_date {
+  color: color(gray);
+  font-style: italic;
+  font-size: font-size(-1);
+}
+
+.mission_text {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.mission_image {
+  width: 48px;
+  height: 48px;
+  justify-self: flex-end;
+}

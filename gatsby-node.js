@@ -154,7 +154,11 @@ exports.onCreateWebpackConfig = ({
 
   actions.setWebpackConfig({
     plugins: [
-      new WriteFilePlugin(),
+      new WriteFilePlugin({
+        // Make sure HMR chunks aren't written to disk.
+        // See https://github.com/gaearon/react-hot-loader/issues/456#issuecomment-273216602
+        test: /^(?!.*(commons\.js|hot|rocketbelt.icons)).*/,
+      }),
       new CopyPlugin(
         [
           {
