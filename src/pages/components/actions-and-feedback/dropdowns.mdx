@@ -1,0 +1,216 @@
+---
+title: Dropdowns
+description: Use a Dropdown component to display rich content.
+scriptTags:
+  - rocketbelt.dropdowns.js
+---
+
+# Dropdowns
+
+## Accessibility
+Include the file `rocketbelt.dropdowns.js` and dropdowns will be augmented with
+accessibility metadata when the page loads. If a dropdown is added to the page
+after it loads, calling `rb.dropdowns.decorateDropdowns()` will add the
+appropriate accessibility attributes. Dropdowns can also be navigated with the
+keyboard.
+
+## Basic
+```html astronauts
+<div class="dropdown">
+  <span class="dropdown_label">Select an Apollo astronaut:</span>
+  <div class="dropdown_body">
+    <button class="dropdown_button"></button>
+    <ul class="dropdown_list">
+      <li class="dropdown_option">Neil Armstrong</li>
+      <li class="dropdown_option">Buzz Aldrin</li>
+      <li class="dropdown_option">Alan Shepard</li>
+      <li class="dropdown_option">Jim Lovell</li>
+      <li class="dropdown_option">Michael Collins</li>
+      <li class="dropdown_option">Gus Grissom</li>
+    </ul>
+  </div>
+</div>
+```
+
+## Rich Content
+```html missions-mercury
+<div class="dropdown">
+  <span class="dropdown_label">Select a Mercury mission:</span>
+  <div class="dropdown_body">
+    <ul class="dropdown_list">
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Mercury-Redstone 3</span>
+            <span class="mission_date">May 5, 1961</span>
+          </div>
+          <img class="mission_image" src="/images/missions/mercury/3.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Mercury-Redstone 4</span>
+            <span class="mission_date">July 21, 1961</span>
+          </div>
+          <img class="mission_image" src="/images/missions/mercury/4.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Mercury-Atlas 6</span>
+            <span class="mission_date">February 20, 1962</span>
+          </div>
+          <img class="mission_image" src="/images/missions/mercury/6.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Mercury-Atlas 7</span>
+            <span class="mission_date">May 24, 1962</span>
+          </div>
+          <img class="mission_image" src="/images/missions/mercury/7.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Mercury-Atlas 8</span>
+            <span class="mission_date">October 3, 1962</span>
+          </div>
+          <img class="mission_image" src="/images/missions/mercury/8.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Mercury-Atlas 9</span>
+            <span class="mission_date">May 15–16, 1963</span>
+          </div>
+          <img class="mission_image" src="/images/missions/mercury/9.png" />
+        </div>
+      </li>
+    </ul>
+    <button class="dropdown_button"></button>
+  </div>
+</div>
+```
+
+## Content Overflow
+Keep longer or taller lists from getting out of hand by adding a `max-height`
+property to a selector that targets `.dropdown_list`.
+
+```scss code-only
+// Your selector may need to be more specific than this!
+.dropdown_list {
+  max-height: 360px;
+}
+```
+
+```html missions-gemini
+<div class="dropdown">
+  <span class="dropdown_label">Select a Gemini mission:</span>
+  <div class="dropdown_body">
+    <ul class="dropdown_list">
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini 3</span>
+            <span class="mission_date">March 23, 1965</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/3.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini IV</span>
+            <span class="mission_date">June 3–7, 1965</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/4.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini V</span>
+            <span class="mission_date">August 21–29, 1965</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/5.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini VII</span>
+            <span class="mission_date">December 4–18, 1965</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/7.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini VI-A</span>
+            <span class="mission_date">December 15–16, 1965</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/6a.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini VIII</span>
+            <span class="mission_date">March 16–17, 1966</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/8.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini IX-A</span>
+            <span class="mission_date">June 3–6, 1966</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/9a.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini X</span>
+            <span class="mission_date">July 18–21, 1966</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/10.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini XI</span>
+            <span class="mission_date">September 12–15, 1966</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/11.png" />
+        </div>
+      </li>
+      <li class="dropdown_option">
+        <div class="mission">
+          <div class="mission_text">
+            <span class="mission_name">Gemini XII</span>
+            <span class="mission_date">November 11–15, 1966</span>
+          </div>
+          <img class="mission_image" src="/images/missions/gemini/12.png" />
+        </div>
+      </li>
+    </ul>
+    <button class="dropdown_button"></button>
+  </div>
+</div>
+```
+
+* JS:
+  * `decorateDropdowns`
+  * `toggleDropdown`
+  * `focusItem($dropdownOption, { closeAfterFocus = false, selectAfterFocus = false })

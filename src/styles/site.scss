@@ -416,5 +416,9 @@ $header-height: 64px;
       justify-content: center;
     }
   }
+
+  &.dropdowns {
+    @import 'dropdowns';
+  }
 }
 // sass-lint:enable no-qualifying-elements force-element-nesting nesting-depth

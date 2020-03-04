@@ -67,7 +67,9 @@ const LiveCode = (props) => {
       disabled={true}
       code={`${props.children.props.children.trim()}`}
       transformCode={(code) => {
-        return language === 'html' ? `<>${code}</>` : code;
+        return language === 'html' || language === 'css'
+          ? `<>${code}</>`
+          : code;
       }}
       theme={theme}
     >
