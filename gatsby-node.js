@@ -173,6 +173,12 @@ exports.onCreateWebpackConfig = ({
             flatten: true,
             force: true,
           },
+          {
+            from: `${__dirname}/src/images/404/404*`,
+            to: `${__dirname}/public/images/404`,
+            flatten: true,
+            force: true,
+          },
         ]
         // { logLevel: 'debug' }
       ),

@@ -40,6 +40,17 @@ module.exports = {
       },
     },
     {
+      resolve: `gatsby-plugin-prefetch-google-fonts`,
+      options: {
+        fonts: [
+          {
+            family: `Tomorrow`,
+            variants: [300, '300i', 400, '400i', 500, 600],
+          },
+        ],
+      },
+    },
+    {
       resolve: 'gatsby-plugin-react-helmet',
     },
     {

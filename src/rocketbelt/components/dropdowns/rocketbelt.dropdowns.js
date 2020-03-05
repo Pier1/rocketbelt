@@ -8,6 +8,8 @@
     const $options = $dropdown.find('.dropdown_option');
     let $selectedOption = $options.filter('[aria-selected="true"]');
 
+    e.preventDefault();
+
     switch (e.which) {
       case keys.ARROW_UP:
         const $prev = $selectedOption[0]
@@ -31,10 +33,8 @@
         toggleDropdown($dropdown);
         break;
       case keys.ENTER:
-        // keys.ENTER gets picked up as a click by the button click handler in
-        // decorateDropdowns, so we won't close it with this focusItem call.
         focusItem($selectedOption, {
-          closeAfterFocus: false,
+          closeAfterFocus: true,
           selectAfterFocus: true,
         });
         break;

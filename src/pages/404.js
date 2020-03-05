@@ -1,21 +1,32 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
+import { useStaticQuery, graphql } from 'gatsby';
 
 import Layout from '../components/layout';
 import SEO from '../components/seo';
 
 const NotFoundPage = () => {
-  const [imageNum, setImageNum] = useState(Math.floor(Math.random() * 8));
+  const edges = useStaticQuery(graphql`
+    query  {
+      allFile(filter: {name: {regex: "/^404-\\d+?/i"}}) {
+        edges {
+          node {
+            name
+            relativePath
+          }
+        }
+      }
+    }
+  `).allFile.edges;
 
-  useEffect(() => {
-    setImageNum(Math.floor(Math.random() * 8));
-  });
+  const randomSrc =
+    edges[Math.floor(Math.random() * edges.length)].node.relativePath;
 
   return (
     <Layout>
-      <SEO title="404: Not found" />
+      <SEO title="404: Page Not Found" />
       <h1>Page Not Found</h1>
       <video width="100%" autoPlay loop muted>
-        <source src={`/images/404-${imageNum}.mp4`} type="video/mp4" />
+        <source src={`/images/${randomSrc}`} type="video/mp4" />
       </video>
     </Layout>
   );
