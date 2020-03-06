@@ -10,16 +10,20 @@ const H = (props) => {
     Htag = `h${props.level}`;
   }
 
+  // Prevent "JavaScript" from slugging as "java-script" because that's just
+  // silly.
+  const toSlug = props.children.replace('JavaScript', 'Javascript');
+
   return (
     <span className="linked-heading">
       <Htag
         className="rbio linked-heading_heading"
-        id={slugify(props.children)}
+        id={slugify(toSlug)}
         {...props}
       />
       <Link
         className="linked-heading_anchor"
-        to={`${window.location.pathname}#${slugify(props.children)}`}
+        to={`${window.location.pathname}#${slugify(toSlug)}`}
       >
         #
       </Link>
