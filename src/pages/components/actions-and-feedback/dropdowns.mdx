@@ -210,7 +210,30 @@ property to a selector that targets `.dropdown_list`.
 </div>
 ```
 
-* JS:
-  * `decorateDropdowns`
-  * `toggleDropdown`
-  * `focusItem($dropdownOption, { closeAfterFocus = false, selectAfterFocus = false })
+## JavaScript
+<h3 class="code">decorateDropdowns</h3>
+
+`rb.dropdowns.decorateDropdowns()` can be called manually to add accessibility
+properties to a Dropdown. This function runs on page load for all Dropdowns that
+are present.
+
+<h3 class="code">toggleDropdown</h3>
+
+Use `rb.dropdowns.toggleDropdown($dropdown)` to programmatically open or close a
+dropdown. Be sure the `$dropdown` parameter passed in is a jQuery object
+constructed from a `.dropdown` top-level class.
+
+<h3 class="code">focusItem</h3>
+
+`rb.dropdowns.focusItem` sets the value of the list of options. It requires a
+`$dropdownOption` parameter—be sure this is a jQuery object constructed from a `.dropdown_option`—and takes an optional configuration object:
+
+```js code-only
+{
+  // Both options default to false if omitted.
+  // Closes an open Dropdown after the function runs
+  closeAfterFocus: yourCloseValue,
+  // "Selects" the option by copying the option's HTML into .dropdown_button
+  selectAfterFocus: yourSelectValue,
+}
+```
