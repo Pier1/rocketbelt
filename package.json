@@ -1,35 +1,40 @@
 {
   "name": "rocketbelt",
-  "version": "2.0.24",
+  "version": "2.1-beta.1",
   "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively assembled at Pier 1 Imports.",
   "homepage": "http://rocketbelt.io",
   "bugs": "https://github.com/pier1/rocketbelt/issues",
   "license": "MIT",
   "main": "gulpfile.js",
   "scripts": {
-    "lint": "stylelint './src/**/*.js'"
+    "lint": "stylelint './src/**/*.js'",
+    "build:styles": "find . -name 'rocketbelt*scss' -print0 | xargs -0 -I{} node-sass {} -o dist/css --source-map true",
+    "build:js":"./scripts/build-js.sh"
   },
-  "author": "",
+  "author": "Pier 1 Imports",
   "repository": {
     "type": "git",
     "url": "git@github.com:Pier1/rocketbelt.git"
   },
   "browserslist": [
     "Chrome >= 49",
-    "Firefox >= 48",
-    "Safari >= 9",
+    "Firefox >= 52",
+    "Safari >= 10.1.2",
     "ie >= 11",
-    "Edge >= 14",
+    "Edge >= 16",
     "iOS >= 9",
     "Android >= 5.1.1"
   ],
   "devDependencies": {
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/preset-env": "^7.8.7",
     "@sindresorhus/slugify": "^0.9.1",
-    "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.2",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-minify": "^0.5.1",
     "copy-webpack-plugin": "^5.0.4",
-    "cssnano": "^3.10.0",
+    "cssnano": "^4.1.10",
     "cz-conventional-changelog": "^1.2.0",
     "eslint": "^6.2.1",
     "eslint-config-airbnb": "^18.0.1",
@@ -52,6 +57,7 @@
     "perfectionist": "^2.4.0",
     "postcss-import": "^12.0.1",
     "postcss-svg": "^3.0.0",
+    "postcss-svgo": "^4.0.2",
     "sanitize.css": "^11.0.0",
     "sass-loader": "^7.3.1",
     "slug": "^0.9.1",
