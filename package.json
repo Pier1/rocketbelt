@@ -16,10 +16,10 @@
   },
   "browserslist": [
     "Chrome >= 49",
-    "Firefox >= 48",
-    "Safari >= 9",
+    "Firefox >= 52",
+    "Safari >= 10.1.2",
     "ie >= 11",
-    "Edge >= 14",
+    "Edge >= 16",
     "iOS >= 9",
     "Android >= 5.1.1"
   ],
