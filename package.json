@@ -7,9 +7,11 @@
   "license": "MIT",
   "main": "gulpfile.js",
   "scripts": {
-    "lint": "stylelint './src/**/*.js'"
+    "lint": "stylelint './src/**/*.js'",
+    "build:styles": "find . -name 'rocketbelt*scss' -print0 | xargs -0 -I{} node-sass {} -o dist/css --source-map true",
+    "build:js":"./scripts/build-js.sh"
   },
-  "author": "",
+  "author": "Pier 1 Imports",
   "repository": {
     "type": "git",
     "url": "git@github.com:Pier1/rocketbelt.git"
