@@ -1,6 +1,8 @@
 .cache/
 .csscomb.json
 .eslintrc
+.prettierignore
+.prettierrc.js
 .sass-lint.yml
 .vscode
 CHANGELOG.md
@@ -17,7 +19,10 @@ dist/exposition/
 dist/index.html
 dist/partials/
 dist/sitemap.xml
+gatsby-*.js
 gulp-tasks/
 gulpfile.js
+public/
 templates/
 test/
+*.log

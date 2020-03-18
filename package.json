@@ -1,6 +1,6 @@
 {
   "name": "rocketbelt",
-  "version": "2.1-beta.1",
+  "version": "2.1.0-beta.1",
   "description": "Rocketbelt is a UX-influenced, mobile-first pattern library collaboratively assembled at Pier 1 Imports.",
   "homepage": "http://rocketbelt.io",
   "bugs": "https://github.com/pier1/rocketbelt/issues",
@@ -8,8 +8,9 @@
   "main": "gulpfile.js",
   "scripts": {
     "lint": "stylelint './src/**/*.js'",
-    "build:styles": "find . -name 'rocketbelt*scss' -print0 | xargs -0 -I{} node-sass {} -o dist/css --source-map true",
-    "build:js":"./scripts/build-js.sh"
+    "build": "rsync -av ./src/rocketbelt/* ./dist && npm run build:styles && npm run build:js",
+    "build:styles": "./scripts/build-styles.sh",
+    "build:js": "./scripts/build-js.sh"
   },
   "author": "Pier 1 Imports",
   "repository": {
@@ -64,6 +65,7 @@
     "style-loader": "^1.0.0",
     "stylelint-order": "^4.0.0",
     "to-title-case": "^1.0.0",
+    "uglify-js": "^3.8.0",
     "webpack": "^4.39.2",
     "webpack-cli": "^3.3.7",
     "webpack-fix-style-only-entries": "^0.3.1",
