@@ -11,34 +11,20 @@ fieldset {
     position: absolute;
     right: $border-max-width;
     z-index: 1;
+    width: 36px - (2 * $border-max-width);
     height: 36px - (2 * $border-max-width);
     opacity: 0;
     transition: opacity 200ms linear;
     transform: translateY($border-max-width);
 
+    .icon {
+      width: 100%;
+      height: 100%;
+    }
+
     &.affixed {
       opacity: 1;
     }
-
-    // Reverting for now—this needs to be finessed a bit.
-    // &::before {
-    //   position: relative;
-    //   top: 2px;
-    //   left: -36px;
-    //   display: block;
-    //   width: 36px;
-    //   height: calc(100% - 4px);
-    //   background-image:
-    //     linear-gradient(270deg,
-    //     #fff, rgba(#fff, 0.89) 23%,
-    //       rgba(#fff, 0.65) 41%,
-    //       rgba(#fff, 0.36) 57%,
-    //       rgba(#fff, 0.12) 76%,
-    //       rgba(#fff, 0)
-    //     )
-    //   ;
-    //   content: '';
-    // }
   }
 
   &:not(:last-child) {
@@ -122,7 +108,6 @@ fieldset {
   &.inline {
     @include vset(--required-text, '(required)');
     @include vset(--optional-text, '(optional)');
-
     flex-direction: row;
     align-items: center;
 
@@ -211,7 +196,8 @@ fieldset {
       input {
         // Must keep unit on zero-value for flex-basis here to avoid an IE bug.
         // See https://github.com/Pier1/rocketbelt/pull/182.
-        flex: 1 0 0px; // sass-lint:disable-line zero-unit
+        flex: 1 0 0px;
+        // sass-lint:disable-line zero-unit
         min-width: 0;
         width: auto;
       }
@@ -246,7 +232,6 @@ html {
     }
   }
 }
-
 %select-min-height,
 input:not([type='checkbox']),
 select {
@@ -270,7 +255,6 @@ input {
     }
   }
 }
-
 %form-basics,
 input:not([type='radio']),
 input:not([type='checkbox']),
@@ -328,7 +312,6 @@ textarea {
       }
     }
   }
-
   // Character Based Ems - Good Idea??
   &.field-small {
     width: 8em;
@@ -362,11 +345,9 @@ textarea {
   filter: grayscale(0.6);
   transition: opacity 500ms ease;
 }
-
 %select,
 select {
   $fill: color(black);
-
   padding-right: 25px;
   background-color: color(white);
   background-image: url("data:image/svg+xml;charset=utf-8,%3Csvg aria-labelledby='asrb-icon-chevron-down-desc asrb-icon-chevron-down-title' xmlns='http://www.w3.org/2000/svg' style='fill: black%3B' viewBox='0 0 16 16'%3E%3Ctitle id='asrb-icon-chevron-down-title'%3EDown Chevron%3C/title%3E%3Cdesc id='asrb-icon-chevron-down-desc'%3EA downward chevron%3C/desc%3E%3Cpath d='M8.023 10.681a.356.356 0 01-.232-.085L2.305 5.953a.36.36 0 01.465-.549l5.252 4.444 5.207-4.443a.36.36 0 01.467.547l-5.44 4.643a.36.36 0 01-.233.086' fill-rule='evenodd'/%3E%3C/svg%3E");
