@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { jsx, css, Global } from '@emotion/core';
 import cx from 'emotion';
 
-import { media } from '../utils/rocketbelt';
+import { media, colors } from '../utils/rocketbelt';
 
 import * as styles from './layout.styles';
 
@@ -62,7 +62,8 @@ const addScrollListeners = () => {
   });
 };
 
-const Layout = ({ children, pageContext }) => {
+const Layout = ({ children, pageContext, noShadow }) => {
+  console.dir(noShadow);
   const edges = useStaticQuery(graphql`
     query {
       allMdx {
@@ -169,6 +170,18 @@ const Layout = ({ children, pageContext }) => {
   }
 
   const globalCss = css`
+    html {
+      background: ${colors
+        .chroma(colors.gray.plus2)
+        .brighten(0.0625)
+        .css()};
+    }
+
+    body,
+    .fonts-loaded body {
+      font-family: Montserrat, 'Brand Sans', Arial, Helvetica, sans-serif;
+    }
+
     :root {
       --mobile-padding-base: 0.5rem;
       --nav-desktop-width: 300px;
@@ -188,6 +201,19 @@ const Layout = ({ children, pageContext }) => {
     .scroll-locked {
       overflow: hidden;
     }
+
+    .full-vw {
+      position: relative;
+      left: 50%;
+      width: 100vw;
+      transform: translateX(-50%);
+    }
+
+    .header-footer_wrap {
+      max-width: 1200px;
+      width: 100%;
+      height: 100%;
+    }
   `;
 
   return (
@@ -198,6 +224,7 @@ const Layout = ({ children, pageContext }) => {
       <div
         css={css`
           display: flex;
+          height: 100%;
           justify-content: center;
         `}
       >
@@ -208,13 +235,17 @@ const Layout = ({ children, pageContext }) => {
             css`
               display: grid;
               max-width: 1200px;
+              width: 100%;
               grid-template-areas:
                 'header'
                 'nav'
                 'main'
                 'footer';
+              grid-template-rows: auto auto 1fr auto;
 
               ${media[2]} {
+                grid-gap: 2rem;
+                grid-template-rows: min-content 1fr min-content;
                 grid-template-columns: var(--nav-desktop-width) 1fr;
                 grid-template-areas:
                   'header header'
@@ -233,6 +264,7 @@ const Layout = ({ children, pageContext }) => {
                 css`
                   /* TODO: A better way to do this… */
                   background: ${pageContext ? 'white' : 'transparent'};
+                  box-shadow: ${noShadow ? 'none !important' : null};
                 `,
               ]}
             >

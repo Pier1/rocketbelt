@@ -27,7 +27,7 @@ const IndexPage = () => {
     }
   `;
   return (
-    <Layout>
+    <Layout noShadow={true}>
       <SEO title="Home" />
       <section
         className="hero"

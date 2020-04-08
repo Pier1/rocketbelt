@@ -11,7 +11,7 @@
   transform: translateX(0);
   grid-auto-flow: column;
   align-items: center;
-  grid-template-columns: repeat(auto-fill, 1fr);
+  grid-template-columns: 1fr;
   justify-content: start;
 
   @include media('>=sm') {

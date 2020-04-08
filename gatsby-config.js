@@ -47,6 +47,10 @@ module.exports = {
             family: `Tomorrow`,
             variants: [300, '300i', 400, '400i', 500, 600],
           },
+          {
+            family: `Montserrat`,
+            variants: [400, '400i', 500, 600],
+          },
         ],
       },
     },

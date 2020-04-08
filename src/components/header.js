@@ -4,7 +4,6 @@ import React from 'react';
 
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
-import * as styles from './header.styles';
 import hamburger from '../images/hamburger.svg';
 import logo from '../images/rb-logo-white.svg';
 import { media, fontSize, colors, ease } from '../utils/rocketbelt';
@@ -12,97 +11,115 @@ import { media, fontSize, colors, ease } from '../utils/rocketbelt';
 const Header = ({ siteTitle }) => {
   return (
     <header
-      css={css`
-        position: sticky;
-        top: 0;
-        z-index: 10;
-        display: flex;
-        padding: var(--mobile-padding-base);
-        min-height: var(--header-mobile-height);
-        background: ${colors.brand.prussianBlue};
-        transition: transform 300ms ${ease.in};
-        transform: translateY(0);
-        align-items: center;
-        grid-area: header;
+      css={[
+        css`
+          position: sticky;
+          top: 0;
+          z-index: 10;
+          display: flex;
+          padding: var(--mobile-padding-base);
+          min-height: var(--header-mobile-height);
+          background: ${colors.brand.prussianBlue};
+          transition: transform 300ms ${ease.in};
+          transform: translateY(0);
+          align-items: center;
+          grid-area: header;
 
-        &.header-hidden {
-          transform: translateY(-100%);
-        }
-
-        ${media[2]} {
-          height: 64px;
-
-          &,
           &.header-hidden {
-            position: relative;
-            transform: none;
+            transform: translateY(-100%);
           }
-        }
-      `}
-    >
-      <button
-        className="button-minimal button"
-        onClick={() => {
-          const nav = document.querySelector('nav');
-          const body = document.querySelector('body');
 
-          nav.classList.toggle('nav-hidden');
-          body.classList.toggle('scroll-locked');
-        }}
-        css={css`
           ${media[2]} {
-            display: none;
-            visibility: hidden;
-          }
-        `}
-      >
-        <div
-          css={css`
-            height: var(--header-mobile-height);
+            position: relative;
+            left: 50%;
+            display: flex;
+            width: 100vw;
+            height: 64px;
+            transition: none;
+            transform: translateX(-50%);
+            justify-content: center;
 
-            img {
-              height: 100%;
+            &.header-hidden {
+              position: relative;
+              transform: none;
             }
-          `}
-        >
-          <img src={hamburger} />
-        </div>
-      </button>
-
-      <Link
-        to="/"
+          }
+        `,
+      ]}
+    >
+      <div
+        className="header-footer_wrap"
         css={css`
-          display: inline-flex;
-          height: 100%;
-          text-transform: lowercase;
-          font-weight: 400;
-          font-size: ${fontSize(4)};
-          font-family: Tomorrow;
+          display: flex;
           align-items: center;
         `}
       >
-        <img
-          src={logo}
+        <button
+          className="button-minimal button"
+          onClick={() => {
+            const nav = document.querySelector('nav');
+            const body = document.querySelector('body');
+
+            nav.classList.toggle('nav-hidden');
+            body.classList.toggle('scroll-locked');
+          }}
           css={css`
-            display: none;
-            visibility: hidden;
             height: 100%;
 
             ${media[2]} {
-              display: inline-block;
-              visibility: visible;
+              display: none;
+              visibility: hidden;
             }
           `}
-        />
-        <span
+        >
+          <div
+            css={css`
+              &,
+              img {
+                display: inline-block;
+                height: 100%;
+              }
+            `}
+          >
+            <img src={hamburger} />
+          </div>
+        </button>
+
+        <Link
+          to="/"
           css={css`
-            margin-left: var(--mobile-padding-base);
-            color: white;
+            display: inline-flex;
+            height: 100%;
+            text-transform: lowercase;
+            font-weight: 400;
+            font-size: ${fontSize(4)};
+            font-family: Tomorrow;
+            align-items: center;
           `}
         >
-          Rocketbelt
-        </span>
-      </Link>
+          <img
+            src={logo}
+            css={css`
+              display: none;
+              visibility: hidden;
+              height: 100%;
+
+              ${media[2]} {
+                display: inline-block;
+                visibility: visible;
+              }
+            `}
+          />
+          <span
+            css={css`
+              margin-left: var(--mobile-padding-base);
+              color: white;
+            `}
+          >
+            Rocketbelt
+          </span>
+        </Link>
+      </div>
     </header>
   );
 };

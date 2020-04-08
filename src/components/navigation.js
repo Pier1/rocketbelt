@@ -1,20 +1,16 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import React, { useState, useEffect } from 'react';
 
-import Image from 'gatsby-image';
-
 /** @jsx jsx */
 import { jsx, css } from '@emotion/core';
 import { cx } from 'emotion';
 
 import { media, colors, fontSize, ease } from '../utils/rocketbelt';
-import { expandOrCollapseEl } from '../utils/expandOrCollapse';
 
 const Navigation = () => {
   const [activeL1, setActiveL1] = useState({});
   const [activeL2, setActiveL2] = useState({});
   const [activeL3, setActiveL3] = useState({});
-  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     const path = location.pathname.split('/');
@@ -143,7 +139,7 @@ const Navigation = () => {
         background: ${colors.gray.plus2};
         box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
         opacity: 1;
-        transition: transform 300ms ${ease.out}, opacity 300ms linear;
+        transition: transform 300ms ${ease.out}, opacity 150ms linear;
         transform: translateX(0%);
         grid-area: nav;
 
@@ -165,13 +161,13 @@ const Navigation = () => {
           padding-top: 0;
           padding-bottom: 0;
           max-width: var(--nav-desktop-width);
+          height: 100%;
           background: transparent;
           box-shadow: none;
 
           .nav_top-level {
             margin: 0;
             padding: 0;
-            padding-top: 2rem;
           }
         }
 
@@ -268,7 +264,7 @@ const Navigation = () => {
 
           .nav_element {
             display: flex;
-            padding-right: 1.5rem;
+
             color: black;
             text-transform: uppercase;
             letter-spacing: 1.6px;
