@@ -1,55 +1,31 @@
 import { Link, graphql, useStaticQuery } from 'gatsby';
 import React, { useState, useEffect } from 'react';
 
-/** @jsx jsx */
-import { jsx } from '@emotion/core';
-const classNames = require('classnames');
+import Image from 'gatsby-image';
 
-import RbIcon from './rb-icon';
-import * as styles from './navigation.styles';
+/** @jsx jsx */
+import { jsx, css } from '@emotion/core';
+import { cx } from 'emotion';
+
+import { media, colors, fontSize, ease } from '../utils/rocketbelt';
+import { expandOrCollapseEl } from '../utils/expandOrCollapse';
 
 const Navigation = () => {
-  const [activeL1, setActiveL1] = useState({ name: '', slug: '', l2s: [] });
-  const [activeL2, setActiveL2] = useState({ name: '', slug: '', l3s: [] });
-  const [activeL3, setActiveL3] = useState({ name: '', slug: '' });
-
-  const [navOpen, setNavOpen] = useState({ l1: false, l2: false, l3: false });
-
-  const openNavAtLevel = (navLevel) => {
-    Object.keys(navOpen).forEach((level) => {
-      if (level !== navLevel) {
-        navOpen[level] = false;
-      }
-    });
-
-    navOpen[navLevel] = !navOpen[navLevel];
-
-    const updatedNav = Object.assign({}, navOpen);
-    setNavOpen(updatedNav);
-  };
-
-  const closeNavAtLevel = (navLevel, e, that) => {
-    const el = e.currentTarget;
-    const sib = el.nextElementSibling;
-
-    if (!sib.classList || !sib.classList.contains('rbio-nav_dropdown-open')) {
-      navOpen[navLevel] = false;
-    }
-
-    const updatedNav = Object.assign({}, navOpen);
-    setNavOpen(updatedNav);
-  };
+  const [activeL1, setActiveL1] = useState({});
+  const [activeL2, setActiveL2] = useState({});
+  const [activeL3, setActiveL3] = useState({});
+  const [mobileNavOpen, setMobileNavOpen] = useState(false);
 
   useEffect(() => {
     const path = location.pathname.split('/');
-
     const l1Slug = '/' + path.slice(1, 2);
+
     const l1 = navData.l1s.filter((l1) => {
       return l1.slug === l1Slug;
     })[0];
 
     if (l1) {
-      setActiveL1({ name: l1.name, slug: l1.slug, l2s: l1.l2s });
+      setActiveL1(l1);
 
       const l2Slug = '/' + path.slice(1, 3).join('/');
       const l2 = l1.l2s.filter((l2) => {
@@ -57,11 +33,7 @@ const Navigation = () => {
       })[0];
 
       if (l2) {
-        setActiveL2({
-          name: l2.name,
-          slug: l2.slug,
-          l3s: l2.l3s || [],
-        });
+        setActiveL2(l2);
 
         const l3Slug = '/' + path.slice(1, 4).join('/');
         const l3 = l2.l3s.filter((l3) => {
@@ -69,32 +41,16 @@ const Navigation = () => {
         })[0];
 
         if (l3) {
-          setActiveL3({
-            name: l3.name,
-            slug: l3.slug,
-          });
+          setActiveL3(l3);
         } else {
-          setActiveL3({ name: '', slug: '' });
+          setActiveL3({});
         }
       } else {
-        setActiveL2({ name: '', slug: '' });
+        setActiveL2({});
       }
     } else {
-      setActiveL1({ name: '', slug: '' });
+      setActiveL1({});
     }
-
-    // const l1El = document.querySelector('.rbio-nav .nav_l1');
-    // const l2El = document.querySelector('.rbio-nav .nav_l2');
-    // const l3El = document.querySelector('.rbio-nav .nav_l3');
-    // console.dir(l1El, l2El, l3El);
-    // const offscreen = {
-    //   l2: l2El && window.rb.distanceOffscreen(l2El),
-    //   l3: l3El && window.rb.distanceOffscreen(l3El),
-    // };
-
-    // if (offscreen.l3 && offscreen.l3.right < 0) {
-    //   l1El.classList.add('nav_title_condensed');
-    // }
   }, []);
 
   const data = useStaticQuery(graphql`
@@ -170,173 +126,307 @@ const Navigation = () => {
   });
 
   return (
-    <nav className="rbio-nav" css={styles.navCss}>
-      <div css={styles.navWrapperCss}>
-        <Link to="/" css={styles.homeLinkCss}>
-          <span className="site-title">Rocketbelt</span>
-        </Link>
-      </div>
-      <span css={styles.navIconCss}>
-        <RbIcon icon="chevron-right" />
-      </span>
-      <div css={styles.navWrapperCss} className="nav_l1">
-        <button
-          // onMouseEnter={() => {
-          //   openNavAtLevel('l1');
-          // }}
-          // onMouseLeave={(e) => {
-          //   closeNavAtLevel('l1', e, this);
-          // }}
-          onClick={() => {
-            openNavAtLevel('l1');
-          }}
-          className={`rbio-nav_button ${
-            !!navOpen.l1 ? 'rbio-nav_dropdown-open' : ''
-          }`}
-        >
-          <span css={styles.navIconCss}>
-            {activeL1.name === '' ? (
-              <RbIcon icon="more-horz" />
-            ) : (
-              <span
-                className="nav_title_wrapper"
-                css={styles.navTitleWrapperCss}
-              >
-                <span className="nav_title_text">{activeL1.name}</span>
-                <RbIcon className="nav_title_placeholder" icon="more-horz" />
-              </span>
-            )}
-          </span>
-        </button>
-        <ul
-          className={classNames('rbio-nav_dropdown', {
-            'rbio-nav_dropdown-open': navOpen.l1,
-          })}
-        >
-          {navData.l1s.map((l1) => {
-            return (
-              <li
-                key={l1.slug}
-                className={classNames('rbio-nav_level1_item', 'rbio-nav_item', {
-                  active: activeL1.name === l1.name,
-                })}
-              >
-                <Link to={l1.slug} className="rbio-nav_link">
-                  <span className="link_text">{l1.name}</span>
+    <nav
+      className="nav-hidden"
+      css={css`
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 11;
+        overflow: auto;
+        padding: 0;
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+        min-height: calc(var(--mobile-padding-base) + 44px);
+        width: 100vw;
+        height: 100vh;
+        background: ${colors.gray.plus2};
+        box-shadow: 0 2px 18px rgba(0, 0, 0, 0.12);
+        opacity: 1;
+        transition: transform 300ms ${ease.out}, opacity 300ms linear;
+        transform: translateX(0%);
+        grid-area: nav;
+
+        &.nav-hidden {
+          opacity: 0;
+          transform: translateX(-100%);
+
+          ${media[2]} {
+            display: block;
+            visibility: visible;
+            opacity: 1;
+            transform: none;
+          }
+        }
+
+        ${media[2]} {
+          position: sticky;
+          top: 0;
+          padding-top: 0;
+          padding-bottom: 0;
+          max-width: var(--nav-desktop-width);
+          background: transparent;
+          box-shadow: none;
+
+          .nav_top-level {
+            margin: 0;
+            padding: 0;
+            padding-top: 2rem;
+          }
+        }
+
+        .nav_l1:not(.active) .nav_l2,
+        .nav_l2:not(.active) .nav_l3 {
+          display: none;
+          visibility: hidden;
+        }
+
+        .nav_l1,
+        .nav_l2,
+        .nav_l3 {
+          list-style-type: none;
+        }
+
+        .nav_children {
+          padding: 0;
+          transition: height 200ms ${ease.inOut};
+
+          &[data-collapsed='true'] {
+            overflow: hidden;
+          }
+        }
+      `}
+    >
+      <button
+        className="button button-sm"
+        onClick={() => {
+          const nav = document.querySelector('nav');
+          const body = document.querySelector('body');
+
+          nav.classList.toggle('nav-hidden');
+          body.classList.toggle('scroll-locked');
+        }}
+        css={css`
+          margin-left: 1.5rem;
+          min-height: var(--touchable);
+          border-color: currentColor;
+          color: black;
+
+          ${media[2]} {
+            display: none;
+            visibility: hidden;
+          }
+        `}
+      >
+        ✕ Close
+      </button>
+      <ul
+        className="nav_top-level"
+        css={css`
+          margin: 0;
+          padding: 0;
+
+          ${media[2]} {
+            display: block;
+            visibility: visible;
+          }
+
+          .active {
+            > button.nav_element::after {
+              transform: rotate(180deg);
+            }
+
+            > a.nav_element {
+              font-weight: 600;
+            }
+          }
+
+          button.nav_element {
+            display: flex;
+            justify-content: space-between;
+
+            &::after {
+              width: 44px;
+              height: 44px;
+              background-image: url("data:image/svg+xml,%3Csvg width='12' height='6' viewBox='0 0 12 6' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M6.023 5.681a.356.356 0 01-.232-.085L.305.953A.36.36 0 01.77.404l5.252 4.444L11.229.405a.36.36 0 01.467.547l-5.44 4.643a.36.36 0 01-.233.086' fill='%23000' fill-rule='evenodd'/%3E %3C/svg%3E");
+              background-position: center;
+              background-repeat: no-repeat;
+              content: '';
+              transition: transform 200ms linear;
+              transform: rotate(0deg);
+            }
+          }
+
+          .nav_l1,
+          .nav_l2,
+          .nav_l3,
+          .nav_element {
+            min-height: var(--touchable);
+            width: 100%;
+            text-align: left;
+          }
+
+          .nav_element {
+            display: flex;
+            padding-right: 1.5rem;
+            color: black;
+            text-transform: uppercase;
+            letter-spacing: 1.6px;
+            align-items: center;
+          }
+
+          .nav_l1 {
+            .nav_element {
+              padding-left: var(--nav-padding-base);
+              font-weight: 500;
+              font-size: ${fontSize(1)};
+            }
+          }
+
+          .nav_l2 {
+            .nav_element {
+              padding-left: calc(var(--nav-padding-base) * 2);
+              color: ${colors
+                .chroma(colors.gray.base)
+                .darken(0.75)
+                .css()};
+              text-transform: uppercase;
+              letter-spacing: 0;
+              font-weight: 400;
+              font-size: ${fontSize(0)};
+            }
+
+            &.active {
+              > .nav_element {
+                color: black;
+              }
+            }
+          }
+
+          .nav_l3 {
+            .nav_element {
+              padding-left: calc(var(--nav-padding-base) * 3);
+              color: ${colors
+                .chroma(colors.gray.base)
+                .darken(0.75)
+                .css()};
+              text-transform: none;
+              font-size: ${fontSize(-1)};
+            }
+
+            &.active {
+              .nav_element {
+                position: relative;
+                margin-left: -0.5em;
+                color: black;
+
+                &::before {
+                  position: relative;
+                  left: -0.5em;
+                  width: 0.5em;
+                  height: 0.5em;
+                  border-radius: 50%;
+                  background: black;
+                  content: '';
+                }
+              }
+            }
+          }
+        `}
+      >
+        {navData.l1s.map((l1) => {
+          return (
+            <li
+              key={l1.slug}
+              className={cx(
+                'nav_l1',
+                activeL1.slug === l1.slug ? 'active' : null
+              )}
+            >
+              {l1.l2s.length === 0 ? (
+                <Link to={l1.slug} className="nav_element">
+                  {l1.name}
                 </Link>
-              </li>
-            );
-          })}
-        </ul>
-      </div>
-      {activeL1 && activeL1.l2s && activeL1.l2s.length > 0 && (
-        <>
-          <span css={styles.navIconCss}>
-            <RbIcon icon="chevron-right" />
-          </span>
-
-          <div css={styles.navWrapperCss} className="nav_l2">
-            <button
-              onClick={() => {
-                openNavAtLevel('l2');
-              }}
-              className="rbio-nav_button"
-            >
-              <span css={styles.navIconCss}>
-                {activeL2.name === '' ? (
-                  <RbIcon icon="more-horz" />
-                ) : (
-                  <span
-                    className="nav_title_wrapper"
-                    css={styles.navTitleWrapperCss}
+              ) : (
+                <>
+                  <button
+                    className="button-minimal button nav_element"
+                    onClick={(e) => {
+                      e.target.parentElement.classList.toggle('active');
+                      // expandOrCollapseEl(e.target.nextElementSibling);
+                    }}
                   >
-                    <span className="nav_title_text">{activeL2.name}</span>
-                    <RbIcon
-                      className="nav_title_placeholder"
-                      icon="more-horz"
-                    />
-                  </span>
-                )}
-              </span>
-            </button>
-            <ul
-              className={classNames('rbio-nav_dropdown', {
-                'rbio-nav_dropdown-open': navOpen.l2,
-              })}
-            >
-              {activeL1.l2s.map((l2) => {
-                return (
-                  <li
-                    key={l2.slug}
-                    className={classNames(
-                      'rbio-nav_level2_item',
-                      'rbio-nav_item',
-                      {
-                        active: activeL2.slug === l2.slug,
-                      }
-                    )}
+                    {l1.name}
+                  </button>
+                  <ul
+                    className={cx('nav_children', {
+                      'nav_children-hidden': activeL1.slug !== l1.slug,
+                    })}
                   >
-                    <Link to={l2.slug} className="rbio-nav_link">
-                      <span className="link_text">{l2.name}</span>
-                    </Link>
-                  </li>
-                );
-              })}
-            </ul>
-          </div>
-        </>
-      )}
+                    {l1.l2s.map((l2) => {
+                      return (
+                        <li
+                          key={l2.slug}
+                          className={cx(
+                            'nav_l2',
+                            activeL2.slug === l2.slug ? 'active' : null
+                          )}
+                        >
+                          {l2.l3s.length === 0 ? (
+                            <Link to={l2.slug} className="nav_element">
+                              {l2.name}
+                            </Link>
+                          ) : (
+                            <>
+                              <button
+                                className="button-minimal button nav_element"
+                                to={l2.slug}
+                                onClick={(e) => {
+                                  e.target.parentElement.classList.toggle(
+                                    'active'
+                                  );
+                                  // expandOrCollapseEl(
+                                  //   e.target.nextElementSibling
+                                  // );
+                                }}
+                              >
+                                {l2.name}
+                              </button>
 
-      {activeL2 && activeL2.l3s && activeL2.l3s.length > 0 && (
-        <>
-          <span css={styles.navIconCss}>
-            <RbIcon icon="chevron-right" />
-          </span>
-          <div css={styles.navWrapperCss} className="nav_l3">
-            <button
-              onClick={() => {
-                openNavAtLevel('l3');
-              }}
-              className="rbio-nav_button"
-            >
-              <span css={styles.navIconCss}>
-                {activeL3.name === '' ? (
-                  <RbIcon icon="more-horz" />
-                ) : (
-                  activeL3.name
-                )}
-              </span>
-            </button>
-            <ul
-              className={classNames('rbio-nav_dropdown', {
-                'rbio-nav_dropdown-open': navOpen.l3,
-              })}
-            >
-              {activeL2 &&
-                activeL2.l3s &&
-                activeL2.l3s.length > 0 &&
-                activeL2.l3s.map((l3) => {
-                  return (
-                    <li
-                      key={l3.slug}
-                      className={classNames(
-                        'rbio-nav_level3_item',
-                        'rbio-nav_item',
-                        {
-                          active: activeL3.slug === l3.slug,
-                        }
-                      )}
-                    >
-                      <Link to={l3.slug} className="rbio-nav_link">
-                        <span className="link_text">{l3.name}</span>
-                      </Link>
-                    </li>
-                  );
-                })}
-            </ul>
-          </div>
-        </>
-      )}
+                              <ul className="nav_children">
+                                {l2.l3s.map((l3) => {
+                                  return (
+                                    <li
+                                      key={l3.slug}
+                                      className={cx(
+                                        'nav_l3',
+                                        activeL3.slug === l3.slug
+                                          ? 'active'
+                                          : null
+                                      )}
+                                    >
+                                      <Link
+                                        to={l3.slug}
+                                        className="nav_element"
+                                      >
+                                        {l3.name}
+                                      </Link>
+                                    </li>
+                                  );
+                                })}
+                              </ul>
+                            </>
+                          )}
+                        </li>
+                      );
+                    })}
+                  </ul>
+                </>
+              )}
+            </li>
+          );
+        })}
+      </ul>
     </nav>
   );
 };

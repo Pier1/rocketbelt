@@ -51,6 +51,7 @@ export const wrapCss = css`
 `;
 
 export const mainCss = css`
+  grid-area: main;
   background: ${colors
     .chroma(colors.gray.plus2)
     .alpha(0.5)
@@ -59,16 +60,19 @@ export const mainCss = css`
 
 export const mainWrapCss = css`
   margin: auto;
-  margin-top: 0;
   padding: 1rem;
-  padding-top: 2rem;
-  max-width: 1024px;
+
+  max-width: calc(1200px - var(--nav-desktop-width));
   height: 100%;
   background: transparent;
 
   ${media[0]} {
+    padding: 2rem;
+    padding-top: 1rem;
+  }
+
+  ${media[1]} {
     margin-top: 0;
-    padding: 4rem;
-    padding-top: 6rem;
+    padding-top: 1rem;
   }
 `;

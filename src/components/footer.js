@@ -6,6 +6,7 @@ import React from 'react';
 import { css, jsx } from '@emotion/core';
 
 const footerCss = css`
+  grid-area: footer;
   display: flex;
   padding: 1rem;
   background: #e8edf3;
@@ -16,7 +17,7 @@ const footerCss = css`
 `;
 
 const Footer = () => (
-  <footer className="rbio-footer" css={footerCss}>
+  <footer css={[footerCss]}>
     Rocketbelt was collaboratively assembled at Pier 1 Imports and is
     distributed under an MIT license. 🚀 © {new Date().getFullYear()} Pier 1
     Imports.

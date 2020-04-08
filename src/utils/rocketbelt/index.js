@@ -40,3 +40,9 @@ export const colors = {
 
 export const breakpoints = [480, 768, 992, 1200];
 export const media = breakpoints.map((bp) => `@media (min-width: ${bp}px)`);
+
+export const ease = {
+  in: `cubic-bezier(0.470, 0.000, 0.745, 0.715)`,
+  out: `cubic-bezier(0.390, 0.575, 0.565, 1.000)`,
+  inOut: `cubic-bezier(0.445, 0.050, 0.550, 0.950)`,
+};
