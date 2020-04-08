@@ -264,6 +264,7 @@ const Navigation = () => {
 
           .nav_element {
             display: flex;
+            outline-offset: -1px;
 
             color: black;
             text-transform: uppercase;

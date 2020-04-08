@@ -41,7 +41,7 @@ const Header = ({ siteTitle }) => {
 
             &.header-hidden {
               position: relative;
-              transform: none;
+              transform: translateX(-50%);
             }
           }
         `,
