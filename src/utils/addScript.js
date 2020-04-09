@@ -1,4 +1,4 @@
-exports.addScript = (src) => {
+exports.addScript = (src, appendToElement) => {
   if (typeof document !== 'undefined') {
     const matchingScripts = document.querySelectorAll(`script[src*='${src}?'`);
 
@@ -8,6 +8,15 @@ exports.addScript = (src) => {
 
     const s = document.createElement('script');
     s.setAttribute('src', `${src}?${Date.now()}`);
-    document.body.appendChild(s);
+
+    if (appendToElement) {
+      if (typeof appendToElement === 'string') {
+        document.querySelector(appendToElement).appendChild(s);
+      } else if (typeof appendToElement === 'object') {
+        appendToElement.appendChild(s);
+      }
+    } else {
+      document.body.appendChild(s);
+    }
   }
 };

@@ -308,7 +308,7 @@ const Navigation = () => {
                 .darken(0.75)
                 .css()};
               text-transform: none;
-              font-size: ${fontSize(-1)};
+              font-size: ${fontSize(0)};
             }
 
             &.active {

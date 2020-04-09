@@ -9,14 +9,16 @@ $dialog-close-height: 44px;
 }
 
 .dialog {
-  -webkit-overflow-scrolling: touch; // sass-lint:disable-line no-vendor-prefixes
-
+  -webkit-overflow-scrolling: touch;
+  // sass-lint:disable-line no-vendor-prefixes
   &[aria-hidden='true'] {
+    display: none;
     visibility: hidden;
     transition: visibility 300ms ease-out;
   }
 
   &:not([aria-hidden='true']) {
+    display: block;
     visibility: visible;
     transition: visibility 300ms ease-out;
   }
@@ -57,7 +59,7 @@ $dialog-close-height: 44px;
   overflow: hidden;
 
   .dialog_blur {
-    filter: blur(2px);
+    // filter: blur(2px);
   }
 
   .dialog {
@@ -78,7 +80,7 @@ $dialog-close-height: 44px;
   right: 0;
   bottom: 0;
   left: 0;
-  z-index: 2;
+  z-index: 99;
   background-color: rgba(color(gray, plus4), 0.6);
   opacity: 0;
   transition: opacity 300ms ease-out;
@@ -93,11 +95,10 @@ $dialog-close-height: 44px;
 
 .dialog_content {
   @include z-depth(2);
-
   position: fixed;
   top: 50%;
   left: 50%;
-  z-index: 3;
+  z-index: 100;
   display: flex;
   overflow: hidden;
   overflow-y: auto;
@@ -113,17 +114,13 @@ $dialog-close-height: 44px;
     justify-content: center;
     align-items: center;
   }
-
   @include media('>=md') {
     min-width: 75%;
   }
-
-
   @include media('>=lg') {
     min-width: 40%;
   }
 }
-
 @keyframes dialogIn {
   from {
     opacity: 0;
@@ -135,7 +132,6 @@ $dialog-close-height: 44px;
     transform: translate(-50%, -50%);
   }
 }
-
 @keyframes dialogOut {
   from {
     opacity: 1;
@@ -175,7 +171,11 @@ $dialog-close-height: 44px;
   }
 
   .dialog_close {
-    background: linear-gradient(to right, rgba(color(white), 0), color(white) 30%);
+    background: linear-gradient(
+      to right,
+      rgba(color(white), 0),
+      color(white) 30%
+    );
   }
 }
 

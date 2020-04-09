@@ -1,5 +1,7 @@
 /* global $cache:true element:true closers:true */
-$(function () {
+$(function() {
+  decorateDialogParent();
+
   var options = initOptions();
   var focusedBeforeDialog;
   var scrollBeforeDialog;
@@ -9,7 +11,7 @@ $(function () {
     blurElement: $(options.blurElement),
     rbDialog: $('.dialog').last(),
     rbDialogTitle: $('.dialog .dialog_title').last(),
-    rbDialogBody: $('.dialog .dialog_body').last()
+    rbDialogBody: $('.dialog .dialog_body').last(),
   };
   var element = null;
   var closers = $($cache.rbDialog).find('[data-rb-dialog-hide]');
@@ -21,16 +23,16 @@ $(function () {
       autoOpen: true,
       buttons: [],
       classes: {
-        'rbDialog': 'dialog',
-        'rbDialogTitle': 'dialog_title',
-        'rbDialogBody': 'dialog_body'
+        rbDialog: 'dialog',
+        rbDialogTitle: 'dialog_title',
+        rbDialogBody: 'dialog_body',
       },
       title: null,
       beforeClose: null,
       close: null,
       open: null,
       required: false,
-      headerless: false
+      headerless: false,
     };
   }
 
@@ -40,13 +42,14 @@ $(function () {
    * @returns {undefined} Returns undefined
    * @description Pops a Rocketbelt modal
    */
-  $.fn.rbDialog = function (params) {
+  $.fn.rbDialog = function(params) {
     if (typeof params !== 'string') init.call(this, params);
     if (params === 'close') close();
     else if (params === 'destroy') destroy();
     else if (params === 'open' || options.autoOpen) open();
     else if (params === 'options') return options;
-    else if (params === 'isOpen') return $cache.appendTo.hasClass('is-dialog-open');
+    else if (params === 'isOpen')
+      return $cache.appendTo.hasClass('is-dialog-open');
     return null;
   };
 
@@ -75,12 +78,13 @@ $(function () {
     if (options.buttons.length !== 0) addDialogButtons();
 
     $cache.rbDialog.data('options', options);
-    $.each(closers, function (index, el) {
+    $.each(closers, function(index, el) {
       if ($(el).is('.dialog_close')) {
         $(el).addClass('button button-minimal');
       }
 
-      if ( options.required && $(el).is('.dialog_overlay, .dialog_close') ) return;
+      if (options.required && $(el).is('.dialog_overlay, .dialog_close'))
+        return;
 
       el.addEventListener('click', close);
     });
@@ -92,11 +96,14 @@ $(function () {
 
   function addDialogClasses() {
     if (options.classes.rbDialog) {
-      if (options.classes.rbDialog !== 'dialog') $cache.rbDialog.attr('class', 'dialog ' + options.classes.rbDialog);
+      if (options.classes.rbDialog !== 'dialog')
+        $cache.rbDialog.attr('class', 'dialog ' + options.classes.rbDialog);
       else $cache.rbDialog.attr('class', 'dialog');
     }
-    if (options.classes.rbDialogTitle) $cache.rbDialogTitle.addClass(options.classes.rbDialogTitle);
-    if (options.classes.rbDialogBody) $cache.rbDialogBody.addClass(options.classes.rbDialogBody);
+    if (options.classes.rbDialogTitle)
+      $cache.rbDialogTitle.addClass(options.classes.rbDialogTitle);
+    if (options.classes.rbDialogBody)
+      $cache.rbDialogBody.addClass(options.classes.rbDialogBody);
   }
 
   function addDialogButtons() {
@@ -104,7 +111,11 @@ $(function () {
 
     // If we already have a button pane, remove it
 
-    if ($.isEmptyObject(buttons) || ($.isArray(buttons) && !buttons.length) || (options.classes.rbDialog.indexOf('dialog-max') !== -1)) {
+    if (
+      $.isEmptyObject(buttons) ||
+      ($.isArray(buttons) && !buttons.length) ||
+      options.classes.rbDialog.indexOf('dialog-max') !== -1
+    ) {
       return;
     }
 
@@ -112,8 +123,7 @@ $(function () {
     $('.dialog_content').append($('<div class="dialog_buttons"></div>'));
     $cache.rbDialogButtons = $('.dialog_buttons');
 
-    $.each(buttons, function (name, props) {
-
+    $.each(buttons, function(name, props) {
       var click;
       var buttonOptions;
       props = $.isFunction(props) ? { click: props, text: name } : props;
@@ -123,7 +133,12 @@ $(function () {
 
       if (buttons.length === 1) {
         // Button is implicitly primary if there's only one button.
-        if (!props.classes || (props.classes && props.classes.length > 0 && !props.classes.indexOf('button-primary') > -1)) {
+        if (
+          !props.classes ||
+          (props.classes &&
+            props.classes.length > 0 &&
+            !props.classes.indexOf('button-primary') > -1)
+        ) {
           props.classes = props.classes + ' button-primary';
         }
       }
@@ -131,7 +146,7 @@ $(function () {
       click = props.click;
       buttonOptions = {
         class: 'button ' + props.classes,
-        text: props.text
+        text: props.text,
       };
 
       delete props.click;
@@ -144,14 +159,26 @@ $(function () {
         .attr('class', buttonOptions.class)
         .text(buttonOptions.text)
         .appendTo($cache.rbDialogButtons)
-        .on('click', function () {
+        .on('click', function() {
           click.apply($cache.rbDialog, arguments[0]);
         });
     });
   }
 
   function getFocusableChildren(node) {
-    var focusableElements = ['a[href]', 'area[href]', 'input:not([disabled])', 'select:not([disabled])', 'textarea:not([disabled])', 'button:not([disabled])', 'iframe', 'object', 'embed', '[contenteditable]', '[tabindex]:not([tabindex^="-"])'];
+    var focusableElements = [
+      'a[href]',
+      'area[href]',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      'textarea:not([disabled])',
+      'button:not([disabled])',
+      'iframe',
+      'object',
+      'embed',
+      '[contenteditable]',
+      '[tabindex]:not([tabindex^="-"])',
+    ];
     return $(node).find(focusableElements.join(','));
   }
 
@@ -163,7 +190,10 @@ $(function () {
     if (event.shiftKey && focusedItemIndex === 0) {
       focusableChildren[focusableChildren.length - 1].focus();
       event.preventDefault();
-    } else if (!event.shiftKey && focusedItemIndex === focusableChildren.length - 1) {
+    } else if (
+      !event.shiftKey &&
+      focusedItemIndex === focusableChildren.length - 1
+    ) {
       focusableChildren[0].focus();
       event.preventDefault();
     }
@@ -196,7 +226,10 @@ $(function () {
       }
     }
 
-    if (!$cache.rbDialog[0].hasAttribute('aria-hidden') && !$cache.rbDialog[0].contains(target)) {
+    if (
+      !$cache.rbDialog[0].hasAttribute('aria-hidden') &&
+      !$cache.rbDialog[0].contains(target)
+    ) {
       setFocusToFirstItem($cache.rbDialog);
     }
   }
@@ -229,14 +262,20 @@ $(function () {
       $footer.insertAfter($body);
     }
 
-    if ($cache.rbDialog[0] &&
-        $cache.rbDialog[0].classList &&
-        $cache.rbDialog[0].classList.contains('dialog_headerless')) {
-      var $closeContainer = $('.dialog_headerless .dialog_close_container').detach();
+    if (
+      $cache.rbDialog[0] &&
+      $cache.rbDialog[0].classList &&
+      $cache.rbDialog[0].classList.contains('dialog_headerless')
+    ) {
+      var $closeContainer = $(
+        '.dialog_headerless .dialog_close_container'
+      ).detach();
       var $headerlessDialog = $('.dialog_headerless .dialog_content');
 
       if (!$headerlessDialog.children('.dialog_close_container').length) {
-        $closeContainer.insertAfter('.dialog_headerless .dialog_content .dialog_header');
+        $closeContainer.insertAfter(
+          '.dialog_headerless .dialog_content .dialog_header'
+        );
       }
     }
 
@@ -264,23 +303,23 @@ $(function () {
 
     const win = {
       height: $window.height(),
-      width: $window.width()
+      width: $window.width(),
     };
 
     const dialog = {
       height: $dialog.height(),
-      width: $dialog.width()
-    }
+      width: $dialog.width(),
+    };
 
-    const top = (win.height - dialog.height) / 2
-    const left = (win.width - dialog.width) / 2
+    const top = (win.height - dialog.height) / 2;
+    const left = (win.width - dialog.width) / 2;
 
     $dialog.css({
-      'transform': 'none',
-      'position': 'fixed',
-      'top': Math.round(top),
-      'left': Math.round(left),
-      'width': width
+      transform: 'none',
+      position: 'fixed',
+      top: Math.round(top),
+      left: Math.round(left),
+      width: width,
     });
   };
 
@@ -293,9 +332,9 @@ $(function () {
       const $dialog = $($cache.rbDialog[0]).find('.dialog_content');
 
       $dialog.css({
-        'transform': 'translate(-50%, -50%)',
-        'top': '50%',
-        'left': '50%'
+        transform: 'translate(-50%, -50%)',
+        top: '50%',
+        left: '50%',
       });
     }
 
@@ -314,7 +353,7 @@ $(function () {
     document.removeEventListener('keydown', bindKeypress);
 
     // Remove closing
-    $.each(closers, function (index, value) {
+    $.each(closers, function(index, value) {
       value.removeEventListener('click', close);
     });
 
@@ -325,9 +364,12 @@ $(function () {
 
   function destroy() {
     if (document.body.style.animation) {
-      $cache.rbDialog.one('webkitAnimationEnd oanimationend msAnimationEnd animationend', function () {
-        setTimeout(destroyTheWorld, 200);
-      });
+      $cache.rbDialog.one(
+        'webkitAnimationEnd oanimationend msAnimationEnd animationend',
+        function() {
+          setTimeout(destroyTheWorld, 200);
+        }
+      );
     } else {
       setTimeout(destroyTheWorld, 200);
     }
@@ -335,7 +377,12 @@ $(function () {
 
   function destroyTheWorld() {
     if ($cache.rbDialogButtons) $cache.rbDialogButtons.remove();
-    $cache.appendTo.append($cache.rbDialogBody.children('*').detach().hide());
+    $cache.appendTo.append(
+      $cache.rbDialogBody
+        .children('*')
+        .detach()
+        .hide()
+    );
     $cache.rbDialogTitle.text('');
     options = initOptions();
   }
@@ -348,7 +395,10 @@ $(function () {
     data = data || {};
     event = $.Event(event);
     if (this) {
-      event.type = (type === this.widgetEventPrefix ? type : this.widgetEventPrefix + type).toLowerCase();
+      event.type = (type === this.widgetEventPrefix
+        ? type
+        : this.widgetEventPrefix + type
+      ).toLowerCase();
     } else {
       event.type = type;
     }
@@ -367,6 +417,47 @@ $(function () {
     }
 
     element.trigger(event, data);
-    return !($.isFunction(callback) && callback.apply(element[0], [event].concat(data)) === false || event.isDefaultPrevented());
+    return !(
+      ($.isFunction(callback) &&
+        callback.apply(element[0], [event].concat(data)) === false) ||
+      event.isDefaultPrevented()
+    );
   }
+
+  function decorateDialogParent() {
+    const parent = $('#dialog_parent');
+
+    if (parent.length > 0 && parent.children().length === 0) {
+      parent.addClass('dialog');
+      parent.attr('tabindex', 0);
+      parent.attr('aria-hidden', 'true');
+
+      const innerHTML = `
+          <div class="dialog_overlay" tabindex="-1" data-rb-dialog-hide=""></div>
+          <section class="dialog_content grid-fluid" aria-labelledby="dialog_title" aria-describedby="dialog_description" role="dialog">
+            <header class="dialog_header">
+              <h2 class="dialog_title" id="dialog_title"></h2>
+              <div class="dialog_close_container">
+                <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
+                  <svg class="icon">
+                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"></use>
+                  </svg>
+                </button>
+              </div>
+            </header>
+            <div class="dialog_body"></div>
+          </section>
+        `;
+
+      parent.html(innerHTML);
+    }
+  }
+
+  $(document).ready(function() {
+    decorateDialogParent();
+  });
+
+  window.rb = window.rb || {};
+  window.rb.dialogs = window.rb.dialogs || {};
+  window.rb.dialogs.decorateDialogParent = decorateDialogParent;
 });

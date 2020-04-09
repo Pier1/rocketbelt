@@ -10,7 +10,6 @@ import { media, colors } from '../utils/rocketbelt';
 
 import * as styles from './layout.styles';
 
-const { addScript } = require('../utils/addScript.js');
 import jQuery from 'jquery';
 import '../rocketbelt/base/rocketbelt';
 
@@ -22,6 +21,7 @@ import SEO from './seo';
 import Header from './header';
 import Navigation from './navigation';
 import Footer from './footer';
+import Children from './children';
 
 import InjectedScript from './injected-script';
 
@@ -63,7 +63,6 @@ const addScrollListeners = () => {
 };
 
 const Layout = ({ children, pageContext, noShadow }) => {
-  console.dir(noShadow);
   const edges = useStaticQuery(graphql`
     query {
       allMdx {
@@ -214,6 +213,34 @@ const Layout = ({ children, pageContext, noShadow }) => {
       width: 100%;
       height: 100%;
     }
+
+    .video_container {
+      position: relative;
+      overflow: hidden;
+      width: 100%;
+
+      &::after {
+        display: block;
+        padding-top: 56.25%;
+        content: '';
+      }
+
+      &.video_container-4-3::after {
+        padding-top: 75%;
+      }
+
+      & iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    .button + .component-example {
+      margin-top: 1rem;
+    }
   `;
 
   return (
@@ -268,16 +295,12 @@ const Layout = ({ children, pageContext, noShadow }) => {
                 `,
               ]}
             >
-              {children}
+              <Children pageContext={pageContext}>{children}</Children>
             </div>
           </main>
           <Footer />
         </div>
       </div>
-      {hasScriptTags &&
-        pageContext.frontmatter.scriptTags.forEach((script) => {
-          addScript(`/scripts/${script}`);
-        })}
       {injectedScript !== '' && <InjectedScript script={injectedScript} />}
     </>
   );

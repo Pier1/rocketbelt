@@ -2,6 +2,16 @@ import { css } from '@emotion/core';
 import { media, fontSize, colors } from '../utils/rocketbelt';
 
 export const wrapCss = css`
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    &.linked-heading_heading {
+      display: inline;
+    }
+  }
+
   h1 {
     &.linked-heading_heading {
       font-size: ${fontSize(4)};
@@ -18,6 +28,7 @@ export const wrapCss = css`
 
   h2 {
     &.linked-heading_heading {
+      margin-top: 1em;
       font-size: ${fontSize(1)};
 
       ${media[0]} {
@@ -26,27 +37,29 @@ export const wrapCss = css`
 
       ${media[1]} {
         font-size: ${fontSize(3)};
-        line-height: 1.2;
       }
     }
   }
 
   h3 {
     &.linked-heading_heading {
+      margin-top: 0.5em;
       font-size: ${fontSize(1)};
 
       ${media[0]} {
         font-size: ${fontSize(2)};
-      }
-
-      ${media[1]} {
-        line-height: 1.2;
       }
     }
   }
 
   .linked-heading_anchor {
     line-height: 1;
+  }
+
+  .footnote-ref {
+    font-weight: 600;
+    font-style: italic;
+    font-size: ${fontSize(-1)};
   }
 `;
 
