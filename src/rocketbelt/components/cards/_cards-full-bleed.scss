@@ -1,15 +1,28 @@
 .card-full-bleed {
-  display: inline-block;
   position: relative;
+  display: inline-block;
   padding: 0;
 
   .card-content {
     position: absolute;
     bottom: 0;
-    display: block;
+    display: flex;
+    flex-direction: column;
+    min-height: 50%;
     width: 100%;
-    background: eased-gradient($direction: to top, $easing: in-out-sine);
+    background-image: linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0) 0%,
+      rgba(0, 0, 0, 0.06) 17%,
+      rgba(0, 0, 0, 0.18) 32%,
+      rgba(0, 0, 0, 0.34) 44%,
+      rgba(0, 0, 0, 0.51) 56%,
+      rgba(0, 0, 0, 0.67) 68%,
+      rgba(0, 0, 0, 0.79) 83%,
+      rgba(0, 0, 0, 0.85) 100%
+    );
     color: color(white);
+    justify-content: flex-end;
   }
 
   .card-title {
