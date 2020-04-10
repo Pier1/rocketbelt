@@ -3,8 +3,17 @@ title: Flexible Grid
 description: Rocketbelt's flexible grid allows a column-based design to be set up with the quickness.
 ---
 # Flexible Grid
+Rocketbelt's Flexbox-based grid system allows a column-based design to be set
+up with the quickness.
+
+**Do** use the Flex Grid for large-scale organization of a column-based layout.
+
+**Do not** use the Flex Grid to micromanage where individual components should
+appear on a page—use CSS Grid or individual Flexbox properties instead.
 
 ## Simple Syntax
+Just a couple of nested elements to get started.
+
 ```html
 <div class="grid-fluid">
   <div class="row">
@@ -14,6 +23,16 @@ description: Rocketbelt's flexible grid allows a column-based design to be set u
 ```
 
 ## Mobile-First & Responsive
+Building a large-scale mobile-first layout is cake. Just add `xs-`, `sm-`,
+`md-`, `lg-`, `xl-` classes. Follow the dash with how many columns that
+container should span at that breakpoint.
+
+It's ok to omit breakpoints! Columns will simply grow up to the next larger
+declared breakpoint.
+
+Columns will wrap if the columns declared in a row have a combined width
+greater than 12.
+
 ```html
 <div class="grid-fluid">
   <div class="row">
@@ -34,6 +53,10 @@ description: Rocketbelt's flexible grid allows a column-based design to be set u
 ```
 
 ## Auto Widths
+To allow a column to size itself at a given device width, just omit the
+integer (eg. `xs`, `lg`). This type of declaration can be combined with
+columns that have concrete widths.
+
 ```html
 <div class="grid-fluid">
   <div class="row">
@@ -54,6 +77,9 @@ description: Rocketbelt's flexible grid allows a column-based design to be set u
 ```
 
 ## Column Distribution & Alignment
+Content can be rearranged at different device widths—for instance, centered on
+small viewports but left-aligned on larger ones.
+
 ```html
 <div class="grid-fluid">
   <div class="row xs-start md-between xl-end">
