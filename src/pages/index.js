@@ -108,7 +108,7 @@ const IndexPage = () => {
       </section>
 
       <section css={sectionStyles}>
-        <h2>Benefits</h2>
+        <h2>Rocketbelt Includes…</h2>
         <div
           className="card-container grid-fluid"
           css={[
@@ -183,7 +183,7 @@ const IndexPage = () => {
           <div className="card">
             <div className="card-content">
               <div className="card-body">
-                <h3 className="benefit-title">Sass & JavaScript Helpers</h3>
+                <h3 className="benefit-title">Sass & JS Helpers</h3>
                 <svg
                   className="icon"
                   width="259"

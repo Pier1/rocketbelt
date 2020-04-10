@@ -119,7 +119,7 @@ $('#standard-dialog-id').rbDialog({
 }} />
 
 ### Required Dialog
-A Required Dialog doesn't have an '×' closing button and cannot be dismissed by
+A Required Dialog doesn't have an ‘×’ closing button and cannot be dismissed by
 clicking on the screen overlay. This variation is the most obstructive, so use
 it sparingly—when a user is about to engage in irreparable behavior, for
 instance.
@@ -147,7 +147,7 @@ $('#required-dialog-id').rbDialog({
 
 ### Headerless Dialog
 Use a Headerless Dialog for minimal visual impact. For best accessibility, be
-sure to provide a title in the options object even though it won't be displayed.
+sure to provide a title in the options object (even though it won't be displayed).
 <button className="button button-secondary button-sm" onClick={() => {$('#headerless-dialog-id').rbDialog({title: 'Headerless Dialog', headerless: true, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})}}>Launch Headerless</button>
 
 ```js code-only
