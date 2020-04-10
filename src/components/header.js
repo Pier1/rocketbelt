@@ -17,7 +17,6 @@ const Header = ({ siteTitle }) => {
           top: 0;
           z-index: 10;
           display: flex;
-          padding: var(--mobile-padding-base);
           min-height: var(--header-mobile-height);
           background: ${colors.brand.prussianBlue};
           transition: transform 300ms ${ease.in};
@@ -33,8 +32,9 @@ const Header = ({ siteTitle }) => {
             position: relative;
             left: 50%;
             display: flex;
+            /* padding: var(--nav-padding-base); */
             width: 100vw;
-            height: 64px;
+            height: calc(var(--header-mobile-height) * 1.25);
             transition: none;
             transform: translateX(-50%);
             justify-content: center;
@@ -52,6 +52,12 @@ const Header = ({ siteTitle }) => {
         css={css`
           display: flex;
           align-items: center;
+          padding: var(--mobile-padding-base);
+
+          ${media[2]} {
+            padding: calc(var(--nav-padding-base) / 1.33)
+              var(--nav-padding-base);
+          }
         `}
       >
         <button
@@ -64,7 +70,8 @@ const Header = ({ siteTitle }) => {
             body.classList.toggle('scroll-locked');
           }}
           css={css`
-            height: 100%;
+            width: calc(var(--touchable-lg) + var(--mobile-padding-base));
+            height: calc(var(--touchable-lg) - 2 * var(--mobile-padding-base));
 
             ${media[2]} {
               display: none;

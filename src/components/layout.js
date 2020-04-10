@@ -186,8 +186,9 @@ const Layout = ({ children, pageContext, noShadow }) => {
       --nav-desktop-width: 300px;
 
       --touchable: 44px;
+      --touchable-lg: 56px;
 
-      --header-mobile-height: var(--touchable);
+      --header-mobile-height: var(--touchable-lg);
       --header-desktop-height: var(--header-mobile-height);
 
       --nav-padding-base: 1.5rem;
