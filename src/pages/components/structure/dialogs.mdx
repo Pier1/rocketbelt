@@ -171,7 +171,27 @@ $('#headerless-dialog-id').rbDialog({
 }} />
 
 ### Max Dialog
+Max Dialogs sacrifice some context for real estate. Use them for larger blocks
+of content (like Forms) when a task's completion is important enough to offset
+increased cognitive load and interaction cost.
+
 <button className="button button-secondary button-sm" onClick={() => {$('#max-dialog-id').rbDialog({title: 'Max Dialog', classes: { 'rbDialog': 'dialog-max' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})}}>Launch Max</button>
+
+```js code-only
+$('#max-dialog-id').rbDialog({
+  title: 'Max Dialog',
+  classes: {
+    'rbDialog': 'dialog-max'
+  },
+  buttons: [{
+    text: 'Close',
+    click: function(e) {
+      $(this).rbDialog('close');
+    }
+  }]
+})
+```
+
 <div dangerouslySetInnerHTML={{
   __html: `
   <div id="max-dialog-id" style="display:none" aria-hidden="true">
@@ -180,7 +200,26 @@ $('#headerless-dialog-id').rbDialog({
 }} />
 
 ### Sheet Dialog
+Sheet Dialogs are useful in mobile scenarios—especially if the interaction they
+demand is anticipated to be brief.
+
 <button className="button button-secondary button-sm" onClick={() => {$('#sheet-dialog-id').rbDialog({title: 'Sheet Dialog', classes: { 'rbDialog': 'dialog-sheet' }, buttons: [{text: 'Close', click: function (e) { $(this).rbDialog('close'); }}]})}}>Launch Sheet</button>
+
+```js code-only
+$('#sheet-dialog-id').rbDialog({
+  title: 'Sheet Dialog',
+  classes: {
+    'rbDialog': 'dialog-sheet'
+  },
+  buttons: [{
+    text: 'Close',
+    click: function(e) {
+      $(this).rbDialog('close');
+    }
+  }]
+})
+```
+
 <div dangerouslySetInnerHTML={{
   __html: `
   <div id="sheet-dialog-id" style="display:none" aria-hidden="true">
