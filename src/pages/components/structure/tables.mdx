@@ -3,6 +3,7 @@ title: Tables
 description: Tables… they're not just for layout! 😎
 ---
 # Tables
+## Accessibility
 * Always use a `<caption>` or an `aria-describedby` attribute to make the table's purpose clear.
 * Always identify column & row headers with the `<th scope="…">` element.
 * Don't use absolute (pixel) sizing for table content.
@@ -61,6 +62,9 @@ description: Tables… they're not just for layout! 😎
 ```
 
 ## Striped Tables
+A Striped Table improves a table's scannability at the expense of increased
+visual weight.
+
 ```html
 <table class="table-striped">
   <caption>Abbreviated List of NASA Missions</caption>
@@ -114,6 +118,8 @@ description: Tables… they're not just for layout! 😎
 ```
 
 ## Hoverable Tables
+A Hoverable Table gives a table on-demand scannability.
+
 ```html
 <table class="table-hoverable">
   <caption>Abbreviated List of NASA Missions</caption>
