@@ -7,14 +7,29 @@ scriptTags:
 ---
 
 import DeprecationNotice from '../../../components/deprecation-notice';
+import { Link } from 'gatsby';
 
 # Accordions, Expanders & Tabs
 
-- Difference in nomenclature
+Use these components to focus a user's attention on a page's more primary
+elements. The **progressive disclosure** provided by these components simplifies a
+page's visual weight while providing an information scent by which users can
+find content of secondary importance.
+
+Avoid using these components if the user may need most or all of a page's
+content to make a decision.[^1] Hidden content comes at the cost of awareness
+and cognitive load.
+
+If the contents of an Accordion, Expander, or Tab group contain <Link to="/components/forms">Form components</Link>,
+be certain that the form's state is explicitly clear—specifically the state it
+will be in if the user collapses the Accordion or switches to a different
+Tab.[^2]
 
 ## Expanders
+Choose an Expander if you only need to collapse one section of information. Only
+place Expanders adjacent to one another if the information in one expander isn't
+logically related to information in the other.
 
-- Can be adjacent, logically unrelated
 ```html
 <aside class="expandable">
   <span class="expander">
@@ -36,7 +51,8 @@ import DeprecationNotice from '../../../components/deprecation-notice';
 
 ## Accordions
 
-- Should be logically related
+Accordions should be used to collapse multiple sections of information that are
+logically related to one another.
 
 ```html
 <aside class="accordion">
@@ -72,6 +88,9 @@ import DeprecationNotice from '../../../components/deprecation-notice';
 ```
 
 ## Tabs
+Choose a Tab component when the information that each tab contains is logically
+related but that the user is unlikely to need at the same time.
+
 ```html
 <aside class="tabs">
   <ul class="tabs_tab-list">
@@ -110,3 +129,10 @@ import DeprecationNotice from '../../../components/deprecation-notice';
 ## Tabcordions
 
 <DeprecationNotice deprecatedComponent="tabcordions"/>
+
+
+[^1]: Loranger, H. [Accordions Are Not Always the Answer for Complex Content on Desktops](https://www.nngroup.com/articles/accordions-complex-content/).
+      Nielsen Norman Group, 18 May 2014.
+
+[^2]: Appleseed, J. [Form Usability: The Pitfalls of Inline Accordion and Tab Designs](https://baymard.com/blog/accordion-and-tab-design).
+      Baymard Institute, 21 Oct. 2014.
