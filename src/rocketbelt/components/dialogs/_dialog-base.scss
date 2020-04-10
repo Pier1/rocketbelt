@@ -158,6 +158,15 @@ $dialog-close-height: 44px;
   justify-content: center;
   align-items: center;
 
+  &.dialog_close-icon {
+    &::after {
+      width: 20px;
+      height: 20px;
+      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' xmlns='http://www.w3.org/2000/svg'%3E %3Cpath d='M8.767 8L15.841.926a.541.541 0 10-.767-.767L7.999 7.233.927.159a.543.543 0 00-.769.767L7.232 8 .158 15.073a.544.544 0 00.769.767l7.072-7.073 7.075 7.073a.544.544 0 00.767 0 .541.541 0 000-.767L8.767 8z' fill='%2000' fill-rule='evenodd'/%3E %3C/svg%3E");
+      content: '';
+    }
+  }
+
   .icon {
     width: 1rem;
     height: 100%;

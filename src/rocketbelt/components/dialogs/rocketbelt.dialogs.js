@@ -438,11 +438,7 @@ $(function() {
             <header class="dialog_header">
               <h2 class="dialog_title" id="dialog_title"></h2>
               <div class="dialog_close_container">
-                <button class="dialog_close" data-rb-dialog-hide="" aria-label="Close dialog">
-                  <svg class="icon">
-                    <use xlink:href="/components/icons/rocketbelt.icons.svg#rb-icon-close"></use>
-                  </svg>
-                </button>
+                <button class="dialog_close dialog_close-icon" data-rb-dialog-hide="" aria-label="Close dialog"></button>
               </div>
             </header>
             <div class="dialog_body"></div>
