@@ -2,13 +2,18 @@
 title: Cards
 description: Rocketbelt's Card pattern provides an atomic unit to group content on the page.
 ---
+import { Link } from 'gatsby';
+import ExampleCard from '../../../components/example-card';
+
 # Cards
+Cards provide rudimentary visual structure to content. Their composition and
+contents can vary greatly, and they can be quickly arranged on a <Link to="/components/structure/flexible-grid">Flexible Grid</Link>.
 
 ## Basic Cards
 
 ```html
 <div class="grid-fluid">
-  <div class="row xs-center font-weight-light">
+  <div class="row xs-center">
     <div class="col xs-3">
       <div class="card">
         Cards are building blocks that lead to more detailed information. Their
@@ -17,8 +22,8 @@ description: Rocketbelt's Card pattern provides an atomic unit to group content 
     </div>
     <div class="col xs-3">
       <div class="card">
-        Cards may be organized using <span class="font-monospace">grid</span>
-        classes, and can contain many types of content.
+        Cards may be organized using flex grid classes, and can contain many
+        types of content.
       </div>
     </div>
   </div>
@@ -26,6 +31,9 @@ description: Rocketbelt's Card pattern provides an atomic unit to group content 
 ```
 
 ## Action Cards
+Use an Action Card to give a strong visual association between Card content and
+a <Link to="/components/actions-and-feedback/links#ct-as">CTA</Link> or desired
+action.
 
 ```html
 <div class="card card-action z-depth-2">
@@ -42,12 +50,31 @@ description: Rocketbelt's Card pattern provides an atomic unit to group content 
 </div>
 ```
 
-## Notes
-- Cards can be given z-depth via mixins
+## Depth
+Cards can benefit from the extra definition and visual interest that some depth
+provides. Add a `z-depth` class or include the `z-depth` mixin in your SCSS.
 
-## Image Cards
+### Class-Based
+Add any of the classes below to a card.
+<ExampleCard className="card z-depth-0">z-depth-0</ExampleCard>
+<ExampleCard className="card z-depth-1">z-depth-1</ExampleCard>
+<ExampleCard className="card z-depth-2">z-depth-2</ExampleCard>
+<ExampleCard className="card z-depth-3">z-depth-3</ExampleCard>
 
-### Full Bleed Cards
+### Mixin-Based
+The `z-depth` mixin is also provided via Rocketbelt Tools. Use this mixin if
+you need to override any of the properties and you'd prefer to keep the DOM a
+little cleaner.
+
+```scss code-only
+// Use an integer between 0 and 4 for increasing depth
+@include z-depth(2);
+```
+
+## Full Bleed Cards
+Full Bleed Cards allow an image to take center stage, optionally augmented with
+a caption.
+
 ```html
 <div class="card card-full-bleed z-depth-1">
   <div class="">
@@ -63,6 +90,8 @@ description: Rocketbelt's Card pattern provides an atomic unit to group content 
 ```
 
 ## Thumbnail Cards
+Use Thumbnail Cards to provide a representative image for a Card, or to promote
+a strong association between an image and the Card content.
 
 ### Constrained via Grid
 ```html
