@@ -6,7 +6,7 @@ import { useStaticQuery, graphql } from 'gatsby';
 import { jsx, css, Global } from '@emotion/core';
 import cx from 'emotion';
 
-import { media, colors } from '../utils/rocketbelt';
+import { media, colors, fontSize } from '../utils/rocketbelt';
 
 import * as styles from './layout.styles';
 
@@ -241,6 +241,15 @@ const Layout = ({ children, pageContext, noShadow }) => {
 
     .button + .component-example {
       margin-top: 1rem;
+    }
+
+    sup[id^='fnref'] {
+      & + sup[id^='fnref'] {
+        &::before {
+          content: ', ';
+          font-size: ${fontSize(-1)};
+        }
+      }
     }
   `;
 
