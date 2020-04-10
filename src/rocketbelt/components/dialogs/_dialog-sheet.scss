@@ -20,13 +20,23 @@
 
 .dialog {
   &.dialog-sheet {
+    .dialog_header {
+      border-bottom: none;
+    }
+
     .dialog_content {
       top: auto;
-      right: calc(100vw - 16px);
-      bottom: 32px;
-      left: 16px;
+      right: 0;
+      bottom: 0;
+      left: 0;
+      padding: 22px;
       transform: none;
       animation: dialog-sheet-in 300ms ease-in-out;
+    }
+
+    .dialog_buttons {
+      border: none;
+      background: white;
     }
   }
 }
@@ -36,6 +46,7 @@
     opacity: 0;
     transform: translate(0, 100%);
   }
+
   to {
     opacity: 1;
     transform: translate(0, 0%);
@@ -47,6 +58,7 @@
     opacity: 1;
     transform: translate(0, 0%);
   }
+
   to {
     opacity: 0;
     transform: translate(0, 100%);

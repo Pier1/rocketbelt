@@ -23,13 +23,9 @@
     .dialog_header {
       padding: 0;
       border: 0;
-      background-color: color(black);
+
       .dialog_title {
-        padding-left: ms(-5);
-        color: color(white);
-      }
-      .dialog_close {
-        color: color(white);
+        margin: 2rem 0;
       }
     }
 
@@ -49,20 +45,23 @@
       right: 0;
       bottom: 0;
       left: 0;
+      padding: 2rem;
       min-width: 100%;
       max-width: 100%;
       max-height: 100%;
       transform: none;
-
       @include media('>=md') {
         right: 10%;
         left: 10%;
         min-width: 80%;
       }
     }
+
+    .dialog_body {
+      padding: 0;
+    }
   }
 }
-
 @keyframes dialog-max-in {
   from {
     opacity: 0;
@@ -74,7 +73,6 @@
     transform: scale3d(1, 1, 1);
   }
 }
-
 @keyframes dialog-max-out {
   from {
     opacity: 1;
