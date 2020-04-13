@@ -1,37 +1,59 @@
 # Accessibility
 
+> The power of the Web is in its universality. Access by everyone
+> regardless of disability is an essential aspect.[^1]
+> —Tim Berners-Lee, Creator of the Web 
+
 ## Why?
+So many reasons. First, the web was created with *universal access* in mind.
+Second, "disability" on the web doesn't only mean "uses a screen reader". There
+are plenty of sighted users who need accomodation on the web. For instance,
+users with:
 
-## Semantic Markup
+- Low vision
+- Hearing loss
+- Inhibited motor function
+- Diminished cognitive ability
+- Poor color perception
 
-1. Why?
-2. Use semantic markup
-3. Variety of “disabilities” we have to account for—not just screen readers
-4. How to check a11y (bookmarklet, color contrast, Chrome extensions)
-5. Checklist, WCAG 2.0 guidelines
-6. [Cheatsheet](https://moritzgiessmann.de/accessibility-cheatsheet/)
-7. [Focus outline quote](https://medium.com/hackernoon/removing-that-ugly-focus-ring-and-keeping-it-too-6c8727fefcd2)
-8. “The one argument for accessibility that doesn’t get made nearly often enough
-    is how extraordinarily better it makes some people’s lives. How many
-    opportunities do we have to dramatically improve people’s lives just by
-    doing our job a little better?” ― Steve Krug DMMT, p.171
-9. “The power of the Web is in its universality. Access by everyone regardless
-    of disability is an essential aspect.” – Tim Berners-Lee
-10. Tools
-    - https://developer.paciellogroup.com/resources/contrastanalyser/
-    - https://usecontrast.com
-11. Color should not be necessary to understand the content and its current
-    state.
+> How many opportunities do we have to dramatically improve people’s lives
+> just by doing our job a little better?[^2] —Steve Krug,
+> Author of _Don't Make Me Think_
 
-## Specifics
-* Reach all navigation with a keyboard
-* Reach all links (text or image), form controls and page functions
-* Use the enter key to open all links & performa all actions as one would
+## Accessibility is Usability
+Generally speaking, what's good for accessibility is good for usability, and
+vice versa.
+
+- A user who is easily distracted benefits from **concise content**
+- A user recovering from shoulder surgery benefits from **adequate keyboard
+  support**
+- A user who has eye strain benefits from **sufficient color contrast**
+- A user who wears readers benefits from **text that can scale**
+
+## How Do I Make a Site Accessible?
+- Use semantic markup
+- Keep accessibility in mind from the start! Reference
+  [this helpful cheatsheet](https://moritzgiessmann.de/accessibility-cheatsheet/)
+  as you develop
+- Use `aria` properties only when necessary
+- Learn what the web sounds like for users of screen readers:
+
+<div style="text-align: center;">
+  <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/OUDV1gqs9GA?start=667" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</div>
+
+## Success Criteria
+An accessible page allows a user to…
+
+- Reach all navigation with a keyboard
+- Reach all anchors, buttons, and form controls
+- Use the enter key to open all links & perform all actions as one would
   with a mouse click
-* Semantic document outline
-* Hear the text equivalent for each image conveying information
-* Understand how to use every form field on a page
+- Understand how to use every form field on a page
+- Hear the text equivalent for each image conveying information
 
-## Skip Links
-
-## Focus Outline-but-Not
+[^1]: World Wide Web Consortium. (1997). “World Wide Web Consortium Launches
+      International Program Office for Web Accessibility Initiative”
+      (Press release). Retrieved from https://www.w3.org/Press/IPO-announce
+[^2]: Krug, S. (2014, p. 171). _Don't Make Me Think, Revisited: A Common Sense
+      Approach to Web Usability_. Berkeley, CA: New Riders Publishing.
