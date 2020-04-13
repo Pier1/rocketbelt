@@ -9,7 +9,7 @@ const FontWeightSpecimens = ({ typeface }) => {
       ? ['regular', 'italic', 'bold', 'extra-bold']
       : [];
 
-  const token = typeface === 'serif' ? 'EB' : 'NS';
+  const token = typeface === 'serif' ? 'EB' : 'Ms';
   return (
     <ul className={`${typeface} font-weight-specimens list-reset-horizontal`}>
       {fonts.map((font) => {
