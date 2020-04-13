@@ -1,53 +1,95 @@
 import FontWeightSpecimens from '../../components/font-weight-specimens';
 
 # Typography
+Well-implemented typography sets the baseline of a site's information
+architecture. Use typographic principles to increase a page's scannability
 
-## Tips
+## Accessibility
+Always maintain a 4.5:1 or greater contrast ratio between foreground and background text
+colors. Additionally, be sure to use adequately heavy font weights to ensure
+good legibility.
 
-- Use semantics to provide structure to the document.
-- Never break rank just for font sizing or weight. The next heading after an h1 should
-  be an h2 even if that h2 is much smaller. Use HTML for meaning and CSS for
-  styling. You can make that h2 whatever size you need.
+### Contrast Tools
+The [Contrast macOS app](https://usecontrast.com/) comes highly recommended. On
+PC, consider The Paciello Group's [Colour Contrast Analyser app](https://developer.paciellogroup.com/resources/contrastanalyser/).
+There are many web-based tools to calculate contrast; the [tool provided by WebAIM](https://webaim.org/resources/contrastchecker/)
+is perhaps the simplest and easiest to use.
 
-## Typefaces
-### Sans Serif
-[Nunito Sans]{.sans .font-bold} is Rocketbelt's sans serif typeface.
+## Design for Scannability
+People don't read, they scan![^1] Your reader is highly unlikely to pore over
+every word on the page. It's imperative that a page is designed with this in
+mind and that a page's layout and typography adequately aids a user who will
+only scan the content. Methods for achieving that goal follow.
+
+### Heading Levels
+Heading tags are commonly used by users of assistive technology to navigate the
+document, so using them correctly boosts a page's accessibility.
+
+Separate your page's semantics from its style! Think of the DOM like an outline.
+An `h1` should always be followed by an `h2`, an `h2` by an `h3`, and so on.
+Never "break rank" and use an improper heading tag just for the size or visual
+weight it offers.
+
+### Visual Hierarchy
+Establishing a consistent visual hierarchy will help your users quickly make
+sense of a page's content.
+
+- **Size & weight** draw the eye and indicate what's important.
+- **Positioning** one element above or beside another indicates a relationship
+- **Typeface**s can be used to draw contrast between two pieces of content (a label and a definition, for instance)
+- **Color** can emphasize or deemphasize a particular piece of text
+- **Proximity & similarity** are Gestalt principles that indicate a relationship. For instance:
+  - Things that are close to each other ([Proximity](https://en.wikipedia.org/wiki/Gestalt_psychology#Law_of_Proximity)) are likely related
+  - Things that look alike ([Similarity](https://en.wikipedia.org/wiki/Gestalt_psychology#Law_of_Similarity)) are likely related
+
+### Line Composition
+Aim for a line length of 50-70 characters when possible. Be sure to give ample
+line height, especially for sections with a long line length.
+
+## Typeface
+[Nunito Sans]{.sans .font-bold} is Rocketbelt's sans serif typeface. The
+typeface is a branded element and is likely to change—therefore it's important
+that the `font-family` value isn't explicitly declared. Instead, use
+Rocketbelt's `font-family` helper function when declaring a `font-family`
+property. This ensures that an updated font definition can be used without the
+difficulty of changing hundreds or thousands of font declarations.
 
 ```scss code-only
 font-family: font-family(sans);
 ```
 
-### Serif
-[EB Garamond]{.serif .font-bold .font-plus1} is Rocketbelt's serif typeface.
-
-```scss code-only
-font-family: font-family(serif);
-```
-
 ## Font Sizes
+Rocketbelt's font sizes are based on a modular scale in which each step up or
+down the scale increases or decreases the font size by the same ratio.
 
-[font-size(-2)]{.subhead-unlinked} [On a mote of dust suspended in a sunbeam.
+To that end, Rocketbelt provides a `font-size` Sass helper function so that font
+sizes don't have to be memorized. **Always use the `font-size` function when
+building layouts!**
+
+[`font-size: font-size(-2)`]{.subhead-unlinked} [On a mote of dust suspended in a sunbeam.
 ]{.font-minus2}
 
-[font-size(-1)]{.subhead-unlinked} [On a mote of dust suspended in a
+[`font-size: font-size(-1)`]{.subhead-unlinked} [On a mote of dust suspended in a
 sunbeam.]{.font-minus1}
 
-[font-size(0)]{.subhead-unlinked} On a mote of dust suspended in a sunbeam.
+[`font-size: font-size(0)`]{.subhead-unlinked} On a mote of dust suspended in a sunbeam.
 
-[font-size(1)]{.subhead-unlinked} [On a mote of dust suspended in a
+[`font-size: font-size(1)`]{.subhead-unlinked} [On a mote of dust suspended in a
 sunbeam.]{.font-plus1}
 
-[font-size(2)]{.subhead-unlinked} [On a mote of dust suspended in a
+[`font-size: font-size(2)`]{.subhead-unlinked} [On a mote of dust suspended in a
 sunbeam.]{.font-plus2}
 
-[font-size(3)]{.subhead-unlinked} [On a mote of dust suspended in a
+[`font-size: font-size(3)`]{.subhead-unlinked} [On a mote of dust suspended in a
 sunbeam.]{.font-plus3}
 
 ## Font Weights
 <FontWeightSpecimens typeface="sans" />
-<FontWeightSpecimens typeface="serif" />
 
 ## Headings
+Use the `heading-style` mixin to create specifically-styled headings. The mixin
+requires a SCSS object with `style` and `font-size` keys. The `style` key should
+be set to one of the four values below.
 
 ```scss code-only
 @include heading-style(
@@ -60,19 +102,19 @@ sunbeam.]{.font-plus3}
 );
 ```
 
-[font-size(0)]{.subhead-unlinked}
+[font-size: font-size(0)]{.subhead-unlinked}
 [Whisper]{.heading-styles .whisper}
 [Mention]{.heading-styles .mention}
 [Blurt]{.heading-styles .blurt}
 [Shout]{.heading-styles .shout}
 
-[font-size(2)]{.subhead-unlinked}
+[font-size: font-size(2)]{.subhead-unlinked}
 [Whisper]{.heading-styles .whisper .plus2}
 [Mention]{.heading-styles .mention .plus2}
 [Blurt]{.heading-styles .blurt .plus2}
 [Shout]{.heading-styles .shout .plus2}
 
-[font-size(6)]{.subhead-unlinked}
+[font-size: font-size(6)]{.subhead-unlinked}
 [Whisper]{.heading-styles .whisper .plus6}
 [Mention]{.heading-styles .mention .plus6}
 [Blurt]{.heading-styles .blurt .plus6}
@@ -167,3 +209,6 @@ Use the `icon-left` and `icon-right` classes to indicate icon placement.
 ```html
 <div class="text-with-rule">text with rule</div>
 ```
+
+[^1]: Nielsen, J. [“How Users Read on the Web.”](https://www.nngroup.com/articles/how-users-read-on-the-web/)
+      Nielsen Norman Group, 30 Sep. 1997.
