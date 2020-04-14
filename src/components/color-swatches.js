@@ -4,6 +4,8 @@ import React from 'react';
 /** @jsx jsx */
 import { css, jsx } from '@emotion/core';
 
+import { fontSize, colors } from '../utils/rocketbelt';
+
 const classNames = require('classnames');
 const Color = require('color');
 
@@ -181,6 +183,8 @@ const ColorSwatches = ({ swatchSet }) => {
     <ul className={`swatches ${swatchSet} list-reset-horizontal`}>
       {swatches.map((swatch) => {
         const color = Color(swatch.hex);
+        const contrastOnWhite = color.contrast(Color(`#fff`));
+        const contrastOnBlack = color.contrast(Color(`#000`));
         return (
           <li className="swatch_wrapper" key={`${swatch.scss}`}>
             <button
@@ -201,6 +205,79 @@ const ColorSwatches = ({ swatchSet }) => {
               ></span>
               <span className="swatch_name">{swatch.name}</span>
             </button>
+            <div
+              css={css`
+                margin-top: 0.5rem;
+                padding: 0.5rem;
+
+                .swatch_contrast {
+                  padding: 0.5rem;
+                  border: 1px solid;
+                  border-radius: 2px;
+                  color: ${swatch.hex};
+                  font-weight: 600;
+                  font-size: ${fontSize(-1)};
+                }
+
+                .swatch_contrast-white {
+                  border-color: currentColor;
+                }
+
+                .swatch_contrast-black {
+                  border-color: black;
+                }
+
+                .swatch_contrast-fail {
+                  --swatch_stripe-bg: #fff;
+
+                  background: linear-gradient(
+                    to bottom right,
+                    var(--swatch_stripe-bg) calc(50% - 1px),
+                    ${colors.indicating.error},
+                    var(--swatch_stripe-bg) calc(50% + 1px)
+                  );
+                  cursor: not-allowed;
+
+                  &.swatch_contrast-black {
+                    --swatch_stripe-bg: #000;
+                  }
+                }
+              `}
+            >
+              <span
+                className={`swatch_contrast swatch_contrast-white ${
+                  contrastOnWhite < 3 ? 'swatch_contrast-fail' : null
+                }`}
+                css={css`
+                  margin-right: 0.5rem;
+                  background: white;
+                `}
+              >
+                {contrastOnWhite >= 7
+                  ? 'AAA'
+                  : contrastOnWhite >= 4.5
+                  ? 'AA'
+                  : contrastOnWhite >= 3
+                  ? 'AA+'
+                  : 'Fail'}
+              </span>
+              <span
+                className={`swatch_contrast swatch_contrast-black ${
+                  contrastOnBlack < 3 ? 'swatch_contrast-fail' : null
+                }`}
+                css={css`
+                  background: black;
+                `}
+              >
+                {contrastOnBlack >= 7
+                  ? 'AAA'
+                  : contrastOnBlack >= 4.5
+                  ? 'AA'
+                  : contrastOnBlack >= 3
+                  ? 'AA+'
+                  : 'Fail'}
+              </span>
+            </div>
           </li>
         );
       })}

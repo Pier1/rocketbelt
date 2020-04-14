@@ -3,10 +3,22 @@ import ColorContrastCalculator from
   '../../components/color-contrast-calculator';
 
 # Color
-## Color Contrast & Accessibility
-_Never use color alone to indicate a condition or state._
+## Accessibility
+There are two primary accessibility guidelines related to color:
+
+1. Always use a text color that provides sufficient contrast (4.5:1 or greater[^1])
+with its background. Pragramtically, this means never using a gray lighter than
+Sonic Silver (`color(gray)`) against a white background
+2. Never use color along to indicate a condition or state[^2]—consider using an icon
+or more descriptive text in such cases
+
+<!-- ## Functional Colors -->
 
 ## Brand Colors
+Avoid using concretely-named brand colors when possible; instead use the
+functional colors ([defined in `_post-tools-includes.scss`](https://github.com/Pier1/rocketbelt/blob/develop/src/rocketbelt/tools/variables/post-tools-includes/_post-tools-includes.scss))
+provided by Rocketbelt's `color` helper function.
+
 <ColorSwatches swatchSet="brand"/>
 
 ## Grays
@@ -14,3 +26,10 @@ _Never use color alone to indicate a condition or state._
 
 ## Indicating Colors
 <ColorSwatches swatchSet="indicating"/>
+
+[^1]: Web Content Accessibility Guidelines 2.0, W3C World Wide Web Consortium
+      Recommendation 11 December 2008, Level A Success Criteria plus Success
+      Criteria 1.4.3. (https://www.w3.org/TR/2008/REC-WCAG20-20081211/#visual-audio-contrast-contrast)
+
+[^2]: World Wide Web Consortium (2016): WCAG2.0 HTML Techniques
+      (https://www.w3.org/TR/2016/NOTE-WCAG20-TECHS-20161007/G182)
