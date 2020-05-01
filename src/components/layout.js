@@ -251,6 +251,12 @@ const Layout = ({ children, pageContext, noShadow }) => {
         }
       }
     }
+
+    strong,
+    .emphasize {
+      font-weight: 500;
+      font-family: Tomorrow;
+    }
   `;
 
   return (

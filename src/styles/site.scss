@@ -21,60 +21,6 @@ body {
   flex-direction: column;
 }
 
-.emphasize {
-  text-transform: uppercase;
-  font-style: font-style(italic);
-  font-family: font-family(serif);
-}
-
-.footnotes {
-  padding-top: 1rem;
-  border-top: 1px solid color(gray, plus3);
-
-  &::before {
-    display: block;
-    color: color(gray, minus1);
-    content: 'Notes';
-    font-style: font-style(italic);
-    font-size: font-size(1);
-    font-family: font-family(serif);
-  }
-
-  .target,
-  :target {
-    background: rgba(color(warning), 0.6);
-  }
-
-  hr {
-    display: none;
-    visibility: hidden;
-  }
-
-  ol {
-    display: inline-flex;
-    flex-direction: column;
-    margin: 0;
-    padding-left: 0;
-  }
-
-  li {
-    display: inline-block;
-    margin-bottom: 0.5rem;
-    background: transparent;
-    counter-increment: FN-ITEMS;
-    transition: background 300ms linear;
-  }
-
-  li::before {
-    padding-right: 0.25em;
-    content: counter(FN-ITEMS) '.';
-  }
-
-  .footnote-backref {
-    margin-left: 0.5rem;
-  }
-}
-
 .linked-heading {
   display: table;
   color: unset;
@@ -91,7 +37,7 @@ body {
 
   h1 {
     letter-spacing: letter-spacing(plus3);
-    font-weight: font-weight(normal);
+    font-weight: 300;
     font-style: font-style(italic);
     font-size: font-size(9);
     font-family: font-family(serif);

@@ -7,7 +7,7 @@ import Layout from '../components/layout';
 import SEO from '../components/seo';
 import { media, fontSize, colors } from '../utils/rocketbelt';
 
-import RbLogo from '../images/rb-logo-white.svg';
+import RbLogo from '../images/rocketbelt.svg';
 import RbIcon from '../components/rb-icon';
 
 const IndexPage = () => {
@@ -32,16 +32,8 @@ const IndexPage = () => {
       <section
         className="hero"
         css={css`
-          margin: 0 -1rem 3rem -1rem;
-          padding: 2rem 1rem;
-          background-color: ${colors.brand.prussianBlue};
-          box-shadow: 0 2px 24px 0
-            ${colors
-              .chroma(colors.brand.prussianBlue)
-              .darken()
-              .alpha(0.2)
-              .css()};
-          color: #fff;
+          margin: 0 -1rem;
+          padding: 2rem 1rem 0;
           text-align: center;
 
           ${media[0]} {
@@ -50,11 +42,7 @@ const IndexPage = () => {
           }
 
           .logo-container-logo {
-            height: 4rem;
-          }
-
-          .emphasize {
-            color: #fff;
+            height: 12rem;
           }
         `}
       >
@@ -65,8 +53,8 @@ const IndexPage = () => {
           className="rb-title"
           // These have to be inline to override the RB default heading styles…
           style={{
-            fontWeight: 'normal',
-            textTransform: 'uppercase',
+            fontWeight: '300',
+            fontSize: `${fontSize(6)}`,
             letterSpacing: '3.6px',
           }}
         >
@@ -84,7 +72,7 @@ const IndexPage = () => {
           The Rocketbelt Pattern Library makes it easier to design & build{' '}
           <span className="emphasize">human-centered</span>,{' '}
           <span className="emphasize">accessible</span>,{' '}
-          <span className="emphasize">mobile-friendly</span> websites.
+          <span className="emphasize">mobile-first</span> websites.
         </p>
       </section>
 
