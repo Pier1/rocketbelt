@@ -54,6 +54,14 @@ const Header = ({ siteTitle }) => {
           align-items: center;
           padding: var(--mobile-padding-base);
 
+          button,
+          a {
+            :focus {
+              outline-color: #fff !important;
+              outline-offset: 4px;
+            }
+          }
+
           ${media[2]} {
             padding: calc(var(--nav-padding-base) / 1.33)
               var(--nav-padding-base);

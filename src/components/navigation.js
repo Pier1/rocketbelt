@@ -264,12 +264,15 @@ const Navigation = () => {
 
           .nav_element {
             display: flex;
-            outline-offset: -1px;
 
             color: black;
             text-transform: uppercase;
             letter-spacing: 1.6px;
             align-items: center;
+
+            &:focus {
+              outline-offset: -2px;
+            }
           }
 
           .nav_l1 {
