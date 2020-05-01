@@ -32,20 +32,31 @@ const Footer = () => (
         align-items: center;
       `}
     >
+      <div
+        className="footer_logo"
+        css={css`
+          margin-bottom: 1rem;
+          height: 56px;
+        `}
+      >
+        <a
+          href="https://www.pier1.com/"
+          css={css`
+            height: 100%;
+          `}
+        >
+          <img
+            src={meatball}
+            css={css`
+              height: 100%;
+            `}
+          />
+        </a>
+      </div>
       <div className="footer_text">
         Rocketbelt was collaboratively assembled at Pier 1 Imports and is
         distributed under an MIT license. 🚀 © {new Date().getFullYear()} Pier 1
         Imports.
-      </div>
-      <div
-        className="footer_logo"
-        css={css`
-          margin-top: 1rem;
-        `}
-      >
-        <a href="https://www.pier1.com/">
-          <img src={meatball} />
-        </a>
       </div>
     </div>
   </footer>
