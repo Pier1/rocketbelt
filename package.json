@@ -53,7 +53,7 @@
     "gatsby-remark-smartypants": "^2.1.14",
     "mini-css-extract-plugin": "^0.8.0",
     "mutationobserver-shim": "^0.3.2",
-    "node-sass": "^4.13.1",
+    "node-sass": "^7.0.0",
     "normalize.css": "^8.0.1",
     "perfectionist": "^2.4.0",
     "postcss-import": "^12.0.1",
